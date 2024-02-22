@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk44w6ltyiq7d"]
+
+[ext_resource type="Script" path="res://scripts/HUD/Menu.gd" id="1_g04yw"]
+[ext_resource type="Theme" uid="uid://btc3kqb6qx6k3" path="res://themes/button.tres" id="2_27d8b"]
+[ext_resource type="Texture2D" uid="uid://cumum55a2e8e4" path="res://images/Menu_Screen.png" id="2_bscqu"]
+[ext_resource type="AudioStream" uid="uid://c14cj6uhjlgdt" path="res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav" id="3_ry4k5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjy7t"]
+bg_color = Color(0.305882, 0.67451, 0.615686, 1)
+
+[sub_resource type="Theme" id="Theme_seh5y"]
+Button/styles/normal = SubResource("StyleBoxFlat_sjy7t")
+
+[node name="Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g04yw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+show_behind_parent = true
+position = Vector2(586, 327)
+scale = Vector2(0.55779, 0.445475)
+texture = ExtResource("2_bscqu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 282.0
+offset_top = 428.0
+offset_right = 882.0
+offset_bottom = 535.0
+theme = SubResource("Theme_seh5y")
+
+[node name="Play" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_27d8b")
+text = "Jogar"
+
+[node name="Options" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_27d8b")
+text = "Opções"
+
+[node name="Exit" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_27d8b")
+text = "Sair
+"
+
+[node name="MainBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ry4k5")
+volume_db = -20.0
+bus = &"BGM"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

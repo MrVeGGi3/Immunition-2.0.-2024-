@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c14cj6uhjlgdt"
+path="res://.godot/imported/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav-d771959fbddb83820cd81b17b6ad5614.sample"
+
+[deps]
+
+source_file="res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav"
+dest_files=["res://.godot/imported/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav-d771959fbddb83820cd81b17b6ad5614.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://unuynfnhkuni"]
+
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_kijmf"]
+
+[resource]
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_kijmf")

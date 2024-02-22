@@ -1,0 +1,16 @@
+res://bus/MainBus.tres::0c96dc44c838157a2f616a10528d060f::1699561254::res://.godot/exported/133200997/export-bd9e388df8ba38d0cbbecf5875947450-MainBus.res
+res://scenes/Characters/enemy_b.tscn::f2f6126009d8fb9f70cb619b14cb8049::1701982818::res://.godot/exported/133200997/export-6acb3982278b0a47ee8f625d0a6d023c-enemy_b.scn
+res://scenes/Characters/enemy_g.tscn::c70e2ae2d1fdc50fdd288a5858265944::1701982818::res://.godot/exported/133200997/export-383b5c1cbfe7bdf712545211d61fcbb3-enemy_g.scn
+res://scenes/Characters/Player.tscn::418ffd7f52f94277105672944740e3c1::1701982894::res://.godot/exported/133200997/export-cdce71b517f166468cb1e83f8db31e83-Player.scn
+res://scenes/HUD/loading.tscn::ce8fca4f956845cf8a8a3c76221aa111::1701982818::res://.godot/exported/133200997/export-d17bc17117b1094dbda722143e40f10c-loading.scn
+res://scenes/HUD/logo_transition.tscn::854a17bd09b3414ef4c16e04bc7b3b78::1701982817::res://.godot/exported/133200997/export-ce12deca61f72d5ad5ea26d87b33ebf9-logo_transition.scn
+res://scenes/HUD/menu.tscn::679159840e11cea01155dd62d53e6f3a::1701982818::res://.godot/exported/133200997/export-9bf5a2bc97e6190d803cbcc893ec85e6-menu.scn
+res://scenes/HUD/options_menu.tscn::d27d85b2bdf1a7e0aa64dcdd1329576e::1701982818::res://.godot/exported/133200997/export-e980a350d58854daa45f3dcba193099c-options_menu.scn
+res://scenes/HUD/pause_menu.tscn::30ffb4a9ac90fdd20cc02a621fcd3d11::1701982818::res://.godot/exported/133200997/export-b69e9db915a69c3bf00bb4bd44aa2122-pause_menu.scn
+res://scenes/Levels/world.tscn::728c009f57da15045255ed02572da201::1701982818::res://.godot/exported/133200997/export-56d439b0c4d72b67ff07c4735c61dc0d-world.scn
+res://themes/button.tres::0e0f25fcbe8476e657a7adfe64cd767c::1701042106::res://.godot/exported/133200997/export-6f7a51284530c50e34ed43edcb1b4f05-button.res
+res://themes/label.tres::b637ddbb1fc13da98bdcadc9ab5be0b8::1701042106::res://.godot/exported/133200997/export-d61b4f26aaac5babc0b6539c5e3f3cdc-label.res
+res://themes/PanelColor.tres::6cfbe8ff79f89f642f405527c5ebf4a1::1700747186::res://.godot/exported/133200997/export-b173fb94eb7cafa21e3751df93e37577-PanelColor.res
+res://themes/playerLifeBarTheme.tres::740ccdf0c2a464d6156c3e9dcf8dd4e8::1701955341::res://.godot/exported/133200997/export-dd0201cd4bd83adb1cde40efaffe32f9-playerLifeBarTheme.res
+res://themes/purpleTheme.tres::92c3e5848c9784d5ef57ae1ad44b44dc::1700747186::res://.godot/exported/133200997/export-318fd55f143bf1809cac38c04f7ce44b-purpleTheme.res
+res://scenes/Characters/enemy_r.tscn::0c8a396244011a87a7c6382069f36c5b::1701982818::res://.godot/exported/133200997/export-c748bbcc53cb3a2b67c13b90ef902799-enemy_r.scn

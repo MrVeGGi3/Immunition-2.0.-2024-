@@ -1,0 +1,181 @@
+[gd_scene load_steps=11 format=3 uid="uid://dsouffo4som3t"]
+
+[ext_resource type="Script" path="res://scripts/HUD/Options.gd" id="1_6trq0"]
+[ext_resource type="Theme" uid="uid://unuynfnhkuni" path="res://themes/label.tres" id="2_v1hyc"]
+[ext_resource type="Script" path="res://scripts/Sound/ChangeSound.gd" id="3_y1gkl"]
+[ext_resource type="Theme" uid="uid://btc3kqb6qx6k3" path="res://themes/button.tres" id="4_d6y3n"]
+[ext_resource type="AudioStream" uid="uid://hqasyg3vanal" path="res://sounds/SFX/Player/ShootEffect.wav" id="4_haawu"]
+[ext_resource type="AudioStream" uid="uid://c14cj6uhjlgdt" path="res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav" id="5_c0eoc"]
+[ext_resource type="Script" path="res://scripts/HUD/WindowType.gd" id="5_ek1pb"]
+[ext_resource type="Script" path="res://scripts/HUD/ResolutionControl.gd" id="6_yybn1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eu5c7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nhucs"]
+font_size = 50
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6trq0")
+
+[node name="Opções" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Opções"]
+modulate = Color(0.741176, 0.741176, 0.415686, 1)
+self_modulate = Color(0.764706, 0.694118, 0.290196, 1)
+material = SubResource("CanvasItemMaterial_eu5c7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Opções/Panel"]
+position = Vector2(-418, -377)
+color = Color(0.184314, 0.666667, 0.705882, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Opções/Panel/CanvasModulate"]
+offset_left = 846.0
+offset_top = 601.0
+offset_right = 1146.0
+offset_bottom = 721.0
+
+[node name="SFX" type="Label" parent="Opções/Panel/CanvasModulate/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_v1hyc")
+text = "SFX
+"
+horizontal_alignment = 1
+
+[node name="SFX - Slider" type="HSlider" parent="Opções/Panel/CanvasModulate/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_y1gkl")
+bus_name = "SFX"
+
+[node name="BGM" type="Label" parent="Opções/Panel/CanvasModulate/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_v1hyc")
+text = "BGM"
+horizontal_alignment = 1
+
+[node name="BGM - Slider" type="HSlider" parent="Opções/Panel/CanvasModulate/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_y1gkl")
+bus_name = "BGM"
+
+[node name="Options" type="Label" parent="Opções/Panel/CanvasModulate"]
+offset_left = 906.0
+offset_top = 485.0
+offset_right = 1097.0
+offset_bottom = 557.0
+theme = ExtResource("2_v1hyc")
+theme_override_font_sizes/font_size = 150
+text = "Opções"
+label_settings = SubResource("LabelSettings_nhucs")
+
+[node name="Button" type="Button" parent="Opções/Panel"]
+layout_mode = 2
+offset_left = 44.0
+offset_top = 581.0
+offset_right = 344.0
+offset_bottom = 612.0
+theme = ExtResource("4_d6y3n")
+text = "Voltar"
+
+[node name="Button2" type="Button" parent="Opções/Panel"]
+layout_mode = 0
+offset_left = 859.0
+offset_top = 581.0
+offset_right = 1109.0
+offset_bottom = 612.0
+theme = ExtResource("4_d6y3n")
+text = "Jogar"
+
+[node name="Button3" type="Button" parent="Opções/Panel"]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 265.0
+offset_right = 857.0
+offset_bottom = 296.0
+theme = ExtResource("4_d6y3n")
+text = "Testar SFX"
+
+[node name="Shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_haawu")
+bus = &"SFX"
+
+[node name="MainBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_c0eoc")
+volume_db = -20.0
+bus = &"BGM"
+
+[node name="TypeScreenControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_ek1pb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TypeScreenControl"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 396.0
+offset_right = 576.0
+offset_bottom = 436.0
+
+[node name="Label" type="Label" parent="TypeScreenControl/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_v1hyc")
+text = "Tipo de Tela"
+
+[node name="VSeparator" type="VSeparator" parent="TypeScreenControl/HBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="TypeScreenControl/HBoxContainer"]
+layout_mode = 2
+
+[node name="ResolutionControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_yybn1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResolutionControl"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 450.0
+offset_right = 591.0
+offset_bottom = 490.0
+
+[node name="Label" type="Label" parent="ResolutionControl/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_v1hyc")
+text = "Resolução"
+
+[node name="VSeparator" type="VSeparator" parent="ResolutionControl/HBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="ResolutionControl/HBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="Opções/Panel/Button" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="Opções/Panel/Button2" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Opções/Panel/Button3" to="." method="_on_playsound_pressed"]

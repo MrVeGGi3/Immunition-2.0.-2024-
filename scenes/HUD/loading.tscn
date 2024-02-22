@@ -1,0 +1,72 @@
+[gd_scene load_steps=13 format=3 uid="uid://crf2xech1iu65"]
+
+[ext_resource type="Script" path="res://scripts/HUD/loading.gd" id="1_qkt6g"]
+[ext_resource type="Texture2D" uid="uid://blu4xn1a04yvy" path="res://images/loading screen/Loading Screen 1.png" id="2_fdqnr"]
+[ext_resource type="Texture2D" uid="uid://g2w8v82gwrb" path="res://images/loading screen/Loading Screen 2.png" id="3_8tjr1"]
+[ext_resource type="Texture2D" uid="uid://cm0go7hjvclxg" path="res://images/loading screen/Loading Screen 3.png" id="4_7vx8l"]
+[ext_resource type="Texture2D" uid="uid://cahbqtupvbn64" path="res://images/loading screen/Loading Screen 4.png" id="5_s3xp6"]
+[ext_resource type="Texture2D" uid="uid://ckr3mx5u3m41j" path="res://images/loading screen/Loading Screen 5.png" id="6_2ste7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n317"]
+atlas = ExtResource("2_fdqnr")
+region = Rect2(0, 0, 2560, 1440)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feh15"]
+atlas = ExtResource("3_8tjr1")
+region = Rect2(0, 0, 2560, 1440)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf52j"]
+atlas = ExtResource("4_7vx8l")
+region = Rect2(0, 0, 2560, 1440)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1374"]
+atlas = ExtResource("5_s3xp6")
+region = Rect2(0, 0, 2560, 1440)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u6px"]
+atlas = ExtResource("6_2ste7")
+region = Rect2(0, 0, 2560, 1440)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjd0t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n317")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feh15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf52j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1374")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u6px")
+}],
+"loop": false,
+"name": &"animation",
+"speed": 1.0
+}]
+
+[node name="loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qkt6g")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(570, 329)
+scale = Vector2(0.436574, 0.436574)
+sprite_frames = SubResource("SpriteFrames_tjd0t")
+animation = &"animation"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

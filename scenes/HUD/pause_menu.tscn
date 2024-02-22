@@ -1,0 +1,183 @@
+[gd_scene load_steps=14 format=3 uid="uid://5ran8yqdqky"]
+
+[ext_resource type="Script" path="res://scripts/HUD/Pause.gd" id="1_4srht"]
+[ext_resource type="Theme" uid="uid://unuynfnhkuni" path="res://themes/label.tres" id="1_w2yf1"]
+[ext_resource type="Script" path="res://scripts/Sound/ChangeSound.gd" id="3_rjk7c"]
+[ext_resource type="Theme" uid="uid://btc3kqb6qx6k3" path="res://themes/button.tres" id="4_0h3b8"]
+[ext_resource type="AudioStream" uid="uid://hqasyg3vanal" path="res://sounds/SFX/Player/ShootEffect.wav" id="4_aw64a"]
+[ext_resource type="Script" path="res://scripts/HUD/WindowType.gd" id="5_csce5"]
+[ext_resource type="AudioStream" uid="uid://c14cj6uhjlgdt" path="res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav" id="5_e355g"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="5_ggvt1"]
+[ext_resource type="Script" path="res://scripts/HUD/ResolutionControl.gd" id="5_t1wfl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eu5c7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nhucs"]
+font_size = 93
+
+[sub_resource type="InputEventAction" id="InputEventAction_cc1os"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_0bu3k"]
+events = [SubResource("InputEventAction_cc1os")]
+
+[node name="pause_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_w2yf1")
+script = ExtResource("1_4srht")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.741176, 0.741176, 0.415686, 1)
+self_modulate = Color(0.764706, 0.694118, 0.290196, 1)
+material = SubResource("CanvasItemMaterial_eu5c7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Panel"]
+position = Vector2(-418, -377)
+color = Color(0.839216, 0.501961, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CanvasModulate"]
+offset_left = 846.0
+offset_top = 601.0
+offset_right = 1146.0
+offset_bottom = 721.0
+
+[node name="SFX" type="Label" parent="Panel/CanvasModulate/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_w2yf1")
+text = "SFX
+"
+horizontal_alignment = 1
+
+[node name="SFX - Slider" type="HSlider" parent="Panel/CanvasModulate/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_rjk7c")
+bus_name = "SFX"
+
+[node name="BGM" type="Label" parent="Panel/CanvasModulate/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_w2yf1")
+text = "BGM"
+horizontal_alignment = 1
+
+[node name="BGM - Slider" type="HSlider" parent="Panel/CanvasModulate/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_rjk7c")
+bus_name = "BGM"
+
+[node name="Options" type="Label" parent="Panel/CanvasModulate"]
+offset_left = 877.0
+offset_top = 430.0
+offset_right = 1146.0
+offset_bottom = 561.0
+theme = ExtResource("1_w2yf1")
+text = "Pausa"
+label_settings = SubResource("LabelSettings_nhucs")
+
+[node name="BackToGame" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 44.0
+offset_top = 581.0
+offset_right = 344.0
+offset_bottom = 612.0
+theme = ExtResource("4_0h3b8")
+shortcut = SubResource("Shortcut_0bu3k")
+text = "Voltar ao Jogo
+"
+
+[node name="BacktoMainMenu" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 584.0
+offset_right = 1130.0
+offset_bottom = 625.0
+theme = ExtResource("4_0h3b8")
+text = "Voltar ao Menu Principal"
+
+[node name="TestSFX" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 265.0
+offset_right = 857.0
+offset_bottom = 296.0
+theme = ExtResource("4_0h3b8")
+theme_override_fonts/font = ExtResource("5_ggvt1")
+text = "Testar SFX"
+
+[node name="Shoot" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("4_aw64a")
+bus = &"SFX"
+
+[node name="MainBGM" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("5_e355g")
+volume_db = -20.0
+bus = &"BGM"
+
+[node name="TypeScreenControl" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_csce5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TypeScreenControl"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 396.0
+offset_right = 576.0
+offset_bottom = 436.0
+
+[node name="Label" type="Label" parent="TypeScreenControl/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_w2yf1")
+text = "Tipo de Tela"
+
+[node name="VSeparator" type="VSeparator" parent="TypeScreenControl/HBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="TypeScreenControl/HBoxContainer"]
+layout_mode = 2
+
+[node name="ResolutionControl" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_t1wfl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResolutionControl"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 450.0
+offset_right = 591.0
+offset_bottom = 490.0
+
+[node name="Label" type="Label" parent="ResolutionControl/HBoxContainer"]
+layout_mode = 2
+text = "Resolução"
+
+[node name="VSeparator" type="VSeparator" parent="ResolutionControl/HBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="ResolutionControl/HBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="Panel/BackToGame" to="." method="_on_voltar_ao_jogo_pressed"]
+[connection signal="pressed" from="Panel/BacktoMainMenu" to="." method="_on_backto_main_menu_pressed"]
+[connection signal="pressed" from="Panel/TestSFX" to="." method="_on_test_sfx_pressed"]
