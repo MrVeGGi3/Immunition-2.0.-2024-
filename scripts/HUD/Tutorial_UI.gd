@@ -4,6 +4,9 @@ extends Control
 
 var dialog_output = []
 var currentIndex = 0
+@onready var pause_menu = $"../pause_menu"
+@onready var main_bgm = $"../../MainBGM"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialog_output.append("Tutorial")
@@ -41,3 +44,17 @@ func nextSpeech():
 func _process(_delta):
 	if Input.is_action_just_pressed("start"):
 		nextSpeech()
+		
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().paused = true
+		main_bgm.play()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		visible = false
+	
+func _on_voltar_ao_jogo_pressed():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	main_bgm.stop()
+	visible = true 
+	get_tree().paused = false
+		

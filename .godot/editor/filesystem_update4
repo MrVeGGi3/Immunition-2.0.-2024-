@@ -12,3 +12,4 @@ res://scenes/Characters/enemy_g.tscn
 res://scenes/Characters/enemy_b.tscn
 res://scenes/HUD/loading.tscn
 res://scenes/Characters/enemy_r.tscn
+res://scripts/HUD/Tutorial_UI.gd
