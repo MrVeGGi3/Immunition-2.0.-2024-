@@ -8,6 +8,9 @@ var dead = false
 @onready var timer = $Timer
 var can_colide = true
 @onready var monster_bite = $MonsterBite
+var enemy_health = 15
+@onready var progress_bar = $SubViewport/ProgressBar
+@onready var label = $SubViewport/ProgressBar/Label
 
 func _physics_process(_delta):
 	if dead:
@@ -34,11 +37,20 @@ func attempt_to_kill_player():
 		timer.start()
 
 func kill_blue():
-	dead = true
-	$DeathSound.play()
-	animated_sprite_3d.play("death")
-	$CollisionShape3D.disabled = true
-	collision_layer = 0
-
+	enemy_health -= 5
+	if enemy_health == 0:
+		dead = true
+		$DeathSound.play()
+		animated_sprite_3d.play("death")
+		$CollisionShape3D.disabled = true
+		collision_layer = 0
+		
+func heal_blue():
+	enemy_health += 5
+	
 func _on_timer_timeout():
 	can_colide = true
+
+func _process(_delta):
+	progress_bar.value = enemy_health
+	label.set_text(enemy_health)

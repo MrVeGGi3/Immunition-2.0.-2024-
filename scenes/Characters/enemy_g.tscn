@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://8onv0icy5g7h"]
+[gd_scene load_steps=21 format=3 uid="uid://8onv0icy5g7h"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Enemy_Green.gd" id="1_bh1ro"]
 [ext_resource type="AudioStream" uid="uid://bw3djxfntr0jb" path="res://sounds/SFX/Monster/monster_die.wav" id="3_hw3m5"]
 [ext_resource type="Texture2D" uid="uid://2semeicsex86" path="res://sprites/Monster/monster1_sprite.png" id="4_0ryar"]
 [ext_resource type="AudioStream" uid="uid://bud3mha4g5u45" path="res://sounds/SFX/Monster/monster_bite.wav" id="4_fgou3"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="5_yia1e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0of21"]
 margin = 2.871
@@ -93,7 +94,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hltyo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js5y0"]
+bg_color = Color(0.141176, 0.458824, 0.137255, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vfcuh"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemy", "green"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_bh1ro")
@@ -123,5 +133,34 @@ bus = &"SFX"
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 2.0
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport"]
+offset_right = 128.0
+offset_bottom = 27.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_hltyo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_js5y0")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="SubViewport/ProgressBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_yia1e")
+theme_override_font_sizes/font_size = 35
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300892, 2.05186, 0.355587)
+billboard = 1
+texture = SubResource("ViewportTexture_vfcuh")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

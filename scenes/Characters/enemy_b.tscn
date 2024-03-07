@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8bydekkhr5m4"]
+[gd_scene load_steps=22 format=3 uid="uid://c8bydekkhr5m4"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Enemy_Blue.gd" id="1_6h0w2"]
 [ext_resource type="Texture2D" uid="uid://cj21mxonxa3cx" path="res://sprites/Monster/monster1_Blue_sprite.png" id="2_u3qrc"]
 [ext_resource type="AudioStream" uid="uid://bw3djxfntr0jb" path="res://sounds/SFX/Monster/monster_die.wav" id="3_4l37k"]
 [ext_resource type="AudioStream" uid="uid://bud3mha4g5u45" path="res://sounds/SFX/Monster/monster_bite.wav" id="4_pk5c8"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="5_bq0q5"]
+[ext_resource type="Script" path="res://scripts/HUD/hb_ccolor.gd" id="5_ygn7q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4qyf"]
 atlas = ExtResource("2_u3qrc")
@@ -92,7 +94,16 @@ animations = [{
 margin = 2.871
 height = 2.54
 
-[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hltyo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js5y0"]
+bg_color = Color(0.0235294, 0.384314, 0.709804, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8ro1c"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Enemy" type="CharacterBody3D" groups=["blue", "enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 2
 collision_mask = 3
@@ -123,5 +134,46 @@ bus = &"SFX"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_0of21")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport"]
+offset_right = 128.0
+offset_bottom = 27.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("5_bq0q5")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/background = SubResource("StyleBoxFlat_hltyo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_js5y0")
+value = 100.0
+show_percentage = false
+script = ExtResource("5_ygn7q")
+
+[node name="Label" type="Label" parent="SubViewport/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_bq0q5")
+theme_override_font_sizes/font_size = 35
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.833375, 0.370634, 0.0253874)
+billboard = 1
+texture = SubResource("ViewportTexture_8ro1c")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

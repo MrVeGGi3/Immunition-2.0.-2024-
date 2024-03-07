@@ -42,3 +42,5 @@ func kill_red():
 
 func _on_timer_timeout():
 	can_colide = true
+	
+
