@@ -1,11 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://c8bydekkhr5m4"]
+[gd_scene load_steps=21 format=3 uid="uid://c8bydekkhr5m4"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Enemy_Blue.gd" id="1_6h0w2"]
 [ext_resource type="Texture2D" uid="uid://cj21mxonxa3cx" path="res://sprites/Monster/monster1_Blue_sprite.png" id="2_u3qrc"]
 [ext_resource type="AudioStream" uid="uid://bw3djxfntr0jb" path="res://sounds/SFX/Monster/monster_die.wav" id="3_4l37k"]
 [ext_resource type="AudioStream" uid="uid://bud3mha4g5u45" path="res://sounds/SFX/Monster/monster_bite.wav" id="4_pk5c8"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="5_bq0q5"]
-[ext_resource type="Script" path="res://scripts/HUD/hb_ccolor.gd" id="5_ygn7q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4qyf"]
 atlas = ExtResource("2_u3qrc")
@@ -150,9 +149,8 @@ theme_override_fonts/font = ExtResource("5_bq0q5")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/background = SubResource("StyleBoxFlat_hltyo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_js5y0")
-value = 100.0
+value = 15.0
 show_percentage = false
-script = ExtResource("5_ygn7q")
 
 [node name="Label" type="Label" parent="SubViewport/ProgressBar"]
 layout_mode = 1

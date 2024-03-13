@@ -1,9 +1,15 @@
-res://scenes/HUD/healthbar_blue.tscn
+res://scenes/Characters/Player.tscn
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/HUD/Options.gd
 res://scripts/Sound/ChangeSound.gd
 res://themes/playerLifeBarTheme.tres
-res://scenes/HUD/healthbar_green.tscn
+res://scripts/Characthers/Enemy_Red.gd
+res://scripts/Characthers/Player.gd
+res://scenes/HUD/sub_viewport_container.tscn
+res://scenes/HUD/healthbar_blue.tscn
+res://scenes/Characters/enemy_b.tscn
 res://scenes/Characters/enemy_r.tscn
 res://scenes/Characters/enemy_g.tscn
+res://scenes/HUD/healthbar_green.tscn
 res://scenes/HUD/healthbar_red.tscn
+res://scripts/Characthers/Enemy_Blue.gd

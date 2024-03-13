@@ -11,6 +11,7 @@ var can_colide = true
 var enemy_health = 15
 @onready var progress_bar = $SubViewport/ProgressBar
 @onready var label = $SubViewport/ProgressBar/Label
+@onready var sub_viewport = $SubViewport
 
 func _physics_process(_delta):
 	if dead:
@@ -41,6 +42,7 @@ func kill_blue():
 	if enemy_health == 0:
 		dead = true
 		$DeathSound.play()
+		progress_bar.visible = false
 		animated_sprite_3d.play("death")
 		$CollisionShape3D.disabled = true
 		collision_layer = 0
@@ -53,4 +55,6 @@ func _on_timer_timeout():
 
 func _process(_delta):
 	progress_bar.value = enemy_health
-	label.set_text(enemy_health)
+	label.set_text(str(enemy_health))
+	if enemy_health > 15:
+		progress_bar.max_value = enemy_health

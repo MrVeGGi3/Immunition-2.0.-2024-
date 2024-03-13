@@ -206,6 +206,10 @@ func shoot():
 	shoot_sound.play()
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill_green"):
 		ray_cast_3d.get_collider().kill_green()
+	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("heal_red"):
+		ray_cast_3d.get_collider().heal_red()
+	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("heal_blue"):
+		ray_cast_3d.get_collider().heal_blue()
 		
 func shoot_by_macrofage():
 	if !can_shoot_mf:
@@ -215,11 +219,22 @@ func shoot_by_macrofage():
 	macrofage_shoot.play()
 	if macrofage_ray_3d.is_colliding() and macrofage_ray_3d.get_collider().has_method("kill_blue"):
 		macrofage_ray_3d.get_collider().kill_blue()
-
+	if macrofage_ray_3d.is_colliding() and macrofage_ray_3d.get_collider().has_method("heal_green"):
+		macrofage_ray_3d.get_collider().heal_green()
+	if macrofage_ray_3d.is_colliding() and macrofage_ray_3d.get_collider().has_method("heal_red"):
+		macrofage_ray_3d.get_collider().heal_red()
+		
 func shoot_by_neutrofile():
 	can_shoot_nf = true
 	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("kill_red"):
 		flame_thrower_shoot.get_collider().kill_red()
+	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("heal_green"):
+		flame_thrower_shoot.get_collider().heal_green()
+	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("heal_blue"):
+		flame_thrower_shoot.get_collider().heal_blue()
+		
+	
+		
 	animated_sprite_2d.play("shoot_neutro")
 	neutrofile_sound.play()
 
