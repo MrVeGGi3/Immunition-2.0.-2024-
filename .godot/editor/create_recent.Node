@@ -1,7 +1,9 @@
-Sprite3D
-ProgressBar
+ColorRect
+Camera3D
 SubViewport
 SubViewportContainer
+Sprite3D
+ProgressBar
 Label
 RichTextLabel
 Sprite2D
@@ -10,5 +12,3 @@ Control
 AudioStreamPlayer3D
 RayCast3D
 AnimatedSprite2D
-Timer
-TextureRect

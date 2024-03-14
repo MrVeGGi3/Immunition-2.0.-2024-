@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=77 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="2_bowrg"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b1i6udx23kait" path="res://images/UI/Barra de Dialogo.png" id="20_a5b7x"]
 [ext_resource type="Script" path="res://scripts/HUD/Tutorial_UI.gd" id="20_bj62o"]
 [ext_resource type="Texture2D" uid="uid://dqomqq5hwrx7" path="res://icons/keyoboard buttons/enterButton.jpeg" id="22_65plv"]
+[ext_resource type="PackedScene" uid="uid://c5yaq5d5t8iip" path="res://scenes/HUD/minimap.tscn" id="23_m73h5"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="24_r7y5r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nwage"]
@@ -417,49 +418,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="PlayerHUD" type="CanvasLayer" parent="."]
 
-[node name="DeathScreen" type="Control" parent="PlayerHUD"]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_top = -24.0
-offset_right = 41.0
-offset_bottom = 16.0
-
-[node name="Panel" type="Panel" parent="PlayerHUD/DeathScreen"]
-modulate = Color(1, 0.403922, 0.619608, 1)
-layout_mode = 0
-offset_left = 364.0
-offset_top = 214.0
-offset_right = 738.0
-offset_bottom = 463.0
-theme = ExtResource("2_y7ca2")
-
-[node name="Label" type="Label" parent="PlayerHUD/DeathScreen/Panel"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 13.0
-offset_right = 320.0
-offset_bottom = 71.0
-theme = ExtResource("3_3hlcx")
-theme_override_colors/font_color = Color(1, 0.972549, 0.964706, 0.980392)
-theme_override_fonts/font = ExtResource("6_41nxb")
-theme_override_font_sizes/font_size = 40
-text = "Você Morreu!"
-
-[node name="RestartButton" type="Button" parent="PlayerHUD/DeathScreen/Panel" groups=["player"]]
-layout_mode = 0
-offset_left = 117.0
-offset_top = 195.0
-offset_right = 263.0
-offset_bottom = 243.0
-text = "Recomeçar"
-
-[node name="PlayerDead" type="Sprite2D" parent="PlayerHUD/DeathScreen"]
-position = Vector2(549, 347)
-scale = Vector2(0.145759, 0.145759)
-texture = ExtResource("4_nc87x")
-
 [node name="PlayerLifeBar" type="Control" parent="PlayerHUD"]
 process_mode = 3
 layout_mode = 3
@@ -567,9 +525,6 @@ position = Vector2(571, 318)
 scale = Vector2(0.0255, 0.0255)
 texture = ExtResource("6_t7800")
 
-[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
-visible = false
-
 [node name="UI_AMMO" type="Control" parent="PlayerHUD"]
 layout_mode = 3
 anchors_preset = 0
@@ -660,6 +615,9 @@ theme_override_font_sizes/font_size = 30
 text = "20"
 horizontal_alignment = 1
 
+[node name="Minimap" parent="PlayerHUD" instance=ExtResource("23_m73h5")]
+target = NodePath("../..")
+
 [node name="Tutorial_UI" type="Control" parent="PlayerHUD"]
 process_mode = 3
 layout_mode = 3
@@ -703,6 +661,52 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
+[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
+visible = false
+
+[node name="DeathScreen" type="Control" parent="PlayerHUD"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -24.0
+offset_right = 41.0
+offset_bottom = 16.0
+
+[node name="Panel" type="Panel" parent="PlayerHUD/DeathScreen"]
+modulate = Color(1, 0.403922, 0.619608, 1)
+layout_mode = 0
+offset_left = 364.0
+offset_top = 214.0
+offset_right = 738.0
+offset_bottom = 463.0
+theme = ExtResource("2_y7ca2")
+
+[node name="Label" type="Label" parent="PlayerHUD/DeathScreen/Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 13.0
+offset_right = 320.0
+offset_bottom = 71.0
+theme = ExtResource("3_3hlcx")
+theme_override_colors/font_color = Color(1, 0.972549, 0.964706, 0.980392)
+theme_override_fonts/font = ExtResource("6_41nxb")
+theme_override_font_sizes/font_size = 40
+text = "Você Morreu!"
+
+[node name="RestartButton" type="Button" parent="PlayerHUD/DeathScreen/Panel" groups=["player"]]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 195.0
+offset_right = 263.0
+offset_bottom = 243.0
+text = "Recomeçar"
+
+[node name="PlayerDead" type="Sprite2D" parent="PlayerHUD/DeathScreen"]
+position = Vector2(549, 347)
+scale = Vector2(0.145759, 0.145759)
+texture = ExtResource("4_nc87x")
+
 [node name="ShootPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_qulf7")
 bus = &"SFX"
@@ -737,6 +741,6 @@ stream = ExtResource("24_r7y5r")
 volume_db = 70.0
 bus = &"SFX"
 
-[connection signal="pressed" from="PlayerHUD/DeathScreen/Panel/RestartButton" to="." method="restart"]
 [connection signal="pressed" from="PlayerHUD/PhaseFinished/Panel/ExitGame" to="." method="_on_exit_game_pressed"]
 [connection signal="pressed" from="PlayerHUD/Tutorial_UI/JumpTutorial" to="." method="_on_jump_tutorial_pressed"]
+[connection signal="pressed" from="PlayerHUD/DeathScreen/Panel/RestartButton" to="." method="restart"]

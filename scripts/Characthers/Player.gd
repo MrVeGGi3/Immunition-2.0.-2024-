@@ -24,6 +24,8 @@ extends CharacterBody3D
 @onready var player_life_bar = $PlayerHUD/PlayerLifeBar #UI que mostra os stats do player
 @onready var damage_taken = $PlayerHUD/PlayerLifeBar/DamageTaken #Animação que mostra quando o jogador perde vida
 @onready var gun_shoot = $PlayerHUD/GunShoot
+@onready var minimap = $PlayerHUD/Minimap
+
 
 #Músicas(BGM)
 @onready var death_sound = $DeathSound # música da morte do player
@@ -49,11 +51,12 @@ var can_shoot_nf = false
 var dead = false
 #Variáveis do Player
 var vida
-var l_ammo = 20 #munição linfócito
-var m_ammo = 20 #munição macrófago
+var l_ammo = 30 #munição linfócito
+var m_ammo = 25 #munição macrófago
 var n_ammo = 50 #munição neutrófilo
 
 func _ready():
+	minimap.show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE #altera o modo de captura do mouse para usar como FPS
 	#Animações
 	animated_sprite_2d.animation_finished.connect(shoot_anim_done) #conecta a outra animação
@@ -136,20 +139,26 @@ func _process(_delta):
 	if Input.is_action_just_pressed("shoot"):
 		if can_shoot:
 			shoot()
+			if l_ammo < 0:
+				l_ammo = 0
 			l_ammo -= 1
 			if l_ammo == 0:
 				can_shoot = false
 		elif can_shoot_mf:
 			shoot_by_macrofage()
+			if m_ammo < 0:
+				m_ammo = 0
 			m_ammo -=1
-			if m_ammo == 0:
+			if m_ammo <= 0:
 				can_shoot_mf = false
 		if can_shoot_nf:
 			shoot_by_neutrofile()
+			if n_ammo < 0:
+				n_ammo = 0
 			n_ammo -= 4 
 			if n_ammo < 0:
 				n_ammo = 0
-			if n_ammo == 0:
+			if n_ammo <= 0:
 				can_shoot_nf = false
 				
 			
@@ -265,6 +274,7 @@ func disable_UI():
 	player_life_bar.hide()
 	tutorial_guide.hide()
 	main_bgm.stop()
+	minimap.hide()
 		
 
 func _on_exit_game_pressed():
