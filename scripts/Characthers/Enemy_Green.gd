@@ -39,7 +39,7 @@ func attempt_to_kill_player():
 
 func kill_green():
 	enemy_health -= 5
-	if enemy_health == 0:
+	if enemy_health <= 0:
 		dead = true
 		$DeathSound.play()
 		animated_sprite_3d.play("death")

@@ -42,7 +42,7 @@ func attempt_to_kill_player():
 
 func kill_red():
 	enemy_health -= 5
-	if enemy_health == 0:
+	if enemy_health <= 0:
 		dead = true
 		progress_bar.visible = false
 		$DeathSound.play()
