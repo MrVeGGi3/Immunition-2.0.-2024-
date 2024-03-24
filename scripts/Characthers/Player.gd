@@ -40,9 +40,9 @@ extends CharacterBody3D
 #Constantes
 const vida_maxima = 10.0
 const MOUSE_SENS = 0.5
-const SPEED = 10.0
-const INCREASE_SPEED = 20
-var JUMP_FORCE = 5.0
+const SPEED = 12.0
+const INCREASE_SPEED = 10
+var JUMP_FORCE = 8.0
 const GRAVITY = Vector3(0, -9.8, 0)
 #Booleanas
 var can_shoot = true

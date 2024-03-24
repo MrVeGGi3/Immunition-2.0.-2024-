@@ -1,13 +1,16 @@
 extends CharacterBody3D
-
-@onready var animated_sprite_3d = $AnimatedSprite3D
+#Variveis
 @export var move_speed = 7.0
 @export var attack_range = 2.0
-@onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
-var dead = false
 var enemy_health = 15
-@onready var timer = $Timer
+var minimum_distance = 10
+#Booleanas
+var dead = false
 var can_colide = true
+#Instancias
+@onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
+@onready var animated_sprite_3d = $AnimatedSprite3D
+@onready var timer = $Timer
 @onready var monster_bite = $MonsterBite
 @onready var progress_bar = $SubViewport/ProgressBar
 @onready var label = $SubViewport/ProgressBar/Label
@@ -22,7 +25,9 @@ func _physics_process(_delta):
 	dir = dir.normalized()
 	velocity = dir * move_speed
 	move_and_slide()
-	attempt_to_kill_player()
+	var dist_to_player = global_transform.origin.distance_to(player.global_transform.origin)
+	if dist_to_player <= minimum_distance:
+		attempt_to_kill_player()
 
 func attempt_to_kill_player():
 	var dist_to_player = global_transform.origin.distance_to(player.global_transform.origin)

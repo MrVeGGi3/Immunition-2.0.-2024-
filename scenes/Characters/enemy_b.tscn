@@ -149,6 +149,7 @@ theme_override_fonts/font = ExtResource("5_bq0q5")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/background = SubResource("StyleBoxFlat_hltyo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_js5y0")
+max_value = 15.0
 value = 15.0
 show_percentage = false
 

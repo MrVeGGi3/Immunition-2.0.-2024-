@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var move_speed = 5.0
 @export var attack_range = 2.0
 var enemy_health = 15
+var minimum_distance = 10
 #Booleanas
 var dead = false
 var can_colide = true
@@ -25,7 +26,9 @@ func _physics_process(_delta):
 	dir = dir.normalized()
 	velocity = dir * move_speed
 	move_and_slide()
-	attempt_to_kill_player()
+	var dist_to_player = global_transform.origin.distance_to(player.global_transform.origin)
+	if dist_to_player <= minimum_distance:
+		attempt_to_kill_player()
 
 func attempt_to_kill_player():
 	var dist_to_player = global_transform.origin.distance_to(player.global_transform.origin)
