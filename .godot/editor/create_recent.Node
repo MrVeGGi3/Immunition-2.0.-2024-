@@ -1,5 +1,7 @@
-AnimationPlayer
+StaticBody3D
+CollisionShape3D
 MeshInstance3D
+AnimationPlayer
 ColorRect
 Camera3D
 SubViewport
@@ -11,4 +13,3 @@ RichTextLabel
 Sprite2D
 Button
 Control
-AudioStreamPlayer3D
