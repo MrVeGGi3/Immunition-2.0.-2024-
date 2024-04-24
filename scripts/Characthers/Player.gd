@@ -141,21 +141,24 @@ func _process(_delta):
 			shoot()
 			if l_ammo < 0:
 				l_ammo = 0
-			l_ammo -= 1
+			if not m_ammo < 0:
+				l_ammo -=1
 			if l_ammo == 0:
 				can_shoot = false
 		elif can_shoot_mf:
 			shoot_by_macrofage()
 			if m_ammo < 0:
 				m_ammo = 0
-			m_ammo -=1
-			if m_ammo <= 0:
+			if not m_ammo < 0:
+				m_ammo -=1
+			if m_ammo == 0:
 				can_shoot_mf = false
 		if can_shoot_nf:
 			shoot_by_neutrofile()
 			if n_ammo < 0:
 				n_ammo = 0
-			n_ammo -= 4 
+			if not m_ammo < 0:
+				n_ammo -=1
 			if n_ammo < 0:
 				n_ammo = 0
 			if n_ammo <= 0:

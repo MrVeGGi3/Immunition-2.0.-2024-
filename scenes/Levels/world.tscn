@@ -221,12 +221,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.491, 4.08756, -92.0511)
 [node name="Enemy4" parent="Enemies/EnemiesGroupBlue" instance=ExtResource("5_l6q2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.924, 4.08756, -92.0511)
 
-[node name="Enemy5" parent="Enemies/EnemiesGroupBlue" instance=ExtResource("5_l6q2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.924, 4.08756, -115.542)
-
-[node name="Enemy6" parent="Enemies/EnemiesGroupBlue" instance=ExtResource("5_l6q2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.076, 4.08756, -115.542)
-
 [node name="EnemiesGroupRed" type="Node3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.613, 8.08258, -297.895)
 

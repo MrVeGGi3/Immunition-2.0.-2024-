@@ -4,7 +4,7 @@ extends Control
 @onready var button_menu = $"PhaseButtons/Menu"
 
 #Botões de Fase
-@onready var phase_1 = $"PhaseButtons/Tutorial/Phase1"
+@onready var phase_1 = $"PhaseButtons/Tutorial(Base)/Phase1"
 @onready var phase_2 = $"PhaseButtons/Level_1/Phase2"
 @onready var phase_3 = $"PhaseButtons/Level_2/Phase3"
 @onready var phase_4 = $"PhaseButtons/Level_3/Phase4"
@@ -43,6 +43,21 @@ func _on_menu_pressed():
 
 func _on_phase_1_pressed():
 	get_tree().change_scene_to_file(TUTORIAL)
+
+func _on_phase_2_pressed():
+	get_tree().change_scene_to_file(LEVEL_1)
+
+func _on_phase_3_pressed():
+	get_tree().change_scene_to_file(LEVEL_2)
+
+func _on_phase_4_pressed():
+	get_tree().change_scene_to_file(LEVEL_3)
 	
 func _on_options_2_pressed():
 	get_tree().change_scene_to_file(OPTIONS)
+
+
+
+
+
+

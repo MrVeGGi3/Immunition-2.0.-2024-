@@ -222,5 +222,8 @@ shortcut_in_tooltip = false
 text = "Opções"
 
 [connection signal="pressed" from="PhaseButtons/Tutorial(Base)/Phase1" to="." method="_on_phase_1_pressed"]
+[connection signal="pressed" from="PhaseButtons/Level_1/Phase2" to="." method="_on_phase_2_pressed"]
+[connection signal="pressed" from="PhaseButtons/Level_2/Phase3" to="." method="_on_phase_3_pressed"]
+[connection signal="pressed" from="PhaseButtons/Level_3/Phase4" to="." method="_on_phase_4_pressed"]
 [connection signal="pressed" from="PhaseButtons/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="PhaseButtons/Opções" to="." method="_on_options_2_pressed"]
