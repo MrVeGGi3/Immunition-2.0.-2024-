@@ -1,0 +1,226 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxw65433g47rd"]
+
+[ext_resource type="Script" path="res://scripts/HUD/level_selection.gd" id="1_787yw"]
+[ext_resource type="Texture2D" uid="uid://bbb5bhxa2nget" path="res://images/UI/Main Screen Without logo.png" id="1_jvapf"]
+[ext_resource type="Theme" uid="uid://chfew0owxhkt5" path="res://themes/fasename_description.tres" id="2_a5op5"]
+[ext_resource type="Theme" uid="uid://c33mgls2q6ijq" path="res://themes/go_phase_button.tres" id="2_xsfrr"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="3_7wr2f"]
+[ext_resource type="Theme" uid="uid://btc3kqb6qx6k3" path="res://themes/button.tres" id="5_rvcye"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4r14i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bnv5"]
+bg_color = Color(0.925542, 0.443592, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ps03p"]
+bg_color = Color(0.62042, 0.28124, 0.0131039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ib5p"]
+bg_color = Color(0.214756, 0.0837354, 0, 1)
+
+[node name="LevelSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_787yw")
+
+[node name="MainScreenWithoutLogo" type="Sprite2D" parent="."]
+position = Vector2(576.75, 331.75)
+scale = Vector2(0.44707, 0.454514)
+texture = ExtResource("1_jvapf")
+
+[node name="Title" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 68.0
+offset_right = 926.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(1, 0.708364, 0.376428, 1)
+theme_override_fonts/font = ExtResource("3_7wr2f")
+theme_override_font_sizes/font_size = 90
+text = "Seleção de Fase"
+
+[node name="PhaseButtons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tutorial(Base)" type="Panel" parent="PhaseButtons"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 231.0
+offset_right = 236.0
+offset_bottom = 431.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4r14i")
+
+[node name="Phase1" type="Button" parent="PhaseButtons/Tutorial(Base)"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+theme = ExtResource("2_xsfrr")
+
+[node name="Level_1" type="Panel" parent="PhaseButtons"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 233.0
+offset_right = 520.0
+offset_bottom = 433.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4r14i")
+
+[node name="Phase2" type="Button" parent="PhaseButtons/Level_1"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+
+[node name="Level_2" type="Panel" parent="PhaseButtons"]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 230.0
+offset_right = 808.0
+offset_bottom = 430.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4r14i")
+
+[node name="Phase3" type="Button" parent="PhaseButtons/Level_2"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+
+[node name="Level_3" type="Panel" parent="PhaseButtons"]
+layout_mode = 0
+offset_left = 915.0
+offset_top = 228.0
+offset_right = 1115.0
+offset_bottom = 428.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4r14i")
+
+[node name="Phase4" type="Button" parent="PhaseButtons/Level_3"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+
+[node name="PhaseButtonsName" type="Control" parent="PhaseButtons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title_Tutorial" type="Panel" parent="PhaseButtons/PhaseButtonsName"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 454.0
+offset_right = 235.0
+offset_bottom = 494.0
+theme = ExtResource("2_a5op5")
+
+[node name="Label_Tutorial" type="Label" parent="PhaseButtons/PhaseButtonsName/Title_Tutorial"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = -6.0
+offset_right = 173.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.969137, 0.969137, 0.969137, 1)
+theme_override_fonts/font = ExtResource("3_7wr2f")
+theme_override_font_sizes/font_size = 35
+text = "Tutorial"
+
+[node name="Title_Level_1" type="Panel" parent="PhaseButtons/PhaseButtonsName"]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 453.0
+offset_right = 525.0
+offset_bottom = 493.0
+theme = ExtResource("2_a5op5")
+
+[node name="Label_Level_1" type="Label" parent="PhaseButtons/PhaseButtonsName/Title_Level_1"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = -6.0
+offset_right = 173.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.969137, 0.969137, 0.969137, 1)
+theme_override_fonts/font = ExtResource("3_7wr2f")
+theme_override_font_sizes/font_size = 35
+text = "Tutorial"
+
+[node name="Title_Level_2" type="Panel" parent="PhaseButtons/PhaseButtonsName"]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 453.0
+offset_right = 809.0
+offset_bottom = 493.0
+theme = ExtResource("2_a5op5")
+
+[node name="Label_Level_2" type="Label" parent="PhaseButtons/PhaseButtonsName/Title_Level_2"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = -6.0
+offset_right = 173.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.969137, 0.969137, 0.969137, 1)
+theme_override_fonts/font = ExtResource("3_7wr2f")
+theme_override_font_sizes/font_size = 35
+text = "Tutorial"
+
+[node name="Title_Level_3" type="Panel" parent="PhaseButtons/PhaseButtonsName"]
+layout_mode = 0
+offset_left = 914.0
+offset_top = 448.0
+offset_right = 1114.0
+offset_bottom = 488.0
+theme = ExtResource("2_a5op5")
+
+[node name="Label_Level_3" type="Label" parent="PhaseButtons/PhaseButtonsName/Title_Level_3"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = -6.0
+offset_right = 173.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.969137, 0.969137, 0.969137, 1)
+theme_override_fonts/font = ExtResource("3_7wr2f")
+theme_override_font_sizes/font_size = 35
+text = "Tutorial"
+
+[node name="Menu" type="Button" parent="PhaseButtons"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 544.0
+offset_right = 435.0
+offset_bottom = 584.0
+theme = ExtResource("5_rvcye")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5bnv5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ps03p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ib5p")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Voltar ao Menu"
+
+[node name="Opções" type="Button" parent="PhaseButtons"]
+layout_mode = 0
+offset_left = 754.0
+offset_top = 548.0
+offset_right = 1054.0
+offset_bottom = 588.0
+theme = ExtResource("5_rvcye")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5bnv5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ps03p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ib5p")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Opções"
+
+[connection signal="pressed" from="PhaseButtons/Tutorial(Base)/Phase1" to="." method="_on_phase_1_pressed"]
+[connection signal="pressed" from="PhaseButtons/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="PhaseButtons/Opções" to="." method="_on_options_2_pressed"]

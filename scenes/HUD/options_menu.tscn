@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dsouffo4som3t"]
 
-[ext_resource type="Script" path="res://scripts/HUD/Options.gd" id="1_6trq0"]
+[ext_resource type="Script" path="res://scripts/HUD/options_pre_game.gd" id="1_i72dq"]
 [ext_resource type="Theme" uid="uid://unuynfnhkuni" path="res://themes/label.tres" id="2_v1hyc"]
 [ext_resource type="Script" path="res://scripts/Sound/ChangeSound.gd" id="3_y1gkl"]
 [ext_resource type="Theme" uid="uid://btc3kqb6qx6k3" path="res://themes/button.tres" id="4_d6y3n"]
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6trq0")
+script = ExtResource("1_i72dq")
 
 [node name="Opções" type="Control" parent="."]
 layout_mode = 1

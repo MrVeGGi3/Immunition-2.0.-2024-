@@ -1,7 +1,7 @@
 extends Control
 
 
-@onready var color_rect = $ColorRect/SubViewportContainer/ColorRect
+@onready var color_rect = $ColorRect/SubViewportContainer/SubViewport/ColorRect
 @export var target : NodePath
 @export var camera_distance := 40.0 
 @onready var player := get_node(target)
