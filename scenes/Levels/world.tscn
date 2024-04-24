@@ -206,7 +206,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0133667, -0.0177388, 0.001
 shape = SubResource("BoxShape3D_dfins")
 
 [node name="orangeDevBlock2" type="MeshInstance3D" parent="Environment"]
-transform = Transform3D(22.0332, 0, 0, 0, 10, 0, 0, 0, 1, 73.193, -10.4203, 113.918)
+transform = Transform3D(22.0332, 0, 0, 0, 10, 0, 0, 0, 1, 71.3654, -10.4203, 113.918)
 material_override = SubResource("StandardMaterial3D_nfw12")
 mesh = ExtResource("3_pxglq")
 
