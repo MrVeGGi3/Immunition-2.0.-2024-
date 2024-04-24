@@ -1,15 +1,12 @@
-res://scenes/HUD/minimap.tscn
+res://scenes/Levels/world.tscn
 res://scripts/Characthers/Enemy_Blue.gd
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/HUD/Options.gd
 res://scripts/Sound/ChangeSound.gd
 res://themes/playerLifeBarTheme.tres
-res://scripts/HUD/minimap.gd
 res://scenes/Characters/enemy_g.tscn
 res://scenes/Characters/enemy_r.tscn
 res://scenes/Characters/enemy_b.tscn
 res://scenes/Characters/Player.tscn
 res://scenes/HUD/menu.tscn
-res://scenes/Levels/world.tscn
-res://scripts/Characthers/Player.gd
-res://scripts/Characthers/Enemy_Red.gd
+res://scenes/HUD/minimap.tscn

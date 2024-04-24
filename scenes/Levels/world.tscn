@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d36mflmgjmxea"]
+[gd_scene load_steps=25 format=3 uid="uid://d36mflmgjmxea"]
 
 [ext_resource type="ArrayMesh" uid="uid://djp2vbbqe1dc" path="res://prefabs/map0.obj" id="1_62mxc"]
 [ext_resource type="Texture2D" uid="uid://daa1un0fymlfh" path="res://textures/texas.png" id="2_23uxg"]
@@ -19,6 +19,21 @@ size = Vector3(30, 4, 30)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dval3"]
 albedo_color = Color(0.615686, 0, 0.372549, 1)
 
+[sub_resource type="Animation" id="Animation_queg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(186.573, -2.15206, -159.431)]
+}
+
 [sub_resource type="Animation" id="Animation_0e4b4"]
 resource_name = "moving platform"
 length = 17.0
@@ -34,21 +49,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(186.573, -2.15206, -159.431), Vector3(186.573, -2.15206, -159.431), Vector3(186.573, -2.15206, -208.718), Vector3(186.573, -2.15206, -210.012), Vector3(186.573, -2.15206, -159.714)]
-}
-
-[sub_resource type="Animation" id="Animation_queg3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(186.573, -2.15206, -159.431)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ncl28"]
@@ -74,6 +74,21 @@ albedo_color = Color(1, 0, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_fm6f6"]
 size = Vector3(46, 6, 75)
 
+[sub_resource type="Animation" id="Animation_v3wrh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(186.5, -28.7908, -182.488)]
+}
+
 [sub_resource type="Animation" id="Animation_nltjj"]
 resource_name = "move_platform_escaoe"
 length = 17.0
@@ -91,21 +106,6 @@ tracks/0/keys = {
 "values": [Vector3(186.5, -28.7908, -182.488), Vector3(186.5, -28.7908, -182.488), Vector3(186.5, -8.43783, -182.488), Vector3(186.5, -8.43783, -182.488), Vector3(186.5, -28.9911, -182.488)]
 }
 
-[sub_resource type="Animation" id="Animation_v3wrh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(186.5, -28.7908, -182.488)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_til0j"]
 _data = {
 "RESET": SubResource("Animation_v3wrh"),
@@ -114,6 +114,8 @@ _data = {
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5j052"]
 data = PackedVector3Array(-23, 3, 37.5, 23, 3, 37.5, -23, -3, 37.5, 23, 3, 37.5, 23, -3, 37.5, -23, -3, 37.5, 23, 3, -37.5, -23, 3, -37.5, 23, -3, -37.5, -23, 3, -37.5, -23, -3, -37.5, 23, -3, -37.5, 23, 3, 37.5, 23, 3, -37.5, 23, -3, 37.5, 23, 3, -37.5, 23, -3, -37.5, 23, -3, 37.5, -23, 3, -37.5, -23, 3, 37.5, -23, -3, -37.5, -23, 3, 37.5, -23, -3, 37.5, -23, -3, -37.5, 23, 3, 37.5, -23, 3, 37.5, 23, 3, -37.5, -23, 3, 37.5, -23, 3, -37.5, 23, 3, -37.5, -23, -3, 37.5, 23, -3, 37.5, -23, -3, -37.5, 23, -3, 37.5, 23, -3, -37.5, -23, -3, -37.5)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f01f8"]
 
 [node name="world" type="Node3D"]
 
@@ -190,52 +192,58 @@ transform = Transform3D(0.740802, 0.513978, -0.432479, 0.566508, -0.13209, 0.813
 
 [node name="Enemies" type="Node3D" parent="."]
 
-[node name="EnemiesGroup1" type="Node3D" parent="Enemies"]
+[node name="EnemiesGroupGreen" type="Node3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184, 5.03331, -3.29282)
 
-[node name="Enemy" parent="Enemies/EnemiesGroup1" instance=ExtResource("3_aiuty")]
+[node name="Enemy" parent="Enemies/EnemiesGroupGreen" instance=ExtResource("3_aiuty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22)
 
-[node name="Enemy2" parent="Enemies/EnemiesGroup1" instance=ExtResource("3_aiuty")]
+[node name="Enemy2" parent="Enemies/EnemiesGroupGreen" instance=ExtResource("3_aiuty")]
 
-[node name="Enemy3" parent="Enemies/EnemiesGroup1" instance=ExtResource("3_aiuty")]
+[node name="Enemy3" parent="Enemies/EnemiesGroupGreen" instance=ExtResource("3_aiuty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18)
 
-[node name="Enemy4" parent="Enemies/EnemiesGroup1" instance=ExtResource("3_aiuty")]
+[node name="Enemy4" parent="Enemies/EnemiesGroupGreen" instance=ExtResource("3_aiuty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
 
-[node name="EnemiesGroup2" type="Node3D" parent="Enemies"]
+[node name="EnemiesGroupBlue" type="Node3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.5895)
 
-[node name="Enemy" parent="Enemies/EnemiesGroup2" instance=ExtResource("5_l6q2f")]
+[node name="Enemy" parent="Enemies/EnemiesGroupBlue" instance=ExtResource("5_l6q2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.856, 4.08756, -67.1203)
 
-[node name="Enemy2" parent="Enemies/EnemiesGroup2" instance=ExtResource("5_l6q2f")]
+[node name="Enemy2" parent="Enemies/EnemiesGroupBlue" instance=ExtResource("5_l6q2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.491, 4.08756, -67.1203)
 
-[node name="Enemy3" parent="Enemies/EnemiesGroup2" instance=ExtResource("5_l6q2f")]
+[node name="Enemy3" parent="Enemies/EnemiesGroupBlue" instance=ExtResource("5_l6q2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.491, 4.08756, -92.0511)
 
-[node name="Enemy4" parent="Enemies/EnemiesGroup2" instance=ExtResource("5_l6q2f")]
+[node name="Enemy4" parent="Enemies/EnemiesGroupBlue" instance=ExtResource("5_l6q2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.924, 4.08756, -92.0511)
 
-[node name="Enemy5" parent="Enemies/EnemiesGroup2" instance=ExtResource("5_l6q2f")]
+[node name="Enemy5" parent="Enemies/EnemiesGroupBlue" instance=ExtResource("5_l6q2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.924, 4.08756, -115.542)
 
-[node name="Enemy6" parent="Enemies/EnemiesGroup2" instance=ExtResource("5_l6q2f")]
+[node name="Enemy6" parent="Enemies/EnemiesGroupBlue" instance=ExtResource("5_l6q2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.076, 4.08756, -115.542)
 
-[node name="EnemiesGroup3" type="Node3D" parent="Enemies"]
+[node name="EnemiesGroupRed" type="Node3D" parent="Enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.613, 8.08258, -297.895)
 
-[node name="Enemy" parent="Enemies/EnemiesGroup3" instance=ExtResource("6_grihp")]
+[node name="Enemy" parent="Enemies/EnemiesGroupRed" instance=ExtResource("6_grihp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9048, 0, 0)
 
-[node name="Enemy2" parent="Enemies/EnemiesGroup3" instance=ExtResource("6_grihp")]
+[node name="Enemy2" parent="Enemies/EnemiesGroupRed" instance=ExtResource("6_grihp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.252609, 0, 0)
 
-[node name="Enemy3" parent="Enemies/EnemiesGroup3" instance=ExtResource("6_grihp")]
+[node name="Enemy3" parent="Enemies/EnemiesGroupRed" instance=ExtResource("6_grihp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7908, 0, 0)
 
-[node name="Enemy4" parent="Enemies/EnemiesGroup3" instance=ExtResource("6_grihp")]
+[node name="Enemy4" parent="Enemies/EnemiesGroupRed" instance=ExtResource("6_grihp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.174, 0, -26.4244)
+
+[node name="ControlDistanceNode" type="Node3D" parent="."]
+
+[node name="CalculationPoint" type="MeshInstance3D" parent="ControlDistanceNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.442, -2.94984, 0)
+mesh = SubResource("ArrayMesh_f01f8")

@@ -15,6 +15,7 @@ var dead = false
 @onready var progress_bar = $SubViewport/ProgressBar
 @onready var label = $SubViewport/ProgressBar/Label
 @onready var sub_viewport = $SubViewport
+@onready var calculation_point = $"../../../ControlDistanceNode/CalculationPoint"
 
 func _physics_process(_delta):
 	if dead:
@@ -25,12 +26,16 @@ func _physics_process(_delta):
 	dir = dir.normalized()
 	velocity = dir * move_speed
 	move_and_slide()
-	var dist_to_player = global_transform.origin.distance_to(player.global_transform.origin)
-	if dist_to_player <= minimum_distance:
+	var dist_calc_point = global_transform.origin.distance_to(calculation_point.global_transform.origin)
+	var dist_calc_to_player = calculation_point.origin.distance_to(player.global_transform.origin)
+	var dist_to_player = dist_calc_point + dist_calc_to_player
+	if  dist_to_player <= minimum_distance:
 		attempt_to_kill_player()
 
 func attempt_to_kill_player():
-	var dist_to_player = global_transform.origin.distance_to(player.global_transform.origin)
+	var dist_calc_point = global_transform.origin.distance_to(calculation_point.global_transform.origin)
+	var dist_calc_to_player = calculation_point.origin.distance_to(player.global_transform.origin)
+	var dist_to_player = dist_calc_point + dist_calc_to_player
 	if dist_to_player > attack_range:
 		return
 	var eye_line = Vector3.UP * 1.0
