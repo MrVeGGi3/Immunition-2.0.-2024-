@@ -1,4 +1,4 @@
-res://scenes/HUD/logo_transition.tscn
+res://scenes/Levels/world.tscn
 res://scripts/Characthers/Enemy_Blue.gd
 res://scripts/Characthers/Enemy_Green.gd
 res://themes/playerLifeBarTheme.tres
@@ -6,6 +6,7 @@ res://scripts/Sound/ChangeSound.gd
 res://scripts/HUD/Options.gd
 res://themes/fasename_description.tres
 res://themes/go_phase_button.tres
+res://scenes/HUD/logo_transition.tscn
 res://scenes/HUD/level_selection.tscn
 res://scenes/HUD/minimap.tscn
 res://scenes/HUD/options_menu.tscn
@@ -16,6 +17,3 @@ res://scenes/HUD/healthbar_green.tscn
 res://scenes/HUD/healthbar_blue.tscn
 res://scenes/HUD/loading.tscn
 res://scenes/HUD/menu.tscn
-res://scripts/HUD/level_selection.gd
-res://scripts/Characthers/Player.gd
-res://scenes/Levels/world.tscn

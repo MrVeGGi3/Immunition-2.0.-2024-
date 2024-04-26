@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d08ovuxubggti"
+path="res://.godot/imported/dev_torus.obj-57736aa73d0f094316c4b6a17b375bd7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/dev_torus.obj-57736aa73d0f094316c4b6a17b375bd7.mesh"]
+
+source_file="res://prefabs/dev_torus.obj"
+dest_files=["res://.godot/imported/dev_torus.obj-57736aa73d0f094316c4b6a17b375bd7.mesh", "res://.godot/imported/dev_torus.obj-57736aa73d0f094316c4b6a17b375bd7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

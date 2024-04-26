@@ -1,146 +1,149 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713993744
-export_presets.cfg::TextFile::-1::1702215783::0::1::::<><>::
-icon.svg::CompressedTexture2D::4599671292196264100::1699561254::1713968228::1::::<><>::
-Immunition.apple-touch-icon.png::CompressedTexture2D::6159897446387466936::1701827606::1702215771::1::::<><>::
-Immunition.icon.png::CompressedTexture2D::1869714053902809867::1701827606::1702215771::1::::<><>::
-Immunition.png::CompressedTexture2D::2289465966330344163::1701827606::1702215771::1::::<><>::
-Menu_Screen.png::CompressedTexture2D::2105343557355047749::1701044950::1701044951::1::::<><>::
-README.md::TextFile::-1::1708605507::0::1::::<><>::
-::res://addons/::1701973691
-::res://bus/::1713979011
-Main Screen Without logo.png::CompressedTexture2D::10806572295273::1713979011::1713979011::1::::<><>::
-MainBus.tres::AudioBusLayout::7319392856565982687::1699561254::0::1::::<><>::
-::res://dialogues/::1708605543
-::res://fonts/::1708605543
-batmfa__.ttf::FontFile::1344750889945249551::1701037680::1701037680::1::::<><>::
-Hey Comic.otf::FontFile::4566043958742349283::1700782324::1700782327::1::::<><>::
-::res://HTML/::1708605543
-index.apple-touch-icon.png::CompressedTexture2D::2293201719177120918::1702215782::1705946712::1::::<><>::
-index.icon.png::CompressedTexture2D::2269283357336891068::1702215782::1705946713::1::::<><>::
-index.png::CompressedTexture2D::5756855896203523891::1702215782::1705946712::1::::<><>::
-::res://icons/::1708605579
-health Icon.png::CompressedTexture2D::2704379742846021037::1700747102::1700747104::1::::<><>::
-icon gun select.png::CompressedTexture2D::428229676487639646::1701018734::1701018734::1::::<><>::
-Icon Head CH Alive.png::CompressedTexture2D::7052548299528952876::1700524908::1700524918::1::::<><>::
-Icon Head CH Alive_RedAnimated.png::CompressedTexture2D::3921916952340897373::1700783032::1700783051::1::::<><>::
-Icon Head CH Died.png::CompressedTexture2D::8950722234108079222::1700521810::1700521810::1::::<><>::
-::res://icons/itens/::1708605579
-orbzBlue.png::CompressedTexture2D::893299490329959053::1701036173::1701036174::1::::<><>::
-orbzPurple.png::CompressedTexture2D::7694549093736570413::1701036159::1701036161::1::::<><>::
-orb_green.png::CompressedTexture2D::5893146638344783554::1701036165::1701036165::1::::<><>::
-::res://icons/keyoboard buttons/::1708605579
-enterButton.jpeg::CompressedTexture2D::244468908868418002::1701961043::1701961044::1::::<><>::
-keyboard.png::CompressedTexture2D::2023636912444015064::1701021784::1701036119::1::::<><>::
-::res://icons/weapons/::1708605579
-Icon Linfosito.png::CompressedTexture2D::7043781093226451796::1701018741::1701036132::1::::<><>::
-Icon macrofago.png::CompressedTexture2D::513149103984886612::1701018747::1701036135::1::::<><>::
-Icon neutrofilo.png::CompressedTexture2D::2184395739624753132::1701018754::1701036138::1::::<><>::
-::res://images/::1708605579
-FATEC LOGO.png::CompressedTexture2D::1620976486105104905::1699561256::1699561256::1::::<><>::
-Fatec.png::CompressedTexture2D::5279149937170537833::1699561256::1699561256::1::::<><>::
-immunition.jpg::CompressedTexture2D::7828567062758680311::1699610898::1699610898::1::::<><>::
-Loading Screen.png::CompressedTexture2D::1262695601239072536::1701032887::1701032901::1::::<><>::
-Logo Tech Dragons - size618x404_Red Blue_White.png::CompressedTexture2D::7923815093214251140::1700523302::1700523310::1::::<><>::
-Menu_Screen.png::CompressedTexture2D::6202628164658668537::1701044972::1701044973::1::::<><>::
-SMAUG-removebg-preview.jpg::CompressedTexture2D::4000361483793671232::1699561256::1699561256::1::::<><>::
-::res://images/loading screen/::1708605579
-Loading Screen 1.png::CompressedTexture2D::3201588107845736250::1701035778::1701035783::1::::<><>::
-Loading Screen 2.png::CompressedTexture2D::14066680042120283::1701035788::1701035789::1::::<><>::
-Loading Screen 3.png::CompressedTexture2D::5667107929963261952::1701035796::1701035797::1::::<><>::
-Loading Screen 4.png::CompressedTexture2D::4787382330909256231::1701035803::1701035804::1::::<><>::
-Loading Screen 5.png::CompressedTexture2D::5511546986237679633::1701035808::1701035809::1::::<><>::
-::res://images/UI/::1713979182
-Barra de Dialogo.png::CompressedTexture2D::4229763777333398739::1701955053::1701955055::1::::<><>::
-Main Screen Without logo.png::CompressedTexture2D::2460497603892643723::1713979145::1713979182::1::::<><>::
-::res://prefabs/::1713968617
-map0.obj::Mesh::230106006629725904::1700960141::1713968617::1::::<><>::
-map0_tutorial.obj::Mesh::6440017377467487492::1699561256::1713968617::1::::<><>::
-map0_tutorialv2.obj::Mesh::7310907279223856633::1700959945::1713968617::1::::<><>::
-::res://prefabs/mapa/::1713968592
-::res://scenes/::1708605579
-::res://scenes/Characters/::1713990697
-enemy_b.tscn::PackedScene::7092600376409296997::1713990697::0::1::::<><>::res://scripts/Characthers/Enemy_Blue.gd<>uid://cj21mxonxa3cx::::res://sprites/Monster/monster1_Blue_sprite.png<>uid://bw3djxfntr0jb::::res://sounds/SFX/Monster/monster_die.wav<>uid://bud3mha4g5u45::::res://sounds/SFX/Monster/monster_bite.wav<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
-enemy_g.tscn::PackedScene::2345961276756191375::1713966750::0::1::::<><>::res://scripts/Characthers/Enemy_Green.gd<>uid://bw3djxfntr0jb::::res://sounds/SFX/Monster/monster_die.wav<>uid://2semeicsex86::::res://sprites/Monster/monster1_sprite.png<>uid://bud3mha4g5u45::::res://sounds/SFX/Monster/monster_bite.wav<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
-enemy_r.tscn::PackedScene::1334761374456632927::1713966750::0::1::::<><>::res://scripts/Characthers/Enemy_Red.gd<>uid://bw3djxfntr0jb::::res://sounds/SFX/Monster/monster_die.wav<>uid://b7gk6t1q8ddtl::::res://sprites/Monster/monster1_purple_sprite.png<>uid://bud3mha4g5u45::::res://sounds/SFX/Monster/monster_bite.wav<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
-Player.tscn::PackedScene::8855806073806431325::1713966750::0::1::::<><>::res://scripts/Characthers/Player.gd<>uid://buqhd8dubn178::::res://sprites/Player/revolver_sprites.png<>uid://bw2cynbti0h7y::::res://themes/PanelColor.tres<>uid://dufxlwl2jmmm8::::res://themes/purpleTheme.tres<>uid://b86srxxd4jnsq::::res://sprites/Player/macrofago_sprite.png<>uid://d0r2c8ejf2khy::::res://icons/Icon Head CH Died.png<>uid://tfn36nnpaotb::::res://fonts/batmfa__.ttf<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>uid://bd32nqym4104l::::res://themes/playerLifeBarTheme.tres<>uid://besa0etqgk00h::::res://icons/health Icon.png<>uid://5ran8yqdqky::::res://scenes/HUD/pause_menu.tscn<>uid://bv42ntqndsu6p::::res://icons/Icon Head CH Alive_RedAnimated.png<>uid://hqasyg3vanal::::res://sounds/SFX/Player/ShootEffect.wav<>uid://c5iqptwqnbvnt::::res://sprites/UI/Animação de teclas.png<>uid://cmixvfomb2y5w::::res://sprites/Player/neutrofilos_sprite2.png<>uid://cl16r632p0qb5::::res://sounds/BGM/deathsound.wav<>uid://gdo46rv1wjh3::::res://icons/icon gun select.png<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav<>uid://c7mcbsugesbyq::::res://icons/weapons/Icon Linfosito.png<>uid://6eexcteofaqe::::res://icons/weapons/Icon neutrofilo.png<>uid://hktqxlioxt6s::::res://icons/weapons/Icon macrofago.png<>uid://dk7wdjoi41cuq::::res://sounds/SFX/Player/macrofage_weapon .wav<>uid://33jae7wc4cls::::res://icons/keyoboard buttons/keyboard.png<>uid://b1i6udx23kait::::res://images/UI/Barra de Dialogo.png<>res://scripts/HUD/Tutorial_UI.gd<>uid://dqomqq5hwrx7::::res://icons/keyoboard buttons/enterButton.jpeg<>uid://c5yaq5d5t8iip::::res://scenes/HUD/minimap.tscn<>uid://blyju371t1s68::::res://sounds/SFX/Player/Flamethrower_Sound.wav
-::res://scenes/HUD/::1713990705
-healthbar_blue.tscn::PackedScene::2194062513758371261::1710341740::0::1::::<><>::res://scripts/HUD/hb_ccolor.gd<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
-healthbar_green.tscn::PackedScene::7277985914833032643::1713990704::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
-healthbar_red.tscn::PackedScene::8108780980428379948::1713990703::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
-level_selection.tscn::PackedScene::8820959133649335437::1713990691::0::1::::<><>::res://scripts/HUD/level_selection.gd<>uid://bbb5bhxa2nget::::res://images/UI/Main Screen Without logo.png<>uid://chfew0owxhkt5::::res://themes/fasename_description.tres<>uid://c33mgls2q6ijq::::res://themes/go_phase_button.tres<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>uid://btc3kqb6qx6k3::::res://themes/button.tres
-loading.tscn::PackedScene::5978054243603699404::1713990702::0::1::::<><>::res://scripts/HUD/loading.gd<>uid://blu4xn1a04yvy::::res://images/loading screen/Loading Screen 1.png<>uid://g2w8v82gwrb::::res://images/loading screen/Loading Screen 2.png<>uid://cm0go7hjvclxg::::res://images/loading screen/Loading Screen 3.png<>uid://cahbqtupvbn64::::res://images/loading screen/Loading Screen 4.png<>uid://ckr3mx5u3m41j::::res://images/loading screen/Loading Screen 5.png
-logo_transition.tscn::PackedScene::7129568780501517391::1713990690::0::1::::<><>::res://scripts/HUD/LogoTransition.gd<>uid://chhi3fmpyfpxx::::res://images/Fatec.png<>uid://bw82ms1f15lv1::::res://images/SMAUG-removebg-preview.jpg
-menu.tscn::PackedScene::3149977801309675747::1713990689::0::1::::<><>::res://scripts/HUD/Menu.gd<>uid://btc3kqb6qx6k3::::res://themes/button.tres<>uid://cumum55a2e8e4::::res://images/Menu_Screen.png<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav
-minimap.tscn::PackedScene::6928081897051763831::1713990684::0::1::::<><>::res://scripts/HUD/minimap.gd
-options_menu.tscn::PackedScene::8452786079531835691::1713990699::0::1::::<><>::res://scripts/HUD/options_pre_game.gd<>uid://unuynfnhkuni::::res://themes/label.tres<>res://scripts/Sound/ChangeSound.gd<>uid://btc3kqb6qx6k3::::res://themes/button.tres<>uid://hqasyg3vanal::::res://sounds/SFX/Player/ShootEffect.wav<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav<>res://scripts/HUD/WindowType.gd<>res://scripts/HUD/ResolutionControl.gd
-options_menu_pre_game.tscn::PackedScene::817792519861858909::1713990705::0::1::::<><>::res://scripts/HUD/Options.gd<>uid://unuynfnhkuni::::res://themes/label.tres<>res://scripts/Sound/ChangeSound.gd<>uid://btc3kqb6qx6k3::::res://themes/button.tres<>uid://hqasyg3vanal::::res://sounds/SFX/Player/ShootEffect.wav<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav<>res://scripts/HUD/WindowType.gd<>res://scripts/HUD/ResolutionControl.gd
-pause_menu.tscn::PackedScene::62964256392889092::1713990701::0::1::::<><>::res://scripts/HUD/Pause.gd<>uid://unuynfnhkuni::::res://themes/label.tres<>res://scripts/Sound/ChangeSound.gd<>uid://btc3kqb6qx6k3::::res://themes/button.tres<>uid://hqasyg3vanal::::res://sounds/SFX/Player/ShootEffect.wav<>res://scripts/HUD/WindowType.gd<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>res://scripts/HUD/ResolutionControl.gd
-sub_viewport_container.tscn::PackedScene::214375395463189002::1713990687::0::1::::<><>::
-::res://scenes/Levels/::1713990698
-level_1.tscn::PackedScene::5470866197431277161::1713990696::0::1::::<><>::
-level_2.tscn::PackedScene::3607244491359219360::1713990694::0::1::::<><>::
-level_3.tscn::PackedScene::8913426150632920717::1713990693::0::1::::<><>::
-world.tscn::PackedScene::9189283512782427540::1713990698::0::1::::<><>::uid://djp2vbbqe1dc::::res://prefabs/map0.obj<>uid://daa1un0fymlfh::::res://textures/texas.png<>uid://dyf23kaij0wqn::::res://scenes/Characters/Player.tscn<>uid://8onv0icy5g7h::::res://scenes/Characters/enemy_g.tscn<>uid://c8bydekkhr5m4::::res://scenes/Characters/enemy_b.tscn<>uid://tatlbq78gkdr::::res://scenes/Characters/enemy_r.tscn
-::res://scripts/::1708605579
-::res://scripts/Characthers/::1713990758
-Enemy_Blue.gd::GDScript::-1::1713990753::0::1::::<>CharacterBody3D<>::
-Enemy_Green.gd::GDScript::-1::1713990754::0::1::::<>CharacterBody3D<>::
-Enemy_Red.gd::GDScript::-1::1713990755::0::1::::<>CharacterBody3D<>::
-Map.gd::GDScript::-1::1713990757::0::1::::<>Control<>::
-Player.gd::GDScript::-1::1713990758::0::1::::<>CharacterBody3D<>::
-::res://scripts/HUD/::1713990770
-hb_ccolor.gd::GDScript::-1::1713990759::0::1::::<>ProgressBar<>::
-level_selection.gd::GDScript::-1::1713990760::0::1::::<>Control<>::
-loading.gd::GDScript::-1::1713990761::0::1::::<>Control<>::
-LogoTransition.gd::GDScript::-1::1713990762::0::1::::<>Control<>::
-Menu.gd::GDScript::-1::1713990763::0::1::::<>Control<>::
-minimap.gd::GDScript::-1::1713990765::0::1::::<>Control<>::
-Options.gd::GDScript::-1::1713990766::0::1::::<>Control<>::
-options_pre_game.gd::GDScript::-1::1713990767::0::1::::<>Control<>::
-Pause.gd::GDScript::-1::1713990768::0::1::::<>Control<>::
-pause_menu.gd::GDScript::-1::1713990769::0::1::::<>Control<>::
-ResolutionControl.gd::GDScript::-1::1713990770::0::1::::<>Control<>::
-Tutorial_UI.gd::GDScript::-1::1713990770::0::1::::<>Control<>::
-WindowType.gd::GDScript::-1::1700995786::0::1::::<>Control<>::
-::res://scripts/Sliders/::1713990772
-HSlider.gd::GDScript::-1::1713990772::0::1::::<>HSlider<>::
-::res://scripts/Sound/::1713990773
-ChangeSound.gd::GDScript::-1::1713990773::0::1::::<>HSlider<>::
-::res://sounds/::1708605579
-::res://sounds/BGM/::1708605579
-deathsound.wav::AudioStreamWAV::5600506727008436888::1700518998::1700701604::1::::<><>::
-Synthwave Game Vlog [No Copyright Music]  San Juniper.wav::AudioStreamWAV::6657757422423911769::1700492308::1700701646::1::::<><>::
-::res://sounds/SFX/::1708605579
-::res://sounds/SFX/Monster/::1708605579
-monster_bite.wav::AudioStreamWAV::3798112564030547384::1700781104::1700781119::1::::<><>::
-monster_die.wav::AudioStreamWAV::3988577260344754351::1699561256::1700701640::1::::<><>::
-::res://sounds/SFX/Player/::1708605579
-Flamethrower_Sound.wav::AudioStreamWAV::3208626719917188551::1701881256::1701881264::1::::<><>::
-macrofage_weapon .wav::AudioStreamWAV::7928552201552791904::1701011034::1701011042::1::::<><>::
-ShootEffect.wav::AudioStreamWAV::524385364950971151::1699561256::1700701642::1::::<><>::
-::res://sprites/::1708605579
-::res://sprites/Bullet/::1701018423
-::res://sprites/Monster/::1708605579
-monster1_Blue_sprite.png::CompressedTexture2D::5461880461112638171::1701014509::1701015664::1::::<><>::
-monster1_purple_sprite.png::CompressedTexture2D::4645513515052967877::1701014526::1701047990::1::::<><>::
-monster1_sprite.png::CompressedTexture2D::1932522097864820701::1701047777::1701047901::1::::<><>::
-monster_bacteria.png::CompressedTexture2D::8925384634465800729::1699610580::1700701552::1::::<><>::
-::res://sprites/Player/::1708605579
-gun_shoot.png::CompressedTexture2D::5936077985092246905::1699610488::1700701538::1::::<><>::
-macrofago_sprite.png::CompressedTexture2D::4767772742233186656::1701011573::1701011575::1::::<><>::
-neutrofilos_sprite2.png::CompressedTexture2D::5633056790372364378::1701048945::1701048954::1::::<><>::
-revolver_sprites.png::CompressedTexture2D::3823659715665340033::1700964707::1700964724::1::::<><>::
-::res://sprites/UI/::1708605579
-Animação de teclas.png::CompressedTexture2D::6896020990026241785::1700701562::1700701568::1::::<><>::
-::res://textures/::1708605579
-tenesse.png::CompressedTexture2D::6948268283639013713::1701022002::1701022012::1::::<><>::
-texas.png::CompressedTexture2D::7160877130452725149::1700960715::1700960780::1::::<><>::
-::res://themes/::1713981789
-button.tres::Theme::3725856245409572292::1713981789::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
-fasename_description.tres::Theme::5274768652801319092::1713980266::0::1::::<><>::
-go_phase_button.tres::Theme::6796671491854106426::1713980886::0::1::::<><>::
-label.tres::Theme::1431871673600476978::1701042106::0::1::::<><>::uid://b6b3cu5hbka6f
-PanelColor.tres::Theme::3986478421351989724::1700747186::0::1::::<><>::
-playerLifeBarTheme.tres::Theme::2656453243880269033::1713968883::0::1::::<><>::
-purpleTheme.tres::Theme::8574778120922653433::1700747186::0::1::::<><>::
+::res://::1714128554
+icon.svg::CompressedTexture2D::4599671292196264100::1709555774::1714128443::1::::<><>::
+Immunition.apple-touch-icon.png::CompressedTexture2D::6159897446387466936::1709555774::1709555774::1::::<><>::
+Immunition.icon.png::CompressedTexture2D::1869714053902809867::1709555774::1709555774::1::::<><>::
+Immunition.png::CompressedTexture2D::2289465966330344163::1709555774::1709555774::1::::<><>::
+Menu_Screen.png::CompressedTexture2D::2105343557355047749::1709555774::1709555774::1::::<><>::
+README.md::TextFile::-1::1709555774::0::1::::<><>::
+::res://bus/::1713991061
+Main Screen Without logo.png::CompressedTexture2D::10806572295273::1713991061::1713991061::1::::<><>::
+MainBus.tres::AudioBusLayout::7319392856565982687::1709555774::0::1::::<><>::
+::res://dialogues/::1709555774
+::res://fonts/::1709555774
+batmfa__.ttf::FontFile::1344750889945249551::1709555774::1709555774::1::::<><>::
+Hey Comic.otf::FontFile::4566043958742349283::1709555774::1709555774::1::::<><>::
+::res://HTML/::1709555774
+index.apple-touch-icon.png::CompressedTexture2D::2293201719177120918::1709555773::1709555773::1::::<><>::
+index.icon.png::CompressedTexture2D::2269283357336891068::1709555773::1709555773::1::::<><>::
+index.png::CompressedTexture2D::5756855896203523891::1709555774::1709555774::1::::<><>::
+::res://icons/::1709555774
+health Icon.png::CompressedTexture2D::2704379742846021037::1709555774::1709555774::1::::<><>::
+icon gun select.png::CompressedTexture2D::428229676487639646::1709555774::1709555774::1::::<><>::
+Icon Head CH Alive.png::CompressedTexture2D::7052548299528952876::1709555774::1709555774::1::::<><>::
+Icon Head CH Alive_RedAnimated.png::CompressedTexture2D::3921916952340897373::1709555774::1709555774::1::::<><>::
+Icon Head CH Died.png::CompressedTexture2D::8950722234108079222::1709555774::1709555774::1::::<><>::
+::res://icons/itens/::1709555774
+orbzBlue.png::CompressedTexture2D::893299490329959053::1709555774::1709555774::1::::<><>::
+orbzPurple.png::CompressedTexture2D::7694549093736570413::1709555774::1709555774::1::::<><>::
+orb_green.png::CompressedTexture2D::5893146638344783554::1709555774::1709555774::1::::<><>::
+::res://icons/keyoboard buttons/::1709555774
+enterButton.jpeg::CompressedTexture2D::244468908868418002::1709555774::1709555774::1::::<><>::
+keyboard.png::CompressedTexture2D::2023636912444015064::1709555774::1709555774::1::::<><>::
+::res://icons/weapons/::1709555774
+Icon Linfosito.png::CompressedTexture2D::7043781093226451796::1709555774::1709555774::1::::<><>::
+Icon macrofago.png::CompressedTexture2D::513149103984886612::1709555774::1709555774::1::::<><>::
+Icon neutrofilo.png::CompressedTexture2D::2184395739624753132::1709555774::1709555774::1::::<><>::
+::res://images/::1709555774
+FATEC LOGO.png::CompressedTexture2D::1620976486105104905::1709555774::1709555774::1::::<><>::
+Fatec.png::CompressedTexture2D::5279149937170537833::1709555774::1709555774::1::::<><>::
+immunition.jpg::CompressedTexture2D::7828567062758680311::1709555774::1709555774::1::::<><>::
+Loading Screen.png::CompressedTexture2D::1262695601239072536::1709555774::1709555774::1::::<><>::
+Logo Tech Dragons - size618x404_Red Blue_White.png::CompressedTexture2D::7923815093214251140::1709555774::1709555774::1::::<><>::
+Menu_Screen.png::CompressedTexture2D::6202628164658668537::1709555774::1709555774::1::::<><>::
+SMAUG-removebg-preview.jpg::CompressedTexture2D::4000361483793671232::1709555774::1709555774::1::::<><>::
+::res://images/loading screen/::1709555774
+Loading Screen 1.png::CompressedTexture2D::3201588107845736250::1709555774::1709555774::1::::<><>::
+Loading Screen 2.png::CompressedTexture2D::14066680042120283::1709555774::1709555774::1::::<><>::
+Loading Screen 3.png::CompressedTexture2D::5667107929963261952::1709555774::1709555774::1::::<><>::
+Loading Screen 4.png::CompressedTexture2D::4787382330909256231::1709555774::1709555774::1::::<><>::
+Loading Screen 5.png::CompressedTexture2D::5511546986237679633::1709555774::1709555774::1::::<><>::
+::res://images/UI/::1713991061
+Barra de Dialogo.png::CompressedTexture2D::4229763777333398739::1709555774::1709555774::1::::<><>::
+Main Screen Without logo.png::CompressedTexture2D::2460497603892643723::1713991061::1713991061::1::::<><>::
+::res://prefabs/::1714128554
+dev_grey.obj::Mesh::297907145339645822::1714128517::1714128542::1::::<><>::
+dev_grey.png::CompressedTexture2D::3216721010241192645::1714128517::1714128728::1::::<><>::
+dev_orange.png::CompressedTexture2D::5208512768167994920::1714128517::1714128880::1::::<><>::
+dev_pillar.obj::Mesh::2651624718668549627::1714128517::1714128554::1::::<><>::
+dev_sphere.obj::Mesh::2520775417054993912::1714128517::1714128554::1::::<><>::
+dev_torus.obj::Mesh::8982996234392611366::1714128517::1714128554::1::::<><>::
+dev_valley.obj::Mesh::1516715546812702795::1714128517::1714128554::1::::<><>::
+map0.obj::Mesh::230106006629725904::1709555774::1714128443::1::::<><>::
+map0_tutorial.obj::Mesh::6440017377467487492::1709555774::1714128443::1::::<><>::
+map0_tutorialv2.obj::Mesh::7310907279223856633::1709555774::1714128443::1::::<><>::
+::res://scenes/::1709555774
+::res://scenes/Characters/::1713959910
+enemy_b.tscn::PackedScene::7092600376409296997::1713959910::0::1::::<><>::res://scripts/Characthers/Enemy_Blue.gd<>uid://cj21mxonxa3cx::::res://sprites/Monster/monster1_Blue_sprite.png<>uid://bw3djxfntr0jb::::res://sounds/SFX/Monster/monster_die.wav<>uid://bud3mha4g5u45::::res://sounds/SFX/Monster/monster_bite.wav<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
+enemy_g.tscn::PackedScene::2345961276756191375::1713959910::0::1::::<><>::res://scripts/Characthers/Enemy_Green.gd<>uid://bw3djxfntr0jb::::res://sounds/SFX/Monster/monster_die.wav<>uid://2semeicsex86::::res://sprites/Monster/monster1_sprite.png<>uid://bud3mha4g5u45::::res://sounds/SFX/Monster/monster_bite.wav<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
+enemy_r.tscn::PackedScene::1334761374456632927::1713959910::0::1::::<><>::res://scripts/Characthers/Enemy_Red.gd<>uid://bw3djxfntr0jb::::res://sounds/SFX/Monster/monster_die.wav<>uid://b7gk6t1q8ddtl::::res://sprites/Monster/monster1_purple_sprite.png<>uid://bud3mha4g5u45::::res://sounds/SFX/Monster/monster_bite.wav<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
+Player.tscn::PackedScene::8855806073806431325::1713959910::0::1::::<><>::res://scripts/Characthers/Player.gd<>uid://buqhd8dubn178::::res://sprites/Player/revolver_sprites.png<>uid://bw2cynbti0h7y::::res://themes/PanelColor.tres<>uid://dufxlwl2jmmm8::::res://themes/purpleTheme.tres<>uid://b86srxxd4jnsq::::res://sprites/Player/macrofago_sprite.png<>uid://d0r2c8ejf2khy::::res://icons/Icon Head CH Died.png<>uid://tfn36nnpaotb::::res://fonts/batmfa__.ttf<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>uid://bd32nqym4104l::::res://themes/playerLifeBarTheme.tres<>uid://besa0etqgk00h::::res://icons/health Icon.png<>uid://5ran8yqdqky::::res://scenes/HUD/pause_menu.tscn<>uid://bv42ntqndsu6p::::res://icons/Icon Head CH Alive_RedAnimated.png<>uid://hqasyg3vanal::::res://sounds/SFX/Player/ShootEffect.wav<>uid://c5iqptwqnbvnt::::res://sprites/UI/Animação de teclas.png<>uid://cmixvfomb2y5w::::res://sprites/Player/neutrofilos_sprite2.png<>uid://cl16r632p0qb5::::res://sounds/BGM/deathsound.wav<>uid://gdo46rv1wjh3::::res://icons/icon gun select.png<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav<>uid://c7mcbsugesbyq::::res://icons/weapons/Icon Linfosito.png<>uid://6eexcteofaqe::::res://icons/weapons/Icon neutrofilo.png<>uid://hktqxlioxt6s::::res://icons/weapons/Icon macrofago.png<>uid://dk7wdjoi41cuq::::res://sounds/SFX/Player/macrofage_weapon .wav<>uid://33jae7wc4cls::::res://icons/keyoboard buttons/keyboard.png<>uid://b1i6udx23kait::::res://images/UI/Barra de Dialogo.png<>res://scripts/HUD/Tutorial_UI.gd<>uid://dqomqq5hwrx7::::res://icons/keyoboard buttons/enterButton.jpeg<>uid://c5yaq5d5t8iip::::res://scenes/HUD/minimap.tscn<>uid://blyju371t1s68::::res://sounds/SFX/Player/Flamethrower_Sound.wav
+::res://scenes/HUD/::1714128403
+healthbar_blue.tscn::PackedScene::2194062513758371261::1713350982::0::1::::<><>::res://scripts/HUD/hb_ccolor.gd<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
+healthbar_green.tscn::PackedScene::7277985914833032643::1713350982::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
+healthbar_red.tscn::PackedScene::8108780980428379948::1713350982::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
+level_selection.tscn::PackedScene::8820959133649335437::1714128403::0::1::::<><>::res://scripts/HUD/level_selection.gd<>uid://bbb5bhxa2nget::::res://images/UI/Main Screen Without logo.png<>uid://chfew0owxhkt5::::res://themes/fasename_description.tres<>uid://c33mgls2q6ijq::::res://themes/go_phase_button.tres<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>uid://btc3kqb6qx6k3::::res://themes/button.tres
+loading.tscn::PackedScene::5978054243603699404::1709555774::0::1::::<><>::res://scripts/HUD/loading.gd<>uid://blu4xn1a04yvy::::res://images/loading screen/Loading Screen 1.png<>uid://g2w8v82gwrb::::res://images/loading screen/Loading Screen 2.png<>uid://cm0go7hjvclxg::::res://images/loading screen/Loading Screen 3.png<>uid://cahbqtupvbn64::::res://images/loading screen/Loading Screen 4.png<>uid://ckr3mx5u3m41j::::res://images/loading screen/Loading Screen 5.png
+logo_transition.tscn::PackedScene::7129568780501517391::1713991277::0::1::::<><>::res://scripts/HUD/LogoTransition.gd<>uid://chhi3fmpyfpxx::::res://images/Fatec.png<>uid://bw82ms1f15lv1::::res://images/SMAUG-removebg-preview.jpg
+menu.tscn::PackedScene::3149977801309675747::1713959910::0::1::::<><>::res://scripts/HUD/Menu.gd<>uid://btc3kqb6qx6k3::::res://themes/button.tres<>uid://cumum55a2e8e4::::res://images/Menu_Screen.png<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav
+minimap.tscn::PackedScene::6928081897051763831::1713959911::0::1::::<><>::res://scripts/HUD/minimap.gd
+options_menu.tscn::PackedScene::8452786079531835691::1713991061::0::1::::<><>::res://scripts/HUD/options_pre_game.gd<>uid://unuynfnhkuni::::res://themes/label.tres<>res://scripts/Sound/ChangeSound.gd<>uid://btc3kqb6qx6k3::::res://themes/button.tres<>uid://hqasyg3vanal::::res://sounds/SFX/Player/ShootEffect.wav<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav<>res://scripts/HUD/WindowType.gd<>res://scripts/HUD/ResolutionControl.gd
+options_menu_pre_game.tscn::PackedScene::817792519861858909::1713991061::0::1::::<><>::res://scripts/HUD/Options.gd<>uid://unuynfnhkuni::::res://themes/label.tres<>res://scripts/Sound/ChangeSound.gd<>uid://btc3kqb6qx6k3::::res://themes/button.tres<>uid://hqasyg3vanal::::res://sounds/SFX/Player/ShootEffect.wav<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav<>res://scripts/HUD/WindowType.gd<>res://scripts/HUD/ResolutionControl.gd
+pause_menu.tscn::PackedScene::62964256392889092::1709555774::0::1::::<><>::res://scripts/HUD/Pause.gd<>uid://unuynfnhkuni::::res://themes/label.tres<>res://scripts/Sound/ChangeSound.gd<>uid://btc3kqb6qx6k3::::res://themes/button.tres<>uid://hqasyg3vanal::::res://sounds/SFX/Player/ShootEffect.wav<>res://scripts/HUD/WindowType.gd<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>res://scripts/HUD/ResolutionControl.gd
+sub_viewport_container.tscn::PackedScene::214375395463189002::1713350982::0::1::::<><>::
+::res://scenes/Levels/::1714128554
+level_1.tscn::PackedScene::5470866197431277161::1713991061::0::1::::<><>::
+level_2.tscn::PackedScene::3607244491359219360::1713991061::0::1::::<><>::
+level_3.tscn::PackedScene::8913426150632920717::1713991061::0::1::::<><>::
+world.tscn::PackedScene::9189283512782427540::1714128403::0::1::::<><>::uid://djp2vbbqe1dc::::res://prefabs/map0.obj<>uid://daa1un0fymlfh::::res://textures/texas.png<>uid://dyf23kaij0wqn::::res://scenes/Characters/Player.tscn<>uid://8onv0icy5g7h::::res://scenes/Characters/enemy_g.tscn<>uid://c8bydekkhr5m4::::res://scenes/Characters/enemy_b.tscn<>uid://tatlbq78gkdr::::res://scenes/Characters/enemy_r.tscn
+::res://scripts/::1709555774
+::res://scripts/Characthers/::1714128403
+Enemy_Blue.gd::GDScript::-1::1714128403::0::1::::<>CharacterBody3D<>::
+Enemy_Green.gd::GDScript::-1::1713991088::0::1::::<>CharacterBody3D<>::
+Enemy_Red.gd::GDScript::-1::1713350982::0::1::::<>CharacterBody3D<>::
+Map.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
+Player.gd::GDScript::-1::1714128403::0::1::::<>CharacterBody3D<>::
+::res://scripts/HUD/::1714128403
+hb_ccolor.gd::GDScript::-1::1713350982::0::1::::<>ProgressBar<>::
+level_selection.gd::GDScript::-1::1714128403::0::1::::<>Control<>::
+loading.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
+LogoTransition.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
+Menu.gd::GDScript::-1::1713991061::0::1::::<>Control<>::
+minimap.gd::GDScript::-1::1713991061::0::1::::<>Control<>::
+Options.gd::GDScript::-1::1713991277::0::1::::<>Control<>::
+options_pre_game.gd::GDScript::-1::1713991061::0::1::::<>Control<>::
+Pause.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
+pause_menu.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
+ResolutionControl.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
+Tutorial_UI.gd::GDScript::-1::1713350982::0::1::::<>Control<>::
+WindowType.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
+::res://scripts/Sliders/::1709555774
+HSlider.gd::GDScript::-1::1709555774::0::1::::<>HSlider<>::
+::res://scripts/Sound/::1713991088
+ChangeSound.gd::GDScript::-1::1713991088::0::1::::<>HSlider<>::
+::res://sounds/::1709555775
+::res://sounds/BGM/::1709555775
+deathsound.wav::AudioStreamWAV::5600506727008436888::1709555775::1709555775::1::::<><>::
+Synthwave Game Vlog [No Copyright Music]  San Juniper.wav::AudioStreamWAV::6657757422423911769::1709555775::1709555775::1::::<><>::
+::res://sounds/SFX/::1709555775
+::res://sounds/SFX/Monster/::1709555775
+monster_bite.wav::AudioStreamWAV::3798112564030547384::1709555775::1709555775::1::::<><>::
+monster_die.wav::AudioStreamWAV::3988577260344754351::1709555775::1709555775::1::::<><>::
+::res://sounds/SFX/Player/::1709555775
+Flamethrower_Sound.wav::AudioStreamWAV::3208626719917188551::1709555775::1709555775::1::::<><>::
+macrofage_weapon .wav::AudioStreamWAV::7928552201552791904::1709555775::1709555775::1::::<><>::
+ShootEffect.wav::AudioStreamWAV::524385364950971151::1709555775::1709555775::1::::<><>::
+::res://sprites/::1709555775
+::res://sprites/Monster/::1709555775
+monster1_Blue_sprite.png::CompressedTexture2D::5461880461112638171::1709555775::1709555775::1::::<><>::
+monster1_purple_sprite.png::CompressedTexture2D::4645513515052967877::1709555775::1709555775::1::::<><>::
+monster1_sprite.png::CompressedTexture2D::1932522097864820701::1709555775::1709555775::1::::<><>::
+monster_bacteria.png::CompressedTexture2D::8925384634465800729::1709555775::1709555775::1::::<><>::
+::res://sprites/Player/::1709555775
+gun_shoot.png::CompressedTexture2D::5936077985092246905::1709555775::1709555775::1::::<><>::
+macrofago_sprite.png::CompressedTexture2D::4767772742233186656::1709555775::1709555775::1::::<><>::
+neutrofilos_sprite2.png::CompressedTexture2D::5633056790372364378::1709555775::1709555775::1::::<><>::
+revolver_sprites.png::CompressedTexture2D::3823659715665340033::1709555775::1709555775::1::::<><>::
+::res://sprites/UI/::1709555775
+Animação de teclas.png::CompressedTexture2D::6896020990026241785::1709555775::1709555775::1::::<><>::
+::res://textures/::1709555775
+tenesse.png::CompressedTexture2D::6948268283639013713::1709555775::1709555775::1::::<><>::
+texas.png::CompressedTexture2D::7160877130452725149::1709555775::1709555775::1::::<><>::
+::res://themes/::1713991088
+button.tres::Theme::3725856245409572292::1709555775::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
+fasename_description.tres::Theme::5274768652801319092::1713991061::0::1::::<><>::
+go_phase_button.tres::Theme::6796671491854106426::1713991061::0::1::::<><>::
+label.tres::Theme::1431871673600476978::1709555775::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
+PanelColor.tres::Theme::3986478421351989724::1709555775::0::1::::<><>::
+playerLifeBarTheme.tres::Theme::2656453243880269033::1713991088::0::1::::<><>::
+purpleTheme.tres::Theme::8574778120922653433::1709555775::0::1::::<><>::

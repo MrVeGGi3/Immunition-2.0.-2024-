@@ -1,3 +1,7 @@
+CollisionShape3D
+StaticBody3D
+MeshInstance3D
+Node3D
 CanvasLayer
 MenuButton
 Button
@@ -6,9 +10,5 @@ Label
 Panel
 Sprite2D
 TextureButton
-MeshInstance3D
 Sprite3D
 CharacterBody3D
-Node3D
-AnimationPlayer
-ColorRect
