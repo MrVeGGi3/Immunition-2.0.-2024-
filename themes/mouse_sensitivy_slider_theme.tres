@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bkgybgo6kob0a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjvyy"]
+bg_color = Color(0.771644, 0.147981, 0.253495, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i63p"]
+bg_color = Color(1, 0.478021, 0.641426, 1)
+
+[resource]
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_yjvyy")
+HSlider/styles/slider = SubResource("StyleBoxFlat_0i63p")

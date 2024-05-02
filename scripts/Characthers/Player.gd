@@ -30,6 +30,7 @@ extends CharacterBody3D
 #Músicas(BGM)
 @onready var death_sound = $DeathSound # música da morte do player
 @onready var main_bgm = $MainBGM # trilha sonora principal
+
 #Tutorial
 @onready var tutorial_walk = $PlayerHUD/TutorialGuide/TutorialWalk #animação de tutorial
 @onready var tutorial_guide = $PlayerHUD/TutorialGuide  #UI que mostra a animação de tutorial
@@ -39,21 +40,24 @@ extends CharacterBody3D
 
 #Constantes
 const vida_maxima = 10.0
-const MOUSE_SENS = 0.5
 const SPEED = 12.0
 const INCREASE_SPEED = 10
 var JUMP_FORCE = 8.0
 const GRAVITY = Vector3(0, -9.8, 0)
+
 #Booleanas
 var can_shoot = true
 var can_shoot_mf = false
 var can_shoot_nf = false
 var dead = false
+
+
 #Variáveis do Player
 var vida
 var l_ammo = 30 #munição linfócito
 var m_ammo = 25 #munição macrófago
 var n_ammo = 50 #munição neutrófilo
+var MOUSE_SENS = Global.mouse_sens
 
 func _ready():
 	minimap.show()
@@ -205,7 +209,6 @@ func _physics_process(delta):
 		kill()
 	
 	move_and_slide()
-	_on_check_coliision_FinishLevel() #Função que verifica o fim do level
 
 func restart():
 	get_tree().reload_current_scene()
@@ -282,19 +285,6 @@ func disable_UI():
 
 func _on_exit_game_pressed():
 	get_tree().quit()
-	
-func _on_check_coliision_FinishLevel():
-	var eye_line = Vector3.UP * 0.5
-	var query = PhysicsRayQueryParameters3D.create(global_transform.origin + eye_line, win_platform.global_transform.origin + eye_line, 1)
-	var result = get_world_3d().direct_space_state.intersect_ray(query)
-	if result.is_empty():
-		can_shoot = false
-		can_shoot_mf = false
-		disable_UI()
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		get_tree().paused = true
-		phase_finished.show()
-		
 		
 func shoot_macrofage_anim_done():
 	animated_sprite_2d.play("idle_macrofage")

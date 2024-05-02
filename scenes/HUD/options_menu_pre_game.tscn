@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://lwe6nmhjudq8"]
+[gd_scene load_steps=13 format=3 uid="uid://lwe6nmhjudq8"]
 
 [ext_resource type="Script" path="res://scripts/HUD/Options.gd" id="1_4361s"]
 [ext_resource type="Theme" uid="uid://unuynfnhkuni" path="res://themes/label.tres" id="2_08ac3"]
@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://c14cj6uhjlgdt" path="res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav" id="6_m25jj"]
 [ext_resource type="Script" path="res://scripts/HUD/WindowType.gd" id="7_01fni"]
 [ext_resource type="Script" path="res://scripts/HUD/ResolutionControl.gd" id="8_0olrr"]
+[ext_resource type="Script" path="res://scripts/Sliders/mouse_sensibility.gd" id="10_ymm1f"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="11_c75qs"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eu5c7"]
 
@@ -135,10 +137,10 @@ script = ExtResource("7_01fni")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TypeScreenControl"]
 layout_mode = 0
-offset_left = 442.0
-offset_top = 396.0
-offset_right = 576.0
-offset_bottom = 436.0
+offset_left = 444.0
+offset_top = 433.0
+offset_right = 631.0
+offset_bottom = 473.0
 
 [node name="Label" type="Label" parent="TypeScreenControl/HBoxContainer"]
 layout_mode = 2
@@ -160,10 +162,10 @@ script = ExtResource("8_0olrr")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ResolutionControl"]
 layout_mode = 0
-offset_left = 457.0
-offset_top = 450.0
-offset_right = 591.0
-offset_bottom = 490.0
+offset_left = 464.0
+offset_top = 484.0
+offset_right = 631.0
+offset_bottom = 524.0
 
 [node name="Label" type="Label" parent="ResolutionControl/HBoxContainer"]
 layout_mode = 2
@@ -176,6 +178,36 @@ layout_mode = 2
 [node name="OptionButton" type="OptionButton" parent="ResolutionControl/HBoxContainer"]
 layout_mode = 2
 
+[node name="MouseSensibilityControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 12.0
+offset_right = 43.0
+offset_bottom = 52.0
+
+[node name="MouseSensibilitySlider" type="HSlider" parent="MouseSensibilityControl"]
+process_mode = 3
+layout_mode = 0
+offset_left = 426.0
+offset_top = 378.0
+offset_right = 726.0
+offset_bottom = 394.0
+max_value = 4.0
+step = 0.1
+value = 1.0
+script = ExtResource("10_ymm1f")
+
+[node name="Label" type="Label" parent="MouseSensibilityControl"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 339.0
+offset_right = 671.0
+offset_bottom = 362.0
+theme_override_fonts/font = ExtResource("11_c75qs")
+text = "Sensibilidade do Mouse"
+
 [connection signal="pressed" from="Opções/Panel/Button" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="Opções/Panel/Button2" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Opções/Panel/Button3" to="." method="_on_playsound_pressed"]
+[connection signal="changed" from="MouseSensibilityControl/MouseSensibilitySlider" to="MouseSensibilityControl/MouseSensibilitySlider" method="_on_changed"]
