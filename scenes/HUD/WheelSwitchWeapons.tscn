@@ -1,0 +1,230 @@
+[gd_scene load_steps=29 format=3 uid="uid://nt37rum3dhef"]
+
+[ext_resource type="Script" path="res://scripts/HUD/wheel_weapons.gd" id="1_bo0mf"]
+[ext_resource type="Texture2D" uid="uid://xcd5ydfjwtnc" path="res://icons/wheelswitchweapon/1.png" id="1_sd6pk"]
+[ext_resource type="Texture2D" uid="uid://btctrf3wkpel6" path="res://icons/wheelswitchweapon/2.png" id="2_n4dho"]
+[ext_resource type="Texture2D" uid="uid://hi8ss7osq1d6" path="res://icons/wheelswitchweapon/3.png" id="3_dom8v"]
+[ext_resource type="Texture2D" uid="uid://72ylx8c83xsn" path="res://icons/wheelswitchweapon/hover/p1_h.png" id="3_uv8vc"]
+[ext_resource type="Texture2D" uid="uid://ca8stmocutcy5" path="res://icons/wheelswitchweapon/normal/p1_nh.png" id="4_jw6xd"]
+[ext_resource type="Texture2D" uid="uid://b36secffima4t" path="res://icons/wheelswitchweapon/selected/p1_w.png" id="5_sr1ih"]
+[ext_resource type="Texture2D" uid="uid://cp7xi8lr3clv3" path="res://icons/itens/orb_green.png" id="6_pxtwf"]
+[ext_resource type="Texture2D" uid="uid://ci2j0r2q4xiii" path="res://icons/wheelswitchweapon/hover/p2_h.png" id="7_gw8yf"]
+[ext_resource type="Texture2D" uid="uid://bfbq2mwd8sjwk" path="res://icons/wheelswitchweapon/normal/p2_nh.png" id="8_heab5"]
+[ext_resource type="Texture2D" uid="uid://8g56k6fwdldb" path="res://icons/wheelswitchweapon/selected/p2_w.png" id="9_hu13h"]
+[ext_resource type="Texture2D" uid="uid://myyrn8kmweh6" path="res://icons/itens/orbzBlue.png" id="11_bk4m3"]
+[ext_resource type="Texture2D" uid="uid://246vqqjo7txv" path="res://icons/wheelswitchweapon/hover/p3_h.png" id="11_jnj58"]
+[ext_resource type="Texture2D" uid="uid://4lo3aeotjykd" path="res://icons/wheelswitchweapon/normal/p3_nh.png" id="12_eh8cw"]
+[ext_resource type="Texture2D" uid="uid://dpnnpvd286n27" path="res://icons/wheelswitchweapon/selected/p3_w.png" id="13_hcb2f"]
+[ext_resource type="Texture2D" uid="uid://dhvkdm5jj3v7j" path="res://icons/itens/orbzPurple.png" id="16_h0bmo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wwdb"]
+bg_color = Color(0.318406, 0.633702, 0.306821, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lap8"]
+bg_color = Color(0.0810841, 0.339237, 0.111896, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ic0s"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l7w0a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uv8vc")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jw6xd")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_sr1ih")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6uo4n"]
+bg_color = Color(0.374885, 0.603015, 0.932179, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjape"]
+bg_color = Color(0.0878923, 0.319982, 0.547125, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0ysi"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xdphb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_gw8yf")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_heab5")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_hu13h")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0v226"]
+bg_color = Color(0.955654, 0.319372, 0.669201, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1c3l"]
+bg_color = Color(0.629246, 0.021521, 0.510348, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt220"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7svws"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_jnj58")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_eh8cw")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_hcb2f")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[node name="WheelSwitchWeapons" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -2.0
+offset_right = 3.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bo0mf")
+
+[node name="Wheel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Green" type="Button" parent="Wheel"]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 148.0
+offset_right = 467.0
+offset_bottom = 275.0
+scale = Vector2(1.88164, 1.85309)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5wwdb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3lap8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ic0s")
+icon = ExtResource("1_sd6pk")
+flat = true
+
+[node name="GreenButton" type="AnimatedSprite2D" parent="Wheel/Green"]
+position = Vector2(38.2645, 63.6774)
+sprite_frames = SubResource("SpriteFrames_l7w0a")
+animation = &"normal"
+autoplay = "normal"
+
+[node name="OrbGreen" type="Sprite2D" parent="Wheel/Green"]
+position = Vector2(36.6701, 62.5981)
+scale = Vector2(0.046502, 0.0474208)
+texture = ExtResource("6_pxtwf")
+
+[node name="Blue" type="Button" parent="Wheel"]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 148.0
+offset_right = 619.0
+offset_bottom = 273.0
+scale = Vector2(1.84215, 1.85488)
+theme_override_styles/normal = SubResource("StyleBoxFlat_6uo4n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bjape")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t0ysi")
+icon = ExtResource("2_n4dho")
+flat = true
+
+[node name="BlueButton" type="AnimatedSprite2D" parent="Wheel/Blue"]
+position = Vector2(38.5418, 61.4596)
+sprite_frames = SubResource("SpriteFrames_xdphb")
+animation = &"normal"
+autoplay = "normal"
+
+[node name="OrbzBlue" type="Sprite2D" parent="Wheel/Blue"]
+position = Vector2(39.0848, 61.4595)
+scale = Vector2(0.0493988, 0.0485207)
+texture = ExtResource("11_bk4m3")
+
+[node name="Red" type="Button" parent="Wheel"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 300.0
+offset_right = 544.0
+offset_bottom = 386.0
+scale = Vector2(1.92129, 1.86159)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0v226")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b1c3l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dt220")
+icon = ExtResource("3_dom8v")
+flat = true
+
+[node name="RedButton" type="AnimatedSprite2D" parent="Wheel/Red"]
+position = Vector2(64.5401, 42.4368)
+sprite_frames = SubResource("SpriteFrames_7svws")
+animation = &"normal"
+autoplay = "normal"
+
+[node name="OrbzPurple" type="Sprite2D" parent="Wheel/Red"]
+position = Vector2(64.2797, 47.2043)
+scale = Vector2(0.0546508, 0.0549262)
+texture = ExtResource("16_h0bmo")
+
+[connection signal="mouse_entered" from="Wheel/Green" to="." method="_on_green_mouse_entered"]
+[connection signal="mouse_exited" from="Wheel/Green" to="." method="_on_green_mouse_exited"]
+[connection signal="pressed" from="Wheel/Green" to="." method="_on_green_pressed"]
+[connection signal="mouse_entered" from="Wheel/Blue" to="." method="_on_blue_mouse_entered"]
+[connection signal="mouse_exited" from="Wheel/Blue" to="." method="_on_blue_mouse_exited"]
+[connection signal="pressed" from="Wheel/Blue" to="." method="_on_blue_pressed"]
+[connection signal="mouse_entered" from="Wheel/Red" to="." method="_on_red_mouse_entered"]
+[connection signal="mouse_exited" from="Wheel/Red" to="." method="_on_red_mouse_exited"]
+[connection signal="pressed" from="Wheel/Red" to="." method="_on_red_pressed"]

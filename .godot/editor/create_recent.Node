@@ -1,14 +1,14 @@
+AnimatedSprite2D
+Button
+Control
 Label
 HSlider
-Control
 CollisionShape3D
 Node3D
 StaticBody3D
 MeshInstance3D
 CanvasLayer
 MenuButton
-Button
 Panel
 Sprite2D
 TextureButton
-Sprite3D

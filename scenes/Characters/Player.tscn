@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=78 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="2_bowrg"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" path="res://scripts/HUD/Tutorial_UI.gd" id="20_bj62o"]
 [ext_resource type="Texture2D" uid="uid://dqomqq5hwrx7" path="res://icons/keyoboard buttons/enterButton.jpeg" id="22_65plv"]
 [ext_resource type="PackedScene" uid="uid://c5yaq5d5t8iip" path="res://scenes/HUD/minimap.tscn" id="23_m73h5"]
+[ext_resource type="PackedScene" uid="uid://nt37rum3dhef" path="res://scenes/HUD/WheelSwitchWeapons.tscn" id="24_40cle"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="24_r7y5r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nwage"]
@@ -306,7 +307,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_neutro",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_weqne"]
@@ -519,6 +520,8 @@ scale = Vector2(0.418145, 0.418145)
 sprite_frames = SubResource("SpriteFrames_qaoph")
 animation = &"shoot_neutro"
 autoplay = "idle"
+frame = 3
+frame_progress = 0.206659
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerHUD/GunShoot"]
 position = Vector2(571, 318)
@@ -706,6 +709,9 @@ text = "Recomeçar"
 position = Vector2(549, 347)
 scale = Vector2(0.145759, 0.145759)
 texture = ExtResource("4_nc87x")
+
+[node name="WheelSwitchWeapons" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("24_40cle")]
+player = NodePath("../..")
 
 [node name="ShootPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_qulf7")

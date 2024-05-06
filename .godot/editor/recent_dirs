@@ -1,8 +1,11 @@
+res://scripts/HUD
+res://icons/wheelswitchweapon/selected
+res://icons/wheelswitchweapon/hover
+res://icons/wheelswitchweapon/normal
 res://scripts/Global
 res://scripts/Characthers
 res://scripts/Sliders
 res://themes
-res://scripts/HUD
 res://scenes/HUD
 E:/Immunition/Immunition/HTML
 E:/Immunition/Immunition

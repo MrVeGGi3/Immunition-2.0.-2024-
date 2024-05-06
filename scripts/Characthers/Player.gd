@@ -34,7 +34,6 @@ extends CharacterBody3D
 #Tutorial
 @onready var tutorial_walk = $PlayerHUD/TutorialGuide/TutorialWalk #animação de tutorial
 @onready var tutorial_guide = $PlayerHUD/TutorialGuide  #UI que mostra a animação de tutorial
-@onready var win_platform : MeshInstance3D = get_tree().get_first_node_in_group("finishphase") #Instância da Plataforma para detectar colisão
 @onready var tutorial_ui = $PlayerHUD/Tutorial_UI #nó que contém a caixa de diálogo do tutorial
 @onready var speech_tutorial = $PlayerHUD/Tutorial_UI/SpeechTutorial #Lugar aonde vai atualizar os textos
 
@@ -46,9 +45,9 @@ var JUMP_FORCE = 8.0
 const GRAVITY = Vector3(0, -9.8, 0)
 
 #Booleanas
-var can_shoot = true
-var can_shoot_mf = false
-var can_shoot_nf = false
+var can_shoot = Global.c_shoot
+var can_shoot_mf = Global.c_shoot_mf
+var can_shoot_nf = Global.c_shoot_nf
 var dead = false
 
 
@@ -84,8 +83,6 @@ func _ready():
 	l_ammo = 20 #munição linfócito
 	m_ammo = 20 #munição macrófago
 	n_ammo = 50 #munição neutrófilo
-	can_shoot_mf = false
-	can_shoot_nf = false
 	
 
 	
@@ -103,42 +100,23 @@ func _input(event):
 func _process(_delta):
 	if dead:
 		return
-	progress_bar.value = vida	
+	progress_bar.value = vida
+	MOUSE_SENS = Global.mouse_sens
+	can_shoot = Global.c_shoot
+	can_shoot_mf = Global.c_shoot_mf
+	can_shoot_nf = Global.c_shoot_nf
+	
 	if Input.is_action_just_pressed("restart"):
 		restart()
 		
 	if Input.is_action_just_pressed("change_macrofage"):
-		neutrofile_sound.stop()
-		animated_sprite_2d.play("idle_macrofage")
-		animated_sprite_2d.animation_finished.disconnect(shoot_neutrofile_anim_done)
-		animated_sprite_2d.animation_finished.disconnect(shoot_anim_done)
-		animated_sprite_2d.animation_finished.connect(shoot_macrofage_anim_done)
-		if l_ammo > 0:
-			can_shoot_mf = true
-			can_shoot = false
-			can_shoot_nf = false
+		change_macrofage()
 
-	if Input.is_action_just_pressed("change_linfocit"):
-		neutrofile_sound.stop()
-		animated_sprite_2d.play("idle")
-		animated_sprite_2d.animation_finished.disconnect(shoot_neutrofile_anim_done)
-		animated_sprite_2d.animation_finished.disconnect(shoot_macrofage_anim_done)
-		animated_sprite_2d.animation_finished.connect(shoot_anim_done)
-		if m_ammo > 0:
-			can_shoot = true
-			can_shoot_mf = false
-			can_shoot_nf = false
+	elif Input.is_action_just_pressed("change_linfocit"):
+		change_linfocit()
 	
-	if Input.is_action_just_pressed("change_neutrofile"):
-		neutrofile_sound.stop()
-		animated_sprite_2d.play("idle_neutro")
-		animated_sprite_2d.animation_finished.disconnect(shoot_anim_done)
-		animated_sprite_2d.animation_finished.disconnect(shoot_macrofage_anim_done)
-		animated_sprite_2d.animation_finished.connect(shoot_neutrofile_anim_done)
-		if n_ammo > 0:
-			can_shoot = false
-			can_shoot_mf = false
-			can_shoot_nf = true
+	elif Input.is_action_just_pressed("change_neutrofile"):
+		change_neutrofile()
 	
 	if Input.is_action_just_pressed("shoot"):
 		if can_shoot:
@@ -149,6 +127,8 @@ func _process(_delta):
 				l_ammo -=1
 			if l_ammo == 0:
 				can_shoot = false
+				set_global_transition_bool_cs(can_shoot)
+				
 		elif can_shoot_mf:
 			shoot_by_macrofage()
 			if m_ammo < 0:
@@ -157,16 +137,19 @@ func _process(_delta):
 				m_ammo -=1
 			if m_ammo == 0:
 				can_shoot_mf = false
-		if can_shoot_nf:
+				set_global_transition_bool_csm(can_shoot_mf)
+				
+		elif can_shoot_nf:
 			shoot_by_neutrofile()
 			if n_ammo < 0:
 				n_ammo = 0
 			if not m_ammo < 0:
 				n_ammo -=1
-			if n_ammo < 0:
-				n_ammo = 0
+				animated_sprite_2d.play("shoot_neutro")
+				neutrofile_sound.play()
 			if n_ammo <= 0:
 				can_shoot_nf = false
+				set_global_transition_bool_csn(can_shoot_nf)
 				
 			
 				
@@ -190,7 +173,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_FORCE
 			if Input.is_action_pressed("run"):
-				velocity += direction * INCREASE_SPEED
+				velocity += direction * (SPEED + INCREASE_SPEED)
 			else:
 				velocity += direction * SPEED
 
@@ -198,14 +181,14 @@ func _physics_process(delta):
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		if Input.is_action_just_pressed("run"):
-			velocity.x += direction.x * INCREASE_SPEED
-			velocity.z += direction.z * INCREASE_SPEED
+			velocity.x += direction.x * (SPEED + INCREASE_SPEED)
+			velocity.z += direction.z * (SPEED + INCREASE_SPEED)
 			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
-	if position.y < -30: #Se o jogador estiver muito fundo caindo, ele morre
+	if position.y < -40: #Se o jogador estiver muito fundo caindo, ele morre
 		kill()
 	
 	move_and_slide()
@@ -217,6 +200,7 @@ func shoot():
 	if !can_shoot:
 		return
 	can_shoot = false
+	set_global_transition_bool_cs(can_shoot)
 	animated_sprite_2d.play("shoot")
 	shoot_sound.play()
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill_green"):
@@ -230,6 +214,7 @@ func shoot_by_macrofage():
 	if !can_shoot_mf:
 		return
 	can_shoot_mf = false
+	set_global_transition_bool_csm(can_shoot_mf)
 	animated_sprite_2d.play("shoot_macrofage")
 	macrofage_shoot.play()
 	if macrofage_ray_3d.is_colliding() and macrofage_ray_3d.get_collider().has_method("kill_blue"):
@@ -240,18 +225,16 @@ func shoot_by_macrofage():
 		macrofage_ray_3d.get_collider().heal_red()
 		
 func shoot_by_neutrofile():
-	can_shoot_nf = true
+	if !can_shoot_nf:
+		return
 	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("kill_red"):
 		flame_thrower_shoot.get_collider().kill_red()
 	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("heal_green"):
 		flame_thrower_shoot.get_collider().heal_green()
 	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("heal_blue"):
 		flame_thrower_shoot.get_collider().heal_blue()
-		
-	
-		
-	animated_sprite_2d.play("shoot_neutro")
-	neutrofile_sound.play()
+	print(can_shoot_nf)
+	print("Shoot by Neutrofile")
 
 func return_normalUI():
 	damage_taken.play("idle")
@@ -268,6 +251,8 @@ func kill():
 		dead = true
 		can_shoot = false
 		can_shoot_mf = false
+		can_shoot_nf = false
+		set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
 		$CollisionShape3D.disabled = true
 		$MainBGM.stop()
 		gun_shoot.hide()
@@ -289,17 +274,84 @@ func _on_exit_game_pressed():
 func shoot_macrofage_anim_done():
 	animated_sprite_2d.play("idle_macrofage")
 	can_shoot_mf = true
-
+	can_shoot = false
+	can_shoot_nf = false
+	set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
+	
 func shoot_anim_done():
 	animated_sprite_2d.play("idle")
 	can_shoot = true
+	can_shoot_mf = false
+	can_shoot_nf = false
+	set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
 	
 func shoot_neutrofile_anim_done():
 	animated_sprite_2d.play("idle_neutro")
 	can_shoot_nf = true
-		
-
+	can_shoot_mf = false
+	can_shoot = false
+	set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
+	print(can_shoot_nf)
+	print("anim_done")
 func _on_jump_tutorial_pressed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
 	tutorial_ui.hide()
+	
+func set_global_animation_bool(variavel, variavel2, variavel3):
+	Global.c_shoot = variavel
+	Global.c_shoot_mf = variavel2
+	Global.c_shoot_nf = variavel3
+		
+func set_global_transition_bool_cs(variavel):
+		Global.c_shoot = variavel
+func set_global_transition_bool_csm(variavel):
+		Global.c_shoot_mf = variavel
+func set_global_transition_bool_csn(variavel):
+		Global.c_shoot_nf = variavel
+		
+func change_linfocit():
+	animated_sprite_2d.play("idle")
+	animated_sprite_2d.animation_finished.disconnect(shoot_macrofage_anim_done)
+	animated_sprite_2d.animation_finished.disconnect(shoot_neutrofile_anim_done)
+	animated_sprite_2d.animation_finished.connect(shoot_anim_done)
+	if m_ammo > 0:
+		can_shoot = true
+		can_shoot_mf = false
+		can_shoot_nf = false
+		set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
+	else:
+		can_shoot = false
+		set_global_transition_bool_cs(can_shoot)
+	
+func change_macrofage():
+	neutrofile_sound.stop()
+	animated_sprite_2d.play("idle_macrofage")
+	animated_sprite_2d.animation_finished.disconnect(shoot_anim_done)
+	animated_sprite_2d.animation_finished.disconnect(shoot_neutrofile_anim_done)
+	animated_sprite_2d.animation_finished.connect(shoot_macrofage_anim_done)
+	if l_ammo > 0:
+		can_shoot_mf = true
+		can_shoot = false
+		can_shoot_nf = false
+		set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
+	else:
+		can_shoot_mf = false
+		set_global_transition_bool_csm(can_shoot_mf)
+		
+func change_neutrofile():
+	neutrofile_sound.stop()
+	animated_sprite_2d.play("idle_neutro")
+	animated_sprite_2d.animation_finished.disconnect(shoot_anim_done)
+	animated_sprite_2d.animation_finished.disconnect(shoot_macrofage_anim_done)
+	animated_sprite_2d.animation_finished.connect(shoot_neutrofile_anim_done)
+	if n_ammo > 0:
+		can_shoot = false
+		can_shoot_mf = false
+		can_shoot_nf = true
+		set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
+	else:
+		can_shoot_nf = false
+		set_global_transition_bool_csn(can_shoot_nf)
+	print(can_shoot_nf)
+	print("change_neutrofile")
