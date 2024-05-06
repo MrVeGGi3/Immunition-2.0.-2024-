@@ -1,3 +1,6 @@
+res://images/baseMemorySytem/Selected
+res://images/baseMemorySytem
+res://sprites/UI
 res://scripts/HUD
 res://icons/wheelswitchweapon/selected
 res://icons/wheelswitchweapon/hover
@@ -16,7 +19,4 @@ res://images
 res://icons
 res://images/loading screen
 res://
-res://sprites/UI
 res://scripts
-res://sprites
-res://scenes

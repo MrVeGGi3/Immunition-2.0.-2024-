@@ -1,4 +1,7 @@
+TextureRect
+TextEdit
 AnimatedSprite2D
+Sprite2D
 Button
 Control
 Label
@@ -9,6 +12,3 @@ StaticBody3D
 MeshInstance3D
 CanvasLayer
 MenuButton
-Panel
-Sprite2D
-TextureButton

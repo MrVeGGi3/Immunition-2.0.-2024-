@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=79 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="2_bowrg"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://c5yaq5d5t8iip" path="res://scenes/HUD/minimap.tscn" id="23_m73h5"]
 [ext_resource type="PackedScene" uid="uid://nt37rum3dhef" path="res://scenes/HUD/WheelSwitchWeapons.tscn" id="24_40cle"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="24_r7y5r"]
+[ext_resource type="PackedScene" uid="uid://bli5ijcxx5bse" path="res://scenes/HUD/MemorySystem.tscn" id="25_vndgg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nwage"]
 
@@ -411,7 +412,7 @@ shape = SubResource("CapsuleShape3D_nwage")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-target_position = Vector3(0, 0, -20)
+target_position = Vector3(0, 0, -30)
 collision_mask = 3
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -621,49 +622,6 @@ horizontal_alignment = 1
 [node name="Minimap" parent="PlayerHUD" instance=ExtResource("23_m73h5")]
 target = NodePath("../..")
 
-[node name="Tutorial_UI" type="Control" parent="PlayerHUD"]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("20_bj62o")
-
-[node name="DialogueBox" type="Sprite2D" parent="PlayerHUD/Tutorial_UI"]
-position = Vector2(539, 314)
-scale = Vector2(0.218513, 0.218513)
-texture = ExtResource("20_a5b7x")
-
-[node name="JumpTutorial" type="Button" parent="PlayerHUD/Tutorial_UI"]
-layout_mode = 0
-offset_left = 497.0
-offset_top = 386.0
-offset_right = 611.0
-offset_bottom = 417.0
-theme_override_colors/font_color = Color(0.94902, 1, 0.945098, 1)
-theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
-theme_override_fonts/font = ExtResource("6_41nxb")
-text = "Pular Tutorial"
-
-[node name="EnterButton" type="Sprite2D" parent="PlayerHUD/Tutorial_UI"]
-position = Vector2(788, 386)
-scale = Vector2(0.200487, 0.200487)
-texture = ExtResource("22_65plv")
-
-[node name="SpeechTutorial" type="RichTextLabel" parent="PlayerHUD/Tutorial_UI"]
-layout_mode = 0
-offset_left = 231.0
-offset_top = 259.0
-offset_right = 271.0
-offset_bottom = 299.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("6_41nxb")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
 [node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
 visible = false
 
@@ -713,6 +671,52 @@ texture = ExtResource("4_nc87x")
 [node name="WheelSwitchWeapons" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("24_40cle")]
 player = NodePath("../..")
 
+[node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
+player = NodePath("../..")
+
+[node name="Tutorial_UI" type="Control" parent="PlayerHUD"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("20_bj62o")
+
+[node name="DialogueBox" type="Sprite2D" parent="PlayerHUD/Tutorial_UI"]
+position = Vector2(539, 314)
+scale = Vector2(0.218513, 0.218513)
+texture = ExtResource("20_a5b7x")
+
+[node name="JumpTutorial" type="Button" parent="PlayerHUD/Tutorial_UI"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 386.0
+offset_right = 611.0
+offset_bottom = 417.0
+theme_override_colors/font_color = Color(0.94902, 1, 0.945098, 1)
+theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
+theme_override_fonts/font = ExtResource("6_41nxb")
+text = "Pular Tutorial"
+
+[node name="EnterButton" type="Sprite2D" parent="PlayerHUD/Tutorial_UI"]
+position = Vector2(788, 386)
+scale = Vector2(0.200487, 0.200487)
+texture = ExtResource("22_65plv")
+
+[node name="SpeechTutorial" type="RichTextLabel" parent="PlayerHUD/Tutorial_UI"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 259.0
+offset_right = 271.0
+offset_bottom = 299.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_41nxb")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
 [node name="ShootPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_qulf7")
 bus = &"SFX"
@@ -739,7 +743,7 @@ bus = &"SFX"
 
 [node name="FlameThrowerShoot" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-target_position = Vector3(0, 0, -20)
+target_position = Vector3(0, 0, -30)
 collision_mask = 3
 
 [node name="NeutrofileSound" type="AudioStreamPlayer3D" parent="."]
@@ -748,5 +752,5 @@ volume_db = 70.0
 bus = &"SFX"
 
 [connection signal="pressed" from="PlayerHUD/PhaseFinished/Panel/ExitGame" to="." method="_on_exit_game_pressed"]
-[connection signal="pressed" from="PlayerHUD/Tutorial_UI/JumpTutorial" to="." method="_on_jump_tutorial_pressed"]
 [connection signal="pressed" from="PlayerHUD/DeathScreen/Panel/RestartButton" to="." method="restart"]
+[connection signal="pressed" from="PlayerHUD/Tutorial_UI/JumpTutorial" to="." method="_on_jump_tutorial_pressed"]

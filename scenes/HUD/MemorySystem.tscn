@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=3 uid="uid://bli5ijcxx5bse"]
+
+[ext_resource type="Script" path="res://sprites/UI/memory_system.gd" id="1_cgkq3"]
+[ext_resource type="Texture2D" uid="uid://dnyy3dpv5wttx" path="res://images/baseMemorySytem/MemoryBar.png" id="2_0tlbn"]
+[ext_resource type="Texture2D" uid="uid://w2wgt0bahe5j" path="res://images/baseMemorySytem/Memory1.png" id="3_gh8ea"]
+[ext_resource type="Texture2D" uid="uid://p0qgcoomdx1h" path="res://images/baseMemorySytem/Selected/Memory1_Selected.png" id="4_2hgra"]
+[ext_resource type="Texture2D" uid="uid://2r5e7j4yc1w0" path="res://images/baseMemorySytem/Memory2.png" id="4_if5op"]
+[ext_resource type="Texture2D" uid="uid://mipp4e0fpcuk" path="res://images/baseMemorySytem/Memory3.png" id="5_jn682"]
+[ext_resource type="Texture2D" uid="uid://op3w0pa4qalg" path="res://images/baseMemorySytem/Selected/Memory2_Selected.png" id="6_tbopm"]
+[ext_resource type="Texture2D" uid="uid://grkvnmyt7ntc" path="res://images/baseMemorySytem/Selected/Memory3_Selected.png" id="8_7mygo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbdq5"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwkqk"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wlel"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[node name="MemorySystem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cgkq3")
+
+[node name="Memorias" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 35.0
+offset_top = -48.0
+offset_right = 75.0
+offset_bottom = -8.0
+
+[node name="MemoryBar" type="Sprite2D" parent="Memorias"]
+position = Vector2(48, 268)
+scale = Vector2(0.467604, 0.59995)
+texture = ExtResource("2_0tlbn")
+
+[node name="Memoria 1" type="Button" parent="Memorias"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 127.0
+offset_right = 211.0
+offset_bottom = 233.0
+scale = Vector2(0.482651, 0.533583)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nbdq5")
+icon = ExtResource("3_gh8ea")
+
+[node name="M1_Selected" type="TextureRect" parent="Memorias/Memoria 1"]
+layout_mode = 0
+offset_left = 4.14378
+offset_top = 3.74825
+offset_right = 214.144
+offset_bottom = 101.748
+texture = ExtResource("4_2hgra")
+
+[node name="Memoria 2" type="Button" parent="Memorias"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 238.0
+offset_right = 213.0
+offset_bottom = 342.0
+scale = Vector2(0.478676, 0.538684)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cwkqk")
+icon = ExtResource("4_if5op")
+
+[node name="M2_Selected" type="TextureRect" parent="Memorias/Memoria 2"]
+visible = false
+layout_mode = 0
+offset_left = 4.17819
+offset_top = 3.71275
+offset_right = 216.178
+offset_bottom = 99.7128
+texture = ExtResource("6_tbopm")
+
+[node name="Memoria 3" type="Button" parent="Memorias"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 355.0
+offset_right = 280.0
+offset_bottom = 491.0
+scale = Vector2(0.366304, 0.395396)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1wlel")
+icon = ExtResource("5_jn682")
+
+[node name="M3_Selected" type="TextureRect" parent="Memorias/Memoria 3"]
+visible = false
+layout_mode = 0
+offset_left = 8.18992
+offset_top = 2.52911
+offset_right = 285.19
+offset_bottom = 130.529
+texture = ExtResource("8_7mygo")
+
+[connection signal="pressed" from="Memorias/Memoria 1" to="." method="_on_memoria_1_pressed"]
+[connection signal="pressed" from="Memorias/Memoria 2" to="." method="_on_memoria_2_pressed"]
+[connection signal="pressed" from="Memorias/Memoria 3" to="." method="_on_memoria_3_pressed"]
