@@ -43,6 +43,7 @@ const SPEED = 12.0
 const INCREASE_SPEED = 10
 var JUMP_FORCE = 8.0
 const GRAVITY = Vector3(0, -9.8, 0)
+const CONTROL_BULLET_EMISSION = 1
 
 #Booleanas
 var can_shoot = Global.c_shoot
@@ -97,7 +98,7 @@ func _input(event):
 	if rotation_degrees.x < -90:
 		rotation_degrees.x = -90
 
-func _process(_delta):
+func _process(delta):
 	if dead:
 		return
 	progress_bar.value = vida
@@ -123,7 +124,7 @@ func _process(_delta):
 			shoot()
 			if l_ammo < 0:
 				l_ammo = 0
-			if not m_ammo < 0:
+			if not l_ammo < 0:
 				l_ammo -=1
 			if l_ammo == 0:
 				can_shoot = false
@@ -139,17 +140,13 @@ func _process(_delta):
 				can_shoot_mf = false
 				set_global_transition_bool_csm(can_shoot_mf)
 				
-		elif can_shoot_nf:
-			shoot_by_neutrofile()
-			if n_ammo < 0:
-				n_ammo = 0
-			if not m_ammo < 0:
-				n_ammo -=1
-				animated_sprite_2d.play("shoot_neutro")
-				neutrofile_sound.play()
-			if n_ammo <= 0:
-				can_shoot_nf = false
-				set_global_transition_bool_csn(can_shoot_nf)
+	if input_is_pressed("shoot") and can_shoot_nf:
+		shoot_by_neutrofile()
+		if n_ammo < 0:
+			n_ammo = 0
+		if n_ammo > 0:
+			n_ammo -= 1 * delta * CONTROL_BULLET_EMISSION
+			
 				
 			
 				
@@ -227,6 +224,8 @@ func shoot_by_macrofage():
 func shoot_by_neutrofile():
 	if !can_shoot_nf:
 		return
+	animated_sprite_2d.play("shoot_neutro")
+	neutrofile_sound.play()
 	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("kill_red"):
 		flame_thrower_shoot.get_collider().kill_red()
 	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("heal_green"):
