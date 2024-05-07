@@ -44,22 +44,32 @@ func attempt_to_kill_player():
 
 func kill_green():
 	enemy_health -= 5
-	if enemy_health <= 0:
-		dead = true
-		$DeathSound.play()
-		animated_sprite_3d.play("death")
-		progress_bar.visible = false
-		$CollisionShape3D.disabled = true
-		collision_layer = 0
+	move_speed -= 2
+	if move_speed < 2:
+		move_speed = 2
+	killed()
+
+func heal_green():
+	enemy_health -= 2
+	move_speed -= 1
+	if move_speed < 3:
+		move_speed = 3
+	killed()	
 
 func _on_timer_timeout():
 	can_colide = true
-
-func heal_green():
-	enemy_health += 3
 
 func _process(_delta):
 	progress_bar.value = enemy_health
 	label.set_text(str(enemy_health))
 	if enemy_health > 15:
 		progress_bar.max_value = enemy_health
+
+func killed():
+	if enemy_health <= 0:
+		dead = true
+		$DeathSound.play()
+		progress_bar.visible = false
+		animated_sprite_3d.play("death")
+		$CollisionShape3D.disabled = true
+		collision_layer = 0

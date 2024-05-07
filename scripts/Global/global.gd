@@ -7,6 +7,7 @@ var c_shoot_nf = false
 var m1_active = true
 var m2_active = false
 var m3_active = false
+const CONTROL_BULLET_EMISSION = 2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

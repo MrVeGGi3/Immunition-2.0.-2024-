@@ -43,7 +43,7 @@ const SPEED = 12.0
 const INCREASE_SPEED = 10
 var JUMP_FORCE = 8.0
 const GRAVITY = Vector3(0, -9.8, 0)
-const CONTROL_BULLET_EMISSION = 1
+const CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 
 #Booleanas
 var can_shoot = Global.c_shoot
@@ -140,12 +140,12 @@ func _process(delta):
 				can_shoot_mf = false
 				set_global_transition_bool_csm(can_shoot_mf)
 				
-	if input_is_pressed("shoot") and can_shoot_nf:
+	if Input.is_action_pressed("shoot") and can_shoot_nf:
 		shoot_by_neutrofile()
 		if n_ammo < 0:
 			n_ammo = 0
 		if n_ammo > 0:
-			n_ammo -= 1 * delta * CONTROL_BULLET_EMISSION
+			n_ammo -= 3 * delta * CONTROL_BULLET_EMISSION
 			
 				
 			
@@ -155,7 +155,7 @@ func _process(delta):
 	#labels para informação de munição
 	ammo_linf.text = str(l_ammo)
 	ammo_macr.text = str(m_ammo)
-	ammo_neu.text = str(n_ammo)
+	ammo_neu.text = str(int(n_ammo))
 		
 func _physics_process(delta):
 	

@@ -44,19 +44,12 @@ func attempt_to_kill_player():
 
 func kill_blue():
 	enemy_health -= 5
-	move_speed -= 2
-	if move_speed < 2:
-		move_speed = 2
-	killed()
+
 		
 func heal_blue():
 	enemy_health -= 2
-	move_speed -= 1
-	if move_speed < 3:
-		move_speed = 3
-	killed()	
 	
-
+	
 func killed():
 	if enemy_health <= 0:
 		dead = true

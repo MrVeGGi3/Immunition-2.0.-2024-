@@ -412,7 +412,7 @@ shape = SubResource("CapsuleShape3D_nwage")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-target_position = Vector3(0, 0, -30)
+target_position = Vector3(0, 0, -50)
 collision_mask = 3
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -622,9 +622,6 @@ horizontal_alignment = 1
 [node name="Minimap" parent="PlayerHUD" instance=ExtResource("23_m73h5")]
 target = NodePath("../..")
 
-[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
-visible = false
-
 [node name="DeathScreen" type="Control" parent="PlayerHUD"]
 process_mode = 3
 layout_mode = 3
@@ -716,6 +713,9 @@ bbcode_enabled = true
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+
+[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
+visible = false
 
 [node name="ShootPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_qulf7")

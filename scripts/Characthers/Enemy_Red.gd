@@ -17,6 +17,7 @@ var can_colide = true
 @onready var animated_sprite_3d = $AnimatedSprite3D
 @onready var sub_viewport = $SubViewport
 
+@onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 func _physics_process(_delta):
 	if dead:
 		return
@@ -44,7 +45,7 @@ func attempt_to_kill_player():
 		timer.start()
 
 func kill_red():
-	enemy_health -= 5
+	enemy_health -= 2  * CONTROL_BULLET_EMISSION
 	if enemy_health <= 0:
 		dead = true
 		progress_bar.visible = false
@@ -61,7 +62,7 @@ func heal_green():
 
 func _process(_delta):
 	progress_bar.value = enemy_health
-	label.set_text(str(enemy_health))
+	label.set_text(str(int(enemy_health)))
 	if enemy_health > 15:
 		progress_bar.max_value = enemy_health
 		
