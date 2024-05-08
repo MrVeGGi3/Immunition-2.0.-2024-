@@ -16,6 +16,8 @@ extends CharacterBody3D
 #Animação e Camera
 @onready var animated_sprite_2d = $PlayerHUD/GunShoot/AnimatedSprite2D # animated sprite das armas
 @onready var camera_3d = $Camera3D #camera de visão do player
+@onready var particles = $FlameThrowerShoot/GPUParticles3D #efeito de particulas
+
 #UI
 @onready var deathscreen = $PlayerHUD/DeathScreen #tela de quando o player morre
 @onready var progress_bar = $PlayerHUD/PlayerLifeBar/ProgressBar # barra de progresso de vida do player
@@ -25,9 +27,11 @@ extends CharacterBody3D
 @onready var damage_taken = $PlayerHUD/PlayerLifeBar/DamageTaken #Animação que mostra quando o jogador perde vida
 @onready var gun_shoot = $PlayerHUD/GunShoot
 @onready var minimap = $PlayerHUD/Minimap
+@onready var wheel_switch_weapons = $PlayerHUD/WheelSwitchWeapons
+@onready var ui_ammo = $PlayerHUD/UI_AMMO
 
 
-#Músicas(BGM)
+#Músicas(BGM
 @onready var death_sound = $DeathSound # música da morte do player
 @onready var main_bgm = $MainBGM # trilha sonora principal
 
@@ -146,7 +150,8 @@ func _process(delta):
 			n_ammo = 0
 		if n_ammo > 0:
 			n_ammo -= 3 * delta * CONTROL_BULLET_EMISSION
-			
+	else:
+		particles.emitting = false
 				
 			
 				
@@ -216,14 +221,18 @@ func shoot_by_macrofage():
 	macrofage_shoot.play()
 	if macrofage_ray_3d.is_colliding() and macrofage_ray_3d.get_collider().has_method("kill_blue"):
 		macrofage_ray_3d.get_collider().kill_blue()
+		queue_free()
 	if macrofage_ray_3d.is_colliding() and macrofage_ray_3d.get_collider().has_method("heal_green"):
 		macrofage_ray_3d.get_collider().heal_green()
+		queue_free()
 	if macrofage_ray_3d.is_colliding() and macrofage_ray_3d.get_collider().has_method("heal_red"):
 		macrofage_ray_3d.get_collider().heal_red()
+		queue_free()
 		
 func shoot_by_neutrofile():
 	if !can_shoot_nf:
 		return
+	particles.emitting = true
 	animated_sprite_2d.play("shoot_neutro")
 	neutrofile_sound.play()
 	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("kill_red"):
@@ -232,8 +241,6 @@ func shoot_by_neutrofile():
 		flame_thrower_shoot.get_collider().heal_green()
 	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("heal_blue"):
 		flame_thrower_shoot.get_collider().heal_blue()
-	print(can_shoot_nf)
-	print("Shoot by Neutrofile")
 
 func return_normalUI():
 	damage_taken.play("idle")
@@ -265,12 +272,14 @@ func disable_UI():
 	tutorial_guide.hide()
 	main_bgm.stop()
 	minimap.hide()
-		
+	wheel_switch_weapons.hide()
+	ui_ammo.hide()	
 
 func _on_exit_game_pressed():
 	get_tree().quit()
 		
 func shoot_macrofage_anim_done():
+	particles.emitting = false
 	animated_sprite_2d.play("idle_macrofage")
 	can_shoot_mf = true
 	can_shoot = false
@@ -285,13 +294,12 @@ func shoot_anim_done():
 	set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
 	
 func shoot_neutrofile_anim_done():
-	animated_sprite_2d.play("idle_neutro")
 	can_shoot_nf = true
 	can_shoot_mf = false
 	can_shoot = false
 	set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
-	print(can_shoot_nf)
-	print("anim_done")
+
+	
 func _on_jump_tutorial_pressed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
@@ -340,7 +348,7 @@ func change_macrofage():
 		
 func change_neutrofile():
 	neutrofile_sound.stop()
-	animated_sprite_2d.play("idle_neutro")
+	animated_sprite_2d.play("shoot_neutro")
 	animated_sprite_2d.animation_finished.disconnect(shoot_anim_done)
 	animated_sprite_2d.animation_finished.disconnect(shoot_macrofage_anim_done)
 	animated_sprite_2d.animation_finished.connect(shoot_neutrofile_anim_done)

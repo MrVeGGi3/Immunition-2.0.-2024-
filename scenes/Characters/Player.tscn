@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=82 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="2_bowrg"]
@@ -401,6 +401,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ayvqm"]
+inherit_velocity_ratio = 5.0
+velocity_pivot = Vector3(0, 0, 1)
+direction = Vector3(0, 0, 4)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, -2, 0)
+linear_accel_min = -1.35
+linear_accel_max = 7.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuhuk"]
+albedo_color = Color(1, 0.341176, 1, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(0.247059, 0, 0.890196, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_s0y5o"]
+material = SubResource("StandardMaterial3D_xuhuk")
+radius = 0.2
+height = 0.4
+
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 3
@@ -665,9 +687,6 @@ position = Vector2(549, 347)
 scale = Vector2(0.145759, 0.145759)
 texture = ExtResource("4_nc87x")
 
-[node name="WheelSwitchWeapons" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("24_40cle")]
-player = NodePath("../..")
-
 [node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
 player = NodePath("../..")
 
@@ -717,6 +736,11 @@ autowrap_mode = 0
 [node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
 visible = false
 
+[node name="WheelSwitchWeapons" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("24_40cle")]
+offset_right = -264.0
+offset_bottom = -192.0
+player = NodePath("../..")
+
 [node name="ShootPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_qulf7")
 bus = &"SFX"
@@ -746,9 +770,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -30)
 collision_mask = 3
 
+[node name="GPUParticles3D" type="GPUParticles3D" parent="FlameThrowerShoot"]
+transform = Transform3D(-0.999934, 0, 0.0115189, 0, 1, 0, -0.0115189, 0, -0.999934, 0.234038, -0.287282, -2.10114)
+emitting = false
+amount = 5
+lifetime = 1.14
+explosiveness = 0.3
+randomness = 0.07
+process_material = SubResource("ParticleProcessMaterial_ayvqm")
+draw_pass_1 = SubResource("SphereMesh_s0y5o")
+
 [node name="NeutrofileSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("24_r7y5r")
-volume_db = 70.0
+volume_db = 80.0
 bus = &"SFX"
 
 [connection signal="pressed" from="PlayerHUD/PhaseFinished/Panel/ExitGame" to="." method="_on_exit_game_pressed"]

@@ -2,6 +2,7 @@ extends Control
 @onready var main_bgm = $MainBGM
 @onready var shoot = $Shoot
 var menu = "res://scenes/HUD/menu.tscn"
+@onready var wheel_switch_weapons = $"../WheelSwitchWeapons"
 
 func _ready():
 	visible = false
@@ -9,6 +10,7 @@ func _ready():
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().paused = true
+		wheel_switch_weapons.hide()
 		main_bgm.play()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		visible = true
