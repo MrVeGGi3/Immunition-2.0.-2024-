@@ -220,14 +220,14 @@ func shoot():
         if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("heal_blue") and m3:
 		ray_cast_3d.get_collider().heal_blue()
         if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("heal_blue") and m1:
-		ray_cast_3d.get_collider().heal_blue()
+		ray_cast_3d.get_collider().heal_blue_lf()
 
         if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill_red") and m3:
 		ray_cast_3d.get_collider().kill_red()
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("heal_red") and m2:
-		ray_cast_3d.get_collider().heal_red()
+		ray_cast_3d.get_collider().heal_red_mf()
         if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("heal_red") and m1:
-		ray_cast_3d.get_collider().heal_red()
+		ray_cast_3d.get_collider().heal_red_lf()
 		
 func shoot_by_macrofage():
 	if !can_shoot_mf:
