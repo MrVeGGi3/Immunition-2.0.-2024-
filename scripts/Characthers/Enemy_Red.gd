@@ -44,15 +44,33 @@ func attempt_to_kill_player():
 		can_colide = false
 		timer.start()
 
+
 func kill_red():
 	enemy_health -= 2  * CONTROL_BULLET_EMISSION
 	if enemy_health <= 0:
-		dead = true
-		progress_bar.visible = false
-		$DeathSound.play()
-		animated_sprite_3d.play("death")
-		$CollisionShape3D.disabled = true
-		collision_layer = 0
+		killed()
+
+func heal_red_lf():
+         enemy_health -= 2
+         move_speed -= 2
+         if move_speed < 2:
+                 move_speed = 2
+         if enemy_health < 0:
+                 enemy_health = 0
+         if enemy_health == 0:
+                  killed()
+
+func heal_red_mf():
+        enemy_health -= 3
+        if enemy_health <= 0:
+                  killed()
+func killed():
+         dead = true
+	 progress_bar.visible = false
+	 $DeathSound.play()
+	 animated_sprite_3d.play("death")
+	 $CollisionShape3D.disabled = true
+	 collision_layer = 0
 
 func _on_timer_timeout():
 	can_colide = true
