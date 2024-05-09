@@ -44,11 +44,18 @@ func attempt_to_kill_player():
 
 func kill_blue():
 	enemy_health -= 5
+        if enemy_health < 0:
+                enemy_health = 0
+        if enemy_health == 0:
+                 killed()
 
 		
 func heal_blue():
 	enemy_health -= 2
-	
+	if enemy_health < 0:
+                enemy_health = 0
+        if enemy_health == 0:
+                 killed()
 	
 func killed():
 	if enemy_health <= 0:
