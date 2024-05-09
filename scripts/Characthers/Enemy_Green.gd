@@ -47,14 +47,19 @@ func kill_green():
 	move_speed -= 2
 	if move_speed < 2:
 		move_speed = 2
-	killed()
+        if enemy_health < 0:
+                enemy_health = 0
+        if enemy_health == 0:
+	         killed()
 
 func heal_green():
-	enemy_health -= 2
-	move_speed -= 1
-	if move_speed < 3:
-		move_speed = 3
-	killed()	
+	enemy_health -= 1
+        if enemy_health < 0:
+                enemy_health = 0
+        if enemy_health == 0:
+	         killed()
+	killed()
+
 
 func _on_timer_timeout():
 	can_colide = true
