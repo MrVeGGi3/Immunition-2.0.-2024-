@@ -50,8 +50,18 @@ func kill_blue():
                  killed()
 
 		
-func heal_blue():
+func heal_blue_mf():
 	enemy_health -= 2
+	if enemy_health < 0:
+                enemy_health = 0
+        if enemy_health == 0:
+                 killed()
+
+func heal_blue_lf():
+	enemy_health -= 2
+        move_speed -= 3
+        if move_speed < 2:
+                move_speed = 2
 	if enemy_health < 0:
                 enemy_health = 0
         if enemy_health == 0:
