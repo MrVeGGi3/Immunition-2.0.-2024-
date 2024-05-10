@@ -15,6 +15,7 @@ var dead = false
 @onready var progress_bar = $SubViewport/ProgressBar
 @onready var label = $SubViewport/ProgressBar/Label
 @onready var sub_viewport = $SubViewport
+@onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 
 func _physics_process(_delta):
 	if dead:
@@ -42,30 +43,51 @@ func attempt_to_kill_player():
 		can_colide = false
 		timer.start()
 
-func kill_blue():
-	enemy_health -= 5
-        if enemy_health < 0:
-                enemy_health = 0
-        if enemy_health == 0:
-                 killed()
-
-		
-func heal_blue_mf():
-	enemy_health -= 2
+func kill_blue_mf():
+	enemy_health -= 7
 	if enemy_health < 0:
-                enemy_health = 0
-        if enemy_health == 0:
-                 killed()
+		enemy_health = 0
+	if enemy_health == 0:
+		killed()
+		
+func kill_blue_lf():
+	enemy_health -= 5
+	move_speed -= 2
+	if move_speed < 2:
+		move_speed = 2
+	if enemy_health < 0:
+		enemy_health = 0
+	if enemy_health == 0:
+		killed()
+
+func kill_blue_nf():
+	enemy_health -= 2 * CONTROL_BULLET_EMISSION
+	if enemy_health <= 0:
+		killed()
+
 
 func heal_blue_lf():
 	enemy_health -= 2
-        move_speed -= 3
-        if move_speed < 2:
-                move_speed = 2
+	move_speed -= 1
+	if move_speed < 2:
+		move_speed = 2
 	if enemy_health < 0:
-                enemy_health = 0
-        if enemy_health == 0:
-                 killed()
+		enemy_health = 0
+	if enemy_health == 0:
+		killed()
+
+func heal_blue_mf():
+	enemy_health -= 3
+	if enemy_health < 0:
+		enemy_health = 0
+	if enemy_health == 0:
+		killed()
+
+func heal_blue_nf():
+	enemy_health -= 0.5 * CONTROL_BULLET_EMISSION
+	if enemy_health <= 0:
+		killed()
+
 	
 func killed():
 	if enemy_health <= 0:
@@ -81,6 +103,6 @@ func _on_timer_timeout():
 
 func _process(_delta):
 	progress_bar.value = enemy_health
-	label.set_text(str(enemy_health))
+	label.set_text(str(int(enemy_health)))
 	if enemy_health > 15:
 		progress_bar.max_value = enemy_health

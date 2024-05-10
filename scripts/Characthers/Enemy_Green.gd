@@ -15,8 +15,10 @@ var can_colide = true
 @onready var progress_bar = $SubViewport/ProgressBar
 @onready var label = $SubViewport/ProgressBar/Label
 @onready var sub_viewport = $SubViewport
+#Variáveis Globais
+@onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	if dead:
 		return
 	if player == null:
@@ -42,23 +44,56 @@ func attempt_to_kill_player():
 		can_colide = false
 		timer.start()
 
-func kill_green():
+func kill_green_lf():
 	enemy_health -= 5
 	move_speed -= 2
 	if move_speed < 2:
 		move_speed = 2
-        if enemy_health < 0:
-                enemy_health = 0
-        if enemy_health == 0:
-	         killed()
+	if enemy_health < 0:
+		enemy_health = 0
+	if enemy_health == 0:
+		killed()
 
-func heal_green():
-	enemy_health -= 1
-        if enemy_health < 0:
-                enemy_health = 0
-        if enemy_health == 0:
-	         killed()
-	killed()
+func kill_green_mf():
+	enemy_health -= 7
+	if enemy_health < 0:
+		enemy_health = 0
+	if enemy_health == 0:
+		killed()
+
+func kill_green_nf():
+	enemy_health -= CONTROL_BULLET_EMISSION * 2
+	if enemy_health < 0:
+		enemy_health = 0
+	if enemy_health == 0:
+		killed()
+	
+func heal_green_lf():
+	enemy_health -= 2
+	move_speed -= 1
+	if move_speed < 2:
+		move_speed = 2
+	if enemy_health < 0:
+		enemy_health = 0
+	if enemy_health == 0:
+		killed()
+
+func heal_green_mf():
+	enemy_health -= 3
+	if enemy_health < 0:
+		enemy_health = 0
+	if enemy_health == 0:
+		killed()
+		
+func heal_green_nf():
+	enemy_health -= CONTROL_BULLET_EMISSION * 0.5
+	if enemy_health < 0:
+		enemy_health = 0
+	if enemy_health == 0:
+		killed()
+
+	
+
 
 
 func _on_timer_timeout():
@@ -66,7 +101,7 @@ func _on_timer_timeout():
 
 func _process(_delta):
 	progress_bar.value = enemy_health
-	label.set_text(str(enemy_health))
+	label.set_text(str(int(enemy_health)))
 	if enemy_health > 15:
 		progress_bar.max_value = enemy_health
 
