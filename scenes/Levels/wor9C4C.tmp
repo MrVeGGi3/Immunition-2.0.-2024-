@@ -430,4 +430,4 @@ shape = SubResource("ConcavePolygonShape3D_obcvt")
 
 [node name="Minimap" parent="." instance=ExtResource("11_o0fx2")]
 target = NodePath("../Player")
-level = NodePath("..")
+camera_distance = 40.0

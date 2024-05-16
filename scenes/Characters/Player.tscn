@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=81 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="2_bowrg"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://b1i6udx23kait" path="res://images/UI/Barra de Dialogo.png" id="20_a5b7x"]
 [ext_resource type="Script" path="res://scripts/HUD/Tutorial_UI.gd" id="20_bj62o"]
 [ext_resource type="Texture2D" uid="uid://dqomqq5hwrx7" path="res://icons/keyoboard buttons/enterButton.jpeg" id="22_65plv"]
-[ext_resource type="PackedScene" uid="uid://c5yaq5d5t8iip" path="res://scenes/HUD/minimap.tscn" id="23_m73h5"]
 [ext_resource type="PackedScene" uid="uid://nt37rum3dhef" path="res://scenes/HUD/WheelSwitchWeapons.tscn" id="24_40cle"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="24_r7y5r"]
 [ext_resource type="PackedScene" uid="uid://bli5ijcxx5bse" path="res://scenes/HUD/MemorySystem.tscn" id="25_vndgg"]
@@ -640,9 +639,6 @@ theme_override_fonts/font = ExtResource("5_h2cv3")
 theme_override_font_sizes/font_size = 30
 text = "20"
 horizontal_alignment = 1
-
-[node name="Minimap" parent="PlayerHUD" instance=ExtResource("23_m73h5")]
-target = NodePath("../..")
 
 [node name="DeathScreen" type="Control" parent="PlayerHUD"]
 process_mode = 3

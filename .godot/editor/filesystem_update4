@@ -1,4 +1,4 @@
-res://scenes/Characters/Player.tscn
+res://scenes/icons/EnemyMinimapColorect.tscn
 res://scripts/Characthers/Enemy_Blue.gd
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/Characthers/Player.gd
@@ -7,11 +7,16 @@ res://scripts/HUD/wheel_weapons.gd
 res://scripts/Sound/ChangeSound.gd
 res://sprites/UI/memory_system.gd
 res://themes/playerLifeBarTheme.tres
-res://scripts/Characthers/Enemy_Red.gd
+res://scripts/HUD/minimap.gd
+res://scenes/HUD/WheelSwitchWeapons.tscn
+res://scenes/HUD/pause_menu.tscn
+res://scenes/Characters/Player.tscn
 res://scenes/Characters/enemy_b.tscn
 res://scenes/Characters/enemy_g.tscn
 res://scenes/Characters/enemy_r.tscn
-res://scenes/HUD/WheelSwitchWeapons.tscn
-res://scenes/HUD/pause_menu.tscn
 res://scenes/HUD/MemorySystem.tscn
 res://scenes/Levels/world.tscn
+res://scenes/HUD/minimap.tscn
+res://scenes/Levels/level_3.tscn
+res://scenes/Levels/level_2.tscn
+res://scenes/Levels/level_1.tscn

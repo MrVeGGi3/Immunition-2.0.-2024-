@@ -18,7 +18,7 @@ var can_colide = true
 #Variáveis Globais
 @onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if dead:
 		return
 	if player == null:
@@ -92,10 +92,6 @@ func heal_green_nf():
 	if enemy_health == 0:
 		killed()
 
-	
-
-
-
 func _on_timer_timeout():
 	can_colide = true
 
@@ -113,3 +109,5 @@ func killed():
 		animated_sprite_3d.play("death")
 		$CollisionShape3D.disabled = true
 		collision_layer = 0
+		
+

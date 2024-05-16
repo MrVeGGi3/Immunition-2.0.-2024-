@@ -106,3 +106,5 @@ func _process(_delta):
 	label.set_text(str(int(enemy_health)))
 	if enemy_health > 15:
 		progress_bar.max_value = enemy_health
+		
+

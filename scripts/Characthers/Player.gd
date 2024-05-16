@@ -26,7 +26,6 @@ extends CharacterBody3D
 @onready var player_life_bar = $PlayerHUD/PlayerLifeBar #UI que mostra os stats do player
 @onready var damage_taken = $PlayerHUD/PlayerLifeBar/DamageTaken #Animação que mostra quando o jogador perde vida
 @onready var gun_shoot = $PlayerHUD/GunShoot
-@onready var minimap = $PlayerHUD/Minimap
 @onready var wheel_switch_weapons = $PlayerHUD/WheelSwitchWeapons
 @onready var ui_ammo = $PlayerHUD/UI_AMMO
 
@@ -67,7 +66,6 @@ var n_ammo = 50 #munição neutrófilo
 var MOUSE_SENS = Global.mouse_sens
 
 func _ready():
-	minimap.show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE #altera o modo de captura do mouse para usar como FPS
 	#Animações
 	animated_sprite_2d.animation_finished.connect(shoot_anim_done) #conecta a outra animação
@@ -319,7 +317,6 @@ func disable_UI():
 	player_life_bar.hide()
 	tutorial_guide.hide()
 	main_bgm.stop()
-	minimap.hide()
 	wheel_switch_weapons.hide()
 	ui_ammo.hide()	
 

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b2t0j5ekr733w"]
+
+[node name="EnemyMinimapColorect" type="ColorRect"]
+offset_right = 20.0
+offset_bottom = 20.0
+scale = Vector2(0.771761, 0.74745)

@@ -1,3 +1,4 @@
+ColorRect
 MeshInstance3D
 GPUParticles3D
 TextureRect
@@ -11,4 +12,3 @@ HSlider
 CollisionShape3D
 Node3D
 StaticBody3D
-CanvasLayer

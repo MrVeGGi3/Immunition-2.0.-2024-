@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5yaq5d5t8iip"]
+[gd_scene load_steps=2 format=3 uid="uid://c5yaq5d5t8iip"]
 
 [ext_resource type="Script" path="res://scripts/HUD/minimap.gd" id="1_3n4vq"]
-[ext_resource type="PackedScene" uid="uid://b2t0j5ekr733w" path="res://scenes/icons/EnemyMinimapColorect.tscn" id="2_d4bn4"]
 
 [node name="Minimap" type="Control"]
 layout_mode = 3
@@ -56,6 +55,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.694118, 0.694118, 0.694118, 1)
 
-[node name="EnemyMinimapColorect" parent="ColorRect/SubViewportContainer/SubViewport" instance=ExtResource("2_d4bn4")]
-offset_left = 952.0
-offset_right = 972.0
+[node name="Enemies" type="ColorRect" parent="ColorRect/SubViewportContainer/SubViewport"]
+offset_left = 964.0
+offset_top = 9.0
+offset_right = 1004.0
+offset_bottom = 49.0
+scale = Vector2(0.157857, 0.187724)
