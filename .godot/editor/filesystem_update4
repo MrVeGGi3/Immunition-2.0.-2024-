@@ -23,3 +23,4 @@ res://scenes/Levels/level_1.tscn
 res://scenes/HUD/EnemiesRemainingDisplay.tscn
 res://scripts/HUD/Pause.gd
 res://scenes/HUD/sub_viewport_container.tscn
+res://scenes/HUD/SymbolRecognition.tscn

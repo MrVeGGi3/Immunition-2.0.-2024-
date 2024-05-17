@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://d36mflmgjmxea"]
+[gd_scene load_steps=48 format=3 uid="uid://d36mflmgjmxea"]
 
 [ext_resource type="ArrayMesh" uid="uid://djp2vbbqe1dc" path="res://prefabs/map0.obj" id="1_62mxc"]
 [ext_resource type="Texture2D" uid="uid://daa1un0fymlfh" path="res://textures/texas.png" id="2_23uxg"]
@@ -11,6 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://cghbpdvq15frc" path="res://prefabs/dev_orange.png" id="9_leb2p"]
 [ext_resource type="ArrayMesh" uid="uid://vuyc3qmcbjd0" path="res://prefabs/dev_valley.obj" id="10_nwkjw"]
 [ext_resource type="PackedScene" uid="uid://c5yaq5d5t8iip" path="res://scenes/HUD/minimap.tscn" id="11_o0fx2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x5567"]
+sky_top_color = Color(0.663169, 0.350295, 0.212311, 1)
+sky_horizon_color = Color(0.718113, 0.629168, 0.58202, 1)
+sky_energy_multiplier = 1.25
+ground_bottom_color = Color(0.209284, 0.166378, 0.115768, 1)
+ground_horizon_color = Color(0.718113, 0.629168, 0.58202, 1)
+
+[sub_resource type="Sky" id="Sky_j0pin"]
+sky_material = SubResource("ProceduralSkyMaterial_x5567")
+
+[sub_resource type="Environment" id="Environment_m8tp8"]
+background_mode = 2
+sky = SubResource("Sky_j0pin")
+tonemap_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqugq"]
 albedo_texture = ExtResource("2_23uxg")
@@ -169,6 +184,9 @@ data = PackedVector3Array(-2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.
 data = PackedVector3Array(-2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085)
 
 [node name="world" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m8tp8")
 
 [node name="Environment" type="Node3D" parent="."]
 process_mode = 3

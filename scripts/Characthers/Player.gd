@@ -88,7 +88,7 @@ func _ready():
 	vida = vida_maxima #vida igual a vida máxima quando resetar
 	l_ammo = 20 #munição linfócito
 	m_ammo = 20 #munição macrófago
-	n_ammo = 50 #munição neutrófilo
+	n_ammo = 15 #munição neutrófilo
 	
 
 	

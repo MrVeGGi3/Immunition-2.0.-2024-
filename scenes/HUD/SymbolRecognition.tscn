@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnkpuli74cidr"]
+
+[ext_resource type="Texture2D" uid="uid://c7xe4utj0k8r3" path="res://images/icon/Circulo.png" id="1_v1mbk"]
+
+[node name="SymbolRecognition" type="SubViewportContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 6.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Image" type="Sprite2D" parent="SubViewport"]
+texture = ExtResource("1_v1mbk")
+centered = false
