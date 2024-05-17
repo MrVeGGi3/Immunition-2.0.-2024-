@@ -62,7 +62,7 @@ var m3 = Global.m3_active
 var vida
 var l_ammo = 30 #munição linfócito
 var m_ammo = 25 #munição macrófago
-var n_ammo = 50 #munição neutrófilo
+var n_ammo = 15 #munição neutrófilo
 var MOUSE_SENS = Global.mouse_sens
 
 func _ready():

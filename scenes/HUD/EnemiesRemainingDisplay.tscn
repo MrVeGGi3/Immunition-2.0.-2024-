@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bjofawnfm47ym"]
+
+[node name="EnemiesRemainingDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Green" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnemyGreen" type="Sprite2D" parent="Green"]
+
+[node name="Blue" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnemyBlue" type="Sprite2D" parent="Blue"]
+
+[node name="Red" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnemyRed" type="Sprite2D" parent="Red"]

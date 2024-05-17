@@ -8,10 +8,11 @@ extends Control
 @onready var camera = $ColorRect/SubViewportContainer/SubViewport/Camera3D
 @export var level : NodePath
 @onready var world := get_node(level)
+@onready var is_paused = Global.is_paused
 #@onready var screen_size = DisplayServer.window_get_size()
 #var enemy_colorect = preload("res://scenes/icons/EnemyMinimapColorect.tscn")
 #@onready var diff_size = Vector2(screen_size.x - color_rect.size.x, screen_size.y - color_rect.size.y)
-
+	
 func _process(_delta : float) -> void:
 	if target:
 		camera.size = camera_distance
@@ -20,7 +21,10 @@ func _process(_delta : float) -> void:
 	#var enemies_green = get_tree().get_nodes_in_group("green")
 	#var enemies_blue = get_tree().get_nodes_in_group("blue")
 	#var enemies_red = get_tree().get_nodes_in_group("red")
-	
+	if is_paused:
+		visible = false
+	else:
+		visible = true
 
 	
 	#for g in enemies_green:
