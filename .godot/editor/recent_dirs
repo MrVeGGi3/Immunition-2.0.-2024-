@@ -1,3 +1,5 @@
+res://scripts/Characthers
+res://scripts/Spawner
 res://images/baseMemorySytem/Selected
 res://images/baseMemorySytem
 res://sprites/UI
@@ -6,7 +8,6 @@ res://icons/wheelswitchweapon/selected
 res://icons/wheelswitchweapon/hover
 res://icons/wheelswitchweapon/normal
 res://scripts/Global
-res://scripts/Characthers
 res://scripts/Sliders
 res://themes
 res://scenes/HUD
@@ -19,4 +20,3 @@ res://images
 res://icons
 res://images/loading screen
 res://
-res://scripts

@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1pekafrslpsq"]
+
+[ext_resource type="PackedScene" uid="uid://g64qk0w7pcle" path="res://scenes/testing/StartCellLocal.tscn" id="1_vf4nb"]
+[ext_resource type="PackedScene" uid="uid://cc6g7d2jxbm48" path="res://scenes/testing/Spawner3D.tscn" id="3_sk47y"]
+[ext_resource type="PackedScene" uid="uid://bmaecxa81b56j" path="res://scenes/testing/Influenza.tscn" id="4_0ehu5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uty21"]
+albedo_color = Color(0.929412, 0, 0.309804, 0.45098)
+metallic = 0.09
+metallic_specular = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_vyhjx"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_np065"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="Environment" id="Environment_tnl2d"]
+
+[node name="TestSceneEnvironment" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_uty21")
+mesh = SubResource("BoxMesh_vyhjx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_np065")
+
+[node name="StartCellLocal" parent="." instance=ExtResource("1_vf4nb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.821184, -2.4278)
+
+[node name="Spawner3d" parent="." instance=ExtResource("3_sk47y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.455472, 0.326075, -2.42573)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965654, 0.259831, 0, -0.259831, 0.965654, -0.941687, 8.34028, 18.3268)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tnl2d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, -5)
+
+[node name="Influenza" parent="." instance=ExtResource("4_0ehu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.49583, 3.65344)
