@@ -39,7 +39,7 @@ func attempt_to_kill_player():
 	var result = get_world_3d().direct_space_state.intersect_ray(query)
 	if result.is_empty() and can_colide and player.vida > 0:
 		monster_bite.play()
-		player.damage()
+		player._damage(2)
 		can_colide = false
 		timer.start()
 

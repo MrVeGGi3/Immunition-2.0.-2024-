@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=79 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="2_bowrg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://dufxlwl2jmmm8" path="res://themes/purpleTheme.tres" id="3_3hlcx"]
 [ext_resource type="Texture2D" uid="uid://b86srxxd4jnsq" path="res://sprites/Player/macrofago_sprite.png" id="3_lknyr"]
 [ext_resource type="Texture2D" uid="uid://d0r2c8ejf2khy" path="res://icons/Icon Head CH Died.png" id="4_nc87x"]
+[ext_resource type="PackedScene" uid="uid://br57ykp7o40bi" path="res://scenes/HUD/phase_finished.tscn" id="5_0b6hl"]
 [ext_resource type="FontFile" uid="uid://tfn36nnpaotb" path="res://fonts/batmfa__.ttf" id="5_h2cv3"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="6_41nxb"]
 [ext_resource type="Theme" uid="uid://bd32nqym4104l" path="res://themes/playerLifeBarTheme.tres" id="6_lmol0"]
@@ -23,9 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://hktqxlioxt6s" path="res://icons/weapons/Icon macrofago.png" id="14_8hv6x"]
 [ext_resource type="AudioStream" uid="uid://dk7wdjoi41cuq" path="res://sounds/SFX/Player/macrofage_weapon .wav" id="15_fkrn1"]
 [ext_resource type="Texture2D" uid="uid://33jae7wc4cls" path="res://icons/keyoboard buttons/keyboard.png" id="15_ttbl5"]
-[ext_resource type="Texture2D" uid="uid://b1i6udx23kait" path="res://images/UI/Barra de Dialogo.png" id="20_a5b7x"]
-[ext_resource type="Script" path="res://scripts/HUD/Tutorial_UI.gd" id="20_bj62o"]
-[ext_resource type="Texture2D" uid="uid://dqomqq5hwrx7" path="res://icons/keyoboard buttons/enterButton.jpeg" id="22_65plv"]
 [ext_resource type="PackedScene" uid="uid://nt37rum3dhef" path="res://scenes/HUD/WheelSwitchWeapons.tscn" id="24_40cle"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="24_r7y5r"]
 [ext_resource type="PackedScene" uid="uid://bli5ijcxx5bse" path="res://scenes/HUD/MemorySystem.tscn" id="25_vndgg"]
@@ -422,19 +420,16 @@ material = SubResource("StandardMaterial3D_xuhuk")
 radius = 0.2
 height = 0.4
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 7
+platform_floor_layers = 4294967041
+platform_wall_layers = 1
 script = ExtResource("1_cyly3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982741, 0)
 shape = SubResource("CapsuleShape3D_nwage")
-
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-target_position = Vector3(0, 0, -50)
-collision_mask = 3
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -481,52 +476,7 @@ position = Vector2(223, 201)
 sprite_frames = SubResource("SpriteFrames_1vt75")
 animation = &"walk"
 
-[node name="PhaseFinished" type="Control" parent="PlayerHUD"]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Panel" type="Panel" parent="PlayerHUD/PhaseFinished"]
-layout_mode = 0
-offset_left = 344.0
-offset_top = 175.0
-offset_right = 781.0
-offset_bottom = 447.0
-
-[node name="Parabéns" type="Label" parent="PlayerHUD/PhaseFinished/Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -113.5
-offset_top = 21.0
-offset_right = 143.5
-offset_bottom = 79.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("6_41nxb")
-theme_override_font_sizes/font_size = 40
-text = "Parábens!!!!!!!"
-
-[node name="Obrigado" type="Label" parent="PlayerHUD/PhaseFinished/Panel"]
-layout_mode = 0
-offset_left = 113.0
-offset_top = 122.0
-offset_right = 328.0
-offset_bottom = 174.0
-theme_override_fonts/font = ExtResource("6_41nxb")
-text = "Obrigado por jogar a Demo!
-      Aguarde por mais!!"
-
-[node name="ExitGame" type="Button" parent="PlayerHUD/PhaseFinished/Panel"]
-process_mode = 3
-layout_mode = 0
-offset_left = 170.0
-offset_top = 216.0
-offset_right = 269.0
-offset_bottom = 247.0
-text = "Sair do Jogo"
+[node name="PhaseFinished" parent="PlayerHUD" instance=ExtResource("5_0b6hl")]
 
 [node name="GunShoot" type="Control" parent="PlayerHUD"]
 process_mode = 3
@@ -644,49 +594,6 @@ horizontal_alignment = 1
 [node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
 player = NodePath("../..")
 
-[node name="Tutorial_UI" type="Control" parent="PlayerHUD"]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("20_bj62o")
-
-[node name="DialogueBox" type="Sprite2D" parent="PlayerHUD/Tutorial_UI"]
-position = Vector2(539, 314)
-scale = Vector2(0.218513, 0.218513)
-texture = ExtResource("20_a5b7x")
-
-[node name="JumpTutorial" type="Button" parent="PlayerHUD/Tutorial_UI"]
-layout_mode = 0
-offset_left = 497.0
-offset_top = 386.0
-offset_right = 611.0
-offset_bottom = 417.0
-theme_override_colors/font_color = Color(0.94902, 1, 0.945098, 1)
-theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
-theme_override_fonts/font = ExtResource("6_41nxb")
-text = "Pular Tutorial"
-
-[node name="EnterButton" type="Sprite2D" parent="PlayerHUD/Tutorial_UI"]
-position = Vector2(788, 386)
-scale = Vector2(0.200487, 0.200487)
-texture = ExtResource("22_65plv")
-
-[node name="SpeechTutorial" type="RichTextLabel" parent="PlayerHUD/Tutorial_UI"]
-layout_mode = 0
-offset_left = 231.0
-offset_top = 259.0
-offset_right = 271.0
-offset_bottom = 299.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("6_41nxb")
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
 [node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
 visible = false
 
@@ -753,20 +660,27 @@ volume_db = -20.0
 autoplay = true
 bus = &"BGM"
 
-[node name="MacrofageRay3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-target_position = Vector3(0, 0, -100)
-collision_mask = 3
-
 [node name="MacrofageShoot" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("15_fkrn1")
 volume_db = -20.0
 bus = &"SFX"
 
+[node name="NeutrofileSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("24_r7y5r")
+volume_db = 80.0
+bus = &"SFX"
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, 0, -50)
+collision_mask = 7
+collide_with_areas = true
+
 [node name="FlameThrowerShoot" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -30)
-collision_mask = 3
+collision_mask = 7
+collide_with_areas = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="FlameThrowerShoot"]
 transform = Transform3D(-0.999934, 0, 0.0115189, 0, 1, 0, -0.0115189, 0, -0.999934, 0.234038, -0.287282, -2.10114)
@@ -778,11 +692,13 @@ randomness = 0.07
 process_material = SubResource("ParticleProcessMaterial_ayvqm")
 draw_pass_1 = SubResource("SphereMesh_s0y5o")
 
-[node name="NeutrofileSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("24_r7y5r")
-volume_db = 80.0
-bus = &"SFX"
+[node name="MacrofageRay3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, 0, -100)
+collision_mask = 7
+collide_with_areas = true
 
-[connection signal="pressed" from="PlayerHUD/PhaseFinished/Panel/ExitGame" to="." method="_on_exit_game_pressed"]
-[connection signal="pressed" from="PlayerHUD/Tutorial_UI/JumpTutorial" to="." method="_on_jump_tutorial_pressed"]
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48025, -1.34568)
+
 [connection signal="pressed" from="PlayerHUD/DeathScreen/Panel/RestartButton" to="." method="restart"]

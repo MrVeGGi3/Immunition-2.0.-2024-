@@ -1,3 +1,8 @@
+res://scenes
+res://scenes/Characters
+res://scenes/objects
+res://scenes/HUD
+res://scenes/UI
 res://scripts/Characthers
 res://scripts/Spawner
 res://images/baseMemorySytem/Selected
@@ -10,13 +15,8 @@ res://icons/wheelswitchweapon/normal
 res://scripts/Global
 res://scripts/Sliders
 res://themes
-res://scenes/HUD
 E:/Immunition/Immunition/HTML
 E:/Immunition/Immunition
 res://sprites/Player
 res://sprites/Monster
 E:/Godot
-res://images
-res://icons
-res://images/loading screen
-res://

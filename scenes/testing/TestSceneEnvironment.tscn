@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://d1pekafrslpsq"]
 
-[ext_resource type="PackedScene" uid="uid://g64qk0w7pcle" path="res://scenes/testing/StartCellLocal.tscn" id="1_vf4nb"]
+[ext_resource type="PackedScene" uid="uid://g64qk0w7pcle" path="res://scenes/testing/SpawnCellsLocal.tscn" id="1_vf4nb"]
 [ext_resource type="PackedScene" uid="uid://cc6g7d2jxbm48" path="res://scenes/testing/Spawner3D.tscn" id="3_sk47y"]
 [ext_resource type="PackedScene" uid="uid://bmaecxa81b56j" path="res://scenes/testing/Influenza.tscn" id="4_0ehu5"]
 

@@ -9,8 +9,13 @@ var m2_active = false
 var m3_active = false
 const CONTROL_BULLET_EMISSION = 2
 var is_paused = false
-var contamined_cells = 0
-var cells_in_scene = 0
+
+#placar e pontuação
+var contamined_cells : int = 0
+var cells_in_scene : int = 0
+var influenza_destroyed : int = 0
+var infected_cells_destroyed : int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

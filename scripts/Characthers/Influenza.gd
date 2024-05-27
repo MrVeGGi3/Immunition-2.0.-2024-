@@ -1,22 +1,40 @@
 extends CharacterBody3D
 
-@export var speed = 15
+@export_category("Atributos")
+@export var speed = 5
+@export var life = 10
+@export_category("Controle de Distância")
+@export var distance_to_shoot = Vector3(5,5,5).normalized()
+@export var keep_distance = Vector3()
+@onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
+#Variável de comparação
 var nearest_cell = null
+
+#Variável de Controle
 var is_moving = true
+var is_shooting = false
+
 @onready var go_to_object = $GoToObject
+var projectile = preload("res://scenes/testing/influenza_projectile.tscn")
+@onready var marker_3d = $Marker3D
+@onready var shoot_time = $ShootTime
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var pos_x = randf_range(0,4)
+	var pos_y = randf_range(2,4)
+	var pos_z = randf_range(0,4)
+	keep_distance = Vector3(pos_x, pos_y, pos_z)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if !is_shooting:
+		shoot_player()
 	if is_moving:
 		var cells = get_tree().get_nodes_in_group("cell")
 		nearest_cell = null
 		var shortest_distance = INF
 		var current_position = global_transform.origin
-
 		# Encontre a célula mais próxima
 		for c in cells:
 			var cell_distance = (c.global_transform.origin - current_position).length()
@@ -38,22 +56,48 @@ func _process(delta):
 				global_transform.origin += movement
 				
 				
-	#var player = get_tree().get_first_node_in_group("player")
-	#var player_position = player.global_transform.origin
-	#var player_distance = (player_position - global_transform.origin).normalized()
-
-	#if player_distance < shortest_distance:
-		#move_to_object(player_position)
-	#else:
-		#move_to_object(nearest_cell_position) 
-			
-#func move_to_object(object : Vector3):
-	#var direction = (object - global_transform.origin).normalized()
-	#var movement = direction * speed * get_process_delta_time()
-	#if global_transform.origin.distance_to(object) <= movement.lenght():
-		#global_transform.origin = object
-	#else:
-		#global_transform.origin += movement
+		var player = get_tree().get_nodes_in_group("player")
+		var player_position = player[0].marker_3d.global_transform.origin + keep_distance
+		var player_distance = (player_position - global_transform.origin).normalized()
+		if global_transform.origin.distance_to(player_position) <= shortest_distance:
+			var movement = player_distance * speed * delta
+			if global_transform.origin.distance_to(player_position) <= movement.length() and !is_shooting:
+				global_transform.origin = Vector3(player_position.x, player_position.y + 1, player_position.z)
+				go_to_object.start()
+			else:
+				global_transform.origin += movement
 		
 func _on_go_to_object_timeout():
 	is_moving = true
+
+func shoot_player():
+	var new_projectile = projectile.instantiate()
+	new_projectile.global_transform.origin = marker_3d.global_transform.origin
+	get_parent().add_child(new_projectile)
+	is_shooting = true
+	shoot_time.start()
+
+func _on_shoot_time_timeout():
+	is_shooting = false
+	
+func hit_by_lf(damage, speed_down):
+	life -= damage
+	speed -= speed_down
+	if life <= 0:
+		Global.influenza_destroyed += 1 
+		print("Eu destruí:", Global.influenza_destroyed)
+		queue_free()
+
+func hit_by_mf(damage):
+	life -= damage
+	if life <= 0:
+		Global.influenza_destroyed += 1 
+		print("Eu destruí:", Global.influenza_destroyed)
+		queue_free()
+	
+func hit_by_nf(damage):
+	life -= damage * CONTROL_BULLET_EMISSION
+	if life <= 0:
+		Global.influenza_destroyed += 1
+		print("Eu destruí:", Global.influenza_destroyed)
+		queue_free()

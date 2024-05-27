@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjw408o6mqkvr"]
+
+[ext_resource type="PackedScene" uid="uid://don5l8livtsxn" path="res://scenes/testing/Cell.tscn" id="3_4du7i"]
+[ext_resource type="PackedScene" uid="uid://bmaecxa81b56j" path="res://scenes/testing/Influenza.tscn" id="3_qojjq"]
+[ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="4_84hsm"]
+
+[sub_resource type="Environment" id="Environment_vnqnv"]
+background_mode = 1
+background_color = Color(0.104658, 0.203131, 0.223592, 1)
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3glur"]
+albedo_color = Color(1, 0.0823529, 0.529412, 0.294118)
+
+[sub_resource type="BoxMesh" id="BoxMesh_exoh4"]
+size = Vector3(20, 1, 40)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wubcw"]
+data = PackedVector3Array(-10, 0.5, 20, 10, 0.5, 20, -10, -0.5, 20, 10, 0.5, 20, 10, -0.5, 20, -10, -0.5, 20, 10, 0.5, -20, -10, 0.5, -20, 10, -0.5, -20, -10, 0.5, -20, -10, -0.5, -20, 10, -0.5, -20, 10, 0.5, 20, 10, 0.5, -20, 10, -0.5, 20, 10, 0.5, -20, 10, -0.5, -20, 10, -0.5, 20, -10, 0.5, -20, -10, 0.5, 20, -10, -0.5, -20, -10, 0.5, 20, -10, -0.5, 20, -10, -0.5, -20, 10, 0.5, 20, -10, 0.5, 20, 10, 0.5, -20, -10, 0.5, 20, -10, 0.5, -20, 10, 0.5, -20, -10, -0.5, 20, 10, -0.5, 20, -10, -0.5, -20, 10, -0.5, 20, 10, -0.5, -20, -10, -0.5, -20)
+
+[node name="TestPlayerInfluenza" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vnqnv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 18, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_3glur")
+mesh = SubResource("BoxMesh_exoh4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_wubcw")
+
+[node name="Player" parent="." instance=ExtResource("4_84hsm")]
+transform = Transform3D(1, 0, 0, 0, 0.999664, 0.0259153, 0, -0.0259153, 0.999664, 0, 1.70785, 17.149)
+
+[node name="Cell" parent="." instance=ExtResource("3_4du7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54186, 5.04393, -2.80241)
+
+[node name="Influenza" parent="." instance=ExtResource("3_qojjq")]

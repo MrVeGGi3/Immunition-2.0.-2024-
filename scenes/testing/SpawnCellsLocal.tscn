@@ -1,4 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://g64qk0w7pcle"]
+[gd_scene load_steps=12 format=3 uid="uid://g64qk0w7pcle"]
+
+[ext_resource type="PackedScene" uid="uid://cc6g7d2jxbm48" path="res://scenes/testing/Spawner3D.tscn" id="1_7gsfe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_me7r6"]
 albedo_color = Color(0.105882, 1, 1, 1)
@@ -35,6 +37,7 @@ material_override = SubResource("StandardMaterial3D_me7r6")
 mesh = SubResource("PrismMesh_ay4dg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 process_mode = 3
@@ -46,6 +49,7 @@ material_override = SubResource("StandardMaterial3D_me7r6")
 mesh = SubResource("PrismMesh_ay4dg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_e1mvd")
@@ -56,6 +60,7 @@ material_override = SubResource("StandardMaterial3D_0xgpc")
 mesh = SubResource("BoxMesh_o042a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7jwom")
@@ -66,6 +71,10 @@ material_override = SubResource("StandardMaterial3D_5yel5")
 mesh = SubResource("PrismMesh_es0l5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_bviuc")
+
+[node name="MobSpawner3d" parent="." instance=ExtResource("1_7gsfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.332064, -0.367344, 0)

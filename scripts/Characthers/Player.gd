@@ -22,12 +22,13 @@ extends CharacterBody3D
 @onready var deathscreen = $PlayerHUD/DeathScreen #tela de quando o player morre
 @onready var progress_bar = $PlayerHUD/PlayerLifeBar/ProgressBar # barra de progresso de vida do player
 @onready var pause_menu = $PlayerHUD/pause_menu #menu de pausa
-@onready var phase_finished = $PlayerHUD/PhaseFinished #UI de quando termina a fase
+@onready var phase_finished =  $PlayerHUD/PhaseFinished #UI de quando termina a fase
 @onready var player_life_bar = $PlayerHUD/PlayerLifeBar #UI que mostra os stats do player
 @onready var damage_taken = $PlayerHUD/PlayerLifeBar/DamageTaken #Animação que mostra quando o jogador perde vida
 @onready var gun_shoot = $PlayerHUD/GunShoot
 @onready var wheel_switch_weapons = $PlayerHUD/WheelSwitchWeapons
 @onready var ui_ammo = $PlayerHUD/UI_AMMO
+@onready var memory_system = $PlayerHUD/MemorySystem
 
 
 #Músicas(BGM
@@ -37,8 +38,9 @@ extends CharacterBody3D
 #Tutorial
 @onready var tutorial_walk = $PlayerHUD/TutorialGuide/TutorialWalk #animação de tutorial
 @onready var tutorial_guide = $PlayerHUD/TutorialGuide  #UI que mostra a animação de tutorial
-@onready var tutorial_ui = $PlayerHUD/Tutorial_UI #nó que contém a caixa de diálogo do tutorial
-@onready var speech_tutorial = $PlayerHUD/Tutorial_UI/SpeechTutorial #Lugar aonde vai atualizar os textos
+
+#Ajuste de Mecânica
+@onready var marker_3d = $Marker3D
 
 #Constantes
 const vida_maxima = 10.0
@@ -66,19 +68,18 @@ var n_ammo = 15 #munição neutrófilo
 var MOUSE_SENS = Global.mouse_sens
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE #altera o modo de captura do mouse para usar como FPS
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #altera o modo de captura do mouse para usar como FPS
 	#Animações
 	animated_sprite_2d.animation_finished.connect(shoot_anim_done) #conecta a outra animação
 	damage_taken.animation_finished.connect(return_normalUI) #conecta á outra animação
 	#Esconder e mostrar UI
-	deathscreen.hide()
 	phase_finished.hide()
+	deathscreen.hide()
 	pause_menu.hide()
 	tutorial_guide.show()
 	player_life_bar.show()
 	#Física
 	set_physics_process(true)
-	get_tree().paused = true
 	$CollisionShape3D.disabled = false
 	#Músicas
 	death_sound.stop()#ao resetar, para a música de morte
@@ -231,6 +232,16 @@ func shoot():
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("heal_red_lf") and m1:
 		ray_cast_3d.get_collider().heal_red_lf()
 		
+	#Célula Infectada
+	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("hit"):
+		ray_cast_3d.get_collider().hit(5,3)
+	
+	#Influenza
+	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("hit_by_lf"):
+		ray_cast_3d.get_collider().hit_by_lf(1,1)
+	
+		
+		
 func shoot_by_macrofage():
 	if !can_shoot_mf:
 		return
@@ -259,7 +270,10 @@ func shoot_by_macrofage():
 		macrofage_ray_3d.get_collider().heal_red_mf()
 	if macrofage_ray_3d.is_colliding() and macrofage_ray_3d.get_collider().has_method("heal_red_mf") and m1:
 		macrofage_ray_3d.get_collider().heal_red_mf()
-		
+	
+	#Influenza
+	if macrofage_ray_3d.is_colliding() and macrofage_ray_3d.get_collider().has_method("hit_by_mf"):
+		macrofage_ray_3d.get_collider().hit_by_mf(7)
 		
 func shoot_by_neutrofile():
 	if !can_shoot_nf:
@@ -286,16 +300,20 @@ func shoot_by_neutrofile():
 	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("heal_blue_nf") and m1:
 		flame_thrower_shoot.get_collider().heal_blue_nf()
 	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("heal_blue_nf") and m3:
-		flame_thrower_shoot.get_collider().heal_blue_Nf()
+		flame_thrower_shoot.get_collider().heal_blue_nf()
+		
+	#Influenza
+	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("hit_by_nf"):
+		flame_thrower_shoot.get_collider().hit_by_nf(3)
 
 func return_normalUI():
 	damage_taken.play("idle")
 
 
-func damage():
-	vida -= 2
+func _damage(damage):
+	vida -= damage
 	damage_taken.play("damage_received")
-	if vida == 0:
+	if vida <= 0:
 		kill()
 	
 		
@@ -307,18 +325,19 @@ func kill():
 		set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
 		$CollisionShape3D.disabled = true
 		$MainBGM.stop()
-		gun_shoot.hide()
 		disable_UI()
 		death_sound.play()
 		deathscreen.show()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func disable_UI():
+	gun_shoot.hide()
 	player_life_bar.hide()
 	tutorial_guide.hide()
 	main_bgm.stop()
 	wheel_switch_weapons.hide()
 	ui_ammo.hide()	
+	memory_system.hide()
 
 func _on_exit_game_pressed():
 	get_tree().quit()
@@ -348,7 +367,6 @@ func shoot_neutrofile_anim_done():
 func _on_jump_tutorial_pressed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
-	tutorial_ui.hide()
 	
 func set_global_animation_bool(variavel, variavel2, variavel3):
 	Global.c_shoot = variavel
@@ -405,5 +423,5 @@ func change_neutrofile():
 	else:
 		can_shoot_nf = false
 		set_global_transition_bool_csn(can_shoot_nf)
-	print(can_shoot_nf)
-	print("change_neutrofile")
+
+

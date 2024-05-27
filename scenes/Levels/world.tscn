@@ -24,6 +24,7 @@ sky_material = SubResource("ProceduralSkyMaterial_x5567")
 
 [sub_resource type="Environment" id="Environment_m8tp8"]
 background_mode = 2
+background_color = Color(0.0110149, 0.132527, 0.149299, 0.0117647)
 sky = SubResource("Sky_j0pin")
 tonemap_mode = 2
 
@@ -232,11 +233,10 @@ autoplay = "move_platform_escaoe"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Returning Platform/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5j052")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_25qut")]
+[node name="Player" parent="." instance=ExtResource("2_25qut")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 53.1159, 5.94677, 128.878)
 platform_on_leave = 2
 platform_floor_layers = 4294901761
-platform_wall_layers = 1
 
 [node name="DirectionalLights" type="Node3D" parent="."]
 

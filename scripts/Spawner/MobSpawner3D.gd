@@ -7,10 +7,10 @@ var cells_created = Global.cells_in_scene
 # Called when the node enters the scene tree for the first time.
 
 func spawnCells():
-	if cells_created > 5:
+	if cells_created > 3:
 		return
 	var instance = cell.instantiate()
-	instance.global_position = global_position + Vector3(0,1,0) 
+	instance.global_position = global_position + Vector3(0,1,0).normalized() 
 	get_parent().add_child(instance)
 	cells_created += 1
 	
