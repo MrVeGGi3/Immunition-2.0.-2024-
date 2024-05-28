@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bli0twbrcas3l"]
+
+[ext_resource type="Script" path="res://scenes/objects/explosion.gd" id="1_b7loo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_61oa7"]
+
+[node name="Explosion" type="Node3D"]
+script = ExtResource("1_b7loo")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_61oa7")

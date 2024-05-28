@@ -41,6 +41,7 @@ extends CharacterBody3D
 
 #Ajuste de Mecânica
 @onready var marker_3d = $Marker3D
+@onready var hit_marker_explosion = $HitMarkerExplosion
 
 #Constantes
 const vida_maxima = 10.0

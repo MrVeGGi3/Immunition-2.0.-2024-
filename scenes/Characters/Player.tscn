@@ -701,4 +701,7 @@ collide_with_areas = true
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48025, -1.34568)
 
+[node name="HitMarkerExplosion" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21481, 1.27402, 0.017539)
+
 [connection signal="pressed" from="PlayerHUD/DeathScreen/Panel/RestartButton" to="." method="restart"]

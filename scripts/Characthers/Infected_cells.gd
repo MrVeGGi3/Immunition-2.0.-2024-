@@ -13,10 +13,8 @@ var is_hitting = false
 @onready var collision_timer = $CollisionTimer
 @onready var influenza = preload("res://scenes/testing/Influenza.tscn")
 #Raycasts
-@onready var cell_ray = $CellRay1
-@onready var cell_ray_2 = $CellRay2
-@onready var cell_ray_3 = $CellRay3
-@onready var cell_ray_4 = $CellRay4
+@onready var explosion = preload("res://scenes/testing/explosion.tscn")
+@onready var marker_3d = $Marker3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,7 +23,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
 		var player = get_tree().get_nodes_in_group("player")
-		var player_position = player[0].marker_3d.global_transform.origin
+		var player_position = player[0].hit_marker_explosion.global_transform.origin
 		var player_distance = (player_position - global_transform.origin).normalized()
 		var movement = player_distance * speed * delta
 		if global_transform.origin.distance_to(player_position) <= movement.length():
@@ -33,28 +31,14 @@ func _process(delta):
 		else:
 			global_transform.origin += movement
 		
-		
-		if cell_ray.is_colliding() and cell_ray.get_collider().is_in_group("player") and !is_hitting:
-			queue_free()
-			player[0]._damage(damage)
-			is_hitting = true
-			
-		if cell_ray_2.is_colliding() and cell_ray_2.get_collider().is_in_group("player") and !is_hitting:
-			queue_free()
-			player[0]._damage(damage)
-			is_hitting = true
-			
-		if cell_ray_3.is_colliding() and cell_ray_3.get_collider().is_in_group("player") and !is_hitting:
-			queue_free()
-			player[0]._damage(damage)
-			is_hitting = true
-			
-		if cell_ray_4.is_colliding() and cell_ray_4.get_collider().is_in_group("player") and !is_hitting:
-			queue_free()
-			player[0]._damage(damage)
+		if global_transform.origin.distance_to(player_position) <= 1 and !is_hitting:
+			var new_explosion = explosion.instantiate()
+			new_explosion.global_transform.origin = marker_3d.global_transform.origin
+			get_parent().add_child(new_explosion)
 			is_hitting = true
 			
 		if is_hitting:
+			queue_free()
 			spawn_influenza(spawn_collision)
 			print("Fui spawnado após entrar em colisão com o player")
 				
