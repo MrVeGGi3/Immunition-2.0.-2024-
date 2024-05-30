@@ -32,4 +32,7 @@ collision_mask = 3
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_qmprq")
 
+[node name="BlinkCooldown" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="timeout" from="MovementTime" to="." method="_on_movement_time_timeout"]

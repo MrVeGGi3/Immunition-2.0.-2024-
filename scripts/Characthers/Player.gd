@@ -104,6 +104,8 @@ func _input(event):
 		rotation_degrees.x = 90
 	if rotation_degrees.x < -90:
 		rotation_degrees.x = -90
+		
+	
 
 func _process(delta):
 	if dead:
@@ -116,6 +118,17 @@ func _process(delta):
 	m1 = Global.m1_active
 	m2 = Global.m2_active
 	m3 = Global.m3_active
+	
+	var right_stick_x = Input.get_action_strength("camera_xbox_right") - Input.get_action_strength("camera_xbox_left")
+	var right_stick_y = Input.get_action_strength("camera_xbox_up") - Input.get_action_strength("camera_xbox_down")
+	
+	rotation_degrees.y -= right_stick_x * MOUSE_SENS * 3
+	rotation_degrees.x -= right_stick_y * MOUSE_SENS * 3
+	
+	if rotation_degrees.x > 90:
+		rotation_degrees.x = 90
+	if rotation_degrees.x < -90:
+		rotation_degrees.x = -90
 
 	if Input.is_action_just_pressed("restart"):
 		restart()
@@ -180,10 +193,8 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_FORCE
-			if Input.is_action_pressed("run"):
-				velocity += direction * (SPEED + INCREASE_SPEED)
-			else:
-				velocity += direction * SPEED
+		if Input.is_action_pressed("run"):
+			velocity += direction * (SPEED + INCREASE_SPEED)
 
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -339,6 +350,7 @@ func disable_UI():
 	wheel_switch_weapons.hide()
 	ui_ammo.hide()	
 	memory_system.hide()
+	
 
 func _on_exit_game_pressed():
 	get_tree().quit()
