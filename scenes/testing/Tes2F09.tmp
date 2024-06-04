@@ -46,17 +46,16 @@ transform = Transform3D(1, 0, 0, 0, 0.999664, 0.0259153, 0, -0.0259153, 0.999664
 
 [node name="Cell" parent="." instance=ExtResource("3_4du7i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.94067, 9.24075, 3.49855)
-speed = 2
-move_radius = 5
-distance_to_run = 8
-floor_distance = 4
-floor_smoothness = 0.5
-life = 3
-original_color = Color(25, 255, 255, 255)
-red_color = Color(255, 0, 0, 255)
 
 [node name="Influenza" parent="." instance=ExtResource("3_qojjq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.6676, 5.02908)
+speed = 5
+life = 10
+original_color = Color(237, 147, 145, 255)
+red_color = Color(255, 0, 0, 255)
+keep_distance = Vector3(0, 0, 0)
+floor_distance = 4
+floor_smoothness = 0.5
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_gphj4")

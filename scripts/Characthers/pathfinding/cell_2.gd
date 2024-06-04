@@ -1,11 +1,13 @@
-class_name Cell
+#class_name Cell
 extends CharacterBody3D
 
 @export_category("Move")
 @export var speed = 2
 @export var move_radius = 5  # Raio de movimento em torno do spawner
-@export var distance_to_run = 8 
-
+@export var distance_to_run = 8
+@export_category("Floor") 
+@export var floor_distance = 4
+@export var floor_smoothness = 0.5
 @export_category("Atributes")
 @export var life = 3 
 @export var original_color = Color(25,255,255,255)
@@ -26,36 +28,40 @@ var escape_vector = Vector3(0,0,0)
 var infected_cell = preload("res://scenes/testing/Infected_cells.tscn")
 @onready var mesh_instance_cell = $MeshInstance3D
 @onready var walk_marker = $WalkMarker
-
+@onready var nav = $NavigationAgent3D
+@onready var walk_marker_position = walk_marker.global_transform.origin
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
+	walk_marker_position = global_transform.origin
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var next_location = nav.get_next_path_position()
+	var current_location = global_transform.origin
+	var new_velocity = (next_location - current_location).normalized() * speed
+	velocity = velocity.move_toward(new_velocity, .25 * speed) 
+	move_and_slide()
+		
 	if is_moving:
-		_set_new_position()
+		_set_new_position(walk_marker_position)
 		if global_position.distance_to(new_position) <= 0.2 or global_position.distance_to(new_position) == 0.0:
-			_set_new_position()
-		var direction = (new_position - global_transform.origin).normalized()
-		var movement = direction * speed * delta
-		if global_transform.origin.distance_to(new_position) <= movement.length():
-			global_transform.origin = new_position
+			_set_new_position(walk_marker_position)
+		walk_marker_position = new_position
+		nav.target_position = walk_marker_position
+		if current_location == walk_marker_position:
 			is_moving = false
 			movement_time.start()
-		else:
-			global_transform.origin += movement
+			
 	
 	
 	var influenza = get_tree().get_nodes_in_group("influenza")
 	for i in influenza:
-		var influenza_distance = (i.global_transform.origin - global_transform.origin).normalized()
-		if global_transform.origin.distance_to(i.global_transform.origin) <= distance_to_run and !is_catched_by_influenza:
-			var direction_to_influenza = (global_transform.origin - i.global_transform.origin).normalized()
+		var influenza_distance = (i.global_transform.origin - current_location).normalized()
+		if current_location.distance_to(i.global_transform.origin) <= distance_to_run and !is_catched_by_influenza:
+			var direction_to_influenza = (walk_marker_position - i.global_transform.origin).normalized()
 			escape_vector += direction_to_influenza
 			escape_vector = escape_vector.normalized() * speed * delta
-			global_transform.origin += escape_vector
-		
+			walk_marker_position += escape_vector
+			nav.target_position = walk_marker_position
 	
 	var bodies = area_3d.get_overlapping_bodies()
 	for body in bodies:
@@ -74,12 +80,12 @@ func _process(delta):
 			#if life == 0:
 				#_change_type("outro_virus")
 				
-func _set_new_position():
+func _set_new_position(current):
 	var angle = randf_range(0, TAU)  
 	var distance = randf_range(0, move_radius)
 	var new_pos_x = cos(angle) * distance
 	var new_pos_z = sin(angle) * distance
-	new_position = global_transform.origin + Vector3(new_pos_x, 0, new_pos_z)
+	new_position = current + Vector3(new_pos_x, 0, new_pos_z)
 
 
 func _on_movement_time_timeout():

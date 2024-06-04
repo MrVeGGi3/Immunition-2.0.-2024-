@@ -1,4 +1,4 @@
-res://scenes/Levels/world.tscn
+res://scenes/testing/Cell.tscn
 res://scripts/Characthers/Enemy_Blue.gd
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/Characthers/Player.gd
@@ -8,13 +8,9 @@ res://scripts/HUD/wheel_weapons.gd
 res://scripts/Sound/ChangeSound.gd
 res://sprites/UI/memory_system.gd
 res://themes/playerLifeBarTheme.tres
+res://scripts/Characthers/pathfinding/cell_2.gd
 res://scenes/testing/Influenza.tscn
-res://scripts/Characthers/Influenza.gd
-res://scenes/testing/Infected_cells.tscn
-res://scripts/Characthers/Infected_cells.gd
-res://scenes/testing/Cell.tscn
-res://scripts/Characthers/Cell.gd
-res://scenes/testing/TestPlayerInfluenza.tscn
+res://scripts/Characthers/pathfinding/Influenza2.gd
 res://scenes/HUD/WheelSwitchWeapons.tscn
 res://scenes/HUD/pause_menu.tscn
 res://scenes/Characters/Player.tscn
@@ -22,6 +18,7 @@ res://scenes/Characters/enemy_b.tscn
 res://scenes/Characters/enemy_g.tscn
 res://scenes/Characters/enemy_r.tscn
 res://scenes/HUD/MemorySystem.tscn
+res://scenes/Levels/world.tscn
 res://scenes/HUD/minimap.tscn
 res://scenes/icons/EnemyMinimapColorect.tscn
 res://scenes/Levels/level_3.tscn
@@ -35,5 +32,7 @@ res://scenes/HUD/loading.tscn
 res://scenes/testing/TestSceneEnvironment.tscn
 res://scenes/testing/SpawnCellsLocal.tscn
 res://scenes/testing/Spawner3D.tscn
+res://scenes/testing/TestPlayerInfluenza.tscn
+res://scenes/testing/Infected_cells.tscn
 res://scenes/testing/explosion.tscn
 res://scenes/testing/influenza_projectile.tscn

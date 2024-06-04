@@ -9,6 +9,9 @@ extends CharacterBody3D
 @export var distance_to_shoot = Vector3(5,5,5).normalized()
 @export var keep_distance = Vector3()
 @onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
+@export_category("Colisão com o Chão")
+@export var floor_distance = 4
+@export var floor_smoothness = 0.5
 #Variável de comparação
 var nearest_cell = null
 #Variável de Controle
@@ -16,7 +19,6 @@ var is_moving = true
 var is_shooting = false
 var shoot_by_player = false
 #Instâncias
-@onready var mesh_instance_influenza = $MeshInstance3Ds
 var projectile = preload("res://scenes/testing/influenza_projectile.tscn")
 #Referência de Localização
 @onready var marker_3d = $Marker3D
@@ -24,6 +26,7 @@ var projectile = preload("res://scenes/testing/influenza_projectile.tscn")
 @onready var blink_cooldown = $BlinkCooldown
 @onready var go_to_object = $GoToObject
 @onready var shoot_time = $ShootTime
+@onready var nav = $NavigationAgent3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,16 +34,21 @@ func _ready():
 	var pos_y = randf_range(2,4)
 	var pos_z = randf_range(0,4)
 	keep_distance = Vector3(pos_x, pos_y, pos_z)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
+	var current_position = global_transform.origin
+	var next_location = nav.get_next_path_position()
+	var new_velocity = (next_location - current_position).normalized()
+	velocity = velocity.move_toward(new_velocity, .25 * speed)
+	move_and_slide()
+		
 	if !is_shooting:
 		shoot_player()
 	if is_moving:
 		var cells = get_tree().get_nodes_in_group("cell")
 		nearest_cell = null
 		var shortest_distance = INF
-		var current_position = global_transform.origin
+		
 		# Encontre a célula mais próxima
 		for c in cells:
 			var cell_distance = (c.global_transform.origin - current_position).length()
@@ -50,36 +58,16 @@ func _process(delta):
 
 		if nearest_cell:
 			var nearest_cell_position = nearest_cell.global_transform.origin
-			var direction = (nearest_cell_position - current_position).normalized()
-			var movement = direction * speed * delta
-			
-			# Verifique se está perto o suficiente para chegar na célula
-			if current_position.distance_to(nearest_cell_position) <= movement.length():
-				global_transform.origin = nearest_cell_position
-				is_moving = false  
-				go_to_object.start()
-			else:
-				global_transform.origin += movement
+			nav.target_position = nearest_cell_position
 				
 				
 		var player = get_tree().get_nodes_in_group("player")
 		var player_position = player[0].marker_3d.global_transform.origin + keep_distance
-		var player_distance = (player_position - global_transform.origin).normalized()
-		if global_transform.origin.distance_to(player_position) <= shortest_distance:
-			var movement = player_distance * speed * delta
-			if global_transform.origin.distance_to(player_position) <= movement.length() and !is_shooting:
-				global_transform.origin = Vector3(player_position.x, player_position.y + 1, player_position.z)
-				go_to_object.start()
-			else:
-				global_transform.origin += movement
+		if current_position.distance_to(player_position) <= shortest_distance and !is_shooting:
+				nav.target_position = player_position
 				
 		if shoot_by_player:
-			var movement = player_distance * speed * delta
-			if global_transform.origin.distance_to(player_position) <= movement.length() and !is_shooting:
-				global_transform.origin = Vector3(player_position.x, player_position.y + 1, player_position.z)
-				go_to_object.start()
-			else:
-				global_transform.origin += movement
+			nav.target_position = player_position
 		
 func _on_go_to_object_timeout():
 	is_moving = true

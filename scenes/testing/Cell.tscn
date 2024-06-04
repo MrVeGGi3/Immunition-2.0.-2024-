@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://don5l8livtsxn"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/Cell.gd" id="1_8etxe"]
+[ext_resource type="Script" path="res://scripts/Characthers/pathfinding/cell_2.gd" id="1_v552j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24vit"]
 albedo_color = Color(0.0980392, 1, 1, 1)
@@ -14,8 +14,7 @@ collision_layer = 2
 collision_mask = 3
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
-script = ExtResource("1_8etxe")
-speed = 1
+script = ExtResource("1_v552j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
@@ -34,5 +33,15 @@ shape = SubResource("SphereShape3D_qmprq")
 
 [node name="BlinkCooldown" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="WalkMarker" type="Marker3D" parent="."]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = -4.0
+avoidance_enabled = true
+height = 3.0
+radius = 1.0
+neighbor_distance = 10.0
+use_3d_avoidance = true
 
 [connection signal="timeout" from="MovementTime" to="." method="_on_movement_time_timeout"]
