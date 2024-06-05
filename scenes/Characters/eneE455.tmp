@@ -1,0 +1,176 @@
+[gd_scene load_steps=21 format=3 uid="uid://tatlbq78gkdr"]
+
+[ext_resource type="Script" path="res://scripts/Characthers/Enemy_Red.gd" id="1_oqfwn"]
+[ext_resource type="AudioStream" uid="uid://bw3djxfntr0jb" path="res://sounds/SFX/Monster/monster_die.wav" id="3_8tm2e"]
+[ext_resource type="Texture2D" uid="uid://b7gk6t1q8ddtl" path="res://sprites/Monster/monster1_purple_sprite.png" id="3_kx0kl"]
+[ext_resource type="AudioStream" uid="uid://bud3mha4g5u45" path="res://sounds/SFX/Monster/monster_bite.wav" id="4_r3ya0"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="6_rggwi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m24n"]
+atlas = ExtResource("3_kx0kl")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhv6o"]
+atlas = ExtResource("3_kx0kl")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhsmq"]
+atlas = ExtResource("3_kx0kl")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sttor"]
+atlas = ExtResource("3_kx0kl")
+region = Rect2(1536, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c4u1"]
+atlas = ExtResource("3_kx0kl")
+region = Rect2(2048, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np65q"]
+atlas = ExtResource("3_kx0kl")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r7e8"]
+atlas = ExtResource("3_kx0kl")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afgic"]
+atlas = ExtResource("3_kx0kl")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc0qs"]
+atlas = ExtResource("3_kx0kl")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgriy"]
+atlas = ExtResource("3_kx0kl")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6gmfw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m24n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhv6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhsmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sttor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c4u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np65q")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r7e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afgic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc0qs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgriy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0of21"]
+margin = 2.871
+radius = 0.75
+height = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hltyo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js5y0"]
+bg_color = Color(0.72549, 0, 0.184314, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mhv1c"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemy", "red"]]
+collision_layer = 2
+collision_mask = 3
+platform_floor_layers = 4294967041
+platform_wall_layers = 1
+script = ExtResource("1_oqfwn")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(-3.73677e-08, 0, -0.854874, 0, 0.854874, 0, 0.854874, 0, -3.73677e-08, 0, 1, 0)
+pixel_size = 0.0076
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_6gmfw")
+animation = &"death"
+autoplay = "idle"
+
+[node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_8tm2e")
+volume_db = 5.0
+unit_size = 2.0
+bus = &"SFX"
+emission_angle_degrees = 90.0
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
+
+[node name="MonsterBite" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_r3ya0")
+bus = &"SFX"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.967815, 0)
+shape = SubResource("CapsuleShape3D_0of21")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport"]
+offset_right = 128.0
+offset_bottom = 27.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_hltyo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_js5y0")
+max_value = 15.0
+value = 15.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="SubViewport/ProgressBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_rggwi")
+theme_override_font_sizes/font_size = 35
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.642613, 1.39857, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_mhv1c")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = -0.5
+navigation_layers = 3
+height = 0.01
+use_3d_avoidance = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

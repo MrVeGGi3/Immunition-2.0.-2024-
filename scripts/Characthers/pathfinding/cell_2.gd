@@ -38,7 +38,7 @@ func _process(delta):
 	var next_location = nav.get_next_path_position()
 	var current_location = global_transform.origin
 	var new_velocity = (next_location - current_location).normalized() * speed
-	velocity = velocity.move_toward(new_velocity, .25 * speed) 
+	velocity = velocity.move_toward(new_velocity, .25) 
 	move_and_slide()
 		
 	if is_moving:

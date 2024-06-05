@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=85 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="2_bowrg"]
@@ -18,12 +18,15 @@
 [ext_resource type="Texture2D" uid="uid://cmixvfomb2y5w" path="res://sprites/Player/neutrofilos_sprite2.png" id="11_1qujk"]
 [ext_resource type="AudioStream" uid="uid://cl16r632p0qb5" path="res://sounds/BGM/deathsound.wav" id="11_6pg7g"]
 [ext_resource type="Texture2D" uid="uid://gdo46rv1wjh3" path="res://icons/icon gun select.png" id="11_qcxcy"]
+[ext_resource type="Texture2D" uid="uid://bap8mnn7tl4bg" path="res://icons/gun selection/icon gun green.jpg" id="11_upebd"]
 [ext_resource type="AudioStream" uid="uid://c14cj6uhjlgdt" path="res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav" id="12_68dol"]
 [ext_resource type="Texture2D" uid="uid://c7mcbsugesbyq" path="res://icons/weapons/Icon Linfosito.png" id="12_nrvla"]
 [ext_resource type="Texture2D" uid="uid://6eexcteofaqe" path="res://icons/weapons/Icon neutrofilo.png" id="13_c7qck"]
 [ext_resource type="Texture2D" uid="uid://hktqxlioxt6s" path="res://icons/weapons/Icon macrofago.png" id="14_8hv6x"]
 [ext_resource type="AudioStream" uid="uid://dk7wdjoi41cuq" path="res://sounds/SFX/Player/macrofage_weapon .wav" id="15_fkrn1"]
+[ext_resource type="Texture2D" uid="uid://b82c6dssql1le" path="res://icons/gun selection/icon gun blue.jpg" id="15_qgr1h"]
 [ext_resource type="Texture2D" uid="uid://33jae7wc4cls" path="res://icons/keyoboard buttons/keyboard.png" id="15_ttbl5"]
+[ext_resource type="Texture2D" uid="uid://b1kyb3y8wghfy" path="res://icons/gun selection/icon gun red.jpg" id="17_nxrvq"]
 [ext_resource type="PackedScene" uid="uid://nt37rum3dhef" path="res://scenes/HUD/WheelSwitchWeapons.tscn" id="24_40cle"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="24_r7y5r"]
 [ext_resource type="PackedScene" uid="uid://bli5ijcxx5bse" path="res://scenes/HUD/MemorySystem.tscn" id="25_vndgg"]
@@ -308,6 +311,52 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_asqag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_upebd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_upebd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}],
+"loop": false,
+"name": &"recharge",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65rdl"]
+atlas = ExtResource("15_ttbl5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2db4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65rdl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_weqne"]
 atlas = ExtResource("12_nrvla")
 region = Rect2(0, 0, 200, 200)
@@ -323,6 +372,37 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_uf55j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qgr1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qgr1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}],
+"loop": false,
+"name": &"recharge",
+"speed": 10.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6va40"]
 atlas = ExtResource("13_c7qck")
 region = Rect2(0, 0, 200, 200)
@@ -335,36 +415,6 @@ animations = [{
 }],
 "loop": false,
 "name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aj6o7"]
-atlas = ExtResource("14_8hv6x")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f2ewk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aj6o7")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_65rdl"]
-atlas = ExtResource("15_ttbl5")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2db4e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_65rdl")
-}],
-"loop": true,
-"name": &"default",
 "speed": 5.0
 }]
 
@@ -383,6 +433,37 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_yltvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nxrvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nxrvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qcxcy")
+}],
+"loop": false,
+"name": &"recharge",
+"speed": 10.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_375ne"]
 atlas = ExtResource("15_ttbl5")
 region = Rect2(0, 64, 32, 32)
@@ -395,6 +476,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj6o7"]
+atlas = ExtResource("14_8hv6x")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2ewk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj6o7")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -509,56 +605,32 @@ offset_top = 646.0
 offset_right = 418.0
 offset_bottom = 686.0
 
-[node name="Ammo1" type="Sprite2D" parent="PlayerHUD/UI_AMMO"]
-position = Vector2(121, -37)
-scale = Vector2(0.056, 0.056)
-texture = ExtResource("11_qcxcy")
-
-[node name="Ammo2" type="Sprite2D" parent="PlayerHUD/UI_AMMO"]
-position = Vector2(184, -37)
-scale = Vector2(0.056, 0.056)
-texture = ExtResource("11_qcxcy")
-
 [node name="Ammo3" type="Sprite2D" parent="PlayerHUD/UI_AMMO"]
 position = Vector2(247, -36)
 scale = Vector2(0.056, 0.056)
 texture = ExtResource("11_qcxcy")
 
-[node name="Linfocit" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO"]
-position = Vector2(121, -44)
-scale = Vector2(0.226765, 0.226765)
-sprite_frames = SubResource("SpriteFrames_3br55")
-animation = &"idle"
+[node name="Linfócito" type="Control" parent="PlayerHUD/UI_AMMO"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Macrofage" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO"]
-position = Vector2(185, -44)
-scale = Vector2(0.21566, 0.21566)
-sprite_frames = SubResource("SpriteFrames_yg3w6")
-animation = &"idle"
+[node name="LinfocitBar" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO/Linfócito"]
+position = Vector2(115, -42)
+scale = Vector2(0.0631217, 0.0635484)
+sprite_frames = SubResource("SpriteFrames_asqag")
+animation = &"recharge"
+autoplay = "default"
 
-[node name="Neutrofile" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO"]
-position = Vector2(248, -45)
-scale = Vector2(0.256223, 0.256223)
-sprite_frames = SubResource("SpriteFrames_f2ewk")
-animation = &"idle"
-
-[node name="1" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO"]
-position = Vector2(119, -83)
+[node name="1" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO/Linfócito"]
+position = Vector2(117, -82)
 sprite_frames = SubResource("SpriteFrames_2db4e")
 
-[node name="2" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO"]
-position = Vector2(183, -84)
-sprite_frames = SubResource("SpriteFrames_f73ti")
-
-[node name="3" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO"]
-position = Vector2(246, -84)
-sprite_frames = SubResource("SpriteFrames_aobn8")
-
-[node name="Ammo_Linf" type="Label" parent="PlayerHUD/UI_AMMO"]
+[node name="Ammo_Linf" type="Label" parent="PlayerHUD/UI_AMMO/Linfócito"]
 layout_mode = 0
-offset_left = 91.0
+offset_left = 85.0
 offset_top = -26.0
-offset_right = 158.0
+offset_right = 152.0
 offset_bottom = 32.0
 theme_override_colors/font_color = Color(0, 0.286275, 0, 1)
 theme_override_fonts/font = ExtResource("5_h2cv3")
@@ -567,11 +639,39 @@ text = "20
 "
 horizontal_alignment = 1
 
-[node name="Ammo_Macr" type="Label" parent="PlayerHUD/UI_AMMO"]
+[node name="LinfocitIcon" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO/Linfócito"]
+position = Vector2(117, -43)
+scale = Vector2(0.226765, 0.226765)
+sprite_frames = SubResource("SpriteFrames_3br55")
+animation = &"idle"
+
+[node name="Macrofágo" type="Control" parent="PlayerHUD/UI_AMMO"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MacrofageBar" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO/Macrofágo"]
+position = Vector2(180, -44)
+scale = Vector2(0.0631217, 0.0635484)
+sprite_frames = SubResource("SpriteFrames_uf55j")
+animation = &"recharge"
+autoplay = "default"
+
+[node name="MacrofageIcon" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO/Macrofágo"]
+position = Vector2(184, -46)
+scale = Vector2(0.21566, 0.21566)
+sprite_frames = SubResource("SpriteFrames_yg3w6")
+animation = &"idle"
+
+[node name="2" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO/Macrofágo"]
+position = Vector2(183, -82)
+sprite_frames = SubResource("SpriteFrames_f73ti")
+
+[node name="Ammo_Macr" type="Label" parent="PlayerHUD/UI_AMMO/Macrofágo"]
 layout_mode = 0
-offset_left = 155.0
+offset_left = 150.0
 offset_top = -25.0
-offset_right = 222.0
+offset_right = 217.0
 offset_bottom = 33.0
 theme_override_colors/font_color = Color(0, 0, 0.937255, 1)
 theme_override_fonts/font = ExtResource("5_h2cv3")
@@ -579,7 +679,19 @@ theme_override_font_sizes/font_size = 30
 text = "20"
 horizontal_alignment = 1
 
-[node name="Ammo_Neu" type="Label" parent="PlayerHUD/UI_AMMO"]
+[node name="Neutrófilo" type="Control" parent="PlayerHUD/UI_AMMO"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NeutrofileBar" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO/Neutrófilo"]
+position = Vector2(248, -43)
+scale = Vector2(0.0631217, 0.0635484)
+sprite_frames = SubResource("SpriteFrames_yltvk")
+animation = &"recharge"
+autoplay = "default"
+
+[node name="Ammo_Neu" type="Label" parent="PlayerHUD/UI_AMMO/Neutrófilo"]
 layout_mode = 0
 offset_left = 224.0
 offset_top = -26.0
@@ -590,6 +702,16 @@ theme_override_fonts/font = ExtResource("5_h2cv3")
 theme_override_font_sizes/font_size = 30
 text = "20"
 horizontal_alignment = 1
+
+[node name="3" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO/Neutrófilo"]
+position = Vector2(246, -84)
+sprite_frames = SubResource("SpriteFrames_aobn8")
+
+[node name="Neutrofile" type="AnimatedSprite2D" parent="PlayerHUD/UI_AMMO/Neutrófilo"]
+position = Vector2(248, -45)
+scale = Vector2(0.256223, 0.256223)
+sprite_frames = SubResource("SpriteFrames_f2ewk")
+animation = &"idle"
 
 [node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
 player = NodePath("../..")

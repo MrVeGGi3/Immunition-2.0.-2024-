@@ -34,6 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00263292)
 [node name="BlinkCooldown" type="Timer" parent="."]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = -1.0
 path_max_distance = 1.01
 avoidance_enabled = true
 height = 2.0

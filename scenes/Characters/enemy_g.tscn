@@ -164,4 +164,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300892, 2.05186, 0.355587)
 billboard = 1
 texture = SubResource("ViewportTexture_vfcuh")
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = -0.5
+use_3d_avoidance = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

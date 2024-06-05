@@ -10,14 +10,14 @@ func _ready():
 	visible = false
 	
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") or Input.is_action_just_pressed("pause"):
 		visible = true
 		get_tree().paused = true
 		wheel_switch_weapons.hide()
 		main_bgm.play()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
-	if Input.is_action_just_pressed("ui_cancel") and is_paused:
+	if Input.is_action_just_pressed("ui_cancel")or Input.is_action_just_pressed("pause") and is_paused:
 		_on_voltar_ao_jogo_pressed()
 	
 func _on_voltar_ao_jogo_pressed():

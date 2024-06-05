@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://bao777hooaroe"]
+
+[ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="1_50dfv"]
+[ext_resource type="PackedScene" uid="uid://tatlbq78gkdr" path="res://scenes/Characters/enemy_r.tscn" id="2_ok5d2"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_0r0th"]
+rayleigh_color = Color(0.694317, 7.82606e-05, 0.573323, 1)
+
+[sub_resource type="Sky" id="Sky_v1sxc"]
+sky_material = SubResource("PhysicalSkyMaterial_0r0th")
+
+[sub_resource type="Environment" id="Environment_0uunw"]
+background_mode = 2
+sky = SubResource("Sky_v1sxc")
+ambient_light_color = Color(0.991164, 0.991164, 0.991164, 1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_2ieyc"]
+vertices = PackedVector3Array(-4.67592, 1, -9.45093, -4.67592, 1, 9.54907, 4.32408, 1, 9.54907, 4.32408, 1, -9.45093)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_height = 2.0
+agent_max_climb = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g21cu"]
+albedo_color = Color(1, 0.415938, 0.653875, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vbvwj"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2jl0q"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="PatogenPahfindingBehaviour" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0uunw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, 0, 10, 0)
+light_energy = 3.11
+
+[node name="Player" parent="." instance=ExtResource("1_50dfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73199, 3.34383)
+
+[node name="Enemy" parent="." instance=ExtResource("2_ok5d2")]
+transform = Transform3D(0.599582, 0, 0, 0, 0.599582, 0, 0, 0, 0.599582, 0, 1.34162, -6.19102)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_2ieyc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 20, -0.175919, 1.90735e-06, 0.0490656)
+material_override = SubResource("StandardMaterial3D_g21cu")
+mesh = SubResource("BoxMesh_vbvwj")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2jl0q")

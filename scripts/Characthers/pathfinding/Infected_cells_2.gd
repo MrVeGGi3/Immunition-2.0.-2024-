@@ -32,25 +32,25 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-		var player = get_tree().get_nodes_in_group("player")
-		var player_position = player[0].hit_marker_explosion.global_transform.origin
-		nav.target_position = player_position
-		var current_location = global_transform.origin
-		var next_location = nav.get_next_path_position()
-		var new_velocity = (next_location - current_location).normalized() * speed
-		velocity = velocity.move_toward(new_velocity, .25 * speed)
-		move_and_slide()
+	var player = get_tree().get_nodes_in_group("player")
+	var player_position = player[0].hit_marker_explosion.global_transform.origin
+	nav.target_position = player_position
+	var current_location = global_transform.origin
+	var next_location = nav.get_next_path_position()
+	var new_velocity = (next_location - current_location).normalized() * speed
+	velocity = velocity.move_toward(new_velocity, .25)
+	move_and_slide()
 		
-		if current_location.distance_to(player_position) <= 1 and !is_hitting:
-			var new_explosion = explosion.instantiate()
-			new_explosion.global_transform.origin = marker_3d.global_transform.origin
-			get_parent().add_child(new_explosion)
-			is_hitting = true
+	if current_location.distance_to(player_position) <= 1 and !is_hitting:
+		var new_explosion = explosion.instantiate()
+		new_explosion.global_transform.origin = marker_3d.global_transform.origin
+		get_parent().add_child(new_explosion)
+		is_hitting = true
 			
-		if is_hitting:
-			queue_free()
-			spawn_influenza(spawn_collision, virus_type)
-			print("Fui spawnado após entrar em colisão com o player")
+	if is_hitting:
+		queue_free()
+		spawn_influenza(spawn_collision, virus_type)
+		print("Fui spawnado após entrar em colisão com o player")
 			
 func spawn_influenza(spawn, virus):
 	for i in range(spawn):

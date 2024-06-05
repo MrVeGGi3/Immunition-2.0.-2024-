@@ -41,7 +41,10 @@ wait_time = 2.0
 wait_time = 5.0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_height_offset = -1.0
+path_height_offset = -3.0
+path_max_distance = 2.01
+height = 3.0
+radius = 1.0
 use_3d_avoidance = true
 
 [connection signal="timeout" from="Destruction" to="." method="_on_destruction_timeout"]

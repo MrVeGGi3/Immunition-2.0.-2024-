@@ -106,6 +106,8 @@ viewport_path = NodePath("SubViewport")
 [node name="Enemy" type="CharacterBody3D" groups=["enemy", "red"]]
 collision_layer = 2
 collision_mask = 3
+platform_floor_layers = 4294967041
+platform_wall_layers = 1
 script = ExtResource("1_oqfwn")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
@@ -164,5 +166,12 @@ theme_override_font_sizes/font_size = 35
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.642613, 1.39857, 0)
 billboard = 1
 texture = SubResource("ViewportTexture_mhv1c")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = -0.5
+height = 3.0
+radius = 1.0
+time_horizon_agents = 0.0
+use_3d_avoidance = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

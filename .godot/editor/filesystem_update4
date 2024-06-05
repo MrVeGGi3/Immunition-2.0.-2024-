@@ -1,4 +1,4 @@
-res://scenes/testing/Cell.tscn
+res://scenes/testing/PatogenPahfindingBehaviour.tscn
 res://scripts/Characthers/Enemy_Blue.gd
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/Characthers/Player.gd
@@ -8,9 +8,7 @@ res://scripts/HUD/wheel_weapons.gd
 res://scripts/Sound/ChangeSound.gd
 res://sprites/UI/memory_system.gd
 res://themes/playerLifeBarTheme.tres
-res://scripts/Characthers/pathfinding/cell_2.gd
-res://scenes/testing/Influenza.tscn
-res://scripts/Characthers/pathfinding/Influenza2.gd
+res://scripts/Characthers/Enemy_Red.gd
 res://scenes/HUD/WheelSwitchWeapons.tscn
 res://scenes/HUD/pause_menu.tscn
 res://scenes/Characters/Player.tscn
@@ -31,8 +29,15 @@ res://scenes/HUD/logo_transition.tscn
 res://scenes/HUD/loading.tscn
 res://scenes/testing/TestSceneEnvironment.tscn
 res://scenes/testing/SpawnCellsLocal.tscn
+res://scenes/testing/Cell.tscn
+res://scenes/testing/Influenza.tscn
 res://scenes/testing/Spawner3D.tscn
 res://scenes/testing/TestPlayerInfluenza.tscn
 res://scenes/testing/Infected_cells.tscn
 res://scenes/testing/explosion.tscn
 res://scenes/testing/influenza_projectile.tscn
+res://scenes/HUD/healthbar_red.tscn
+res://scripts/Characthers/pathfinding/Influenza2.gd
+res://scripts/Characthers/pathfinding/Infected_cells_2.gd
+res://scripts/HUD/Pause.gd
+res://scripts/HUD/LogoTransition.gd

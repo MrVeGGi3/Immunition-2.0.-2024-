@@ -36,10 +36,12 @@ func _ready():
 	keep_distance = Vector3(pos_x, pos_y, pos_z)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	var player = get_tree().get_nodes_in_group("player")
+	var player_position = player[0].marker_3d.global_transform.origin + keep_distance
 	var current_position = global_transform.origin
 	var next_location = nav.get_next_path_position()
-	var new_velocity = (next_location - current_position).normalized()
-	velocity = velocity.move_toward(new_velocity, .25 * speed)
+	var new_velocity = (next_location - current_position).normalized() * speed
+	velocity = velocity.move_toward(new_velocity, .25)
 	move_and_slide()
 		
 	if !is_shooting:
@@ -59,10 +61,10 @@ func _process(_delta):
 		if nearest_cell:
 			var nearest_cell_position = nearest_cell.global_transform.origin
 			nav.target_position = nearest_cell_position
+		else:
+			nav.target_position = player_position
 				
-				
-		var player = get_tree().get_nodes_in_group("player")
-		var player_position = player[0].marker_3d.global_transform.origin + keep_distance
+		
 		if current_position.distance_to(player_position) <= shortest_distance and !is_shooting:
 				nav.target_position = player_position
 				

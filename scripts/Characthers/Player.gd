@@ -2,21 +2,27 @@ extends CharacterBody3D
 #Arma 1
 @onready var ray_cast_3d = $RayCast3D #raycast da pistola linfócito
 @onready var shoot_sound = $ShootPlayer #som da pistola linfócito
-@onready var ammo_linf = $PlayerHUD/UI_AMMO/Ammo_Linf #texto da munição da arma linfócito
+@onready var ammo_linf = $"PlayerHUD/UI_AMMO/Linfócito/Ammo_Linf" #texto da munição da arma linfócito
 #Arma 2
 @onready var macrofage_ray_3d = $MacrofageRay3D #raycast do macrófago
 @onready var macrofage_shoot = $MacrofageShoot #som do macrofagoweapon
-@onready var ammo_macr = $PlayerHUD/UI_AMMO/Ammo_Macr #texto da munição da arma macrófago
+@onready var ammo_macr = $"PlayerHUD/UI_AMMO/Macrofágo/Ammo_Macr"
 #Arma 3
 @onready var flame_thrower_shoot = $FlameThrowerShoot #raycast do neutrófilo
 @onready var neutrofile_sound = $NeutrofileSound#som do flamethrower
-@onready var ammo_neu = $PlayerHUD/UI_AMMO/Ammo_Neu #texto da munição da arma neutrófilo
+@onready var ammo_neu = $"PlayerHUD/UI_AMMO/Neutrófilo/Ammo_Neu"
+
 
 
 #Animação e Camera
 @onready var animated_sprite_2d = $PlayerHUD/GunShoot/AnimatedSprite2D # animated sprite das armas
 @onready var camera_3d = $Camera3D #camera de visão do player
 @onready var particles = $FlameThrowerShoot/GPUParticles3D #efeito de particulas
+
+#Animação das barras de armas
+@onready var linfocit_bar = $"PlayerHUD/UI_AMMO/Linfócito/LinfocitBar"
+@onready var macrofage_bar = $"PlayerHUD/UI_AMMO/Macrofágo/MacrofageBar"
+@onready var neutrofile_bar = $"PlayerHUD/UI_AMMO/Neutrófilo/NeutrofileBar"
 
 #UI
 @onready var deathscreen = $PlayerHUD/DeathScreen #tela de quando o player morre
@@ -437,4 +443,10 @@ func change_neutrofile():
 		can_shoot_nf = false
 		set_global_transition_bool_csn(can_shoot_nf)
 
-
+func get_more_ammo(lammo, mammo, nammo):
+	l_ammo += lammo
+	m_ammo += mammo
+	n_ammo += nammo
+	linfocit_bar.play("recharge")
+	macrofage_bar.play("recharge")
+	neutrofile_bar.play("recharge")
