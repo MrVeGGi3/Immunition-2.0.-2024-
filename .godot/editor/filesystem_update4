@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 res://scenes/Levels/level_1.tscn
+=======
+res://scenes/Characters/Player.tscn
+>>>>>>> main
 res://scripts/Characthers/Enemy_Blue.gd
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/Characthers/Player.gd
@@ -8,6 +12,11 @@ res://scripts/HUD/wheel_weapons.gd
 res://scripts/Sound/ChangeSound.gd
 res://sprites/UI/memory_system.gd
 res://themes/playerLifeBarTheme.tres
+<<<<<<< HEAD
+=======
+res://scenes/HUD/pause_menu.tscn
+res://scripts/Sliders/mouse_sensibility.gd
+>>>>>>> main
 res://scenes/HUD/WheelSwitchWeapons.tscn
 res://scenes/HUD/pause_menu.tscn
 res://scenes/Characters/Player.tscn
@@ -36,3 +45,11 @@ res://scenes/testing/explosion.tscn
 res://scenes/testing/influenza_projectile.tscn
 res://scenes/testing/PatogenPahfindingBehaviour.tscn
 res://scenes/HUD/healthbar_red.tscn
+<<<<<<< HEAD
+=======
+res://scenes/UI/Tutorials/pathogen_tutorial.tscn
+res://scenes/UI/Tutorials/influenza_tutorial.tscn
+res://scenes/UI/ui_ammo.tscn
+res://scripts/HUD/Pause.gd
+res://scenes/testing/PlayerRunning.tscn
+>>>>>>> main
