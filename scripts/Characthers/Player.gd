@@ -69,9 +69,9 @@ var m3 = Global.m3_active
 
 #Variáveis do Player
 var vida
-var l_ammo = 30 #munição linfócito
-var m_ammo = 25 #munição macrófago
-var n_ammo = 15 #munição neutrófilo
+@export var l_ammo = 30 #munição linfócito
+@export var m_ammo = 25 #munição macrófago
+@export var n_ammo = 100 #munição neutrófilo
 var MOUSE_SENS = Global.mouse_sens
 
 func _ready():
@@ -336,6 +336,7 @@ func _damage(damage):
 	
 		
 func kill():
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		dead = true
 		can_shoot = false
 		can_shoot_mf = false
@@ -353,9 +354,9 @@ func disable_UI():
 	player_life_bar.hide()
 	tutorial_guide.hide()
 	main_bgm.stop()
-	wheel_switch_weapons.hide()
+	wheel_switch_weapons.visible = false
 	ui_ammo.hide()	
-	memory_system.hide()
+	memory_system.visible = false
 	
 
 func _on_exit_game_pressed():

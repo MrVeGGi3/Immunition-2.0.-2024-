@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddags07nm6eq3"]
+
+[ext_resource type="Script" path="res://scripts/tutorials/pathogen_tutorial.gd" id="1_62s8w"]
+[ext_resource type="Texture2D" uid="uid://b1i6udx23kait" path="res://images/UI/Barra de Dialogo.png" id="2_uyx4h"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="3_bfnmk"]
+[ext_resource type="Texture2D" uid="uid://dqomqq5hwrx7" path="res://icons/keyoboard buttons/enterButton.jpeg" id="4_43eri"]
+
+[node name="PathogenTutorial" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_62s8w")
+
+[node name="DialogueBox" type="Sprite2D" parent="."]
+position = Vector2(539, 314)
+scale = Vector2(0.218513, 0.218513)
+texture = ExtResource("2_uyx4h")
+
+[node name="JumpTutorial" type="Button" parent="."]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 386.0
+offset_right = 611.0
+offset_bottom = 417.0
+theme_override_colors/font_color = Color(0.94902, 1, 0.945098, 1)
+theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
+theme_override_fonts/font = ExtResource("3_bfnmk")
+text = "Pular Tutorial"
+
+[node name="EnterButton" type="Sprite2D" parent="."]
+position = Vector2(788, 386)
+scale = Vector2(0.200487, 0.200487)
+texture = ExtResource("4_43eri")
+
+[node name="SpeechTutorial" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 259.0
+offset_right = 271.0
+offset_bottom = 299.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_bfnmk")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

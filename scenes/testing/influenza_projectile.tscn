@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwiunuar2xtst"]
 
-[ext_resource type="Script" path="res://scenes/objects/influenza_projectile.gd" id="1_5m3nf"]
+[ext_resource type="Script" path="res://scripts/Characthers/objects/influenza_projectile.gd" id="1_5m3nf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ik0v4"]
 albedo_color = Color(1, 0.403922, 0, 1)

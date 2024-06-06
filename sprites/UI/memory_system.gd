@@ -15,11 +15,20 @@ var count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	visible = true
-
+	visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if Input.is_action_just_pressed("call_memory_system") and !visible:
+		visible = true
+		get_tree().paused = true
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		
+	elif Input.is_action_just_pressed("call_memory_system") and visible:
+		_disable_visibility()
+		get_tree().paused = false
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
 	if Input.is_action_just_pressed("roll_up"):
 		if count == 0:
 			count = 2
@@ -47,6 +56,7 @@ func _on_memoria_1_pressed():
 	m1_selected.visible = true
 	set_global_memory_variables(m1, m2, m3)
 	change_button_animation_state(m2_selected, m3_selected)
+	_disable_visibility()
 
 func _on_memoria_2_pressed():
 	m1 = false
@@ -55,7 +65,8 @@ func _on_memoria_2_pressed():
 	m2_selected.visible = true
 	set_global_memory_variables(m1, m2, m3)
 	change_button_animation_state(m1_selected, m3_selected)
-
+	_disable_visibility()
+	
 func _on_memoria_3_pressed():
 	m1 = false
 	m2 = false
@@ -63,7 +74,8 @@ func _on_memoria_3_pressed():
 	m3_selected.visible = true
 	set_global_memory_variables(m1, m2, m3)
 	change_button_animation_state(m1_selected, m2_selected)
-
+	_disable_visibility()
+	
 func set_global_memory_variables(variavel, variavel2, variavel3):
 	Global.m1_active = variavel
 	Global.m2_active = variavel2
@@ -80,3 +92,8 @@ func activate_memory(number):
 func change_button_animation_state(b1, b2):
 	b1.visible = false
 	b2.visible = false
+	
+func _disable_visibility():
+	visible = false
+	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

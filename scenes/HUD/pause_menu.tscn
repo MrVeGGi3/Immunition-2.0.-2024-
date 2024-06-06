@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://5ran8yqdqky"]
+[gd_scene load_steps=14 format=3 uid="uid://5ran8yqdqky"]
 
 [ext_resource type="Script" path="res://scripts/HUD/Pause.gd" id="1_4srht"]
 [ext_resource type="Theme" uid="uid://unuynfnhkuni" path="res://themes/label.tres" id="1_w2yf1"]
@@ -6,7 +6,6 @@
 [ext_resource type="Theme" uid="uid://btc3kqb6qx6k3" path="res://themes/button.tres" id="4_0h3b8"]
 [ext_resource type="AudioStream" uid="uid://hqasyg3vanal" path="res://sounds/SFX/Player/ShootEffect.wav" id="4_aw64a"]
 [ext_resource type="Script" path="res://scripts/HUD/WindowType.gd" id="5_csce5"]
-[ext_resource type="AudioStream" uid="uid://c14cj6uhjlgdt" path="res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav" id="5_e355g"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="5_ggvt1"]
 [ext_resource type="Script" path="res://scripts/HUD/ResolutionControl.gd" id="5_t1wfl"]
 [ext_resource type="Script" path="res://scripts/Sliders/mouse_sensibility.gd" id="11_wh8we"]
@@ -125,12 +124,6 @@ text = "Testar SFX"
 process_mode = 3
 stream = ExtResource("4_aw64a")
 bus = &"SFX"
-
-[node name="MainBGM" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("5_e355g")
-volume_db = -20.0
-bus = &"BGM"
 
 [node name="TypeScreenControl" type="Control" parent="."]
 anchors_preset = 0

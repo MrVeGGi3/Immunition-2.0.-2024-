@@ -20,11 +20,11 @@ func _process(_delta):
 	var can_shoot_nf = Global.c_shoot_nf
 	
 	if can_shoot:
-		_on_green_pressed()
+		green_button.play("selected")
 	elif can_shoot_mf:
-		_on_blue_pressed()
+		blue_button.play("selected")
 	elif can_shoot_nf:
-		_on_red_pressed()
+		red_button.play("selected")
 	
 	if Input.is_action_just_pressed("weapon_wheel") and !weapon_selected:
 		visible = true
@@ -44,6 +44,7 @@ func _process(_delta):
 #Botão da Arma Verde
 func _on_green_mouse_entered():
 	green_button.play("hover")
+	
 func _on_green_mouse_exited():
 	green_button.play("normal")
 
@@ -51,6 +52,7 @@ func _on_green_mouse_exited():
 #Botão da Arma Azul
 func _on_blue_mouse_entered():
 	blue_button.play("hover")
+	
 func _on_blue_mouse_exited():
 	blue_button.play("normal")
 
@@ -65,17 +67,21 @@ func _on_green_pressed():
 	player.change_linfocit()
 	green_button.play("selected")
 	disable_animations(blue_button, red_button)
+	_disable_wheel()
 	
 func _on_blue_pressed():
 	player.change_macrofage()
 	blue_button.play("selected")
 	disable_animations(green_button, red_button)
+	_disable_wheel()
 	
 func _on_red_pressed():
 	player.change_neutrofile()
 	red_button.play("selected")
 	disable_animations(green_button, blue_button)
-
+	visible = false
+	_disable_wheel()
+	
 func disable_animations(botao1, botao2):
 	botao1.play("normal")
 	botao2.play("normal")
@@ -85,3 +91,7 @@ func set_global_bool(variavel, variavel2, variavel3):
 	Global.c_shoot_mf = variavel2
 	Global.c_shoot_nf = variavel3
 	
+func _disable_wheel():
+	visible = false
+	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

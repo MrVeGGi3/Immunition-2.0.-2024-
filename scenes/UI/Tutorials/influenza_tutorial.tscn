@@ -1,22 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddags07nm6eq3"]
+[gd_scene load_steps=5 format=3 uid="uid://c7d6ck0hhnu3j"]
 
-[ext_resource type="Script" path="res://scripts/HUD/Tutorial_UI.gd" id="1_tw04c"]
-[ext_resource type="Texture2D" uid="uid://b1i6udx23kait" path="res://images/UI/Barra de Dialogo.png" id="2_uyx4h"]
-[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="3_bfnmk"]
-[ext_resource type="Texture2D" uid="uid://dqomqq5hwrx7" path="res://icons/keyoboard buttons/enterButton.jpeg" id="4_43eri"]
+[ext_resource type="Script" path="res://scripts/tutorials/Tutorial_UI.gd" id="1_sltn4"]
+[ext_resource type="Texture2D" uid="uid://b1i6udx23kait" path="res://images/UI/Barra de Dialogo.png" id="2_jywvg"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="3_1jqqi"]
+[ext_resource type="Texture2D" uid="uid://dqomqq5hwrx7" path="res://icons/keyoboard buttons/enterButton.jpeg" id="4_o7h4m"]
 
-[node name="Tutorial_UI" type="Control"]
+[node name="InfluenzaTutorial" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_tw04c")
+script = ExtResource("1_sltn4")
 
 [node name="DialogueBox" type="Sprite2D" parent="."]
 position = Vector2(539, 314)
 scale = Vector2(0.218513, 0.218513)
-texture = ExtResource("2_uyx4h")
+texture = ExtResource("2_jywvg")
 
 [node name="JumpTutorial" type="Button" parent="."]
 layout_mode = 0
@@ -26,13 +26,13 @@ offset_right = 611.0
 offset_bottom = 417.0
 theme_override_colors/font_color = Color(0.94902, 1, 0.945098, 1)
 theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
-theme_override_fonts/font = ExtResource("3_bfnmk")
+theme_override_fonts/font = ExtResource("3_1jqqi")
 text = "Pular Tutorial"
 
 [node name="EnterButton" type="Sprite2D" parent="."]
 position = Vector2(788, 386)
 scale = Vector2(0.200487, 0.200487)
-texture = ExtResource("4_43eri")
+texture = ExtResource("4_o7h4m")
 
 [node name="SpeechTutorial" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -41,7 +41,7 @@ offset_top = 259.0
 offset_right = 271.0
 offset_bottom = 299.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_bfnmk")
+theme_override_fonts/normal_font = ExtResource("3_1jqqi")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 fit_content = true
