@@ -7,6 +7,8 @@ var m3 = Global.m3_active
 @onready var m1_selected = $"Memorias/Memoria 1/M1_Selected"
 @onready var m2_selected = $"Memorias/Memoria 2/M2_Selected"
 @onready var m3_selected = $"Memorias/Memoria 3/M3_Selected"
+@onready var pause_menu = $"../pause_menu"
+@onready var wsw = $"../WheelSwitchWeapons"
 
 
 @export var player:CharacterBody3D = null
@@ -19,7 +21,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_just_pressed("call_memory_system") and !visible:
+	if Input.is_action_just_pressed("call_memory_system") and !visible and !wsw.visible:
 		visible = true
 		get_tree().paused = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

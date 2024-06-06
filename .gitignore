@@ -2,6 +2,8 @@
 .import/
 export.cfg
 export_presets.cfg
+/.godot/editor
+/.godot/uid_cache.bin
 
 # Imported translations (automatically generated from CSV files)
 *.translation

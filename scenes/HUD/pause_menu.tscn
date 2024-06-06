@@ -203,3 +203,4 @@ text = "Sensibilidade do Mouse"
 [connection signal="pressed" from="Panel/BacktoMainMenu" to="." method="_on_backto_main_menu_pressed"]
 [connection signal="pressed" from="Panel/TestSFX" to="." method="_on_test_sfx_pressed"]
 [connection signal="changed" from="MouseSensibilityControl/MouseSensibilitySlider" to="MouseSensibilityControl/MouseSensibilitySlider" method="_on_changed"]
+[connection signal="value_changed" from="MouseSensibilityControl/MouseSensibilitySlider" to="MouseSensibilityControl/MouseSensibilitySlider" method="_on_value_changed"]

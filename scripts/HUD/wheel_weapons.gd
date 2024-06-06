@@ -5,6 +5,7 @@ extends Control
 @onready var blue_button = $Wheel/Blue/BlueButton
 @onready var red_button = $Wheel/Red/RedButton
 @export var player : CharacterBody3D = null
+@onready var ms = $"../MemorySystem"
 
 var weapon_selected = null
 
@@ -26,7 +27,7 @@ func _process(_delta):
 	elif can_shoot_nf:
 		red_button.play("selected")
 	
-	if Input.is_action_just_pressed("weapon_wheel") and !weapon_selected:
+	if Input.is_action_just_pressed("weapon_wheel") and !weapon_selected and !ms.visible:
 		visible = true
 		get_tree().paused = true
 		weapon_selected = true
