@@ -1,55 +1,11 @@
-<<<<<<< HEAD
-res://scenes/Levels/level_1.tscn
-=======
-res://scenes/Characters/Player.tscn
->>>>>>> main
+res://scenes/HUD/logo_transition.tscn
 res://scripts/Characthers/Enemy_Blue.gd
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/Characthers/Player.gd
+res://themes/playerLifeBarTheme.tres
+res://scripts/Sound/ChangeSound.gd
+res://scripts/HUD/wheel_weapons.gd
+res://sprites/UI/memory_system.gd
 res://scripts/HUD/minimap.gd
 res://scripts/HUD/Options.gd
-res://scripts/HUD/wheel_weapons.gd
-res://scripts/Sound/ChangeSound.gd
-res://sprites/UI/memory_system.gd
-res://themes/playerLifeBarTheme.tres
-<<<<<<< HEAD
-=======
-res://scenes/HUD/pause_menu.tscn
-res://scripts/Sliders/mouse_sensibility.gd
->>>>>>> main
-res://scenes/HUD/WheelSwitchWeapons.tscn
-res://scenes/HUD/pause_menu.tscn
-res://scenes/Characters/Player.tscn
-res://scenes/Characters/enemy_b.tscn
-res://scenes/Characters/enemy_g.tscn
-res://scenes/Characters/enemy_r.tscn
-res://scenes/HUD/MemorySystem.tscn
-res://scenes/Levels/world.tscn
-res://scenes/HUD/minimap.tscn
-res://scenes/icons/EnemyMinimapColorect.tscn
-res://scenes/Levels/level_3.tscn
-res://scenes/Levels/level_2.tscn
-res://scenes/HUD/EnemiesRemainingDisplay.tscn
-res://scenes/HUD/sub_viewport_container.tscn
-res://scenes/HUD/SymbolRecognition.tscn
-res://scenes/HUD/logo_transition.tscn
-res://scenes/HUD/loading.tscn
-res://scenes/testing/TestSceneEnvironment.tscn
-res://scenes/testing/SpawnCellsLocal.tscn
-res://scenes/testing/Cell.tscn
-res://scenes/testing/Influenza.tscn
-res://scenes/testing/Spawner3D.tscn
-res://scenes/testing/TestPlayerInfluenza.tscn
-res://scenes/testing/Infected_cells.tscn
-res://scenes/testing/explosion.tscn
-res://scenes/testing/influenza_projectile.tscn
-res://scenes/testing/PatogenPahfindingBehaviour.tscn
-res://scenes/HUD/healthbar_red.tscn
-<<<<<<< HEAD
-=======
-res://scenes/UI/Tutorials/pathogen_tutorial.tscn
-res://scenes/UI/Tutorials/influenza_tutorial.tscn
-res://scenes/UI/ui_ammo.tscn
-res://scripts/HUD/Pause.gd
-res://scenes/testing/PlayerRunning.tscn
->>>>>>> main
+res://scenes/Levels/level_1.tscn

@@ -606,7 +606,6 @@ mesh = ExtResource("4_8d1tl")
 shape = SubResource("ConvexPolygonShape3D_lfanu")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="DevPillar15/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_lfanu")
 
 [node name="DevPillar16" type="MeshInstance3D" parent="."]
@@ -660,7 +659,6 @@ mesh = ExtResource("4_8d1tl")
 shape = SubResource("ConvexPolygonShape3D_lfanu")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="DevPillar22/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_lfanu")
 
 [node name="DevPillar23" type="MeshInstance3D" parent="."]
