@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://d36mflmgjmxea"]
+[gd_scene load_steps=50 format=3 uid="uid://d36mflmgjmxea"]
 
 [ext_resource type="ArrayMesh" uid="uid://djp2vbbqe1dc" path="res://prefabs/map0.obj" id="1_62mxc"]
 [ext_resource type="Texture2D" uid="uid://daa1un0fymlfh" path="res://textures/texas.png" id="2_23uxg"]
@@ -143,6 +143,9 @@ albedo_texture = ExtResource("7_crgw4")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4t2qi"]
 data = PackedVector3Array(-2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdpqn"]
+albedo_texture = ExtResource("9_leb2p")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s6byu"]
 data = PackedVector3Array(-2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085)
@@ -301,7 +304,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.252609, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7908, 0, 0)
 
 [node name="Enemy4" parent="Enemies/EnemiesGroupRed" instance=ExtResource("6_grihp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.174, 0, -26.4244)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.174, 0, -12.8252)
 
 [node name="ControlDistanceNode" type="Node3D" parent="."]
 
@@ -317,7 +320,7 @@ level = NodePath("..")
 navigation_mesh = SubResource("NavigationMesh_77m7i")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Plataforma de Tutorial"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 5, 67.3583, 1.36087, 130.063)
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 5, 67.4, 1.36087, 130.063)
 material_override = SubResource("StandardMaterial3D_426fq")
 mesh = ExtResource("8_pm2n1")
 skeleton = NodePath("../..")
@@ -325,6 +328,30 @@ skeleton = NodePath("../..")
 [node name="StaticBody3D2" type="StaticBody3D" parent="Plataforma de Tutorial/MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma de Tutorial/MeshInstance3D/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_4t2qi")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Plataforma de Tutorial"]
+transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 2, 67.4042, 1.36087, 144.036)
+material_override = SubResource("StandardMaterial3D_fdpqn")
+mesh = ExtResource("8_pm2n1")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Plataforma de Tutorial/MeshInstance3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma de Tutorial/MeshInstance3D14/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_4t2qi")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Plataforma de Tutorial"]
+transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 2, 67.4042, 1.36087, 116.078)
+material_override = SubResource("StandardMaterial3D_fdpqn")
+mesh = ExtResource("8_pm2n1")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Plataforma de Tutorial/MeshInstance3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma de Tutorial/MeshInstance3D15/StaticBody3D2"]
 shape = SubResource("ConcavePolygonShape3D_4t2qi")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Plataforma de Tutorial"]
