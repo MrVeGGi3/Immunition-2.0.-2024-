@@ -337,7 +337,6 @@ mesh = ExtResource("8_pm2n1")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Plataforma de Tutorial/MeshInstance3D14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma de Tutorial/MeshInstance3D14/StaticBody3D2"]
 shape = SubResource("ConcavePolygonShape3D_4t2qi")
@@ -349,7 +348,6 @@ mesh = ExtResource("8_pm2n1")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Plataforma de Tutorial/MeshInstance3D15"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma de Tutorial/MeshInstance3D15/StaticBody3D2"]
 shape = SubResource("ConcavePolygonShape3D_4t2qi")
