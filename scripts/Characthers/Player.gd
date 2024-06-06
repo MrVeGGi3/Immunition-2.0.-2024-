@@ -51,7 +51,6 @@ extends CharacterBody3D
 
 #Constantes
 const vida_maxima = 10.0
-const SPEED = 12.0
 const INCREASE_SPEED = 10
 var JUMP_FORCE = 8.0
 const GRAVITY = Vector3(0, -9.8, 0)
@@ -72,7 +71,9 @@ var vida
 @export var l_ammo = 30 #munição linfócito
 @export var m_ammo = 25 #munição macrófago
 @export var n_ammo = 100 #munição neutrófilo
-var MOUSE_SENS = Global.mouse_sens
+@export var max_speed : float = 24.0
+@export var SPEED = 12.0
+@export var aceleration = 0.1
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #altera o modo de captura do mouse para usar como FPS
@@ -101,6 +102,7 @@ func _ready():
 
 	
 func _input(event):
+	var MOUSE_SENS = Global.mouse_sens
 	if dead:
 		return
 	if event is InputEventMouseMotion:
@@ -114,6 +116,8 @@ func _input(event):
 	
 
 func _process(delta):
+	var MOUSE_SENS = Global.mouse_sens
+	
 	if dead:
 		return
 	progress_bar.value = vida
@@ -200,14 +204,17 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_FORCE
 		if Input.is_action_pressed("run"):
-			velocity += direction * (SPEED + INCREASE_SPEED)
-
+			SPEED += lerp(SPEED, max_speed, aceleration)
+			SPEED = min(SPEED, max_speed)
+		else:
+			SPEED = 12
+	else:
+		SPEED = 12
+		
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		if Input.is_action_just_pressed("run"):
-			velocity.x += direction.x * (SPEED + INCREASE_SPEED)
-			velocity.z += direction.z * (SPEED + INCREASE_SPEED)
+		print(velocity.normalized())
 			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
