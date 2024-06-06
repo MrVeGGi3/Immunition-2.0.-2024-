@@ -70,6 +70,8 @@ func _process(_delta):
 				
 		if shoot_by_player:
 			nav.target_position = player_position
+			
+		
 		
 func _on_go_to_object_timeout():
 	is_moving = true

@@ -1,0 +1,310 @@
+[gd_scene load_steps=25 format=3 uid="uid://bxgsykpmywb7o"]
+
+[ext_resource type="Texture2D" uid="uid://gdo46rv1wjh3" path="res://icons/icon gun select.png" id="1_2p4jd"]
+[ext_resource type="Texture2D" uid="uid://bap8mnn7tl4bg" path="res://icons/gun selection/icon gun green.jpg" id="2_mf1pr"]
+[ext_resource type="Texture2D" uid="uid://33jae7wc4cls" path="res://icons/keyoboard buttons/keyboard.png" id="3_c63y8"]
+[ext_resource type="FontFile" uid="uid://tfn36nnpaotb" path="res://fonts/batmfa__.ttf" id="4_2gssc"]
+[ext_resource type="Texture2D" uid="uid://c7mcbsugesbyq" path="res://icons/weapons/Icon Linfosito.png" id="5_8mvfi"]
+[ext_resource type="Texture2D" uid="uid://b82c6dssql1le" path="res://icons/gun selection/icon gun blue.jpg" id="6_44nh7"]
+[ext_resource type="Texture2D" uid="uid://6eexcteofaqe" path="res://icons/weapons/Icon neutrofilo.png" id="7_bb3ce"]
+[ext_resource type="Texture2D" uid="uid://b1kyb3y8wghfy" path="res://icons/gun selection/icon gun red.jpg" id="8_m7xla"]
+[ext_resource type="Texture2D" uid="uid://hktqxlioxt6s" path="res://icons/weapons/Icon macrofago.png" id="9_gjsm3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_asqag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mf1pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mf1pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}],
+"loop": false,
+"name": &"recharge",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65rdl"]
+atlas = ExtResource("3_c63y8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2db4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65rdl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weqne"]
+atlas = ExtResource("5_8mvfi")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3br55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weqne")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uf55j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_44nh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_44nh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}],
+"loop": false,
+"name": &"recharge",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6va40"]
+atlas = ExtResource("7_bb3ce")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yg3w6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6va40")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kqli"]
+atlas = ExtResource("3_c63y8")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f73ti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kqli")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yltvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m7xla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m7xla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2p4jd")
+}],
+"loop": false,
+"name": &"recharge",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_375ne"]
+atlas = ExtResource("3_c63y8")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aobn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_375ne")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj6o7"]
+atlas = ExtResource("9_gjsm3")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2ewk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj6o7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="UI_AMMO" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 378.0
+offset_top = 646.0
+offset_right = 418.0
+offset_bottom = 686.0
+
+[node name="Ammo3" type="Sprite2D" parent="."]
+position = Vector2(247, -36)
+scale = Vector2(0.056, 0.056)
+texture = ExtResource("1_2p4jd")
+
+[node name="Linfócito" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LinfocitBar" type="AnimatedSprite2D" parent="Linfócito"]
+position = Vector2(115, -42)
+scale = Vector2(0.0631217, 0.0635484)
+sprite_frames = SubResource("SpriteFrames_asqag")
+animation = &"recharge"
+autoplay = "default"
+
+[node name="1" type="AnimatedSprite2D" parent="Linfócito"]
+position = Vector2(117, -82)
+sprite_frames = SubResource("SpriteFrames_2db4e")
+
+[node name="Ammo_Linf" type="Label" parent="Linfócito"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = -26.0
+offset_right = 152.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0.286275, 0, 1)
+theme_override_fonts/font = ExtResource("4_2gssc")
+theme_override_font_sizes/font_size = 30
+text = "20
+"
+horizontal_alignment = 1
+
+[node name="LinfocitIcon" type="AnimatedSprite2D" parent="Linfócito"]
+position = Vector2(117, -43)
+scale = Vector2(0.226765, 0.226765)
+sprite_frames = SubResource("SpriteFrames_3br55")
+animation = &"idle"
+
+[node name="Macrofágo" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MacrofageBar" type="AnimatedSprite2D" parent="Macrofágo"]
+position = Vector2(180, -44)
+scale = Vector2(0.0631217, 0.0635484)
+sprite_frames = SubResource("SpriteFrames_uf55j")
+animation = &"recharge"
+autoplay = "default"
+
+[node name="MacrofageIcon" type="AnimatedSprite2D" parent="Macrofágo"]
+position = Vector2(184, -46)
+scale = Vector2(0.21566, 0.21566)
+sprite_frames = SubResource("SpriteFrames_yg3w6")
+animation = &"idle"
+
+[node name="2" type="AnimatedSprite2D" parent="Macrofágo"]
+position = Vector2(183, -82)
+sprite_frames = SubResource("SpriteFrames_f73ti")
+
+[node name="Ammo_Macr" type="Label" parent="Macrofágo"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = -25.0
+offset_right = 217.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0.937255, 1)
+theme_override_fonts/font = ExtResource("4_2gssc")
+theme_override_font_sizes/font_size = 30
+text = "20"
+horizontal_alignment = 1
+
+[node name="Neutrófilo" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NeutrofileBar" type="AnimatedSprite2D" parent="Neutrófilo"]
+position = Vector2(248, -43)
+scale = Vector2(0.0631217, 0.0635484)
+sprite_frames = SubResource("SpriteFrames_yltvk")
+animation = &"recharge"
+autoplay = "default"
+
+[node name="Ammo_Neu" type="Label" parent="Neutrófilo"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = -26.0
+offset_right = 275.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0.952941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_2gssc")
+theme_override_font_sizes/font_size = 30
+text = "20"
+horizontal_alignment = 1
+
+[node name="3" type="AnimatedSprite2D" parent="Neutrófilo"]
+position = Vector2(246, -84)
+sprite_frames = SubResource("SpriteFrames_aobn8")
+
+[node name="Neutrofile" type="AnimatedSprite2D" parent="Neutrófilo"]
+position = Vector2(248, -45)
+scale = Vector2(0.256223, 0.256223)
+sprite_frames = SubResource("SpriteFrames_f2ewk")
+animation = &"idle"

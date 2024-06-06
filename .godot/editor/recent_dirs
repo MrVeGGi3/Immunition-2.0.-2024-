@@ -1,11 +1,11 @@
+res://scenes/UI
+res://scripts/tutorials
 res://icons/gun selection
 res://icons
 res://scripts/Characthers/pathfinding
-res://scenes/objects
 res://scenes
 res://scenes/Characters
 res://scenes/HUD
-res://scenes/UI
 res://scripts/Characthers
 res://scripts/Spawner
 res://images/baseMemorySytem/Selected

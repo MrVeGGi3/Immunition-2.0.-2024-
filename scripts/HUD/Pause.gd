@@ -1,28 +1,28 @@
 extends Control
-@onready var main_bgm = $MainBGM
+
 @onready var shoot = $Shoot
 var menu = "res://scenes/HUD/menu.tscn"
 @onready var wheel_switch_weapons = $"../WheelSwitchWeapons"
-const MINIMAP = preload("res://scenes/HUD/minimap.tscn")
-@onready var is_paused = Global.is_paused
+@onready var pause_menu = $"."
+@onready var memory_system = $"../MemorySystem"
+
 
 func _ready():
 	visible = false
 	
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel") or Input.is_action_just_pressed("pause"):
+	if event.is_action_pressed("ui_cancel") and !visible:
 		visible = true
 		get_tree().paused = true
 		wheel_switch_weapons.hide()
-		main_bgm.play()
+		memory_system.hide()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
-	if Input.is_action_just_pressed("ui_cancel")or Input.is_action_just_pressed("pause") and is_paused:
+	elif Input.is_action_pressed("ui_cancel") and visible:
 		_on_voltar_ao_jogo_pressed()
 	
 func _on_voltar_ao_jogo_pressed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	main_bgm.stop()
 	visible = false
 	get_tree().paused = false
 	
@@ -32,6 +32,5 @@ func _on_backto_main_menu_pressed():
 func _on_test_sfx_pressed():
 	shoot.play()
 	
-func set_global_pause(variavel : bool):
-	Global.is_paused = variavel
+
 	

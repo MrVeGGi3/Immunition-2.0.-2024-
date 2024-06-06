@@ -1,4 +1,4 @@
-res://scenes/testing/PatogenPahfindingBehaviour.tscn
+res://scenes/UI/Tutorials/pathogen_tutorial.tscn
 res://scripts/Characthers/Enemy_Blue.gd
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/Characthers/Player.gd
@@ -8,10 +8,10 @@ res://scripts/HUD/wheel_weapons.gd
 res://scripts/Sound/ChangeSound.gd
 res://sprites/UI/memory_system.gd
 res://themes/playerLifeBarTheme.tres
-res://scripts/Characthers/Enemy_Red.gd
-res://scenes/HUD/WheelSwitchWeapons.tscn
-res://scenes/HUD/pause_menu.tscn
+res://scripts/tutorials/pathogen_tutorial.gd
 res://scenes/Characters/Player.tscn
+res://scenes/HUD/pause_menu.tscn
+res://scenes/HUD/WheelSwitchWeapons.tscn
 res://scenes/Characters/enemy_b.tscn
 res://scenes/Characters/enemy_g.tscn
 res://scenes/Characters/enemy_r.tscn
@@ -36,8 +36,9 @@ res://scenes/testing/TestPlayerInfluenza.tscn
 res://scenes/testing/Infected_cells.tscn
 res://scenes/testing/explosion.tscn
 res://scenes/testing/influenza_projectile.tscn
+res://scenes/testing/PatogenPahfindingBehaviour.tscn
 res://scenes/HUD/healthbar_red.tscn
-res://scripts/Characthers/pathfinding/Influenza2.gd
-res://scripts/Characthers/pathfinding/Infected_cells_2.gd
+res://scenes/UI/Tutorials/influenza_tutorial.tscn
 res://scripts/HUD/Pause.gd
-res://scripts/HUD/LogoTransition.gd
+res://scenes/UI/ui_ammo.tscn
+res://scripts/Characthers/pathfinding/Influenza2.gd

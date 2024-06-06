@@ -713,11 +713,7 @@ scale = Vector2(0.256223, 0.256223)
 sprite_frames = SubResource("SpriteFrames_f2ewk")
 animation = &"idle"
 
-[node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
-player = NodePath("../..")
-
 [node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
-visible = false
 
 [node name="WheelSwitchWeapons" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("24_40cle")]
 offset_right = -264.0
@@ -768,6 +764,19 @@ position = Vector2(549, 347)
 scale = Vector2(0.145759, 0.145759)
 texture = ExtResource("4_nc87x")
 
+[node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
+process_mode = 3
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = -4.0
+offset_bottom = -3.0
+grow_horizontal = 1
+grow_vertical = 1
+player = NodePath("../..")
+
 [node name="ShootPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_qulf7")
 bus = &"SFX"
@@ -777,6 +786,7 @@ stream = ExtResource("11_6pg7g")
 bus = &"BGM"
 
 [node name="MainBGM" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("12_68dol")
 volume_db = -20.0
 autoplay = true
@@ -807,10 +817,11 @@ collide_with_areas = true
 [node name="GPUParticles3D" type="GPUParticles3D" parent="FlameThrowerShoot"]
 transform = Transform3D(-0.999934, 0, 0.0115189, 0, 1, 0, -0.0115189, 0, -0.999934, 0.234038, -0.287282, -2.10114)
 emitting = false
-amount = 5
+amount = 10
 lifetime = 1.14
-explosiveness = 0.3
-randomness = 0.07
+speed_scale = 2.0
+explosiveness = 0.2
+randomness = 0.05
 process_material = SubResource("ParticleProcessMaterial_ayvqm")
 draw_pass_1 = SubResource("SphereMesh_s0y5o")
 
