@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717711329
+::res://::1717870181
 icon.svg::CompressedTexture2D::4599671292196264100::1709555774::1717693729::1::::<><>::
 Immunition.apple-touch-icon.png::CompressedTexture2D::6159897446387466936::1709555774::1709555774::1::::<><>::
 Immunition.icon.png::CompressedTexture2D::1869714053902809867::1709555774::1709555774::1::::<><>::
@@ -104,14 +104,14 @@ enemy_g.tscn::PackedScene::2345961276756191375::1717703952::0::1::::<><>::res://
 enemy_r.tscn::PackedScene::1334761374456632927::1717703952::0::1::::<><>::res://scripts/Characthers/Enemy_Red.gd<>uid://bw3djxfntr0jb::::res://sounds/SFX/Monster/monster_die.wav<>uid://b7gk6t1q8ddtl::::res://sprites/Monster/monster1_purple_sprite.png<>uid://bud3mha4g5u45::::res://sounds/SFX/Monster/monster_bite.wav<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
 Player.tscn::PackedScene::8855806073806431325::1717711186::0::1::::<><>::res://scripts/Characthers/Player.gd<>uid://buqhd8dubn178::::res://sprites/Player/revolver_sprites.png<>uid://bw2cynbti0h7y::::res://themes/PanelColor.tres<>uid://dufxlwl2jmmm8::::res://themes/purpleTheme.tres<>uid://b86srxxd4jnsq::::res://sprites/Player/macrofago_sprite.png<>uid://d0r2c8ejf2khy::::res://icons/Icon Head CH Died.png<>uid://br57ykp7o40bi::::res://scenes/HUD/phase_finished.tscn<>uid://tfn36nnpaotb::::res://fonts/batmfa__.ttf<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>uid://bd32nqym4104l::::res://themes/playerLifeBarTheme.tres<>uid://besa0etqgk00h::::res://icons/health Icon.png<>uid://5ran8yqdqky::::res://scenes/HUD/pause_menu.tscn<>uid://bv42ntqndsu6p::::res://icons/Icon Head CH Alive_RedAnimated.png<>uid://hqasyg3vanal::::res://sounds/SFX/Player/ShootEffect.wav<>uid://c5iqptwqnbvnt::::res://sprites/UI/Animação de teclas.png<>uid://cmixvfomb2y5w::::res://sprites/Player/neutrofilos_sprite2.png<>uid://cl16r632p0qb5::::res://sounds/BGM/deathsound.wav<>uid://gdo46rv1wjh3::::res://icons/icon gun select.png<>uid://bap8mnn7tl4bg::::res://icons/gun selection/icon gun green.jpg<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav<>uid://c7mcbsugesbyq::::res://icons/weapons/Icon Linfosito.png<>uid://6eexcteofaqe::::res://icons/weapons/Icon neutrofilo.png<>uid://hktqxlioxt6s::::res://icons/weapons/Icon macrofago.png<>uid://dk7wdjoi41cuq::::res://sounds/SFX/Player/macrofage_weapon .wav<>uid://b82c6dssql1le::::res://icons/gun selection/icon gun blue.jpg<>uid://33jae7wc4cls::::res://icons/keyoboard buttons/keyboard.png<>uid://b1kyb3y8wghfy::::res://icons/gun selection/icon gun red.jpg<>uid://nt37rum3dhef::::res://scenes/HUD/WheelSwitchWeapons.tscn<>uid://blyju371t1s68::::res://sounds/SFX/Player/Flamethrower_Sound.wav<>uid://bli5ijcxx5bse::::res://scenes/HUD/MemorySystem.tscn
 Triângulo.png::CompressedTexture2D::510733752269360229::1717105321::1717105321::1::::<><>::
-::res://scenes/HUD/::1717711186
+::res://scenes/HUD/::1717711368
 EnemiesRemainingDisplay.tscn::PackedScene::3047326325796613060::1717703953::0::1::::<><>::
 healthbar_blue.tscn::PackedScene::2194062513758371261::1714131295::0::1::::<><>::res://scripts/HUD/hb_ccolor.gd<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
 healthbar_green.tscn::PackedScene::7277985914833032643::1714131295::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
 healthbar_red.tscn::PackedScene::8108780980428379948::1717703954::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
 level_selection.tscn::PackedScene::8820959133649335437::1714131295::0::1::::<><>::res://scripts/HUD/level_selection.gd<>uid://bbb5bhxa2nget::::res://images/UI/Main Screen Without logo.png<>uid://chfew0owxhkt5::::res://themes/fasename_description.tres<>uid://c33mgls2q6ijq::::res://themes/go_phase_button.tres<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>uid://btc3kqb6qx6k3::::res://themes/button.tres
 loading.tscn::PackedScene::5978054243603699404::1717703953::0::1::::<><>::res://scripts/HUD/loading.gd<>uid://blu4xn1a04yvy::::res://images/loading screen/Loading Screen 1.png<>uid://g2w8v82gwrb::::res://images/loading screen/Loading Screen 2.png<>uid://cm0go7hjvclxg::::res://images/loading screen/Loading Screen 3.png<>uid://cahbqtupvbn64::::res://images/loading screen/Loading Screen 4.png<>uid://ckr3mx5u3m41j::::res://images/loading screen/Loading Screen 5.png
-logo_transition.tscn::PackedScene::7129568780501517391::1717703953::0::1::::<><>::res://scripts/HUD/LogoTransition.gd<>uid://chhi3fmpyfpxx::::res://images/Fatec.png<>uid://bw82ms1f15lv1::::res://images/SMAUG-removebg-preview.jpg
+logo_transition.tscn::PackedScene::7129568780501517391::1717711368::0::1::::<><>::res://scripts/HUD/LogoTransition.gd<>uid://chhi3fmpyfpxx::::res://images/Fatec.png<>uid://bw82ms1f15lv1::::res://images/SMAUG-removebg-preview.jpg
 MemorySystem.tscn::PackedScene::3176849258754860076::1717703952::0::1::::<><>::res://sprites/UI/memory_system.gd<>uid://dnyy3dpv5wttx::::res://images/baseMemorySytem/MemoryBar.png<>uid://w2wgt0bahe5j::::res://images/baseMemorySytem/Memory1.png<>uid://p0qgcoomdx1h::::res://images/baseMemorySytem/Selected/Memory1_Selected.png<>uid://2r5e7j4yc1w0::::res://images/baseMemorySytem/Memory2.png<>uid://mipp4e0fpcuk::::res://images/baseMemorySytem/Memory3.png<>uid://op3w0pa4qalg::::res://images/baseMemorySytem/Selected/Memory2_Selected.png<>uid://grkvnmyt7ntc::::res://images/baseMemorySytem/Selected/Memory3_Selected.png
 menu.tscn::PackedScene::3149977801309675747::1714131296::0::1::::<><>::res://scripts/HUD/Menu.gd<>uid://btc3kqb6qx6k3::::res://themes/button.tres<>uid://cumum55a2e8e4::::res://images/Menu_Screen.png<>uid://c14cj6uhjlgdt::::res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav
 minimap.tscn::PackedScene::6928081897051763831::1717703952::0::1::::<><>::res://scripts/HUD/minimap.gd<>uid://b2t0j5ekr733w::::res://scenes/icons/EnemyMinimapColorect.tscn
@@ -124,8 +124,8 @@ SymbolRecognition.tscn::PackedScene::8093307858291978999::1717703953::0::1::::<>
 WheelSwitchWeapons.tscn::PackedScene::953436290199783809::1717703952::0::1::::<><>::res://scripts/HUD/wheel_weapons.gd<>uid://xcd5ydfjwtnc::::res://icons/wheelswitchweapon/1.png<>uid://btctrf3wkpel6::::res://icons/wheelswitchweapon/2.png<>uid://hi8ss7osq1d6::::res://icons/wheelswitchweapon/3.png<>uid://72ylx8c83xsn::::res://icons/wheelswitchweapon/hover/p1_h.png<>uid://ca8stmocutcy5::::res://icons/wheelswitchweapon/normal/p1_nh.png<>uid://b36secffima4t::::res://icons/wheelswitchweapon/selected/p1_w.png<>uid://cp7xi8lr3clv3::::res://icons/itens/orb_green.png<>uid://ci2j0r2q4xiii::::res://icons/wheelswitchweapon/hover/p2_h.png<>uid://bfbq2mwd8sjwk::::res://icons/wheelswitchweapon/normal/p2_nh.png<>uid://8g56k6fwdldb::::res://icons/wheelswitchweapon/selected/p2_w.png<>uid://myyrn8kmweh6::::res://icons/itens/orbzBlue.png<>uid://246vqqjo7txv::::res://icons/wheelswitchweapon/hover/p3_h.png<>uid://4lo3aeotjykd::::res://icons/wheelswitchweapon/normal/p3_nh.png<>uid://dpnnpvd286n27::::res://icons/wheelswitchweapon/selected/p3_w.png<>uid://dhvkdm5jj3v7j::::res://icons/itens/orbzPurple.png
 ::res://scenes/icons/::1717703952
 EnemyMinimapColorect.tscn::PackedScene::4322278218569501838::1717703952::0::1::::<><>::
-::res://scenes/Levels/::1717704417
-level_1.tscn::PackedScene::5470866197431277161::1717704417::0::1::::<><>::uid://bl3g6pm7e6hov::::res://prefabs/dev_grey.png<>uid://dyf23kaij0wqn::::res://scenes/Characters/Player.tscn<>uid://eikqtfkce6jq::::res://prefabs/dev_grey.obj<>uid://cghbpdvq15frc::::res://prefabs/dev_orange.png<>uid://bd1p4vxwpo0fn::::res://prefabs/dev_pillar.obj<>uid://vuyc3qmcbjd0::::res://prefabs/dev_valley.obj
+::res://scenes/Levels/::1717711368
+level_1.tscn::PackedScene::5470866197431277161::1717711368::0::1::::<><>::uid://bl3g6pm7e6hov::::res://prefabs/dev_grey.png<>uid://dyf23kaij0wqn::::res://scenes/Characters/Player.tscn<>uid://eikqtfkce6jq::::res://prefabs/dev_grey.obj<>uid://cghbpdvq15frc::::res://prefabs/dev_orange.png<>uid://bd1p4vxwpo0fn::::res://prefabs/dev_pillar.obj<>uid://vuyc3qmcbjd0::::res://prefabs/dev_valley.obj
 level_2.tscn::PackedScene::3607244491359219360::1717703953::0::1::::<><>::
 level_3.tscn::PackedScene::8913426150632920717::1717703952::0::1::::<><>::
 world.tscn::PackedScene::9189283512782427540::1717703952::0::1::::<><>::uid://djp2vbbqe1dc::::res://prefabs/map0.obj<>uid://daa1un0fymlfh::::res://textures/texas.png<>uid://dyf23kaij0wqn::::res://scenes/Characters/Player.tscn<>uid://8onv0icy5g7h::::res://scenes/Characters/enemy_g.tscn<>uid://c8bydekkhr5m4::::res://scenes/Characters/enemy_b.tscn<>uid://tatlbq78gkdr::::res://scenes/Characters/enemy_r.tscn<>uid://bl3g6pm7e6hov::::res://prefabs/dev_grey.png<>uid://eikqtfkce6jq::::res://prefabs/dev_grey.obj<>uid://cghbpdvq15frc::::res://prefabs/dev_orange.png<>uid://vuyc3qmcbjd0::::res://prefabs/dev_valley.obj<>uid://c5yaq5d5t8iip::::res://scenes/HUD/minimap.tscn
@@ -147,15 +147,15 @@ ui_ammo.tscn::PackedScene::4014286667799450178::1717703317::0::1::::<><>::uid://
 influenza_tutorial.tscn::PackedScene::7026963859610537097::1717703317::0::1::::<><>::res://scripts/tutorials/Tutorial_UI.gd<>uid://b1i6udx23kait::::res://images/UI/Barra de Dialogo.png<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>uid://dqomqq5hwrx7::::res://icons/keyoboard buttons/enterButton.jpeg
 pathogen_tutorial.tscn::PackedScene::7370226391365702308::1717703317::0::1::::<><>::res://scripts/tutorials/pathogen_tutorial.gd<>uid://b1i6udx23kait::::res://images/UI/Barra de Dialogo.png<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>uid://dqomqq5hwrx7::::res://icons/keyoboard buttons/enterButton.jpeg
 ::res://scripts/::1717703317
-::res://scripts/Characthers/::1717711186
+::res://scripts/Characthers/::1717711368
 Cell.gd::GDScript::-1::1717676130::0::1::::Cell<>CharacterBody3D<>::
-Enemy_Blue.gd::GDScript::-1::1717703436::0::1::::<>CharacterBody3D<>::
-Enemy_Green.gd::GDScript::-1::1717703436::0::1::::<>CharacterBody3D<>::
+Enemy_Blue.gd::GDScript::-1::1717711368::0::1::::<>CharacterBody3D<>::
+Enemy_Green.gd::GDScript::-1::1717711368::0::1::::<>CharacterBody3D<>::
 Enemy_Red.gd::GDScript::-1::1717676130::0::1::::<>CharacterBody3D<>::
 Infected_cells.gd::GDScript::-1::1717105321::0::1::::InfectedCell<>CharacterBody3D<>::
 Influenza.gd::GDScript::-1::1717676130::0::1::::<>CharacterBody3D<>::
 Map.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
-Player.gd::GDScript::-1::1717711186::0::1::::<>CharacterBody3D<>::
+Player.gd::GDScript::-1::1717711368::0::1::::<>CharacterBody3D<>::
 ::res://scripts/Characthers/objects/::1717703317
 explosion.gd::GDScript::-1::1717703317::0::1::::<>Node3D<>::
 influenza_projectile.gd::GDScript::-1::1717703317::0::1::::<>Node3D<>::
@@ -165,25 +165,25 @@ Infected_cells_2.gd::GDScript::-1::1717676130::0::1::::InfectedCell<>CharacterBo
 Influenza2.gd::GDScript::-1::1717703317::0::1::::<>CharacterBody3D<>::
 ::res://scripts/Global/::1717105321
 global.gd::GDScript::-1::1717105321::0::1::::<>Node<>::
-::res://scripts/HUD/::1717711186
+::res://scripts/HUD/::1717711368
 hb_ccolor.gd::GDScript::-1::1713350982::0::1::::<>ProgressBar<>::
 level_selection.gd::GDScript::-1::1714128403::0::1::::<>Control<>::
 loading.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
 LogoTransition.gd::GDScript::-1::1717676130::0::1::::<>Control<>::
 Menu.gd::GDScript::-1::1713991061::0::1::::<>Control<>::
-minimap.gd::GDScript::-1::1717703436::0::1::::<>Control<>::
-Options.gd::GDScript::-1::1717703436::0::1::::<>Control<>::
+minimap.gd::GDScript::-1::1717711368::0::1::::<>Control<>::
+Options.gd::GDScript::-1::1717711368::0::1::::<>Control<>::
 options_pre_game.gd::GDScript::-1::1713991061::0::1::::<>Control<>::
 Pause.gd::GDScript::-1::1717711186::0::1::::<>Control<>::
 pause_menu.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
 ResolutionControl.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
-wheel_weapons.gd::GDScript::-1::1717711186::0::1::::<>Control<>::
+wheel_weapons.gd::GDScript::-1::1717711368::0::1::::<>Control<>::
 WindowType.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
 ::res://scripts/Sliders/::1717711186
 HSlider.gd::GDScript::-1::1709555774::0::1::::<>HSlider<>::
 mouse_sensibility.gd::GDScript::-1::1717711186::0::1::::<>HSlider<>::
-::res://scripts/Sound/::1717703436
-ChangeSound.gd::GDScript::-1::1717703436::0::1::::<>HSlider<>::
+::res://scripts/Sound/::1717711368
+ChangeSound.gd::GDScript::-1::1717711368::0::1::::<>HSlider<>::
 ::res://scripts/Spawner/::1717105321
 MobSpawner3D.gd::GDScript::-1::1717105321::0::1::::Spawner<>Node3D<>::
 ::res://scripts/tutorials/::1717703317
@@ -212,18 +212,18 @@ gun_shoot.png::CompressedTexture2D::5936077985092246905::1709555775::1709555775:
 macrofago_sprite.png::CompressedTexture2D::4767772742233186656::1709555775::1709555775::1::::<><>::
 neutrofilos_sprite2.png::CompressedTexture2D::5633056790372364378::1709555775::1709555775::1::::<><>::
 revolver_sprites.png::CompressedTexture2D::3823659715665340033::1709555775::1709555775::1::::<><>::
-::res://sprites/UI/::1717711186
+::res://sprites/UI/::1717711368
 Animação de teclas.png::CompressedTexture2D::6896020990026241785::1709555775::1709555775::1::::<><>::
-memory_system.gd::GDScript::-1::1717711186::0::1::::<>Control<>::
+memory_system.gd::GDScript::-1::1717711368::0::1::::<>Control<>::
 ::res://textures/::1709555775
 tenesse.png::CompressedTexture2D::6948268283639013713::1709555775::1709555775::1::::<><>::
 texas.png::CompressedTexture2D::7160877130452725149::1709555775::1709555775::1::::<><>::
-::res://themes/::1717703436
+::res://themes/::1717711368
 button.tres::Theme::3725856245409572292::1709555775::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
 fasename_description.tres::Theme::5274768652801319092::1714130024::0::1::::<><>::
 go_phase_button.tres::Theme::6796671491854106426::1714130024::0::1::::<><>::
 label.tres::Theme::1431871673600476978::1709555775::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
 mouse_sensitivy_slider_theme.tres::Theme::3102154718407860038::1714664342::0::1::::<><>::
 PanelColor.tres::Theme::3986478421351989724::1709555775::0::1::::<><>::
-playerLifeBarTheme.tres::Theme::2656453243880269033::1717703436::0::1::::<><>::
+playerLifeBarTheme.tres::Theme::2656453243880269033::1717711368::0::1::::<><>::
 purpleTheme.tres::Theme::8574778120922653433::1709555775::0::1::::<><>::
