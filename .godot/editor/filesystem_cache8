@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717870181
+::res://::1718009112
 icon.svg::CompressedTexture2D::4599671292196264100::1709555774::1717693729::1::::<><>::
 Immunition.apple-touch-icon.png::CompressedTexture2D::6159897446387466936::1709555774::1709555774::1::::<><>::
 Immunition.icon.png::CompressedTexture2D::1869714053902809867::1709555774::1709555774::1::::<><>::
@@ -124,10 +124,10 @@ SymbolRecognition.tscn::PackedScene::8093307858291978999::1717703953::0::1::::<>
 WheelSwitchWeapons.tscn::PackedScene::953436290199783809::1717703952::0::1::::<><>::res://scripts/HUD/wheel_weapons.gd<>uid://xcd5ydfjwtnc::::res://icons/wheelswitchweapon/1.png<>uid://btctrf3wkpel6::::res://icons/wheelswitchweapon/2.png<>uid://hi8ss7osq1d6::::res://icons/wheelswitchweapon/3.png<>uid://72ylx8c83xsn::::res://icons/wheelswitchweapon/hover/p1_h.png<>uid://ca8stmocutcy5::::res://icons/wheelswitchweapon/normal/p1_nh.png<>uid://b36secffima4t::::res://icons/wheelswitchweapon/selected/p1_w.png<>uid://cp7xi8lr3clv3::::res://icons/itens/orb_green.png<>uid://ci2j0r2q4xiii::::res://icons/wheelswitchweapon/hover/p2_h.png<>uid://bfbq2mwd8sjwk::::res://icons/wheelswitchweapon/normal/p2_nh.png<>uid://8g56k6fwdldb::::res://icons/wheelswitchweapon/selected/p2_w.png<>uid://myyrn8kmweh6::::res://icons/itens/orbzBlue.png<>uid://246vqqjo7txv::::res://icons/wheelswitchweapon/hover/p3_h.png<>uid://4lo3aeotjykd::::res://icons/wheelswitchweapon/normal/p3_nh.png<>uid://dpnnpvd286n27::::res://icons/wheelswitchweapon/selected/p3_w.png<>uid://dhvkdm5jj3v7j::::res://icons/itens/orbzPurple.png
 ::res://scenes/icons/::1717703952
 EnemyMinimapColorect.tscn::PackedScene::4322278218569501838::1717703952::0::1::::<><>::
-::res://scenes/Levels/::1717711368
-level_1.tscn::PackedScene::5470866197431277161::1717711368::0::1::::<><>::uid://bl3g6pm7e6hov::::res://prefabs/dev_grey.png<>uid://dyf23kaij0wqn::::res://scenes/Characters/Player.tscn<>uid://eikqtfkce6jq::::res://prefabs/dev_grey.obj<>uid://cghbpdvq15frc::::res://prefabs/dev_orange.png<>uid://bd1p4vxwpo0fn::::res://prefabs/dev_pillar.obj<>uid://vuyc3qmcbjd0::::res://prefabs/dev_valley.obj
-level_2.tscn::PackedScene::3607244491359219360::1717703953::0::1::::<><>::
-level_3.tscn::PackedScene::8913426150632920717::1717703952::0::1::::<><>::
+::res://scenes/Levels/::1717871267
+level_1.tscn::PackedScene::5470866197431277161::1717871181::0::1::::<><>::uid://bl3g6pm7e6hov::::res://prefabs/dev_grey.png<>uid://dyf23kaij0wqn::::res://scenes/Characters/Player.tscn<>uid://eikqtfkce6jq::::res://prefabs/dev_grey.obj<>uid://cghbpdvq15frc::::res://prefabs/dev_orange.png<>uid://bd1p4vxwpo0fn::::res://prefabs/dev_pillar.obj<>uid://vuyc3qmcbjd0::::res://prefabs/dev_valley.obj<>uid://d08ovuxubggti::::res://prefabs/dev_torus.obj
+level_2.tscn::PackedScene::3607244491359219360::1717871264::0::1::::<><>::uid://dyf23kaij0wqn::::res://scenes/Characters/Player.tscn<>uid://bl3g6pm7e6hov::::res://prefabs/dev_grey.png<>uid://eikqtfkce6jq::::res://prefabs/dev_grey.obj<>uid://cghbpdvq15frc::::res://prefabs/dev_orange.png<>uid://bd1p4vxwpo0fn::::res://prefabs/dev_pillar.obj
+level_3.tscn::PackedScene::8913426150632920717::1717871267::0::1::::<><>::uid://dyf23kaij0wqn::::res://scenes/Characters/Player.tscn<>uid://bl3g6pm7e6hov::::res://prefabs/dev_grey.png<>uid://eikqtfkce6jq::::res://prefabs/dev_grey.obj<>uid://cghbpdvq15frc::::res://prefabs/dev_orange.png<>uid://bd1p4vxwpo0fn::::res://prefabs/dev_pillar.obj
 world.tscn::PackedScene::9189283512782427540::1717703952::0::1::::<><>::uid://djp2vbbqe1dc::::res://prefabs/map0.obj<>uid://daa1un0fymlfh::::res://textures/texas.png<>uid://dyf23kaij0wqn::::res://scenes/Characters/Player.tscn<>uid://8onv0icy5g7h::::res://scenes/Characters/enemy_g.tscn<>uid://c8bydekkhr5m4::::res://scenes/Characters/enemy_b.tscn<>uid://tatlbq78gkdr::::res://scenes/Characters/enemy_r.tscn<>uid://bl3g6pm7e6hov::::res://prefabs/dev_grey.png<>uid://eikqtfkce6jq::::res://prefabs/dev_grey.obj<>uid://cghbpdvq15frc::::res://prefabs/dev_orange.png<>uid://vuyc3qmcbjd0::::res://prefabs/dev_valley.obj<>uid://c5yaq5d5t8iip::::res://scenes/HUD/minimap.tscn
 ::res://scenes/testing/::1717711186
 Cell.tscn::PackedScene::8170585676986199563::1717703953::0::1::::<><>::res://scripts/Characthers/pathfinding/cell_2.gd
@@ -147,15 +147,15 @@ ui_ammo.tscn::PackedScene::4014286667799450178::1717703317::0::1::::<><>::uid://
 influenza_tutorial.tscn::PackedScene::7026963859610537097::1717703317::0::1::::<><>::res://scripts/tutorials/Tutorial_UI.gd<>uid://b1i6udx23kait::::res://images/UI/Barra de Dialogo.png<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>uid://dqomqq5hwrx7::::res://icons/keyoboard buttons/enterButton.jpeg
 pathogen_tutorial.tscn::PackedScene::7370226391365702308::1717703317::0::1::::<><>::res://scripts/tutorials/pathogen_tutorial.gd<>uid://b1i6udx23kait::::res://images/UI/Barra de Dialogo.png<>uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf<>uid://dqomqq5hwrx7::::res://icons/keyoboard buttons/enterButton.jpeg
 ::res://scripts/::1717703317
-::res://scripts/Characthers/::1717711368
+::res://scripts/Characthers/::1717871182
 Cell.gd::GDScript::-1::1717676130::0::1::::Cell<>CharacterBody3D<>::
-Enemy_Blue.gd::GDScript::-1::1717711368::0::1::::<>CharacterBody3D<>::
-Enemy_Green.gd::GDScript::-1::1717711368::0::1::::<>CharacterBody3D<>::
+Enemy_Blue.gd::GDScript::-1::1717871181::0::1::::<>CharacterBody3D<>::
+Enemy_Green.gd::GDScript::-1::1717871181::0::1::::<>CharacterBody3D<>::
 Enemy_Red.gd::GDScript::-1::1717676130::0::1::::<>CharacterBody3D<>::
 Infected_cells.gd::GDScript::-1::1717105321::0::1::::InfectedCell<>CharacterBody3D<>::
 Influenza.gd::GDScript::-1::1717676130::0::1::::<>CharacterBody3D<>::
 Map.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
-Player.gd::GDScript::-1::1717711368::0::1::::<>CharacterBody3D<>::
+Player.gd::GDScript::-1::1717871181::0::1::::<>CharacterBody3D<>::
 ::res://scripts/Characthers/objects/::1717703317
 explosion.gd::GDScript::-1::1717703317::0::1::::<>Node3D<>::
 influenza_projectile.gd::GDScript::-1::1717703317::0::1::::<>Node3D<>::
@@ -165,25 +165,25 @@ Infected_cells_2.gd::GDScript::-1::1717676130::0::1::::InfectedCell<>CharacterBo
 Influenza2.gd::GDScript::-1::1717703317::0::1::::<>CharacterBody3D<>::
 ::res://scripts/Global/::1717105321
 global.gd::GDScript::-1::1717105321::0::1::::<>Node<>::
-::res://scripts/HUD/::1717711368
+::res://scripts/HUD/::1717871182
 hb_ccolor.gd::GDScript::-1::1713350982::0::1::::<>ProgressBar<>::
 level_selection.gd::GDScript::-1::1714128403::0::1::::<>Control<>::
 loading.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
 LogoTransition.gd::GDScript::-1::1717676130::0::1::::<>Control<>::
 Menu.gd::GDScript::-1::1713991061::0::1::::<>Control<>::
-minimap.gd::GDScript::-1::1717711368::0::1::::<>Control<>::
-Options.gd::GDScript::-1::1717711368::0::1::::<>Control<>::
+minimap.gd::GDScript::-1::1717871182::0::1::::<>Control<>::
+Options.gd::GDScript::-1::1717871182::0::1::::<>Control<>::
 options_pre_game.gd::GDScript::-1::1713991061::0::1::::<>Control<>::
 Pause.gd::GDScript::-1::1717711186::0::1::::<>Control<>::
 pause_menu.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
 ResolutionControl.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
-wheel_weapons.gd::GDScript::-1::1717711368::0::1::::<>Control<>::
+wheel_weapons.gd::GDScript::-1::1717871182::0::1::::<>Control<>::
 WindowType.gd::GDScript::-1::1709555774::0::1::::<>Control<>::
 ::res://scripts/Sliders/::1717711186
 HSlider.gd::GDScript::-1::1709555774::0::1::::<>HSlider<>::
 mouse_sensibility.gd::GDScript::-1::1717711186::0::1::::<>HSlider<>::
-::res://scripts/Sound/::1717711368
-ChangeSound.gd::GDScript::-1::1717711368::0::1::::<>HSlider<>::
+::res://scripts/Sound/::1717871182
+ChangeSound.gd::GDScript::-1::1717871182::0::1::::<>HSlider<>::
 ::res://scripts/Spawner/::1717105321
 MobSpawner3D.gd::GDScript::-1::1717105321::0::1::::Spawner<>Node3D<>::
 ::res://scripts/tutorials/::1717703317
@@ -212,18 +212,18 @@ gun_shoot.png::CompressedTexture2D::5936077985092246905::1709555775::1709555775:
 macrofago_sprite.png::CompressedTexture2D::4767772742233186656::1709555775::1709555775::1::::<><>::
 neutrofilos_sprite2.png::CompressedTexture2D::5633056790372364378::1709555775::1709555775::1::::<><>::
 revolver_sprites.png::CompressedTexture2D::3823659715665340033::1709555775::1709555775::1::::<><>::
-::res://sprites/UI/::1717711368
+::res://sprites/UI/::1717871182
 Animação de teclas.png::CompressedTexture2D::6896020990026241785::1709555775::1709555775::1::::<><>::
-memory_system.gd::GDScript::-1::1717711368::0::1::::<>Control<>::
+memory_system.gd::GDScript::-1::1717871182::0::1::::<>Control<>::
 ::res://textures/::1709555775
 tenesse.png::CompressedTexture2D::6948268283639013713::1709555775::1709555775::1::::<><>::
 texas.png::CompressedTexture2D::7160877130452725149::1709555775::1709555775::1::::<><>::
-::res://themes/::1717711368
+::res://themes/::1717871182
 button.tres::Theme::3725856245409572292::1709555775::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
 fasename_description.tres::Theme::5274768652801319092::1714130024::0::1::::<><>::
 go_phase_button.tres::Theme::6796671491854106426::1714130024::0::1::::<><>::
 label.tres::Theme::1431871673600476978::1709555775::0::1::::<><>::uid://b6b3cu5hbka6f::::res://fonts/Hey Comic.otf
 mouse_sensitivy_slider_theme.tres::Theme::3102154718407860038::1714664342::0::1::::<><>::
 PanelColor.tres::Theme::3986478421351989724::1709555775::0::1::::<><>::
-playerLifeBarTheme.tres::Theme::2656453243880269033::1717711368::0::1::::<><>::
+playerLifeBarTheme.tres::Theme::2656453243880269033::1717871182::0::1::::<><>::
 purpleTheme.tres::Theme::8574778120922653433::1709555775::0::1::::<><>::

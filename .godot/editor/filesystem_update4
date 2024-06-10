@@ -8,5 +8,6 @@ res://scripts/HUD/wheel_weapons.gd
 res://scripts/Sound/ChangeSound.gd
 res://sprites/UI/memory_system.gd
 res://themes/playerLifeBarTheme.tres
+res://scenes/HUD/logo_transition.tscn
 res://scenes/Levels/level_2.tscn
 res://scenes/Levels/level_3.tscn
