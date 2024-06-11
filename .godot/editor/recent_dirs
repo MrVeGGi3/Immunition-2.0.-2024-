@@ -1,3 +1,10 @@
+res://scripts/Spawner
+res://scripts/Sound
+res://scenes/UI/Tutorials
+res://scripts/LevelFinished
+res://scripts/Levels
+res://scripts/Elevators
+res://scripts/Collectables
 res://scenes/UI
 res://scripts/tutorials
 res://icons/gun selection
@@ -7,17 +14,12 @@ res://scenes
 res://scenes/Characters
 res://scenes/HUD
 res://scripts/Characthers
-res://scripts/Spawner
 res://images/baseMemorySytem/Selected
 res://images/baseMemorySytem
 res://sprites/UI
 res://scripts/HUD
 res://icons/wheelswitchweapon/selected
 res://icons/wheelswitchweapon/hover
-res://icons/wheelswitchweapon/normal
-res://scripts/Global
-res://scripts/Sliders
-res://themes
 E:/Immunition/Immunition/HTML
 E:/Immunition/Immunition
 E:/Godot

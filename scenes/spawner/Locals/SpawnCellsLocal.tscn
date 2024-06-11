@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://g64qk0w7pcle"]
 
-[ext_resource type="PackedScene" uid="uid://cc6g7d2jxbm48" path="res://scenes/testing/Spawner3D.tscn" id="1_7gsfe"]
+[ext_resource type="PackedScene" uid="uid://cc6g7d2jxbm48" path="res://scenes/spawner/MainSpawner/CellSpawner3D.tscn" id="1_7gsfe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_me7r6"]
 albedo_color = Color(0.105882, 1, 1, 1)

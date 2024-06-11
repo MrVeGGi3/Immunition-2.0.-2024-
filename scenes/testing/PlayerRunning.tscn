@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://di8noqg5eloef"]
-
-[node name="PlayerRunning" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]

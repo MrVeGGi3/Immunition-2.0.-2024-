@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bba17plx7ppug"]
+
+[ext_resource type="Script" path="res://scripts/Count/influenza_count.gd" id="1_lww33"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="2_yk23k"]
+
+[node name="InfluenzaCount" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lww33")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 918.0
+offset_top = 472.0
+offset_right = 958.0
+offset_bottom = 512.0
+
+[node name="InfluenzaDefeated" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.913725, 0.545098, 0, 1)
+theme_override_fonts/font = ExtResource("2_yk23k")
+theme_override_font_sizes/font_size = 40
+text = "0
+"
+
+[node name="TotalInfluenza" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 55.0
+offset_right = 99.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.917647, 0.729412, 0, 1)
+theme_override_fonts/font = ExtResource("2_yk23k")
+theme_override_font_sizes/font_size = 40
+text = "0
+"

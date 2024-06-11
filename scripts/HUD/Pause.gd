@@ -11,7 +11,7 @@ func _ready():
 	visible = false
 	
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel") and !visible:
+	if event.is_action_pressed("ui_cancel"):
 		visible = true
 		get_tree().paused = true
 		wheel_switch_weapons.hide()

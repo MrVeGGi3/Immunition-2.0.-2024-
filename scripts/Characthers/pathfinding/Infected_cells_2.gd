@@ -20,8 +20,8 @@ var is_hitting = false
 @onready var blink_cooldown = $BlinkCooldown
 
 #Instâncias
-@onready var influenza = preload("res://scenes/testing/Influenza.tscn")
-@onready var explosion = preload("res://scenes/testing/explosion.tscn")
+@onready var influenza = preload("res://scenes/Characters/Influenza.tscn")
+@onready var explosion = preload("res://scenes/effect/explosion.tscn")
 @onready var mesh_instance_infected_cell = $MeshInstance3D
 @onready var nav = $NavigationAgent3D
 

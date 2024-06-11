@@ -2,7 +2,7 @@
 extends CharacterBody3D
 
 @export_category("Move")
-@export var speed = 2
+@export var speed = 4
 @export var move_radius = 5  # Raio de movimento em torno do spawner
 @export var distance_to_run = 8
 @export_category("Floor") 
@@ -25,7 +25,7 @@ var new_position : Vector3
 var escape_vector = Vector3(0,0,0)
 
 #Instância
-var infected_cell = preload("res://scenes/testing/Infected_cells.tscn")
+var infected_cell = preload("res://scenes/Characters/Infected_cells.tscn")
 @onready var mesh_instance_cell = $MeshInstance3D
 @onready var walk_marker = $WalkMarker
 @onready var nav = $NavigationAgent3D

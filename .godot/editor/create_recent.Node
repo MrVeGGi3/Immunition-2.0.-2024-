@@ -1,22 +1,14 @@
-<<<<<<< HEAD
-OmniLight3D
-StaticBody3D
-DirectionalLight3D
-CollisionShape3D
-=======
->>>>>>> main
-WorldEnvironment
-Control
-AnimatedSprite2D
-Marker3D
-NavigationRegion3D
 MeshInstance3D
-<<<<<<< HEAD
-=======
 DirectionalLight3D
->>>>>>> main
-NavigationAgent3D
-RayCast3D
-Timer
-NavigationObstacle3D
-GPUParticles3D
+Area3D
+Camera3D
+Label
+Sprite2D
+Control
+Node3D
+AudioStreamPlayer
+AnimatedSprite3D
+Sprite3D
+CollisionShape3D
+AnimationPlayer
+Path3D
