@@ -1,4 +1,4 @@
-res://scenes/HUD/logo_transition.tscn
+res://scenes/Levels/level_1.tscn
 res://scripts/Characthers/Enemy_Blue.gd
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/Characthers/Player.gd
@@ -9,7 +9,7 @@ res://scripts/Sound/ChangeSound.gd
 res://themes/playerLifeBarTheme.tres
 res://themes/fasename_description.tres
 res://themes/go_phase_button.tres
-res://scenes/Levels/level_1.tscn
+res://scenes/HUD/logo_transition.tscn
 res://scenes/Levels/level_2.tscn
 res://scenes/Levels/level_3.tscn
 res://scenes/Characters/Infected_cells.tscn
@@ -38,12 +38,4 @@ res://scenes/spawner/MainSpawner/CellSpawner3D.tscn
 res://scenes/spawner/Locals/SpawnCellsLocal.tscn
 res://scenes/spawner/Locals/SpawnInfluenzaLocal.tscn
 res://scenes/spawner/MainSpawner/InfluenzaSpawner3D.tscn
-res://scripts/Levels/level_1.gd
-res://scripts/Spawner/CellSpawner3D.gd
-res://scripts/Count/influenza_count.gd
-res://scripts/Spawner/InfluenzaSpawner3D.gd
-res://scripts/Characthers/Cell.gd
-res://scripts/Characthers/pathfinding/cell_2.gd
-res://scripts/Characthers/pathfinding/Influenza2.gd
-res://scripts/Sound/open_door.gd
 res://scripts/LevelFinished/phase_ended1.gd

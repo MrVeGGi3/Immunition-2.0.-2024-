@@ -353,6 +353,7 @@ func kill():
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func disable_UI():
+	whell_memory.hide()
 	gun_shoot.hide()
 	player_life_bar.hide()
 	main_bgm.stop()
