@@ -17,16 +17,15 @@ var count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	visible = false
+	visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_just_pressed("call_memory_system") and !visible and !wsw.visible:
-		visible = true
+	if Input.is_action_just_pressed("call_memory_system") and !wsw.visible:
 		get_tree().paused = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
-	elif Input.is_action_just_pressed("call_memory_system") and visible:
+	elif Input.is_action_just_pressed("call_memory_system"):
 		_disable_visibility()
 		get_tree().paused = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -96,6 +95,5 @@ func change_button_animation_state(b1, b2):
 	b2.visible = false
 	
 func _disable_visibility():
-	visible = false
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

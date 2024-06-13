@@ -1,3 +1,4 @@
+Timer
 MeshInstance3D
 DirectionalLight3D
 Area3D
@@ -11,4 +12,3 @@ AnimatedSprite3D
 Sprite3D
 CollisionShape3D
 AnimationPlayer
-Path3D

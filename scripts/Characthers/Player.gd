@@ -18,6 +18,7 @@ extends CharacterBody3D
 @onready var animated_sprite_2d = $PlayerHUD/GunShoot/AnimatedSprite2D # animated sprite das armas
 @onready var camera_3d = $Camera3D #camera de visão do player
 @onready var particles = $FlameThrowerShoot/GPUParticles3D #efeito de particulas
+@onready var enable_particle = $FlameThrowerShoot/EnableParticle #Timer para evitar desvio visual das partículas
 
 #Animação das barras de armas
 @onready var linfocit_bar = $"PlayerHUD/UI_AMMO/Linfócito/LinfocitBar"
@@ -201,22 +202,27 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_FORCE
-		
-		if Input.is_action_pressed("run") and direction:
-				velocity.x = direction.x * 2 * SPEED
-				velocity.z = direction.z * 2 * SPEED # Aumentar a velocidade ao correr	
-					
-
+	
 	if position.y < -40:  # Se o jogador estiver muito fundo caindo, ele morre
 		kill()
-	
+
 	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+		print("Minha velocidade andando é:", velocity.x, velocity.z)
+		if particles.emitting:
+			particles.emitting = false
+			enable_particle.start()
+		if Input.is_action_pressed("run"):
+				velocity.x = direction.x * lerp(SPEED, SPEED * 2, 0.6)
+				velocity.z = direction.z * lerp(SPEED, SPEED *2, 0.6) # Aumentar a velocidade ao correr	
+				print("Minha velocidade correndo é:", velocity.x, velocity.z)
+		else: 
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
 	else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-			velocity.z = move_toward(velocity.z, 0, SPEED)
-			
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
 	
 
@@ -457,3 +463,7 @@ func get_more_ammo(lammo, mammo, nammo):
 
 
 	
+
+
+func _on_enable_particle_timeout():
+	particles.emitting = true
