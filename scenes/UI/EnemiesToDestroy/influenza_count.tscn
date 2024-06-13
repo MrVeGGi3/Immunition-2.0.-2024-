@@ -32,6 +32,17 @@ offset_top = 462.0
 offset_right = 965.0
 offset_bottom = 502.0
 
+[node name="Label" type="Label" parent="Control2/Control"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = -18.0
+offset_right = 110.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 0.622581, 0.481789, 1)
+theme_override_fonts/font = ExtResource("2_yk23k")
+theme_override_font_sizes/font_size = 40
+text = "/"
+
 [node name="InfluenzaDefeated" type="Label" parent="Control2/Control"]
 unique_name_in_owner = true
 layout_mode = 0
@@ -53,14 +64,3 @@ offset_bottom = 63.0
 theme_override_colors/font_color = Color(0.917647, 0.729412, 0, 1)
 theme_override_fonts/font = ExtResource("2_yk23k")
 theme_override_font_sizes/font_size = 40
-
-[node name="Label" type="Label" parent="Control2/Control"]
-layout_mode = 0
-offset_left = 70.0
-offset_top = -18.0
-offset_right = 110.0
-offset_bottom = 34.0
-theme_override_colors/font_color = Color(1, 0.622581, 0.481789, 1)
-theme_override_fonts/font = ExtResource("2_yk23k")
-theme_override_font_sizes/font_size = 40
-text = "/"

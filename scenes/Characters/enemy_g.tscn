@@ -116,13 +116,6 @@ script = ExtResource("1_bh1ro")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.967487, 0)
 shape = SubResource("CapsuleShape3D_0of21")
 
-[node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_hw3m5")
-volume_db = 5.0
-unit_size = 2.0
-bus = &"SFX"
-emission_angle_degrees = 90.0
-
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(-3.47118e-08, 0, -0.794113, 0, 0.794113, 0, 0.794113, 0, -3.47118e-08, 0, 1, 0)
 billboard = 1
@@ -189,5 +182,14 @@ centered = false
 transform = Transform3D(0.58181, 0, 0, 0, 0.58181, 0, 0, 0, 0.58181, -0.494083, 2.37066, 1.14582)
 billboard = 1
 texture = SubResource("ViewportTexture_vdkrg")
+
+[node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_hw3m5")
+volume_db = 5.0
+unit_size = 2.0
+max_distance = 10.0
+bus = &"SFX"
+emission_angle_degrees = 90.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

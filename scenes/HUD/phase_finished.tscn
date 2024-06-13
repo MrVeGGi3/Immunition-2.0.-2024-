@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://br57ykp7o40bi"]
+[gd_scene load_steps=3 format=3 uid="uid://br57ykp7o40bi"]
 
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_6feg8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj026"]
+bg_color = Color(0.563031, 0.650005, 1.34766e-06, 1)
 
 [node name="PhaseFinished" type="Control"]
 process_mode = 3
@@ -15,16 +18,17 @@ offset_left = 344.0
 offset_top = 175.0
 offset_right = 781.0
 offset_bottom = 447.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mj026")
 
 [node name="Parabéns" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -113.5
-offset_top = 21.0
-offset_right = 143.5
-offset_bottom = 79.0
+offset_left = -110.5
+offset_top = 39.0
+offset_right = 146.5
+offset_bottom = 97.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_6feg8")
 theme_override_font_sizes/font_size = 40
@@ -32,19 +36,19 @@ text = "Parábens!!!!!!!"
 
 [node name="Obrigado" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 113.0
-offset_top = 122.0
-offset_right = 328.0
-offset_bottom = 174.0
+offset_left = 152.0
+offset_top = 133.0
+offset_right = 367.0
+offset_bottom = 185.0
 theme_override_fonts/font = ExtResource("1_6feg8")
-text = "Obrigado por jogar a Demo!
-      Aguarde por mais!!"
+text = "Tutorial Concluído!"
 
 [node name="ExitGame" type="Button" parent="Panel"]
 process_mode = 3
 layout_mode = 0
-offset_left = 170.0
-offset_top = 216.0
-offset_right = 269.0
-offset_bottom = 247.0
-text = "Sair do Jogo"
+offset_left = 166.0
+offset_top = 205.0
+offset_right = 283.0
+offset_bottom = 236.0
+theme_override_fonts/font = ExtResource("1_6feg8")
+text = "Próximo Nível"

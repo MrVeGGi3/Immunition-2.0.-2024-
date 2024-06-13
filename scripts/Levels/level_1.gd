@@ -25,6 +25,7 @@ extends Node3D
 @onready var cell_spawner_3d = $CellSpawner3d
 @onready var influenza_spawner_3d = $InfluenzaSpawner3d
 @onready var level_1bgm = $Level1BGM
+@onready var victory_song = $VictorySong
 
 var is_influenza_captured = false
 #Booleanas de Controle
@@ -32,6 +33,8 @@ var is_extractor_build = false
 var is_entered_platform = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_tree().paused = true
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	press_f.visible = false
 	influenza_count.visible = false
 	for inf in influenza:
@@ -52,6 +55,7 @@ func _process(_delta):
 			if dude.is_in_group("player"):
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 				player.disable_UI()
+				victory_song.play()
 				phase_ended.visible = true
 				get_tree().paused = true
 		

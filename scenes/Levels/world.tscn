@@ -1,18 +1,24 @@
-[gd_scene load_steps=53 format=3 uid="uid://d36mflmgjmxea"]
+[gd_scene load_steps=61 format=3 uid="uid://d36mflmgjmxea"]
 
 [ext_resource type="ArrayMesh" uid="uid://djp2vbbqe1dc" path="res://prefabs/map0.obj" id="1_62mxc"]
+[ext_resource type="Script" path="res://scripts/Levels/tutorial_phase.gd" id="1_bhgoj"]
 [ext_resource type="Texture2D" uid="uid://daa1un0fymlfh" path="res://textures/texas.png" id="2_23uxg"]
 [ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="2_25qut"]
 [ext_resource type="PackedScene" uid="uid://8onv0icy5g7h" path="res://scenes/Characters/enemy_g.tscn" id="3_aiuty"]
 [ext_resource type="PackedScene" uid="uid://c8bydekkhr5m4" path="res://scenes/Characters/enemy_b.tscn" id="5_l6q2f"]
 [ext_resource type="PackedScene" uid="uid://tatlbq78gkdr" path="res://scenes/Characters/enemy_r.tscn" id="6_grihp"]
 [ext_resource type="Texture2D" uid="uid://bl3g6pm7e6hov" path="res://prefabs/dev_grey.png" id="7_crgw4"]
+[ext_resource type="Script" path="res://scripts/HUD/minimap.gd" id="8_p6n3d"]
 [ext_resource type="ArrayMesh" uid="uid://eikqtfkce6jq" path="res://prefabs/dev_grey.obj" id="8_pm2n1"]
+[ext_resource type="PackedScene" uid="uid://b2t0j5ekr733w" path="res://scenes/icons/EnemyMinimapColorect.tscn" id="9_1aak7"]
 [ext_resource type="Texture2D" uid="uid://cghbpdvq15frc" path="res://prefabs/dev_orange.png" id="9_leb2p"]
 [ext_resource type="ArrayMesh" uid="uid://vuyc3qmcbjd0" path="res://prefabs/dev_valley.obj" id="10_nwkjw"]
-[ext_resource type="PackedScene" uid="uid://c5yaq5d5t8iip" path="res://scenes/HUD/minimap.tscn" id="11_o0fx2"]
 [ext_resource type="ArrayMesh" uid="uid://d08ovuxubggti" path="res://prefabs/dev_torus.obj" id="12_hyw06"]
 [ext_resource type="ArrayMesh" uid="uid://bd1p4vxwpo0fn" path="res://prefabs/dev_pillar.obj" id="13_jusbj"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="15_s6clv"]
+[ext_resource type="PackedScene" uid="uid://ddags07nm6eq3" path="res://scenes/UI/Tutorials/pathogen_tutorial.tscn" id="16_wu77b"]
+[ext_resource type="AudioStream" uid="uid://ddot4x86ay8a4" path="res://sounds/BGM/VictorySong.wav" id="18_ajfg6"]
+[ext_resource type="AudioStream" uid="uid://f0w2v6fjmevp" path="res://sounds/BGM/TutorialBGM.wav" id="19_2tlax"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x5567"]
 sky_top_color = Color(0.663169, 0.350295, 0.212311, 1)
@@ -203,7 +209,14 @@ data = PackedVector3Array(-2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_obcvt"]
 data = PackedVector3Array(-2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, 2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, 2.0085, -2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, 2.0085, -2.0085, 2.0085, 2.0085, -2.0085, -2.0085, -2.0085, -2.0085, 2.0085, -2.0085, -2.0085)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6oiwd"]
+data = PackedVector3Array(0.8839, 0, -0.8839, 1.25, 0, 0, 0.8321, 0.1768, -0.8321, 0.8321, 0.1768, -0.8321, 1.25, 0, 0, 1.1768, 0.1768, 0, 0.8321, 0.1768, -0.8321, 1.1768, 0.1768, 0, 0.7071, 0.25, -0.7071, 0.7071, 0.25, -0.7071, 1.1768, 0.1768, 0, 1, 0.25, 0, 0.7071, 0.25, -0.7071, 1, 0.25, 0, 0.5821, 0.1768, -0.5821, 0.5821, 0.1768, -0.5821, 1, 0.25, 0, 0.8232, 0.1768, 0, 0.5821, 0.1768, -0.5821, 0.8232, 0.1768, 0, 0.5303, 0, -0.5303, 0.5303, 0, -0.5303, 0.8232, 0.1768, 0, 0.75, 0, 0, 0.5303, 0, -0.5303, 0.75, 0, 0, 0.5821, -0.1768, -0.5821, 0.5821, -0.1768, -0.5821, 0.75, 0, 0, 0.8232, -0.1768, 0, 0.5821, -0.1768, -0.5821, 0.8232, -0.1768, 0, 0.7071, -0.25, -0.7071, 0.7071, -0.25, -0.7071, 0.8232, -0.1768, 0, 1, -0.25, 0, 0.7071, -0.25, -0.7071, 1, -0.25, 0, 0.8321, -0.1768, -0.8321, 0.8321, -0.1768, -0.8321, 1, -0.25, 0, 1.1768, -0.1768, 0, 0.8321, -0.1768, -0.8321, 1.1768, -0.1768, 0, 0.8839, 0, -0.8839, 0.8839, 0, -0.8839, 1.1768, -0.1768, 0, 1.25, 0, 0, 0, 0, -1.25, 0.8839, 0, -0.8839, 0, 0.1768, -1.1768, 0, 0.1768, -1.1768, 0.8839, 0, -0.8839, 0.8321, 0.1768, -0.8321, 0, 0.1768, -1.1768, 0.8321, 0.1768, -0.8321, 0, 0.25, -1, 0, 0.25, -1, 0.8321, 0.1768, -0.8321, 0.7071, 0.25, -0.7071, 0, 0.25, -1, 0.7071, 0.25, -0.7071, 0, 0.1768, -0.8232, 0, 0.1768, -0.8232, 0.7071, 0.25, -0.7071, 0.5821, 0.1768, -0.5821, 0, 0.1768, -0.8232, 0.5821, 0.1768, -0.5821, 0, 0, -0.75, 0, 0, -0.75, 0.5821, 0.1768, -0.5821, 0.5303, 0, -0.5303, 0, 0, -0.75, 0.5303, 0, -0.5303, 0, -0.1768, -0.8232, 0, -0.1768, -0.8232, 0.5303, 0, -0.5303, 0.5821, -0.1768, -0.5821, 0, -0.1768, -0.8232, 0.5821, -0.1768, -0.5821, 0, -0.25, -1, 0, -0.25, -1, 0.5821, -0.1768, -0.5821, 0.7071, -0.25, -0.7071, 0, -0.25, -1, 0.7071, -0.25, -0.7071, 0, -0.1768, -1.1768, 0, -0.1768, -1.1768, 0.7071, -0.25, -0.7071, 0.8321, -0.1768, -0.8321, 0, -0.1768, -1.1768, 0.8321, -0.1768, -0.8321, 0, 0, -1.25, 0, 0, -1.25, 0.8321, -0.1768, -0.8321, 0.8839, 0, -0.8839, -0.8839, 0, -0.8839, 0, 0, -1.25, -0.8321, 0.1768, -0.8321, -0.8321, 0.1768, -0.8321, 0, 0, -1.25, 0, 0.1768, -1.1768, -0.8321, 0.1768, -0.8321, 0, 0.1768, -1.1768, -0.7071, 0.25, -0.7071, -0.7071, 0.25, -0.7071, 0, 0.1768, -1.1768, 0, 0.25, -1, -0.7071, 0.25, -0.7071, 0, 0.25, -1, -0.5821, 0.1768, -0.5821, -0.5821, 0.1768, -0.5821, 0, 0.25, -1, 0, 0.1768, -0.8232, -0.5821, 0.1768, -0.5821, 0, 0.1768, -0.8232, -0.5303, 0, -0.5303, -0.5303, 0, -0.5303, 0, 0.1768, -0.8232, 0, 0, -0.75, -0.5303, 0, -0.5303, 0, 0, -0.75, -0.5821, -0.1768, -0.5821, -0.5821, -0.1768, -0.5821, 0, 0, -0.75, 0, -0.1768, -0.8232, -0.5821, -0.1768, -0.5821, 0, -0.1768, -0.8232, -0.7071, -0.25, -0.7071, -0.7071, -0.25, -0.7071, 0, -0.1768, -0.8232, 0, -0.25, -1, -0.7071, -0.25, -0.7071, 0, -0.25, -1, -0.8321, -0.1768, -0.8321, -0.8321, -0.1768, -0.8321, 0, -0.25, -1, 0, -0.1768, -1.1768, -0.8321, -0.1768, -0.8321, 0, -0.1768, -1.1768, -0.8839, 0, -0.8839, -0.8839, 0, -0.8839, 0, -0.1768, -1.1768, 0, 0, -1.25, -1.25, 0, 0, -0.8839, 0, -0.8839, -1.1768, 0.1768, 0, -1.1768, 0.1768, 0, -0.8839, 0, -0.8839, -0.8321, 0.1768, -0.8321, -1.1768, 0.1768, 0, -0.8321, 0.1768, -0.8321, -1, 0.25, 0, -1, 0.25, 0, -0.8321, 0.1768, -0.8321, -0.7071, 0.25, -0.7071, -1, 0.25, 0, -0.7071, 0.25, -0.7071, -0.8232, 0.1768, 0, -0.8232, 0.1768, 0, -0.7071, 0.25, -0.7071, -0.5821, 0.1768, -0.5821, -0.8232, 0.1768, 0, -0.5821, 0.1768, -0.5821, -0.75, 0, 0, -0.75, 0, 0, -0.5821, 0.1768, -0.5821, -0.5303, 0, -0.5303, -0.75, 0, 0, -0.5303, 0, -0.5303, -0.8232, -0.1768, 0, -0.8232, -0.1768, 0, -0.5303, 0, -0.5303, -0.5821, -0.1768, -0.5821, -0.8232, -0.1768, 0, -0.5821, -0.1768, -0.5821, -1, -0.25, 0, -1, -0.25, 0, -0.5821, -0.1768, -0.5821, -0.7071, -0.25, -0.7071, -1, -0.25, 0, -0.7071, -0.25, -0.7071, -1.1768, -0.1768, 0, -1.1768, -0.1768, 0, -0.7071, -0.25, -0.7071, -0.8321, -0.1768, -0.8321, -1.1768, -0.1768, 0, -0.8321, -0.1768, -0.8321, -1.25, 0, 0, -1.25, 0, 0, -0.8321, -0.1768, -0.8321, -0.8839, 0, -0.8839, -0.8839, 0, 0.8839, -1.25, 0, 0, -0.8321, 0.1768, 0.8321, -0.8321, 0.1768, 0.8321, -1.25, 0, 0, -1.1768, 0.1768, 0, -0.8321, 0.1768, 0.8321, -1.1768, 0.1768, 0, -0.7071, 0.25, 0.7071, -0.7071, 0.25, 0.7071, -1.1768, 0.1768, 0, -1, 0.25, 0, -0.7071, 0.25, 0.7071, -1, 0.25, 0, -0.5821, 0.1768, 0.5821, -0.5821, 0.1768, 0.5821, -1, 0.25, 0, -0.8232, 0.1768, 0, -0.5821, 0.1768, 0.5821, -0.8232, 0.1768, 0, -0.5303, 0, 0.5303, -0.5303, 0, 0.5303, -0.8232, 0.1768, 0, -0.75, 0, 0, -0.5303, 0, 0.5303, -0.75, 0, 0, -0.5821, -0.1768, 0.5821, -0.5821, -0.1768, 0.5821, -0.75, 0, 0, -0.8232, -0.1768, 0, -0.5821, -0.1768, 0.5821, -0.8232, -0.1768, 0, -0.7071, -0.25, 0.7071, -0.7071, -0.25, 0.7071, -0.8232, -0.1768, 0, -1, -0.25, 0, -0.7071, -0.25, 0.7071, -1, -0.25, 0, -0.8321, -0.1768, 0.8321, -0.8321, -0.1768, 0.8321, -1, -0.25, 0, -1.1768, -0.1768, 0, -0.8321, -0.1768, 0.8321, -1.1768, -0.1768, 0, -0.8839, 0, 0.8839, -0.8839, 0, 0.8839, -1.1768, -0.1768, 0, -1.25, 0, 0, 0, 0, 1.25, -0.8839, 0, 0.8839, 0, 0.1768, 1.1768, 0, 0.1768, 1.1768, -0.8839, 0, 0.8839, -0.8321, 0.1768, 0.8321, 0, 0.1768, 1.1768, -0.8321, 0.1768, 0.8321, 0, 0.25, 1, 0, 0.25, 1, -0.8321, 0.1768, 0.8321, -0.7071, 0.25, 0.7071, 0, 0.25, 1, -0.7071, 0.25, 0.7071, 0, 0.1768, 0.8232, 0, 0.1768, 0.8232, -0.7071, 0.25, 0.7071, -0.5821, 0.1768, 0.5821, 0, 0.1768, 0.8232, -0.5821, 0.1768, 0.5821, 0, 0, 0.75, 0, 0, 0.75, -0.5821, 0.1768, 0.5821, -0.5303, 0, 0.5303, 0, 0, 0.75, -0.5303, 0, 0.5303, 0, -0.1768, 0.8232, 0, -0.1768, 0.8232, -0.5303, 0, 0.5303, -0.5821, -0.1768, 0.5821, 0, -0.1768, 0.8232, -0.5821, -0.1768, 0.5821, 0, -0.25, 1, 0, -0.25, 1, -0.5821, -0.1768, 0.5821, -0.7071, -0.25, 0.7071, 0, -0.25, 1, -0.7071, -0.25, 0.7071, 0, -0.1768, 1.1768, 0, -0.1768, 1.1768, -0.7071, -0.25, 0.7071, -0.8321, -0.1768, 0.8321, 0, -0.1768, 1.1768, -0.8321, -0.1768, 0.8321, 0, 0, 1.25, 0, 0, 1.25, -0.8321, -0.1768, 0.8321, -0.8839, 0, 0.8839, 0.8839, 0, 0.8839, 0, 0, 1.25, 0.8321, 0.1768, 0.8321, 0.8321, 0.1768, 0.8321, 0, 0, 1.25, 0, 0.1768, 1.1768, 0.8321, 0.1768, 0.8321, 0, 0.1768, 1.1768, 0.7071, 0.25, 0.7071, 0.7071, 0.25, 0.7071, 0, 0.1768, 1.1768, 0, 0.25, 1, 0.7071, 0.25, 0.7071, 0, 0.25, 1, 0.5821, 0.1768, 0.5821, 0.5821, 0.1768, 0.5821, 0, 0.25, 1, 0, 0.1768, 0.8232, 0.5821, 0.1768, 0.5821, 0, 0.1768, 0.8232, 0.5303, 0, 0.5303, 0.5303, 0, 0.5303, 0, 0.1768, 0.8232, 0, 0, 0.75, 0.5303, 0, 0.5303, 0, 0, 0.75, 0.5821, -0.1768, 0.5821, 0.5821, -0.1768, 0.5821, 0, 0, 0.75, 0, -0.1768, 0.8232, 0.5821, -0.1768, 0.5821, 0, -0.1768, 0.8232, 0.7071, -0.25, 0.7071, 0.7071, -0.25, 0.7071, 0, -0.1768, 0.8232, 0, -0.25, 1, 0.7071, -0.25, 0.7071, 0, -0.25, 1, 0.8321, -0.1768, 0.8321, 0.8321, -0.1768, 0.8321, 0, -0.25, 1, 0, -0.1768, 1.1768, 0.8321, -0.1768, 0.8321, 0, -0.1768, 1.1768, 0.8839, 0, 0.8839, 0.8839, 0, 0.8839, 0, -0.1768, 1.1768, 0, 0, 1.25, 1.25, 0, 0, 0.8839, 0, 0.8839, 1.1768, 0.1768, 0, 1.1768, 0.1768, 0, 0.8839, 0, 0.8839, 0.8321, 0.1768, 0.8321, 1.1768, 0.1768, 0, 0.8321, 0.1768, 0.8321, 1, 0.25, 0, 1, 0.25, 0, 0.8321, 0.1768, 0.8321, 0.7071, 0.25, 0.7071, 1, 0.25, 0, 0.7071, 0.25, 0.7071, 0.8232, 0.1768, 0, 0.8232, 0.1768, 0, 0.7071, 0.25, 0.7071, 0.5821, 0.1768, 0.5821, 0.8232, 0.1768, 0, 0.5821, 0.1768, 0.5821, 0.75, 0, 0, 0.75, 0, 0, 0.5821, 0.1768, 0.5821, 0.5303, 0, 0.5303, 0.75, 0, 0, 0.5303, 0, 0.5303, 0.8232, -0.1768, 0, 0.8232, -0.1768, 0, 0.5303, 0, 0.5303, 0.5821, -0.1768, 0.5821, 0.8232, -0.1768, 0, 0.5821, -0.1768, 0.5821, 1, -0.25, 0, 1, -0.25, 0, 0.5821, -0.1768, 0.5821, 0.7071, -0.25, 0.7071, 1, -0.25, 0, 0.7071, -0.25, 0.7071, 1.1768, -0.1768, 0, 1.1768, -0.1768, 0, 0.7071, -0.25, 0.7071, 0.8321, -0.1768, 0.8321, 1.1768, -0.1768, 0, 0.8321, -0.1768, 0.8321, 1.25, 0, 0, 1.25, 0, 0, 0.8321, -0.1768, 0.8321, 0.8839, 0, 0.8839)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj026"]
+bg_color = Color(0.563031, 0.650005, 1.34766e-06, 1)
+
 [node name="world" type="Node3D"]
+script = ExtResource("1_bhgoj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m8tp8")
@@ -322,9 +335,64 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.174, 0, -12.8252)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.442, -2.94984, 0)
 mesh = SubResource("ArrayMesh_f01f8")
 
-[node name="Minimap" parent="." instance=ExtResource("11_o0fx2")]
+[node name="Minimap" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_p6n3d")
 target = NodePath("../Player")
 level = NodePath("..")
+
+[node name="ColorRect" type="ColorRect" parent="Minimap"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 200.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Minimap/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="Minimap/ColorRect/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Minimap/ColorRect/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.207912, 0.978148, 4.37114e-08, 9.08811e-09, 4.27562e-08, -1, -0.978148, 0.207912, 1.91069e-15, 0, 70, 0)
+projection = 1
+current = true
+size = 20.0
+
+[node name="ColorRect" type="ColorRect" parent="Minimap/ColorRect/SubViewportContainer/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.694118, 0.694118, 0.694118, 1)
+
+[node name="EnemyMinimapColorect" parent="Minimap/ColorRect/SubViewportContainer/SubViewport" instance=ExtResource("9_1aak7")]
+offset_left = 952.0
+offset_right = 972.0
 
 [node name="Plataforma de Tutorial" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_77m7i")
@@ -766,6 +834,15 @@ shape = SubResource("ConcavePolygonShape3D_obcvt")
 transform = Transform3D(3, 0, 0, 0, 2.17792, 2.06316, 0, -2.06316, 2.17792, 106.458, -0.745753, 355.695)
 mesh = ExtResource("12_hyw06")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="DevTorus"]
+collision_mask = 3
+
+[node name="Area3D" type="Area3D" parent="DevTorus"]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DevTorus/Area3D"]
+shape = SubResource("ConcavePolygonShape3D_6oiwd")
+
 [node name="DevPillar" type="MeshInstance3D" parent="."]
 transform = Transform3D(11.3658, -5.77431, 0, 3.84954, 17.0487, 0, 0, 0, 12, -21.8939, -109.392, 57.5058)
 mesh = ExtResource("13_jusbj")
@@ -797,3 +874,66 @@ mesh = ExtResource("13_jusbj")
 [node name="DevPillar8" type="MeshInstance3D" parent="."]
 transform = Transform3D(-11.3658, 5.77431, -0.000210667, 3.84954, 17.0487, 0, 0.000199533, -0.000101371, -12, 244.799, -109.392, 57.5058)
 mesh = ExtResource("13_jusbj")
+
+[node name="PhaseFinished" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="PhaseFinished"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 175.0
+offset_right = 781.0
+offset_bottom = 447.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mj026")
+
+[node name="Parabéns" type="Label" parent="PhaseFinished/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.5
+offset_top = 39.0
+offset_right = 146.5
+offset_bottom = 97.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("15_s6clv")
+theme_override_font_sizes/font_size = 40
+text = "Parábens!!!!!!!"
+
+[node name="Obrigado" type="Label" parent="PhaseFinished/Panel"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 133.0
+offset_right = 367.0
+offset_bottom = 185.0
+theme_override_fonts/font = ExtResource("15_s6clv")
+text = "Tutorial Concluído!"
+
+[node name="NextPhase" type="Button" parent="PhaseFinished/Panel"]
+process_mode = 3
+layout_mode = 0
+offset_left = 166.0
+offset_top = 205.0
+offset_right = 283.0
+offset_bottom = 236.0
+theme_override_fonts/font = ExtResource("15_s6clv")
+text = "Próximo Nível"
+
+[node name="PathogenTutorial" parent="." instance=ExtResource("16_wu77b")]
+
+[node name="VictorySong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_ajfg6")
+volume_db = -10.0
+bus = &"BGM"
+
+[node name="TutorialBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_2tlax")
+volume_db = -10.0
+bus = &"BGM"
+
+[connection signal="pressed" from="PhaseFinished/Panel/NextPhase" to="." method="_on_next_phase_pressed"]

@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://crryhmvagudiy"]
+
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_quklc"]
+[ext_resource type="Script" path="res://scripts/Credits.gd" id="1_t7vyp"]
+[ext_resource type="Texture2D" uid="uid://1vx6gnr4idap" path="res://Immunition.icon.png" id="3_ulgcr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qlg7"]
+bg_color = Color(0.6, 0.6, 0.929412, 0.364706)
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7vyp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7qlg7")
+
+[node name="Voltar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 557.0
+offset_right = 205.0
+offset_bottom = 630.0
+theme_override_fonts/font = ExtResource("1_quklc")
+theme_override_font_sizes/font_size = 50
+text = "Voltar"
+
+[node name="Créditos" type="Label" parent="."]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 17.0
+offset_right = 763.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0.931439, 0.484165, 0, 1)
+theme_override_fonts/font = ExtResource("1_quklc")
+theme_override_font_sizes/font_size = 100
+text = "Créditos
+"
+
+[node name="Daniel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 189.0
+offset_right = 1124.0
+offset_bottom = 244.0
+theme_override_fonts/font = ExtResource("1_quklc")
+theme_override_font_sizes/font_size = 40
+text = "Daniel Marto da Silva - Artista 2D/Animação/Concept Art"
+
+[node name="Lucas" type="Label" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 273.0
+offset_right = 1133.0
+offset_bottom = 325.0
+theme_override_fonts/font = ExtResource("1_quklc")
+theme_override_font_sizes/font_size = 40
+text = "Lucas Camilo dos Reis - Game Designer/Artista 3D/Arte 2D"
+
+[node name="Matheus" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 352.0
+offset_right = 1047.0
+offset_bottom = 404.0
+theme_override_fonts/font = ExtResource("1_quklc")
+theme_override_font_sizes/font_size = 40
+text = "Matheus Veras Soares - Programador/Sonoplastia/UI"
+
+[node name="Músicas" type="Label" parent="."]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 425.0
+offset_right = 1409.0
+offset_bottom = 645.0
+theme_override_fonts/font = ExtResource("1_quklc")
+theme_override_font_sizes/font_size = 25
+text = "Músicas(Composições)
+
+Infraction: Game Boy, 
+Vlad Gluschenko: When the Lights Go On
+Ultrawave: Oceandive
+San Junipero: Infraction"
+
+[node name="Immune" type="Sprite2D" parent="."]
+position = Vector2(1022, 540)
+scale = Vector2(0.246376, 0.303228)
+texture = ExtResource("3_ulgcr")
+
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]

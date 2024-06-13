@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://cj7emqhky70af"]
+[gd_scene load_steps=123 format=3 uid="uid://cj7emqhky70af"]
 
 [ext_resource type="Script" path="res://scripts/Levels/level_1.gd" id="1_bgiqj"]
 [ext_resource type="Texture2D" uid="uid://bl3g6pm7e6hov" path="res://prefabs/dev_grey.png" id="1_m5ve1"]
@@ -46,6 +46,7 @@
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="31_8xm55"]
 [ext_resource type="PackedScene" uid="uid://cc6g7d2jxbm48" path="res://scenes/spawner/MainSpawner/CellSpawner3D.tscn" id="47_5u452"]
 [ext_resource type="PackedScene" uid="uid://doww2heou7dsn" path="res://scenes/spawner/MainSpawner/InfluenzaSpawner3D.tscn" id="48_d5mun"]
+[ext_resource type="AudioStream" uid="uid://ddot4x86ay8a4" path="res://sounds/BGM/VictorySong.wav" id="48_n7oef"]
 [ext_resource type="AudioStream" uid="uid://b0f6ntlqc0lg5" path="res://sounds/BGM/Level_1.wav" id="49_wylse"]
 
 [sub_resource type="Environment" id="Environment_07ns0"]
@@ -2459,6 +2460,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48025, -1.34568)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21481, 1.27402, 0.017539)
 
 [node name="PhaseEnded" parent="." instance=ExtResource("16_ee351")]
+
+[node name="VictorySong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("48_n7oef")
+volume_db = -10.0
+bus = &"BGM"
 
 [connection signal="body_entered" from="ExtractorPlatform/AreaPlatform" to="." method="_on_area_platform_body_entered"]
 [connection signal="pressed" from="Player/PlayerHUD/DeathScreen/Panel/RestartButton" to="Player" method="restart"]

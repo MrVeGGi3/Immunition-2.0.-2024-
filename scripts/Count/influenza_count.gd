@@ -6,10 +6,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	total_influenza = str(influenza_to_destroy)
+	total_influenza.text = str(influenza_to_destroy)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	influenza_defeated = Global.influenza_destroyed
+	influenza_defeated.text = str(Global.influenza_destroyed)
 	

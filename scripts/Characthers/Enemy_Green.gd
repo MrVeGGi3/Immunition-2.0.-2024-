@@ -25,7 +25,7 @@ var can_colide = true
 @onready var label = $SubViewport/ProgressBar/Label
 @onready var sub_viewport = $SubViewport
 @onready var symbol = $Sprite3D2
-@onready var death_sound = $DeathSound
+@onready var death_sound = %DeathSound
 
 
 #Variáveis Globais

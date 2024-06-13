@@ -205,14 +205,12 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		print("Minha velocidade andando é:", velocity.x, velocity.z)
 		if particles.emitting:
 			particles.emitting = false
 			enable_particle.start()
 		if Input.is_action_pressed("run"):
 				velocity.x = direction.x * lerp(SPEED, SPEED * 2, 0.6)
 				velocity.z = direction.z * lerp(SPEED, SPEED *2, 0.6) # Aumentar a velocidade ao correr	
-				print("Minha velocidade correndo é:", velocity.x, velocity.z)
 		else: 
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
@@ -360,6 +358,15 @@ func disable_UI():
 	wheel_switch_weapons.visible = false
 	ui_ammo.hide()	
 	memory_system.visible = false
+
+func restore_UI():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	whell_memory.show()
+	gun_shoot.show()
+	player_life_bar.show()
+	wheel_switch_weapons.visible = false
+	ui_ammo.show()	
+	memory_system.visible = true
 	
 
 func _on_exit_game_pressed():

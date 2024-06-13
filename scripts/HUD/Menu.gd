@@ -2,6 +2,7 @@ extends Control
 @onready var world_scene = "res://scenes/Levels/world.tscn"
 @onready var option_scene = "res://scenes/HUD/options_menu.tscn"
 @onready var level_selection = "res://scenes/HUD/level_selection.tscn"
+@onready var credits = "res://scenes/Credits.tscn"
 @onready var main_bgm = $MainBGM
 
 func _ready():
@@ -16,3 +17,5 @@ func _on_options_pressed():
 func _on_exit_pressed():
 	get_tree().quit()
   
+func _on_créditos_pressed():
+	get_tree().change_scene_to_file(credits)

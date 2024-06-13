@@ -14,32 +14,32 @@ offset_bottom = 40.0
 script = ExtResource("1_62s8w")
 
 [node name="DialogueBox" type="Sprite2D" parent="."]
-position = Vector2(539, 314)
-scale = Vector2(0.218513, 0.218513)
+position = Vector2(582, 469)
+scale = Vector2(0.243585, 0.275393)
 texture = ExtResource("2_uyx4h")
 
 [node name="JumpTutorial" type="Button" parent="."]
 layout_mode = 0
-offset_left = 497.0
-offset_top = 386.0
-offset_right = 611.0
-offset_bottom = 417.0
+offset_left = 550.0
+offset_top = 580.0
+offset_right = 664.0
+offset_bottom = 611.0
 theme_override_colors/font_color = Color(0.94902, 1, 0.945098, 1)
 theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
 theme_override_fonts/font = ExtResource("3_bfnmk")
 text = "Pular Tutorial"
 
 [node name="EnterButton" type="Sprite2D" parent="."]
-position = Vector2(788, 386)
+position = Vector2(873, 580)
 scale = Vector2(0.200487, 0.200487)
 texture = ExtResource("4_43eri")
 
 [node name="SpeechTutorial" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 231.0
-offset_top = 259.0
-offset_right = 271.0
-offset_bottom = 299.0
+offset_left = 235.0
+offset_top = 387.0
+offset_right = 275.0
+offset_bottom = 427.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_bfnmk")
 theme_override_font_sizes/normal_font_size = 20
@@ -47,3 +47,5 @@ bbcode_enabled = true
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+
+[connection signal="pressed" from="JumpTutorial" to="." method="_on_jump_tutorial_pressed"]
