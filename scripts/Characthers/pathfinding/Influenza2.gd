@@ -1,10 +1,11 @@
 extends CharacterBody3D
 
 @export_category("Atributos")
-@export var speed = 5
+@export var speed = 8
 @export var life = 10
 @export var original_color = Color(237,147,145,255)
 @export var red_color = Color(255,0,0,255)
+
 @export_category("Controle de Distância")
 @export var distance_to_shoot = Vector3(5,5,5).normalized()
 @export var keep_distance = Vector3()
@@ -19,7 +20,7 @@ var is_moving = true
 var is_shooting = false
 var shoot_by_player = false
 #Instâncias
-var projectile = preload("res://scenes/testing/influenza_projectile.tscn")
+var projectile = preload("res://scenes/effect/influenza_projectile.tscn")
 #Referência de Localização
 @onready var marker_3d = $Marker3D
 #Timers

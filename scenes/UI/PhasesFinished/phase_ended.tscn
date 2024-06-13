@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://cisbfousat14j"]
+
+[ext_resource type="Script" path="res://scripts/LevelFinished/phase_ended1.gd" id="1_e8n6b"]
+[ext_resource type="Texture2D" uid="uid://b1i6udx23kait" path="res://images/UI/Barra de Dialogo.png" id="2_7mnyx"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="3_naj03"]
+
+[node name="PhaseEnded" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_e8n6b")
+
+[node name="DialogueBox" type="Sprite2D" parent="."]
+position = Vector2(539, 314)
+scale = Vector2(0.218513, 0.218513)
+texture = ExtResource("2_7mnyx")
+
+[node name="GoToMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 355.0
+offset_right = 517.0
+offset_bottom = 386.0
+scale = Vector2(2.39583, 2.39583)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
+theme_override_fonts/font = ExtResource("3_naj03")
+text = "Menu de Fases"
+
+[node name="TextPhaseEnded" type="Label" parent="."]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 231.0
+offset_right = 844.0
+offset_bottom = 338.0
+theme_override_colors/font_color = Color(1.88913e-06, 0.440336, 0, 1)
+theme_override_fonts/font = ExtResource("3_naj03")
+theme_override_font_sizes/font_size = 40
+text = "     Fase Terminada!!!
+Ótimo Trabalho Soldado!"
+
+[connection signal="pressed" from="GoToMenu" to="." method="_on_go_to_menu_pressed"]

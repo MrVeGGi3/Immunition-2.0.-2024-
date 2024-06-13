@@ -3,7 +3,7 @@ extends Control
 
 @onready var color_rect = $ColorRect/SubViewportContainer/SubViewport/ColorRect
 @export var target : NodePath
-@export var camera_distance := 40.0 
+@export var camera_distance := 60.0 
 @onready var player := get_node(target)
 @onready var camera = $ColorRect/SubViewportContainer/SubViewport/Camera3D
 @export var level : NodePath
@@ -17,7 +17,6 @@ func _process(_delta : float) -> void:
 	if target:
 		camera.size = camera_distance
 		camera.position = Vector3(player.position.x, camera_distance, player.position.z)
-	
 	#var enemies_green = get_tree().get_nodes_in_group("green")
 	#var enemies_blue = get_tree().get_nodes_in_group("blue")
 	#var enemies_red = get_tree().get_nodes_in_group("red")

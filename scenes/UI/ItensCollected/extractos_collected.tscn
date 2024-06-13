@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://chjb7f3unarmp"]
+
+[ext_resource type="Script" path="res://scripts/Count/extractors_collected.gd" id="1_1iq7y"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_qg1se"]
+
+[node name="ExtractosCollected" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1iq7y")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = -59.0
+offset_right = 60.0
+offset_bottom = -19.0
+
+[node name="ExtractorCollected" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 511.0
+offset_right = 1040.0
+offset_bottom = 566.0
+theme_override_fonts/font = ExtResource("1_qg1se")
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="TotalExtractors" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1052.0
+offset_top = 567.0
+offset_right = 1092.0
+offset_bottom = 619.0
+theme_override_fonts/font = ExtResource("1_qg1se")
+theme_override_font_sizes/font_size = 40
+text = "3
+"
+
+[node name="Barra" type="Sprite2D" parent="Control"]
+position = Vector2(1039, 563)
+
+[node name="Extractor" type="Sprite2D" parent="Control"]
+position = Vector2(920, 562)

@@ -35,6 +35,7 @@ extends CharacterBody3D
 @onready var wheel_switch_weapons = $PlayerHUD/WheelSwitchWeapons
 @onready var ui_ammo = $PlayerHUD/UI_AMMO
 @onready var memory_system = $PlayerHUD/MemorySystem
+@onready var whell_memory = $"PlayerHUD/Whell&memory"
 
 
 #Músicas(BGM
@@ -42,8 +43,7 @@ extends CharacterBody3D
 @onready var main_bgm = $MainBGM # trilha sonora principal
 
 #Tutorial
-@onready var tutorial_walk = $PlayerHUD/TutorialGuide/TutorialWalk #animação de tutorial
-@onready var tutorial_guide = $PlayerHUD/TutorialGuide  #UI que mostra a animação de tutorial
+
 
 #Ajuste de Mecânica
 @onready var marker_3d = $Marker3D
@@ -73,7 +73,7 @@ var vida
 @export var n_ammo = 100 #munição neutrófilo
 @export var max_speed : float = 24.0
 @export var SPEED = 12.0
-@export var aceleration = 0.1
+@export var aceleration = 0.5
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #altera o modo de captura do mouse para usar como FPS
@@ -84,7 +84,6 @@ func _ready():
 	phase_finished.hide()
 	deathscreen.hide()
 	pause_menu.hide()
-	tutorial_guide.show()
 	player_life_bar.show()
 	#Física
 	set_physics_process(true)
@@ -92,7 +91,6 @@ func _ready():
 	#Músicas
 	death_sound.stop()#ao resetar, para a música de morte
 	$MainBGM.play() #executa o BGM principal 
-	tutorial_walk.play("walk")
 	#Variáveis
 	vida = vida_maxima #vida igual a vida máxima quando resetar
 	l_ammo = 20 #munição linfócito
@@ -203,27 +201,24 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_FORCE
-		if Input.is_action_pressed("run"):
-			SPEED += lerp(SPEED, max_speed, aceleration)
-			SPEED = min(SPEED, max_speed)
-		else:
-			SPEED = 12
-	else:
-		SPEED = 12
 		
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-		print(velocity.normalized())
-			
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-		
-	if position.y < -40: #Se o jogador estiver muito fundo caindo, ele morre
+		if Input.is_action_pressed("run") and direction:
+				velocity.x = direction.x * 2 * SPEED
+				velocity.z = direction.z * 2 * SPEED # Aumentar a velocidade ao correr	
+					
+
+	if position.y < -40:  # Se o jogador estiver muito fundo caindo, ele morre
 		kill()
 	
+	if direction:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+	else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
+			
 	move_and_slide()
+	
 
 func restart():
 	get_tree().reload_current_scene()
@@ -354,12 +349,13 @@ func kill():
 		disable_UI()
 		death_sound.play()
 		deathscreen.show()
+		whell_memory.hide()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func disable_UI():
+	whell_memory.hide()
 	gun_shoot.hide()
 	player_life_bar.hide()
-	tutorial_guide.hide()
 	main_bgm.stop()
 	wheel_switch_weapons.visible = false
 	ui_ammo.hide()	
@@ -458,3 +454,6 @@ func get_more_ammo(lammo, mammo, nammo):
 	linfocit_bar.play("recharge")
 	macrofage_bar.play("recharge")
 	neutrofile_bar.play("recharge")
+
+
+	

@@ -1,0 +1,828 @@
+[gd_scene load_steps=80 format=3 uid="uid://ryq41sr1ajnr"]
+
+[ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_t28fd"]
+[ext_resource type="Theme" uid="uid://bd32nqym4104l" path="res://themes/playerLifeBarTheme.tres" id="2_idtty"]
+[ext_resource type="Texture2D" uid="uid://bv42ntqndsu6p" path="res://icons/Icon Head CH Alive_RedAnimated.png" id="3_ibs0r"]
+[ext_resource type="PackedScene" uid="uid://br57ykp7o40bi" path="res://scenes/HUD/phase_finished.tscn" id="4_iu8ug"]
+[ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="5_nj0qx"]
+[ext_resource type="Texture2D" uid="uid://b86srxxd4jnsq" path="res://sprites/Player/macrofago_sprite.png" id="6_aroda"]
+[ext_resource type="Texture2D" uid="uid://cmixvfomb2y5w" path="res://sprites/Player/neutrofilos_sprite2.png" id="7_1bb62"]
+[ext_resource type="Texture2D" uid="uid://besa0etqgk00h" path="res://icons/health Icon.png" id="8_8l5wb"]
+[ext_resource type="Texture2D" uid="uid://gdo46rv1wjh3" path="res://icons/icon gun select.png" id="9_0clvy"]
+[ext_resource type="Texture2D" uid="uid://bap8mnn7tl4bg" path="res://icons/gun selection/icon gun green.jpg" id="10_7epi1"]
+[ext_resource type="Texture2D" uid="uid://33jae7wc4cls" path="res://icons/keyoboard buttons/keyboard.png" id="11_7d4dh"]
+[ext_resource type="FontFile" uid="uid://tfn36nnpaotb" path="res://fonts/batmfa__.ttf" id="12_y4wgm"]
+[ext_resource type="Texture2D" uid="uid://c7mcbsugesbyq" path="res://icons/weapons/Icon Linfosito.png" id="13_bnf58"]
+[ext_resource type="Texture2D" uid="uid://b82c6dssql1le" path="res://icons/gun selection/icon gun blue.jpg" id="14_sexvw"]
+[ext_resource type="Texture2D" uid="uid://6eexcteofaqe" path="res://icons/weapons/Icon neutrofilo.png" id="15_he0vh"]
+[ext_resource type="Texture2D" uid="uid://b1kyb3y8wghfy" path="res://icons/gun selection/icon gun red.jpg" id="16_fg6u7"]
+[ext_resource type="Texture2D" uid="uid://hktqxlioxt6s" path="res://icons/weapons/Icon macrofago.png" id="17_2ebso"]
+[ext_resource type="PackedScene" uid="uid://nt37rum3dhef" path="res://scenes/HUD/WheelSwitchWeapons.tscn" id="18_1dl0o"]
+[ext_resource type="PackedScene" uid="uid://bli5ijcxx5bse" path="res://scenes/HUD/MemorySystem.tscn" id="19_ht0f4"]
+[ext_resource type="PackedScene" uid="uid://cfltp503gd8w7" path="res://scenes/UI/Player/whell&memory.tscn" id="20_0nuba"]
+[ext_resource type="PackedScene" uid="uid://5ran8yqdqky" path="res://scenes/HUD/pause_menu.tscn" id="21_6cw7s"]
+[ext_resource type="Theme" uid="uid://bw2cynbti0h7y" path="res://themes/PanelColor.tres" id="22_tawwm"]
+[ext_resource type="Theme" uid="uid://dufxlwl2jmmm8" path="res://themes/purpleTheme.tres" id="23_vt722"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="24_1dhhl"]
+[ext_resource type="Texture2D" uid="uid://d0r2c8ejf2khy" path="res://icons/Icon Head CH Died.png" id="25_ogqko"]
+[ext_resource type="AudioStream" uid="uid://hqasyg3vanal" path="res://sounds/SFX/Player/ShootEffect.wav" id="26_abe6a"]
+[ext_resource type="AudioStream" uid="uid://cl16r632p0qb5" path="res://sounds/BGM/deathsound.wav" id="27_cbcvg"]
+[ext_resource type="AudioStream" uid="uid://c14cj6uhjlgdt" path="res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav" id="28_xo0km"]
+[ext_resource type="AudioStream" uid="uid://dk7wdjoi41cuq" path="res://sounds/SFX/Player/macrofage_weapon .wav" id="29_lgkc5"]
+[ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="30_xrmcx"]
+
+[sub_resource type="GDScript" id="GDScript_vwpip"]
+script/source = "extends Node3D
+
+@onready var area_3d = $MeshInstance3D2/Area3D
+@onready var camera_3d = $Camera3D
+@onready var player_camera_3d = $Camera3D2
+var entered = false
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if entered:
+		if Input.is_action_just_pressed(\"Interact\"):
+			print(\"Estou tentando mudar de camera\")
+			change_camera()
+
+func _on_area_3d_body_entered(body):
+	print(\"Estou entrando no sistema\")
+	entered = true
+	
+func change_camera():
+	camera_3d.make_current()		
+"
+
+[sub_resource type="BoxMesh" id="BoxMesh_xajon"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1dsut"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nwage"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocaef"]
+atlas = ExtResource("3_ibs0r")
+region = Rect2(1062, 0, 1062, 731)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft53n"]
+atlas = ExtResource("3_ibs0r")
+region = Rect2(0, 0, 1062, 731)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsgjo"]
+atlas = ExtResource("3_ibs0r")
+region = Rect2(0, 0, 1062, 731)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vnq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocaef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft53n")
+}],
+"loop": false,
+"name": &"damage_received",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsgjo")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys8yx"]
+atlas = ExtResource("5_nj0qx")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyhc2"]
+atlas = ExtResource("6_aroda")
+region = Rect2(0, 0, 2048, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og1fy"]
+atlas = ExtResource("7_1bb62")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eulep"]
+atlas = ExtResource("5_nj0qx")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbxrv"]
+atlas = ExtResource("5_nj0qx")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkq2n"]
+atlas = ExtResource("5_nj0qx")
+region = Rect2(3072, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5ljn"]
+atlas = ExtResource("5_nj0qx")
+region = Rect2(4096, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2nwi"]
+atlas = ExtResource("5_nj0qx")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71dco"]
+atlas = ExtResource("6_aroda")
+region = Rect2(2048, 0, 2048, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48bmv"]
+atlas = ExtResource("6_aroda")
+region = Rect2(0, 1024, 2048, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18mu0"]
+atlas = ExtResource("6_aroda")
+region = Rect2(2048, 1024, 2048, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvoft"]
+atlas = ExtResource("6_aroda")
+region = Rect2(0, 0, 2048, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dci4r"]
+atlas = ExtResource("7_1bb62")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejm24"]
+atlas = ExtResource("7_1bb62")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmhim"]
+atlas = ExtResource("7_1bb62")
+region = Rect2(3072, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqiax"]
+atlas = ExtResource("7_1bb62")
+region = Rect2(0, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0nvl"]
+atlas = ExtResource("7_1bb62")
+region = Rect2(1024, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usdhk"]
+atlas = ExtResource("7_1bb62")
+region = Rect2(2048, 1024, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1slse"]
+atlas = ExtResource("7_1bb62")
+region = Rect2(3072, 1024, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qaoph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys8yx")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyhc2")
+}],
+"loop": false,
+"name": &"idle_macrofage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og1fy")
+}],
+"loop": false,
+"name": &"idle_neutro",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eulep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbxrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkq2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5ljn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2nwi")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71dco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48bmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18mu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvoft")
+}],
+"loop": false,
+"name": &"shoot_macrofage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dci4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejm24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmhim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqiax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0nvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usdhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1slse")
+}],
+"loop": true,
+"name": &"shoot_neutro",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_asqag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7epi1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7epi1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}],
+"loop": false,
+"name": &"recharge",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65rdl"]
+atlas = ExtResource("11_7d4dh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2db4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65rdl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weqne"]
+atlas = ExtResource("13_bnf58")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3br55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weqne")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uf55j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_sexvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_sexvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}],
+"loop": false,
+"name": &"recharge",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6va40"]
+atlas = ExtResource("15_he0vh")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yg3w6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6va40")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kqli"]
+atlas = ExtResource("11_7d4dh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f73ti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kqli")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yltvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fg6u7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fg6u7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0clvy")
+}],
+"loop": false,
+"name": &"recharge",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_375ne"]
+atlas = ExtResource("11_7d4dh")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aobn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_375ne")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj6o7"]
+atlas = ExtResource("17_2ebso")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2ewk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj6o7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ayvqm"]
+particle_flag_align_y = true
+emission_shape_scale = Vector3(0, 1, 0)
+inherit_velocity_ratio = 5.0
+velocity_pivot = Vector3(0, 0, 1)
+direction = Vector3(0, 0, 4)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, -2, 0)
+linear_accel_min = -1.35
+linear_accel_max = 7.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuhuk"]
+albedo_color = Color(1, 0.341176, 1, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(0.247059, 0, 0.890196, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_s0y5o"]
+material = SubResource("StandardMaterial3D_xuhuk")
+radius = 0.2
+height = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60ql2"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h5eli"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m6f5v"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="TestCameraTransition" type="Node3D"]
+script = SubResource("GDScript_vwpip")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_xajon")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_1dsut")
+
+[node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53124, -0.367183, 0.583074)
+collision_layer = 2
+collision_mask = 7
+platform_floor_layers = 4294967041
+platform_wall_layers = 1
+script = ExtResource("1_t28fd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982741, 0)
+shape = SubResource("CapsuleShape3D_nwage")
+
+[node name="PlayerHUD" type="CanvasLayer" parent="Player"]
+
+[node name="PlayerLifeBar" type="Control" parent="Player/PlayerHUD"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 135.0
+offset_top = 492.0
+offset_right = 175.0
+offset_bottom = 532.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Player/PlayerHUD/PlayerLifeBar"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 9.0
+offset_right = 274.0
+offset_bottom = 36.0
+theme = ExtResource("2_idtty")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+
+[node name="DamageTaken" type="AnimatedSprite2D" parent="Player/PlayerHUD/PlayerLifeBar"]
+position = Vector2(-31, 24)
+scale = Vector2(0.193912, 0.193912)
+sprite_frames = SubResource("SpriteFrames_4vnq4")
+animation = &"damage_received"
+frame = 1
+frame_progress = 1.0
+
+[node name="PhaseFinished" parent="Player/PlayerHUD" instance=ExtResource("4_iu8ug")]
+
+[node name="GunShoot" type="Control" parent="Player/PlayerHUD"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/PlayerHUD/GunShoot"]
+position = Vector2(758, 442)
+scale = Vector2(0.418145, 0.418145)
+sprite_frames = SubResource("SpriteFrames_qaoph")
+animation = &"shoot_neutro"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.206659
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/PlayerHUD/GunShoot"]
+position = Vector2(571, 318)
+scale = Vector2(0.0255, 0.0255)
+texture = ExtResource("8_8l5wb")
+
+[node name="UI_AMMO" type="Control" parent="Player/PlayerHUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 378.0
+offset_top = 646.0
+offset_right = 418.0
+offset_bottom = 686.0
+
+[node name="Ammo3" type="Sprite2D" parent="Player/PlayerHUD/UI_AMMO"]
+position = Vector2(247, -36)
+scale = Vector2(0.056, 0.056)
+texture = ExtResource("9_0clvy")
+
+[node name="Linfócito" type="Control" parent="Player/PlayerHUD/UI_AMMO"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LinfocitBar" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Linfócito"]
+position = Vector2(115, -42)
+scale = Vector2(0.0631217, 0.0635484)
+sprite_frames = SubResource("SpriteFrames_asqag")
+animation = &"recharge"
+autoplay = "default"
+
+[node name="1" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Linfócito"]
+position = Vector2(117, -82)
+sprite_frames = SubResource("SpriteFrames_2db4e")
+
+[node name="Ammo_Linf" type="Label" parent="Player/PlayerHUD/UI_AMMO/Linfócito"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = -26.0
+offset_right = 152.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0.286275, 0, 1)
+theme_override_fonts/font = ExtResource("12_y4wgm")
+theme_override_font_sizes/font_size = 30
+text = "20
+"
+horizontal_alignment = 1
+
+[node name="LinfocitIcon" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Linfócito"]
+position = Vector2(117, -43)
+scale = Vector2(0.226765, 0.226765)
+sprite_frames = SubResource("SpriteFrames_3br55")
+animation = &"idle"
+
+[node name="Macrofágo" type="Control" parent="Player/PlayerHUD/UI_AMMO"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MacrofageBar" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Macrofágo"]
+position = Vector2(180, -44)
+scale = Vector2(0.0631217, 0.0635484)
+sprite_frames = SubResource("SpriteFrames_uf55j")
+animation = &"recharge"
+autoplay = "default"
+
+[node name="MacrofageIcon" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Macrofágo"]
+position = Vector2(184, -46)
+scale = Vector2(0.21566, 0.21566)
+sprite_frames = SubResource("SpriteFrames_yg3w6")
+animation = &"idle"
+
+[node name="2" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Macrofágo"]
+position = Vector2(183, -82)
+sprite_frames = SubResource("SpriteFrames_f73ti")
+
+[node name="Ammo_Macr" type="Label" parent="Player/PlayerHUD/UI_AMMO/Macrofágo"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = -25.0
+offset_right = 217.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0.937255, 1)
+theme_override_fonts/font = ExtResource("12_y4wgm")
+theme_override_font_sizes/font_size = 30
+text = "20"
+horizontal_alignment = 1
+
+[node name="Neutrófilo" type="Control" parent="Player/PlayerHUD/UI_AMMO"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NeutrofileBar" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Neutrófilo"]
+position = Vector2(248, -43)
+scale = Vector2(0.0631217, 0.0635484)
+sprite_frames = SubResource("SpriteFrames_yltvk")
+animation = &"recharge"
+autoplay = "default"
+
+[node name="Ammo_Neu" type="Label" parent="Player/PlayerHUD/UI_AMMO/Neutrófilo"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = -26.0
+offset_right = 275.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0.952941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_y4wgm")
+theme_override_font_sizes/font_size = 30
+text = "20"
+horizontal_alignment = 1
+
+[node name="3" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Neutrófilo"]
+position = Vector2(246, -84)
+sprite_frames = SubResource("SpriteFrames_aobn8")
+
+[node name="Neutrofile" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Neutrófilo"]
+position = Vector2(248, -45)
+scale = Vector2(0.256223, 0.256223)
+sprite_frames = SubResource("SpriteFrames_f2ewk")
+animation = &"idle"
+
+[node name="WheelSwitchWeapons" parent="Player/PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("18_1dl0o")]
+offset_right = -264.0
+offset_bottom = -192.0
+player = NodePath("../..")
+
+[node name="MemorySystem" parent="Player/PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("19_ht0f4")]
+process_mode = 3
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 70.0
+offset_top = 11.0
+offset_right = 70.0
+offset_bottom = 11.0
+grow_horizontal = 1
+grow_vertical = 1
+player = NodePath("../..")
+
+[node name="Whell&memory" parent="Player/PlayerHUD" instance=ExtResource("20_0nuba")]
+offset_left = 168.0
+offset_top = 306.0
+offset_right = 168.0
+offset_bottom = 306.0
+scale = Vector2(0.480624, 0.480624)
+
+[node name="pause_menu" parent="Player/PlayerHUD" instance=ExtResource("21_6cw7s")]
+
+[node name="DeathScreen" type="Control" parent="Player/PlayerHUD"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -24.0
+offset_right = 41.0
+offset_bottom = 16.0
+
+[node name="Panel" type="Panel" parent="Player/PlayerHUD/DeathScreen"]
+modulate = Color(1, 0.403922, 0.619608, 1)
+layout_mode = 0
+offset_left = 364.0
+offset_top = 214.0
+offset_right = 738.0
+offset_bottom = 463.0
+theme = ExtResource("22_tawwm")
+
+[node name="Label" type="Label" parent="Player/PlayerHUD/DeathScreen/Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 13.0
+offset_right = 320.0
+offset_bottom = 71.0
+theme = ExtResource("23_vt722")
+theme_override_colors/font_color = Color(1, 0.972549, 0.964706, 0.980392)
+theme_override_fonts/font = ExtResource("24_1dhhl")
+theme_override_font_sizes/font_size = 40
+text = "Você Morreu!"
+
+[node name="RestartButton" type="Button" parent="Player/PlayerHUD/DeathScreen/Panel" groups=["player"]]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 195.0
+offset_right = 263.0
+offset_bottom = 243.0
+text = "Recomeçar"
+
+[node name="PlayerDead" type="Sprite2D" parent="Player/PlayerHUD/DeathScreen"]
+position = Vector2(549, 347)
+scale = Vector2(0.145759, 0.145759)
+texture = ExtResource("25_ogqko")
+
+[node name="ShootPlayer" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("26_abe6a")
+bus = &"SFX"
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("27_cbcvg")
+bus = &"BGM"
+
+[node name="MainBGM" type="AudioStreamPlayer" parent="Player"]
+process_mode = 3
+stream = ExtResource("28_xo0km")
+volume_db = -20.0
+autoplay = true
+bus = &"BGM"
+
+[node name="MacrofageShoot" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("29_lgkc5")
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="NeutrofileSound" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("30_xrmcx")
+volume_db = 80.0
+bus = &"SFX"
+
+[node name="RayCast3D" type="RayCast3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, 0, -50)
+collision_mask = 7
+collide_with_areas = true
+
+[node name="FlameThrowerShoot" type="RayCast3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, 0, -30)
+collision_mask = 7
+collide_with_areas = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Player/FlameThrowerShoot"]
+transform = Transform3D(-0.999934, 0, 0.0115189, 0, 1, 0, -0.0115189, 0, -0.999934, 0.234038, -0.287282, -2.10114)
+amount = 10
+lifetime = 1.14
+speed_scale = 2.0
+process_material = SubResource("ParticleProcessMaterial_ayvqm")
+draw_pass_1 = SubResource("SphereMesh_s0y5o")
+
+[node name="MacrofageRay3D" type="RayCast3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, 0, -100)
+collision_mask = 7
+collide_with_areas = true
+
+[node name="Marker3D" type="Marker3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48025, -1.34568)
+
+[node name="HitMarkerExplosion" type="Marker3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21481, 1.27402, 0.017539)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.953717, 0.0645722, -0.293691, 0, 0.976672, 0.214735, 0.300706, -0.204797, 0.931469, -1.69, 4.83, 3.893)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_60ql2")
+mesh = SubResource("BoxMesh_h5eli")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D2"]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/Area3D"]
+shape = SubResource("ConcavePolygonShape3D_m6f5v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0449446, 0.99899, 0, -0.99899, -0.0449446, 0, 6.87153, 0)
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53124, 1.13282, 0.583074)
+current = true
+
+[connection signal="pressed" from="Player/PlayerHUD/DeathScreen/Panel/RestartButton" to="Player" method="restart"]
+[connection signal="body_entered" from="MeshInstance3D2/Area3D" to="." method="_on_area_3d_body_entered"]

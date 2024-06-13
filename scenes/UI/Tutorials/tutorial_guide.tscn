@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://bm8l8rndn3w62"]
+
+[ext_resource type="Texture2D" uid="uid://c5iqptwqnbvnt" path="res://sprites/UI/Animação de teclas.png" id="1_woivq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5v67"]
+atlas = ExtResource("1_woivq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj0jn"]
+atlas = ExtResource("1_woivq")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6076"]
+atlas = ExtResource("1_woivq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy1jy"]
+atlas = ExtResource("1_woivq")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83gqe"]
+atlas = ExtResource("1_woivq")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s4s6"]
+atlas = ExtResource("1_woivq")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgc7n"]
+atlas = ExtResource("1_woivq")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fa34"]
+atlas = ExtResource("1_woivq")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omdf5"]
+atlas = ExtResource("1_woivq")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k1bi"]
+atlas = ExtResource("1_woivq")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vt75"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5v67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj0jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6076")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy1jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83gqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s4s6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgc7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fa34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omdf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k1bi")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 1.0
+}]
+
+[node name="TutorialGuide" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TutorialWalk" type="AnimatedSprite2D" parent="."]
+position = Vector2(223, 201)
+sprite_frames = SubResource("SpriteFrames_1vt75")
+animation = &"walk"

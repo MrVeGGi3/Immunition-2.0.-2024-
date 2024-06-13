@@ -167,7 +167,7 @@ animation = &"normal"
 autoplay = "normal"
 
 [node name="OrbGreen" type="Sprite2D" parent="Wheel/Green"]
-position = Vector2(36.6701, 62.5981)
+position = Vector2(42.5161, 62.0585)
 scale = Vector2(0.046502, 0.0474208)
 texture = ExtResource("6_pxtwf")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=74 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="2_bowrg"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://5ran8yqdqky" path="res://scenes/HUD/pause_menu.tscn" id="8_5pk0d"]
 [ext_resource type="Texture2D" uid="uid://bv42ntqndsu6p" path="res://icons/Icon Head CH Alive_RedAnimated.png" id="8_6e3wa"]
 [ext_resource type="AudioStream" uid="uid://hqasyg3vanal" path="res://sounds/SFX/Player/ShootEffect.wav" id="9_qulf7"]
-[ext_resource type="Texture2D" uid="uid://c5iqptwqnbvnt" path="res://sprites/UI/Animação de teclas.png" id="10_axibj"]
 [ext_resource type="Texture2D" uid="uid://cmixvfomb2y5w" path="res://sprites/Player/neutrofilos_sprite2.png" id="11_1qujk"]
 [ext_resource type="AudioStream" uid="uid://cl16r632p0qb5" path="res://sounds/BGM/deathsound.wav" id="11_6pg7g"]
 [ext_resource type="Texture2D" uid="uid://gdo46rv1wjh3" path="res://icons/icon gun select.png" id="11_qcxcy"]
@@ -30,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://nt37rum3dhef" path="res://scenes/HUD/WheelSwitchWeapons.tscn" id="24_40cle"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="24_r7y5r"]
 [ext_resource type="PackedScene" uid="uid://bli5ijcxx5bse" path="res://scenes/HUD/MemorySystem.tscn" id="25_vndgg"]
+[ext_resource type="PackedScene" uid="uid://cfltp503gd8w7" path="res://scenes/UI/Player/whell&memory.tscn" id="26_yg6t8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nwage"]
 
@@ -65,84 +65,6 @@ animations = [{
 "loop": false,
 "name": &"idle",
 "speed": 10.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i5v67"]
-atlas = ExtResource("10_axibj")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uj0jn"]
-atlas = ExtResource("10_axibj")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a6076"]
-atlas = ExtResource("10_axibj")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dy1jy"]
-atlas = ExtResource("10_axibj")
-region = Rect2(0, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_83gqe"]
-atlas = ExtResource("10_axibj")
-region = Rect2(128, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1s4s6"]
-atlas = ExtResource("10_axibj")
-region = Rect2(256, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgc7n"]
-atlas = ExtResource("10_axibj")
-region = Rect2(0, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6fa34"]
-atlas = ExtResource("10_axibj")
-region = Rect2(128, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_omdf5"]
-atlas = ExtResource("10_axibj")
-region = Rect2(256, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5k1bi"]
-atlas = ExtResource("10_axibj")
-region = Rect2(0, 384, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1vt75"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i5v67")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uj0jn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a6076")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dy1jy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_83gqe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1s4s6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jgc7n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6fa34")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_omdf5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5k1bi")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 1.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ys8yx"]
@@ -538,10 +460,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
-offset_left = 139.0
-offset_top = 508.0
-offset_right = 179.0
-offset_bottom = 548.0
+offset_left = 135.0
+offset_top = 492.0
+offset_right = 175.0
+offset_bottom = 532.0
 
 [node name="ProgressBar" type="ProgressBar" parent="PlayerHUD/PlayerLifeBar"]
 layout_mode = 0
@@ -561,18 +483,6 @@ sprite_frames = SubResource("SpriteFrames_4vnq4")
 animation = &"damage_received"
 frame = 1
 frame_progress = 1.0
-
-[node name="TutorialGuide" type="Control" parent="PlayerHUD"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TutorialWalk" type="AnimatedSprite2D" parent="PlayerHUD/TutorialGuide"]
-position = Vector2(223, 201)
-sprite_frames = SubResource("SpriteFrames_1vt75")
-animation = &"walk"
 
 [node name="PhaseFinished" parent="PlayerHUD" instance=ExtResource("5_0b6hl")]
 
@@ -715,12 +625,32 @@ scale = Vector2(0.256223, 0.256223)
 sprite_frames = SubResource("SpriteFrames_f2ewk")
 animation = &"idle"
 
-[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
-
 [node name="WheelSwitchWeapons" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("24_40cle")]
 offset_right = -264.0
 offset_bottom = -192.0
 player = NodePath("../..")
+
+[node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
+process_mode = 3
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 70.0
+offset_top = 11.0
+offset_right = 70.0
+offset_bottom = 11.0
+grow_horizontal = 1
+grow_vertical = 1
+player = NodePath("../..")
+
+[node name="Whell&memory" parent="PlayerHUD" instance=ExtResource("26_yg6t8")]
+offset_left = 168.0
+offset_top = 306.0
+offset_right = 168.0
+offset_bottom = 306.0
+scale = Vector2(0.480624, 0.480624)
+
+[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
 
 [node name="DeathScreen" type="Control" parent="PlayerHUD"]
 process_mode = 3
@@ -765,19 +695,6 @@ text = "Recomeçar"
 position = Vector2(549, 347)
 scale = Vector2(0.145759, 0.145759)
 texture = ExtResource("4_nc87x")
-
-[node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
-process_mode = 3
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -4.0
-offset_top = -3.0
-offset_right = -4.0
-offset_bottom = -3.0
-grow_horizontal = 1
-grow_vertical = 1
-player = NodePath("../..")
 
 [node name="ShootPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_qulf7")
