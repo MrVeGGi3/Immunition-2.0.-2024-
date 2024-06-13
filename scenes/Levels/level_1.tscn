@@ -1066,6 +1066,8 @@ speed_scale = 2.0
 process_material = SubResource("ParticleProcessMaterial_ayvqm")
 draw_pass_1 = SubResource("SphereMesh_s0y5o")
 
+[node name="EnableParticle" type="Timer" parent="Player/FlameThrowerShoot"]
+
 [node name="MacrofageRay3D" type="RayCast3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -100)
