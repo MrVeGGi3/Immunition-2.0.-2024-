@@ -28,6 +28,10 @@ var projectile = preload("res://scenes/effect/influenza_projectile.tscn")
 @onready var go_to_object = $GoToObject
 @onready var shoot_time = $ShootTime
 @onready var nav = $NavigationAgent3D
+#Soms
+@onready var influenza_projectile_sound = $InfluenzaProjectileSound
+@onready var influenza_death = $InfluenzaDeath
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -81,6 +85,7 @@ func shoot_player():
 	var new_projectile = projectile.instantiate()
 	new_projectile.global_transform.origin = marker_3d.global_transform.origin
 	get_parent().add_child(new_projectile)
+	influenza_projectile_sound.play()
 	is_shooting = true
 	shoot_time.start()
 
@@ -92,24 +97,22 @@ func hit_by_lf(damage, speed_down):
 	speed -= speed_down
 	shoot_by_player = true
 	if life <= 0:
-		Global.influenza_destroyed += 1 
-		print("Eu destruí:", Global.influenza_destroyed)
-		queue_free()
+		kill()
 
 func hit_by_mf(damage):
 	life -= damage
 	shoot_by_player = true
 	if life <= 0:
-		Global.influenza_destroyed += 1 
-		print("Eu destruí:", Global.influenza_destroyed)
-		queue_free()
+		kill()
 	
 func hit_by_nf(damage):
 	life -= damage * CONTROL_BULLET_EMISSION
 	shoot_by_player = true
 	if life <= 0:
-		Global.influenza_destroyed += 1
-		print("Eu destruí:", Global.influenza_destroyed)
-		queue_free()
+		kill()
 
-	
+func kill():
+	influenza_death.play()
+	Global.influenza_destroyed += 1
+	print("Eu destruí:", Global.influenza_destroyed)
+	queue_free()

@@ -1,4 +1,3 @@
-class_name InfectedCell
 extends CharacterBody3D
 
 @export_category("Atributos")

@@ -1,3 +1,4 @@
+res://scripts/HUD
 res://scripts/Spawner
 res://scripts/Sound
 res://scenes/UI/Tutorials
@@ -17,7 +18,6 @@ res://scripts/Characthers
 res://images/baseMemorySytem/Selected
 res://images/baseMemorySytem
 res://sprites/UI
-res://scripts/HUD
 res://icons/wheelswitchweapon/selected
 res://icons/wheelswitchweapon/hover
 E:/Immunition/Immunition/HTML

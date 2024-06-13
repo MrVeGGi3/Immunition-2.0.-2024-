@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnkpuli74cidr"]
 
-[ext_resource type="Texture2D" uid="uid://c7xe4utj0k8r3" path="res://images/icon/Circulo.png" id="1_v1mbk"]
+[ext_resource type="Texture2D" uid="uid://c7xe4utj0k8r3" path="res://images/EnemiesIcon/Circulo.png" id="1_v1mbk"]
 
 [node name="SymbolRecognition" type="SubViewportContainer"]
 anchors_preset = 15

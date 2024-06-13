@@ -41,6 +41,9 @@ path_height_offset = -2.0
 height = 3.0
 radius = 1.0
 neighbor_distance = 10.0
-keep_y_velocity = false
+max_neighbors = 3
+use_3d_avoidance = true
+avoidance_layers = 2
+avoidance_mask = 2
 
 [connection signal="timeout" from="MovementTime" to="." method="_on_movement_time_timeout"]

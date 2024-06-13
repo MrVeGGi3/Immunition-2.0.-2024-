@@ -12,6 +12,10 @@ var can_colide = true
 @onready var nav = $NavigationAgent3D
 @onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 @onready var catch_player = $CatchPlayer
+@onready var symbol = $Control/Sprite3D2
+
+
+
 
 @export_category("Atributos")
 @export var move_speed = 5.0
@@ -106,12 +110,14 @@ func kill_red_mf():
 
 func killed():
 	dead = true
+	symbol.visible = false
 	progress_bar.visible = false
 	$DeathSound.play()
 	animated_sprite_3d.play("death")
 	$CollisionShape3D.disabled = true
 	collision_layer = 0
 	player.get_more_ammo(l_ammo, m_ammo, n_ammo)
+
 
 func _on_timer_timeout():
 	can_colide = true

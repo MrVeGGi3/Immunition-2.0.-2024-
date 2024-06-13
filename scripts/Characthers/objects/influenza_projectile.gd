@@ -12,6 +12,7 @@ extends Node3D
 var target_position = Vector3()
 @onready var destruction_timer = $Destruction
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if player:

@@ -24,6 +24,10 @@ var can_colide = true
 @onready var progress_bar = $SubViewport/ProgressBar
 @onready var label = $SubViewport/ProgressBar/Label
 @onready var sub_viewport = $SubViewport
+@onready var symbol = $Sprite3D2
+@onready var death_sound = $DeathSound
+
+
 #Variáveis Globais
 @onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 @onready var nav= $NavigationAgent3D
@@ -120,12 +124,14 @@ func _process(_delta):
 
 func killed():
 	if enemy_health <= 0:
+		symbol.visible = false
 		dead = true
-		$DeathSound.play()
+		death_sound.play()
 		progress_bar.visible = false
 		animated_sprite_3d.play("death")
 		$CollisionShape3D.disabled = true
 		collision_layer = 0
 		player.get_more_ammo(l_ammo, m_ammo, n_ammo)
+		queue_free()
 		
 

@@ -24,6 +24,7 @@ extends Node3D
 
 @onready var cell_spawner_3d = $CellSpawner3d
 @onready var influenza_spawner_3d = $InfluenzaSpawner3d
+@onready var level_1bgm = $Level1BGM
 
 var is_influenza_captured = false
 #Booleanas de Controle
@@ -37,7 +38,7 @@ func _ready():
 		inf.visible = false
 	for cell in cells:
 		cell.visible = false
-
+	level_1bgm.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -65,7 +66,10 @@ func _process(_delta):
 			
 		if Input.is_action_just_pressed("Interact") and is_extractor_build:
 			error_audio.play()
-			
+		
+	if player.dead:
+		level_1bgm.stop()
+		
 func cutscene_cells():
 	is_extractor_build = true
 	player_hud.visible = false

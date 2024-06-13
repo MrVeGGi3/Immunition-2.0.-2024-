@@ -8,7 +8,7 @@ func _ready():
 	main_bgm.play()
 	
 func _on_play_pressed():
-	get_tree().change_scene_to_file(level_selection)
+	get_tree().change_scene_to_file(world_scene)
 
 func _on_options_pressed():
 	get_tree().change_scene_to_file(option_scene)

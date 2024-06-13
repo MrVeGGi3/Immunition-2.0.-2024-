@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bba17plx7ppug"]
+[gd_scene load_steps=4 format=3 uid="uid://bba17plx7ppug"]
 
 [ext_resource type="Script" path="res://scripts/Count/influenza_count.gd" id="1_lww33"]
+[ext_resource type="Texture2D" uid="uid://bvjoyraetdpi6" path="res://images/CountBackground/Contador_base.png" id="2_0uc78"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="2_yk23k"]
 
 [node name="InfluenzaCount" type="Control"]
@@ -12,31 +13,54 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lww33")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control2" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 918.0
-offset_top = 472.0
-offset_right = 958.0
-offset_bottom = 512.0
+offset_left = -403.0
+offset_top = -360.0
+offset_right = -363.0
+offset_bottom = -320.0
 
-[node name="InfluenzaDefeated" type="Label" parent="Control"]
+[node name="Sprite2D" type="Sprite2D" parent="Control2"]
+position = Vector2(960, 479)
+scale = Vector2(0.452796, 0.452796)
+texture = ExtResource("2_0uc78")
+
+[node name="Control" type="Control" parent="Control2"]
+anchors_preset = 0
+offset_left = 925.0
+offset_top = 462.0
+offset_right = 965.0
+offset_bottom = 502.0
+
+[node name="InfluenzaDefeated" type="Label" parent="Control2/Control"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.913725, 0.545098, 0, 1)
+offset_left = 44.0
+offset_top = -40.0
+offset_right = 84.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(1, 0.609536, 0.364002, 1)
 theme_override_fonts/font = ExtResource("2_yk23k")
 theme_override_font_sizes/font_size = 40
-text = "0
-"
 
-[node name="TotalInfluenza" type="Label" parent="Control"]
+[node name="TotalInfluenza" type="Label" parent="Control2/Control"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 59.0
-offset_top = 55.0
-offset_right = 99.0
-offset_bottom = 110.0
+offset_left = 89.0
+offset_top = 8.0
+offset_right = 129.0
+offset_bottom = 63.0
 theme_override_colors/font_color = Color(0.917647, 0.729412, 0, 1)
 theme_override_fonts/font = ExtResource("2_yk23k")
 theme_override_font_sizes/font_size = 40
-text = "0
-"
+
+[node name="Label" type="Label" parent="Control2/Control"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = -18.0
+offset_right = 110.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 0.622581, 0.481789, 1)
+theme_override_fonts/font = ExtResource("2_yk23k")
+theme_override_font_sizes/font_size = 40
+text = "/"

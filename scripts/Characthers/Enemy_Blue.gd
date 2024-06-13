@@ -27,6 +27,7 @@ var dead = false
 @onready var sub_viewport = $SubViewport
 @onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 @onready var nav = $NavigationAgent3D
+@onready var symbol = $Sprite3D2
 
 func _physics_process(_delta):
 	var player_position = player.global_transform.origin
@@ -112,9 +113,11 @@ func killed():
 		$DeathSound.play()
 		progress_bar.visible = false
 		animated_sprite_3d.play("death")
+		symbol.visible = false
 		$CollisionShape3D.disabled = true
 		collision_layer = 0
 		player.get_more_ammo(l_ammo, m_ammo, n_ammo)
+		
 	
 func _on_timer_timeout():
 	can_colide = true

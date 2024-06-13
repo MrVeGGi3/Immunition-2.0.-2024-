@@ -29,7 +29,6 @@ extends CharacterBody3D
 @onready var deathscreen = $PlayerHUD/DeathScreen #tela de quando o player morre
 @onready var progress_bar = $PlayerHUD/PlayerLifeBar/ProgressBar # barra de progresso de vida do player
 @onready var pause_menu = $PlayerHUD/pause_menu #menu de pausa
-@onready var phase_finished =  $PlayerHUD/PhaseFinished #UI de quando termina a fase
 @onready var player_life_bar = $PlayerHUD/PlayerLifeBar #UI que mostra os stats do player
 @onready var damage_taken = $PlayerHUD/PlayerLifeBar/DamageTaken #Animação que mostra quando o jogador perde vida
 @onready var gun_shoot = $PlayerHUD/GunShoot
@@ -41,7 +40,6 @@ extends CharacterBody3D
 
 #Músicas(BGM
 @onready var death_sound = $DeathSound # música da morte do player
-@onready var main_bgm = $MainBGM # trilha sonora principal
 
 #Tutorial
 
@@ -82,7 +80,6 @@ func _ready():
 	animated_sprite_2d.animation_finished.connect(shoot_anim_done) #conecta a outra animação
 	damage_taken.animation_finished.connect(return_normalUI) #conecta á outra animação
 	#Esconder e mostrar UI
-	phase_finished.hide()
 	deathscreen.hide()
 	pause_menu.hide()
 	player_life_bar.show()
@@ -91,7 +88,6 @@ func _ready():
 	$CollisionShape3D.disabled = false
 	#Músicas
 	death_sound.stop()#ao resetar, para a música de morte
-	$MainBGM.play() #executa o BGM principal 
 	#Variáveis
 	vida = vida_maxima #vida igual a vida máxima quando resetar
 	l_ammo = 20 #munição linfócito
@@ -351,18 +347,16 @@ func kill():
 		can_shoot_nf = false
 		set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
 		$CollisionShape3D.disabled = true
-		$MainBGM.stop()
 		disable_UI()
 		death_sound.play()
 		deathscreen.show()
-		whell_memory.hide()
+		particles.emitting = false
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func disable_UI():
 	whell_memory.hide()
 	gun_shoot.hide()
 	player_life_bar.hide()
-	main_bgm.stop()
 	wheel_switch_weapons.visible = false
 	ui_ammo.hide()	
 	memory_system.visible = false
@@ -460,10 +454,6 @@ func get_more_ammo(lammo, mammo, nammo):
 	linfocit_bar.play("recharge")
 	macrofage_bar.play("recharge")
 	neutrofile_bar.play("recharge")
-
-
 	
-
-
 func _on_enable_particle_timeout():
 	particles.emitting = true

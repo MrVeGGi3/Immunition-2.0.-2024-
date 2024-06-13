@@ -1,6 +1,6 @@
 extends MeshInstance3D
 
-@onready var opening_door = $"../DevGrey35/OpeningDoor"
+@onready var opening_door = %OpeningDoor
 
 func ready():
 	position.y = 0.486

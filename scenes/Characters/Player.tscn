@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=72 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="2_bowrg"]
@@ -6,7 +6,6 @@
 [ext_resource type="Theme" uid="uid://dufxlwl2jmmm8" path="res://themes/purpleTheme.tres" id="3_3hlcx"]
 [ext_resource type="Texture2D" uid="uid://b86srxxd4jnsq" path="res://sprites/Player/macrofago_sprite.png" id="3_lknyr"]
 [ext_resource type="Texture2D" uid="uid://d0r2c8ejf2khy" path="res://icons/Icon Head CH Died.png" id="4_nc87x"]
-[ext_resource type="PackedScene" uid="uid://br57ykp7o40bi" path="res://scenes/HUD/phase_finished.tscn" id="5_0b6hl"]
 [ext_resource type="FontFile" uid="uid://tfn36nnpaotb" path="res://fonts/batmfa__.ttf" id="5_h2cv3"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="6_41nxb"]
 [ext_resource type="Theme" uid="uid://bd32nqym4104l" path="res://themes/playerLifeBarTheme.tres" id="6_lmol0"]
@@ -18,7 +17,6 @@
 [ext_resource type="AudioStream" uid="uid://cl16r632p0qb5" path="res://sounds/BGM/deathsound.wav" id="11_6pg7g"]
 [ext_resource type="Texture2D" uid="uid://gdo46rv1wjh3" path="res://icons/icon gun select.png" id="11_qcxcy"]
 [ext_resource type="Texture2D" uid="uid://bap8mnn7tl4bg" path="res://icons/gun selection/icon gun green.jpg" id="11_upebd"]
-[ext_resource type="AudioStream" uid="uid://c14cj6uhjlgdt" path="res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav" id="12_68dol"]
 [ext_resource type="Texture2D" uid="uid://c7mcbsugesbyq" path="res://icons/weapons/Icon Linfosito.png" id="12_nrvla"]
 [ext_resource type="Texture2D" uid="uid://6eexcteofaqe" path="res://icons/weapons/Icon neutrofilo.png" id="13_c7qck"]
 [ext_resource type="Texture2D" uid="uid://hktqxlioxt6s" path="res://icons/weapons/Icon macrofago.png" id="14_8hv6x"]
@@ -485,8 +483,6 @@ animation = &"damage_received"
 frame = 1
 frame_progress = 1.0
 
-[node name="PhaseFinished" parent="PlayerHUD" instance=ExtResource("5_0b6hl")]
-
 [node name="GunShoot" type="Control" parent="PlayerHUD"]
 process_mode = 3
 layout_mode = 3
@@ -703,13 +699,6 @@ bus = &"SFX"
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_6pg7g")
-bus = &"BGM"
-
-[node name="MainBGM" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("12_68dol")
-volume_db = -20.0
-autoplay = true
 bus = &"BGM"
 
 [node name="MacrofageShoot" type="AudioStreamPlayer3D" parent="."]

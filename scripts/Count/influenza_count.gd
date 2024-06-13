@@ -1,7 +1,7 @@
 extends Control
 
-@onready var influenza_defeated = $Control/InfluenzaDefeated
-@onready var total_influenza = $Control/TotalInfluenza
+@onready var influenza_defeated = %InfluenzaDefeated
+@onready var total_influenza = %TotalInfluenza
 @export var influenza_to_destroy = 3 
 
 # Called when the node enters the scene tree for the first time.

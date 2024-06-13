@@ -184,8 +184,9 @@ run={
 3d_physics/layer_1="Environment"
 3d_physics/layer_2="Characters"
 3d_physics/layer_3="Projectiles"
-avoidance/layer_1="environment"
-avoidance/layer_2="objects"
+avoidance/layer_1="Influenza"
+avoidance/layer_2="Cells"
+avoidance/layer_3="Pathogen"
 
 [physics]
 

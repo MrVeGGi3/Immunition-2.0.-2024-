@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://chjb7f3unarmp"]
+[gd_scene load_steps=4 format=3 uid="uid://chjb7f3unarmp"]
 
 [ext_resource type="Script" path="res://scripts/Count/extractors_collected.gd" id="1_1iq7y"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_qg1se"]
+[ext_resource type="Texture2D" uid="uid://bvjoyraetdpi6" path="res://images/CountBackground/Contador_base.png" id="2_gua5c"]
 
 [node name="ExtractosCollected" type="Control"]
 layout_mode = 3
@@ -16,14 +17,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1iq7y")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control2" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 20.0
-offset_top = -59.0
-offset_right = 60.0
-offset_bottom = -19.0
+offset_left = 48.0
+offset_top = -7.0
+offset_right = 88.0
+offset_bottom = 33.0
+scale = Vector2(0.889124, 0.889124)
 
-[node name="ExtractorCollected" type="Label" parent="Control"]
+[node name="Background" type="Sprite2D" parent="Control2"]
+position = Vector2(597, 131)
+scale = Vector2(0.536252, 0.544096)
+texture = ExtResource("2_gua5c")
+
+[node name="Control" type="Control" parent="Control2"]
+anchors_preset = 0
+offset_left = -383.0
+offset_top = -443.0
+offset_right = -343.0
+offset_bottom = -403.0
+
+[node name="ExtractorCollected" type="Label" parent="Control2/Control"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 1000.0
 offset_top = 511.0
@@ -33,7 +48,7 @@ theme_override_fonts/font = ExtResource("1_qg1se")
 theme_override_font_sizes/font_size = 40
 text = "0"
 
-[node name="TotalExtractors" type="Label" parent="Control"]
+[node name="TotalExtractors" type="Label" parent="Control2/Control"]
 layout_mode = 0
 offset_left = 1052.0
 offset_top = 567.0
@@ -44,8 +59,17 @@ theme_override_font_sizes/font_size = 40
 text = "3
 "
 
-[node name="Barra" type="Sprite2D" parent="Control"]
-position = Vector2(1039, 563)
-
-[node name="Extractor" type="Sprite2D" parent="Control"]
+[node name="Extractor" type="Sprite2D" parent="Control2/Control"]
 position = Vector2(920, 562)
+
+[node name="Label" type="Label" parent="Control2/Control"]
+layout_mode = 0
+offset_left = 1028.0
+offset_top = 541.0
+offset_right = 1068.0
+offset_bottom = 593.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_qg1se")
+theme_override_font_sizes/font_size = 40
+text = "/
+"
