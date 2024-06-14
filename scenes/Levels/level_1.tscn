@@ -1,25 +1,31 @@
-[gd_scene load_steps=123 format=3 uid="uid://cj7emqhky70af"]
+[gd_scene load_steps=203 format=3 uid="uid://cj7emqhky70af"]
 
 [ext_resource type="Script" path="res://scripts/Levels/level_1.gd" id="1_bgiqj"]
 [ext_resource type="Texture2D" uid="uid://bl3g6pm7e6hov" path="res://prefabs/dev_grey.png" id="1_m5ve1"]
+[ext_resource type="Texture2D" uid="uid://bhlaan6ukbhkc" path="res://prefabs/floor1_20240614085358.png" id="2_fikwp"]
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="2_hvoua"]
 [ext_resource type="ArrayMesh" uid="uid://eikqtfkce6jq" path="res://prefabs/dev_grey.obj" id="2_n1rvy"]
 [ext_resource type="Texture2D" uid="uid://cghbpdvq15frc" path="res://prefabs/dev_orange.png" id="3_3i1ra"]
 [ext_resource type="Theme" uid="uid://bd32nqym4104l" path="res://themes/playerLifeBarTheme.tres" id="3_s1558"]
 [ext_resource type="ArrayMesh" uid="uid://bd1p4vxwpo0fn" path="res://prefabs/dev_pillar.obj" id="4_8d1tl"]
+[ext_resource type="Texture2D" uid="uid://btxr4ptpyvwrb" path="res://prefabs/wall1_20240614085020.png" id="4_p16kq"]
 [ext_resource type="Texture2D" uid="uid://bv42ntqndsu6p" path="res://icons/Icon Head CH Alive_RedAnimated.png" id="4_sfmia"]
 [ext_resource type="Script" path="res://scripts/Elevators/Elevator_Animations.gd" id="5_hwk44"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="6_0hlob"]
 [ext_resource type="ArrayMesh" uid="uid://vuyc3qmcbjd0" path="res://prefabs/dev_valley.obj" id="6_f3rrp"]
 [ext_resource type="Script" path="res://scripts/Sound/open_door.gd" id="7_e1fkr"]
 [ext_resource type="ArrayMesh" uid="uid://d08ovuxubggti" path="res://prefabs/dev_torus.obj" id="7_l520q"]
+[ext_resource type="Texture2D" uid="uid://2xy8spk7ppfo" path="res://prefabs/asset1_20240614085733.png" id="7_lhhxw"]
 [ext_resource type="Texture2D" uid="uid://b86srxxd4jnsq" path="res://sprites/Player/macrofago_sprite.png" id="7_lj3td"]
 [ext_resource type="PackedScene" uid="uid://b8uj1bea2qdb1" path="res://scenes/Collectables/extractor.tscn" id="8_2o5mc"]
 [ext_resource type="Texture2D" uid="uid://cmixvfomb2y5w" path="res://sprites/Player/neutrofilos_sprite2.png" id="8_6afrl"]
+[ext_resource type="Texture2D" uid="uid://coa64uv3ga52g" path="res://prefabs/wall2_20240614085027.png" id="9_2x05d"]
 [ext_resource type="Texture2D" uid="uid://besa0etqgk00h" path="res://icons/health Icon.png" id="9_5ial8"]
 [ext_resource type="PackedScene" uid="uid://chjb7f3unarmp" path="res://scenes/UI/ItensCollected/extractos_collected.tscn" id="9_hv02g"]
 [ext_resource type="Texture2D" uid="uid://gdo46rv1wjh3" path="res://icons/icon gun select.png" id="10_0emxl"]
+[ext_resource type="Texture2D" uid="uid://bbnptvq4384u6" path="res://prefabs/wall3_20240614085034.png" id="10_fcgfb"]
 [ext_resource type="PackedScene" uid="uid://c5yaq5d5t8iip" path="res://scenes/HUD/minimap.tscn" id="10_vb8wc"]
+[ext_resource type="Texture2D" uid="uid://tabp7eyt3ehb" path="res://prefabs/floor2_20240614085410.png" id="11_amhns"]
 [ext_resource type="Texture2D" uid="uid://bap8mnn7tl4bg" path="res://icons/gun selection/icon gun green.jpg" id="11_uajww"]
 [ext_resource type="Texture2D" uid="uid://33jae7wc4cls" path="res://icons/keyoboard buttons/keyboard.png" id="12_sjyor"]
 [ext_resource type="FontFile" uid="uid://tfn36nnpaotb" path="res://fonts/batmfa__.ttf" id="13_rgi30"]
@@ -61,14 +67,33 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Arr
 agent_height = 1.0
 agent_max_climb = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3i7d"]
-albedo_texture = ExtResource("1_m5ve1")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpjr2"]
+albedo_texture = ExtResource("2_fikwp")
+uv1_scale = Vector3(-20.915, -20.915, -20.915)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0jkbb"]
 size = Vector3(4.05217, 4.01801, 4.06567)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1hg3"]
-albedo_texture = ExtResource("3_3i1ra")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nc5k"]
+albedo_texture = ExtResource("2_fikwp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q21dx"]
+albedo_texture = ExtResource("2_fikwp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqs66"]
+albedo_texture = ExtResource("2_fikwp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljvon"]
+albedo_texture = ExtResource("2_fikwp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fu3pm"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xtfr"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fv18"]
+albedo_texture = ExtResource("4_p16kq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs3hl"]
 albedo_texture = ExtResource("1_m5ve1")
@@ -124,6 +149,12 @@ _data = {
 "RESET": SubResource("Animation_7evaq"),
 "parado": SubResource("Animation_gx5gc")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kretu"]
+albedo_texture = ExtResource("2_fikwp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uiobt"]
+albedo_texture = ExtResource("7_lhhxw")
 
 [sub_resource type="Animation" id="Animation_m7d40"]
 resource_name = "CameraFinalPoint"
@@ -293,23 +324,214 @@ _data = {
 "RESET": SubResource("Animation_yf2j5")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ur1ww"]
-albedo_texture = ExtResource("3_3i1ra")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1nqo"]
+albedo_texture = ExtResource("4_p16kq")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_loecg"]
-albedo_texture = ExtResource("1_m5ve1")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okep8"]
+albedo_texture = ExtResource("4_p16kq")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lf7fv"]
-albedo_texture = ExtResource("3_3i1ra")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6n7m"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xca84"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocs18"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tk7ok"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5ric"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0c45c"]
+albedo_texture = ExtResource("2_fikwp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2on6t"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdy2d"]
+albedo_texture = ExtResource("4_p16kq")
+uv1_scale = Vector3(20.095, 20.095, 20.095)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkxv7"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fowda"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jmak"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyd4x"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xc342"]
+albedo_texture = ExtResource("4_p16kq")
+uv1_scale = Vector3(9.43, 9.43, 9.43)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tthe3"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_larw6"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qgihb"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pckd"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33pri"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pimq5"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_si6pd"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1wri"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_664ec"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2psm"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4d2ty"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rx52"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6o6jt"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5v58v"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ok8y1"]
+albedo_texture = ExtResource("10_fcgfb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nb365"]
+albedo_texture = ExtResource("10_fcgfb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pq7xu"]
+albedo_texture = ExtResource("10_fcgfb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b8d8"]
+albedo_texture = ExtResource("10_fcgfb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktdaj"]
+albedo_texture = ExtResource("4_p16kq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1huw"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugnr5"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1pb2"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cm7v"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vykm"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4j5sp"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqggr"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbrqv"]
+albedo_texture = ExtResource("11_amhns")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lfxd"]
+albedo_texture = ExtResource("11_amhns")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_06773"]
+albedo_texture = ExtResource("11_amhns")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ib2e4"]
+albedo_texture = ExtResource("11_amhns")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ilk2"]
+albedo_texture = ExtResource("11_amhns")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swel1"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dipxl"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45ryu"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rgyu"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwgkl"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45lqx"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0lhq"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pmv3"]
+albedo_texture = ExtResource("9_2x05d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wjb5"]
+albedo_texture = ExtResource("4_p16kq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6uey"]
 albedo_texture = ExtResource("3_3i1ra")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gv0yk"]
-albedo_texture = ExtResource("1_m5ve1")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1gko"]
+albedo_texture = ExtResource("2_fikwp")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3llbl"]
-albedo_texture = ExtResource("3_3i1ra")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu3i4"]
+albedo_texture = ExtResource("2_fikwp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oarxg"]
+albedo_texture = ExtResource("11_amhns")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_to3i6"]
+albedo_texture = ExtResource("7_lhhxw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfipk"]
+albedo_texture = ExtResource("7_lhhxw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0jp5"]
+albedo_texture = ExtResource("7_lhhxw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lsxc"]
+albedo_texture = ExtResource("7_lhhxw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_si8ak"]
+albedo_texture = ExtResource("7_lhhxw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0iwme"]
+albedo_texture = ExtResource("7_lhhxw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpglr"]
+albedo_texture = ExtResource("7_lhhxw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ylhsi"]
+albedo_texture = ExtResource("7_lhhxw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8gw0"]
+albedo_texture = ExtResource("7_lhhxw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldo6x"]
+albedo_texture = ExtResource("11_amhns")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lfanu"]
 points = PackedVector3Array(-2, 0, -2, 2, 0, -2, -2, 0, 2, -2, 12.5806, -2, 2, 0, 2, 2, 12.5806, -2, -2, 12.5806, 2, 2, 12.5806, 2)
@@ -326,11 +548,14 @@ albedo_texture = ExtResource("3_3i1ra")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yus0s"]
 albedo_texture = ExtResource("3_3i1ra")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2iph"]
-albedo_texture = ExtResource("3_3i1ra")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljjir"]
+albedo_texture = ExtResource("7_lhhxw")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3bgv8"]
 points = PackedVector3Array(1.02167, -0.825062, 1.02167, -1.94925, -0.04456, -1.94925, -1.73741, -0.222828, -1.73741, -2.0022, 0.953813, 2.0022, 2.0022, 0.953636, -2.0022, 2.0022, 0.953636, 2.0022, -2.0022, 0.953813, -2.0022, -1.94924, -0.0445597, 1.94924, 1.94924, -0.0445597, -1.94924, -1.02172, -0.825104, -1.02172, 1.94924, -0.0445597, 1.94924, 1.02167, -0.825062, -1.02167, -1.02167, -0.825062, 1.02167, 1.93948, 0.953813, -2.0022, 1.93948, 0.953813, 2.0022)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1l60"]
+albedo_texture = ExtResource("7_lhhxw")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6r4b1"]
 data = PackedVector3Array(0.8839, 0, -0.8839, 1.25, 0, 0, 0.8321, 0.1768, -0.8321, 0.8321, 0.1768, -0.8321, 1.25, 0, 0, 1.1768, 0.1768, 0, 0.8321, 0.1768, -0.8321, 1.1768, 0.1768, 0, 0.7071, 0.25, -0.7071, 0.7071, 0.25, -0.7071, 1.1768, 0.1768, 0, 1, 0.25, 0, 0.7071, 0.25, -0.7071, 1, 0.25, 0, 0.5821, 0.1768, -0.5821, 0.5821, 0.1768, -0.5821, 1, 0.25, 0, 0.8232, 0.1768, 0, 0.5821, 0.1768, -0.5821, 0.8232, 0.1768, 0, 0.5303, 0, -0.5303, 0.5303, 0, -0.5303, 0.8232, 0.1768, 0, 0.75, 0, 0, 0.5303, 0, -0.5303, 0.75, 0, 0, 0.5821, -0.1768, -0.5821, 0.5821, -0.1768, -0.5821, 0.75, 0, 0, 0.8232, -0.1768, 0, 0.5821, -0.1768, -0.5821, 0.8232, -0.1768, 0, 0.7071, -0.25, -0.7071, 0.7071, -0.25, -0.7071, 0.8232, -0.1768, 0, 1, -0.25, 0, 0.7071, -0.25, -0.7071, 1, -0.25, 0, 0.8321, -0.1768, -0.8321, 0.8321, -0.1768, -0.8321, 1, -0.25, 0, 1.1768, -0.1768, 0, 0.8321, -0.1768, -0.8321, 1.1768, -0.1768, 0, 0.8839, 0, -0.8839, 0.8839, 0, -0.8839, 1.1768, -0.1768, 0, 1.25, 0, 0, 0, 0, -1.25, 0.8839, 0, -0.8839, 0, 0.1768, -1.1768, 0, 0.1768, -1.1768, 0.8839, 0, -0.8839, 0.8321, 0.1768, -0.8321, 0, 0.1768, -1.1768, 0.8321, 0.1768, -0.8321, 0, 0.25, -1, 0, 0.25, -1, 0.8321, 0.1768, -0.8321, 0.7071, 0.25, -0.7071, 0, 0.25, -1, 0.7071, 0.25, -0.7071, 0, 0.1768, -0.8232, 0, 0.1768, -0.8232, 0.7071, 0.25, -0.7071, 0.5821, 0.1768, -0.5821, 0, 0.1768, -0.8232, 0.5821, 0.1768, -0.5821, 0, 0, -0.75, 0, 0, -0.75, 0.5821, 0.1768, -0.5821, 0.5303, 0, -0.5303, 0, 0, -0.75, 0.5303, 0, -0.5303, 0, -0.1768, -0.8232, 0, -0.1768, -0.8232, 0.5303, 0, -0.5303, 0.5821, -0.1768, -0.5821, 0, -0.1768, -0.8232, 0.5821, -0.1768, -0.5821, 0, -0.25, -1, 0, -0.25, -1, 0.5821, -0.1768, -0.5821, 0.7071, -0.25, -0.7071, 0, -0.25, -1, 0.7071, -0.25, -0.7071, 0, -0.1768, -1.1768, 0, -0.1768, -1.1768, 0.7071, -0.25, -0.7071, 0.8321, -0.1768, -0.8321, 0, -0.1768, -1.1768, 0.8321, -0.1768, -0.8321, 0, 0, -1.25, 0, 0, -1.25, 0.8321, -0.1768, -0.8321, 0.8839, 0, -0.8839, -0.8839, 0, -0.8839, 0, 0, -1.25, -0.8321, 0.1768, -0.8321, -0.8321, 0.1768, -0.8321, 0, 0, -1.25, 0, 0.1768, -1.1768, -0.8321, 0.1768, -0.8321, 0, 0.1768, -1.1768, -0.7071, 0.25, -0.7071, -0.7071, 0.25, -0.7071, 0, 0.1768, -1.1768, 0, 0.25, -1, -0.7071, 0.25, -0.7071, 0, 0.25, -1, -0.5821, 0.1768, -0.5821, -0.5821, 0.1768, -0.5821, 0, 0.25, -1, 0, 0.1768, -0.8232, -0.5821, 0.1768, -0.5821, 0, 0.1768, -0.8232, -0.5303, 0, -0.5303, -0.5303, 0, -0.5303, 0, 0.1768, -0.8232, 0, 0, -0.75, -0.5303, 0, -0.5303, 0, 0, -0.75, -0.5821, -0.1768, -0.5821, -0.5821, -0.1768, -0.5821, 0, 0, -0.75, 0, -0.1768, -0.8232, -0.5821, -0.1768, -0.5821, 0, -0.1768, -0.8232, -0.7071, -0.25, -0.7071, -0.7071, -0.25, -0.7071, 0, -0.1768, -0.8232, 0, -0.25, -1, -0.7071, -0.25, -0.7071, 0, -0.25, -1, -0.8321, -0.1768, -0.8321, -0.8321, -0.1768, -0.8321, 0, -0.25, -1, 0, -0.1768, -1.1768, -0.8321, -0.1768, -0.8321, 0, -0.1768, -1.1768, -0.8839, 0, -0.8839, -0.8839, 0, -0.8839, 0, -0.1768, -1.1768, 0, 0, -1.25, -1.25, 0, 0, -0.8839, 0, -0.8839, -1.1768, 0.1768, 0, -1.1768, 0.1768, 0, -0.8839, 0, -0.8839, -0.8321, 0.1768, -0.8321, -1.1768, 0.1768, 0, -0.8321, 0.1768, -0.8321, -1, 0.25, 0, -1, 0.25, 0, -0.8321, 0.1768, -0.8321, -0.7071, 0.25, -0.7071, -1, 0.25, 0, -0.7071, 0.25, -0.7071, -0.8232, 0.1768, 0, -0.8232, 0.1768, 0, -0.7071, 0.25, -0.7071, -0.5821, 0.1768, -0.5821, -0.8232, 0.1768, 0, -0.5821, 0.1768, -0.5821, -0.75, 0, 0, -0.75, 0, 0, -0.5821, 0.1768, -0.5821, -0.5303, 0, -0.5303, -0.75, 0, 0, -0.5303, 0, -0.5303, -0.8232, -0.1768, 0, -0.8232, -0.1768, 0, -0.5303, 0, -0.5303, -0.5821, -0.1768, -0.5821, -0.8232, -0.1768, 0, -0.5821, -0.1768, -0.5821, -1, -0.25, 0, -1, -0.25, 0, -0.5821, -0.1768, -0.5821, -0.7071, -0.25, -0.7071, -1, -0.25, 0, -0.7071, -0.25, -0.7071, -1.1768, -0.1768, 0, -1.1768, -0.1768, 0, -0.7071, -0.25, -0.7071, -0.8321, -0.1768, -0.8321, -1.1768, -0.1768, 0, -0.8321, -0.1768, -0.8321, -1.25, 0, 0, -1.25, 0, 0, -0.8321, -0.1768, -0.8321, -0.8839, 0, -0.8839, -0.8839, 0, 0.8839, -1.25, 0, 0, -0.8321, 0.1768, 0.8321, -0.8321, 0.1768, 0.8321, -1.25, 0, 0, -1.1768, 0.1768, 0, -0.8321, 0.1768, 0.8321, -1.1768, 0.1768, 0, -0.7071, 0.25, 0.7071, -0.7071, 0.25, 0.7071, -1.1768, 0.1768, 0, -1, 0.25, 0, -0.7071, 0.25, 0.7071, -1, 0.25, 0, -0.5821, 0.1768, 0.5821, -0.5821, 0.1768, 0.5821, -1, 0.25, 0, -0.8232, 0.1768, 0, -0.5821, 0.1768, 0.5821, -0.8232, 0.1768, 0, -0.5303, 0, 0.5303, -0.5303, 0, 0.5303, -0.8232, 0.1768, 0, -0.75, 0, 0, -0.5303, 0, 0.5303, -0.75, 0, 0, -0.5821, -0.1768, 0.5821, -0.5821, -0.1768, 0.5821, -0.75, 0, 0, -0.8232, -0.1768, 0, -0.5821, -0.1768, 0.5821, -0.8232, -0.1768, 0, -0.7071, -0.25, 0.7071, -0.7071, -0.25, 0.7071, -0.8232, -0.1768, 0, -1, -0.25, 0, -0.7071, -0.25, 0.7071, -1, -0.25, 0, -0.8321, -0.1768, 0.8321, -0.8321, -0.1768, 0.8321, -1, -0.25, 0, -1.1768, -0.1768, 0, -0.8321, -0.1768, 0.8321, -1.1768, -0.1768, 0, -0.8839, 0, 0.8839, -0.8839, 0, 0.8839, -1.1768, -0.1768, 0, -1.25, 0, 0, 0, 0, 1.25, -0.8839, 0, 0.8839, 0, 0.1768, 1.1768, 0, 0.1768, 1.1768, -0.8839, 0, 0.8839, -0.8321, 0.1768, 0.8321, 0, 0.1768, 1.1768, -0.8321, 0.1768, 0.8321, 0, 0.25, 1, 0, 0.25, 1, -0.8321, 0.1768, 0.8321, -0.7071, 0.25, 0.7071, 0, 0.25, 1, -0.7071, 0.25, 0.7071, 0, 0.1768, 0.8232, 0, 0.1768, 0.8232, -0.7071, 0.25, 0.7071, -0.5821, 0.1768, 0.5821, 0, 0.1768, 0.8232, -0.5821, 0.1768, 0.5821, 0, 0, 0.75, 0, 0, 0.75, -0.5821, 0.1768, 0.5821, -0.5303, 0, 0.5303, 0, 0, 0.75, -0.5303, 0, 0.5303, 0, -0.1768, 0.8232, 0, -0.1768, 0.8232, -0.5303, 0, 0.5303, -0.5821, -0.1768, 0.5821, 0, -0.1768, 0.8232, -0.5821, -0.1768, 0.5821, 0, -0.25, 1, 0, -0.25, 1, -0.5821, -0.1768, 0.5821, -0.7071, -0.25, 0.7071, 0, -0.25, 1, -0.7071, -0.25, 0.7071, 0, -0.1768, 1.1768, 0, -0.1768, 1.1768, -0.7071, -0.25, 0.7071, -0.8321, -0.1768, 0.8321, 0, -0.1768, 1.1768, -0.8321, -0.1768, 0.8321, 0, 0, 1.25, 0, 0, 1.25, -0.8321, -0.1768, 0.8321, -0.8839, 0, 0.8839, 0.8839, 0, 0.8839, 0, 0, 1.25, 0.8321, 0.1768, 0.8321, 0.8321, 0.1768, 0.8321, 0, 0, 1.25, 0, 0.1768, 1.1768, 0.8321, 0.1768, 0.8321, 0, 0.1768, 1.1768, 0.7071, 0.25, 0.7071, 0.7071, 0.25, 0.7071, 0, 0.1768, 1.1768, 0, 0.25, 1, 0.7071, 0.25, 0.7071, 0, 0.25, 1, 0.5821, 0.1768, 0.5821, 0.5821, 0.1768, 0.5821, 0, 0.25, 1, 0, 0.1768, 0.8232, 0.5821, 0.1768, 0.5821, 0, 0.1768, 0.8232, 0.5303, 0, 0.5303, 0.5303, 0, 0.5303, 0, 0.1768, 0.8232, 0, 0, 0.75, 0.5303, 0, 0.5303, 0, 0, 0.75, 0.5821, -0.1768, 0.5821, 0.5821, -0.1768, 0.5821, 0, 0, 0.75, 0, -0.1768, 0.8232, 0.5821, -0.1768, 0.5821, 0, -0.1768, 0.8232, 0.7071, -0.25, 0.7071, 0.7071, -0.25, 0.7071, 0, -0.1768, 0.8232, 0, -0.25, 1, 0.7071, -0.25, 0.7071, 0, -0.25, 1, 0.8321, -0.1768, 0.8321, 0.8321, -0.1768, 0.8321, 0, -0.25, 1, 0, -0.1768, 1.1768, 0.8321, -0.1768, 0.8321, 0, -0.1768, 1.1768, 0.8839, 0, 0.8839, 0.8839, 0, 0.8839, 0, -0.1768, 1.1768, 0, 0, 1.25, 1.25, 0, 0, 0.8839, 0, 0.8839, 1.1768, 0.1768, 0, 1.1768, 0.1768, 0, 0.8839, 0, 0.8839, 0.8321, 0.1768, 0.8321, 1.1768, 0.1768, 0, 0.8321, 0.1768, 0.8321, 1, 0.25, 0, 1, 0.25, 0, 0.8321, 0.1768, 0.8321, 0.7071, 0.25, 0.7071, 1, 0.25, 0, 0.7071, 0.25, 0.7071, 0.8232, 0.1768, 0, 0.8232, 0.1768, 0, 0.7071, 0.25, 0.7071, 0.5821, 0.1768, 0.5821, 0.8232, 0.1768, 0, 0.5821, 0.1768, 0.5821, 0.75, 0, 0, 0.75, 0, 0, 0.5821, 0.1768, 0.5821, 0.5303, 0, 0.5303, 0.75, 0, 0, 0.5303, 0, 0.5303, 0.8232, -0.1768, 0, 0.8232, -0.1768, 0, 0.5303, 0, 0.5303, 0.5821, -0.1768, 0.5821, 0.8232, -0.1768, 0, 0.5821, -0.1768, 0.5821, 1, -0.25, 0, 1, -0.25, 0, 0.5821, -0.1768, 0.5821, 0.7071, -0.25, 0.7071, 1, -0.25, 0, 0.7071, -0.25, 0.7071, 1.1768, -0.1768, 0, 1.1768, -0.1768, 0, 0.7071, -0.25, 0.7071, 0.8321, -0.1768, 0.8321, 1.1768, -0.1768, 0, 0.8321, -0.1768, 0.8321, 1.25, 0, 0, 1.25, 0, 0, 0.8321, -0.1768, 0.8321, 0.8839, 0, 0.8839)
@@ -753,6 +978,12 @@ material = SubResource("StandardMaterial3D_xuhuk")
 radius = 0.2
 height = 0.4
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abj4j"]
+albedo_texture = ExtResource("7_lhhxw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgeng"]
+albedo_texture = ExtResource("7_lhhxw")
+
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_bgiqj")
 
@@ -770,7 +1001,7 @@ navigation_mesh = SubResource("NavigationMesh_yw4jm")
 
 [node name="DevGrey" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(8.89854, 0, 0, 0, 0.355079, 0, 0, 0, 11.8928, -20.5192, 0.584612, -43.9004)
-material_override = SubResource("StandardMaterial3D_b3i7d")
+material_override = SubResource("StandardMaterial3D_bpjr2")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -782,7 +1013,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey8" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(14.8309, 0, 0, 0, 0.355079, 0, 0, 0, 17.8393, -27.8294, 0.584612, -103.616)
-material_override = SubResource("StandardMaterial3D_b3i7d")
+material_override = SubResource("StandardMaterial3D_4nc5k")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -794,7 +1025,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey14" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(17.7971, 0, 0, 0, 0.355079, 0, 0, 0, 7.13571, -93.3547, 0.584612, -103.345)
-material_override = SubResource("StandardMaterial3D_b3i7d")
+material_override = SubResource("StandardMaterial3D_q21dx")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -806,7 +1037,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey21" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(11.5919, 0, 0, 0, 0.355079, 0, 0, 0, 7.13571, -152.379, 0.584612, -103.345)
-material_override = SubResource("StandardMaterial3D_b3i7d")
+material_override = SubResource("StandardMaterial3D_rqs66")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -818,7 +1049,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey28" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(20.1992, 0, 0, 0, 0.355079, 0, 0, 0, 21.0767, -216.087, 0.584612, -103.345)
-material_override = SubResource("StandardMaterial3D_b3i7d")
+material_override = SubResource("StandardMaterial3D_ljvon")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -830,7 +1061,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey29" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(20.199, 0, 0, 0, 5, 0, 0, 0, 1, -216.087, 0.584612, -62.8122)
-material_override = SubResource("StandardMaterial3D_x1hg3")
+material_override = SubResource("StandardMaterial3D_fu3pm")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -842,7 +1073,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey31" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-8.82926e-07, 0, 1, 0, 5, 0, -20.199, 0, -4.37114e-08, -254.567, 0.584612, -104.556)
-material_override = SubResource("StandardMaterial3D_x1hg3")
+material_override = SubResource("StandardMaterial3D_3xtfr")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -854,7 +1085,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey32" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.53581e-07, 0, -1, 0, 5, 0, 8.089, 0, -4.37114e-08, -215.222, 0.584612, -79.4553)
-material_override = SubResource("StandardMaterial3D_x1hg3")
+material_override = SubResource("StandardMaterial3D_3fv18")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -885,7 +1116,7 @@ libraries = {
 
 [node name="DevGrey30" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(0.0131671, 0, 7.13599, 0, 0.355, 0, -8.77199, 0, 0.0107114, -217.102, 0.585, -163.29)
-material_override = SubResource("StandardMaterial3D_b3i7d")
+material_override = SubResource("StandardMaterial3D_kretu")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -897,7 +1128,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey41" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(8.08899, 0, -0.00150108, 0, 5, 0, 0.0121423, 0, 0.999999, -219.727, 0.216109, -146.586)
-material_override = SubResource("StandardMaterial3D_rs3hl")
+material_override = SubResource("StandardMaterial3D_uiobt")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 script = ExtResource("7_e1fkr")
@@ -918,7 +1149,7 @@ libraries = {
 
 [node name="DevGrey33" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.22109e-07, 0, -1, 0, 5, 0, 7.369, 0, -4.37114e-08, -177.514, 0.584612, -75.8867)
-material_override = SubResource("StandardMaterial3D_x1hg3")
+material_override = SubResource("StandardMaterial3D_i1nqo")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -930,7 +1161,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey34" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.53581e-07, 0, -1, 0, 5, 0, 8.089, 0, -4.37114e-08, -177.514, 0.584612, -132.278)
-material_override = SubResource("StandardMaterial3D_x1hg3")
+material_override = SubResource("StandardMaterial3D_okep8")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -942,7 +1173,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey39" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-7.369, 0, 8.73486e-05, 0, 5, 0, -0.000643672, 0, -1, -241.794, 0.584, -146.543)
-material_override = SubResource("StandardMaterial3D_x1hg3")
+material_override = SubResource("StandardMaterial3D_q6n7m")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -954,7 +1185,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey40" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-8.089, 0, 8.73486e-05, 0, 5, 0, -0.000706563, 0, -1, -192.719, 0.584, -146.538)
-material_override = SubResource("StandardMaterial3D_x1hg3")
+material_override = SubResource("StandardMaterial3D_xca84")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -966,7 +1197,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey69" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(8.089, 0, 0, 0, 5, 0, 0, 0, 1, -217.191, 0.583998, -180.127)
-material_override = SubResource("StandardMaterial3D_x1hg3")
+material_override = SubResource("StandardMaterial3D_ocs18")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -978,7 +1209,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey70" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.53581e-07, 0, 1, 0, 5, 0, -8.089, 0, -4.37114e-08, -231.408, 0.554, -164.131)
-material_override = SubResource("StandardMaterial3D_x1hg3")
+material_override = SubResource("StandardMaterial3D_tk7ok")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -990,7 +1221,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey71" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.53581e-07, 0, 1, 0, 5, 0, -8.089, 0, -4.37114e-08, -202.857, 0.554, -164.131)
-material_override = SubResource("StandardMaterial3D_x1hg3")
+material_override = SubResource("StandardMaterial3D_c5ric")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1002,7 +1233,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey15" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.41736e-07, 0, 17.447, 0, 0.355, 0, -7.818, 0, -7.62633e-07, -124.036, 0.585, -133.373)
-material_override = SubResource("StandardMaterial3D_b3i7d")
+material_override = SubResource("StandardMaterial3D_0c45c")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1014,7 +1245,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey6" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(5.418, 0, 0, 0, 10, 0, 0, 0, 0.594, -49.1608, 19.23, -69.055)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_2on6t")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1026,7 +1257,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey53" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(10.383, 0, 0, 0, 10, 0, 0, 0, 0.594, -59.9086, 19.231, -55.492)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_jdy2d")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1038,7 +1269,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey55" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-1.71043e-07, 0, 0.594, 0, 10, 0, -3.913, 0, -2.59646e-08, -39.4647, 19.231, -62.2549)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_gkxv7")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1050,7 +1281,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey54" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(9.568, 0, 0, 0, 5, 0, 0, 0, 0.594, -57.571, 9.98198, -29.3556)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_fowda")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1062,7 +1293,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey63" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(9.568, 0, 0, 0, 5, 0, 0, 0, 0.594, -21.9639, 9.98198, -18.8866)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_8jmak")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1074,7 +1305,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey64" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-4.18231e-07, 0, 0.594, 0, 5, 0, -9.568, 0, -2.59646e-08, -39.625, 9.972, -11.032)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_eyd4x")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1086,7 +1317,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey58" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-4.18231e-07, 0, 0.594, 0, 5, 0, -9.568, 0, -2.59646e-08, -77.3138, 9.98198, -47.4086)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_xc342")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1098,7 +1329,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey59" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-5.71439e-07, 0, 0.594, 0, 3, 0, -13.073, 0, -2.59646e-08, -1.5385, -0.768167, -44.2764)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_tthe3")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1110,7 +1341,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey60" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-5.71439e-07, 0, 0.594, 0, 3, 0, -13.073, 0, -2.59646e-08, -1.5385, 16.0369, -44.2764)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_larw6")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1122,7 +1353,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey61" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-2.29616e-07, 0, 0.594, 0, 3, 0, -5.253, 0, -2.59646e-08, -1.528, 9.297, -58.339)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_qgihb")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1134,7 +1365,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey62" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-2.29616e-07, 0, 0.594, 0, 3, 0, -5.253, 0, -2.59646e-08, -1.528, 9.297, -28.6066)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_2pckd")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1146,7 +1377,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey44" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-7.63769e-07, 0, 0.594, 0, 4.971, 0, -17.473, 0, -2.59646e-08, 0.52, 11.2199, -105.191)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_33pri")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1158,7 +1389,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey47" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-2.29834e-07, 0, 0.594, 0, 10, 0, -5.258, 0, -2.59646e-08, -58.889, 19.232, -78.463)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_pimq5")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1170,7 +1401,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey56" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(5.258, 0, 0, 0, 10, 0, 0, 0, 0.594, -70.279, 19.232, -87.815)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_si6pd")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1182,7 +1413,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey57" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.50915e-07, 0, 0.594, 0, 10, 0, -8.028, 0, -2.59646e-08, -79.645, 19.232, -72.0784)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_y1wri")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1194,7 +1425,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey45" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(22.313, 0, 0, 0, 4.971, 0, 0, 0, 0.594, -43.481, 11.2049, -141.386)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_664ec")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1206,7 +1437,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey49" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(17.468, 0, 0, 0, 4.971, 0, 0, 0, 0.594, -124.073, 11.2049, -150.19)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_v2psm")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1218,7 +1449,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey50" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-2.23496e-07, 0, 0.594, 0, 4.971, 0, -5.113, 0, -2.59646e-08, -88.1181, 11.2049, -150.464)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_4d2ty")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1230,7 +1461,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey51" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.6381e-07, 0, 0.594, 0, 4.941, 0, -8.323, 0, -2.59646e-08, -160.17, 11.2773, -134.515)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_3rx52")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1242,7 +1473,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey52" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(4.733, 0, 0, 0, 4.971, 0, 0, 0, 0.594, -169.184, 5.85022, -119)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_6o6jt")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1254,7 +1485,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey48" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(7.823, 0, 0, 0, 4.971, 0, 0, 0, 0.594, -73.362, 11.2049, -118.717)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_5v58v")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1266,7 +1497,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey65" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(7.823, 0, 0, 0, 10, 0, 0, 0, 0.594, -73.362, -18.7949, -118.734)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_ok8y1")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1278,7 +1509,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey66" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(7.823, 0, 0, 0, 10, 0, 0, 0, 0.594, -73.362, -18.7949, -141.414)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_nb365")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1290,7 +1521,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey67" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.41954e-07, 0, 0.594, 0, 10, 0, -7.823, 0, -2.59646e-08, -87.979, -18.7949, -131.73)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_pq7xu")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1302,7 +1533,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey68" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.41954e-07, 0, 0.594, 0, 10, 0, -7.823, 0, -2.59646e-08, -58.7244, -18.7949, -131.73)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_8b8d8")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1314,7 +1545,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey46" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(24.108, 0, 0, 0, 4.971, 0, 0, 0, 0.594, -128.905, 5.85523, -88.0083)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_ktdaj")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1326,7 +1557,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey9" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(4.74588, 0, 0, 0, 4.9711, 0, 0, 0, 0.594642, -28.3789, 0.584612, -87.7786)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_u1huw")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1338,7 +1569,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey17" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(7.543, 0, 0, 0, 4.971, 0, 0, 0, 1.32, -29.9564, 0.584612, -113.46)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_ugnr5")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1350,7 +1581,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey19" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(7.54299, 0, 0, 0, 4.9711, 0, 0, 0, 0.594642, -21.8862, 0.584612, -138.24)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_l1pb2")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1362,7 +1593,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey10" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-7.79779e-08, 0, 0.593236, 0, 4.9711, 0, -1.78393, 0, -2.59311e-08, -20.0419, 0.584612, -83.9384)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_6cm7v")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1374,7 +1605,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey11" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-7.79779e-08, 0, 0.593236, 0, 4.9711, 0, -1.78393, 0, -2.59311e-08, -20.0419, 0.584612, -71.754)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_7vykm")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1386,7 +1617,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey12" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-7.79779e-08, 0, -0.593236, 0, 4.9711, 0, 1.78393, 0, -2.59311e-08, -36.672, 0.584612, -72.9534)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_4j5sp")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1398,7 +1629,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey18" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-1.61934e-07, 0, -0.593236, 0, 4.9711, 0, 3.70462, 0, -2.59311e-08, -35.4241, 0.584612, -123.342)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_kqggr")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1410,7 +1641,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey36" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.0598e-07, 0, -7.38, 0, 0.5, 0, 7, 0, -3.2259e-07, -21.756, 9.576, -124.861)
-material_override = SubResource("StandardMaterial3D_loecg")
+material_override = SubResource("StandardMaterial3D_jbrqv")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1422,7 +1653,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey42" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-8.19589e-08, 0, -9.33, 0, 0.5, 0, 1.875, 0, -4.07827e-07, -54.667, 9.571, -133.97)
-material_override = SubResource("StandardMaterial3D_loecg")
+material_override = SubResource("StandardMaterial3D_7lfxd")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1434,7 +1665,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey43" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-8.19589e-08, 0, -9.33, 0, 0.5, 0, 1.875, 0, -4.07827e-07, -92.133, 9.571, -133.97)
-material_override = SubResource("StandardMaterial3D_loecg")
+material_override = SubResource("StandardMaterial3D_06773")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1446,7 +1677,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey38" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-2.2726e-07, 0, -4.7833, 0, 0.5, 0, 5.19909, 0, -2.09085e-07, -28.4163, 11.507, -78.5216)
-material_override = SubResource("StandardMaterial3D_loecg")
+material_override = SubResource("StandardMaterial3D_ib2e4")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1464,7 +1695,7 @@ transform = Transform3D(1, 0, 4.61772e-15, 0, 1, 0, -4.61772e-15, 0, 1, -9.59027
 
 [node name="DevGrey37" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-3.0598e-07, -9.04853e-16, -1, 3.11857, 0.447638, -1.94739e-08, 6.26694, -0.222755, -3.91338e-08, -39.165, 3.451, -128.171)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_1ilk2")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1476,7 +1707,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey20" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-1.61934e-07, 0, -0.593236, 0, 4.9711, 0, 3.70462, 0, -2.59311e-08, -7.93298, 0.584612, -131.546)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_swel1")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1488,7 +1719,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey13" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-7.79779e-08, 0, -0.593236, 0, 4.9711, 0, 1.78393, 0, -2.59311e-08, -36.8503, 0.584612, -85.0995)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_dipxl")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1500,7 +1731,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey22" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(6.86634, 0, 0, 0, 4.9711, 0, 0, 0, 0.594642, -118.694, 11.1673, -91.0139)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_45ryu")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1512,7 +1743,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey23" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(6.86634, 0, 0, 0, 4.9711, 0, 0, 0, 0.594642, -118.694, 11.1673, -109.737)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_3rgyu")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1524,7 +1755,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey24" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-7.79778e-08, 0, 0.5174, 0, 4.9711, 0, -1.78393, 0, -2.26163e-08, -105.995, 11.1527, -105.266)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_hwgkl")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1536,7 +1767,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey25" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-7.79778e-08, 0, 0.5174, 0, 4.9711, 0, -1.78393, 0, -2.26163e-08, -105.995, 11.1146, -93.4016)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_45lqx")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1548,7 +1779,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey26" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-7.79778e-08, 0, 0.5174, 0, 4.9711, 0, -1.78393, 0, -2.26163e-08, -131.436, 11.1627, -107.339)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_t0lhq")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1560,7 +1791,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey27" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(-7.79778e-08, 0, 0.5174, 0, 4.9711, 0, -1.78393, 0, -2.26163e-08, -131.436, 11.1377, -95.433)
-material_override = SubResource("StandardMaterial3D_ur1ww")
+material_override = SubResource("StandardMaterial3D_2pmv3")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1572,7 +1803,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey7" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(2.37294, 0, 0, 0, 4.9711, 0, 0, 0, 0.594642, -3.06175, 11.2295, -69.0548)
-material_override = SubResource("StandardMaterial3D_lf7fv")
+material_override = SubResource("StandardMaterial3D_3wjb5")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1596,7 +1827,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey3" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(8.89854, 0, 0, 0, 0.355079, 0, 0, 0, 5.94642, -56.2408, 0.610358, -42.3938)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_w1gko")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1608,7 +1839,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey16" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(30, 0, 0, 0, 0.355, 0, 0, 0, 30, 57.287, 0.562, -42.394)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_xu3i4")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1620,7 +1851,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey5" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(2.96618, 0, 0, 0, 4.23254, 0, 0, 0, 2.97321, -64.297, 0.610358, -42.3938)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_oarxg")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1632,7 +1863,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey72" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(4, 0, 0, 0, 20, 0, 0, 0, 5, 29.2174, 37.3266, -80.6587)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_to3i6")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1644,7 +1875,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey73" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(4, 0, 0, 0, 20, 0, 0, 0, 5, 57.3864, 37.3266, -16.6003)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_jfipk")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1656,7 +1887,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey74" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(4, 0, 0, 0, 20, 0, 0, 0, 5, 83.5683, 37.3266, -68.12)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_k0jp5")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1668,7 +1899,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey75" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(4, 0, 0, 0, 20, 0, 0, 0, 5, -144.114, 37.3266, -249.749)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_8lsxc")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1680,7 +1911,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey76" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(4, 0, 0, 0, 20, 0, 0, 0, 5, -115.945, 37.3266, -185.691)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_si8ak")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1692,7 +1923,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey77" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(4, 0, 0, 0, 20, 0, 0, 0, 5, -89.7627, 37.3266, -237.211)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_0iwme")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1704,7 +1935,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey78" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(2.07963, 0, -4.27112, 0, 20, 0, 3.41689, 0, 2.59953, -126.559, 37.3266, -33.1823)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_jpglr")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1716,7 +1947,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey79" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(2.07963, 0, -4.27112, 0, 20, 0, 3.41689, 0, 2.59953, -166.634, 37.3266, 24.1847)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_ylhsi")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1728,7 +1959,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey80" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(2.07963, 0, -4.27112, 0, 20, 0, 3.41689, 0, 2.59953, -109.013, 37.3266, 19.7644)
-material_override = SubResource("StandardMaterial3D_gv0yk")
+material_override = SubResource("StandardMaterial3D_t8gw0")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -1740,7 +1971,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="DevGrey4" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(4.99014, 0.148624, 0, -2.76608, 0.268124, 0, 0, 0, 2.37857, -48.609, 3.018, -42.394)
-material_override = SubResource("StandardMaterial3D_3llbl")
+material_override = SubResource("StandardMaterial3D_ldo6x")
 mesh = ExtResource("2_n1rvy")
 skeleton = NodePath("../..")
 
@@ -2018,7 +2249,7 @@ shape = SubResource("ConvexPolygonShape3D_lfanu")
 
 [node name="DevValley" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(15, 0, 0, 0, -6, 1.31134e-06, 0, -5.24537e-07, -15, -217.42, -0.277041, -103.901)
-material_override = SubResource("StandardMaterial3D_n2iph")
+material_override = SubResource("StandardMaterial3D_ljjir")
 mesh = ExtResource("6_f3rrp")
 skeleton = NodePath("../..")
 
@@ -2029,6 +2260,7 @@ shape = SubResource("ConvexPolygonShape3D_3bgv8")
 
 [node name="DevTorus" type="MeshInstance3D" parent="MapLevel1"]
 transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, -217.754, 6.28375, -160.9)
+material_override = SubResource("StandardMaterial3D_u1l60")
 mesh = ExtResource("7_l520q")
 skeleton = NodePath("../..")
 
@@ -2443,7 +2675,7 @@ bus = &"BGM"
 
 [node name="DevPillar13" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.000811764, 0, 0.475713, 0, 0.568126, 0, -0.474588, 0, -0.000813688, -215.755, 4.70212, -99.794)
-material_override = SubResource("StandardMaterial3D_tdwkl")
+material_override = SubResource("StandardMaterial3D_abj4j")
 mesh = ExtResource("4_8d1tl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DevPillar13"]
@@ -2453,7 +2685,7 @@ shape = SubResource("ConvexPolygonShape3D_lfanu")
 
 [node name="DevPillar14" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.000811764, 0, 0.475713, 0, 0.568126, 0, -0.474588, 0, -0.000813688, -215.768, 4.70212, -107.09)
-material_override = SubResource("StandardMaterial3D_bwryu")
+material_override = SubResource("StandardMaterial3D_rgeng")
 mesh = ExtResource("4_8d1tl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DevPillar14"]
