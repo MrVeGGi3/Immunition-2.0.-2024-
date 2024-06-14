@@ -69,11 +69,13 @@ func attempt_to_kill_player():
 		timer.start()
 
 func kill_red_nf():
+	damage_effect()
 	enemy_health -= 2 * CONTROL_BULLET_EMISSION
 	if enemy_health <= 0:
 		killed()
 
 func heal_red_nf():
+	damage_effect()
 	enemy_health -= CONTROL_BULLET_EMISSION * 0.2
 	if enemy_health < 0:
 		enemy_health = 0
@@ -81,6 +83,7 @@ func heal_red_nf():
 		killed()
 
 func kill_red_lf():
+	damage_effect()
 	enemy_health -= 2
 	move_speed -= 2
 	if move_speed < 2:
@@ -91,6 +94,7 @@ func kill_red_lf():
 		killed()
 
 func heal_red_lf():
+	damage_effect()
 	enemy_health -= 1
 	move_speed -= 1
 	if move_speed < 2:
@@ -99,11 +103,13 @@ func heal_red_lf():
 		killed()
 
 func heal_red_mf():
+	damage_effect()
 	enemy_health -= 3
 	if enemy_health <= 0:
 		killed()
 
 func kill_red_mf():
+	damage_effect()
 	enemy_health -= 7
 	if enemy_health <= 0:
 		killed()	
@@ -133,4 +139,10 @@ func _process(delta):
 	if enemy_health > 15:
 		progress_bar.max_value = enemy_health
 
+func damage_effect():
+	animated_sprite_3d.modulate = Color.RED
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(animated_sprite_3d, "modulate", Color.WHITE, 0.3)
 

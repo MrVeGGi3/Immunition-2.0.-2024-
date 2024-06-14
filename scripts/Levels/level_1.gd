@@ -33,7 +33,7 @@ var is_extractor_build = false
 var is_entered_platform = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_tree().paused = true
+	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	press_f.visible = false
 	influenza_count.visible = false
@@ -55,6 +55,7 @@ func _process(_delta):
 			if dude.is_in_group("player"):
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 				player.disable_UI()
+				level_1bgm.stop()
 				victory_song.play()
 				phase_ended.visible = true
 				get_tree().paused = true

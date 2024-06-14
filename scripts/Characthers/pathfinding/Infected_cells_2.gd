@@ -23,6 +23,7 @@ var is_hitting = false
 @onready var explosion = preload("res://scenes/effect/explosion.tscn")
 @onready var mesh_instance_infected_cell = $MeshInstance3D
 @onready var nav = $NavigationAgent3D
+@onready var mesh = $MeshInstance3D
 
 var virus_type : String = "null"
 # Called when the node enters the scene tree for the first time.

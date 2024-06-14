@@ -66,6 +66,7 @@ func attempt_to_kill_player():
 		timer.start()
 
 func kill_green_lf():
+	damage_effect()
 	enemy_health -= 5
 	move_speed -= 2
 	if move_speed < 2:
@@ -76,6 +77,7 @@ func kill_green_lf():
 		killed()
 
 func kill_green_mf():
+	damage_effect()
 	enemy_health -= 7
 	if enemy_health < 0:
 		enemy_health = 0
@@ -83,6 +85,7 @@ func kill_green_mf():
 		killed()
 
 func kill_green_nf():
+	damage_effect()
 	enemy_health -= CONTROL_BULLET_EMISSION * 2
 	if enemy_health < 0:
 		enemy_health = 0
@@ -90,6 +93,7 @@ func kill_green_nf():
 		killed()
 	
 func heal_green_lf():
+	damage_effect()
 	enemy_health -= 2
 	move_speed -= 1
 	if move_speed < 2:
@@ -100,6 +104,7 @@ func heal_green_lf():
 		killed()
 
 func heal_green_mf():
+	damage_effect()
 	enemy_health -= 3
 	if enemy_health < 0:
 		enemy_health = 0
@@ -107,6 +112,7 @@ func heal_green_mf():
 		killed()
 		
 func heal_green_nf():
+	damage_effect()
 	enemy_health -= CONTROL_BULLET_EMISSION * 0.5
 	if enemy_health < 0:
 		enemy_health = 0
@@ -133,5 +139,12 @@ func killed():
 		collision_layer = 0
 		player.get_more_ammo(l_ammo, m_ammo, n_ammo)
 		queue_free()
+		
+func damage_effect():
+	animated_sprite_3d.modulate = Color.RED
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(animated_sprite_3d,"modulate", Color.WHITE, 0.3)
 		
 

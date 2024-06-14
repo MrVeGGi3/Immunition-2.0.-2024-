@@ -31,6 +31,8 @@ var projectile = preload("res://scenes/effect/influenza_projectile.tscn")
 #Soms
 @onready var influenza_projectile_sound = $InfluenzaProjectileSound
 @onready var influenza_death = $InfluenzaDeath
+#Corpo
+@onready var mesh = $MeshInstance3D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -116,3 +118,4 @@ func kill():
 	Global.influenza_destroyed += 1
 	print("Eu destruí:", Global.influenza_destroyed)
 	queue_free()
+

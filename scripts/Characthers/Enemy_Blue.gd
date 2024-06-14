@@ -29,6 +29,7 @@ var dead = false
 @onready var nav = $NavigationAgent3D
 @onready var symbol = $Sprite3D2
 
+
 func _physics_process(_delta):
 	var player_position = player.global_transform.origin
 	var current_position = global_transform.origin
@@ -62,6 +63,7 @@ func attempt_to_kill_player():
 		timer.start()
 
 func kill_blue_mf():
+	damage_effect()
 	enemy_health -= 7
 	if enemy_health < 0:
 		enemy_health = 0
@@ -69,6 +71,7 @@ func kill_blue_mf():
 		killed()
 		
 func kill_blue_lf():
+	damage_effect()
 	enemy_health -= 5
 	move_speed -= 2
 	if move_speed < 2:
@@ -79,12 +82,14 @@ func kill_blue_lf():
 		killed()
 
 func kill_blue_nf():
+	damage_effect()
 	enemy_health -= 2 * CONTROL_BULLET_EMISSION
 	if enemy_health <= 0:
 		killed()
 
 
 func heal_blue_lf():
+	damage_effect()
 	enemy_health -= 2
 	move_speed -= 1
 	if move_speed < 2:
@@ -95,6 +100,7 @@ func heal_blue_lf():
 		killed()
 
 func heal_blue_mf():
+	damage_effect()
 	enemy_health -= 3
 	if enemy_health < 0:
 		enemy_health = 0
@@ -102,6 +108,7 @@ func heal_blue_mf():
 		killed()
 
 func heal_blue_nf():
+	damage_effect()
 	enemy_health -= 0.5 * CONTROL_BULLET_EMISSION
 	if enemy_health <= 0:
 		killed()
@@ -128,4 +135,10 @@ func _process(_delta):
 	if enemy_health > 15:
 		progress_bar.max_value = enemy_health
 		
-
+func damage_effect():
+	animated_sprite_3d.modulate = Color.RED
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(animated_sprite_3d,"modulate", Color.WHITE, 0.3)
+	
