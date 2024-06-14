@@ -1,4 +1,4 @@
-res://scenes/Levels/level_1.tscn
+res://scenes/HUD/logo_transition.tscn
 res://scripts/Characthers/Enemy_Blue.gd
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/Characthers/Player.gd
@@ -7,7 +7,7 @@ res://scripts/HUD/Options.gd
 res://scripts/HUD/wheel_weapons.gd
 res://scripts/Sound/ChangeSound.gd
 res://themes/playerLifeBarTheme.tres
-res://scenes/HUD/logo_transition.tscn
+res://scenes/Levels/level_1.tscn
 res://scenes/Levels/level_2.tscn
 res://scenes/Levels/level_3.tscn
 res://scenes/Levels/world.tscn
@@ -32,3 +32,4 @@ res://scenes/UI/Tutorials/tutorial_guide.tscn
 res://scenes/UI/Tutorials/pathogen_tutorial.tscn
 res://scenes/Credits.tscn
 res://scenes/Characters/Infected_cells.tscn
+res://scenes/UI/Tutorials/influenza_tutorial.tscn
