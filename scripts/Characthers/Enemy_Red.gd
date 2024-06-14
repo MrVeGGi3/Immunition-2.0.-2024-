@@ -70,13 +70,13 @@ func attempt_to_kill_player():
 
 func kill_red_nf():
 	damage_effect()
-	enemy_health -= 2 * CONTROL_BULLET_EMISSION
+	enemy_health -= 0.3 * CONTROL_BULLET_EMISSION
 	if enemy_health <= 0:
 		killed()
 
 func heal_red_nf():
 	damage_effect()
-	enemy_health -= CONTROL_BULLET_EMISSION * 0.2
+	enemy_health -= CONTROL_BULLET_EMISSION * 0.05
 	if enemy_health < 0:
 		enemy_health = 0
 	if enemy_health == 0:

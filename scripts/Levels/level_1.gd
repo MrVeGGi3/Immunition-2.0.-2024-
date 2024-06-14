@@ -12,13 +12,10 @@ extends Node3D
 
 #Objetivos
 @onready var extractos_collected = $ExtractosCollected
-@onready var influenza_count = $InfluenzaCount
 #Fim de Fase
 @onready var next_phase_collision = $MapLevel1/DevTorus/NextPhaseCollision
 @onready var phase_ended = $PhaseEnded
 
-
-@onready var influenza = get_tree().get_nodes_in_group("influenza")
 @onready var cells = get_tree().get_nodes_in_group("cell")
 @onready var player_hud = $Player/PlayerHUD
 
@@ -26,28 +23,24 @@ extends Node3D
 @onready var influenza_spawner_3d = $InfluenzaSpawner3d
 @onready var level_1bgm = $Level1BGM
 @onready var victory_song = $VictorySong
+@onready var timer_counter = $TimerCounter
 
-var is_influenza_captured = false
 #Booleanas de Controle
 var is_extractor_build = false
 var is_entered_platform = false
+var go_to_next_phase = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	timer_counter.hide()
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	press_f.visible = false
-	influenza_count.visible = false
-	for inf in influenza:
-		inf.visible = false
-	for cell in cells:
-		cell.visible = false
 	level_1bgm.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	var go_to_next_phase = Global.is_enemies_destroyed	
-	if Global.influenza_destroyed >= 3 and !is_influenza_captured:
-		execute_second_animation()
+	if timer_counter.timer_out:
+		end_influenza_fight()
 	
 	if go_to_next_phase:
 		var duddies = next_phase_collision.get_overlapping_bodies()
@@ -66,7 +59,6 @@ func _process(_delta):
 			player.set_physics_process(false)
 			is_extractor_build = true
 			press_f.visible = false
-			influenza_count.visible = true
 			cutscene_cells()
 			
 		if Input.is_action_just_pressed("Interact") and is_extractor_build:
@@ -77,7 +69,7 @@ func _process(_delta):
 		
 func cutscene_cells():
 	is_extractor_build = true
-	player_hud.visible = false
+	player.disable_UI()
 	cutscene_camera.make_current()
 	camera_movement.play("CameraFirstPoint")
 
@@ -85,10 +77,11 @@ func spawn_cells():
 	cell_spawner_3d._on_timer_timeout()
 	
 func spawn_influenza():
+	influenza_spawner_3d.can_create_influ = true
 	influenza_spawner_3d._on_timer_timeout()
-
+	
 func return_player_camera():
-	player_hud.visible = true
+	player.restore_UI()
 	camera_movement.stop()
 	player_camera.make_current()
 	player.set_physics_process(true)
@@ -102,10 +95,19 @@ func _on_area_platform_body_entered(body):
 		
 		
 func execute_second_animation():
-	Global.is_enemies_destroyed = true
-	player_hud.visible = false
-	influenza_count.visible = false
+	go_to_next_phase = true
+	player.disable_UI()
 	player.set_physics_process(false)
 	cutscene_camera.make_current()
 	camera_movement.play("CameraFinalPoint")
-	is_influenza_captured = true
+
+func start_timer():
+	timer_counter.show()
+	timer_counter.can_count = true
+
+func end_influenza_fight():
+	var influenza = get_tree().get_nodes_in_group("influenza")
+	influenza_spawner_3d.can_create_influ = false
+	for influ in influenza:
+		queue_free()
+	execute_second_animation()

@@ -1,13 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://don5l8livtsxn"]
+[gd_scene load_steps=6 format=3 uid="uid://don5l8livtsxn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/pathfinding/cell_2.gd" id="1_fwl1p"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24vit"]
-albedo_color = Color(0.0980392, 1, 1, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_a152o"]
+[ext_resource type="Texture2D" uid="uid://cskn57alcan64" path="res://sprites/cell/Célula.png" id="2_nl86d"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qmprq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8etg"]
+atlas = ExtResource("2_nl86d")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_far0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8etg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Cell" type="CharacterBody3D" groups=["cell"]]
 collision_layer = 2
@@ -15,11 +26,6 @@ collision_mask = 3
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
 script = ExtResource("1_fwl1p")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-layers = 2
-material_override = SubResource("StandardMaterial3D_24vit")
-mesh = SubResource("SphereMesh_a152o")
 
 [node name="MovementTime" type="Timer" parent="."]
 process_callback = 0
@@ -45,5 +51,11 @@ max_neighbors = 3
 use_3d_avoidance = true
 avoidance_layers = 2
 avoidance_mask = 2
+
+[node name="CellAnimatedSprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.892322, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_far0h")
+autoplay = "default"
 
 [connection signal="timeout" from="MovementTime" to="." method="_on_movement_time_timeout"]

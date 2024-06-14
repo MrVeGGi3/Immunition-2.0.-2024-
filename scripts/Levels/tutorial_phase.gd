@@ -4,9 +4,10 @@ extends Node3D
 @onready var phase_finished = $PhaseFinished
 @onready var next_phase = $PhaseFinished/Panel/NextPhase
 @onready var pathogen_tutorial = $PathogenTutorial
-@onready var area_3d = $DevTorus/Area3D
 @onready var victory_song = $VictorySong
 @onready var tutorial_bgm = $TutorialBGM
+@onready var area_3d = $"Plataforma de Tutorial/MeshInstance3D40/Area3D"
+@onready var pause_menu = $Player/PlayerHUD/pause_menu
 
 const LEVEL_1 = "res://scenes/Levels/level_1.tscn"
 # Called when the node enters the scene tree for the first time.
@@ -23,13 +24,12 @@ func _process(delta):
 	var bodies = area_3d.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("player"):
-			player.disable_UI()
-			get_tree().paused = true
-			phase_finished.visible = true
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
-
-
+			end_phase()
+	if player.dead:
+		tutorial_bgm.stop()
+	if pathogen_tutorial.visible and !pause_menu.visible:
+		get_tree().paused = true
+		
 
 	
 
@@ -40,7 +40,7 @@ func end_phase():
 	phase_finished.visible = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().paused = true
-	player.disableUI()
+	player.disable_UI()
 	
 
 

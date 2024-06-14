@@ -205,9 +205,11 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		if particles.emitting:
+		if particles.emitting and Input.is_action_pressed("shoot") and can_shoot_nf:
 			particles.emitting = false
 			enable_particle.start()
+		else:
+			enable_particle.stop()
 		if Input.is_action_pressed("run"):
 				velocity.x = direction.x * lerp(SPEED, SPEED * 2, 0.6)
 				velocity.z = direction.z * lerp(SPEED, SPEED *2, 0.6) # Aumentar a velocidade ao correr	
@@ -225,6 +227,8 @@ func restart():
 
 func shoot():
 	if !can_shoot:
+		return
+	if l_ammo <= 0:
 		return
 	can_shoot = false
 	set_global_transition_bool_cs(can_shoot)
@@ -265,6 +269,8 @@ func shoot():
 func shoot_by_macrofage():
 	if !can_shoot_mf:
 		return
+	if m_ammo <= 0:
+		return
 	can_shoot_mf = false
 	set_global_transition_bool_csm(can_shoot_mf)
 	animated_sprite_2d.play("shoot_macrofage")
@@ -298,6 +304,8 @@ func shoot_by_macrofage():
 func shoot_by_neutrofile():
 	if !can_shoot_nf:
 		return
+	if n_ammo <= 0:
+		return
 	particles.emitting = true
 	animated_sprite_2d.play("shoot_neutro")
 	neutrofile_sound.play()
@@ -324,7 +332,7 @@ func shoot_by_neutrofile():
 		
 	#Influenza
 	if flame_thrower_shoot.is_colliding() and flame_thrower_shoot.get_collider().has_method("hit_by_nf"):
-		flame_thrower_shoot.get_collider().hit_by_nf(3)
+		flame_thrower_shoot.get_collider().hit_by_nf(0.5)
 
 func return_normalUI():
 	damage_taken.play("idle")

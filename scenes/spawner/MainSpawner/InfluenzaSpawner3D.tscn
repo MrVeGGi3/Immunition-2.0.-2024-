@@ -33,6 +33,6 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.843373, 0)
 shape = SubResource("CylinderShape3D_4q62p")
 
 [node name="CreateCellInstance" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 
 [connection signal="timeout" from="CreateCellInstance" to="." method="_on_timer_timeout"]

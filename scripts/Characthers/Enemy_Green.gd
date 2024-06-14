@@ -1,6 +1,6 @@
 extends CharacterBody3D
 #Variveis
-@export var move_speed = 7.0
+@export var move_speed = 5.0
 @export var attack_range = 2.0
 @export var enemy_health = 15
 @export var minimum_distance = 15
@@ -86,7 +86,7 @@ func kill_green_mf():
 
 func kill_green_nf():
 	damage_effect()
-	enemy_health -= CONTROL_BULLET_EMISSION * 2
+	enemy_health -= CONTROL_BULLET_EMISSION * 0.3
 	if enemy_health < 0:
 		enemy_health = 0
 	if enemy_health == 0:
@@ -113,7 +113,7 @@ func heal_green_mf():
 		
 func heal_green_nf():
 	damage_effect()
-	enemy_health -= CONTROL_BULLET_EMISSION * 0.5
+	enemy_health -= CONTROL_BULLET_EMISSION * 0.05
 	if enemy_health < 0:
 		enemy_health = 0
 	if enemy_health == 0:

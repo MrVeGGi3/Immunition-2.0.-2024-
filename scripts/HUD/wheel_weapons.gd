@@ -27,14 +27,14 @@ func _process(_delta):
 	elif can_shoot_nf:
 		red_button.play("selected")
 	
-	if Input.is_action_just_pressed("weapon_wheel") and !weapon_selected:
+	if Input.is_action_just_pressed("weapon_wheel") and !weapon_selected and !ms.visible:
 		visible = true
 		get_tree().paused = true
 		weapon_selected = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
 		
-	elif Input.is_action_just_pressed("weapon_wheel") and weapon_selected:
+		
+	elif Input.is_action_just_pressed("weapon_wheel") and weapon_selected and !ms.visible:
 		visible = false
 		get_tree().paused = false
 		weapon_selected = false

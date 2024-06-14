@@ -31,40 +31,6 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nwage"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ocaef"]
-atlas = ExtResource("8_6e3wa")
-region = Rect2(1062, 0, 1062, 731)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ft53n"]
-atlas = ExtResource("8_6e3wa")
-region = Rect2(0, 0, 1062, 731)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jsgjo"]
-atlas = ExtResource("8_6e3wa")
-region = Rect2(0, 0, 1062, 731)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4vnq4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ocaef")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ft53n")
-}],
-"loop": false,
-"name": &"damage_received",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jsgjo")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 10.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ys8yx"]
 atlas = ExtResource("2_bowrg")
 region = Rect2(0, 0, 1024, 1024)
@@ -228,6 +194,40 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_neutro",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocaef"]
+atlas = ExtResource("8_6e3wa")
+region = Rect2(1062, 0, 1062, 731)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft53n"]
+atlas = ExtResource("8_6e3wa")
+region = Rect2(0, 0, 1062, 731)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsgjo"]
+atlas = ExtResource("8_6e3wa")
+region = Rect2(0, 0, 1062, 731)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vnq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocaef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft53n")
+}],
+"loop": false,
+"name": &"damage_received",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsgjo")
+}],
+"loop": false,
+"name": &"idle",
 "speed": 10.0
 }]
 
@@ -416,7 +416,6 @@ animations = [{
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ayvqm"]
 particle_flag_align_y = true
-particle_flag_disable_z = true
 emission_shape_scale = Vector3(0, 1, 0)
 inherit_velocity_ratio = 5.0
 velocity_pivot = Vector3(0, 0, 1)
@@ -455,6 +454,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="PlayerHUD" type="CanvasLayer" parent="."]
 
+[node name="GunShoot" type="Control" parent="PlayerHUD"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerHUD/GunShoot"]
+position = Vector2(758, 442)
+scale = Vector2(0.418145, 0.418145)
+sprite_frames = SubResource("SpriteFrames_qaoph")
+animation = &"shoot_neutro"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.206659
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerHUD/GunShoot"]
+position = Vector2(571, 318)
+scale = Vector2(0.0255, 0.0255)
+texture = ExtResource("6_t7800")
+
 [node name="PlayerLifeBar" type="Control" parent="PlayerHUD"]
 process_mode = 3
 layout_mode = 3
@@ -482,29 +504,6 @@ sprite_frames = SubResource("SpriteFrames_4vnq4")
 animation = &"damage_received"
 frame = 1
 frame_progress = 1.0
-
-[node name="GunShoot" type="Control" parent="PlayerHUD"]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerHUD/GunShoot"]
-position = Vector2(758, 442)
-scale = Vector2(0.418145, 0.418145)
-sprite_frames = SubResource("SpriteFrames_qaoph")
-animation = &"shoot_neutro"
-autoplay = "idle"
-frame = 3
-frame_progress = 0.206659
-
-[node name="Sprite2D" type="Sprite2D" parent="PlayerHUD/GunShoot"]
-position = Vector2(571, 318)
-scale = Vector2(0.0255, 0.0255)
-texture = ExtResource("6_t7800")
 
 [node name="UI_AMMO" type="Control" parent="PlayerHUD"]
 layout_mode = 3
@@ -622,32 +621,12 @@ scale = Vector2(0.256223, 0.256223)
 sprite_frames = SubResource("SpriteFrames_f2ewk")
 animation = &"idle"
 
-[node name="WheelSwitchWeapons" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("24_40cle")]
-offset_right = -264.0
-offset_bottom = -192.0
-player = NodePath("../..")
-
-[node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
-process_mode = 3
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 70.0
-offset_top = 11.0
-offset_right = 70.0
-offset_bottom = 11.0
-grow_horizontal = 1
-grow_vertical = 1
-player = NodePath("../..")
-
 [node name="Whell&memory" parent="PlayerHUD" instance=ExtResource("26_yg6t8")]
 offset_left = 168.0
 offset_top = 306.0
 offset_right = 168.0
 offset_bottom = 306.0
 scale = Vector2(0.480624, 0.480624)
-
-[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
 
 [node name="DeathScreen" type="Control" parent="PlayerHUD"]
 process_mode = 3
@@ -693,6 +672,26 @@ position = Vector2(549, 347)
 scale = Vector2(0.145759, 0.145759)
 texture = ExtResource("4_nc87x")
 
+[node name="WheelSwitchWeapons" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("24_40cle")]
+offset_right = -264.0
+offset_bottom = -192.0
+player = NodePath("../..")
+
+[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
+
+[node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
+process_mode = 3
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 70.0
+offset_top = 11.0
+offset_right = 70.0
+offset_bottom = 11.0
+grow_horizontal = 1
+grow_vertical = 1
+player = NodePath("../..")
+
 [node name="ShootPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_qulf7")
 bus = &"SFX"
@@ -724,8 +723,7 @@ collision_mask = 7
 collide_with_areas = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="FlameThrowerShoot"]
-transform = Transform3D(-0.999934, 0, 0.0115189, 0, 1, 0, -0.0115189, 0, -0.999934, 0.234038, -0.287282, -2.10114)
-emitting = false
+transform = Transform3D(-0.999926, 0, 0.0122171, 0, 1, 0, -0.0122171, 0, -0.999926, 0.0692955, 0.0534637, -1.20281)
 amount = 10
 lifetime = 1.14
 speed_scale = 2.0
@@ -733,7 +731,7 @@ process_material = SubResource("ParticleProcessMaterial_ayvqm")
 draw_pass_1 = SubResource("SphereMesh_s0y5o")
 
 [node name="EnableParticle" type="Timer" parent="FlameThrowerShoot"]
-wait_time = 0.5
+wait_time = 0.4
 
 [node name="MacrofageRay3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

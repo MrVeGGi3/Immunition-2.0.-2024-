@@ -23,7 +23,7 @@ var is_hitting = false
 @onready var explosion = preload("res://scenes/effect/explosion.tscn")
 @onready var mesh_instance_infected_cell = $MeshInstance3D
 @onready var nav = $NavigationAgent3D
-@onready var mesh = $MeshInstance3D
+@onready var infectedl_cell_animation = $InfectedlCellAnimation
 
 var virus_type : String = "null"
 # Called when the node enters the scene tree for the first time.
@@ -60,6 +60,7 @@ func spawn_influenza(spawn, virus):
 			get_parent().add_child(new_influenza)
 
 func hit(damage_by_player, speed_down):
+	damage_effect()
 	life -= damage_by_player
 	speed -= speed_down
 	print("Célula Infectada - Recebi dano")
@@ -76,3 +77,9 @@ func get_virus_type(virus):
 	virus_type = virus
 	print("O tipo de vírus é:", virus_type)
 
+func damage_effect():
+	infectedl_cell_animation.modulate = Color.RED
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(infectedl_cell_animation,"modulate", Color.WHITE, 0.3)

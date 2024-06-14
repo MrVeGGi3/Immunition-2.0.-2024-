@@ -59,3 +59,6 @@ color = Color(0.694118, 0.694118, 0.694118, 1)
 [node name="EnemyMinimapColorect" parent="ColorRect/SubViewportContainer/SubViewport" instance=ExtResource("2_d4bn4")]
 offset_left = 952.0
 offset_right = 972.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="ColorRect/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.127173, -0.219471, 0.967295, 0.925641, -0.324144, -0.195242, 0.356393, 0.920197, 0.161929, 1.27151, 110.385, 1.01056)

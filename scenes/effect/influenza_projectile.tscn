@@ -38,13 +38,6 @@ shape = SubResource("ConcavePolygonShape3D_3ri2e")
 wait_time = 2.0
 
 [node name="Destruction" type="Timer" parent="."]
-wait_time = 5.0
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_height_offset = -3.0
-path_max_distance = 2.01
-height = 3.0
-radius = 1.0
-use_3d_avoidance = true
+wait_time = 3.0
 
 [connection signal="timeout" from="Destruction" to="." method="_on_destruction_timeout"]

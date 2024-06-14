@@ -1,7 +1,7 @@
 extends CharacterBody3D
 #Variáveis
 @export_category("Atributos")
-@export var move_speed = 8.0 
+@export var move_speed = 5.0 
 @export var attack_range = 2.0
 @export var enemy_health = 15
 @export var minimum_distance = 15
@@ -83,7 +83,7 @@ func kill_blue_lf():
 
 func kill_blue_nf():
 	damage_effect()
-	enemy_health -= 2 * CONTROL_BULLET_EMISSION
+	enemy_health -= 0.3 * CONTROL_BULLET_EMISSION
 	if enemy_health <= 0:
 		killed()
 
@@ -109,7 +109,7 @@ func heal_blue_mf():
 
 func heal_blue_nf():
 	damage_effect()
-	enemy_health -= 0.5 * CONTROL_BULLET_EMISSION
+	enemy_health -= 0.05 * CONTROL_BULLET_EMISSION
 	if enemy_health <= 0:
 		killed()
 

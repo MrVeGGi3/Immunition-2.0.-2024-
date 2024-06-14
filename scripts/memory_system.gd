@@ -4,31 +4,37 @@ var m1 = Global.m1_active
 var m2 = Global.m2_active
 var m3 = Global.m3_active
 
-@onready var m1_selected = $"Memorias/Memoria 1/M1_Selected"
-@onready var m2_selected = $"Memorias/Memoria 2/M2_Selected"
-@onready var m3_selected = $"Memorias/Memoria 3/M3_Selected"
+@onready var m1_selected = $"Memorias/PositionMarker/Memoria 1/M1_Selected"
+@onready var m2_selected = $"Memorias/PositionMarker/Memoria 2/M2_Selected"
+@onready var m3_selected = $"Memorias/PositionMarker/Memoria 3/M3_Selected"
 @onready var pause_menu = $"../pause_menu"
 @onready var wsw = $"../WheelSwitchWeapons"
+@onready var memorias = $Memorias
+@onready var animation_player = $AnimationPlayer
 
 
 @export var player:CharacterBody3D = null
 
 var count = 0
-
+var pressed = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = true
-
+	animation_player.play("idle")
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_just_pressed("call_memory_system") and !wsw.visible:
+	if Input.is_action_just_pressed("call_memory_system") and !wsw.visible and !pressed:
+		animation_player.play("to_center")
 		get_tree().paused = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		pressed = true
 		
-	elif Input.is_action_just_pressed("call_memory_system"):
-		_disable_visibility()
+	elif Input.is_action_just_pressed("call_memory_system") and !wsw.visible and pressed:
+		animation_player.play("to_side")
 		get_tree().paused = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		pressed = false
 		
 	if Input.is_action_just_pressed("roll_up"):
 		if count == 0:
@@ -55,6 +61,7 @@ func _on_memoria_1_pressed():
 	m2 = false
 	m3 = false
 	m1_selected.visible = true
+	pressed = true
 	set_global_memory_variables(m1, m2, m3)
 	change_button_animation_state(m2_selected, m3_selected)
 	_disable_visibility()
@@ -63,6 +70,7 @@ func _on_memoria_2_pressed():
 	m1 = false
 	m2 = true
 	m3 = false
+	pressed = true
 	m2_selected.visible = true
 	set_global_memory_variables(m1, m2, m3)
 	change_button_animation_state(m1_selected, m3_selected)
@@ -72,6 +80,7 @@ func _on_memoria_3_pressed():
 	m1 = false
 	m2 = false
 	m3 = true
+	pressed = true
 	m3_selected.visible = true
 	set_global_memory_variables(m1, m2, m3)
 	change_button_animation_state(m1_selected, m2_selected)
@@ -95,5 +104,8 @@ func change_button_animation_state(b1, b2):
 	b2.visible = false
 	
 func _disable_visibility():
+	if pressed:
+		animation_player.play("to_side")
+		pressed = false
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

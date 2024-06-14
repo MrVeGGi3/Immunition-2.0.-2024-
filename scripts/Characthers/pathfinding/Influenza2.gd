@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export_category("Atributos")
-@export var speed = 8
+@export var speed = 5
 @export var life = 10
 @export var original_color = Color(237,147,145,255)
 @export var red_color = Color(255,0,0,255)
@@ -33,6 +33,7 @@ var projectile = preload("res://scenes/effect/influenza_projectile.tscn")
 @onready var influenza_death = $InfluenzaDeath
 #Corpo
 @onready var mesh = $MeshInstance3D
+@onready var influenza_animation = $InfluenzaAnimation
 
 
 # Called when the node enters the scene tree for the first time.
@@ -95,6 +96,7 @@ func _on_shoot_time_timeout():
 	is_shooting = false
 	
 func hit_by_lf(damage, speed_down):
+	damage_effect()
 	life -= damage
 	speed -= speed_down
 	shoot_by_player = true
@@ -102,12 +104,14 @@ func hit_by_lf(damage, speed_down):
 		kill()
 
 func hit_by_mf(damage):
+	damage_effect()
 	life -= damage
 	shoot_by_player = true
 	if life <= 0:
 		kill()
 	
 func hit_by_nf(damage):
+	damage_effect()
 	life -= damage * CONTROL_BULLET_EMISSION
 	shoot_by_player = true
 	if life <= 0:
@@ -119,3 +123,9 @@ func kill():
 	print("Eu destruí:", Global.influenza_destroyed)
 	queue_free()
 
+func damage_effect():
+	influenza_animation.modulate = Color.RED
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(influenza_animation,"modulate", Color.WHITE, 0.3)

@@ -1,3 +1,6 @@
+res://sprites/Monster/infectedcell
+res://sprites/cell
+res://sprites/Monster/influenza
 res://scripts
 res://scripts/HUD
 res://scripts/Spawner
@@ -17,9 +20,6 @@ res://scenes/Characters
 res://scenes/HUD
 res://scripts/Characthers
 res://images/baseMemorySytem/Selected
-res://images/baseMemorySytem
-res://sprites/UI
-res://icons/wheelswitchweapon/selected
 E:/Immunition/Immunition/HTML
 E:/Immunition/Immunition
 E:/Godot

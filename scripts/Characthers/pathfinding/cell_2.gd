@@ -30,6 +30,8 @@ var infected_cell = preload("res://scenes/Characters/Infected_cells.tscn")
 @onready var walk_marker = $WalkMarker
 @onready var nav = $NavigationAgent3D
 @onready var walk_marker_position = walk_marker.global_transform.origin
+@onready var cell_animated_sprite = $CellAnimatedSprite
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	walk_marker_position = global_transform.origin
@@ -66,6 +68,7 @@ func _process(delta):
 	var bodies = area_3d.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("influenza"):
+			damage_effect()
 			movement_time.stop()
 			is_moving = false
 			is_catched_by_influenza = true
@@ -99,5 +102,11 @@ func _change_type(virus):
 	new_infected_cell.global_transform.origin = global_transform.origin
 	get_parent().add_child(new_infected_cell)
 	queue_free()
-
+	
+func damage_effect():
+	cell_animated_sprite.modulate = Color.RED
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(cell_animated_sprite,"modulate", Color.WHITE, 0.3)
 
