@@ -30,10 +30,8 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 
-[sub_resource type="Animation" id="Animation_l4hql"]
-resource_name = "idle"
+[sub_resource type="Animation" id="Animation_485vo"]
 length = 0.001
-loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -59,8 +57,10 @@ tracks/1/keys = {
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_485vo"]
+[sub_resource type="Animation" id="Animation_l4hql"]
+resource_name = "idle"
 length = 0.001
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

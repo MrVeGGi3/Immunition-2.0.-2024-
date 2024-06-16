@@ -64,17 +64,16 @@ use_3d_avoidance = true
 stream = ExtResource("2_qyl77")
 volume_db = -10.0
 
-[node name="InfluenzaDeath" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_23wsa")
-volume_db = 30.0
-bus = &"SFX"
-
 [node name="InfluenzaAnimation" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.391261, 0, 0, 0, 0.391261, 0, 0, 0, 0.391261, 0, -0.0935751, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_xvbic")
 autoplay = "default"
 frame_progress = 0.669839
+
+[node name="InfluenzaDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_23wsa")
+bus = &"SFX"
 
 [connection signal="timeout" from="GoToObject" to="." method="_on_go_to_object_timeout"]
 [connection signal="timeout" from="ShootTime" to="." method="_on_shoot_time_timeout"]

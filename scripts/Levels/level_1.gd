@@ -24,6 +24,8 @@ extends Node3D
 @onready var level_1bgm = $Level1BGM
 @onready var victory_song = $VictorySong
 @onready var timer_counter = $TimerCounter
+@onready var count = $TimerCounter/Control2/Count
+
 
 #Booleanas de Controle
 var is_extractor_build = false
@@ -39,8 +41,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if timer_counter.timer_out:
-		end_influenza_fight()
 	
 	if go_to_next_phase:
 		var duddies = next_phase_collision.get_overlapping_bodies()
@@ -95,19 +95,18 @@ func _on_area_platform_body_entered(body):
 		
 		
 func execute_second_animation():
+	print("Essa função está sendo executada:Animação")
 	go_to_next_phase = true
 	player.disable_UI()
-	player.set_physics_process(false)
-	cutscene_camera.make_current()
 	camera_movement.play("CameraFinalPoint")
+	
 
 func start_timer():
 	timer_counter.show()
-	timer_counter.can_count = true
+	count.start()
 
-func end_influenza_fight():
-	var influenza = get_tree().get_nodes_in_group("influenza")
+
+func _on_count_timeout():
 	influenza_spawner_3d.can_create_influ = false
-	for influ in influenza:
-		queue_free()
+	player.set_physics_process(false)
 	execute_second_animation()

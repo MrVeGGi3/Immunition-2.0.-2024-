@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://chjb7f3unarmp"]
+[gd_scene load_steps=5 format=3 uid="uid://chjb7f3unarmp"]
 
 [ext_resource type="Script" path="res://scripts/Count/extractors_collected.gd" id="1_1iq7y"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_qg1se"]
 [ext_resource type="Texture2D" uid="uid://bvjoyraetdpi6" path="res://images/CountBackground/Contador_base.png" id="2_gua5c"]
+[ext_resource type="Texture2D" uid="uid://3flapnmavn1e" path="res://images/Collectables/Extractor_sprite.png" id="4_vfkmo"]
 
 [node name="ExtractosCollected" type="Control"]
 layout_mode = 3
@@ -60,7 +61,9 @@ text = "3
 "
 
 [node name="Extractor" type="Sprite2D" parent="Control2/Control"]
-position = Vector2(920, 562)
+position = Vector2(922.857, 575.715)
+scale = Vector2(0.145562, 0.148942)
+texture = ExtResource("4_vfkmo")
 
 [node name="Label" type="Label" parent="Control2/Control"]
 layout_mode = 0

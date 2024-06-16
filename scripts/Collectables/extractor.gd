@@ -1,4 +1,4 @@
-extends MeshInstance3D
+extends Node3D
 
 @onready var extractor_area_3d = $Extractor_Area3D
 # Called when the node enters the scene tree for the first time.

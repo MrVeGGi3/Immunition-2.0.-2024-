@@ -42,3 +42,8 @@ theme_override_colors/font_color = Color(1, 0.622581, 0.481789, 1)
 theme_override_fonts/font = ExtResource("2_yk23k")
 theme_override_font_sizes/font_size = 40
 text = ":"
+
+[node name="Count" type="Timer" parent="Control2"]
+wait_time = 30.0
+
+[connection signal="timeout" from="Control2/Count" to="." method="_on_count_timeout"]
