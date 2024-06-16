@@ -1,4 +1,4 @@
-[gd_scene load_steps=223 format=3 uid="uid://cj7emqhky70af"]
+[gd_scene load_steps=225 format=3 uid="uid://cj7emqhky70af"]
 
 [ext_resource type="Script" path="res://scripts/Levels/level_1.gd" id="1_bgiqj"]
 [ext_resource type="Texture2D" uid="uid://bhlaan6ukbhkc" path="res://prefabs/floor1_20240614085358.png" id="2_fikwp"]
@@ -56,6 +56,8 @@
 [ext_resource type="AudioStream" uid="uid://b0f6ntlqc0lg5" path="res://sounds/BGM/Level_1.wav" id="49_wylse"]
 [ext_resource type="Script" path="res://scripts/Count/influenza_count.gd" id="52_ket2y"]
 [ext_resource type="Texture2D" uid="uid://bvjoyraetdpi6" path="res://images/CountBackground/Contador_base.png" id="53_p5uxp"]
+[ext_resource type="PackedScene" uid="uid://c8bydekkhr5m4" path="res://scenes/Characters/enemy_b.tscn" id="57_uqt37"]
+[ext_resource type="PackedScene" uid="uid://8onv0icy5g7h" path="res://scenes/Characters/enemy_g.tscn" id="58_crqrg"]
 
 [sub_resource type="Environment" id="Environment_07ns0"]
 background_mode = 1
@@ -2540,7 +2542,7 @@ volume_db = -10.0
 bus = &"BGM"
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.055, 4.055, -25.676)
+transform = Transform3D(0.713238, 0, 0.700922, 0, 1, 0, -0.700922, 0, 0.713238, -19.668, 4.055, -25.4212)
 collision_layer = 2
 collision_mask = 7
 platform_floor_layers = 4294967041
@@ -2935,6 +2937,90 @@ target = NodePath("../Player")
 level = NodePath("..")
 
 [node name="PhaseEnded" parent="." instance=ExtResource("16_ee351")]
+
+[node name="Enemy" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2124, 2.94173, -39.7701)
+
+[node name="Enemy2" parent="." instance=ExtResource("58_crqrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.2531, 2.35873, -43.3863)
+
+[node name="Enemy3" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9394, 2.93461, -46.6202)
+
+[node name="Enemy4" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(-0.0131769, 0, -0.999913, 0, 1, 0, 0.999913, 0, -0.0131769, -18.659, 2.94173, -62.0855)
+
+[node name="Enemy5" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(-0.0131769, 0, -0.999913, 0, 1, 0, 0.999913, 0, -0.0131769, -11.8132, 2.93461, -61.7223)
+
+[node name="Enemy6" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(-0.0131769, 0, -0.999913, 0, 1, 0, 0.999913, 0, -0.0131769, -15.3877, 2.93461, -58.1825)
+
+[node name="Enemy7" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.773376, 0, -0.633948, 0, 1, 0, 0.633948, 0, 0.773376, -29.1567, 2.94173, -98.3671)
+
+[node name="Enemy8" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.773376, 0, -0.633948, 0, 1, 0, 0.633948, 0, 0.773376, -24.603, 2.93461, -103.492)
+
+[node name="Enemy9" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.773376, 0, -0.633948, 0, 1, 0, 0.633948, 0, 0.773376, -24.0655, 2.93461, -98.4899)
+
+[node name="Enemy10" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.999145, 0, 0.0413525, 0, 1, 0, -0.0413525, 0, 0.999145, -97.5383, 2.94173, -98.8526)
+
+[node name="Enemy11" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.999145, 0, 0.0413525, 0, 1, 0, -0.0413525, 0, 0.999145, -97.5488, 2.93461, -105.708)
+
+[node name="Enemy12" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.999145, 0, 0.0413525, 0, 1, 0, -0.0413525, 0, 0.999145, -93.8194, 2.93461, -102.332)
+
+[node name="Enemy13" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.875709, 0, 0.482839, 0, 1, 0, -0.482839, 0, 0.875709, -166.361, 2.94173, -92.7609)
+
+[node name="Enemy14" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.875709, 0, 0.482839, 0, 1, 0, -0.482839, 0, 0.875709, -169.429, 2.93461, -98.8914)
+
+[node name="Enemy15" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.875709, 0, 0.482839, 0, 1, 0, -0.482839, 0, 0.875709, -164.585, 2.93461, -97.534)
+
+[node name="Enemy16" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.754114, 0, -0.656744, 0, 1, 0, 0.656744, 0, 0.754114, -169.443, 2.94173, -109.58)
+
+[node name="Enemy17" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.754114, 0, -0.656744, 0, 1, 0, 0.656744, 0, 0.754114, -164.738, 2.93462, -114.566)
+
+[node name="Enemy18" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.754114, 0, -0.656744, 0, 1, 0, 0.656744, 0, 0.754114, -164.35, 2.93462, -109.551)
+
+[node name="Enemy19" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.754114, 0, -0.656744, 0, 1, 0, 0.656744, 0, 0.754114, -127.614, 2.94173, -132.636)
+
+[node name="Enemy20" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.754114, 0, -0.656744, 0, 1, 0, 0.656744, 0, 0.754114, -122.909, 2.93462, -137.622)
+
+[node name="Enemy21" parent="." instance=ExtResource("57_uqt37")]
+transform = Transform3D(0.754114, 0, -0.656744, 0, 1, 0, 0.656744, 0, 0.754114, -122.521, 2.93462, -132.606)
+
+[node name="Enemy22" parent="." instance=ExtResource("58_crqrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.8021, 11.6362, -126.16)
+
+[node name="Enemy23" parent="." instance=ExtResource("58_crqrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1648, 11.6362, -126.16)
+
+[node name="Enemy24" parent="." instance=ExtResource("58_crqrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0899, 11.6362, -123.813)
+
+[node name="Enemy25" parent="." instance=ExtResource("58_crqrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5596, 11.6362, -133.172)
+
+[node name="Enemy26" parent="." instance=ExtResource("58_crqrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.5037, 11.6362, -133.797)
+
+[node name="Enemy27" parent="." instance=ExtResource("58_crqrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.7926, 11.6362, -133.747)
+
+[node name="Enemy28" parent="." instance=ExtResource("58_crqrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.5069, 11.6362, -133.552)
 
 [connection signal="body_entered" from="ExtractorPlatform/AreaPlatform" to="." method="_on_area_platform_body_entered"]
 [connection signal="pressed" from="Player/PlayerHUD/DeathScreen/Panel/RestartButton" to="Player" method="restart"]
