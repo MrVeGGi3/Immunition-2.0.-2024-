@@ -33,6 +33,7 @@ animations = [{
 [node name="Influenza" type="CharacterBody3D" groups=["influenza"]]
 collision_layer = 2
 collision_mask = 3
+platform_on_leave = 2
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
 script = ExtResource("1_ivp2f")
@@ -52,9 +53,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.54406, 0)
 wait_time = 0.5
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_height_offset = -3.0
+path_height_offset = -2.0
 path_max_distance = 2.01
-height = 0.2
+avoidance_enabled = true
+height = 2.0
 radius = 2.0
 neighbor_distance = 5.0
 max_neighbors = 5

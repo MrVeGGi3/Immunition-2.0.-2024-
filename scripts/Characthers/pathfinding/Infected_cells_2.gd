@@ -78,8 +78,8 @@ func get_virus_type(virus):
 	print("O tipo de vírus é:", virus_type)
 
 func damage_effect():
-	infectedl_cell_animation.modulate = Color.RED
+	infectedl_cell_animation.modulate = Color.WHITE
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_QUINT)
-	tween.tween_property(infectedl_cell_animation,"modulate", Color.WHITE, 0.3)
+	tween.tween_property(infectedl_cell_animation,"modulate", Color.RED, 0.3)

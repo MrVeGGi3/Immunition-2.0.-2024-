@@ -23,7 +23,7 @@ data = PackedVector3Array(0, 0.5, 0, 0, 0.5, 0, 0, 0.4977, 0.0475, 0, 0.5, 0, 0.
 
 [node name="InfectedCell" type="CharacterBody3D" groups=["infected_cell"]]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 7
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
 script = ExtResource("1_hcc2l")
@@ -46,7 +46,7 @@ neighbor_distance = 10.0
 keep_y_velocity = false
 
 [node name="InfectedlCellAnimation" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(0.583893, 0, 0, 0, 0.583893, 0, 0, 0, 0.583893, 0, 0.417398, 0)
+transform = Transform3D(0.219175, 0, 0, 0, 0.219175, 0, 0, 0, 0.219175, 0, 0.214727, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_p7756")
 

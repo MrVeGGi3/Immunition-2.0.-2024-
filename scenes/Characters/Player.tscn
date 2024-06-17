@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=73 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="2_bowrg"]
@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="24_r7y5r"]
 [ext_resource type="PackedScene" uid="uid://bli5ijcxx5bse" path="res://scenes/HUD/MemorySystem.tscn" id="25_vndgg"]
 [ext_resource type="PackedScene" uid="uid://cfltp503gd8w7" path="res://scenes/UI/Player/whell&memory.tscn" id="26_yg6t8"]
+[ext_resource type="Texture2D" uid="uid://c7bx6oyr5oajj" path="res://sprites/Player/Splash_sprites.png" id="29_811ot"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nwage"]
 
@@ -427,23 +428,13 @@ gravity = Vector3(0, -2, 0)
 linear_accel_min = -1.35
 linear_accel_max = 7.8
 
-<<<<<<< HEAD
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6em7j"]
-transparency = 1
+transparency = 4
 albedo_texture = ExtResource("29_811ot")
 billboard_mode = 1
-=======
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuhuk"]
-albedo_color = Color(1, 0.341176, 1, 1)
-metallic = 1.0
-emission_enabled = true
-emission = Color(0.247059, 0, 0.890196, 1)
->>>>>>> parent of 0b6e497 (Correções)
 
-[sub_resource type="SphereMesh" id="SphereMesh_s0y5o"]
-material = SubResource("StandardMaterial3D_xuhuk")
-radius = 0.2
-height = 0.4
+[sub_resource type="TorusMesh" id="TorusMesh_15gfy"]
+material = SubResource("StandardMaterial3D_6em7j")
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
@@ -731,11 +722,11 @@ collide_with_areas = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="FlameThrowerShoot"]
 transform = Transform3D(-0.999926, 0, 0.0122171, 0, 1, 0, -0.0122171, 0, -0.999926, 0.0692955, 0.0534637, -1.20281)
-amount = 10
-lifetime = 1.14
+amount = 6
+lifetime = 0.47
 speed_scale = 2.0
 process_material = SubResource("ParticleProcessMaterial_ayvqm")
-draw_pass_1 = SubResource("SphereMesh_s0y5o")
+draw_pass_1 = SubResource("TorusMesh_15gfy")
 
 [node name="EnableParticle" type="Timer" parent="FlameThrowerShoot"]
 wait_time = 0.4

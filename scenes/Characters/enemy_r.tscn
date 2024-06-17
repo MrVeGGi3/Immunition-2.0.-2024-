@@ -110,10 +110,11 @@ viewport_path = NodePath("SubViewport")
 [node name="Enemy" type="CharacterBody3D" groups=["enemy", "red"]]
 collision_layer = 2
 collision_mask = 3
+platform_on_leave = 2
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
 script = ExtResource("1_oqfwn")
-move_speed = 15.0
+move_speed = 7.0
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(-3.73677e-08, 0, -0.854874, 0, 0.854874, 0, 0.854874, 0, -3.73677e-08, 0, 1, 0)
@@ -173,7 +174,7 @@ radius = 2.0
 neighbor_distance = 10.0
 max_neighbors = 4
 time_horizon_agents = 0.0
-max_speed = 15.0
+max_speed = 7.0
 use_3d_avoidance = true
 avoidance_layers = 4
 avoidance_mask = 5

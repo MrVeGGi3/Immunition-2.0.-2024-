@@ -1,4 +1,4 @@
-[gd_scene load_steps=175 format=3 uid="uid://d36mflmgjmxea"]
+[gd_scene load_steps=176 format=3 uid="uid://d36mflmgjmxea"]
 
 [ext_resource type="ArrayMesh" uid="uid://djp2vbbqe1dc" path="res://prefabs/map0.obj" id="1_62mxc"]
 [ext_resource type="Script" path="res://scripts/Levels/tutorial_phase.gd" id="1_bhgoj"]
@@ -48,6 +48,7 @@
 [ext_resource type="AudioStream" uid="uid://cl16r632p0qb5" path="res://sounds/BGM/deathsound.wav" id="29_yw7u0"]
 [ext_resource type="AudioStream" uid="uid://dk7wdjoi41cuq" path="res://sounds/SFX/Player/macrofage_weapon .wav" id="30_ifcyg"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="31_o602k"]
+[ext_resource type="Texture2D" uid="uid://c7bx6oyr5oajj" path="res://sprites/Player/Splash_sprites.png" id="32_qo002"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x5567"]
 sky_top_color = Color(0.663169, 0.350295, 0.212311, 1)
@@ -563,16 +564,15 @@ gravity = Vector3(0, -2, 0)
 linear_accel_min = -1.35
 linear_accel_max = 7.8
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuhuk"]
-albedo_color = Color(1, 0.341176, 1, 1)
-metallic = 1.0
-emission_enabled = true
-emission = Color(0.247059, 0, 0.890196, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5e7kp"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("32_qo002")
+billboard_mode = 1
 
-[sub_resource type="SphereMesh" id="SphereMesh_s0y5o"]
-material = SubResource("StandardMaterial3D_xuhuk")
-radius = 0.2
-height = 0.4
+[sub_resource type="TorusMesh" id="TorusMesh_evdpj"]
+material = SubResource("StandardMaterial3D_5e7kp")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_f01f8"]
 
@@ -1166,7 +1166,7 @@ amount = 10
 lifetime = 1.14
 speed_scale = 2.0
 process_material = SubResource("ParticleProcessMaterial_ayvqm")
-draw_pass_1 = SubResource("SphereMesh_s0y5o")
+draw_pass_1 = SubResource("TorusMesh_evdpj")
 
 [node name="EnableParticle" type="Timer" parent="Player/FlameThrowerShoot"]
 wait_time = 0.4
