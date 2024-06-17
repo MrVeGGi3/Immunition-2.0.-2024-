@@ -32,7 +32,6 @@ var projectile = preload("res://scenes/effect/influenza_projectile.tscn")
 @onready var influenza_projectile_sound = $InfluenzaProjectileSound
 @onready var influenza_death = $InfluenzaDeath
 #Corpo
-@onready var mesh = $MeshInstance3D
 @onready var influenza_animation = $InfluenzaAnimation
 
 

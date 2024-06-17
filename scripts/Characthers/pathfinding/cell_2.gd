@@ -26,7 +26,6 @@ var escape_vector = Vector3(0,0,0)
 
 #Instância
 var infected_cell = preload("res://scenes/Characters/Infected_cells.tscn")
-@onready var mesh_instance_cell = $MeshInstance3D
 @onready var walk_marker = $WalkMarker
 @onready var nav = $NavigationAgent3D
 @onready var walk_marker_position = walk_marker.global_transform.origin

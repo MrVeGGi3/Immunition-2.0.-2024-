@@ -109,6 +109,7 @@ func start_timer():
 
 
 func _on_count_timeout():
+	timer_counter.hide()
 	influenza_spawner_3d.can_create_influ = false
 	player.set_physics_process(false)
 	execute_second_animation()
