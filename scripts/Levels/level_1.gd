@@ -41,6 +41,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if !level_1bgm.playing and !player.dead:
+		level_1bgm.play()
 	
 	if go_to_next_phase:
 		var duddies = next_phase_collision.get_overlapping_bodies()

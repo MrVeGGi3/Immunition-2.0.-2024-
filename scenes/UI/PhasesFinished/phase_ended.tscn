@@ -33,16 +33,16 @@ text = "Menu"
 
 [node name="TextPhaseEnded" type="Label" parent="."]
 layout_mode = 0
-offset_left = 139.0
-offset_top = 194.0
-offset_right = 1699.0
-offset_bottom = 356.0
+offset_left = 253.0
+offset_top = 197.0
+offset_right = 1813.0
+offset_bottom = 359.0
 theme_override_colors/font_color = Color(1.88913e-06, 0.440336, 0, 1)
 theme_override_fonts/font = ExtResource("3_naj03")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 30
 text = " Com as proteínas extraídas da fibra muscular,
  o sistema imune tem mais força para derrotar
- a infecção da Influenza, 
+ a infecção da Influenza!
 "
 
 [node name="Label" type="Label" parent="."]

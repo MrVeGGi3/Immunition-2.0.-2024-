@@ -78,7 +78,7 @@ func kill_green_lf():
 
 func kill_green_mf():
 	damage_effect()
-	enemy_health -= 7
+	enemy_health -= 15
 	if enemy_health < 0:
 		enemy_health = 0
 	if enemy_health == 0:
@@ -105,7 +105,7 @@ func heal_green_lf():
 
 func heal_green_mf():
 	damage_effect()
-	enemy_health -= 3
+	enemy_health -= 7.5
 	if enemy_health < 0:
 		enemy_health = 0
 	if enemy_health == 0:

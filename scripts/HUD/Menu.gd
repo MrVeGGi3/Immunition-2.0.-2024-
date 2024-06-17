@@ -8,6 +8,9 @@ extends Control
 func _ready():
 	main_bgm.play()
 	
+	if !main_bgm.playing:
+		main_bgm.play()
+	
 func _on_play_pressed():
 	get_tree().change_scene_to_file(world_scene)
 

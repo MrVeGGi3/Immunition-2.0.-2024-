@@ -38,3 +38,9 @@ res://scenes/HUD/minimap.tscn
 res://scenes/Collectables/extractor.tscn
 res://scenes/Characters/Player.tscn
 res://scenes/testing/TestInfluenzaBehaviour.tscn
+res://scenes/HUD/level_selection.tscn
+res://themes/fasename_description.tres
+res://themes/go_phase_button.tres
+res://scripts/Levels/level_1.gd
+res://scripts/Levels/tutorial_phase.gd
+res://scripts/HUD/Menu.gd

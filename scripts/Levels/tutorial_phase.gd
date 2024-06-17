@@ -21,6 +21,8 @@ func _ready():
 
 
 func _process(delta):
+	if !tutorial_bgm.playing and !player.dead:
+		tutorial_bgm.play()
 	var bodies = area_3d.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("player"):
