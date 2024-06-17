@@ -44,3 +44,4 @@ res://scenes/HUD/level_selection.tscn
 res://scripts/Count/extractors_collected.gd
 res://scripts/Characthers/pathfinding/cell_2.gd
 res://scripts/Characthers/pathfinding/Influenza2.gd
+res://scripts/Characthers/objects/influenza_projectile.gd

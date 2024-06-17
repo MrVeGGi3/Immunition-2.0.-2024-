@@ -45,6 +45,7 @@ wait_time = 0.5
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_height_offset = -2.0
+avoidance_enabled = true
 height = 3.0
 radius = 1.0
 neighbor_distance = 10.0

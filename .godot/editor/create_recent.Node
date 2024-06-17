@@ -1,7 +1,8 @@
+Node3D
+NavigationObstacle3D
 AudioStreamPlayer
 Timer
 Sprite3D
-Node3D
 AnimatedSprite3D
 MeshInstance3D
 DirectionalLight3D
@@ -11,4 +12,3 @@ Area3D
 TextureRect
 Label
 Button
-Sprite2D

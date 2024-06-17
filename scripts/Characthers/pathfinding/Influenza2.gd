@@ -3,16 +3,10 @@ extends CharacterBody3D
 @export_category("Atributos")
 @export var speed = 5
 @export var life = 10
-@export var original_color = Color(237,147,145,255)
-@export var red_color = Color(255,0,0,255)
-
 @export_category("Controle de Distância")
 @export var distance_to_shoot = Vector3(5,5,5).normalized()
 @export var keep_distance = Vector3()
 @onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
-@export_category("Colisão com o Chão")
-@export var floor_distance = 4
-@export var floor_smoothness = 0.5
 #Variável de comparação
 var nearest_cell = null
 #Variável de Controle
