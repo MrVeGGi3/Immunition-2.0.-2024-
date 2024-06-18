@@ -21,7 +21,6 @@ var is_hitting = false
 #Instâncias
 @onready var influenza = preload("res://scenes/Characters/Influenza.tscn")
 @onready var explosion = preload("res://scenes/effect/explosion.tscn")
-@onready var mesh_instance_infected_cell = $MeshInstance3D
 @onready var nav = $NavigationAgent3D
 @onready var infectedl_cell_animation = $InfectedlCellAnimation
 
@@ -43,9 +42,12 @@ func _process(_delta):
 		
 	if current_location.distance_to(player_position) <= 1 and !is_hitting:
 		var new_explosion = explosion.instantiate()
-		new_explosion.global_transform.origin = marker_3d.global_transform.origin
 		get_parent().add_child(new_explosion)
-		is_hitting = true
+		if new_explosion.is_inside_tree():
+			new_explosion.global_transform.origin = marker_3d.global_transform.origin
+			is_hitting = true
+		else:
+			print("Instância da Explosão não colocada de maneira correta")
 			
 	if is_hitting:
 		queue_free()
@@ -56,8 +58,11 @@ func spawn_influenza(spawn, virus):
 	for i in range(spawn):
 		if virus_type == "influenza":
 			var new_influenza = influenza.instantiate()
-			new_influenza.global_transform.origin = global_transform.origin
 			get_parent().add_child(new_influenza)
+			if new_influenza.is_inside_tree():
+				new_influenza.global_transform.origin = global_transform.origin
+			else:
+				print("Instância de Influenza não colocada de maneira correta")
 
 func hit(damage_by_player, speed_down):
 	damage_effect()

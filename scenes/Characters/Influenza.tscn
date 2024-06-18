@@ -61,6 +61,7 @@ radius = 2.0
 neighbor_distance = 5.0
 max_neighbors = 5
 use_3d_avoidance = true
+avoidance_mask = 9
 
 [node name="InfluenzaProjectileSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_qyl77")

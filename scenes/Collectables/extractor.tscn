@@ -25,3 +25,5 @@ texture = ExtResource("2_y5qpl")
 
 [node name="ExtractorCollected" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_an6nw")
+volume_db = 10.0
+bus = &"SFX"

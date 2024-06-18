@@ -43,7 +43,8 @@ avoidance_enabled = true
 height = 2.0
 radius = 1.0
 neighbor_distance = 10.0
-keep_y_velocity = false
+use_3d_avoidance = true
+avoidance_mask = 15
 
 [node name="InfectedlCellAnimation" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.219175, 0, 0, 0, 0.219175, 0, 0, 0, 0.219175, 0, 0.214727, 0)

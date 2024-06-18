@@ -183,6 +183,7 @@ run={
 avoidance/layer_1="Influenza"
 avoidance/layer_2="Cells"
 avoidance/layer_3="Pathogen"
+avoidance/layer_4="Environment"
 
 [physics]
 

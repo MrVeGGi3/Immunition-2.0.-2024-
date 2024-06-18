@@ -14,11 +14,14 @@ func spawnCells():
 	if cells_created > maximum_cells:
 		return
 	var instance = cell.instantiate()
-	instance.global_position = global_position + Vector3(0,1,0) 
 	get_parent().add_child(instance)
-	cells_created += 1
-	create_cell_instance.start()
-	print("Célula Spawnado")
+	if instance.is_inside_tree():
+		instance.global_position = global_position + Vector3(0,1,0) 
+		cells_created += 1
+		create_cell_instance.start()
+		print("Célula Spawnado")
+	else:
+		print("Célula não foi spawnada da maneira correta")
 	
 func _on_timer_timeout():
 	spawnCells()

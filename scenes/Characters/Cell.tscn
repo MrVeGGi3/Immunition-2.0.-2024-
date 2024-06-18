@@ -26,6 +26,14 @@ collision_mask = 3
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
 script = ExtResource("1_fwl1p")
+speed = null
+move_radius = null
+distance_to_run = null
+floor_distance = null
+floor_smoothness = null
+life = null
+original_color = null
+red_color = null
 
 [node name="MovementTime" type="Timer" parent="."]
 process_callback = 0
@@ -46,13 +54,12 @@ wait_time = 0.5
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_height_offset = -2.0
 avoidance_enabled = true
-height = 3.0
 radius = 1.0
-neighbor_distance = 10.0
-max_neighbors = 3
+neighbor_distance = 8.0
+max_neighbors = 5
 use_3d_avoidance = true
 avoidance_layers = 2
-avoidance_mask = 2
+avoidance_mask = 15
 
 [node name="CellAnimatedSprite" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.237627, 0, 0, 0, 0.237627, 0, 0, 0, 0.237627, 0, 0.199289, 0)

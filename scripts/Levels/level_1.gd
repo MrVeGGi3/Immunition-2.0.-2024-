@@ -7,13 +7,13 @@ extends Node3D
 @onready var error_audio = $ExtractorPlatform/ErrorAudio
 #Câmera e Animação
 @onready var camera_movement = %CameraMovement
-@onready var cutscene_camera = $CameraPosition/CutsceneCamera
+@onready var cutscene_camera = %CutsceneCamera
 @onready var player_camera = $Player/Camera3D
 
 #Objetivos
 @onready var extractos_collected = $ExtractosCollected
 #Fim de Fase
-@onready var next_phase_collision = $MapLevel1/DevTorus/NextPhaseCollision
+@onready var next_phase_collision = %NextPhaseCollision
 @onready var phase_ended = $PhaseEnded
 
 @onready var cells = get_tree().get_nodes_in_group("cell")

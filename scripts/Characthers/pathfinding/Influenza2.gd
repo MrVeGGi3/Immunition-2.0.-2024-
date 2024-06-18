@@ -36,7 +36,7 @@ func _ready():
 	var pos_z = randf_range(0,4)
 	keep_distance = Vector3(pos_x, pos_y, pos_z)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(delta):
 	var player = get_tree().get_nodes_in_group("player")
 	var player_position = player[0].marker_3d.global_transform.origin + keep_distance
 	var current_position = global_transform.origin
@@ -79,11 +79,15 @@ func _on_go_to_object_timeout():
 
 func shoot_player():
 	var new_projectile = projectile.instantiate()
-	new_projectile.global_transform.origin = marker_3d.global_transform.origin
 	get_parent().add_child(new_projectile)
-	influenza_projectile_sound.play()
-	is_shooting = true
-	shoot_time.start()
+	new_projectile.global_transform.origin = marker_3d.global_transform.origin
+	if new_projectile.is_inside_tree():
+		influenza_projectile_sound.play()
+		is_shooting = true
+		shoot_time.start()
+	else:
+		print("projétil não lançado adequadamente")
+	
 
 func _on_shoot_time_timeout():
 	is_shooting = false

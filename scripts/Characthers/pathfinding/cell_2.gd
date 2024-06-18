@@ -35,7 +35,10 @@ var infected_cell = preload("res://scenes/Characters/Infected_cells.tscn")
 func _ready():
 	walk_marker_position = global_transform.origin
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
+	if is_in_floor():
+		queue_free()
+		
 	var next_location = nav.get_next_path_position()
 	var current_location = global_transform.origin
 	var new_velocity = (next_location - current_location).normalized() * speed
@@ -53,14 +56,11 @@ func _process(delta):
 			movement_time.start()
 			
 	
-	
 	var influenza = get_tree().get_nodes_in_group("influenza")
 	for i in influenza:
-		var influenza_distance = (i.global_transform.origin - current_location).normalized()
 		if current_location.distance_to(i.global_transform.origin) <= distance_to_run and !is_catched_by_influenza:
-			var direction_to_influenza = (walk_marker_position - i.global_transform.origin).normalized()
-			escape_vector += direction_to_influenza
-			escape_vector = escape_vector.normalized() * speed * delta
+			var direction_to_influenza = (current_location - i.global_transform.origin).normalized()
+			escape_vector = direction_to_influenza * speed * delta
 			walk_marker_position += escape_vector
 			nav.target_position = walk_marker_position
 	
@@ -94,13 +94,16 @@ func _on_movement_time_timeout():
 	is_moving = true
 
 func _change_type(virus):
-	Global.contamined_cells += 1
-	print("o número de células infectadas é: ", Global.contamined_cells)
 	var new_infected_cell = infected_cell.instantiate()
 	new_infected_cell.get_virus_type(virus)
-	new_infected_cell.global_transform.origin = global_transform.origin
 	get_parent().add_child(new_infected_cell)
-	queue_free()
+	if new_infected_cell.is_inside_tree():
+		Global.contamined_cells += 1
+		print("o número de células infectadas é: ", Global.contamined_cells)
+		new_infected_cell.global_transform.origin = global_transform.origin
+		queue_free()
+	else: 
+		print("Célula infectada não colocado de maneira correta")
 	
 func damage_effect():
 	cell_animated_sprite.modulate = Color.RED
