@@ -76,3 +76,13 @@ theme_override_fonts/font = ExtResource("1_qg1se")
 theme_override_font_sizes/font_size = 40
 text = "/
 "
+
+[node name="Description" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 273.303
+offset_top = 208.07
+offset_right = 1280.3
+offset_bottom = 248.07
+theme_override_fonts/font = ExtResource("1_qg1se")
+theme_override_font_sizes/font_size = 20
+text = "Colete os Extratores de Proteína e as ative na plataforma de extração!"

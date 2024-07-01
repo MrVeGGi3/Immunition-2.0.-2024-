@@ -1,3 +1,5 @@
+WorldEnvironment
+Label
 Node3D
 NavigationObstacle3D
 AudioStreamPlayer
@@ -10,5 +12,4 @@ Marker2D
 AnimationPlayer
 Area3D
 TextureRect
-Label
 Button

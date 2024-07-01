@@ -31,8 +31,8 @@ animations = [{
 }]
 
 [node name="Influenza" type="CharacterBody3D" groups=["influenza"]]
-collision_layer = 2
-collision_mask = 3
+collision_layer = 8
+collision_mask = 19
 platform_on_leave = 2
 platform_floor_layers = 4294967040
 platform_wall_layers = 1
@@ -58,8 +58,10 @@ path_max_distance = 2.01
 avoidance_enabled = true
 height = 2.0
 radius = 2.0
-neighbor_distance = 5.0
-max_neighbors = 5
+neighbor_distance = 10.0
+max_neighbors = 1
+time_horizon_agents = 5.0
+time_horizon_obstacles = 3.0
 use_3d_avoidance = true
 avoidance_mask = 9
 

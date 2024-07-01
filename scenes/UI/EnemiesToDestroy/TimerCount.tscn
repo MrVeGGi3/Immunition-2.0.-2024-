@@ -46,4 +46,13 @@ text = ":"
 [node name="Count" type="Timer" parent="Control2"]
 wait_time = 30.0
 
+[node name="Description" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 547.0
+offset_right = 1178.0
+offset_bottom = 570.0
+theme_override_fonts/font = ExtResource("2_yk23k")
+text = "Proteja as células de serem atacadas pela Influenza!"
+
 [connection signal="timeout" from="Control2/Count" to="." method="_on_count_timeout"]

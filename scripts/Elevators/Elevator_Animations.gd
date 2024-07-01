@@ -1,6 +1,6 @@
 extends MeshInstance3D
 
-@onready var opening_door = %OpeningDoor
+@onready var opening_door = $OpeningDoor
 @onready var animation_player = $AnimationPlayer
 
 

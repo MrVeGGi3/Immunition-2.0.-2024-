@@ -27,7 +27,7 @@ var projectile = preload("res://scenes/effect/influenza_projectile.tscn")
 @onready var influenza_death = $InfluenzaDeath
 #Corpo
 @onready var influenza_animation = $InfluenzaAnimation
-
+@onready var player = get_tree().get_first_node_in_group("player")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,8 +37,7 @@ func _ready():
 	keep_distance = Vector3(pos_x, pos_y, pos_z)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var player = get_tree().get_nodes_in_group("player")
-	var player_position = player[0].marker_3d.global_transform.origin + keep_distance
+	var player_position = player.marker_3d.global_transform.origin + keep_distance
 	var current_position = global_transform.origin
 	var next_location = nav.get_next_path_position()
 	var new_velocity = (next_location - current_position).normalized() * speed

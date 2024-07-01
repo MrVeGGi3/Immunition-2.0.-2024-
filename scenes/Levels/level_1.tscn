@@ -2180,7 +2180,6 @@ libraries = {
 }
 
 [node name="OpeningDoor" type="AudioStreamPlayer3D" parent="NavigationObstacle3D/Portões/DevGrey35"]
-unique_name_in_owner = true
 transform = Transform3D(0.123625, 0, 1.19904e-14, 0, 0.2, 0, -3.55271e-14, 0, 1, 0, 0, 0)
 stream = ExtResource("59_4cx6g")
 attenuation_model = 3
@@ -2210,7 +2209,7 @@ libraries = {
 "": SubResource("AnimationLibrary_fx1qj")
 }
 
-[node name="OpeningDoor" type="AudioStreamPlayer3D" parent="NavigationObstacle3D/Portões/DevGrey41"]
+[node name="OpeningDoor2" type="AudioStreamPlayer3D" parent="NavigationObstacle3D/Portões/DevGrey41"]
 transform = Transform3D(0.123625, 0, 1.19904e-14, 0, 0.2, 0, -3.55271e-14, 0, 1, 0, 0, 0)
 stream = ExtResource("59_4cx6g")
 attenuation_model = 3
@@ -2510,7 +2509,7 @@ transform = Transform3D(0.936842, 0, 0, 0, 0.936842, 0, 0, 0, 0.936842, -165.963
 
 [node name="CutsceneCamera" type="Camera3D" parent="CameraPosition"]
 unique_name_in_owner = true
-transform = Transform3D(0.0540799, 0.306907, -0.950202, 0, 0.951595, 0.307357, 0.998536, -0.0166218, 0.0514621, -265.499, 26.33, -104.033)
+transform = Transform3D(0.0540799, 0.306907, -0.950202, 0, 0.951595, 0.307357, 0.998536, -0.0166218, 0.0514622, -265.096, 26.2732, -104.218)
 current = true
 
 [node name="Extractor" type="Node3D" parent="."]

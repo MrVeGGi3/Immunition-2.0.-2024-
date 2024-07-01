@@ -1,4 +1,4 @@
-res://scenes/HUD/logo_transition.tscn
+res://scenes/Characters/Cell.tscn
 res://scripts/Characthers/Enemy_Blue.gd
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/Characthers/Player.gd
@@ -9,12 +9,15 @@ res://scripts/Sound/ChangeSound.gd
 res://themes/playerLifeBarTheme.tres
 res://themes/fasename_description.tres
 res://themes/go_phase_button.tres
+res://scripts/Characthers/pathfinding/cell_2.gd
+res://scenes/Characters/Infected_cells.tscn
+res://scripts/Characthers/pathfinding/Infected_cells_2.gd
+res://scenes/HUD/logo_transition.tscn
 res://scenes/Levels/level_1.tscn
 res://scenes/Levels/world.tscn
 res://scenes/UI/EnemiesToDestroy/TimerCount.tscn
 res://scenes/UI/ItensCollected/extractos_collected.tscn
 res://scenes/Characters/Influenza.tscn
-res://scenes/Characters/Cell.tscn
 res://scenes/effect/influenza_projectile.tscn
 res://scenes/HUD/pause_menu.tscn
 res://scenes/HUD/phase_finished.tscn
@@ -30,7 +33,6 @@ res://scenes/UI/PhasesFinished/phase_ended.tscn
 res://scenes/UI/Tutorials/tutorial_guide.tscn
 res://scenes/UI/Tutorials/pathogen_tutorial.tscn
 res://scenes/Credits.tscn
-res://scenes/Characters/Infected_cells.tscn
 res://scenes/UI/Tutorials/influenza_tutorial.tscn
 res://scenes/HUD/MemorySystem.tscn
 res://scenes/spawner/MainSpawner/InfluenzaSpawner3D.tscn
@@ -40,12 +42,7 @@ res://scenes/Collectables/extractor.tscn
 res://scenes/Characters/Player.tscn
 res://scenes/testing/TestInfluenzaBehaviour.tscn
 res://scenes/HUD/level_selection.tscn
-res://scripts/Characthers/pathfinding/cell_2.gd
-res://scripts/Characthers/pathfinding/Influenza2.gd
-res://scripts/Levels/level_1.gd
-res://scripts/Spawner/InfluenzaSpawner3D.gd
-res://scripts/Spawner/CellSpawner3D.gd
 res://scenes/spawner/Locals/SpawnInfluenzaLocal.tscn
-res://scripts/Characthers/pathfinding/Infected_cells_2.gd
-res://scripts/Sound/open_door.gd
-res://bus/MainBus.tres
+res://scenes/Test/TestCameraTransition.tscn
+res://scenes/effect/explosion.tscn
+res://scripts/Characthers/pathfinding/Influenza2.gd

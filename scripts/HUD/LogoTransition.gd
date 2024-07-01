@@ -28,5 +28,5 @@ func _process(_delta):
 		else:
 			get_tree().change_scene_to_file(loading_screen)
 
-	if Input.is_action_just_pressed("start") or Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("start"):
 		get_tree().change_scene_to_file(menu_scene)

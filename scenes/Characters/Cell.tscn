@@ -21,27 +21,19 @@ animations = [{
 }]
 
 [node name="Cell" type="CharacterBody3D" groups=["cell"]]
-collision_layer = 2
-collision_mask = 3
+collision_layer = 16
+collision_mask = 9
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
 script = ExtResource("1_fwl1p")
-speed = null
-move_radius = null
-distance_to_run = null
-floor_distance = null
-floor_smoothness = null
-life = null
-original_color = null
-red_color = null
 
 [node name="MovementTime" type="Timer" parent="."]
 process_callback = 0
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1.17039, 0, 0, 0, 1.17039, 0, 0, 0, 1.17039, 0, 0, 0)
-collision_layer = 2
-collision_mask = 3
+collision_layer = 16
+collision_mask = 9
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_qmprq")
@@ -68,3 +60,4 @@ sprite_frames = SubResource("SpriteFrames_far0h")
 autoplay = "default"
 
 [connection signal="timeout" from="MovementTime" to="." method="_on_movement_time_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

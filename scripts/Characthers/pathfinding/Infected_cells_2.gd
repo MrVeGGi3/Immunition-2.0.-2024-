@@ -12,6 +12,7 @@ extends CharacterBody3D
 
 #Variável de Controle
 var is_hitting = false
+var is_destroyed = false
 @onready var marker_3d = $Marker3D
 
 #Timers
@@ -23,16 +24,17 @@ var is_hitting = false
 @onready var explosion = preload("res://scenes/effect/explosion.tscn")
 @onready var nav = $NavigationAgent3D
 @onready var infectedl_cell_animation = $InfectedlCellAnimation
+@onready var player = get_tree().get_first_node_in_group("player")
 
+#Variáveis
 var virus_type : String = "null"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	var player = get_tree().get_nodes_in_group("player")
-	var player_position = player[0].hit_marker_explosion.global_transform.origin
+func _physics_process(delta):
+	var player_position = player.hit_marker_explosion.global_transform.origin
 	nav.target_position = player_position
 	var current_location = global_transform.origin
 	var next_location = nav.get_next_path_position()
@@ -41,6 +43,7 @@ func _process(_delta):
 	move_and_slide()
 		
 	if current_location.distance_to(player_position) <= 1 and !is_hitting:
+		queue_free()
 		var new_explosion = explosion.instantiate()
 		get_parent().add_child(new_explosion)
 		if new_explosion.is_inside_tree():
@@ -50,19 +53,19 @@ func _process(_delta):
 			print("Instância da Explosão não colocada de maneira correta")
 			
 	if is_hitting:
-		queue_free()
 		spawn_influenza(spawn_collision, virus_type)
-		print("Fui spawnado após entrar em colisão com o player")
+		print("Célula Infectada: Fui spawnado após entrar em colisão com o player")
 			
 func spawn_influenza(spawn, virus):
-	for i in range(spawn):
-		if virus_type == "influenza":
-			var new_influenza = influenza.instantiate()
-			get_parent().add_child(new_influenza)
-			if new_influenza.is_inside_tree():
-				new_influenza.global_transform.origin = global_transform.origin
-			else:
-				print("Instância de Influenza não colocada de maneira correta")
+	if is_destroyed:
+		for i in range(spawn):
+			if virus_type == "influenza":
+				var new_influenza = influenza.instantiate()
+				get_parent_node_3d().add_child(new_influenza)
+				if new_influenza.is_inside_tree():
+					new_influenza.global_transform.origin = global_transform.origin
+				else:
+					print("Instância de Influenza não colocada de maneira correta")
 
 func hit(damage_by_player, speed_down):
 	damage_effect()
@@ -75,8 +78,9 @@ func hit(damage_by_player, speed_down):
 	
 func kill():
 	queue_free()
+	is_destroyed = true
 	spawn_influenza(spawn_destroyed, virus_type)
-	print("Fui spawnado após ser destruído")
+	print("Célula Infectada: Fui spawnado após ser destruído")
 	
 func get_virus_type(virus):
 	virus_type = virus
