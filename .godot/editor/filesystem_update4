@@ -47,3 +47,7 @@ res://scenes/Test/TestCameraTransition.tscn
 res://scenes/effect/explosion.tscn
 res://scripts/Characthers/pathfinding/Influenza2.gd
 res://scripts/Spawner/InfluenzaSpawner3D.gd
+res://scripts/Levels/level_1.gd
+res://scenes/UI/Player/press_interaction.tscn
+res://scripts/Elevators/Elevator_Animations.gd
+res://scripts/Sound/open_door.gd

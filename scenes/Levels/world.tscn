@@ -877,7 +877,7 @@ shape = SubResource("ConcavePolygonShape3D_5j052")
 [node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 53.1159, 5.94677, 128.878)
 collision_layer = 2
-collision_mask = 7
+collision_mask = 45
 platform_on_leave = 2
 platform_floor_layers = 4294901761
 platform_wall_layers = 1
@@ -1151,13 +1151,13 @@ bus = &"SFX"
 [node name="RayCast3D" type="RayCast3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -50)
-collision_mask = 7
+collision_mask = 45
 collide_with_areas = true
 
 [node name="FlameThrowerShoot" type="RayCast3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -30)
-collision_mask = 7
+collision_mask = 13
 collide_with_areas = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Player/FlameThrowerShoot"]
@@ -1174,7 +1174,7 @@ wait_time = 0.4
 [node name="MacrofageRay3D" type="RayCast3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -100)
-collision_mask = 7
+collision_mask = 13
 collide_with_areas = true
 
 [node name="Marker3D" type="Marker3D" parent="Player"]

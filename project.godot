@@ -183,6 +183,7 @@ run={
 3d_physics/layer_4="Enemies"
 3d_physics/layer_5="Cells"
 3d_physics/layer_6="Infected Cell"
+3d_physics/layer_7="null"
 avoidance/layer_1="Influenza"
 avoidance/layer_2="Cells"
 avoidance/layer_3="Pathogen"

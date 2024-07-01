@@ -3,8 +3,9 @@ extends Node3D
 @onready var player = get_tree().get_first_node_in_group("player")
 #Plataforma do Extractor
 @onready var area_platform = $ExtractorPlatform/AreaPlatform
-@onready var press_f = $ExtractorPlatform/PressF
 @onready var error_audio = $ExtractorPlatform/ErrorAudio
+@onready var press_f = $Player/PlayerHUD/PressInteraction
+
 #Câmera e Animação
 @onready var camera_movement = %CameraMovement
 @onready var cutscene_camera = %CutsceneCamera
@@ -60,7 +61,7 @@ func _process(_delta):
 			extractos_collected.visible = false
 			player.set_physics_process(false)
 			is_extractor_build = true
-			press_f.visible = false
+			press_f.hide()
 			cutscene_cells()
 			
 		if Input.is_action_just_pressed("Interact") and is_extractor_build:
@@ -68,6 +69,7 @@ func _process(_delta):
 		
 	if player.dead:
 		level_1bgm.stop()
+	
 		
 func cutscene_cells():
 	is_extractor_build = true
@@ -89,9 +91,9 @@ func return_player_camera():
 	player.set_physics_process(true)
 	
 func _on_area_platform_body_entered(body):
-	if body.is_in_group("player"):
-		press_f.show()
+	if body.is_in_group("player") and !is_extractor_build:
 		is_entered_platform = true
+		press_f.show()
 	else:
 		return
 		
@@ -113,3 +115,12 @@ func _on_count_timeout():
 	influenza_spawner_3d.can_create_influ = false
 	player.set_physics_process(false)
 	execute_second_animation()
+
+func destroy_enemies_in_level():
+	var influenza = get_tree().get_nodes_in_group("influenza")
+	var inf_cell = get_tree().get_nodes_in_group("infected_cell")
+	for i in influenza:
+		i.phase_timeout()
+	for j in inf_cell:
+		j.phase_timeout()
+	

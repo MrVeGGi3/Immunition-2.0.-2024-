@@ -1,4 +1,5 @@
 E:/Downloads/ImmutionHTML
+res://scenes/UI/Player
 E:/Godot
 E:/Downloads/ImmunitionExport
 res://images/Collectables
@@ -19,7 +20,3 @@ res://scripts/tutorials
 res://icons/gun selection
 res://icons
 res://scripts/Characthers/pathfinding
-res://scenes
-res://scenes/Characters
-res://scenes/HUD
-res://scripts/Characthers

@@ -23,7 +23,7 @@ data = PackedVector3Array(0, 0.5, 0, 0, 0.5, 0, 0, 0.4977, 0.0475, 0, 0.5, 0, 0.
 
 [node name="InfectedCell" type="CharacterBody3D" groups=["infected_cell"]]
 collision_layer = 32
-collision_mask = 3
+collision_mask = 2
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
 script = ExtResource("1_hcc2l")

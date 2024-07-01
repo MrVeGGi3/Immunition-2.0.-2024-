@@ -36,12 +36,12 @@ extends CharacterBody3D
 @onready var ui_ammo = $PlayerHUD/UI_AMMO
 @onready var memory_system = $PlayerHUD/MemorySystem
 @onready var whell_memory = $"PlayerHUD/Whell&memory"
+@onready var press_interaction = $PlayerHUD/PressInteraction
 
 
 #Músicas(BGM
 @onready var death_sound = $DeathSound # música da morte do player
 
-#Tutorial
 
 
 #Ajuste de Mecânica
@@ -63,8 +63,6 @@ var dead = false
 var m1 = Global.m1_active
 var m2 = Global.m2_active
 var m3 = Global.m3_active
-
-
 #Variáveis do Player
 var vida
 @export var l_ammo = 30 #munição linfócito
@@ -74,12 +72,14 @@ var vida
 @export var SPEED = 12.0
 @export var aceleration = 0.5
 
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #altera o modo de captura do mouse para usar como FPS
 	#Animações
 	animated_sprite_2d.animation_finished.connect(shoot_anim_done) #conecta a outra animação
 	damage_taken.animation_finished.connect(return_normalUI) #conecta á outra animação
 	#Esconder e mostrar UI
+	press_interaction.hide()
 	deathscreen.hide()
 	pause_menu.hide()
 	player_life_bar.show()
@@ -354,12 +354,14 @@ func kill():
 		set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
 		$CollisionShape3D.disabled = true
 		disable_UI()
+		restore_Global_var()
 		death_sound.play()
 		deathscreen.show()
 		particles.emitting = false
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func disable_UI():
+	set_physics_process(false)
 	whell_memory.hide()
 	gun_shoot.hide()
 	player_life_bar.hide()
@@ -367,8 +369,18 @@ func disable_UI():
 	ui_ammo.hide()	
 	memory_system.visible = false
 
+func restore_Global_var():
+	Global.influenza_destroyed = 0
+	Global.extractors_collected = 0
+	Global.cells_in_scene = 0
+	Global.contamined_cells = 0
+	Global.infected_cells_destroyed = 0 
+	Global.influenza_in_scene = 0
+	Global.is_enemies_destroyed = false
+
 func restore_UI():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	set_physics_process(true)
 	whell_memory.show()
 	gun_shoot.show()
 	player_life_bar.show()

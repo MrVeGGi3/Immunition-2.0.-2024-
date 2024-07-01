@@ -92,3 +92,6 @@ func damage_effect():
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(infectedl_cell_animation,"modulate", Color.RED, 0.3)
+
+func phase_timeout():
+	queue_free()

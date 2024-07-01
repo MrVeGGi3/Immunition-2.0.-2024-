@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=74 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="2_bowrg"]
@@ -26,11 +26,46 @@
 [ext_resource type="Texture2D" uid="uid://b1kyb3y8wghfy" path="res://icons/gun selection/icon gun red.jpg" id="17_nxrvq"]
 [ext_resource type="PackedScene" uid="uid://nt37rum3dhef" path="res://scenes/HUD/WheelSwitchWeapons.tscn" id="24_40cle"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="24_r7y5r"]
+[ext_resource type="PackedScene" uid="uid://bj2row0123pwr" path="res://scenes/UI/Player/press_interaction.tscn" id="25_rnpm1"]
 [ext_resource type="PackedScene" uid="uid://bli5ijcxx5bse" path="res://scenes/HUD/MemorySystem.tscn" id="25_vndgg"]
 [ext_resource type="PackedScene" uid="uid://cfltp503gd8w7" path="res://scenes/UI/Player/whell&memory.tscn" id="26_yg6t8"]
 [ext_resource type="Texture2D" uid="uid://c7bx6oyr5oajj" path="res://sprites/Player/Splash_sprites.png" id="29_811ot"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nwage"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocaef"]
+atlas = ExtResource("8_6e3wa")
+region = Rect2(1062, 0, 1062, 731)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft53n"]
+atlas = ExtResource("8_6e3wa")
+region = Rect2(0, 0, 1062, 731)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsgjo"]
+atlas = ExtResource("8_6e3wa")
+region = Rect2(0, 0, 1062, 731)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vnq4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocaef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft53n")
+}],
+"loop": false,
+"name": &"damage_received",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsgjo")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 10.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ys8yx"]
 atlas = ExtResource("2_bowrg")
@@ -195,40 +230,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"shoot_neutro",
-"speed": 10.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ocaef"]
-atlas = ExtResource("8_6e3wa")
-region = Rect2(1062, 0, 1062, 731)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ft53n"]
-atlas = ExtResource("8_6e3wa")
-region = Rect2(0, 0, 1062, 731)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jsgjo"]
-atlas = ExtResource("8_6e3wa")
-region = Rect2(0, 0, 1062, 731)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4vnq4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ocaef")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ft53n")
-}],
-"loop": false,
-"name": &"damage_received",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jsgjo")
-}],
-"loop": false,
-"name": &"idle",
 "speed": 10.0
 }]
 
@@ -438,7 +439,7 @@ material = SubResource("StandardMaterial3D_6em7j")
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
-collision_mask = 47
+collision_mask = 109
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
 script = ExtResource("1_cyly3")
@@ -452,29 +453,6 @@ shape = SubResource("CapsuleShape3D_nwage")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="PlayerHUD" type="CanvasLayer" parent="."]
-
-[node name="GunShoot" type="Control" parent="PlayerHUD"]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerHUD/GunShoot"]
-position = Vector2(758, 442)
-scale = Vector2(0.418145, 0.418145)
-sprite_frames = SubResource("SpriteFrames_qaoph")
-animation = &"shoot_neutro"
-autoplay = "idle"
-frame = 3
-frame_progress = 0.206659
-
-[node name="Sprite2D" type="Sprite2D" parent="PlayerHUD/GunShoot"]
-position = Vector2(571, 318)
-scale = Vector2(0.0255, 0.0255)
-texture = ExtResource("6_t7800")
 
 [node name="PlayerLifeBar" type="Control" parent="PlayerHUD"]
 process_mode = 3
@@ -503,6 +481,29 @@ sprite_frames = SubResource("SpriteFrames_4vnq4")
 animation = &"damage_received"
 frame = 1
 frame_progress = 1.0
+
+[node name="GunShoot" type="Control" parent="PlayerHUD"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerHUD/GunShoot"]
+position = Vector2(758, 442)
+scale = Vector2(0.418145, 0.418145)
+sprite_frames = SubResource("SpriteFrames_qaoph")
+animation = &"shoot_neutro"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.206659
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerHUD/GunShoot"]
+position = Vector2(571, 318)
+scale = Vector2(0.0255, 0.0255)
+texture = ExtResource("6_t7800")
 
 [node name="UI_AMMO" type="Control" parent="PlayerHUD"]
 layout_mode = 3
@@ -620,12 +621,19 @@ scale = Vector2(0.256223, 0.256223)
 sprite_frames = SubResource("SpriteFrames_f2ewk")
 animation = &"idle"
 
+[node name="WheelSwitchWeapons" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("24_40cle")]
+offset_right = -264.0
+offset_bottom = -192.0
+player = NodePath("../..")
+
 [node name="Whell&memory" parent="PlayerHUD" instance=ExtResource("26_yg6t8")]
 offset_left = 168.0
 offset_top = 306.0
 offset_right = 168.0
 offset_bottom = 306.0
 scale = Vector2(0.480624, 0.480624)
+
+[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
 
 [node name="DeathScreen" type="Control" parent="PlayerHUD"]
 process_mode = 3
@@ -671,13 +679,6 @@ position = Vector2(549, 347)
 scale = Vector2(0.145759, 0.145759)
 texture = ExtResource("4_nc87x")
 
-[node name="WheelSwitchWeapons" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("24_40cle")]
-offset_right = -264.0
-offset_bottom = -192.0
-player = NodePath("../..")
-
-[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
-
 [node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
 process_mode = 3
 anchors_preset = 0
@@ -690,6 +691,13 @@ offset_bottom = 11.0
 grow_horizontal = 1
 grow_vertical = 1
 player = NodePath("../..")
+
+[node name="PressInteraction" parent="PlayerHUD" instance=ExtResource("25_rnpm1")]
+offset_left = 566.0
+offset_top = 491.0
+offset_right = 606.0
+offset_bottom = 531.0
+scale = Vector2(0.33834, 0.33834)
 
 [node name="ShootPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_qulf7")
@@ -712,13 +720,13 @@ bus = &"SFX"
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -50)
-collision_mask = 43
+collision_mask = 41
 collide_with_areas = true
 
 [node name="FlameThrowerShoot" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -30)
-collision_mask = 11
+collision_mask = 75
 collide_with_areas = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="FlameThrowerShoot"]

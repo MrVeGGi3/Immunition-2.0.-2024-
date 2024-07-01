@@ -5,6 +5,7 @@ extends MeshInstance3D
 
 
 var is_played = false
+
 func open_door():
 	opening_door.play()
 

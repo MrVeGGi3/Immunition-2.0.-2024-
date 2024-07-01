@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj2row0123pwr"]
+
+[ext_resource type="Texture2D" uid="uid://qrwngwlxceyy" path="res://icons/keyoboard buttons/F.png" id="1_hxqqb"]
+
+[node name="PressInteraction" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.999992, 3.99999)
+scale = Vector2(0.611328, 0.611328)
+texture = ExtResource("1_hxqqb")

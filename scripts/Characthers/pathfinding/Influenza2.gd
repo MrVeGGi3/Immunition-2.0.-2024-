@@ -125,3 +125,6 @@ func damage_effect():
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(influenza_animation,"modulate", Color.WHITE, 0.3)
+
+func phase_timeout():
+	queue_free()
