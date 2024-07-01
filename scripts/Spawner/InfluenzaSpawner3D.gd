@@ -6,7 +6,7 @@ var influenza_created = Global.influenza_in_scene
 # Called when the node enters the scene tree for the first time.
 var can_create_influ = false
 var no_max_influ = false
-@export var max_influenza = 4
+@export var max_influenza = 6
 @onready var create_cell_instance = $CreateCellInstance
 
 func spawnInflu():
