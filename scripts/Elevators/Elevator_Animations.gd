@@ -9,7 +9,7 @@ var is_played = false
 func open_door():
 	opening_door.play()
 
-func _process(delta):
+func _process(_delta):
 	if Global.extractors_collected == 3 and !is_played:
 		animation_player.play("Aberto")
 		is_played = true

@@ -1,3 +1,5 @@
+RichTextLabel
+TBLoader
 Sprite2D
 Control
 WorldEnvironment
@@ -11,5 +13,3 @@ AnimatedSprite3D
 MeshInstance3D
 DirectionalLight3D
 Marker2D
-AnimationPlayer
-Area3D

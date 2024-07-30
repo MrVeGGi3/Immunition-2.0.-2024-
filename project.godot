@@ -36,6 +36,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Immunition"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/tbloader/plugin.cfg")
+
 [input]
 
 move_forwards={

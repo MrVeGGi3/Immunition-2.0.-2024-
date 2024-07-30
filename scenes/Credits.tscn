@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://crryhmvagudiy"]
+[gd_scene load_steps=6 format=3 uid="uid://crryhmvagudiy"]
 
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_quklc"]
 [ext_resource type="Script" path="res://scripts/Credits.gd" id="1_t7vyp"]
 [ext_resource type="Texture2D" uid="uid://1vx6gnr4idap" path="res://Immunition.icon.png" id="3_ulgcr"]
+[ext_resource type="Script" path="res://scripts/Credits/CreditsScroll.gd" id="4_woutw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qlg7"]
 bg_color = Color(0.6, 0.6, 0.929412, 0.364706)
@@ -47,54 +48,19 @@ theme_override_font_sizes/font_size = 100
 text = "Créditos
 "
 
-[node name="Daniel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 189.0
-offset_right = 1124.0
-offset_bottom = 244.0
-theme_override_fonts/font = ExtResource("1_quklc")
-theme_override_font_sizes/font_size = 40
-text = "Daniel Marto da Silva - Artista 2D/Animação/Concept Art"
-
-[node name="Lucas" type="Label" parent="."]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 273.0
-offset_right = 1133.0
-offset_bottom = 325.0
-theme_override_fonts/font = ExtResource("1_quklc")
-theme_override_font_sizes/font_size = 40
-text = "Lucas Camilo dos Reis - Game Designer/Artista 3D/Arte 2D"
-
-[node name="Matheus" type="Label" parent="."]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 352.0
-offset_right = 1047.0
-offset_bottom = 404.0
-theme_override_fonts/font = ExtResource("1_quklc")
-theme_override_font_sizes/font_size = 40
-text = "Matheus Veras Soares - Programador/Sonoplastia/UI"
-
-[node name="Músicas" type="Label" parent="."]
-layout_mode = 0
-offset_left = 453.0
-offset_top = 425.0
-offset_right = 1409.0
-offset_bottom = 645.0
-theme_override_fonts/font = ExtResource("1_quklc")
-theme_override_font_sizes/font_size = 25
-text = "Músicas(Composições)
-
-Infraction: Game Boy, 
-Vlad Gluschenko: When the Lights Go On
-Ultrawave: Oceandive
-San Junipero: Infraction"
-
 [node name="Immune" type="Sprite2D" parent="."]
-position = Vector2(1022, 540)
+position = Vector2(152, 188)
 scale = Vector2(0.246376, 0.303228)
 texture = ExtResource("3_ulgcr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 150.0
+offset_right = 717.0
+offset_bottom = 550.0
+bbcode_enabled = true
+tab_size = 10
+script = ExtResource("4_woutw")
 
 [connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]

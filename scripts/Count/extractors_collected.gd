@@ -9,7 +9,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	extractor_collected_label.text = str(Global.extractors_collected)
 	if player[0].dead:
 		visible = false

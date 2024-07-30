@@ -33,7 +33,7 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	var player_position = player.hit_marker_explosion.global_transform.origin
 	nav.target_position = player_position
 	var current_location = global_transform.origin

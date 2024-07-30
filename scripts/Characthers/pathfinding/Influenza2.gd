@@ -36,7 +36,7 @@ func _ready():
 	var pos_z = randf_range(0,4)
 	keep_distance = Vector3(pos_x, pos_y, pos_z)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	var player_position = player.marker_3d.global_transform.origin + keep_distance
 	var current_position = global_transform.origin
 	var next_location = nav.get_next_path_position()
