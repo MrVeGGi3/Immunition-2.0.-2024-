@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://28opafgpc8eo"]
+
+[ext_resource type="PackedScene" uid="uid://co1gpl0ybl361" path="res://scenes/Characters/BoatLevel/PlayerRedGlob.tscn" id="1_qlcyt"]
+
+[sub_resource type="Sky" id="Sky_s4xck"]
+
+[sub_resource type="Environment" id="Environment_r1dyt"]
+background_mode = 1
+background_color = Color(0.427451, 0.0117647, 0, 1)
+sky = SubResource("Sky_s4xck")
+
+[node name="BoatLevel" type="Node3D"]
+
+[node name="PlayerRedGlob" parent="." instance=ExtResource("1_qlcyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40.0013, 0)
+
+[node name="Camera3D" type="Camera3D" parent="PlayerRedGlob"]
+transform = Transform3D(-4.37114e-08, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 2.18557e-08, -3.78552e-08, -3.73369, 3.81867, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 98.9987, 0)
+light_energy = 5.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r1dyt")

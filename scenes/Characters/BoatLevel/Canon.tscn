@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq18nfmu2v2tt"]
+
+[ext_resource type="Script" path="res://scripts/Spawner/CanonSpawn.gd" id="1_5nrsw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imanp"]
+albedo_color = Color(0.0338533, 0.0338533, 0.0338533, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_eq24d"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u7lpi"]
+
+[node name="Canon" type="Node3D"]
+script = ExtResource("1_5nrsw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_imanp")
+mesh = SubResource("CylinderMesh_eq24d")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
+[node name="ShootTime" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_u7lpi")
+
+[connection signal="timeout" from="ShootTime" to="." method="_on_shoot_time_timeout"]

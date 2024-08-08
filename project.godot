@@ -182,12 +182,15 @@ run={
 [layer_names]
 
 3d_physics/layer_1="Environment"
-3d_physics/layer_2="Characters"
-3d_physics/layer_3="Projectiles"
+3d_physics/layer_2="Player"
+3d_physics/layer_3="EnemyProjectiles"
 3d_physics/layer_4="Enemies"
 3d_physics/layer_5="Cells"
 3d_physics/layer_6="Infected Cell"
-3d_physics/layer_7="null"
+3d_physics/layer_7="LDL"
+3d_physics/layer_8="PlayerProj"
+3d_physics/layer_9="HDL"
+3d_physics/layer_10="StopBar"
 avoidance/layer_1="Influenza"
 avoidance/layer_2="Cells"
 avoidance/layer_3="Pathogen"

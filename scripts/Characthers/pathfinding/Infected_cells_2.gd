@@ -5,7 +5,6 @@ extends CharacterBody3D
 @export var life = 5
 @export var damage = 2
 @export var hit_color = Color(255,0,0,255) #Vermelho
-
 @export_category("Variáveis de Spawn")
 @export var spawn_collision : int = 2
 @export var spawn_destroyed : int = 1

@@ -1,3 +1,11 @@
+res://scripts/Effects
+res://scripts/Spawner
+res://scripts/Characthers/objects
+res://scenes/scenary
+res://scenes/Characters/BoatLevel
+res://scripts/Characthers/boatlevel
+res://scripts/Characthers/on_water
+res://shaders
 res://scripts/Credits
 E:/Downloads/ImmutionHTML
 res://scenes/UI/Player
@@ -9,14 +17,6 @@ res://sprites/cell
 res://sprites/Monster/influenza
 res://scripts
 res://scripts/HUD
-res://scripts/Spawner
 res://scripts/Sound
 res://scenes/UI/Tutorials
 res://scripts/LevelFinished
-res://scripts/Levels
-res://scripts/Elevators
-res://scripts/Collectables
-res://scenes/UI
-res://scripts/tutorials
-res://icons/gun selection
-res://icons

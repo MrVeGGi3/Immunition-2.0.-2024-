@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0vfkd7kys2id"]
+
+[ext_resource type="Script" path="res://scripts/Effects/StopBoatBar.gd" id="1_jh5io"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o64gg"]
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jjqrg"]
+size = Vector3(5, 1, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ydhho"]
+size = Vector3(5, 1, 30)
+
+[node name="StopBoatBar" type="Node3D"]
+script = ExtResource("1_jh5io")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_o64gg")
+mesh = SubResource("BoxMesh_jjqrg")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 512
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_ydhho")

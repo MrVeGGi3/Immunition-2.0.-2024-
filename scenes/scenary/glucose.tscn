@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cddycqhl26bsg"]
+
+[ext_resource type="Script" path="res://scripts/Characthers/on_water/TestWaterBehaviour.gd" id="1_125vd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ap0t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_efb53"]
+
+[node name="Cubo de Teste(Itens e Obstáculos)" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.58159)
+script = ExtResource("1_125vd")
+float_force = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55149, 0)
+mesh = SubResource("BoxMesh_7ap0t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.54981, 0)
+shape = SubResource("BoxShape3D_efb53")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxr7ccckvjy8x"]
+
+[ext_resource type="Script" path="res://scripts/Characthers/boatlevel/Enemy1.gd" id="1_1kcsf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uuku6"]
+albedo_color = Color(1, 0.67451, 0.133333, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x4wbj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k4pr5"]
+size = Vector3(0.873016, 1.81567, 1)
+
+[node name="Enemy1" type="Node3D" groups=["Colenemy"]]
+script = ExtResource("1_1kcsf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_uuku6")
+mesh = SubResource("CapsuleMesh_x4wbj")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 130
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0234833, 0.0828857, 0)
+shape = SubResource("BoxShape3D_k4pr5")

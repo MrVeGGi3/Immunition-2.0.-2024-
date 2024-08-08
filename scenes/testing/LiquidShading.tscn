@@ -1,0 +1,112 @@
+[gd_scene load_steps=15 format=3 uid="uid://cpjluqbhepjhu"]
+
+[ext_resource type="Shader" path="res://shaders/water.gdshader" id="1_vkdau"]
+[ext_resource type="PackedScene" uid="uid://cddycqhl26bsg" path="res://scenes/scenary/glucose.tscn" id="2_v0oxb"]
+[ext_resource type="PackedScene" uid="uid://co1gpl0ybl361" path="res://scenes/Characters/BoatLevel/PlayerRedGlob.tscn" id="3_en4je"]
+[ext_resource type="PackedScene" uid="uid://bxr7ccckvjy8x" path="res://scenes/Characters/BoatLevel/Enemy1.tscn" id="4_o6jnu"]
+[ext_resource type="PackedScene" uid="uid://d0vfkd7kys2id" path="res://scenes/effect/StopBoatBar.tscn" id="5_ko3sr"]
+[ext_resource type="PackedScene" uid="uid://bq18nfmu2v2tt" path="res://scenes/Characters/BoatLevel/Canon.tscn" id="6_hhbnb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tngam"]
+size = Vector3(100, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1apux"]
+size = Vector3(1, 1, 20)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5lfmc"]
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y026k"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_5lfmc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mxnh"]
+render_priority = 0
+shader = ExtResource("1_vkdau")
+shader_parameter/water_color = Color(0.305882, 0, 0, 1)
+shader_parameter/time_scale = 3.0
+shader_parameter/water_normal_noise = SubResource("NoiseTexture2D_y026k")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wb34j"]
+size = Vector2(100, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d4mb2"]
+size = Vector3(100, 1, 20)
+
+[sub_resource type="Environment" id="Environment_xrqcn"]
+background_mode = 1
+background_color = Color(0.345334, 0.319675, 0.0886716, 0.027451)
+ambient_light_source = 3
+ambient_light_color = Color(1, 0.223529, 0.239216, 1)
+
+[node name="LiquidShading" type="Node3D"]
+
+[node name="Pool" type="Node3D" parent="."]
+
+[node name="LateralBarI" type="MeshInstance3D" parent="Pool"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("BoxMesh_tngam")
+skeleton = NodePath("../..")
+
+[node name="LateralBarI2" type="MeshInstance3D" parent="Pool"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("BoxMesh_tngam")
+skeleton = NodePath("../..")
+
+[node name="SideBar1" type="MeshInstance3D" parent="Pool"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7649, 0, -0.325407)
+mesh = SubResource("BoxMesh_1apux")
+
+[node name="SideBar2" type="MeshInstance3D" parent="Pool"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5791, 0, -0.58834)
+mesh = SubResource("BoxMesh_1apux")
+
+[node name="Water" type="MeshInstance3D" parent="." groups=["blood"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.486854, -0.129008)
+material_override = SubResource("ShaderMaterial_1mxnh")
+mesh = SubResource("PlaneMesh_wb34j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.342127, 0)
+shape = SubResource("BoxShape3D_d4mb2")
+
+[node name="Glicose" parent="." instance=ExtResource("2_v0oxb")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.205829, 0.978588, -1.41264e-08, 0.026453, 0.00556394, 0.999635, 0.97823, 0.205754, -0.0270318, 0, 39.968, -2.65741)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xrqcn")
+
+[node name="PlayerRedGlob" parent="." instance=ExtResource("3_en4je")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.3884, 0.763004, 0.419622)
+collision_mask = 69
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+platform_on_leave = 0
+side_velocity = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="PlayerRedGlob"]
+transform = Transform3D(-4.37114e-08, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 2.18557e-08, -3.78552e-08, -7.8234, 5.88777, -0.339365)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource("4_o6jnu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92352, 1.35945, -7.82899)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("4_o6jnu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93568, 1.44323, -0.525762)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("4_o6jnu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91158, 1.43959, 6.69296)
+
+[node name="StopBoatBar" parent="." instance=ExtResource("5_ko3sr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6684, 0, 0)
+
+[node name="Canon" parent="." instance=ExtResource("6_hhbnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7566, 0.526962, 0)
+
+[node name="Canon2" parent="." instance=ExtResource("6_hhbnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8456, 0.524622, -5.57835)
