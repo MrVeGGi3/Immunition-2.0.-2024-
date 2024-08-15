@@ -55,9 +55,3 @@ func _on_phase_4_pressed():
 	
 func _on_options_2_pressed():
 	get_tree().change_scene_to_file(OPTIONS)
-
-
-
-
-
-

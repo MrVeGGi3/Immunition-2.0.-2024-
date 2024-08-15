@@ -130,6 +130,7 @@ func _process(_delta):
 
 func killed():
 	if enemy_health <= 0:
+		Global.pathogen_killed += 1
 		symbol.visible = false
 		dead = true
 		death_sound.play()
@@ -147,4 +148,3 @@ func damage_effect():
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(animated_sprite_3d,"modulate", Color.WHITE, 0.3)
 		
-

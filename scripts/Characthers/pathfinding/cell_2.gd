@@ -60,7 +60,7 @@ func _physics_process(delta):
 		if current_location.distance_to(i.global_transform.origin) <= distance_to_run:
 			var direction_to_influenza =  (i.global_transform.origin - current_location).normalized()
 			escape_vector = direction_to_influenza * speed * delta
-			walk_marker_position -= escape_vector
+			walk_marker_position += escape_vector
 			nav.target_position = walk_marker_position
 				
 		#Para outros virus, a mesma sintaxe
@@ -118,4 +118,3 @@ func _on_area_3d_body_entered(body):
 		
 		
 		
-

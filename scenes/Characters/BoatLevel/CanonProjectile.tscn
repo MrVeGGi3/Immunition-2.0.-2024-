@@ -1,8 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://j634oumsagby"]
+[gd_scene load_steps=5 format=3 uid="uid://j634oumsagby"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/objects/CanonProjectile.gd" id="1_vv54j"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_cgpt0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msw4u"]
 albedo_color = Color(1, 1, 0.282353, 1)
@@ -15,15 +13,19 @@ radius = 0.6
 [node name="CanonProjectile" type="Node3D"]
 script = ExtResource("1_vv54j")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_cgpt0")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_msw4u")
 mesh = SubResource("SphereMesh_qr5vj")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_nicem")
+
+[node name="DestructionTimer" type="Timer" parent="."]
+wait_time = 2.5
+
+[connection signal="timeout" from="DestructionTimer" to="." method="_on_destruction_timer_timeout"]

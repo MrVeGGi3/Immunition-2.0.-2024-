@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_t28fd"]
 [ext_resource type="Theme" uid="uid://bd32nqym4104l" path="res://themes/playerLifeBarTheme.tres" id="2_idtty"]
 [ext_resource type="Texture2D" uid="uid://bv42ntqndsu6p" path="res://icons/Icon Head CH Alive_RedAnimated.png" id="3_ibs0r"]
-[ext_resource type="PackedScene" uid="uid://br57ykp7o40bi" path="res://scenes/HUD/phase_finished.tscn" id="4_iu8ug"]
+[ext_resource type="PackedScene" uid="uid://br57ykp7o40bi" path="res://scenes/HUD/tutorial_finished.tscn" id="4_iu8ug"]
 [ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="5_nj0qx"]
 [ext_resource type="Texture2D" uid="uid://b86srxxd4jnsq" path="res://sprites/Player/macrofago_sprite.png" id="6_aroda"]
 [ext_resource type="Texture2D" uid="uid://cmixvfomb2y5w" path="res://sprites/Player/neutrofilos_sprite2.png" id="7_1bb62"]

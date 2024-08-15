@@ -115,6 +115,7 @@ func kill_red_mf():
 		killed()	
 
 func killed():
+	Global.pathogen_killed += 1
 	dead = true
 	symbol.visible = false
 	progress_bar.visible = false
@@ -145,4 +146,3 @@ func damage_effect():
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(animated_sprite_3d, "modulate", Color.WHITE, 0.3)
-

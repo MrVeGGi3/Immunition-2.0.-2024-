@@ -18,4 +18,3 @@ func _physics_process(delta):
 			
 func _on_proj_auto_destruction_timeout():
 	queue_free()
-

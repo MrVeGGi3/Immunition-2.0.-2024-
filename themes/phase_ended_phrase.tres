@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://btbu3ixh3ca7k"]
+
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_cp4xn"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0.658824, 1)
+Label/font_sizes/font_size = 17
+Label/fonts/font = ExtResource("1_cp4xn")

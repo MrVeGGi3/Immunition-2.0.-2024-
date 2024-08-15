@@ -27,19 +27,29 @@ extends Node3D
 @onready var timer_counter = $TimerCounter
 @onready var count = $TimerCounter/Control2/Count
 
-
+@export_category("Critérios")
+@onready var message = "Com as proteínas extraídas da fibra muscular, o sistema imune tem mais força para derrotar a infecção da Influenza!"
+@onready var criteria1 = "Células Vivas" 
+@onready var criteria2 = "Patógenos Destruídos"
+@onready var criteria3 = "Vida Restante"
 #Booleanas de Controle
 var is_extractor_build = false
 var is_entered_platform = false
 var go_to_next_phase = false
+var start_enemies
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.cells_in_scene = 0
+	Global.contamined_cells = 0
+	Global.pathogen_killed = 0 
+	
 	timer_counter.hide()
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	press_f.visible = false
 	level_1bgm.play()
-
+	start_enemies = get_tree().get_nodes_in_group("enemy").size()
+	print(start_enemies)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if !level_1bgm.playing and !player.dead:
@@ -53,6 +63,8 @@ func _process(_delta):
 				player.disable_UI()
 				level_1bgm.stop()
 				victory_song.play()
+				phase_ended.count_score_lvl_1(Global.contamined_cells, Global.cells_in_scene, Global.pathogen_killed, start_enemies, player.vida, player.vida_maxima)
+				phase_ended.level_finished(1, message, criteria1, criteria2, criteria3)
 				phase_ended.visible = true
 				get_tree().paused = true
 		

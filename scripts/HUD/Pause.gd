@@ -22,6 +22,7 @@ func _unhandled_input(event):
 		_on_voltar_ao_jogo_pressed()
 	
 func _on_voltar_ao_jogo_pressed():
+	memory_system.show()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	visible = false
 	get_tree().paused = false

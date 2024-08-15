@@ -6,6 +6,8 @@ const gravity = 9.8
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var area_3d = $Area3D
 @onready var canon_projectile = $"."
+@onready var destruction_timer = $DestructionTimer
+
 #Variáveis de Controle 
 var is_launched = false
 #Variáveis de Cálculo
@@ -37,6 +39,7 @@ func LaunchProjectile(initial_position : Vector3, final_position : Vector3, angl
 	n_direction = (final_position - initial_position).normalized()
 	throwing_angle = angle
 	is_launched = true
+	destruction_timer.start()
 	
 func _physics_process(delta):
 	var bodies = area_3d.get_overlapping_bodies()
@@ -49,3 +52,7 @@ func _physics_process(delta):
 			queue_free()
 		else:
 			queue_free()
+
+
+func _on_destruction_timer_timeout():
+	queue_free()

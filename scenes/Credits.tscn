@@ -49,8 +49,8 @@ text = "Créditos
 "
 
 [node name="Immune" type="Sprite2D" parent="."]
-position = Vector2(152, 188)
-scale = Vector2(0.246376, 0.303228)
+position = Vector2(161.773, 185.14)
+scale = Vector2(0.239771, 0.295103)
 texture = ExtResource("3_ulgcr")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]

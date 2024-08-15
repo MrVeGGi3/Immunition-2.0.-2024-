@@ -17,14 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://dpnnpvd286n27" path="res://icons/wheelswitchweapon/selected/p3_w.png" id="13_hcb2f"]
 [ext_resource type="Texture2D" uid="uid://dhvkdm5jj3v7j" path="res://icons/itens/orbzPurple.png" id="16_h0bmo"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wwdb"]
-bg_color = Color(0.318406, 0.633702, 0.306821, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lap8"]
 bg_color = Color(0.0810841, 0.339237, 0.111896, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ic0s"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wwdb"]
+bg_color = Color(0.318406, 0.633702, 0.306821, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l7w0a"]
 animations = [{
@@ -53,14 +53,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6uo4n"]
-bg_color = Color(0.374885, 0.603015, 0.932179, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjape"]
 bg_color = Color(0.0878923, 0.319982, 0.547125, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0ysi"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6uo4n"]
+bg_color = Color(0.374885, 0.603015, 0.932179, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xdphb"]
 animations = [{
@@ -89,14 +89,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0v226"]
-bg_color = Color(0.955654, 0.319372, 0.669201, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1c3l"]
 bg_color = Color(0.629246, 0.021521, 0.510348, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt220"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0v226"]
+bg_color = Color(0.955654, 0.319372, 0.669201, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7svws"]
 animations = [{
@@ -154,9 +154,9 @@ offset_top = 148.0
 offset_right = 467.0
 offset_bottom = 275.0
 scale = Vector2(1.88164, 1.85309)
-theme_override_styles/normal = SubResource("StyleBoxFlat_5wwdb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3lap8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2ic0s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5wwdb")
 icon = ExtResource("1_sd6pk")
 flat = true
 
@@ -178,9 +178,9 @@ offset_top = 148.0
 offset_right = 619.0
 offset_bottom = 273.0
 scale = Vector2(1.84215, 1.85488)
-theme_override_styles/normal = SubResource("StyleBoxFlat_6uo4n")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bjape")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_t0ysi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6uo4n")
 icon = ExtResource("2_n4dho")
 flat = true
 
@@ -202,9 +202,9 @@ offset_top = 300.0
 offset_right = 544.0
 offset_bottom = 386.0
 scale = Vector2(1.92129, 1.86159)
-theme_override_styles/normal = SubResource("StyleBoxFlat_0v226")
 theme_override_styles/hover = SubResource("StyleBoxFlat_b1c3l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dt220")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0v226")
 icon = ExtResource("3_dom8v")
 flat = true
 

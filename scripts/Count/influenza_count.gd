@@ -10,9 +10,6 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	print(floori(count.time_left))
+func _process(_delta):
 	var minutes = 0
 	timer.text = "%02d:%02d" %[minutes, floori(count.time_left)]
-
-

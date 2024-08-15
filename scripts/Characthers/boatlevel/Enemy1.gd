@@ -28,9 +28,3 @@ func _process(_delta):
 func damage(dmg):
 	life -= dmg
 	print("Enemy1 recebeu dano de:", dmg)
-
-
-
-
-
-

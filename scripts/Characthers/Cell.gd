@@ -93,5 +93,3 @@ func _change_type(virus):
 	new_infected_cell.global_transform.origin = global_transform.origin
 	get_parent().add_child(new_infected_cell)
 	queue_free()
-
-

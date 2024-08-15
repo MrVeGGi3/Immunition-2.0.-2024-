@@ -8,6 +8,8 @@ extends Node3D
 @onready var marker_3d = $Marker3D
 @onready var projectile = preload("res://scenes/Characters/BoatLevel/CanonProjectile.tscn")
 @onready var shoot_time = $ShootTime
+@onready var canon_shoot = $CanonShoot
+
 
 var can_shoot = true
 var y_axis = 0.0
@@ -24,7 +26,10 @@ func _process(_delta):
 	var distance_to_player = actual_position.distance_to(player_position)
 	#print("Estou a %d metros de distância do player, falta %d metros para atirar:" % [distance_to_player, distance_to_player - minimum_distance])
 	if can_shoot and  distance_to_player <= minimum_distance:
+		canon_shoot.play()
 		SpawnProjectile(actual_position, player_position)
+	if !player:
+		return
 	
 		
 

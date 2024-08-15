@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq18nfmu2v2tt"]
+[gd_scene load_steps=6 format=3 uid="uid://bq18nfmu2v2tt"]
 
 [ext_resource type="Script" path="res://scripts/Spawner/CanonSpawn.gd" id="1_5nrsw"]
+[ext_resource type="AudioStream" uid="uid://jrls4mvnkg3t" path="res://sounds/SFX/Canon/cannon-firing-193247.wav" id="2_40d0w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imanp"]
 albedo_color = Color(0.0338533, 0.0338533, 0.0338533, 1)
@@ -24,5 +25,8 @@ wait_time = 2.0
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_u7lpi")
+
+[node name="CanonShoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_40d0w")
 
 [connection signal="timeout" from="ShootTime" to="." method="_on_shoot_time_timeout"]

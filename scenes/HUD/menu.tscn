@@ -26,8 +26,8 @@ script = ExtResource("1_g04yw")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 show_behind_parent = true
-position = Vector2(586, 327)
-scale = Vector2(0.55779, 0.445475)
+position = Vector2(574.5, 328.5)
+scale = Vector2(0.448828, 0.452083)
 texture = ExtResource("2_bscqu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]

@@ -200,11 +200,12 @@ script = ExtResource("10_ymm1f")
 
 [node name="Label" type="Label" parent="MouseSensibilityControl"]
 layout_mode = 0
-offset_left = 488.0
-offset_top = 339.0
-offset_right = 671.0
-offset_bottom = 362.0
+offset_left = 419.0
+offset_top = 330.0
+offset_right = 736.0
+offset_bottom = 370.0
 theme_override_fonts/font = ExtResource("11_c75qs")
+theme_override_font_sizes/font_size = 30
 text = "Sensibilidade do Mouse"
 
 [connection signal="pressed" from="Opções/Panel/Button" to="." method="_on_voltar_pressed"]

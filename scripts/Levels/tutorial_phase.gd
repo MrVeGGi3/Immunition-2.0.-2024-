@@ -20,7 +20,7 @@ func _ready():
 	pathogen_tutorial.visible = true
 
 
-func _process(delta):
+func _process(_delta):
 	if !tutorial_bgm.playing and !player.dead:
 		tutorial_bgm.play()
 	var bodies = area_3d.get_overlapping_bodies()
@@ -48,6 +48,3 @@ func end_phase():
 
 func _on_next_phase_pressed():
 	get_tree().change_scene_to_file(LEVEL_1)
-
-
-

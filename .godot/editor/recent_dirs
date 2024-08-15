@@ -1,3 +1,4 @@
+res://themes
 res://scripts/Effects
 res://scripts/Spawner
 res://scripts/Characthers/objects
@@ -19,4 +20,3 @@ res://scripts
 res://scripts/HUD
 res://scripts/Sound
 res://scenes/UI/Tutorials
-res://scripts/LevelFinished

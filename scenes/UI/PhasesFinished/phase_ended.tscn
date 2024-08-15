@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cisbfousat14j"]
+[gd_scene load_steps=10 format=3 uid="uid://cisbfousat14j"]
 
 [ext_resource type="Script" path="res://scripts/LevelFinished/phase_ended1.gd" id="1_e8n6b"]
 [ext_resource type="Texture2D" uid="uid://b1i6udx23kait" path="res://images/UI/Barra de Dialogo.png" id="2_7mnyx"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="3_naj03"]
+[ext_resource type="Theme" uid="uid://ckgj4andhmk7" path="res://themes/criteria_words.tres" id="4_djy4w"]
+[ext_resource type="Theme" uid="uid://btbu3ixh3ca7k" path="res://themes/phase_ended_phrase.tres" id="5_sygh5"]
+[ext_resource type="Theme" uid="uid://rvu3o8i8pi0c" path="res://themes/percentage.tres" id="6_5kdyu"]
+[ext_resource type="Theme" uid="uid://bk276gnt6j165" path="res://themes/score.tres" id="7_pf1pb"]
+
+[sub_resource type="Animation" id="Animation_otj7v"]
+resource_name = "score_animation"
+length = 9.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v72jy"]
+_data = {
+"score_animation": SubResource("Animation_otj7v")
+}
 
 [node name="PhaseEnded" type="Control"]
 process_mode = 3
@@ -15,45 +28,134 @@ offset_bottom = 65.0
 script = ExtResource("1_e8n6b")
 
 [node name="DialogueBox" type="Sprite2D" parent="."]
-position = Vector2(576, 273)
-scale = Vector2(0.351557, 0.351557)
+position = Vector2(576, 304)
+scale = Vector2(0.351557, 0.471557)
 texture = ExtResource("2_7mnyx")
 
 [node name="GoToMenu" type="Button" parent="."]
 layout_mode = 0
-offset_left = 439.0
-offset_top = 368.0
-offset_right = 555.0
-offset_bottom = 399.0
+offset_left = 225.0
+offset_top = 492.0
+offset_right = 341.0
+offset_bottom = 523.0
 scale = Vector2(2.39583, 2.39583)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_naj03")
 text = "Menu"
 
-[node name="TextPhaseEnded" type="Label" parent="."]
+[node name="Nível" type="Label" parent="."]
 layout_mode = 0
-offset_left = 253.0
-offset_top = 197.0
-offset_right = 1813.0
-offset_bottom = 359.0
-theme_override_colors/font_color = Color(1.88913e-06, 0.440336, 0, 1)
-theme_override_fonts/font = ExtResource("3_naj03")
-theme_override_font_sizes/font_size = 30
-text = " Com as proteínas extraídas da fibra muscular,
- o sistema imune tem mais força para derrotar
- a infecção da Influenza!
-"
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 467.0
-offset_top = 108.0
-offset_right = 695.0
-offset_bottom = 173.0
+offset_left = 343.0
+offset_top = 76.0
+offset_right = 822.0
+offset_bottom = 141.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_naj03")
 theme_override_font_sizes/font_size = 50
-text = "Parábens!"
+text = "Nível      Concluído	!"
+
+[node name="LevelNumber" type="Label" parent="."]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 69.0
+offset_right = 535.0
+offset_bottom = 121.0
+scale = Vector2(1.44, 1.44)
+theme_override_colors/font_color = Color(0.945098, 0.00392157, 0.00392157, 1)
+theme_override_fonts/font = ExtResource("3_naj03")
+theme_override_font_sizes/font_size = 40
+text = "1
+"
+
+[node name="PontuationCriteriaI" type="Label" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 208.0
+offset_right = 286.0
+offset_bottom = 248.0
+theme = ExtResource("4_djy4w")
+text = "Critério 1
+"
+
+[node name="PontuationCriteriaII" type="Label" parent="."]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 287.0
+offset_right = 288.0
+offset_bottom = 327.0
+theme = ExtResource("4_djy4w")
+text = "Critério 2"
+
+[node name="PontuationCriteriaIII" type="Label" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 369.0
+offset_right = 290.0
+offset_bottom = 409.0
+theme = ExtResource("4_djy4w")
+text = "Critério 3
+"
+
+[node name="ConclusionMessage" type="Label" parent="."]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 146.0
+offset_right = 1240.0
+offset_bottom = 174.0
+theme = ExtResource("5_sygh5")
+text = "Com as proteínas extraídas da fibra muscular, o sistema imune tem mais força para derrotar a infecção da Influenza!"
+
+[node name="PercentageI" type="Label" parent="."]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 210.0
+offset_right = 730.0
+offset_bottom = 237.0
+theme = ExtResource("6_5kdyu")
+
+[node name="PercentageII" type="Label" parent="."]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 285.0
+offset_right = 732.0
+offset_bottom = 312.0
+theme = ExtResource("6_5kdyu")
+
+[node name="PercentageIII" type="Label" parent="."]
+layout_mode = 0
+offset_left = 697.0
+offset_top = 363.0
+offset_right = 737.0
+offset_bottom = 390.0
+theme = ExtResource("6_5kdyu")
+
+[node name="Score I" type="Label" parent="."]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 204.0
+offset_right = 867.0
+offset_bottom = 227.0
+theme = ExtResource("7_pf1pb")
+
+[node name="Score II" type="Label" parent="."]
+layout_mode = 0
+offset_left = 835.0
+offset_top = 285.0
+offset_right = 875.0
+offset_bottom = 308.0
+theme = ExtResource("7_pf1pb")
+
+[node name="Score III" type="Label" parent="."]
+layout_mode = 0
+offset_left = 825.0
+offset_top = 368.0
+offset_right = 865.0
+offset_bottom = 391.0
+
+[node name="AnimationTree" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v72jy")
+}
 
 [connection signal="pressed" from="GoToMenu" to="." method="_on_go_to_menu_pressed"]

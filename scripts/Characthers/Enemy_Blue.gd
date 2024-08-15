@@ -117,6 +117,7 @@ func heal_blue_nf():
 func killed():
 	if enemy_health <= 0:
 		dead = true
+		Global.pathogen_killed += 1
 		$DeathSound.play()
 		progress_bar.visible = false
 		animated_sprite_3d.play("death")
