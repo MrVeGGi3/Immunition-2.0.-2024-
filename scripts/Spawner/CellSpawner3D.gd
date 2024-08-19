@@ -18,6 +18,7 @@ func spawnCells():
 	if instance.is_inside_tree():
 		instance.global_position = global_position + Vector3(0,1,0) 
 		Global.cells_in_scene += 1
+		print("O número de células na cena é:", Global.cells_in_scene)
 		create_cell_instance.start()
 		print("Célula Spawnado")
 	else:

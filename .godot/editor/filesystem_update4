@@ -1,4 +1,4 @@
-res://scenes/HUD/logo_transition.tscn
+res://scenes/UI/PhasesFinished/phase_ended.tscn
 res://scripts/Characthers/Player.gd
 res://themes/playerLifeBarTheme.tres
 res://scripts/HUD/minimap.gd
@@ -12,6 +12,10 @@ res://shaders/water.gdshader
 res://shaders/PlayerRedGlob.gdshader
 res://scripts/Spawner/CanonSpawn.gd
 res://scripts/HUD/Options.gd
+res://scenes/testing/TestScoreAnimation.tscn
+res://scripts/Tests/score_counter.gd
+res://scripts/LevelFinished/phase_ended1.gd
+res://scenes/HUD/logo_transition.tscn
 res://scenes/Levels/level_1.tscn
 res://scenes/Levels/world.tscn
 res://scenes/UI/EnemiesToDestroy/TimerCount.tscn
@@ -29,7 +33,6 @@ res://scenes/HUD/sub_viewport_container.tscn
 res://scenes/HUD/EnemiesSymbols.tscn
 res://scenes/HUD/EnemiesRemainingDisplay.tscn
 res://scenes/HUD/SymbolRecognition.tscn
-res://scenes/UI/PhasesFinished/phase_ended.tscn
 res://scenes/UI/Tutorials/tutorial_guide.tscn
 res://scenes/UI/Tutorials/pathogen_tutorial.tscn
 res://scenes/Credits.tscn
@@ -66,3 +69,7 @@ res://scenes/HUD/options_menu.tscn
 res://scenes/HUD/options_menu_pre_game.tscn
 res://scenes/Scores/PontuationScoreLvL1.tscn
 res://scenes/spawner/MainSpawner/CellSpawner3D.tscn
+res://scenes/UI/Player/whell&memory.tscn
+res://scenes/Levels/level_2.tscn
+res://themes/score.tres
+res://scripts/memory_system.gd

@@ -20,13 +20,14 @@ func _process(_delta):
 	var can_shoot_mf = Global.c_shoot_mf
 	var can_shoot_nf = Global.c_shoot_nf
 	
-	if can_shoot:
-		green_button.play("selected")
-	elif can_shoot_mf:
-		blue_button.play("selected")
-	elif can_shoot_nf:
-		red_button.play("selected")
-	
+	if visible:
+		if can_shoot:
+			green_button.play("selected")
+		elif can_shoot_mf:
+			blue_button.play("selected")
+		elif can_shoot_nf:
+			red_button.play("selected")
+		
 	if Input.is_action_just_pressed("weapon_wheel") and !weapon_selected  and get_tree().paused == false:
 		visible = true
 		get_tree().paused = true
@@ -45,15 +46,12 @@ func _process(_delta):
 #Botão da Arma Verde
 func _on_green_mouse_entered():
 	green_button.play("hover")
-	
 func _on_green_mouse_exited():
 	green_button.play("normal")
-
 
 #Botão da Arma Azul
 func _on_blue_mouse_entered():
 	blue_button.play("hover")
-	
 func _on_blue_mouse_exited():
 	blue_button.play("normal")
 
@@ -80,7 +78,6 @@ func _on_red_pressed():
 	player.change_neutrofile()
 	red_button.play("selected")
 	disable_animations(green_button, blue_button)
-	visible = false
 	_disable_wheel()
 	
 func disable_animations(botao1, botao2):

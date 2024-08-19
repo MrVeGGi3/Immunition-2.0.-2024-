@@ -118,6 +118,7 @@ func killed():
 	if enemy_health <= 0:
 		dead = true
 		Global.pathogen_killed += 1
+		print("O número de Patógenos derrotados é:", Global.pathogen_killed)
 		$DeathSound.play()
 		progress_bar.visible = false
 		animated_sprite_3d.play("death")

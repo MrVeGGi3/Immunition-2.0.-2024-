@@ -2536,7 +2536,7 @@ volume_db = -20.0
 bus = &"SFX"
 
 [node name="CellSpawner3d" parent="." instance=ExtResource("47_5u452")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -233.735, 2.22554, -70.3537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -233.735, 3.06382, -72.7245)
 
 [node name="InfluenzaSpawner3d" parent="." instance=ExtResource("48_d5mun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.3013, 1.24108, -97.2663)
@@ -2617,6 +2617,17 @@ text = ":"
 
 [node name="Count" type="Timer" parent="TimerCounter/Control2"]
 wait_time = 30.0
+
+[node name="Description" type="Label" parent="TimerCounter"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 170.0
+offset_right = 717.0
+offset_bottom = 197.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("25_7kquy")
+theme_override_font_sizes/font_size = 20
+text = "Proteja as Células do Influenza!!!"
 
 [node name="ExtractosCollected" parent="." instance=ExtResource("9_hv02g")]
 offset_left = -21.0

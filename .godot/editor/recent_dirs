@@ -1,4 +1,7 @@
+res://scripts/Tests
+res://scripts/Characthers
 res://themes
+E:/Downloads/ImmutionHTML
 res://scripts/Effects
 res://scripts/Spawner
 res://scripts/Characthers/objects
@@ -8,7 +11,6 @@ res://scripts/Characthers/boatlevel
 res://scripts/Characthers/on_water
 res://shaders
 res://scripts/Credits
-E:/Downloads/ImmutionHTML
 res://scenes/UI/Player
 E:/Godot
 E:/Downloads/ImmunitionExport
@@ -18,5 +20,3 @@ res://sprites/cell
 res://sprites/Monster/influenza
 res://scripts
 res://scripts/HUD
-res://scripts/Sound
-res://scenes/UI/Tutorials

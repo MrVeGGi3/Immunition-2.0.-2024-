@@ -8,15 +8,17 @@ var menu = "res://scenes/HUD/menu.tscn"
 #labels:
 @onready var level_number = $LevelNumber
 @onready var conclusion_message = $ConclusionMessage
-@onready var pontuation_criteria_i = $PontuationCriteriaI
-@onready var pontuation_criteria_ii = $PontuationCriteriaII
-@onready var pontuation_criteria_iii = $PontuationCriteriaIII
-@onready var percentage_i = $PercentageI
-@onready var percentage_ii = $PercentageII
-@onready var percentage_iii = $PercentageIII
-@onready var score_i = $"Score I"
-@onready var score_ii = $"Score II"
-@onready var score_iii = $"Score III"
+@onready var pontuation_criteria_i = $VBoxContainer/PontuationCriteriaI
+@onready var pontuation_criteria_ii = $VBoxContainer/PontuationCriteriaII
+@onready var pontuation_criteria_iii = $VBoxContainer/PontuationCriteriaIII
+@onready var percentage_i = $VBoxContainer3/PercentageI
+@onready var percentage_ii = $VBoxContainer3/PercentageII
+@onready var percentage_iii = $VBoxContainer3/PercentageIII
+@onready var score_i = $"VBoxContainer2/Score I"
+@onready var score_ii = $"VBoxContainer2/Score II"
+@onready var score_iii = $"VBoxContainer2/Score III"
+@onready var animation_tree: AnimationPlayer = $AnimationTree
+
 var pont_1
 var pont_2
 var pont_3
@@ -29,6 +31,7 @@ var actual_score_iii = 0
 
 func _ready():
 	visible = false
+	animation_tree.speed_scale = 2.0
 
 func _on_go_to_menu_pressed():
 	get_tree().change_scene_to_file(menu)
@@ -40,34 +43,42 @@ func level_finished(lvl : int, message : String, c1 : String, c2 : String, c3 : 
 	pontuation_criteria_ii.text = c2
 	pontuation_criteria_iii.text = c3
 	
-func count_score_lvl_1(inf_cells, total_cells, kill_enemies, total_enemies, player_life, max_life):
-	var score_1 = floori(inf_cells/total_cells * 100)
-	var score_2 = floori(kill_enemies/total_enemies * 100)
+func count_score_lvl_1(inf_cells : float, total_cells : float, kill_enemies : float, total_enemies : float , player_life : float, max_life : float):
+	var score_1 = floori((1 - (inf_cells/total_cells)) * 100)
+	var score_2 = float(kill_enemies/total_enemies * 100)
 	var score_3 = floori(player_life/max_life * 100)
+	var score_2_int = floori(score_2)
 	percentage_i.text = str(score_1) + "%"
-	percentage_ii.text = str(score_2) + "%"
+	percentage_ii.text = str(score_2_int) + "%"
 	percentage_iii.text = str(score_3) + "%"
 	pont_1 = score_1 * 10
-	pont_2 = score_2 * 10
+	pont_2 = score_2_int * 10
 	pont_3 = score_3 * 10
-
+	animation_tree.play("score_animation")
 
 func score_animation_1():
-	var limit_score = pont_1
 	if actual_score_i < pont_1:
+		actual_score_i += 100 
+	elif pont_1 - actual_score_i < 100:
 		actual_score_i += 10
+	else:
+		return
 
 func score_animation_2():
-	var limit_score = pont_2
 	if actual_score_ii < pont_2:
+		actual_score_ii += 100 
+	elif pont_2 - actual_score_ii < 100:
 		actual_score_ii += 10
-
+	else:
+		return
 func score_animation_3():
-	var limit_score = pont_3
 	if actual_score_iii < pont_3:
-		actual_score_iii += 10
-
-func _process(delta):
+		actual_score_iii += 100 
+	elif pont_3 - actual_score_iii < 100:
+		actual_score_iii += 10	
+	else: 
+		return
+func _process(_delta):
 	score_i.text = str(actual_score_i)
 	score_ii.text = str(actual_score_ii)
 	score_iii.text = str(actual_score_iii)

@@ -1,8 +1,10 @@
-RichTextLabel
+VBoxContainer
 AnimationPlayer
+Label
+Panel
+RichTextLabel
 AnimationTree
 Timer
-Label
 GPUParticlesAttractorVectorField3D
 Sprite2D
 AudioStreamPlayer
@@ -10,6 +12,3 @@ CollisionShape3D
 Area3D
 Node3D
 RigidBody3D
-MeshInstance3D
-Marker3D
-CharacterBody3D

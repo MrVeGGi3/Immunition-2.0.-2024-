@@ -17,7 +17,7 @@ extends Node3D
 @onready var next_phase_collision = %NextPhaseCollision
 @onready var phase_ended = $PhaseEnded
 
-@onready var cells = get_tree().get_nodes_in_group("cell")
+
 @onready var player_hud = $Player/PlayerHUD
 
 @onready var cell_spawner_3d = $CellSpawner3d
@@ -39,17 +39,16 @@ var go_to_next_phase = false
 var start_enemies
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global.cells_in_scene = 0
-	Global.contamined_cells = 0
-	Global.pathogen_killed = 0 
-	
+	Global.cells_in_scene = 0.0
+	Global.contamined_cells = 0.0
+	Global.pathogen_killed = 0.0	
 	timer_counter.hide()
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	press_f.visible = false
 	level_1bgm.play()
 	start_enemies = get_tree().get_nodes_in_group("enemy").size()
-	print(start_enemies)
+	print("O número de inimigos iniciais é:", start_enemies)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if !level_1bgm.playing and !player.dead:
@@ -64,6 +63,12 @@ func _process(_delta):
 				level_1bgm.stop()
 				victory_song.play()
 				phase_ended.count_score_lvl_1(Global.contamined_cells, Global.cells_in_scene, Global.pathogen_killed, start_enemies, player.vida, player.vida_maxima)
+				print("O número de células contaminadas:", Global.contamined_cells)
+				print("O número de células no total:", Global.cells_in_scene)
+				print("O númerod de Inimigos derrotados:", Global.pathogen_killed)
+				print("O número de Inimigos na Fase:", start_enemies)
+				print("Vida atual do Player:", player.vida)
+				print("A vida máxima do Player:", player.vida_maxima)
 				phase_ended.level_finished(1, message, criteria1, criteria2, criteria3)
 				phase_ended.visible = true
 				get_tree().paused = true

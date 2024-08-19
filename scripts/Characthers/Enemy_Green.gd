@@ -131,6 +131,7 @@ func _process(_delta):
 func killed():
 	if enemy_health <= 0:
 		Global.pathogen_killed += 1
+		print("O número de Patógenos derrotados é:", Global.pathogen_killed)
 		symbol.visible = false
 		dead = true
 		death_sound.play()

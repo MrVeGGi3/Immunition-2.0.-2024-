@@ -151,8 +151,8 @@ grow_vertical = 2
 layout_mode = 0
 offset_left = 382.0
 offset_top = 148.0
-offset_right = 467.0
-offset_bottom = 275.0
+offset_right = 459.0
+offset_bottom = 267.0
 scale = Vector2(1.88164, 1.85309)
 theme_override_styles/hover = SubResource("StyleBoxFlat_3lap8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2ic0s")
@@ -161,7 +161,7 @@ icon = ExtResource("1_sd6pk")
 flat = true
 
 [node name="GreenButton" type="AnimatedSprite2D" parent="Wheel/Green"]
-position = Vector2(38.2645, 63.6774)
+position = Vector2(38.2645, 59.9)
 sprite_frames = SubResource("SpriteFrames_l7w0a")
 animation = &"normal"
 autoplay = "normal"
@@ -175,8 +175,8 @@ texture = ExtResource("6_pxtwf")
 layout_mode = 0
 offset_left = 534.0
 offset_top = 148.0
-offset_right = 619.0
-offset_bottom = 273.0
+offset_right = 611.0
+offset_bottom = 265.0
 scale = Vector2(1.84215, 1.85488)
 theme_override_styles/hover = SubResource("StyleBoxFlat_bjape")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_t0ysi")
@@ -185,9 +185,9 @@ icon = ExtResource("2_n4dho")
 flat = true
 
 [node name="BlueButton" type="AnimatedSprite2D" parent="Wheel/Blue"]
-position = Vector2(38.5418, 61.4596)
+position = Vector2(38.5419, 58.2248)
 sprite_frames = SubResource("SpriteFrames_xdphb")
-animation = &"normal"
+animation = &"selected"
 autoplay = "normal"
 
 [node name="OrbzBlue" type="Sprite2D" parent="Wheel/Blue"]
@@ -199,8 +199,8 @@ texture = ExtResource("11_bk4m3")
 layout_mode = 0
 offset_left = 406.0
 offset_top = 300.0
-offset_right = 544.0
-offset_bottom = 386.0
+offset_right = 536.0
+offset_bottom = 383.0
 scale = Vector2(1.92129, 1.86159)
 theme_override_styles/hover = SubResource("StyleBoxFlat_b1c3l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dt220")
@@ -209,9 +209,9 @@ icon = ExtResource("3_dom8v")
 flat = true
 
 [node name="RedButton" type="AnimatedSprite2D" parent="Wheel/Red"]
-position = Vector2(64.5401, 42.4368)
+position = Vector2(64.54, 40.8253)
 sprite_frames = SubResource("SpriteFrames_7svws")
-animation = &"normal"
+animation = &"hover"
 autoplay = "normal"
 
 [node name="OrbzPurple" type="Sprite2D" parent="Wheel/Red"]

@@ -116,6 +116,7 @@ func kill_red_mf():
 
 func killed():
 	Global.pathogen_killed += 1
+	print("O número de Patógenos derrotados é:", Global.pathogen_killed)
 	dead = true
 	symbol.visible = false
 	progress_bar.visible = false

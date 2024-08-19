@@ -53,16 +53,17 @@ func _physics_process(delta):
 		if current_location == walk_marker_position:
 			is_moving = false
 			movement_time.start()
-			
 	
-	var influenza = get_tree().get_nodes_in_group("influenza")
-	for i in influenza:
-		if current_location.distance_to(i.global_transform.origin) <= distance_to_run:
-			var direction_to_influenza =  (i.global_transform.origin - current_location).normalized()
-			escape_vector = direction_to_influenza * speed * delta
-			walk_marker_position += escape_vector
-			nav.target_position = walk_marker_position
-				
+	#var influenza = get_tree().get_nodes_in_group("influenza")	
+	#for i in influenza:
+		#if current_location.distance_to(i.global_transform.origin) <= distance_to_run:
+			#is_moving = false
+			#var direction_to_influenza =  (current_location - i.global_transform.origin).normalized()
+			#escape_vector = direction_to_influenza * speed * delta
+			#walk_marker_position -= escape_vector
+			#nav.target_position = walk_marker_position
+		#else:
+			#is_moving = true
 		#Para outros virus, a mesma sintaxe
 		#if body.is_in_group("outro_virus"):
 			#life -= 1 * delta
@@ -88,13 +89,14 @@ func _on_movement_time_timeout():
 
 func _change_type(virus):
 	if is_catched_by_influenza:
+		Global.contamined_cells += 1
+		print("Número de Células contaminadas:", Global.contamined_cells)
 		queue_free()
 		var new_infected_cell = infected_cell.instantiate()
 		new_infected_cell.get_virus_type(virus)
 		get_parent_node_3d().add_child(new_infected_cell)
 		if new_infected_cell.is_inside_tree():
 			new_infected_cell.position = position
-			Global.contamined_cells += 1
 			print("o número de células infectadas é: ", Global.contamined_cells)
 			print("Célula Infectada spawnada na posição:", position)
 		else: 
@@ -114,7 +116,6 @@ func _on_area_3d_body_entered(body):
 		is_catched_by_influenza = true
 		damage_effect()
 		_change_type("influenza")
-
-		
+	
 		
 		

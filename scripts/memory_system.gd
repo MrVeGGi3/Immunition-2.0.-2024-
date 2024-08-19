@@ -40,20 +40,18 @@ func _process(_delta):
 		if count == 0:
 			count = 2
 			activate_memory(count)
-			print(count)
 		else:
 			count -= 1
 			activate_memory(count)
-			print(count)
 	if Input.is_action_just_pressed("roll_down"):
 		if count == 2:
 			count = 0
 			activate_memory(count)
-			print(count)
 		else:
 			count += 1
 			activate_memory(count)
-			print(count)
+	else:
+		return
 
 
 func _on_memoria_1_pressed():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://don5l8livtsxn"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/pathfinding/cell_2.gd" id="1_fwl1p"]
+[ext_resource type="Script" path="res://scripts/Characthers/Cell.gd" id="1_l1yn2"]
 [ext_resource type="Texture2D" uid="uid://cskn57alcan64" path="res://sprites/cell/Célula.png" id="2_nl86d"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qmprq"]
@@ -25,7 +25,7 @@ collision_layer = 16
 collision_mask = 9
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
-script = ExtResource("1_fwl1p")
+script = ExtResource("1_l1yn2")
 
 [node name="MovementTime" type="Timer" parent="."]
 process_callback = 0
@@ -45,13 +45,14 @@ wait_time = 0.5
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_height_offset = -2.0
+simplify_path = true
 avoidance_enabled = true
 radius = 1.0
 neighbor_distance = 8.0
 max_neighbors = 5
 use_3d_avoidance = true
 avoidance_layers = 2
-avoidance_mask = 15
+avoidance_mask = 14
 
 [node name="CellAnimatedSprite" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.237627, 0, 0, 0, 0.237627, 0, 0, 0, 0.237627, 0, 0.199289, 0)
