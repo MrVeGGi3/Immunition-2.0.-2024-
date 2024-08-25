@@ -1,0 +1,376 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc1evn6cd1vd1"]
+
+[ext_resource type="Script" path="res://scripts/Configs/controls.gd" id="1_5caey"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_end32"]
+[ext_resource type="Theme" uid="uid://kk57keqqixit" path="res://themes/config_group_title.tres" id="2_nnchl"]
+[ext_resource type="Theme" uid="uid://ck4ch32br55s2" path="res://themes/ButtonChangeControl.tres" id="3_sl4qg"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5caey")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Controles" type="Label" parent="."]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 36.0
+offset_right = 711.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("1_end32")
+theme_override_font_sizes/font_size = 60
+text = "Controles"
+
+[node name="Linha de Títulos" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 167.0
+offset_right = 137.0
+offset_bottom = 207.0
+alignment = 1
+
+[node name="Movimento" type="Label" parent="Linha de Títulos"]
+layout_mode = 2
+theme = ExtResource("2_nnchl")
+text = "Movimento"
+
+[node name="Ações" type="Label" parent="Linha de Títulos"]
+layout_mode = 2
+theme = ExtResource("2_nnchl")
+text = "       Ações Básicas"
+
+[node name="Seleção" type="Label" parent="Linha de Títulos"]
+layout_mode = 2
+theme = ExtResource("2_nnchl")
+text = "      Seleção"
+
+[node name="Atalhos" type="Label" parent="Linha de Títulos"]
+layout_mode = 2
+theme = ExtResource("2_nnchl")
+text = "          Atalhos"
+
+[node name="Andar para Frente" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B - Andar para Frente" type="Button" parent="Andar para Frente"]
+layout_mode = 2
+offset_left = 67.0
+offset_top = 220.0
+offset_right = 127.0
+offset_bottom = 280.0
+size_flags_vertical = 3
+theme = ExtResource("3_sl4qg")
+
+[node name="T - Andar para Frente" type="Label" parent="Andar para Frente"]
+layout_mode = 2
+offset_left = 137.0
+offset_top = 238.0
+offset_right = 278.0
+offset_bottom = 261.0
+text = "Andar para Frente"
+
+[node name="Andar para Trás" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B - Andar para Trás" type="Button" parent="Andar para Trás"]
+layout_mode = 2
+offset_left = 65.0
+offset_top = 310.0
+offset_right = 125.0
+offset_bottom = 370.0
+size_flags_vertical = 3
+
+[node name="T - Andar para Trás" type="Label" parent="Andar para Trás"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 325.0
+offset_right = 258.0
+offset_bottom = 348.0
+text = "Andar para Trás
+"
+
+[node name="Andar para Direita" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B - Andar para Direita" type="Button" parent="Andar para Direita"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 501.0
+offset_right = 124.0
+offset_bottom = 561.0
+
+[node name="T - Andar para Direita" type="Label" parent="Andar para Direita"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 423.0
+offset_right = 144.0
+offset_bottom = 446.0
+text = "Andar para Direita"
+
+[node name="Andar para Esquerda" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B - Andar para Esquerda" type="Button" parent="Andar para Esquerda"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 405.0
+offset_right = 125.0
+offset_bottom = 465.0
+
+[node name="T - Andar para Esquerda" type="Label" parent="Andar para Esquerda"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 520.0
+offset_right = 142.0
+offset_bottom = 543.0
+text = "Andar para Esquerda"
+
+[node name="Pular" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B - Pular" type="Button" parent="Pular"]
+layout_mode = 2
+offset_left = 367.0
+offset_top = 218.0
+offset_right = 427.0
+offset_bottom = 278.0
+size_flags_vertical = 3
+theme = ExtResource("3_sl4qg")
+
+[node name="T - Pular" type="Label" parent="Pular"]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 239.0
+offset_right = 449.0
+offset_bottom = 262.0
+text = "Pular"
+
+[node name="Atirar" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B - Atirar" type="Button" parent="Atirar"]
+layout_mode = 2
+offset_left = 367.0
+offset_top = 308.0
+offset_right = 427.0
+offset_bottom = 368.0
+size_flags_vertical = 3
+theme = ExtResource("3_sl4qg")
+
+[node name="T - Atirar" type="Label" parent="Atirar"]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 327.0
+offset_right = 484.0
+offset_bottom = 350.0
+text = "Atirar"
+
+[node name="RodaArma" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 267.0
+offset_top = -189.0
+offset_right = 307.0
+offset_bottom = -149.0
+
+[node name="B - RodaArma" type="Button" parent="RodaArma"]
+layout_mode = 2
+offset_left = 369.0
+offset_top = 409.0
+offset_right = 429.0
+offset_bottom = 469.0
+size_flags_vertical = 3
+theme = ExtResource("3_sl4qg")
+
+[node name="T - Roda de Arma" type="Label" parent="RodaArma"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 429.0
+offset_right = 551.0
+offset_bottom = 452.0
+text = "Roda de Arma"
+
+[node name="SistemaMemoria" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 267.0
+offset_top = -198.0
+offset_right = 307.0
+offset_bottom = -158.0
+
+[node name="B - SistemaMemória" type="Button" parent="SistemaMemoria"]
+layout_mode = 2
+offset_left = 369.0
+offset_top = 500.0
+offset_right = 429.0
+offset_bottom = 560.0
+size_flags_vertical = 3
+theme = ExtResource("3_sl4qg")
+
+[node name="T - Sistema de Memória" type="Label" parent="SistemaMemoria"]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 520.0
+offset_right = 600.0
+offset_bottom = 543.0
+text = "Sistema de Memória"
+
+[node name="Seleção Arma 1" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B - Seleção de Arma 1" type="Button" parent="Seleção Arma 1"]
+layout_mode = 2
+offset_left = 919.0
+offset_top = 220.0
+offset_right = 979.0
+offset_bottom = 280.0
+size_flags_vertical = 3
+theme = ExtResource("3_sl4qg")
+
+[node name="T - Seleção de Arma 1" type="Label" parent="Seleção Arma 1"]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 233.0
+offset_right = 1261.0
+offset_bottom = 282.0
+text = "Seleção Arma - 
+Pistola Linfócito"
+
+[node name="Seleção Arma 2" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B - Seleção de Arma 2" type="Button" parent="Seleção Arma 2"]
+layout_mode = 2
+offset_left = 920.0
+offset_top = 305.0
+offset_right = 980.0
+offset_bottom = 365.0
+size_flags_vertical = 3
+theme = ExtResource("3_sl4qg")
+
+[node name="T - Seleção de Arma 2" type="Label" parent="Seleção Arma 2"]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 313.0
+offset_right = 1125.0
+offset_bottom = 362.0
+text = "Seleção Arma - 
+Rifle Macrófago
+"
+
+[node name="Seleção Arma 3" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B - Seleção de Arma 3" type="Button" parent="Seleção Arma 3"]
+layout_mode = 2
+offset_left = 922.0
+offset_top = 398.0
+offset_right = 982.0
+offset_bottom = 458.0
+size_flags_vertical = 3
+theme = ExtResource("3_sl4qg")
+
+[node name="T - Seleção de Arma 3" type="Label" parent="Seleção Arma 3"]
+layout_mode = 0
+offset_left = 1006.0
+offset_top = 404.0
+offset_right = 1121.0
+offset_bottom = 479.0
+text = "Seleção Arma -
+Lança Chamas 
+Neutrófilo"
+
+[node name="Seleção Memória Cima" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 643.0
+offset_top = 387.0
+offset_right = 683.0
+offset_bottom = 427.0
+
+[node name="T -MemóriaCima" type="Label" parent="Seleção Memória Cima"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 22.0
+offset_right = 165.0
+offset_bottom = 45.0
+text = "Memória UP"
+
+[node name="B - Seleção de Memória Cima" type="Button" parent="Seleção Memória Cima"]
+layout_mode = 2
+offset_left = -7.0
+offset_top = 3.0
+offset_right = 53.0
+offset_bottom = 63.0
+size_flags_vertical = 3
+theme = ExtResource("3_sl4qg")
+
+[node name="Seleção Memória Baixo" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B - Seleção de Memória Baixo" type="Button" parent="Seleção Memória Baixo"]
+layout_mode = 2
+offset_left = 637.0
+offset_top = 487.0
+offset_right = 697.0
+offset_bottom = 547.0
+size_flags_vertical = 3
+theme = ExtResource("3_sl4qg")
+
+[node name="T -MemóriaBaixo" type="Label" parent="Seleção Memória Baixo"]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 506.0
+offset_right = 839.0
+offset_bottom = 529.0
+text = "Memória DOWN"
+
+[node name="Run" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 375.0
+offset_top = 417.0
+offset_right = 415.0
+offset_bottom = 457.0
+
+[node name="B - Run" type="Button" parent="Run"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = -11.0
+offset_right = 51.0
+offset_bottom = 49.0
+
+[node name="T - Run" type="Label" parent="Run"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 8.0
+offset_right = 115.0
+offset_bottom = 31.0
+text = "Correr"

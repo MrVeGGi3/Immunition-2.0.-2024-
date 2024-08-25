@@ -1,6 +1,7 @@
+res://scripts/Configs
+res://themes
 res://scripts/Tests
 res://scripts/Characthers
-res://themes
 E:/Downloads/ImmutionHTML
 res://scripts/Effects
 res://scripts/Spawner
@@ -19,4 +20,3 @@ res://sprites/Monster/infectedcell
 res://sprites/cell
 res://sprites/Monster/influenza
 res://scripts
-res://scripts/HUD

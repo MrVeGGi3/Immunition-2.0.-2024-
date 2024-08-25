@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ck4ch32br55s2"]
+
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_l5idv"]
+
+[resource]
+Button/colors/icon_hover_color = Color(0.329158, 0.329158, 0.329158, 1)
+Button/colors/icon_hover_pressed_color = Color(8.42288e-07, 0.622892, 0.135378, 1)
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_l5idv")
