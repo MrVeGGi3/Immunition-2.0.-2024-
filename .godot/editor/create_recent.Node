@@ -1,12 +1,12 @@
+AnimationTree
+AnimationPlayer
 Label
 Button
 Control
 VBoxContainer
 HBoxContainer
 Panel
-AnimationPlayer
 RichTextLabel
-AnimationTree
 Timer
 GPUParticlesAttractorVectorField3D
 Sprite2D

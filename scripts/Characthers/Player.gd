@@ -19,6 +19,7 @@ extends CharacterBody3D
 @onready var camera_3d = $Camera3D #camera de visão do player
 @onready var particles = $FlameThrowerShoot/GPUParticles3D #efeito de particulas
 @onready var enable_particle = $FlameThrowerShoot/EnableParticle #Timer para evitar desvio visual das partículas
+@onready var animation: AnimationPlayer = $"PlayerHUD/GunShoot/AnimaçãoArmas"
 
 #Animação das barras de armas
 @onready var linfocit_bar = $"PlayerHUD/UI_AMMO/Linfócito/LinfocitBar"
@@ -55,6 +56,15 @@ var JUMP_FORCE = 8.0
 const GRAVITY = Vector3(0, -9.8, 0)
 const CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 
+#Constantes para Modulação de Vetor
+const UP = Vector2(0,-1)
+const DOWN = Vector2(0, 1)
+const LEFT = Vector2(-1,0)
+const RIGHT = Vector2(1,0)
+const UPLEFT = Vector2(-1,-1)
+const UPRIGHT = Vector2(1,-1)
+const DOWNLEFT = Vector2(-1,1)
+const DOWNRIGHT = Vector2(1,1)
 #Booleanas
 var can_shoot = Global.c_shoot
 var can_shoot_mf = Global.c_shoot_mf
@@ -212,10 +222,12 @@ func _physics_process(delta):
 			enable_particle.stop()
 		if Input.is_action_pressed("run"):
 				velocity.x = direction.x * lerp(SPEED, SPEED * 2, 0.6)
-				velocity.z = direction.z * lerp(SPEED, SPEED *2, 0.6) # Aumentar a velocidade ao correr	
+				velocity.z = direction.z * lerp(SPEED, SPEED *2, 0.6)
+				animation.speed_scale = lerp(1,2,0.6) # Aumentar a velocidade ao correr	
 		else: 
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
+			animation.speed_scale = 1.0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)

@@ -1,3 +1,5 @@
+res://scripts/Animations
+res://scenes/HUD
 res://scripts/Configs
 res://themes
 res://scripts/Tests
@@ -18,5 +20,3 @@ E:/Downloads/ImmunitionExport
 res://images/Collectables
 res://sprites/Monster/infectedcell
 res://sprites/cell
-res://sprites/Monster/influenza
-res://scripts

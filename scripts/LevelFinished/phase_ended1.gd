@@ -61,6 +61,8 @@ func score_animation_1():
 		actual_score_i += 100 
 	elif pont_1 - actual_score_i < 100:
 		actual_score_i += 10
+	elif actual_score_i > pont_1:
+		actual_score_i = pont_1
 	else:
 		return
 
@@ -69,6 +71,8 @@ func score_animation_2():
 		actual_score_ii += 100 
 	elif pont_2 - actual_score_ii < 100:
 		actual_score_ii += 10
+	elif actual_score_ii > pont_2:
+		actual_score_ii = pont_2
 	else:
 		return
 func score_animation_3():
@@ -76,6 +80,8 @@ func score_animation_3():
 		actual_score_iii += 100 
 	elif pont_3 - actual_score_iii < 100:
 		actual_score_iii += 10	
+	elif actual_score_iii > pont_3:
+		actual_score_iii = pont_3
 	else: 
 		return
 func _process(_delta):
