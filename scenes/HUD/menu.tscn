@@ -31,10 +31,10 @@ scale = Vector2(0.448828, 0.452083)
 texture = ExtResource("2_bscqu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 282.0
-offset_top = 428.0
-offset_right = 882.0
-offset_bottom = 535.0
+offset_left = 455.0
+offset_top = 437.0
+offset_right = 688.0
+offset_bottom = 581.0
 theme = SubResource("Theme_seh5y")
 
 [node name="Play" type="Button" parent="CanvasLayer/VBoxContainer"]

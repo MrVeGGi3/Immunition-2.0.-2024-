@@ -1,54 +1,40 @@
-[gd_scene load_steps=227 format=3 uid="uid://cj7emqhky70af"]
+[gd_scene load_steps=174 format=3 uid="uid://cj7emqhky70af"]
 
 [ext_resource type="Script" path="res://scripts/Levels/level_1.gd" id="1_bgiqj"]
 [ext_resource type="Texture2D" uid="uid://bhlaan6ukbhkc" path="res://prefabs/floor1_20240614085358.png" id="2_fikwp"]
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="2_hvoua"]
 [ext_resource type="ArrayMesh" uid="uid://eikqtfkce6jq" path="res://prefabs/dev_grey.obj" id="2_n1rvy"]
 [ext_resource type="Texture2D" uid="uid://cghbpdvq15frc" path="res://prefabs/dev_orange.png" id="3_3i1ra"]
-[ext_resource type="Theme" uid="uid://bd32nqym4104l" path="res://themes/playerLifeBarTheme.tres" id="3_s1558"]
 [ext_resource type="ArrayMesh" uid="uid://bd1p4vxwpo0fn" path="res://prefabs/dev_pillar.obj" id="4_8d1tl"]
 [ext_resource type="Texture2D" uid="uid://0h81ae3vy3hb" path="res://prefabs/floor3_20240614085419.png" id="4_63pe4"]
 [ext_resource type="Texture2D" uid="uid://btxr4ptpyvwrb" path="res://prefabs/wall1_20240614085020.png" id="4_p16kq"]
-[ext_resource type="Texture2D" uid="uid://bv42ntqndsu6p" path="res://icons/Icon Head CH Alive_RedAnimated.png" id="4_sfmia"]
 [ext_resource type="Script" path="res://scripts/Elevators/Elevator_Animations.gd" id="5_hwk44"]
-[ext_resource type="Texture2D" uid="uid://buqhd8dubn178" path="res://sprites/Player/revolver_sprites.png" id="6_0hlob"]
 [ext_resource type="ArrayMesh" uid="uid://vuyc3qmcbjd0" path="res://prefabs/dev_valley.obj" id="6_f3rrp"]
 [ext_resource type="Script" path="res://scripts/Sound/open_door.gd" id="7_e1fkr"]
 [ext_resource type="ArrayMesh" uid="uid://d08ovuxubggti" path="res://prefabs/dev_torus.obj" id="7_l520q"]
 [ext_resource type="Texture2D" uid="uid://2xy8spk7ppfo" path="res://prefabs/asset1_20240614085733.png" id="7_lhhxw"]
-[ext_resource type="Texture2D" uid="uid://b86srxxd4jnsq" path="res://sprites/Player/macrofago_sprite.png" id="7_lj3td"]
 [ext_resource type="PackedScene" uid="uid://b8uj1bea2qdb1" path="res://scenes/Collectables/extractor.tscn" id="8_2o5mc"]
-[ext_resource type="Texture2D" uid="uid://cmixvfomb2y5w" path="res://sprites/Player/neutrofilos_sprite2.png" id="8_6afrl"]
 [ext_resource type="Texture2D" uid="uid://coa64uv3ga52g" path="res://prefabs/wall2_20240614085027.png" id="9_2x05d"]
-[ext_resource type="Texture2D" uid="uid://besa0etqgk00h" path="res://icons/health Icon.png" id="9_5ial8"]
 [ext_resource type="PackedScene" uid="uid://chjb7f3unarmp" path="res://scenes/UI/ItensCollected/extractos_collected.tscn" id="9_hv02g"]
-[ext_resource type="Texture2D" uid="uid://gdo46rv1wjh3" path="res://icons/icon gun select.png" id="10_0emxl"]
 [ext_resource type="Texture2D" uid="uid://clq1oe7trhohk" path="res://prefabs/muscle_20240614103913.png" id="10_bbnt3"]
 [ext_resource type="Texture2D" uid="uid://bbnptvq4384u6" path="res://prefabs/wall3_20240614085034.png" id="10_fcgfb"]
 [ext_resource type="PackedScene" uid="uid://c5yaq5d5t8iip" path="res://scenes/HUD/minimap.tscn" id="10_vb8wc"]
 [ext_resource type="Texture2D" uid="uid://tabp7eyt3ehb" path="res://prefabs/floor2_20240614085410.png" id="11_amhns"]
-[ext_resource type="Texture2D" uid="uid://bap8mnn7tl4bg" path="res://icons/gun selection/icon gun green.jpg" id="11_uajww"]
-[ext_resource type="Texture2D" uid="uid://33jae7wc4cls" path="res://icons/keyoboard buttons/keyboard.png" id="12_sjyor"]
-[ext_resource type="FontFile" uid="uid://tfn36nnpaotb" path="res://fonts/batmfa__.ttf" id="13_rgi30"]
-[ext_resource type="Texture2D" uid="uid://c7mcbsugesbyq" path="res://icons/weapons/Icon Linfosito.png" id="14_ohaho"]
 [ext_resource type="AudioStream" uid="uid://cjqqt2syy2a28" path="res://sounds/SFX/Buttons/ButtorError.wav" id="14_srumt"]
-[ext_resource type="Texture2D" uid="uid://b82c6dssql1le" path="res://icons/gun selection/icon gun blue.jpg" id="15_v8i5r"]
 [ext_resource type="PackedScene" uid="uid://cisbfousat14j" path="res://scenes/UI/PhasesFinished/phase_ended.tscn" id="16_ee351"]
-[ext_resource type="Texture2D" uid="uid://6eexcteofaqe" path="res://icons/weapons/Icon neutrofilo.png" id="16_k50qe"]
-[ext_resource type="Texture2D" uid="uid://b1kyb3y8wghfy" path="res://icons/gun selection/icon gun red.jpg" id="17_kw8ox"]
-[ext_resource type="Texture2D" uid="uid://hktqxlioxt6s" path="res://icons/weapons/Icon macrofago.png" id="18_dykou"]
 [ext_resource type="PackedScene" uid="uid://nt37rum3dhef" path="res://scenes/HUD/WheelSwitchWeapons.tscn" id="19_3xk8q"]
 [ext_resource type="PackedScene" uid="uid://bli5ijcxx5bse" path="res://scenes/HUD/MemorySystem.tscn" id="20_hysmr"]
 [ext_resource type="PackedScene" uid="uid://cfltp503gd8w7" path="res://scenes/UI/Player/whell&memory.tscn" id="21_m7wo0"]
 [ext_resource type="PackedScene" uid="uid://5ran8yqdqky" path="res://scenes/HUD/pause_menu.tscn" id="22_lt2jr"]
-[ext_resource type="Theme" uid="uid://bw2cynbti0h7y" path="res://themes/PanelColor.tres" id="23_1et4v"]
-[ext_resource type="Theme" uid="uid://dufxlwl2jmmm8" path="res://themes/purpleTheme.tres" id="24_qlig7"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="25_7kquy"]
-[ext_resource type="Texture2D" uid="uid://d0r2c8ejf2khy" path="res://icons/Icon Head CH Died.png" id="26_ys1ex"]
 [ext_resource type="AudioStream" uid="uid://hqasyg3vanal" path="res://sounds/SFX/Player/ShootEffect.wav" id="27_0ur8g"]
 [ext_resource type="AudioStream" uid="uid://cl16r632p0qb5" path="res://sounds/BGM/deathsound.wav" id="28_a2774"]
 [ext_resource type="AudioStream" uid="uid://dk7wdjoi41cuq" path="res://sounds/SFX/Player/macrofage_weapon .wav" id="30_ax3k4"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="31_8xm55"]
+[ext_resource type="PackedScene" uid="uid://csuphbpruxtrh" path="res://scenes/HUD/player_life_bar.tscn" id="33_rwaqr"]
+[ext_resource type="PackedScene" uid="uid://btp7d3bapr771" path="res://scenes/HUD/gun_shoot.tscn" id="34_4hlga"]
+[ext_resource type="PackedScene" uid="uid://bjs28xuudoshk" path="res://scenes/HUD/ui_ammo.tscn" id="35_qvsj1"]
+[ext_resource type="PackedScene" uid="uid://bto3b5twkq7gj" path="res://scenes/HUD/death_screen.tscn" id="39_qgjc3"]
 [ext_resource type="PackedScene" uid="uid://cc6g7d2jxbm48" path="res://scenes/spawner/MainSpawner/CellSpawner3D.tscn" id="47_5u452"]
 [ext_resource type="PackedScene" uid="uid://doww2heou7dsn" path="res://scenes/spawner/MainSpawner/InfluenzaSpawner3D.tscn" id="48_d5mun"]
 [ext_resource type="AudioStream" uid="uid://ddot4x86ay8a4" path="res://sounds/BGM/VictorySong.wav" id="48_n7oef"]
@@ -774,390 +760,8 @@ uv1_scale = Vector3(10, 10, 1)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6r4b1"]
 data = PackedVector3Array(0.8839, 0, -0.8839, 1.25, 0, 0, 0.8321, 0.1768, -0.8321, 0.8321, 0.1768, -0.8321, 1.25, 0, 0, 1.1768, 0.1768, 0, 0.8321, 0.1768, -0.8321, 1.1768, 0.1768, 0, 0.7071, 0.25, -0.7071, 0.7071, 0.25, -0.7071, 1.1768, 0.1768, 0, 1, 0.25, 0, 0.7071, 0.25, -0.7071, 1, 0.25, 0, 0.5821, 0.1768, -0.5821, 0.5821, 0.1768, -0.5821, 1, 0.25, 0, 0.8232, 0.1768, 0, 0.5821, 0.1768, -0.5821, 0.8232, 0.1768, 0, 0.5303, 0, -0.5303, 0.5303, 0, -0.5303, 0.8232, 0.1768, 0, 0.75, 0, 0, 0.5303, 0, -0.5303, 0.75, 0, 0, 0.5821, -0.1768, -0.5821, 0.5821, -0.1768, -0.5821, 0.75, 0, 0, 0.8232, -0.1768, 0, 0.5821, -0.1768, -0.5821, 0.8232, -0.1768, 0, 0.7071, -0.25, -0.7071, 0.7071, -0.25, -0.7071, 0.8232, -0.1768, 0, 1, -0.25, 0, 0.7071, -0.25, -0.7071, 1, -0.25, 0, 0.8321, -0.1768, -0.8321, 0.8321, -0.1768, -0.8321, 1, -0.25, 0, 1.1768, -0.1768, 0, 0.8321, -0.1768, -0.8321, 1.1768, -0.1768, 0, 0.8839, 0, -0.8839, 0.8839, 0, -0.8839, 1.1768, -0.1768, 0, 1.25, 0, 0, 0, 0, -1.25, 0.8839, 0, -0.8839, 0, 0.1768, -1.1768, 0, 0.1768, -1.1768, 0.8839, 0, -0.8839, 0.8321, 0.1768, -0.8321, 0, 0.1768, -1.1768, 0.8321, 0.1768, -0.8321, 0, 0.25, -1, 0, 0.25, -1, 0.8321, 0.1768, -0.8321, 0.7071, 0.25, -0.7071, 0, 0.25, -1, 0.7071, 0.25, -0.7071, 0, 0.1768, -0.8232, 0, 0.1768, -0.8232, 0.7071, 0.25, -0.7071, 0.5821, 0.1768, -0.5821, 0, 0.1768, -0.8232, 0.5821, 0.1768, -0.5821, 0, 0, -0.75, 0, 0, -0.75, 0.5821, 0.1768, -0.5821, 0.5303, 0, -0.5303, 0, 0, -0.75, 0.5303, 0, -0.5303, 0, -0.1768, -0.8232, 0, -0.1768, -0.8232, 0.5303, 0, -0.5303, 0.5821, -0.1768, -0.5821, 0, -0.1768, -0.8232, 0.5821, -0.1768, -0.5821, 0, -0.25, -1, 0, -0.25, -1, 0.5821, -0.1768, -0.5821, 0.7071, -0.25, -0.7071, 0, -0.25, -1, 0.7071, -0.25, -0.7071, 0, -0.1768, -1.1768, 0, -0.1768, -1.1768, 0.7071, -0.25, -0.7071, 0.8321, -0.1768, -0.8321, 0, -0.1768, -1.1768, 0.8321, -0.1768, -0.8321, 0, 0, -1.25, 0, 0, -1.25, 0.8321, -0.1768, -0.8321, 0.8839, 0, -0.8839, -0.8839, 0, -0.8839, 0, 0, -1.25, -0.8321, 0.1768, -0.8321, -0.8321, 0.1768, -0.8321, 0, 0, -1.25, 0, 0.1768, -1.1768, -0.8321, 0.1768, -0.8321, 0, 0.1768, -1.1768, -0.7071, 0.25, -0.7071, -0.7071, 0.25, -0.7071, 0, 0.1768, -1.1768, 0, 0.25, -1, -0.7071, 0.25, -0.7071, 0, 0.25, -1, -0.5821, 0.1768, -0.5821, -0.5821, 0.1768, -0.5821, 0, 0.25, -1, 0, 0.1768, -0.8232, -0.5821, 0.1768, -0.5821, 0, 0.1768, -0.8232, -0.5303, 0, -0.5303, -0.5303, 0, -0.5303, 0, 0.1768, -0.8232, 0, 0, -0.75, -0.5303, 0, -0.5303, 0, 0, -0.75, -0.5821, -0.1768, -0.5821, -0.5821, -0.1768, -0.5821, 0, 0, -0.75, 0, -0.1768, -0.8232, -0.5821, -0.1768, -0.5821, 0, -0.1768, -0.8232, -0.7071, -0.25, -0.7071, -0.7071, -0.25, -0.7071, 0, -0.1768, -0.8232, 0, -0.25, -1, -0.7071, -0.25, -0.7071, 0, -0.25, -1, -0.8321, -0.1768, -0.8321, -0.8321, -0.1768, -0.8321, 0, -0.25, -1, 0, -0.1768, -1.1768, -0.8321, -0.1768, -0.8321, 0, -0.1768, -1.1768, -0.8839, 0, -0.8839, -0.8839, 0, -0.8839, 0, -0.1768, -1.1768, 0, 0, -1.25, -1.25, 0, 0, -0.8839, 0, -0.8839, -1.1768, 0.1768, 0, -1.1768, 0.1768, 0, -0.8839, 0, -0.8839, -0.8321, 0.1768, -0.8321, -1.1768, 0.1768, 0, -0.8321, 0.1768, -0.8321, -1, 0.25, 0, -1, 0.25, 0, -0.8321, 0.1768, -0.8321, -0.7071, 0.25, -0.7071, -1, 0.25, 0, -0.7071, 0.25, -0.7071, -0.8232, 0.1768, 0, -0.8232, 0.1768, 0, -0.7071, 0.25, -0.7071, -0.5821, 0.1768, -0.5821, -0.8232, 0.1768, 0, -0.5821, 0.1768, -0.5821, -0.75, 0, 0, -0.75, 0, 0, -0.5821, 0.1768, -0.5821, -0.5303, 0, -0.5303, -0.75, 0, 0, -0.5303, 0, -0.5303, -0.8232, -0.1768, 0, -0.8232, -0.1768, 0, -0.5303, 0, -0.5303, -0.5821, -0.1768, -0.5821, -0.8232, -0.1768, 0, -0.5821, -0.1768, -0.5821, -1, -0.25, 0, -1, -0.25, 0, -0.5821, -0.1768, -0.5821, -0.7071, -0.25, -0.7071, -1, -0.25, 0, -0.7071, -0.25, -0.7071, -1.1768, -0.1768, 0, -1.1768, -0.1768, 0, -0.7071, -0.25, -0.7071, -0.8321, -0.1768, -0.8321, -1.1768, -0.1768, 0, -0.8321, -0.1768, -0.8321, -1.25, 0, 0, -1.25, 0, 0, -0.8321, -0.1768, -0.8321, -0.8839, 0, -0.8839, -0.8839, 0, 0.8839, -1.25, 0, 0, -0.8321, 0.1768, 0.8321, -0.8321, 0.1768, 0.8321, -1.25, 0, 0, -1.1768, 0.1768, 0, -0.8321, 0.1768, 0.8321, -1.1768, 0.1768, 0, -0.7071, 0.25, 0.7071, -0.7071, 0.25, 0.7071, -1.1768, 0.1768, 0, -1, 0.25, 0, -0.7071, 0.25, 0.7071, -1, 0.25, 0, -0.5821, 0.1768, 0.5821, -0.5821, 0.1768, 0.5821, -1, 0.25, 0, -0.8232, 0.1768, 0, -0.5821, 0.1768, 0.5821, -0.8232, 0.1768, 0, -0.5303, 0, 0.5303, -0.5303, 0, 0.5303, -0.8232, 0.1768, 0, -0.75, 0, 0, -0.5303, 0, 0.5303, -0.75, 0, 0, -0.5821, -0.1768, 0.5821, -0.5821, -0.1768, 0.5821, -0.75, 0, 0, -0.8232, -0.1768, 0, -0.5821, -0.1768, 0.5821, -0.8232, -0.1768, 0, -0.7071, -0.25, 0.7071, -0.7071, -0.25, 0.7071, -0.8232, -0.1768, 0, -1, -0.25, 0, -0.7071, -0.25, 0.7071, -1, -0.25, 0, -0.8321, -0.1768, 0.8321, -0.8321, -0.1768, 0.8321, -1, -0.25, 0, -1.1768, -0.1768, 0, -0.8321, -0.1768, 0.8321, -1.1768, -0.1768, 0, -0.8839, 0, 0.8839, -0.8839, 0, 0.8839, -1.1768, -0.1768, 0, -1.25, 0, 0, 0, 0, 1.25, -0.8839, 0, 0.8839, 0, 0.1768, 1.1768, 0, 0.1768, 1.1768, -0.8839, 0, 0.8839, -0.8321, 0.1768, 0.8321, 0, 0.1768, 1.1768, -0.8321, 0.1768, 0.8321, 0, 0.25, 1, 0, 0.25, 1, -0.8321, 0.1768, 0.8321, -0.7071, 0.25, 0.7071, 0, 0.25, 1, -0.7071, 0.25, 0.7071, 0, 0.1768, 0.8232, 0, 0.1768, 0.8232, -0.7071, 0.25, 0.7071, -0.5821, 0.1768, 0.5821, 0, 0.1768, 0.8232, -0.5821, 0.1768, 0.5821, 0, 0, 0.75, 0, 0, 0.75, -0.5821, 0.1768, 0.5821, -0.5303, 0, 0.5303, 0, 0, 0.75, -0.5303, 0, 0.5303, 0, -0.1768, 0.8232, 0, -0.1768, 0.8232, -0.5303, 0, 0.5303, -0.5821, -0.1768, 0.5821, 0, -0.1768, 0.8232, -0.5821, -0.1768, 0.5821, 0, -0.25, 1, 0, -0.25, 1, -0.5821, -0.1768, 0.5821, -0.7071, -0.25, 0.7071, 0, -0.25, 1, -0.7071, -0.25, 0.7071, 0, -0.1768, 1.1768, 0, -0.1768, 1.1768, -0.7071, -0.25, 0.7071, -0.8321, -0.1768, 0.8321, 0, -0.1768, 1.1768, -0.8321, -0.1768, 0.8321, 0, 0, 1.25, 0, 0, 1.25, -0.8321, -0.1768, 0.8321, -0.8839, 0, 0.8839, 0.8839, 0, 0.8839, 0, 0, 1.25, 0.8321, 0.1768, 0.8321, 0.8321, 0.1768, 0.8321, 0, 0, 1.25, 0, 0.1768, 1.1768, 0.8321, 0.1768, 0.8321, 0, 0.1768, 1.1768, 0.7071, 0.25, 0.7071, 0.7071, 0.25, 0.7071, 0, 0.1768, 1.1768, 0, 0.25, 1, 0.7071, 0.25, 0.7071, 0, 0.25, 1, 0.5821, 0.1768, 0.5821, 0.5821, 0.1768, 0.5821, 0, 0.25, 1, 0, 0.1768, 0.8232, 0.5821, 0.1768, 0.5821, 0, 0.1768, 0.8232, 0.5303, 0, 0.5303, 0.5303, 0, 0.5303, 0, 0.1768, 0.8232, 0, 0, 0.75, 0.5303, 0, 0.5303, 0, 0, 0.75, 0.5821, -0.1768, 0.5821, 0.5821, -0.1768, 0.5821, 0, 0, 0.75, 0, -0.1768, 0.8232, 0.5821, -0.1768, 0.5821, 0, -0.1768, 0.8232, 0.7071, -0.25, 0.7071, 0.7071, -0.25, 0.7071, 0, -0.1768, 0.8232, 0, -0.25, 1, 0.7071, -0.25, 0.7071, 0, -0.25, 1, 0.8321, -0.1768, 0.8321, 0.8321, -0.1768, 0.8321, 0, -0.25, 1, 0, -0.1768, 1.1768, 0.8321, -0.1768, 0.8321, 0, -0.1768, 1.1768, 0.8839, 0, 0.8839, 0.8839, 0, 0.8839, 0, -0.1768, 1.1768, 0, 0, 1.25, 1.25, 0, 0, 0.8839, 0, 0.8839, 1.1768, 0.1768, 0, 1.1768, 0.1768, 0, 0.8839, 0, 0.8839, 0.8321, 0.1768, 0.8321, 1.1768, 0.1768, 0, 0.8321, 0.1768, 0.8321, 1, 0.25, 0, 1, 0.25, 0, 0.8321, 0.1768, 0.8321, 0.7071, 0.25, 0.7071, 1, 0.25, 0, 0.7071, 0.25, 0.7071, 0.8232, 0.1768, 0, 0.8232, 0.1768, 0, 0.7071, 0.25, 0.7071, 0.5821, 0.1768, 0.5821, 0.8232, 0.1768, 0, 0.5821, 0.1768, 0.5821, 0.75, 0, 0, 0.75, 0, 0, 0.5821, 0.1768, 0.5821, 0.5303, 0, 0.5303, 0.75, 0, 0, 0.5303, 0, 0.5303, 0.8232, -0.1768, 0, 0.8232, -0.1768, 0, 0.5303, 0, 0.5303, 0.5821, -0.1768, 0.5821, 0.8232, -0.1768, 0, 0.5821, -0.1768, 0.5821, 1, -0.25, 0, 1, -0.25, 0, 0.5821, -0.1768, 0.5821, 0.7071, -0.25, 0.7071, 1, -0.25, 0, 0.7071, -0.25, 0.7071, 1.1768, -0.1768, 0, 1.1768, -0.1768, 0, 0.7071, -0.25, 0.7071, 0.8321, -0.1768, 0.8321, 1.1768, -0.1768, 0, 0.8321, -0.1768, 0.8321, 1.25, 0, 0, 1.25, 0, 0, 0.8321, -0.1768, 0.8321, 0.8839, 0, 0.8839)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nwage"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ocaef"]
-atlas = ExtResource("4_sfmia")
-region = Rect2(1062, 0, 1062, 731)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ft53n"]
-atlas = ExtResource("4_sfmia")
-region = Rect2(0, 0, 1062, 731)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jsgjo"]
-atlas = ExtResource("4_sfmia")
-region = Rect2(0, 0, 1062, 731)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4vnq4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ocaef")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ft53n")
-}],
-"loop": false,
-"name": &"damage_received",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jsgjo")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 10.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ys8yx"]
-atlas = ExtResource("6_0hlob")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nyhc2"]
-atlas = ExtResource("7_lj3td")
-region = Rect2(0, 0, 2048, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_og1fy"]
-atlas = ExtResource("8_6afrl")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eulep"]
-atlas = ExtResource("6_0hlob")
-region = Rect2(1024, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fbxrv"]
-atlas = ExtResource("6_0hlob")
-region = Rect2(2048, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dkq2n"]
-atlas = ExtResource("6_0hlob")
-region = Rect2(3072, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h5ljn"]
-atlas = ExtResource("6_0hlob")
-region = Rect2(4096, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p2nwi"]
-atlas = ExtResource("6_0hlob")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_71dco"]
-atlas = ExtResource("7_lj3td")
-region = Rect2(2048, 0, 2048, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_48bmv"]
-atlas = ExtResource("7_lj3td")
-region = Rect2(0, 1024, 2048, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_18mu0"]
-atlas = ExtResource("7_lj3td")
-region = Rect2(2048, 1024, 2048, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hvoft"]
-atlas = ExtResource("7_lj3td")
-region = Rect2(0, 0, 2048, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dci4r"]
-atlas = ExtResource("8_6afrl")
-region = Rect2(1024, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejm24"]
-atlas = ExtResource("8_6afrl")
-region = Rect2(2048, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmhim"]
-atlas = ExtResource("8_6afrl")
-region = Rect2(3072, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uqiax"]
-atlas = ExtResource("8_6afrl")
-region = Rect2(0, 1024, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v0nvl"]
-atlas = ExtResource("8_6afrl")
-region = Rect2(1024, 1024, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_usdhk"]
-atlas = ExtResource("8_6afrl")
-region = Rect2(2048, 1024, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1slse"]
-atlas = ExtResource("8_6afrl")
-region = Rect2(3072, 1024, 1024, 1024)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qaoph"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ys8yx")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nyhc2")
-}],
-"loop": false,
-"name": &"idle_macrofage",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_og1fy")
-}],
-"loop": false,
-"name": &"idle_neutro",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eulep")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fbxrv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dkq2n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h5ljn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p2nwi")
-}],
-"loop": false,
-"name": &"shoot",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_71dco")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_48bmv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_18mu0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hvoft")
-}],
-"loop": false,
-"name": &"shoot_macrofage",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dci4r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejm24")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mmhim")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uqiax")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v0nvl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_usdhk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1slse")
-}],
-"loop": true,
-"name": &"shoot_neutro",
-"speed": 10.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_asqag"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_uajww")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_uajww")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}],
-"loop": false,
-"name": &"recharge",
-"speed": 10.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_65rdl"]
-atlas = ExtResource("12_sjyor")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2db4e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_65rdl")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_weqne"]
-atlas = ExtResource("14_ohaho")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3br55"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_weqne")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_uf55j"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_v8i5r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_v8i5r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}],
-"loop": false,
-"name": &"recharge",
-"speed": 10.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6va40"]
-atlas = ExtResource("16_k50qe")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yg3w6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6va40")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4kqli"]
-atlas = ExtResource("12_sjyor")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f73ti"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4kqli")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yltvk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_kw8ox")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_kw8ox")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_0emxl")
-}],
-"loop": false,
-"name": &"recharge",
-"speed": 10.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_375ne"]
-atlas = ExtResource("12_sjyor")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_aobn8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_375ne")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aj6o7"]
-atlas = ExtResource("18_dykou")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f2ewk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aj6o7")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
+[sub_resource type="BoxShape3D" id="BoxShape3D_txq5y"]
+size = Vector3(1, 2, 1)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ayvqm"]
 particle_flag_align_y = true
@@ -2512,7 +2116,6 @@ transform = Transform3D(0.936842, 0, 0, 0, 0.936842, 0, 0, 0, 0.936842, -165.963
 [node name="CutsceneCamera" type="Camera3D" parent="CameraPosition"]
 unique_name_in_owner = true
 transform = Transform3D(0.0540799, 0.306907, -0.950202, 0, 0.951595, 0.307357, 0.998536, -0.0166218, 0.0514622, -265.096, 26.2732, -104.218)
-current = true
 
 [node name="Extractor" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00195313)
@@ -2640,7 +2243,6 @@ offset_left = -3.0
 offset_top = -2.0
 offset_right = -3.0
 offset_bottom = -2.0
-target = NodePath("../Player")
 level = NodePath("..")
 
 [node name="PhaseEnded" parent="." instance=ExtResource("16_ee351")]
@@ -2756,7 +2358,7 @@ m_ammo = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982741, 0)
-shape = SubResource("CapsuleShape3D_nwage")
+shape = SubResource("BoxShape3D_txq5y")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -2764,172 +2366,11 @@ current = true
 
 [node name="PlayerHUD" type="CanvasLayer" parent="Player"]
 
-[node name="PlayerLifeBar" type="Control" parent="Player/PlayerHUD"]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 0
-offset_left = 135.0
-offset_top = 492.0
-offset_right = 175.0
-offset_bottom = 532.0
+[node name="PlayerLifeBar" parent="Player/PlayerHUD" instance=ExtResource("33_rwaqr")]
 
-[node name="ProgressBar" type="ProgressBar" parent="Player/PlayerHUD/PlayerLifeBar"]
-layout_mode = 0
-offset_left = 74.0
-offset_top = 9.0
-offset_right = 274.0
-offset_bottom = 36.0
-theme = ExtResource("3_s1558")
-max_value = 10.0
-value = 10.0
-show_percentage = false
+[node name="GunShoot" parent="Player/PlayerHUD" instance=ExtResource("34_4hlga")]
 
-[node name="DamageTaken" type="AnimatedSprite2D" parent="Player/PlayerHUD/PlayerLifeBar"]
-position = Vector2(-31, 24)
-scale = Vector2(0.193912, 0.193912)
-sprite_frames = SubResource("SpriteFrames_4vnq4")
-animation = &"damage_received"
-frame = 1
-frame_progress = 1.0
-
-[node name="GunShoot" type="Control" parent="Player/PlayerHUD"]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/PlayerHUD/GunShoot"]
-position = Vector2(758, 442)
-scale = Vector2(0.418145, 0.418145)
-sprite_frames = SubResource("SpriteFrames_qaoph")
-animation = &"shoot_neutro"
-autoplay = "idle"
-frame = 3
-frame_progress = 0.206659
-
-[node name="Sprite2D" type="Sprite2D" parent="Player/PlayerHUD/GunShoot"]
-position = Vector2(571, 318)
-scale = Vector2(0.0255, 0.0255)
-texture = ExtResource("9_5ial8")
-
-[node name="UI_AMMO" type="Control" parent="Player/PlayerHUD"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 378.0
-offset_top = 646.0
-offset_right = 418.0
-offset_bottom = 686.0
-
-[node name="Ammo3" type="Sprite2D" parent="Player/PlayerHUD/UI_AMMO"]
-position = Vector2(247, -36)
-scale = Vector2(0.056, 0.056)
-texture = ExtResource("10_0emxl")
-
-[node name="Linfócito" type="Control" parent="Player/PlayerHUD/UI_AMMO"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LinfocitBar" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Linfócito"]
-position = Vector2(115, -42)
-scale = Vector2(0.0631217, 0.0635484)
-sprite_frames = SubResource("SpriteFrames_asqag")
-animation = &"recharge"
-autoplay = "default"
-
-[node name="1" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Linfócito"]
-position = Vector2(117, -82)
-sprite_frames = SubResource("SpriteFrames_2db4e")
-
-[node name="Ammo_Linf" type="Label" parent="Player/PlayerHUD/UI_AMMO/Linfócito"]
-layout_mode = 0
-offset_left = 85.0
-offset_top = -26.0
-offset_right = 152.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0.286275, 0, 1)
-theme_override_fonts/font = ExtResource("13_rgi30")
-theme_override_font_sizes/font_size = 30
-text = "20
-"
-horizontal_alignment = 1
-
-[node name="LinfocitIcon" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Linfócito"]
-position = Vector2(117, -43)
-scale = Vector2(0.226765, 0.226765)
-sprite_frames = SubResource("SpriteFrames_3br55")
-animation = &"idle"
-
-[node name="Macrofágo" type="Control" parent="Player/PlayerHUD/UI_AMMO"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="MacrofageBar" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Macrofágo"]
-position = Vector2(180, -44)
-scale = Vector2(0.0631217, 0.0635484)
-sprite_frames = SubResource("SpriteFrames_uf55j")
-animation = &"recharge"
-autoplay = "default"
-
-[node name="MacrofageIcon" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Macrofágo"]
-position = Vector2(184, -46)
-scale = Vector2(0.21566, 0.21566)
-sprite_frames = SubResource("SpriteFrames_yg3w6")
-animation = &"idle"
-
-[node name="2" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Macrofágo"]
-position = Vector2(183, -82)
-sprite_frames = SubResource("SpriteFrames_f73ti")
-
-[node name="Ammo_Macr" type="Label" parent="Player/PlayerHUD/UI_AMMO/Macrofágo"]
-layout_mode = 0
-offset_left = 150.0
-offset_top = -25.0
-offset_right = 217.0
-offset_bottom = 33.0
-theme_override_colors/font_color = Color(0, 0, 0.937255, 1)
-theme_override_fonts/font = ExtResource("13_rgi30")
-theme_override_font_sizes/font_size = 30
-text = "20"
-horizontal_alignment = 1
-
-[node name="Neutrófilo" type="Control" parent="Player/PlayerHUD/UI_AMMO"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="NeutrofileBar" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Neutrófilo"]
-position = Vector2(248, -43)
-scale = Vector2(0.0631217, 0.0635484)
-sprite_frames = SubResource("SpriteFrames_yltvk")
-animation = &"recharge"
-autoplay = "default"
-
-[node name="Ammo_Neu" type="Label" parent="Player/PlayerHUD/UI_AMMO/Neutrófilo"]
-layout_mode = 0
-offset_left = 224.0
-offset_top = -26.0
-offset_right = 275.0
-offset_bottom = 7.0
-theme_override_colors/font_color = Color(0.952941, 0, 0, 1)
-theme_override_fonts/font = ExtResource("13_rgi30")
-theme_override_font_sizes/font_size = 30
-text = "20"
-horizontal_alignment = 1
-
-[node name="3" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Neutrófilo"]
-position = Vector2(246, -84)
-sprite_frames = SubResource("SpriteFrames_aobn8")
-
-[node name="Neutrofile" type="AnimatedSprite2D" parent="Player/PlayerHUD/UI_AMMO/Neutrófilo"]
-position = Vector2(248, -45)
-scale = Vector2(0.256223, 0.256223)
-sprite_frames = SubResource("SpriteFrames_f2ewk")
-animation = &"idle"
+[node name="UI_AMMO" parent="Player/PlayerHUD" instance=ExtResource("35_qvsj1")]
 
 [node name="WheelSwitchWeapons" parent="Player/PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("19_3xk8q")]
 offset_right = -264.0
@@ -2945,49 +2386,7 @@ scale = Vector2(0.480624, 0.480624)
 
 [node name="pause_menu" parent="Player/PlayerHUD" instance=ExtResource("22_lt2jr")]
 
-[node name="DeathScreen" type="Control" parent="Player/PlayerHUD"]
-process_mode = 3
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_top = -24.0
-offset_right = 41.0
-offset_bottom = 16.0
-
-[node name="Panel" type="Panel" parent="Player/PlayerHUD/DeathScreen"]
-modulate = Color(1, 0.403922, 0.619608, 1)
-layout_mode = 0
-offset_left = 364.0
-offset_top = 214.0
-offset_right = 738.0
-offset_bottom = 463.0
-theme = ExtResource("23_1et4v")
-
-[node name="Label" type="Label" parent="Player/PlayerHUD/DeathScreen/Panel"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 13.0
-offset_right = 320.0
-offset_bottom = 71.0
-theme = ExtResource("24_qlig7")
-theme_override_colors/font_color = Color(1, 0.972549, 0.964706, 0.980392)
-theme_override_fonts/font = ExtResource("25_7kquy")
-theme_override_font_sizes/font_size = 40
-text = "Você Morreu!"
-
-[node name="RestartButton" type="Button" parent="Player/PlayerHUD/DeathScreen/Panel" groups=["player"]]
-layout_mode = 0
-offset_left = 117.0
-offset_top = 195.0
-offset_right = 263.0
-offset_bottom = 243.0
-text = "Recomeçar"
-
-[node name="PlayerDead" type="Sprite2D" parent="Player/PlayerHUD/DeathScreen"]
-position = Vector2(549, 347)
-scale = Vector2(0.145759, 0.145759)
-texture = ExtResource("26_ys1ex")
+[node name="DeathScreen" parent="Player/PlayerHUD" instance=ExtResource("39_qgjc3")]
 
 [node name="MemorySystem" parent="Player/PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("20_hysmr")]
 process_mode = 3
@@ -3064,5 +2463,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21481, 1.27402, 0.017539)
 
 [connection signal="body_entered" from="ExtractorPlatform/AreaPlatform" to="." method="_on_area_platform_body_entered"]
 [connection signal="timeout" from="TimerCounter/Control2/Count" to="." method="_on_count_timeout"]
-[connection signal="pressed" from="Player/PlayerHUD/DeathScreen/Panel/RestartButton" to="Player" method="restart"]
 [connection signal="timeout" from="Player/FlameThrowerShoot/EnableParticle" to="Player" method="_on_enable_particle_timeout"]

@@ -1,4 +1,4 @@
-res://scenes/HUD/gun_shoot.tscn
+res://scenes/Levels/level_1.tscn
 res://scripts/Characthers/Player.gd
 res://themes/playerLifeBarTheme.tres
 res://scripts/HUD/minimap.gd
@@ -12,9 +12,7 @@ res://shaders/water.gdshader
 res://shaders/PlayerRedGlob.gdshader
 res://scripts/Spawner/CanonSpawn.gd
 res://scripts/HUD/Options.gd
-res://scripts/Animations/AnimationTree.gd
 res://scenes/HUD/logo_transition.tscn
-res://scenes/Levels/level_1.tscn
 res://scenes/Levels/world.tscn
 res://scenes/UI/EnemiesToDestroy/TimerCount.tscn
 res://scenes/UI/ItensCollected/extractos_collected.tscn
@@ -72,4 +70,5 @@ res://scenes/UI/Player/whell&memory.tscn
 res://scenes/Levels/level_2.tscn
 res://scenes/testing/TestScoreAnimation.tscn
 res://scenes/configs/Controls.tscn
+res://scenes/HUD/gun_shoot.tscn
 res://scenes/Levels/Test/testingplayer.tscn
