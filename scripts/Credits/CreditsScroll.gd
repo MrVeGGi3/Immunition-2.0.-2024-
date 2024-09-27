@@ -2,15 +2,15 @@ extends RichTextLabel
 @export var spaces_number = 2
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	append_title_line("Arte 2D, Animação e Concept Art")
+	append_title_line("Arte 2D, UI, Animação")
 	append_next_line()
 	append_desc_line("Daniel Marto da Silva")
 	append_empty_space()
-	append_title_line("Game Design, Arte 3D e Environment")
+	append_title_line("Game Design, Arte 3D e Level Design")
 	append_next_line()
 	append_desc_line("Lucas Camilo dos Reis")
 	append_empty_space()
-	append_title_line("Programação, Sonografia e UI")
+	append_title_line("Programação, Sonografia")
 	append_next_line()
 	append_desc_line("Matheus Veras Soares")
 	append_empty_space()
@@ -44,5 +44,5 @@ func append_empty_space():
 	for i in range(spaces_number):
 		append_text("\n")	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass

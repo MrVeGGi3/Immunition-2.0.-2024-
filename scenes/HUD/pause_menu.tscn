@@ -1,19 +1,25 @@
-[gd_scene load_steps=14 format=3 uid="uid://5ran8yqdqky"]
+[gd_scene load_steps=20 format=3 uid="uid://5ran8yqdqky"]
 
 [ext_resource type="Script" path="res://scripts/HUD/Pause.gd" id="1_4srht"]
 [ext_resource type="Theme" uid="uid://unuynfnhkuni" path="res://themes/label.tres" id="1_w2yf1"]
 [ext_resource type="Script" path="res://scripts/Sound/ChangeSound.gd" id="3_rjk7c"]
 [ext_resource type="Theme" uid="uid://btc3kqb6qx6k3" path="res://themes/button.tres" id="4_0h3b8"]
 [ext_resource type="AudioStream" uid="uid://hqasyg3vanal" path="res://sounds/SFX/Player/ShootEffect.wav" id="4_aw64a"]
+[ext_resource type="Theme" uid="uid://wphxiqw387ve" path="res://themes/OptionsButton.tres" id="5_6358x"]
 [ext_resource type="Script" path="res://scripts/HUD/WindowType.gd" id="5_csce5"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="5_ggvt1"]
 [ext_resource type="Script" path="res://scripts/HUD/ResolutionControl.gd" id="5_t1wfl"]
+[ext_resource type="Theme" uid="uid://di70k30qidjuf" path="res://themes/sliders.tres" id="9_hn1co"]
 [ext_resource type="Script" path="res://scripts/Sliders/mouse_sensibility.gd" id="11_wh8we"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eu5c7"]
+[ext_resource type="Texture2D" uid="uid://b2jrnn7487g7v" path="res://images/UI/Backgrounds/Options/Rectangle back.png" id="12_cehts"]
+[ext_resource type="Texture2D" uid="uid://dbs427gxf0y6i" path="res://images/UI/Backgrounds/Options/Rectangle front.png" id="13_hpadi"]
+[ext_resource type="Texture2D" uid="uid://cxhyj8lv8hmyq" path="res://images/UI/Backgrounds/Options/Title Circle - Opções.png" id="14_0c0r3"]
+[ext_resource type="Texture2D" uid="uid://ropyigdpatuv" path="res://images/UI/Sliders/Ellipse 1.png" id="15_xtgub"]
+[ext_resource type="Texture2D" uid="uid://dfl8lv7t0jfyf" path="res://images/UI/Backgrounds/Options/Polygon 1.png" id="16_e0h5u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nhucs"]
-font_size = 93
+font_size = 70
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="InputEventAction" id="InputEventAction_cc1os"]
 action = &"ui_cancel"
@@ -27,164 +33,106 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -66.0
+offset_right = -66.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_w2yf1")
 script = ExtResource("1_4srht")
-
-[node name="Panel" type="Panel" parent="."]
-modulate = Color(0.741176, 0.741176, 0.415686, 1)
-self_modulate = Color(0.764706, 0.694118, 0.290196, 1)
-material = SubResource("CanvasItemMaterial_eu5c7")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Panel"]
-position = Vector2(-418, -377)
-color = Color(0.839216, 0.501961, 0, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CanvasModulate"]
-offset_left = 846.0
-offset_top = 601.0
-offset_right = 1146.0
-offset_bottom = 721.0
-
-[node name="SFX" type="Label" parent="Panel/CanvasModulate/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_w2yf1")
-text = "SFX
-"
-horizontal_alignment = 1
-
-[node name="SFX - Slider" type="HSlider" parent="Panel/CanvasModulate/VBoxContainer"]
-layout_direction = 2
-layout_mode = 2
-max_value = 1.0
-step = 0.001
-script = ExtResource("3_rjk7c")
-bus_name = "SFX"
-
-[node name="BGM" type="Label" parent="Panel/CanvasModulate/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_w2yf1")
-text = "BGM"
-horizontal_alignment = 1
-
-[node name="BGM - Slider" type="HSlider" parent="Panel/CanvasModulate/VBoxContainer"]
-layout_mode = 2
-max_value = 1.0
-step = 0.001
-script = ExtResource("3_rjk7c")
-bus_name = "BGM"
-
-[node name="Options" type="Label" parent="Panel/CanvasModulate"]
-offset_left = 877.0
-offset_top = 430.0
-offset_right = 1146.0
-offset_bottom = 561.0
-theme = ExtResource("1_w2yf1")
-text = "Pausa"
-label_settings = SubResource("LabelSettings_nhucs")
-
-[node name="BackToGame" type="Button" parent="Panel"]
-layout_mode = 2
-offset_left = 44.0
-offset_top = 581.0
-offset_right = 344.0
-offset_bottom = 612.0
-theme = ExtResource("4_0h3b8")
-shortcut = SubResource("Shortcut_0bu3k")
-text = "Voltar ao Jogo
-"
-
-[node name="BacktoMainMenu" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 832.0
-offset_top = 584.0
-offset_right = 1130.0
-offset_bottom = 625.0
-theme = ExtResource("4_0h3b8")
-text = "Voltar ao Menu Principal"
-
-[node name="TestSFX" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 769.0
-offset_top = 265.0
-offset_right = 857.0
-offset_bottom = 296.0
-theme = ExtResource("4_0h3b8")
-theme_override_fonts/font = ExtResource("5_ggvt1")
-text = "Testar SFX"
 
 [node name="Shoot" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("4_aw64a")
 bus = &"SFX"
 
-[node name="TypeScreenControl" type="Control" parent="."]
+[node name="Background" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Back" type="Sprite2D" parent="Background"]
+position = Vector2(666, 316)
+scale = Vector2(0.454056, 0.454056)
+texture = ExtResource("12_cehts")
+
+[node name="Front" type="Sprite2D" parent="Background"]
+position = Vector2(669, 317)
+scale = Vector2(0.454, 0.454)
+texture = ExtResource("13_hpadi")
+
+[node name="Título" type="Sprite2D" parent="Background"]
+position = Vector2(675, 61)
+scale = Vector2(0.456872, 0.482721)
+texture = ExtResource("14_0c0r3")
+
+[node name="TypeScreenControl" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 113.0
+offset_top = -36.0
+offset_right = 153.0
+offset_bottom = 4.0
 script = ExtResource("5_csce5")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TypeScreenControl"]
-layout_mode = 0
-offset_left = 465.0
-offset_top = 428.0
-offset_right = 652.0
-offset_bottom = 468.0
-
-[node name="Label" type="Label" parent="TypeScreenControl/HBoxContainer"]
+[node name="Label" type="Label" parent="TypeScreenControl"]
 layout_mode = 2
+offset_left = 423.0
+offset_top = 398.0
+offset_right = 567.0
+offset_bottom = 430.0
 theme = ExtResource("1_w2yf1")
-text = "Tipo de Tela"
+text = "Modo de Tela"
 
-[node name="VSeparator" type="VSeparator" parent="TypeScreenControl/HBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="TypeScreenControl"]
+unique_name_in_owner = true
 layout_mode = 2
-
-[node name="OptionButton" type="OptionButton" parent="TypeScreenControl/HBoxContainer"]
-layout_mode = 2
+offset_left = 604.0
+offset_top = 396.0
+offset_right = 636.0
+offset_bottom = 436.0
+theme = ExtResource("5_6358x")
+expand_icon = true
 
 [node name="ResolutionControl" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 113.0
+offset_top = -27.0
+offset_right = 153.0
+offset_bottom = 13.0
 script = ExtResource("5_t1wfl")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ResolutionControl"]
-layout_mode = 0
-offset_left = 483.0
-offset_top = 476.0
-offset_right = 650.0
-offset_bottom = 516.0
-
-[node name="Label" type="Label" parent="ResolutionControl/HBoxContainer"]
+[node name="Label" type="Label" parent="ResolutionControl"]
 layout_mode = 2
+offset_left = 422.0
+offset_top = 463.0
+offset_right = 532.0
+offset_bottom = 495.0
 text = "Resolução"
 
-[node name="VSeparator" type="VSeparator" parent="ResolutionControl/HBoxContainer"]
+[node name="ResolutionButton" type="OptionButton" parent="ResolutionControl"]
+unique_name_in_owner = true
 layout_mode = 2
-
-[node name="OptionButton" type="OptionButton" parent="ResolutionControl/HBoxContainer"]
-layout_mode = 2
+offset_left = 604.0
+offset_top = 459.0
+offset_right = 636.0
+offset_bottom = 499.0
+theme = ExtResource("5_6358x")
 
 [node name="MouseSensibilityControl" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -8.0
+offset_top = -42.0
+offset_right = 32.0
+offset_bottom = -2.0
 
 [node name="MouseSensibilitySlider" type="HSlider" parent="MouseSensibilityControl"]
 process_mode = 3
 layout_mode = 0
-offset_left = 417.0
-offset_top = 393.0
-offset_right = 717.0
-offset_bottom = 409.0
+offset_left = 509.0
+offset_top = 352.0
+offset_right = 809.0
+offset_bottom = 402.0
+theme = ExtResource("9_hn1co")
 max_value = 4.0
 step = 0.1
 value = 1.0
@@ -192,15 +140,160 @@ script = ExtResource("11_wh8we")
 
 [node name="Label" type="Label" parent="MouseSensibilityControl"]
 layout_mode = 0
-offset_left = 471.0
-offset_top = 348.0
-offset_right = 723.0
-offset_bottom = 380.0
+offset_left = 535.0
+offset_top = 313.0
+offset_right = 789.0
+offset_bottom = 345.0
 theme_override_fonts/font = ExtResource("5_ggvt1")
 text = "Sensibilidade do Mouse"
 
-[connection signal="pressed" from="Panel/BackToGame" to="." method="_on_voltar_ao_jogo_pressed"]
-[connection signal="pressed" from="Panel/BacktoMainMenu" to="." method="_on_backto_main_menu_pressed"]
-[connection signal="pressed" from="Panel/TestSFX" to="." method="_on_test_sfx_pressed"]
+[node name="Sliders&Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Sliders&Buttons"]
+position = Vector2(-418, -377)
+
+[node name="Options" type="Label" parent="Sliders&Buttons/CanvasModulate"]
+offset_left = 976.0
+offset_top = 387.0
+offset_right = 1282.0
+offset_bottom = 518.0
+theme_override_fonts/font = ExtResource("5_ggvt1")
+text = "Opções"
+label_settings = SubResource("LabelSettings_nhucs")
+
+[node name="SFX2" type="Control" parent="Sliders&Buttons/CanvasModulate"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -47.0
+offset_right = 40.0
+offset_bottom = -7.0
+
+[node name="SFX" type="Label" parent="Sliders&Buttons/CanvasModulate/SFX2"]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 588.0
+offset_right = 1012.0
+offset_bottom = 620.0
+theme = ExtResource("1_w2yf1")
+text = "SFX
+"
+horizontal_alignment = 1
+
+[node name="SFX - Slider" type="HSlider" parent="Sliders&Buttons/CanvasModulate/SFX2"]
+layout_direction = 2
+layout_mode = 0
+offset_left = 923.0
+offset_top = 583.0
+offset_right = 1223.0
+offset_bottom = 633.0
+theme = ExtResource("9_hn1co")
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_rjk7c")
+bus_name = "SFX"
+
+[node name="TestSFX" type="Button" parent="Sliders&Buttons/CanvasModulate/SFX2"]
+layout_mode = 0
+offset_left = 1232.0
+offset_top = 587.0
+offset_right = 1333.0
+offset_bottom = 620.0
+theme = ExtResource("4_0h3b8")
+theme_override_fonts/font = ExtResource("5_ggvt1")
+theme_override_font_sizes/font_size = 20
+text = "Testar SFX"
+
+[node name="BGM" type="Control" parent="Sliders&Buttons"]
+anchors_preset = 0
+offset_left = -1.0
+offset_top = -40.0
+offset_right = 39.0
+
+[node name="BGM" type="Label" parent="Sliders&Buttons/BGM"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 264.0
+offset_right = 593.0
+offset_bottom = 296.0
+theme = ExtResource("1_w2yf1")
+text = "BGM"
+horizontal_alignment = 1
+
+[node name="BGM - Slider" type="HSlider" parent="Sliders&Buttons/BGM"]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 257.0
+offset_right = 807.0
+offset_bottom = 307.0
+theme = ExtResource("9_hn1co")
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_rjk7c")
+bus_name = "BGM"
+
+[node name="Buttons" type="Control" parent="Sliders&Buttons"]
+anchors_preset = 0
+offset_left = 41.0
+offset_right = 81.0
+offset_bottom = 40.0
+
+[node name="BackToGame" type="Button" parent="Sliders&Buttons/Buttons"]
+layout_mode = 2
+offset_left = 405.0
+offset_top = 519.0
+offset_right = 582.0
+offset_bottom = 553.0
+theme = ExtResource("4_0h3b8")
+shortcut = SubResource("Shortcut_0bu3k")
+text = "Jogar
+"
+
+[node name="BacktoMainMenu" type="Button" parent="Sliders&Buttons/Buttons"]
+layout_mode = 0
+offset_left = 645.0
+offset_top = 514.0
+offset_right = 845.0
+offset_bottom = 555.0
+theme = ExtResource("4_0h3b8")
+text = "Voltar ao Menu"
+
+[node name="GrabberViewport" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 50.0
+
+[node name="SubViewport" type="SubViewport" parent="GrabberViewport"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(100, 50)
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="GrabberViewport/SubViewport"]
+position = Vector2(50, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_xtgub")
+
+[node name="ArrowSliderViewport" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="SubViewport" type="SubViewport" parent="ArrowSliderViewport"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(10, 10)
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="ArrowSliderViewport/SubViewport"]
+position = Vector2(5, 5)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_e0h5u")
+
 [connection signal="changed" from="MouseSensibilityControl/MouseSensibilitySlider" to="MouseSensibilityControl/MouseSensibilitySlider" method="_on_changed"]
 [connection signal="value_changed" from="MouseSensibilityControl/MouseSensibilitySlider" to="MouseSensibilityControl/MouseSensibilitySlider" method="_on_value_changed"]
+[connection signal="pressed" from="Sliders&Buttons/CanvasModulate/SFX2/TestSFX" to="." method="_on_test_sfx_pressed"]
+[connection signal="pressed" from="Sliders&Buttons/Buttons/BackToGame" to="." method="_on_voltar_ao_jogo_pressed"]
+[connection signal="pressed" from="Sliders&Buttons/Buttons/BacktoMainMenu" to="." method="_on_backto_main_menu_pressed"]

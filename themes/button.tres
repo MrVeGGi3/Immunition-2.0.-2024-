@@ -1,7 +1,23 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://btc3kqb6qx6k3"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://btc3kqb6qx6k3"]
 
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_mitc1"]
+[ext_resource type="Texture2D" uid="uid://dhetwgp7r6uoj" path="res://images/UI/Buttons/Barras sem Text/Button_pressed.png" id="2_dunew"]
+[ext_resource type="Texture2D" uid="uid://bf7k7u87l0v8k" path="res://images/UI/Buttons/Barras sem Text/button.png" id="2_ec3ll"]
+[ext_resource type="Texture2D" uid="uid://bgkwr2yqwi0ff" path="res://images/UI/Buttons/Barras sem Text/button_select.png" id="4_w55uj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18t6f"]
+texture = ExtResource("2_dunew")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa3an"]
+texture = ExtResource("2_ec3ll")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s0iqe"]
+texture = ExtResource("4_w55uj")
 
 [resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 25
 Button/fonts/font = ExtResource("1_mitc1")
+Button/styles/hover = SubResource("StyleBoxTexture_18t6f")
+Button/styles/normal = SubResource("StyleBoxTexture_oa3an")
+Button/styles/pressed = SubResource("StyleBoxTexture_s0iqe")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk44w6ltyiq7d"]
+[gd_scene load_steps=9 format=3 uid="uid://bk44w6ltyiq7d"]
 
 [ext_resource type="Script" path="res://scripts/HUD/Menu.gd" id="1_g04yw"]
 [ext_resource type="Theme" uid="uid://btc3kqb6qx6k3" path="res://themes/button.tres" id="2_27d8b"]
 [ext_resource type="Texture2D" uid="uid://cumum55a2e8e4" path="res://images/Menu_Screen.png" id="2_bscqu"]
 [ext_resource type="AudioStream" uid="uid://c14cj6uhjlgdt" path="res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav" id="3_ry4k5"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="4_qxk2a"]
+[ext_resource type="AudioStream" uid="uid://bo033vak4kltn" path="res://sounds/SFX/Buttons/ButtonSelected.wav" id="6_q25pb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjy7t"]
 bg_color = Color(0.305882, 0.67451, 0.615686, 1)
@@ -55,6 +56,7 @@ text = "Sair
 
 [node name="Créditos" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_27d8b")
 theme_override_fonts/font = ExtResource("4_qxk2a")
 theme_override_font_sizes/font_size = 25
 text = "Créditos"
@@ -72,6 +74,10 @@ text = "Aprenda, Preserve, Proteja!"
 stream = ExtResource("3_ry4k5")
 volume_db = -20.0
 bus = &"BGM"
+
+[node name="ButtonSelected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_q25pb")
+volume_db = 10.0
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Options" to="." method="_on_options_pressed"]

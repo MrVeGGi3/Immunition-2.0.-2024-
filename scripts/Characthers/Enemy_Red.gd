@@ -11,7 +11,6 @@ var can_colide = true
 @onready var sub_viewport = $SubViewport
 @onready var nav = $NavigationAgent3D
 @onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
-@onready var catch_player = $CatchPlayer
 @onready var symbol = $Control/Sprite3D2
 
 

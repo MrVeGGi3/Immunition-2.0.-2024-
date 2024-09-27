@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://co8iiugfe7eaw"]
+
+[ext_resource type="Script" path="res://scripts/Tests/PlayerDetectorRayCast.gd" id="1_5e8hp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ilvo3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64lv8"]
+
+[node name="EnemyRayCastDetector" type="CharacterBody3D"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_5e8hp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ilvo3")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+exclude_parent = false
+target_position = Vector3(0, 0, -30)
+collision_mask = 3
+hit_back_faces = false
+collide_with_areas = true
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_64lv8")

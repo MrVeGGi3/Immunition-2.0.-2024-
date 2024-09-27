@@ -2243,6 +2243,7 @@ offset_left = -3.0
 offset_top = -2.0
 offset_right = -3.0
 offset_bottom = -2.0
+target = NodePath("../Player")
 level = NodePath("..")
 
 [node name="PhaseEnded" parent="." instance=ExtResource("16_ee351")]

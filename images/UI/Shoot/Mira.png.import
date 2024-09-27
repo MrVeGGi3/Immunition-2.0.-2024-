@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5iqptwqnbvnt"
-path="res://.godot/imported/Animação de teclas.png-5631c6446812fad5c6fff18777ab78a3.ctex"
+uid="uid://d2s5b3sa7xwae"
+path="res://.godot/imported/Mira.png-d94615f30eea6c5b1f9cd761541be8c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/Animação de teclas.png"
-dest_files=["res://.godot/imported/Animação de teclas.png-5631c6446812fad5c6fff18777ab78a3.ctex"]
+source_file="res://images/UI/Shoot/Mira.png"
+dest_files=["res://.godot/imported/Mira.png-d94615f30eea6c5b1f9cd761541be8c5.ctex"]
 
 [params]
 

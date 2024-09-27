@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://di70k30qidjuf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m0027"]
+viewport_path = NodePath("GrabberViewport/SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppq18"]
+bg_color = Color(0.000176905, 0.0529946, 0.285791, 1)
+
+[resource]
+HSlider/icons/grabber = SubResource("ViewportTexture_m0027")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_ppq18")

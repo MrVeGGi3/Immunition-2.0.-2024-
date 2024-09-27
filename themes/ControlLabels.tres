@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dsctbsp16gdw3"]
+
+[ext_resource type="FontFile" uid="uid://blnx7a823g6an" path="res://fonts/Jura-VariableFont_wght.ttf" id="1_oeva2"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("1_oeva2")
