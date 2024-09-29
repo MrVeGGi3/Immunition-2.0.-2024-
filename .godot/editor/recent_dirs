@@ -1,3 +1,6 @@
+res://scenes/AudioSource
+res://scripts/Elevators
+res://scripts/Collectables
 res://themes
 res://images/UI/Backgrounds/Ammo
 res://scripts/Tests
@@ -19,4 +22,3 @@ res://scripts/Credits
 res://scenes/UI/Player
 E:/Godot
 E:/Downloads/ImmunitionExport
-res://images/Collectables

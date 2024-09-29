@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://yxnqnhf18oj6"]
+
+[ext_resource type="AudioStream" uid="uid://cl16r632p0qb5" path="res://sounds/BGM/deathsound.wav" id="1_3hk3t"]
+
+[node name="DeathSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_3hk3t")
+bus = &"BGM"

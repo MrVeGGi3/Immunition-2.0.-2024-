@@ -502,3 +502,9 @@ func _on_enable_particle_timeout():
 	
 func is_player_detection(): #função para detecção do RayCast3D
 	print("Estou sendo avistado pelo inimigo")
+
+func can_interact():
+	press_interaction.visible = true
+
+func cant_interact():
+	press_interaction.visible = false

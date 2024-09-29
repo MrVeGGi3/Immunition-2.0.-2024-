@@ -25,42 +25,48 @@ transform = Transform3D(0.999988, 0, 0.00488687, 0, 1, 0, -0.00488687, 0, 0.9999
 platform_on_leave = 2
 platform_floor_layers = 4294901761
 
-[node name="DevGrey" type="MeshInstance3D" parent="."]
+[node name="Mapa - Level 2" type="Node3D" parent="."]
+
+[node name="DevGrey" type="MeshInstance3D" parent="Mapa - Level 2"]
 transform = Transform3D(8.89854, 0, 0, 0, 0.355079, 0, 0, 0, 11.8928, -0.301975, 0.584612, -11.429)
 material_override = SubResource("StandardMaterial3D_rncjf")
 mesh = ExtResource("3_4ca8m")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DevGrey"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mapa - Level 2/DevGrey"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DevGrey/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mapa - Level 2/DevGrey/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107193, 0.0133362, -0.00012207)
 shape = SubResource("BoxShape3D_8atdu")
 
-[node name="DevGrey2" type="MeshInstance3D" parent="."]
+[node name="DevGrey2" type="MeshInstance3D" parent="Mapa - Level 2"]
 transform = Transform3D(0.889854, 0, 0, 0, 0.355079, 0, 0, 0, 0.891964, -0.0291767, 1.37963, 8.26736)
 material_override = SubResource("StandardMaterial3D_i7rsl")
 mesh = ExtResource("3_4ca8m")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DevGrey2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mapa - Level 2/DevGrey2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DevGrey2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mapa - Level 2/DevGrey2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107193, 0.0133362, -0.00012207)
 shape = SubResource("BoxShape3D_8atdu")
 
-[node name="DevPillar" type="MeshInstance3D" parent="."]
+[node name="DevPillar" type="MeshInstance3D" parent="Mapa - Level 2"]
 transform = Transform3D(0.474588, 0, 0, 0, 0.568126, 0, 0, 0, 0.475714, -3.64038, 1.3027, 7.67016)
 mesh = ExtResource("5_ocly3")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DevPillar"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mapa - Level 2/DevPillar"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DevPillar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mapa - Level 2/DevPillar/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_qjxye")
 
-[node name="DevPillar2" type="MeshInstance3D" parent="."]
+[node name="DevPillar2" type="MeshInstance3D" parent="Mapa - Level 2"]
 transform = Transform3D(0.474588, 0, 0, 0, 0.568126, 0, 0, 0, 0.475714, 3.65522, 1.3027, 7.67016)
 mesh = ExtResource("5_ocly3")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DevPillar2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mapa - Level 2/DevPillar2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DevPillar2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mapa - Level 2/DevPillar2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_qjxye")

@@ -8,7 +8,9 @@ offset_bottom = 100.0
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
+handle_input_locally = false
 size = Vector2i(700, 100)
+render_target_update_mode = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewport"]
 position = Vector2(350, 50)
