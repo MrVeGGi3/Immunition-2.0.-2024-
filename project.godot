@@ -191,6 +191,7 @@ run={
 3d_physics/layer_8="PlayerProj"
 3d_physics/layer_9="HDL"
 3d_physics/layer_10="StopBar"
+3d_physics/layer_11="Interaction"
 avoidance/layer_1="Influenza"
 avoidance/layer_2="Cells"
 avoidance/layer_3="Pathogen"

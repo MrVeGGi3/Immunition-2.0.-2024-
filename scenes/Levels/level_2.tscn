@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://brnm137iii2wi"]
+[gd_scene load_steps=12 format=3 uid="uid://brnm137iii2wi"]
 
 [ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="1_vskrl"]
 [ext_resource type="Texture2D" uid="uid://bl3g6pm7e6hov" path="res://prefabs/dev_grey.png" id="2_nwxma"]
 [ext_resource type="ArrayMesh" uid="uid://eikqtfkce6jq" path="res://prefabs/dev_grey.obj" id="3_4ca8m"]
 [ext_resource type="Texture2D" uid="uid://cghbpdvq15frc" path="res://prefabs/dev_orange.png" id="4_q6oav"]
 [ext_resource type="ArrayMesh" uid="uid://bd1p4vxwpo0fn" path="res://prefabs/dev_pillar.obj" id="5_ocly3"]
+[ext_resource type="PackedScene" uid="uid://iw3umuo4ymew" path="res://scenes/scenary/MovingWalls.tscn" id="6_kxe5x"]
+[ext_resource type="PackedScene" uid="uid://stfl4op38grh" path="res://scenes/Collectables/WallCreator.tscn" id="7_xyd21"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rncjf"]
 albedo_texture = ExtResource("2_nwxma")
@@ -70,3 +72,29 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mapa - Level 2/DevPillar2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_qjxye")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, -2, 28, -14)
+
+[node name="MovingWalls" parent="." instance=ExtResource("6_kxe5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
+
+[node name="Peças de Coletagem" type="Node3D" parent="."]
+
+[node name="WallCreator" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26509, 2.57119, -16.8277)
+
+[node name="WallCreator2" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9039, 2.24683, 0)
+
+[node name="WallCreator3" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75191, 1.60996, -5.67354)
+
+[node name="WallCreator4" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75191, 1.60996, 1.00735)
+
+[node name="WallCreator5" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26509, 2.57119, -13.2478)
+
+[node name="WallCreator6" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53992, 2.57119, -13.2478)

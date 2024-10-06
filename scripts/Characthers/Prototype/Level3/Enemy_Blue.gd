@@ -37,6 +37,7 @@ var shortest_distance
 func _physics_process(_delta):
 	for pipe in pipes:
 		var pipe_position = pipe.global_transform.origin
+		var current_position = global_transform.origin
 		var distance_to_pipe = (current_position - pipe_position).length()
 		var shortest_distance = INF
 		if distance_to_pipe < shortest_distance and pipe.is_active:
