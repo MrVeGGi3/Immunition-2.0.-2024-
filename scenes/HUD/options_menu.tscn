@@ -96,6 +96,7 @@ text = "Testar SFX"
 position = Vector2(-418, -377)
 
 [node name="Options" type="Label" parent="Opções"]
+layout_mode = 0
 offset_left = 485.0
 offset_top = 56.0
 offset_right = 676.0
@@ -107,6 +108,7 @@ text = "Opções"
 label_settings = SubResource("LabelSettings_nhucs")
 
 [node name="SFX" type="Label" parent="Opções"]
+layout_mode = 0
 offset_left = 333.0
 offset_top = 157.0
 offset_right = 433.0
@@ -118,6 +120,7 @@ horizontal_alignment = 1
 
 [node name="SFX - Slider" type="HSlider" parent="Opções"]
 layout_direction = 2
+layout_mode = 0
 offset_left = 435.0
 offset_top = 154.0
 offset_right = 735.0
@@ -129,6 +132,7 @@ script = ExtResource("3_y1gkl")
 bus_name = "SFX"
 
 [node name="BGM" type="Label" parent="Opções"]
+layout_mode = 0
 offset_left = 332.0
 offset_top = 216.0
 offset_right = 432.0
@@ -138,6 +142,7 @@ text = "BGM"
 horizontal_alignment = 1
 
 [node name="BGM - Slider" type="HSlider" parent="Opções"]
+layout_mode = 0
 offset_left = 438.0
 offset_top = 209.0
 offset_right = 738.0
@@ -173,6 +178,7 @@ text = "Tipo de Tela"
 layout_mode = 2
 
 [node name="OptionButton" type="OptionButton" parent="TypeScreenControl/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="ResolutionControl" type="Control" parent="."]
@@ -199,7 +205,8 @@ text = "Resolução"
 [node name="VSeparator" type="VSeparator" parent="ResolutionControl/HBoxContainer"]
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="ResolutionControl/HBoxContainer"]
+[node name="ResolutionButton" type="OptionButton" parent="ResolutionControl/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="MouseSensibilityControl" type="Control" parent="."]

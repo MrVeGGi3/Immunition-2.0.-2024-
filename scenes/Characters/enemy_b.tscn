@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://c8bydekkhr5m4"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/Enemy_Blue.gd" id="1_6h0w2"]
+[ext_resource type="Script" path="res://scripts/Characthers/Prototype/Level3/Enemy_Blue_Pipe.gd" id="1_22ik2"]
 [ext_resource type="Texture2D" uid="uid://cj21mxonxa3cx" path="res://sprites/Monster/monster1_Blue_sprite.png" id="2_u3qrc"]
 [ext_resource type="AudioStream" uid="uid://bw3djxfntr0jb" path="res://sounds/SFX/Monster/monster_die.wav" id="3_4l37k"]
 [ext_resource type="AudioStream" uid="uid://bud3mha4g5u45" path="res://sounds/SFX/Monster/monster_bite.wav" id="4_pk5c8"]
@@ -92,7 +92,8 @@ animations = [{
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0of21"]
 margin = 2.871
-height = 2.54
+radius = 0.587145
+height = 3.07399
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hltyo"]
 bg_color = Color(0, 0, 0, 1)
@@ -113,7 +114,8 @@ collision_mask = 3
 platform_on_leave = 2
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
-script = ExtResource("1_6h0w2")
+script = ExtResource("1_22ik2")
+minimum_distance = 15
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(-3.65853e-08, 0, -0.836973, 0, 0.836973, 0, 0.836973, 0, -3.65853e-08, 0, 0, 0)
@@ -177,25 +179,17 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_bq0q5")
 theme_override_font_sizes/font_size = 35
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.833375, 0.370634, 0.0253874)
-billboard = 1
-texture = SubResource("ViewportTexture_8ro1c")
-
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_height_offset = -0.1
-radius = 1.0
+path_max_distance = 5.01
+radius = 2.0
 neighbor_distance = 10.0
-max_neighbors = 5
+max_neighbors = 4
+time_horizon_agents = 0.0
 max_speed = 15.0
 use_3d_avoidance = true
 avoidance_layers = 4
-avoidance_mask = 7
-
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(0.529244, 0, 0, 0, 0.529244, 0, 0, 0, 0.529244, 0.919687, 0.862516, -0.155986)
-billboard = 1
-texture = SubResource("ViewportTexture_6g00w")
+avoidance_mask = 5
 
 [node name="SubViewport2" type="SubViewport" parent="."]
 transparent_bg = true
@@ -205,5 +199,17 @@ render_target_update_mode = 4
 [node name="Symbol" type="Sprite2D" parent="SubViewport2"]
 texture = ExtResource("6_1ppkl")
 centered = false
+
+[node name="IconControl" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="IconControl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.833375, 0.370634, 0.0253874)
+billboard = 1
+texture = SubResource("ViewportTexture_8ro1c")
+
+[node name="Sprite3D2" type="Sprite3D" parent="IconControl"]
+transform = Transform3D(0.529244, 0, 0, 0, 0.529244, 0, 0, 0, 0.529244, 0.919687, 0.862516, -0.155986)
+billboard = 1
+texture = SubResource("ViewportTexture_6g00w")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

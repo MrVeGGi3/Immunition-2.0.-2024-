@@ -1,12 +1,14 @@
+res://images/UI/Backgrounds/Ammo
+res://scenes/HUD
+res://scripts/Characthers/Prototype/Level3
+res://scripts/Count
 res://scenes/AudioSource
 res://scripts/Elevators
 res://scripts/Collectables
 res://themes
-res://images/UI/Backgrounds/Ammo
 res://scripts/Tests
 res://scripts/HUD
 res://scripts/Animations
-res://scenes/HUD
 res://scripts/Configs
 res://scripts/Characthers
 E:/Downloads/ImmutionHTML
@@ -18,7 +20,5 @@ res://scenes/Characters/BoatLevel
 res://scripts/Characthers/boatlevel
 res://scripts/Characthers/on_water
 res://shaders
-res://scripts/Credits
-res://scenes/UI/Player
 E:/Godot
 E:/Downloads/ImmunitionExport

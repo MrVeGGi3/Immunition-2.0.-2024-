@@ -129,8 +129,6 @@ func killed():
 func _on_timer_timeout():
 	can_colide = true
 
-func heal_green():
-	enemy_health += 2
 
 func _process(delta):
 	if dead:

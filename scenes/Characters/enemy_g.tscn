@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://8onv0icy5g7h"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/Enemy_Green.gd" id="1_bh1ro"]
+[ext_resource type="Script" path="res://scripts/Characthers/Prototype/Level3/Enemy_Green_Pipe.gd" id="1_54gt1"]
 [ext_resource type="AudioStream" uid="uid://bw3djxfntr0jb" path="res://sounds/SFX/Monster/monster_die.wav" id="3_hw3m5"]
 [ext_resource type="Texture2D" uid="uid://2semeicsex86" path="res://sprites/Monster/monster1_sprite.png" id="4_0ryar"]
 [ext_resource type="AudioStream" uid="uid://bud3mha4g5u45" path="res://sounds/SFX/Monster/monster_bite.wav" id="4_fgou3"]
@@ -113,8 +113,11 @@ collision_mask = 3
 platform_on_leave = 2
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
-script = ExtResource("1_bh1ro")
+script = ExtResource("1_54gt1")
 move_speed = 15.0
+minimum_distance = 15
+m_ammo = 2
+n_ammo = 4.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.967487, 0)
@@ -160,11 +163,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_yia1e")
 theme_override_font_sizes/font_size = 35
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300892, 2.05186, 0.355587)
-billboard = 1
-texture = SubResource("ViewportTexture_vfcuh")
-
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_height_offset = -0.1
 neighbor_distance = 10.0
@@ -183,11 +181,6 @@ render_target_update_mode = 4
 texture = ExtResource("6_2i1f4")
 centered = false
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(0.58181, 0, 0, 0, 0.58181, 0, 0, 0, 0.58181, -0.494083, 2.37066, 1.14582)
-billboard = 1
-texture = SubResource("ViewportTexture_vdkrg")
-
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("3_hw3m5")
@@ -196,5 +189,17 @@ unit_size = 2.0
 max_distance = 10.0
 bus = &"SFX"
 emission_angle_degrees = 90.0
+
+[node name="IconControl" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="IconControl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300892, 2.05186, 0.355587)
+billboard = 1
+texture = SubResource("ViewportTexture_vfcuh")
+
+[node name="Sprite3D2" type="Sprite3D" parent="IconControl"]
+transform = Transform3D(0.58181, 0, 0, 0, 0.58181, 0, 0, 0, 0.58181, -0.129741, 2.35011, 0.578897)
+billboard = 1
+texture = SubResource("ViewportTexture_vdkrg")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

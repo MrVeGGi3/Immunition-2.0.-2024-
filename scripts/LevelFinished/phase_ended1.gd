@@ -56,6 +56,9 @@ func count_score_lvl_1(inf_cells : float, total_cells : float, kill_enemies : fl
 	pont_3 = score_3 * 10
 	animation_tree.play("score_animation")
 
+func count_score_lvl_2(min, sec):
+	pass
+
 func score_animation_1():
 	if actual_score_i < pont_1:
 		actual_score_i += 100 

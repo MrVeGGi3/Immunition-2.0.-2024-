@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dblogam5obn7d"]
+
+[ext_resource type="Script" path="res://scripts/Characthers/Prototype/Level3/Pipe.gd" id="1_ffcu3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndf3w"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0xdws"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0wpih"]
+radius = 0.956743
+height = 2.2798
+
+[node name="Pipe" type="Node3D" groups=["pipe"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.13934, 0)
+script = ExtResource("1_ffcu3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["pipe"]]
+transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 0, 2.99999, 0)
+material_override = SubResource("StandardMaterial3D_ndf3w")
+mesh = SubResource("CylinderMesh_0xdws")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2048
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 0.100998, 1.61693, 0.253906)
+shape = SubResource("CapsuleShape3D_0wpih")
+
+[node name="CollisionTime" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="CollisionTime" to="." method="_on_collision_time_timeout"]

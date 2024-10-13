@@ -26,7 +26,7 @@ func _on_exit_pressed():
 	get_tree().quit()
   
 func _on_créditos_pressed():
-	button_selected.play()
+	play_music_button()
 	get_tree().change_scene_to_file(credits)
 
 func play_music_button():

@@ -29,71 +29,69 @@ var is_pipe_attacked = false
 @onready var sub_viewport = $SubViewport
 @onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 @onready var nav = $NavigationAgent3D
-@onready var symbol = $Sprite3D2
-@onready var pipes = get_tree().get_nodes_in_group("pipe")
-var nearest_pipe
-var shortest_distance
+@onready var symbol = $Icon/Sprite3D2
 
-func _physics_process(_delta):
-	for pipe in pipes:
-		var pipe_position = pipe.global_transform.origin
-		var current_position = global_transform.origin
-		var distance_to_pipe = (current_position - pipe_position).length()
-		var shortest_distance = INF
-		if distance_to_pipe < shortest_distance and pipe.is_active:
-			shortest_distance = distance_to_pipe
-			nearest_pipe = pipe
+var current_position
+var player_position 
 
-		
-	var player_position = player.global_transform.origin
-	var current_position = global_transform.origin
-	var next_position = nav.get_next_path_position()
-	var new_velocity = (next_position - current_position).normalized()
-	velocity = velocity.move_toward(new_velocity, .25 * move_speed)
-	move_and_slide()
+func _ready() -> void:
+	pass
 	
+func _physics_process(_delta):
 	if dead:
 		return
+	current_position = global_transform.origin
+	var next_position = nav.get_next_path_position()
+	var new_velocity = (next_position - current_position).normalized()
+	velocity = velocity.move_toward(new_velocity, move_speed)
+	move_and_slide()
+	
+	
 	if player == null:
 		return
-	if pipes == null:
-		return
-		
+	player_position = player.global_transform.origin
+	
 	var dist_to_player = global_transform.origin.distance_to(player_position)
 	if  dist_to_player <= minimum_distance and !is_pipe_attacked:
 		nav.target_position = player_position
 		attempt_to_kill_player()
-	else:
-		nav.target_position = nearest_pipe
-	
-	if shortest_distance < minimum_distance:
-		attack_pipe(nearest_pipe)
-
-func attempt_to_kill_player():
-	var player_position = player.global_transform.origin
-	var dist_to_player = global_transform.origin.distance_to(player_position)
-	if dist_to_player > attack_range:
+		
+	var pipes = get_tree().get_nodes_in_group("pipe")
+	if pipes.is_empty():
 		return
-	var eye_line = Vector3.UP * 1.0
-	var query = PhysicsRayQueryParameters3D.create(global_transform.origin + eye_line, player.global_transform.origin + eye_line, 1)
-	var result = get_world_3d().direct_space_state.intersect_ray(query)
-	if result.is_empty() and can_colide and player.vida > 0:
-		monster_bite.play()
-		player._damage(damage)
-		can_colide = false
-		timer.start()
+	var nearest_pipe = null
+	var pipe_shortest_distance = INF
+	
+	for pipe in pipes:
+		if pipe.visible == true:
+			var pipe_position = pipe.global_transform.origin
+			var distance_to_pipe = current_position.distance_to(pipe_position)
+			if distance_to_pipe <  pipe_shortest_distance:
+				pipe_shortest_distance = distance_to_pipe
+				nearest_pipe = pipe
+		if nearest_pipe != null and pipe_shortest_distance <= minimum_distance and pipe_shortest_distance < dist_to_player:
+			nav.target_position = nearest_pipe.global_transform.origin
+		else:
+			nav.target_position = player_position
+			attempt_to_kill_player()
 
-func kill_blue_mf():
+func kill_red_nf():
 	damage_effect()
-	enemy_health -= 15
+	enemy_health -= 0.3 * CONTROL_BULLET_EMISSION
+	if enemy_health <= 0:
+		killed()
+
+func heal_red_nf():
+	damage_effect()
+	enemy_health -= CONTROL_BULLET_EMISSION * 0.05
 	if enemy_health < 0:
 		enemy_health = 0
 	if enemy_health == 0:
 		killed()
-		
-func kill_blue_lf():
+
+func kill_red_lf():
 	damage_effect()
-	enemy_health -= 5
+	enemy_health -= 2
 	move_speed -= 2
 	if move_speed < 2:
 		move_speed = 2
@@ -102,37 +100,27 @@ func kill_blue_lf():
 	if enemy_health == 0:
 		killed()
 
-func kill_blue_nf():
+func heal_red_lf():
 	damage_effect()
-	enemy_health -= 0.3 * CONTROL_BULLET_EMISSION
-	if enemy_health <= 0:
-		killed()
-
-
-func heal_blue_lf():
-	damage_effect()
-	enemy_health -= 2
+	enemy_health -= 1
 	move_speed -= 1
 	if move_speed < 2:
 		move_speed = 2
-	if enemy_health < 0:
-		enemy_health = 0
-	if enemy_health == 0:
-		killed()
-
-func heal_blue_mf():
-	damage_effect()
-	enemy_health -= 7.5
-	if enemy_health < 0:
-		enemy_health = 0
-	if enemy_health == 0:
-		killed()
-
-func heal_blue_nf():
-	damage_effect()
-	enemy_health -= 0.05 * CONTROL_BULLET_EMISSION
 	if enemy_health <= 0:
 		killed()
+
+func heal_red_mf():
+	damage_effect()
+	enemy_health -= 3
+	if enemy_health <= 0:
+		killed()
+
+func kill_red_mf():
+	damage_effect()
+	enemy_health -= 7
+	if enemy_health <= 0:
+		killed()	
+
 
 	
 func killed():
@@ -165,18 +153,24 @@ func damage_effect():
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(animated_sprite_3d,"modulate", Color.WHITE, 0.3)
 
-func attack_pipe(pipe):
-	var distance_to_pipe = (pipe.position - global_transform.origin).normalized()
-	if distance_to_pipe > attack_range:
+func attempt_to_kill_player():
+	player_position = player.global_transform.origin
+	var dist_to_player = global_transform.origin.distance_to(player_position)
+	if dist_to_player > attack_range:
 		return
 	var eye_line = Vector3.UP * 1.0
 	var query = PhysicsRayQueryParameters3D.create(global_transform.origin + eye_line, player.global_transform.origin + eye_line, 1)
 	var result = get_world_3d().direct_space_state.intersect_ray(query)
-	if result.is_empty() and can_colide and pipe.life > 0:
+	if result.is_empty() and can_colide and player.vida > 0:
 		monster_bite.play()
-		pipe.damage(damage)#Chamar Método Interno do Pipe para descontar a vida
-		is_pipe_attacked = true
+		player._damage(damage)
 		can_colide = false
 		timer.start()
+
+func attack_pipe(pipe):
+		monster_bite.play()
+		is_pipe_attacked = true
+		pipe.damage(damage)
+	
 	
 	
