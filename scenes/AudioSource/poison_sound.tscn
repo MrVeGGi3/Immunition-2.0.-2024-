@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c27g4pvlx8qla"]
-
-[ext_resource type="AudioStream" uid="uid://cbflmritq2bmb" path="res://sounds/SFX/Poison/acid.wav" id="1_xg20u"]
-
-[node name="PoisonSound" type="AudioStreamPlayer3D"]
-stream = ExtResource("1_xg20u")
-volume_db = 10.0

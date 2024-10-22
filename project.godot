@@ -193,13 +193,10 @@ run={
 3d_physics/layer_10="StopBar"
 3d_physics/layer_11="Interaction"
 3d_physics/layer_12="Pipe"
-3d_physics/layer_13="DiareiaPoison"
-3d_physics/layer_14="Markers"
 avoidance/layer_1="Influenza"
 avoidance/layer_2="Cells"
 avoidance/layer_3="Pathogen"
 avoidance/layer_4="Environment"
-avoidance/layer_5="Diareia"
 
 [physics]
 
