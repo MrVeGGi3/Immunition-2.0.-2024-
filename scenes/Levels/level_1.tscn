@@ -2454,6 +2454,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21481, 1.27402, 0.017539)
 
 [node name="DoorOpening" parent="." instance=ExtResource("47_i1yyk")]
 stream = null
+volume_db = -5.0
 
 [connection signal="body_entered" from="ExtractorPlatform/AreaPlatform" to="." method="_on_area_platform_body_entered"]
 [connection signal="timeout" from="TimerCounter/Control2/Count" to="." method="_on_count_timeout"]

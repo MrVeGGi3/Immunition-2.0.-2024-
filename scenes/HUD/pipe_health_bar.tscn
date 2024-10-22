@@ -109,18 +109,21 @@ offset_right = 35.0
 offset_bottom = 30.0
 
 [node name="PipePercentage2" type="Label" parent="Labels"]
+layout_mode = 0
 offset_left = 92.0
 offset_top = 8.0
 offset_right = 132.0
 offset_bottom = 31.0
 
 [node name="PipePercentage3" type="Label" parent="Labels"]
+layout_mode = 0
 offset_left = 194.0
 offset_top = 8.0
 offset_right = 234.0
 offset_bottom = 31.0
 
 [node name="PipePercentage4" type="Label" parent="Labels"]
+layout_mode = 0
 offset_left = 270.0
 offset_top = 9.0
 offset_right = 310.0

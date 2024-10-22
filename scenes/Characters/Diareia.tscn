@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://iokacrnac0al"]
+
+[ext_resource type="Script" path="res://scripts/Characthers/diareia.gd" id="1_kylhq"]
+[ext_resource type="AudioStream" uid="uid://cbflmritq2bmb" path="res://sounds/SFX/Poison/acid.wav" id="2_37tlt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gnm3"]
+albedo_color = Color(1, 0.0745098, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vy65m"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilph2"]
+albedo_color = Color(1, 0.384314, 1, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_ehnw3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_brpco"]
+radius = 5.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kpbi0"]
+height = 5.0
+radius = 8.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_35kit"]
+top_radius = 8.0
+bottom_radius = 8.0
+height = 5.0
+
+[node name="Diareia" type="CharacterBody3D" groups=["diareia"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+collision_layer = 8
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_kylhq")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_6gnm3")
+mesh = SubResource("SphereMesh_vy65m")
+
+[node name="PoisonEmitter" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.29102, 0, 0)
+
+[node name="PoisonEmmiterBody" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 5.10529, 0, 0)
+material_override = SubResource("StandardMaterial3D_ilph2")
+mesh = SubResource("TorusMesh_ehnw3")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = -5.0
+avoidance_enabled = true
+height = 5.0
+radius = 1.0
+use_3d_avoidance = true
+avoidance_layers = 16
+avoidance_mask = 8
+
+[node name="PoisonTimerEmmiter" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Colliding" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="Colliding"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Colliding/Area3D"]
+shape = SubResource("SphereShape3D_brpco")
+
+[node name="PoisonArea3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PoisonArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.80842, -5.89122, 0)
+shape = SubResource("CylinderShape3D_kpbi0")
+
+[node name="CollisionShape3D2" type="MeshInstance3D" parent="PoisonArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.80842, -5.89122, 0)
+mesh = SubResource("CylinderMesh_35kit")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_brpco")
+
+[node name="PoisonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_37tlt")
+volume_db = 10.0
+bus = &"SFX"
+
+[connection signal="timeout" from="PoisonTimerEmmiter" to="." method="_on_poison_timer_emmiter_timeout"]
