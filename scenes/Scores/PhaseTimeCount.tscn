@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4ahcvafmygv2"]
+
+[ext_resource type="Script" path="res://scripts/Count/phase_time_count.gd" id="1_rmqqb"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="2_wdvb4"]
+
+[node name="PhaseTimeCount" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rmqqb")
+
+[node name="Timer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 330.0
+offset_right = 687.0
+offset_bottom = 370.0
+theme_override_fonts/font = ExtResource("2_wdvb4")
+theme_override_font_sizes/font_size = 30
+text = "TESTE DE LETRA"

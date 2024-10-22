@@ -1,5 +1,5 @@
 extends Control
-@onready var option_button = $HBoxContainer/OptionButton as OptionButton
+@onready var option_button = %OptionButton as OptionButton
 
 const WINDOW_MODE_ARRAY: Array[String] = [
 	"Modo de Janela",
@@ -36,4 +36,3 @@ func add_window_mode_items() -> void:
 	for window_mode in WINDOW_MODE_ARRAY:
 		option_button.add_item(window_mode)
 	
-

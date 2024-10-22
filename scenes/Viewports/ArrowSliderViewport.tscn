@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://tvmx7ol4oq4b"]
+
+[ext_resource type="Texture2D" uid="uid://dfl8lv7t0jfyf" path="res://images/UI/Backgrounds/Options/Polygon 1.png" id="1_g3vif"]
+
+[node name="ArrowSliderViewport" type="SubViewportContainer"]
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(10, 10)
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport"]
+position = Vector2(5, 5)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_g3vif")

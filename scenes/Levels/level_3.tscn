@@ -1,10 +1,21 @@
+<<<<<<< HEAD
 [gd_scene load_steps=12 format=4 uid="uid://dy8y3dmei0o10"]
+=======
+[gd_scene load_steps=14 format=3 uid="uid://dy8y3dmei0o10"]
+>>>>>>> main
 
 [ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="1_jlwcs"]
 [ext_resource type="Texture2D" uid="uid://bl3g6pm7e6hov" path="res://prefabs/dev_grey.png" id="2_430f7"]
 [ext_resource type="ArrayMesh" uid="uid://eikqtfkce6jq" path="res://prefabs/dev_grey.obj" id="3_2vqjg"]
 [ext_resource type="Texture2D" uid="uid://cghbpdvq15frc" path="res://prefabs/dev_orange.png" id="4_xppwj"]
 [ext_resource type="ArrayMesh" uid="uid://bd1p4vxwpo0fn" path="res://prefabs/dev_pillar.obj" id="5_w2gxl"]
+[ext_resource type="PackedScene" uid="uid://dblogam5obn7d" path="res://scenes/scenary/Pipe.tscn" id="7_47spo"]
+[ext_resource type="PackedScene" uid="uid://tatlbq78gkdr" path="res://scenes/Characters/enemy_r.tscn" id="7_57rep"]
+[ext_resource type="PackedScene" uid="uid://p3d1lggvitpk" path="res://scenes/HUD/pipe_health_bar.tscn" id="8_1tvo5"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_o4enh"]
+vertices = PackedVector3Array(-20.892, -4.59918, -20.5371, -20.642, -4.59918, -21.7871, -22.392, -4.59918, -21.7871, -18.142, -4.59918, -21.7871, -19.892, -4.59918, -21.7871, -19.642, -4.59918, -20.5371, -22.642, -4.59918, -23.2871, -25.142, -4.59918, -23.2871, -15.142, -4.59918, -23.2871, -17.892, -4.59918, -23.2871, -37.892, -4.59918, -20.5371, -3.14196, -4.59918, -20.5371, -22.392, -4.59918, -26.5371, -14.892, -4.59918, -26.0371, -3.14196, -4.59918, -67.2871, -37.892, -4.59918, -67.2871, -25.392, -4.59918, -26.0371, -21.642, -3.84918, -25.5371, -21.642, -3.84918, -22.7871, -18.892, -3.84918, -22.7871, -18.892, -3.84918, -25.5371, -24.392, 2.65082, -25.2871, -24.392, 2.65082, -24.2871, -23.392, 2.65082, -24.2871, -23.392, 2.65082, -25.2871, -17.142, 2.65082, -25.2871, -17.142, 2.65082, -24.2871, -15.892, 2.65082, -24.2871, -15.892, 2.65082, -25.2871)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(7, 6, 2), PackedInt32Array(3, 9, 8), PackedInt32Array(2, 0, 7), PackedInt32Array(7, 0, 10), PackedInt32Array(3, 8, 5), PackedInt32Array(5, 8, 11), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(8, 13, 11), PackedInt32Array(11, 13, 14), PackedInt32Array(12, 16, 15), PackedInt32Array(7, 10, 16), PackedInt32Array(16, 10, 15), PackedInt32Array(20, 19, 17), PackedInt32Array(17, 19, 18), PackedInt32Array(24, 23, 21), PackedInt32Array(21, 23, 22), PackedInt32Array(28, 27, 25), PackedInt32Array(25, 27, 26), PackedInt32Array(1, 4, 0), PackedInt32Array(0, 4, 5)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqlkb"]
 albedo_texture = ExtResource("2_430f7")
@@ -41,46 +52,76 @@ transform = Transform3D(0.999988, 0, 0.00488687, 0, 1, 0, -0.00488687, 0, 0.9999
 platform_on_leave = 2
 platform_floor_layers = 4294901761
 
-[node name="DevGrey" type="MeshInstance3D" parent="."]
+[node name="Pipes" type="Node3D" parent="."]
+
+[node name="Pipe" parent="Pipes" instance=ExtResource("7_47spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6565, -3.08409, -62.338)
+
+[node name="Pipe2" parent="Pipes" instance=ExtResource("7_47spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1629, -3.08409, -62.338)
+
+[node name="Pipe3" parent="Pipes" instance=ExtResource("7_47spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0348, -3.08409, -62.2801)
+
+[node name="Pipe4" parent="Pipes" instance=ExtResource("7_47spo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.18452, -3.08409, -62.338)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.138032, 0.990428, 0, -0.990428, 0.138032, -12.7674, 21.7121, -46.2395)
+
+[node name="Enemy" parent="." instance=ExtResource("7_57rep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1725, -4.10691, -52.1816)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_o4enh")
+
+[node name="Level3DEnvironment" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="DevGrey" type="MeshInstance3D" parent="NavigationRegion3D/Level3DEnvironment"]
 transform = Transform3D(8.89854, 0, 0, 0, 0.355079, 0, 0, 0, 11.8928, -20.5192, -5.636, -43.9004)
 material_override = SubResource("StandardMaterial3D_cqlkb")
 mesh = ExtResource("3_2vqjg")
+skeleton = NodePath("../../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DevGrey"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Level3DEnvironment/DevGrey"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DevGrey/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Level3DEnvironment/DevGrey/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107193, 0.0133362, -0.00012207)
 shape = SubResource("BoxShape3D_6f227")
 
-[node name="DevGrey2" type="MeshInstance3D" parent="."]
+[node name="DevGrey2" type="MeshInstance3D" parent="NavigationRegion3D/Level3DEnvironment"]
 transform = Transform3D(0.889854, 0, 0, 0, 0.355079, 0, 0, 0, 0.891964, -20.2464, -4.84098, -24.204)
 material_override = SubResource("StandardMaterial3D_jmbkn")
 mesh = ExtResource("3_2vqjg")
+skeleton = NodePath("../../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DevGrey2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Level3DEnvironment/DevGrey2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DevGrey2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Level3DEnvironment/DevGrey2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107193, 0.0133362, -0.00012207)
 shape = SubResource("BoxShape3D_6f227")
 
-[node name="DevPillar" type="MeshInstance3D" parent="."]
+[node name="DevPillar" type="MeshInstance3D" parent="NavigationRegion3D/Level3DEnvironment"]
 transform = Transform3D(0.474588, 0, 0, 0, 0.568126, 0, 0, 0, 0.475714, -23.8576, -4.91791, -24.8012)
 mesh = ExtResource("5_w2gxl")
+skeleton = NodePath("../../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DevPillar"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Level3DEnvironment/DevPillar"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DevPillar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Level3DEnvironment/DevPillar/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_a41eu")
 
-[node name="DevPillar2" type="MeshInstance3D" parent="."]
+[node name="DevPillar2" type="MeshInstance3D" parent="NavigationRegion3D/Level3DEnvironment"]
 transform = Transform3D(0.474588, 0, 0, 0, 0.568126, 0, 0, 0, 0.475714, -16.562, -4.91791, -24.8012)
 mesh = ExtResource("5_w2gxl")
+skeleton = NodePath("../../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DevPillar2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Level3DEnvironment/DevPillar2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DevPillar2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Level3DEnvironment/DevPillar2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_a41eu")
 
+<<<<<<< HEAD
 [node name="TBLoader" type="TBLoader" parent="."]
 map_resource = "res://scenes/tbfiles/unnamed.map"
 
@@ -94,3 +135,7 @@ mesh = SubResource("ArrayMesh_6ec2i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TBLoader/Default Layer/entity_0_geometry_col"]
 shape = SubResource("ConcavePolygonShape3D_gxddu")
+=======
+[node name="PipeHealthBar" parent="." instance=ExtResource("8_1tvo5")]
+visible = false
+>>>>>>> main

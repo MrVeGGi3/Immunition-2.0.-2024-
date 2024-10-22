@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://wphxiqw387ve"]
+
+[ext_resource type="FontFile" uid="uid://ctfmmfe6rfufw" path="res://fonts/Lalezar-Regular.otf" id="1_inrif"]
+[ext_resource type="Texture2D" uid="uid://bgkwr2yqwi0ff" path="res://images/UI/Buttons/Barras sem Text/button_select.png" id="2_iaevm"]
+[ext_resource type="Texture2D" uid="uid://bf7k7u87l0v8k" path="res://images/UI/Buttons/Barras sem Text/button.png" id="3_huy8f"]
+[ext_resource type="Texture2D" uid="uid://dhetwgp7r6uoj" path="res://images/UI/Buttons/Barras sem Text/Button_pressed.png" id="4_vg524"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ticde"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wuqy"]
+texture = ExtResource("2_iaevm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ujwvq"]
+texture = ExtResource("3_huy8f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vx03"]
+texture = ExtResource("4_vg524")
+
+[resource]
+OptionButton/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/font_sizes/font_size = 16
+OptionButton/fonts/font = ExtResource("1_inrif")
+OptionButton/icons/arrow = SubResource("ViewportTexture_ticde")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_2wuqy")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_ujwvq")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_7vx03")

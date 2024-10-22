@@ -22,13 +22,15 @@ extends CharacterBody3D
 @onready var animation: AnimationPlayer = $"PlayerHUD/GunShoot/AnimaçãoArmas"
 
 #Animação das barras de armas
-@onready var linfocit_bar = $"PlayerHUD/UI_AMMO/Linfócito/LinfocitBar"
-@onready var macrofage_bar = $"PlayerHUD/UI_AMMO/Macrofágo/MacrofageBar"
-@onready var neutrofile_bar = $"PlayerHUD/UI_AMMO/Neutrófilo/NeutrofileBar"
+@onready var linfocit_bar = $"PlayerHUD/UI_AMMO/PressedControl/ControlLinfocit/LinfocitButton"
+@onready var macrofage_bar = $"PlayerHUD/UI_AMMO/PressedControl/ControlMacrofage/MacrofageButton"
+@onready var neutrofile_bar = $"PlayerHUD/UI_AMMO/PressedControl/ControlNeutrofile/NeutrofileButton"
+@onready var background_bar = $"PlayerHUD/UI_AMMO/BackgroundAmmo"
+
 
 #UI
 @onready var deathscreen = $PlayerHUD/DeathScreen #tela de quando o player morre
-@onready var progress_bar = $PlayerHUD/PlayerLifeBar/ProgressBar # barra de progresso de vida do player
+@onready var progress_bar = $PlayerHUD/PlayerLifeBar/LifeBar # barra de progresso de vida do player
 @onready var pause_menu = $PlayerHUD/pause_menu #menu de pausa
 @onready var player_life_bar = $PlayerHUD/PlayerLifeBar #UI que mostra os stats do player
 @onready var damage_taken = $PlayerHUD/PlayerLifeBar/DamageTaken #Animação que mostra quando o jogador perde vida
@@ -490,9 +492,19 @@ func get_more_ammo(lammo, mammo, nammo):
 	l_ammo += lammo
 	m_ammo += mammo
 	n_ammo += nammo
-	linfocit_bar.play("recharge")
-	macrofage_bar.play("recharge")
-	neutrofile_bar.play("recharge")
+	background_bar.play("recharged")
+	linfocit_bar.play("recharged")
+	macrofage_bar.play("recharged")
+	neutrofile_bar.play("recharged")
 	
 func _on_enable_particle_timeout():
 	particles.emitting = true
+	
+func is_player_detection(): #função para detecção do RayCast3D
+	print("Estou sendo avistado pelo inimigo")
+
+func can_interact():
+	press_interaction.visible = true
+
+func cant_interact():
+	press_interaction.visible = false

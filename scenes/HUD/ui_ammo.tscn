@@ -1,20 +1,20 @@
-[gd_scene load_steps=25 format=3 uid="uid://bjs28xuudoshk"]
+[gd_scene load_steps=18 format=3 uid="uid://bjs28xuudoshk"]
 
-[ext_resource type="Texture2D" uid="uid://gdo46rv1wjh3" path="res://icons/icon gun select.png" id="1_7y2vy"]
-[ext_resource type="Texture2D" uid="uid://bap8mnn7tl4bg" path="res://icons/gun selection/icon gun green.jpg" id="2_anwxx"]
-[ext_resource type="Texture2D" uid="uid://33jae7wc4cls" path="res://icons/keyoboard buttons/keyboard.png" id="3_5cxsp"]
-[ext_resource type="FontFile" uid="uid://tfn36nnpaotb" path="res://fonts/batmfa__.ttf" id="4_fdmn4"]
+[ext_resource type="Texture2D" uid="uid://bcrja1q6t7mig" path="res://images/UI/Backgrounds/Ammo/UI Bar.png" id="1_37pg4"]
+[ext_resource type="Texture2D" uid="uid://bb8a4v3ufs3h2" path="res://images/UI/Backgrounds/Ammo/UI Bar Piscando.png" id="2_02kds"]
+[ext_resource type="Theme" uid="uid://do5b2cyqf7par" path="res://themes/ui_ammo.tres" id="4_x7jpr"]
+[ext_resource type="Theme" uid="uid://dsctbsp16gdw3" path="res://themes/ControlLabels.tres" id="5_04fx4"]
 [ext_resource type="Texture2D" uid="uid://c7mcbsugesbyq" path="res://icons/weapons/Icon Linfosito.png" id="5_6wled"]
-[ext_resource type="Texture2D" uid="uid://b82c6dssql1le" path="res://icons/gun selection/icon gun blue.jpg" id="6_u03wj"]
+[ext_resource type="Texture2D" uid="uid://dy7bstj1vvvfp" path="res://images/UI/Backgrounds/Ammo/Botao.png" id="6_qs2t2"]
+[ext_resource type="Texture2D" uid="uid://bcs4p13pihvsj" path="res://images/UI/Backgrounds/Ammo/Botão arma selecionada.png" id="6_y5vut"]
 [ext_resource type="Texture2D" uid="uid://6eexcteofaqe" path="res://icons/weapons/Icon neutrofilo.png" id="7_13nga"]
-[ext_resource type="Texture2D" uid="uid://b1kyb3y8wghfy" path="res://icons/gun selection/icon gun red.jpg" id="8_37pnv"]
 [ext_resource type="Texture2D" uid="uid://hktqxlioxt6s" path="res://icons/weapons/Icon macrofago.png" id="9_e2apo"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_asqag"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3qkg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7y2vy")
+"texture": ExtResource("1_37pg4")
 }],
 "loop": true,
 "name": &"default",
@@ -22,38 +22,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7y2vy")
+"texture": ExtResource("1_37pg4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_anwxx")
+"texture": ExtResource("2_02kds")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_7y2vy")
+"texture": ExtResource("1_37pg4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_anwxx")
+"texture": ExtResource("2_02kds")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_7y2vy")
+"texture": ExtResource("1_37pg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_02kds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_37pg4")
 }],
 "loop": false,
-"name": &"recharge",
-"speed": 10.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_65rdl"]
-atlas = ExtResource("3_5cxsp")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2db4e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_65rdl")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"recharged",
+"speed": 20.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_weqne"]
@@ -71,11 +62,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_uf55j"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ik82e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7y2vy")
+"texture": ExtResource("6_qs2t2")
 }],
 "loop": true,
 "name": &"default",
@@ -83,23 +74,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7y2vy")
+"texture": ExtResource("6_qs2t2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_u03wj")
+"texture": ExtResource("6_y5vut")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_7y2vy")
+"texture": ExtResource("6_qs2t2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_u03wj")
+"texture": ExtResource("6_y5vut")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_7y2vy")
+"texture": ExtResource("6_qs2t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y5vut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qs2t2")
 }],
 "loop": false,
-"name": &"recharge",
-"speed": 10.0
+"name": &"recharged",
+"speed": 20.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6va40"]
@@ -114,67 +111,6 @@ animations = [{
 }],
 "loop": false,
 "name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4kqli"]
-atlas = ExtResource("3_5cxsp")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f73ti"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4kqli")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yltvk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_7y2vy")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_7y2vy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_37pnv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_7y2vy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_37pnv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_7y2vy")
-}],
-"loop": false,
-"name": &"recharge",
-"speed": 10.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_375ne"]
-atlas = ExtResource("3_5cxsp")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_aobn8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_375ne")
-}],
-"loop": true,
-"name": &"default",
 "speed": 5.0
 }]
 
@@ -201,110 +137,151 @@ offset_top = 646.0
 offset_right = 418.0
 offset_bottom = 686.0
 
-[node name="Ammo3" type="Sprite2D" parent="."]
-position = Vector2(247, -36)
-scale = Vector2(0.056, 0.056)
-texture = ExtResource("1_7y2vy")
+[node name="BackgroundAmmo" type="AnimatedSprite2D" parent="."]
+position = Vector2(184, -47)
+scale = Vector2(0.472344, 0.432344)
+sprite_frames = SubResource("SpriteFrames_v3qkg")
+animation = &"recharged"
 
 [node name="Linfócito" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LinfocitBar" type="AnimatedSprite2D" parent="Linfócito"]
-position = Vector2(115, -42)
-scale = Vector2(0.0631217, 0.0635484)
-sprite_frames = SubResource("SpriteFrames_asqag")
-animation = &"recharge"
-autoplay = "default"
-
-[node name="1" type="AnimatedSprite2D" parent="Linfócito"]
-position = Vector2(117, -82)
-sprite_frames = SubResource("SpriteFrames_2db4e")
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 39.0
+offset_bottom = 38.0
 
 [node name="Ammo_Linf" type="Label" parent="Linfócito"]
 layout_mode = 0
-offset_left = 85.0
-offset_top = -26.0
-offset_right = 152.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0.286275, 0, 1)
-theme_override_fonts/font = ExtResource("4_fdmn4")
-theme_override_font_sizes/font_size = 30
+offset_left = 81.0
+offset_top = -44.0
+offset_right = 148.0
+offset_bottom = 14.0
+theme = ExtResource("4_x7jpr")
 text = "20
 "
 horizontal_alignment = 1
 
-[node name="LinfocitIcon" type="AnimatedSprite2D" parent="Linfócito"]
-position = Vector2(117, -43)
+[node name="Linfocit" type="AnimatedSprite2D" parent="Linfócito"]
+position = Vector2(114, -55)
 scale = Vector2(0.226765, 0.226765)
 sprite_frames = SubResource("SpriteFrames_3br55")
 animation = &"idle"
 
-[node name="Macrofágo" type="Control" parent="."]
+[node name="PressedControl" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MacrofageBar" type="AnimatedSprite2D" parent="Macrofágo"]
-position = Vector2(180, -44)
-scale = Vector2(0.0631217, 0.0635484)
-sprite_frames = SubResource("SpriteFrames_uf55j")
-animation = &"recharge"
-autoplay = "default"
+[node name="ControlLinfocit" type="Control" parent="PressedControl"]
+anchors_preset = 0
+offset_left = 99.0
+offset_top = -104.0
+offset_right = 139.0
+offset_bottom = -64.0
+
+[node name="LinfocitButton" type="AnimatedSprite2D" parent="PressedControl/ControlLinfocit"]
+position = Vector2(15, 4)
+scale = Vector2(0.531165, 0.531165)
+sprite_frames = SubResource("SpriteFrames_ik82e")
+animation = &"recharged"
+
+[node name="Number1" type="Label" parent="PressedControl/ControlLinfocit"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -19.0
+offset_right = 48.0
+offset_bottom = 27.0
+theme = ExtResource("5_04fx4")
+text = "1"
+
+[node name="ControlMacrofage" type="Control" parent="PressedControl"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 165.0
+offset_top = -104.0
+offset_right = 205.0
+offset_bottom = -64.0
+
+[node name="MacrofageButton" type="AnimatedSprite2D" parent="PressedControl/ControlMacrofage"]
+position = Vector2(16, 4)
+scale = Vector2(0.531165, 0.531165)
+sprite_frames = SubResource("SpriteFrames_ik82e")
+animation = &"recharged"
+
+[node name="Number2" type="Label" parent="PressedControl/ControlMacrofage"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -19.0
+offset_right = 46.0
+offset_bottom = 27.0
+theme = ExtResource("5_04fx4")
+text = "2"
+
+[node name="ControlNeutrofile" type="Control" parent="PressedControl"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 166.0
+offset_top = -103.0
+offset_right = 206.0
+offset_bottom = -63.0
+
+[node name="NeutrofileButton" type="AnimatedSprite2D" parent="PressedControl/ControlNeutrofile"]
+position = Vector2(80, 3)
+scale = Vector2(0.531165, 0.531165)
+sprite_frames = SubResource("SpriteFrames_ik82e")
+animation = &"recharged"
+
+[node name="Number3" type="Label" parent="PressedControl/ControlNeutrofile"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = -18.0
+offset_right = 112.0
+offset_bottom = 28.0
+theme = ExtResource("5_04fx4")
+text = "3"
+
+[node name="Macrofágo" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 39.0
+offset_bottom = 37.0
 
 [node name="MacrofageIcon" type="AnimatedSprite2D" parent="Macrofágo"]
-position = Vector2(184, -46)
+position = Vector2(182, -54)
 scale = Vector2(0.21566, 0.21566)
 sprite_frames = SubResource("SpriteFrames_yg3w6")
 animation = &"idle"
 
-[node name="2" type="AnimatedSprite2D" parent="Macrofágo"]
-position = Vector2(183, -82)
-sprite_frames = SubResource("SpriteFrames_f73ti")
-
 [node name="Ammo_Macr" type="Label" parent="Macrofágo"]
 layout_mode = 0
-offset_left = 150.0
-offset_top = -25.0
-offset_right = 217.0
-offset_bottom = 33.0
-theme_override_colors/font_color = Color(0, 0, 0.937255, 1)
-theme_override_fonts/font = ExtResource("4_fdmn4")
-theme_override_font_sizes/font_size = 30
+offset_left = 148.0
+offset_top = -43.0
+offset_right = 215.0
+offset_bottom = 15.0
+theme = ExtResource("4_x7jpr")
 text = "20"
 horizontal_alignment = 1
 
 [node name="Neutrófilo" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="NeutrofileBar" type="AnimatedSprite2D" parent="Neutrófilo"]
-position = Vector2(248, -43)
-scale = Vector2(0.0631217, 0.0635484)
-sprite_frames = SubResource("SpriteFrames_yltvk")
-animation = &"recharge"
-autoplay = "default"
+offset_left = -2.0
+offset_top = -4.0
+offset_right = 38.0
+offset_bottom = 36.0
 
 [node name="Ammo_Neu" type="Label" parent="Neutrófilo"]
 layout_mode = 0
-offset_left = 224.0
-offset_top = -26.0
-offset_right = 275.0
-offset_bottom = 7.0
-theme_override_colors/font_color = Color(0.952941, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_fdmn4")
-theme_override_font_sizes/font_size = 30
+offset_left = 223.0
+offset_top = -42.0
+offset_right = 274.0
+offset_bottom = 4.0
+theme = ExtResource("4_x7jpr")
 text = "20"
 horizontal_alignment = 1
 
-[node name="3" type="AnimatedSprite2D" parent="Neutrófilo"]
-position = Vector2(246, -84)
-sprite_frames = SubResource("SpriteFrames_aobn8")
-
 [node name="Neutrofile" type="AnimatedSprite2D" parent="Neutrófilo"]
-position = Vector2(248, -45)
+position = Vector2(249, -53)
 scale = Vector2(0.256223, 0.256223)
 sprite_frames = SubResource("SpriteFrames_f2ewk")
 animation = &"idle"

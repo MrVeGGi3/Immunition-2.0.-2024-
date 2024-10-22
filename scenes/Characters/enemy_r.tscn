@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://tatlbq78gkdr"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/Enemy_Red.gd" id="1_oqfwn"]
+[ext_resource type="Script" path="res://scripts/Characthers/Prototype/Level3/Enemy_Red_Pipe.gd" id="1_k2cka"]
 [ext_resource type="AudioStream" uid="uid://bw3djxfntr0jb" path="res://sounds/SFX/Monster/monster_die.wav" id="3_8tm2e"]
 [ext_resource type="Texture2D" uid="uid://b7gk6t1q8ddtl" path="res://sprites/Monster/monster1_purple_sprite.png" id="3_kx0kl"]
 [ext_resource type="AudioStream" uid="uid://bud3mha4g5u45" path="res://sounds/SFX/Monster/monster_bite.wav" id="4_r3ya0"]
@@ -113,8 +113,11 @@ collision_mask = 3
 platform_on_leave = 2
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
-script = ExtResource("1_oqfwn")
+script = ExtResource("1_k2cka")
 move_speed = 7.0
+minimum_distance = 15
+m_ammo = 2
+n_ammo = 4.0
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(-3.73677e-08, 0, -0.854874, 0, 0.854874, 0, 0.854874, 0, -3.73677e-08, 0, 1, 0)
@@ -188,16 +191,16 @@ render_target_update_mode = 4
 texture = ExtResource("6_p1ipx")
 centered = false
 
-[node name="Control" type="Node3D" parent="."]
+[node name="Icon" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
-[node name="Sprite3D2" type="Sprite3D" parent="Control"]
-transform = Transform3D(0.605505, 0, 0, 0, 0.605505, 0, 0, 0, 0.605505, 0.0170641, 1.57167, -1.54261)
+[node name="Sprite3D2" type="Sprite3D" parent="Icon"]
+transform = Transform3D(0.605505, 0, 0, 0, 0.605505, 0, 0, 0, 0.605505, 0.319951, 1.72985, -1.43978)
 billboard = 1
 texture = SubResource("ViewportTexture_2lkcc")
 
-[node name="Sprite3D" type="Sprite3D" parent="Control"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.642613, 1.39857, -0.646967)
+[node name="Sprite3D" type="Sprite3D" parent="Icon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.642613, 1.39857, -1.07276)
 billboard = 1
 texture = SubResource("ViewportTexture_mhv1c")
 

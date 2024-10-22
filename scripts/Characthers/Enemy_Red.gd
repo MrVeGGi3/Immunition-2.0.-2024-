@@ -11,7 +11,6 @@ var can_colide = true
 @onready var sub_viewport = $SubViewport
 @onready var nav = $NavigationAgent3D
 @onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
-@onready var catch_player = $CatchPlayer
 @onready var symbol = $Control/Sprite3D2
 
 
@@ -130,8 +129,6 @@ func killed():
 func _on_timer_timeout():
 	can_colide = true
 
-func heal_green():
-	enemy_health += 2
 
 func _process(delta):
 	if dead:

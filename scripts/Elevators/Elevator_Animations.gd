@@ -6,8 +6,6 @@ extends MeshInstance3D
 
 var is_played = false
 
-func open_door():
-	opening_door.play()
 
 func _process(_delta):
 	if Global.extractors_collected == 3 and !is_played:

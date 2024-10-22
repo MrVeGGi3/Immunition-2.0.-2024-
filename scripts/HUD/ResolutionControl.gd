@@ -1,5 +1,5 @@
 extends Control
-@onready var option_button = $HBoxContainer/OptionButton as OptionButton
+@onready var option_button = %ResolutionButton
 
 
 const RESOLUTION_DICTIONARY : Dictionary = {

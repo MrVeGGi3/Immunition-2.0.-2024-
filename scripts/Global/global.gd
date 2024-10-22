@@ -19,7 +19,7 @@ var influenza_in_scene: int = 0
 var pathogen_killed : int = 0 
 #Contagem de Objetos Coletados!
 var extractors_collected : int = 0
-
+var wall_piece : int = 0 
 #Contagem se um objetivo foi alcançado
 var is_enemies_destroyed = false
 

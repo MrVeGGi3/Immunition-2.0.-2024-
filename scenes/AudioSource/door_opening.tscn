@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://by5w8r5ir8bac"]
+
+[ext_resource type="AudioStream" uid="uid://bqhnvkpnvrvf1" path="res://sounds/SFX/Door/WallMovement.wav" id="1_52h7t"]
+
+[node name="DoorOpening" type="AudioStreamPlayer"]
+stream = ExtResource("1_52h7t")
+bus = &"SFX"

@@ -1,6 +1,8 @@
 extends AnimationTree
 
 @onready var animation_tree: AnimationTree = $"."
+@onready var animação: AnimationPlayer = $"../AnimaçãoArmas"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,3 +21,4 @@ func _process(delta: float) -> void:
 	
 	animation_tree["parameters/Idle/blend_position"] = input_dir
 	animation_tree["parameters/Walk/blend_position"] = input_dir
+	

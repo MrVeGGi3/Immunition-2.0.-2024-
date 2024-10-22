@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bavcym5qvj7ka"]
+
+[ext_resource type="AudioStream" uid="uid://cjqqt2syy2a28" path="res://sounds/SFX/Buttons/ButtorError.wav" id="1_bqtfe"]
+
+[node name="ErrorAudio" type="AudioStreamPlayer"]
+stream = ExtResource("1_bqtfe")
+volume_db = -20.0
+bus = &"SFX"

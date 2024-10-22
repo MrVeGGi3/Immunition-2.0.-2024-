@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfltp503gd8w7"]
 
 [ext_resource type="Texture2D" uid="uid://gdo46rv1wjh3" path="res://icons/icon gun select.png" id="1_bt6cp"]
-[ext_resource type="Texture2D" uid="uid://cva0a0y481gsc" path="res://icons/keyoboard buttons/botão q.png" id="2_6tcw0"]
-[ext_resource type="Texture2D" uid="uid://dlo0i1fhhu3dp" path="res://icons/keyoboard buttons/botão e.png" id="2_utn1r"]
+[ext_resource type="Theme" uid="uid://dsctbsp16gdw3" path="res://themes/ControlLabels.tres" id="3_kqrf0"]
 [ext_resource type="Texture2D" uid="uid://bmnx3x6iggtyl" path="res://icons/whell&memory/wheaponwheel.png" id="3_qeym4"]
+[ext_resource type="Texture2D" uid="uid://dy7bstj1vvvfp" path="res://images/UI/Backgrounds/Ammo/Botao.png" id="3_vkxwj"]
 [ext_resource type="Texture2D" uid="uid://b0s4ia30qnb73" path="res://icons/whell&memory/memorysystemicon.png" id="5_rnf0h"]
 
 [node name="Whell&memory" type="Control"]
@@ -26,15 +26,32 @@ position = Vector2(86, -39)
 scale = Vector2(0.10931, 0.10931)
 texture = ExtResource("1_bt6cp")
 
-[node name="ButtonQ" type="Sprite2D" parent="Whell"]
-position = Vector2(121, -146)
-scale = Vector2(1.88, 1.88)
-texture = ExtResource("2_6tcw0")
-
 [node name="Whell" type="Sprite2D" parent="Whell"]
 position = Vector2(87, -55)
 scale = Vector2(0.206511, 0.206511)
 texture = ExtResource("3_qeym4")
+
+[node name="WheelButton" type="Control" parent="Whell"]
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 169.0
+offset_right = 42.0
+offset_bottom = 209.0
+
+[node name="ButtonWhell" type="Sprite2D" parent="Whell/WheelButton"]
+position = Vector2(86, -139)
+texture = ExtResource("3_vkxwj")
+
+[node name="WhellButton" type="Label" parent="Whell/WheelButton"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = -175.0
+offset_right = 110.0
+offset_bottom = -102.0
+theme = ExtResource("3_kqrf0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Q"
 
 [node name="Memory" type="Control" parent="."]
 anchors_preset = 0
@@ -48,12 +65,30 @@ position = Vector2(307, 285)
 scale = Vector2(0.10931, 0.10931)
 texture = ExtResource("1_bt6cp")
 
-[node name="ButtonE" type="Sprite2D" parent="Memory"]
-position = Vector2(347, 177)
-scale = Vector2(1.87391, 1.87391)
-texture = ExtResource("2_utn1r")
-
 [node name="Memory" type="Sprite2D" parent="Memory"]
 position = Vector2(309, 267)
 scale = Vector2(0.272072, 0.182855)
 texture = ExtResource("5_rnf0h")
+
+[node name="WeaponButton2" type="Control" parent="Memory"]
+anchors_preset = 0
+offset_left = -1.0
+offset_top = 175.0
+offset_right = 39.0
+offset_bottom = 215.0
+
+[node name="ButtonWeapon" type="Sprite2D" parent="Memory/WeaponButton2"]
+position = Vector2(311, 182)
+texture = ExtResource("3_vkxwj")
+
+[node name="WeaponButton" type="Label" parent="Memory/WeaponButton2"]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 147.0
+offset_right = 338.0
+offset_bottom = 220.0
+theme = ExtResource("3_kqrf0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "E
+"

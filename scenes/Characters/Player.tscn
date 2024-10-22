@@ -42,7 +42,7 @@ material = SubResource("StandardMaterial3D_6em7j")
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
-collision_mask = 109
+collision_mask = 1133
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
 script = ExtResource("1_cyly3")
@@ -69,10 +69,10 @@ offset_bottom = -192.0
 player = NodePath("../..")
 
 [node name="Whell&memory" parent="PlayerHUD" instance=ExtResource("26_yg6t8")]
-offset_left = 168.0
-offset_top = 306.0
-offset_right = 168.0
-offset_bottom = 306.0
+offset_left = 154.0
+offset_top = 409.0
+offset_right = 154.0
+offset_bottom = 409.0
 scale = Vector2(0.480624, 0.480624)
 
 [node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]

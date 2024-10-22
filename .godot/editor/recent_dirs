@@ -1,9 +1,20 @@
+<<<<<<< HEAD
 res://scenes/tbfiles
 res://scripts/Animations
+=======
+res://images/UI/Backgrounds/Ammo
+>>>>>>> main
 res://scenes/HUD
-res://scripts/Configs
+res://scripts/Characthers/Prototype/Level3
+res://scripts/Count
+res://scenes/AudioSource
+res://scripts/Elevators
+res://scripts/Collectables
 res://themes
 res://scripts/Tests
+res://scripts/HUD
+res://scripts/Animations
+res://scripts/Configs
 res://scripts/Characthers
 E:/Downloads/ImmutionHTML
 res://scripts/Effects
@@ -14,9 +25,10 @@ res://scenes/Characters/BoatLevel
 res://scripts/Characthers/boatlevel
 res://scripts/Characthers/on_water
 res://shaders
-res://scripts/Credits
-res://scenes/UI/Player
 E:/Godot
 E:/Downloads/ImmunitionExport
+<<<<<<< HEAD
 res://images/Collectables
 res://sprites/Monster/infectedcell
+=======
+>>>>>>> main

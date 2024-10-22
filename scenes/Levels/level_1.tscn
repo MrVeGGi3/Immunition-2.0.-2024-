@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=3 uid="uid://cj7emqhky70af"]
+[gd_scene load_steps=175 format=3 uid="uid://cj7emqhky70af"]
 
 [ext_resource type="Script" path="res://scripts/Levels/level_1.gd" id="1_bgiqj"]
 [ext_resource type="Texture2D" uid="uid://bhlaan6ukbhkc" path="res://prefabs/floor1_20240614085358.png" id="2_fikwp"]
@@ -20,31 +20,32 @@
 [ext_resource type="Texture2D" uid="uid://bbnptvq4384u6" path="res://prefabs/wall3_20240614085034.png" id="10_fcgfb"]
 [ext_resource type="PackedScene" uid="uid://c5yaq5d5t8iip" path="res://scenes/HUD/minimap.tscn" id="10_vb8wc"]
 [ext_resource type="Texture2D" uid="uid://tabp7eyt3ehb" path="res://prefabs/floor2_20240614085410.png" id="11_amhns"]
-[ext_resource type="AudioStream" uid="uid://cjqqt2syy2a28" path="res://sounds/SFX/Buttons/ButtorError.wav" id="14_srumt"]
+[ext_resource type="AudioStream" uid="uid://bqhnvkpnvrvf1" path="res://sounds/SFX/Door/WallMovement.wav" id="14_6j81h"]
 [ext_resource type="PackedScene" uid="uid://cisbfousat14j" path="res://scenes/UI/PhasesFinished/phase_ended.tscn" id="16_ee351"]
+[ext_resource type="PackedScene" uid="uid://bavcym5qvj7ka" path="res://scenes/AudioSource/error_audio.tscn" id="18_l6p46"]
 [ext_resource type="PackedScene" uid="uid://nt37rum3dhef" path="res://scenes/HUD/WheelSwitchWeapons.tscn" id="19_3xk8q"]
 [ext_resource type="PackedScene" uid="uid://bli5ijcxx5bse" path="res://scenes/HUD/MemorySystem.tscn" id="20_hysmr"]
 [ext_resource type="PackedScene" uid="uid://cfltp503gd8w7" path="res://scenes/UI/Player/whell&memory.tscn" id="21_m7wo0"]
 [ext_resource type="PackedScene" uid="uid://5ran8yqdqky" path="res://scenes/HUD/pause_menu.tscn" id="22_lt2jr"]
+[ext_resource type="PackedScene" uid="uid://btp6gers53b0l" path="res://scenes/AudioSource/victory_song.tscn" id="22_n1uel"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="25_7kquy"]
 [ext_resource type="AudioStream" uid="uid://hqasyg3vanal" path="res://sounds/SFX/Player/ShootEffect.wav" id="27_0ur8g"]
-[ext_resource type="AudioStream" uid="uid://cl16r632p0qb5" path="res://sounds/BGM/deathsound.wav" id="28_a2774"]
 [ext_resource type="AudioStream" uid="uid://dk7wdjoi41cuq" path="res://sounds/SFX/Player/macrofage_weapon .wav" id="30_ax3k4"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="31_8xm55"]
 [ext_resource type="PackedScene" uid="uid://csuphbpruxtrh" path="res://scenes/HUD/player_life_bar.tscn" id="33_rwaqr"]
 [ext_resource type="PackedScene" uid="uid://btp7d3bapr771" path="res://scenes/HUD/gun_shoot.tscn" id="34_4hlga"]
 [ext_resource type="PackedScene" uid="uid://bjs28xuudoshk" path="res://scenes/HUD/ui_ammo.tscn" id="35_qvsj1"]
 [ext_resource type="PackedScene" uid="uid://bto3b5twkq7gj" path="res://scenes/HUD/death_screen.tscn" id="39_qgjc3"]
+[ext_resource type="PackedScene" uid="uid://yxnqnhf18oj6" path="res://scenes/AudioSource/death_sound.tscn" id="43_jslcx"]
 [ext_resource type="PackedScene" uid="uid://cc6g7d2jxbm48" path="res://scenes/spawner/MainSpawner/CellSpawner3D.tscn" id="47_5u452"]
+[ext_resource type="PackedScene" uid="uid://by5w8r5ir8bac" path="res://scenes/AudioSource/door_opening.tscn" id="47_i1yyk"]
 [ext_resource type="PackedScene" uid="uid://doww2heou7dsn" path="res://scenes/spawner/MainSpawner/InfluenzaSpawner3D.tscn" id="48_d5mun"]
-[ext_resource type="AudioStream" uid="uid://ddot4x86ay8a4" path="res://sounds/BGM/VictorySong.wav" id="48_n7oef"]
 [ext_resource type="AudioStream" uid="uid://b0f6ntlqc0lg5" path="res://sounds/BGM/Level_1.wav" id="49_wylse"]
 [ext_resource type="Script" path="res://scripts/Count/influenza_count.gd" id="52_ket2y"]
 [ext_resource type="Texture2D" uid="uid://bvjoyraetdpi6" path="res://images/CountBackground/Contador_base.png" id="53_p5uxp"]
 [ext_resource type="PackedScene" uid="uid://bj2row0123pwr" path="res://scenes/UI/Player/press_interaction.tscn" id="56_qlsug"]
 [ext_resource type="PackedScene" uid="uid://c8bydekkhr5m4" path="res://scenes/Characters/enemy_b.tscn" id="57_uqt37"]
 [ext_resource type="PackedScene" uid="uid://8onv0icy5g7h" path="res://scenes/Characters/enemy_g.tscn" id="58_crqrg"]
-[ext_resource type="AudioStream" uid="uid://b37l0rkfg0otl" path="res://sounds/SFX/Door/OpeningDoor.wav" id="59_4cx6g"]
 [ext_resource type="Texture2D" uid="uid://c7bx6oyr5oajj" path="res://sprites/Player/Splash_sprites.png" id="60_4282a"]
 
 [sub_resource type="Environment" id="Environment_07ns0"]
@@ -402,12 +403,16 @@ tracks/0/keys = {
 tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../OpeningDoor")
+tracks/1/path = NodePath("../../../DoorOpening")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"clips": [],
-"times": PackedFloat32Array()
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_6j81h")
+}],
+"times": PackedFloat32Array(1.63333)
 }
 tracks/1/use_blend = true
 
@@ -486,12 +491,9 @@ tracks/3/path = NodePath("../NavigationObstacle3D/Portões/DevGrey41")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4, 7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(7),
+"transitions": PackedFloat32Array(1),
 "values": [{
-"args": [],
-"method": &"open_door"
-}, {
 "args": [],
 "method": &"set_final_position"
 }]
@@ -537,6 +539,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../DoorOpening")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_6j81h")
+}],
+"times": PackedFloat32Array(3.06667)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_o1pda"]
 resource_name = "CameraFirstPoint"
@@ -1783,16 +1800,6 @@ libraries = {
 "": SubResource("AnimationLibrary_l4ghg")
 }
 
-[node name="OpeningDoor" type="AudioStreamPlayer3D" parent="NavigationObstacle3D/Portões/DevGrey35"]
-transform = Transform3D(0.123625, 0, 1.19904e-14, 0, 0.2, 0, -3.55271e-14, 0, 1, 0, 0, 0)
-stream = ExtResource("59_4cx6g")
-attenuation_model = 3
-volume_db = -10.0
-bus = &"SFX"
-emission_angle_filter_attenuation_db = 0.0
-attenuation_filter_cutoff_hz = 1000.0
-attenuation_filter_db = -5.0
-
 [node name="DevGrey41" type="MeshInstance3D" parent="NavigationObstacle3D/Portões"]
 transform = Transform3D(8.08899, 0, -0.00150108, 0, 5, 0, 0.0121423, 0, 0.999999, -219.727, 0.216109, -146.586)
 material_override = SubResource("StandardMaterial3D_15gt3")
@@ -1813,16 +1820,6 @@ root_node = NodePath("../../../../CameraPosition")
 libraries = {
 "": SubResource("AnimationLibrary_fx1qj")
 }
-
-[node name="OpeningDoor2" type="AudioStreamPlayer3D" parent="NavigationObstacle3D/Portões/DevGrey41"]
-transform = Transform3D(0.123625, 0, 1.19904e-14, 0, 0.2, 0, -3.55271e-14, 0, 1, 0, 0, 0)
-stream = ExtResource("59_4cx6g")
-attenuation_model = 3
-volume_db = -10.0
-bus = &"SFX"
-emission_angle_filter_attenuation_db = 0.0
-attenuation_filter_cutoff_hz = 1000.0
-attenuation_filter_db = -5.0
 
 [node name="MapLevel1" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_18hrr")
@@ -2115,7 +2112,8 @@ transform = Transform3D(0.936842, 0, 0, 0, 0.936842, 0, 0, 0, 0.936842, -165.963
 
 [node name="CutsceneCamera" type="Camera3D" parent="CameraPosition"]
 unique_name_in_owner = true
-transform = Transform3D(0.0540799, 0.306907, -0.950202, 0, 0.951595, 0.307357, 0.998536, -0.0166218, 0.0514622, -265.096, 26.2732, -104.218)
+transform = Transform3D(0.838685, 0.213199, -0.501151, -0.0061811, 0.92386, 0.382683, 0.54458, -0.317854, 0.776145, -236.63, 22.2628, -117.269)
+current = true
 
 [node name="Extractor" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00195313)
@@ -2133,10 +2131,7 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0186501, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_lotg3")
 
-[node name="ErrorAudio" type="AudioStreamPlayer" parent="ExtractorPlatform"]
-stream = ExtResource("14_srumt")
-volume_db = -20.0
-bus = &"SFX"
+[node name="ErrorAudio" parent="ExtractorPlatform" instance=ExtResource("18_l6p46")]
 
 [node name="CellSpawner3d" parent="." instance=ExtResource("47_5u452")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -233.735, 3.06382, -72.7245)
@@ -2150,10 +2145,7 @@ stream = ExtResource("49_wylse")
 volume_db = -10.0
 bus = &"BGM"
 
-[node name="VictorySong" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("48_n7oef")
-bus = &"BGM"
+[node name="VictorySong" parent="." instance=ExtResource("22_n1uel")]
 
 [node name="DevPillar13" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.000811764, 0, 0.475713, 0, 0.568126, 0, -0.474588, 0, -0.000813688, -215.755, 4.70212, -99.794)
@@ -2243,6 +2235,7 @@ offset_left = -3.0
 offset_top = -2.0
 offset_right = -3.0
 offset_bottom = -2.0
+target = NodePath("../Player")
 level = NodePath("..")
 
 [node name="PhaseEnded" parent="." instance=ExtResource("16_ee351")]
@@ -2412,9 +2405,7 @@ scale = Vector2(0.33834, 0.33834)
 stream = ExtResource("27_0ur8g")
 bus = &"SFX"
 
-[node name="DeathSound" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource("28_a2774")
-bus = &"BGM"
+[node name="DeathSound" parent="Player" instance=ExtResource("43_jslcx")]
 
 [node name="MacrofageShoot" type="AudioStreamPlayer3D" parent="Player"]
 stream = ExtResource("30_ax3k4")
@@ -2460,6 +2451,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48025, -1.34568)
 
 [node name="HitMarkerExplosion" type="Marker3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21481, 1.27402, 0.017539)
+
+[node name="DoorOpening" parent="." instance=ExtResource("47_i1yyk")]
+stream = null
 
 [connection signal="body_entered" from="ExtractorPlatform/AreaPlatform" to="." method="_on_area_platform_body_entered"]
 [connection signal="timeout" from="TimerCounter/Control2/Count" to="." method="_on_count_timeout"]

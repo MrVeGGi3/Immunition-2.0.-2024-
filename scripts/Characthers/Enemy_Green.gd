@@ -24,7 +24,7 @@ var can_colide = true
 @onready var progress_bar = $SubViewport/ProgressBar
 @onready var label = $SubViewport/ProgressBar/Label
 @onready var sub_viewport = $SubViewport
-@onready var symbol = $Sprite3D2
+@onready var symbol = $IconControl/Sprite3D2
 @onready var death_sound = %DeathSound
 
 
@@ -38,7 +38,7 @@ func _physics_process(_delta):
 	var current_position = global_transform.origin
 	var next_position = nav.get_next_path_position()
 	var new_velocity = (next_position - current_position).normalized()
-	velocity = velocity.move_toward(new_velocity, .25 * move_speed)
+	velocity = velocity.move_toward(new_velocity, move_speed)
 	move_and_slide()
 	
 	if dead:
