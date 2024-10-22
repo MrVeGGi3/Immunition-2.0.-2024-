@@ -1,30 +1,33 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 res://scenes/tbfiles
 res://scripts/Animations
 =======
+=======
+res://scenes/AudioSource
+res://scripts/Tests
+res://scripts/Effects
+res://scripts/Levels
+res://scripts/Characthers
+>>>>>>> parent of d749f0f (Revert "Implementação do Level 4")
 res://images/UI/Backgrounds/Ammo
 >>>>>>> main
 res://scenes/HUD
 res://scripts/Characthers/Prototype/Level3
 res://scripts/Count
-res://scenes/AudioSource
 res://scripts/Elevators
 res://scripts/Collectables
 res://themes
-res://scripts/Tests
 res://scripts/HUD
 res://scripts/Animations
 res://scripts/Configs
-res://scripts/Characthers
 E:/Downloads/ImmutionHTML
-res://scripts/Effects
 res://scripts/Spawner
 res://scripts/Characthers/objects
 res://scenes/scenary
 res://scenes/Characters/BoatLevel
 res://scripts/Characthers/boatlevel
 res://scripts/Characthers/on_water
-res://shaders
 E:/Godot
 E:/Downloads/ImmunitionExport
 <<<<<<< HEAD

@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://beer4f16w3hms"]
+
+[ext_resource type="Script" path="res://scripts/Levels/level_5.gd" id="1_853ym"]
+[ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="2_ul1ws"]
+[ext_resource type="Texture2D" uid="uid://bl3g6pm7e6hov" path="res://prefabs/dev_grey.png" id="3_52dam"]
+[ext_resource type="ArrayMesh" uid="uid://eikqtfkce6jq" path="res://prefabs/dev_grey.obj" id="4_4j80n"]
+[ext_resource type="Texture2D" uid="uid://cghbpdvq15frc" path="res://prefabs/dev_orange.png" id="5_ye7ev"]
+[ext_resource type="ArrayMesh" uid="uid://bd1p4vxwpo0fn" path="res://prefabs/dev_pillar.obj" id="6_dhvis"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqlkb"]
+albedo_texture = ExtResource("3_52dam")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6f227"]
+size = Vector3(4.05217, 4.01801, 4.06567)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmbkn"]
+albedo_texture = ExtResource("5_ye7ev")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a41eu"]
+points = PackedVector3Array(-2, 0, -2, 2, 0, -2, -2, 0, 2, -2, 12.5806, -2, 2, 0, 2, 2, 12.5806, -2, -2, 12.5806, 2, 2, 12.5806, 2)
+
+[node name="Level5" type="Node3D"]
+script = ExtResource("1_853ym")
+
+[node name="Player" parent="." instance=ExtResource("2_ul1ws")]
+transform = Transform3D(0.999988, 0, 0.00488687, 0, 1, 0, -0.00488687, 0, 0.999988, -20.1118, -2.70285, -25.1611)
+platform_on_leave = 2
+platform_floor_layers = 4294901761
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.138032, 0.990428, 0, -0.990428, 0.138032, -12.7674, 21.7121, -46.2395)
+
+[node name="Level3DEnvironment" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.815, 0)
+
+[node name="DevGrey" type="MeshInstance3D" parent="Level3DEnvironment"]
+transform = Transform3D(8.89854, 0, 0, 0, 0.355079, 0, 0, 0, 11.8928, -20.5192, -5.636, -43.9004)
+material_override = SubResource("StandardMaterial3D_cqlkb")
+mesh = ExtResource("4_4j80n")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level3DEnvironment/DevGrey"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level3DEnvironment/DevGrey/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107193, 0.0133362, -0.00012207)
+shape = SubResource("BoxShape3D_6f227")
+
+[node name="DevGrey2" type="MeshInstance3D" parent="Level3DEnvironment"]
+transform = Transform3D(0.889854, 0, 0, 0, 0.355079, 0, 0, 0, 0.891964, -20.2464, -4.84098, -24.204)
+material_override = SubResource("StandardMaterial3D_jmbkn")
+mesh = ExtResource("4_4j80n")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level3DEnvironment/DevGrey2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level3DEnvironment/DevGrey2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107193, 0.0133362, -0.00012207)
+shape = SubResource("BoxShape3D_6f227")
+
+[node name="DevPillar2" type="MeshInstance3D" parent="Level3DEnvironment"]
+transform = Transform3D(0.474588, 0, 0, 0, 0.568126, 0, 0, 0, 0.475714, -16.562, -4.91791, -24.8012)
+mesh = ExtResource("6_dhvis")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level3DEnvironment/DevPillar2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level3DEnvironment/DevPillar2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a41eu")

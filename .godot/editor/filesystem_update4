@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 res://scenes/Levels/level_3.tscn
 res://scripts/Characthers/Enemy_Green.gd
 res://scripts/Characthers/Player.gd
@@ -9,6 +10,9 @@ res://scripts/HUD/wheel_weapons.gd
 res://scripts/Sound/ChangeSound.gd
 =======
 res://scenes/Characters/enemy_r.tscn
+=======
+res://scenes/HUD/logo_transition.tscn
+>>>>>>> parent of d749f0f (Revert "Implementação do Level 4")
 res://scripts/Characthers/Player.gd
 res://scripts/HUD/minimap.gd
 res://scripts/HUD/wheel_weapons.gd
@@ -17,15 +21,17 @@ res://themes/button.tres
 res://themes/OptionsButton.tres
 res://themes/sliders.tres
 res://themes/playerLifeBarTheme.tres
+<<<<<<< HEAD
 res://scripts/Characthers/Enemy_Green.gd
 >>>>>>> main
+=======
+>>>>>>> parent of d749f0f (Revert "Implementação do Level 4")
 res://themes/fasename_description.tres
 res://themes/go_phase_button.tres
 res://scripts/Spawner/CanonSpawn.gd
-res://scripts/Characthers/Enemy_Blue.gd
-res://scripts/HUD/Options.gd
 res://shaders/water.gdshader
 res://shaders/PlayerRedGlob.gdshader
+<<<<<<< HEAD
 <<<<<<< HEAD
 res://scripts/HUD/Options.gd
 res://scenes/HUD/logo_transition.tscn
@@ -41,6 +47,11 @@ res://scripts/Characthers/Prototype/Level3/Enemy_Blue_Pipe.gd
 res://scripts/Characthers/Prototype/Level3/Enemy_Green_Pipe.gd
 res://scripts/Characthers/Prototype/Level3/Enemy_Red_Pipe.gd
 res://scenes/HUD/logo_transition.tscn
+=======
+res://scripts/Characthers/Enemy_Blue.gd
+res://scripts/Characthers/Enemy_Green.gd
+res://scripts/HUD/Options.gd
+>>>>>>> parent of d749f0f (Revert "Implementação do Level 4")
 res://scenes/Levels/level_1.tscn
 >>>>>>> main
 res://scenes/HUD/pause_menu.tscn
@@ -67,6 +78,7 @@ res://scenes/HUD/gun_shoot.tscn
 res://scenes/testing/testingplayer.tscn
 =======
 res://scenes/Levels/world.tscn
+res://scenes/Characters/enemy_r.tscn
 res://scenes/testing/TestScoreAnimation.tscn
 res://scenes/Levels/level_2.tscn
 res://scenes/Collectables/WallCreator.tscn
@@ -84,7 +96,23 @@ res://scenes/Characters/enemy_b.tscn
 res://scenes/Characters/enemy_g.tscn
 res://scenes/HUD/menu.tscn
 res://scenes/HUD/options_menu.tscn
-res://scripts/Characthers/Prototype/Level3/Pipe.gd
 res://scenes/HUD/pipe_health_bar.tscn
+<<<<<<< HEAD
 res://scripts/HUD/death_screen.gd
 >>>>>>> main
+=======
+res://scenes/Levels/level_4.tscn
+res://scenes/Characters/Diareia.tscn
+res://scenes/effect/Poison.tscn
+res://scenes/Characters/BoatLevel/Canon.tscn
+res://scenes/Characters/BoatLevel/CanonProjectile.tscn
+res://scenes/testing/LiquidShading.tscn
+res://scenes/testing/PatogenPahfindingBehaviour.tscn
+res://scenes/testing/DiareiaTestingBehaviour.tscn
+res://scripts/Tests/diareia_testing_behaviour.gd
+res://scripts/Levels/level_4.gd
+res://scripts/Characthers/diareia.gd
+res://scenes/Characters/Cell.tscn
+res://scenes/Characters/Influenza.tscn
+res://scenes/Levels/level_5.tscn
+>>>>>>> parent of d749f0f (Revert "Implementação do Level 4")
