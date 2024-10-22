@@ -1,3 +1,4 @@
+res://scenes/tbfiles
 res://scripts/Animations
 res://scenes/HUD
 res://scripts/Configs
@@ -19,4 +20,3 @@ E:/Godot
 E:/Downloads/ImmunitionExport
 res://images/Collectables
 res://sprites/Monster/infectedcell
-res://sprites/cell
