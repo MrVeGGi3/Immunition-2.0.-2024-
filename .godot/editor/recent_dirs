@@ -1,3 +1,4 @@
+res://scenes/UI/Player
 res://scenes/AudioSource
 res://scripts/Tests
 res://scripts/Effects
@@ -19,6 +20,5 @@ res://scripts/Characthers/objects
 res://scenes/scenary
 res://scenes/Characters/BoatLevel
 res://scripts/Characthers/boatlevel
-res://scripts/Characthers/on_water
 E:/Godot
 E:/Downloads/ImmunitionExport

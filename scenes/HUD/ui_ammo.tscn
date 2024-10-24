@@ -138,8 +138,8 @@ offset_right = 418.0
 offset_bottom = 686.0
 
 [node name="BackgroundAmmo" type="AnimatedSprite2D" parent="."]
-position = Vector2(184, -47)
-scale = Vector2(0.472344, 0.432344)
+position = Vector2(177, -47)
+scale = Vector2(0.411985, 0.432344)
 sprite_frames = SubResource("SpriteFrames_v3qkg")
 animation = &"recharged"
 

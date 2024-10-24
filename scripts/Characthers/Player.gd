@@ -40,6 +40,7 @@ extends CharacterBody3D
 @onready var memory_system = $PlayerHUD/MemorySystem
 @onready var whell_memory = $"PlayerHUD/Whell&memory"
 @onready var press_interaction = $PlayerHUD/PressInteraction
+@onready var bazooka_ui: Control = $PlayerHUD/BazookaUI
 
 
 #Músicas(BGM
@@ -86,6 +87,7 @@ var vida
 
 
 func _ready():
+	bazooka_ui.hide()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #altera o modo de captura do mouse para usar como FPS
 	#Animações
 	animated_sprite_2d.animation_finished.connect(shoot_anim_done) #conecta a outra animação
@@ -106,6 +108,7 @@ func _ready():
 	m_ammo = 20 #munição macrófago
 	n_ammo = 15 #munição neutrófilo
 	
+
 
 	
 func _input(event):
@@ -381,6 +384,7 @@ func disable_UI():
 	player_life_bar.hide()
 	wheel_switch_weapons.visible = false
 	ui_ammo.hide()	
+	bazooka_ui.hide()
 	memory_system.visible = false
 
 func restore_Global_var():

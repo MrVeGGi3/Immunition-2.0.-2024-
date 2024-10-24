@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bli5ijcxx5bse"]
+[gd_scene load_steps=27 format=3 uid="uid://bli5ijcxx5bse"]
 
 [ext_resource type="Script" path="res://scripts/memory_system.gd" id="1_omjui"]
 [ext_resource type="Texture2D" uid="uid://dnyy3dpv5wttx" path="res://images/baseMemorySytem/MemoryBar.png" id="2_0tlbn"]
@@ -150,6 +150,55 @@ _data = {
 "to_side": SubResource("Animation_y7daq")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3ovgi"]
+animation = &"to_center"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_p32nl"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_3ovgi")
+blend_point_0/pos = 1.0
+min_space = -1.1
+max_space = 1.1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_53rb6"]
+animation = &"to_side"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_l4xhh"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_53rb6")
+blend_point_0/pos = 1.0
+min_space = -1.1
+max_space = 1.1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v8q8k"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dkcad"]
+switch_mode = 1
+advance_mode = 2
+advance_condition = &"to_side"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8i8bg"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vr2sv"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4pjlp"]
+switch_mode = 1
+advance_mode = 2
+advance_condition = &"to_center"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_3bfmh"]
+states/End/position = Vector2(689, 100)
+states/Start/position = Vector2(145, 123)
+states/To_Center/node = SubResource("AnimationNodeBlendSpace1D_p32nl")
+states/To_Center/position = Vector2(421, 194)
+states/To_Side/node = SubResource("AnimationNodeBlendSpace1D_l4xhh")
+states/To_Side/position = Vector2(443, 70)
+states/idle/node = SubResource("AnimationNodeAnimation_v8q8k")
+states/idle/position = Vector2(284, 123)
+transitions = ["To_Center", "To_Side", SubResource("AnimationNodeStateMachineTransition_dkcad"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_8i8bg"), "To_Side", "idle", SubResource("AnimationNodeStateMachineTransition_vr2sv"), "idle", "To_Center", SubResource("AnimationNodeStateMachineTransition_4pjlp")]
+
 [node name="MemorySystem" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -231,6 +280,14 @@ texture = ExtResource("8_7mygo")
 libraries = {
 "": SubResource("AnimationLibrary_4b3ci")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_3bfmh")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/to_center = false
+parameters/conditions/to_side = false
+parameters/To_Center/blend_position = -1.09764
+parameters/To_Side/blend_position = -1.09055
 
 [connection signal="pressed" from="Memorias/PositionMarker/Memoria 1" to="." method="_on_memoria_1_pressed"]
 [connection signal="pressed" from="Memorias/PositionMarker/Memoria 2" to="." method="_on_memoria_2_pressed"]

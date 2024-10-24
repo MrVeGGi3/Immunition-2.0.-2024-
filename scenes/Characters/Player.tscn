@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dyf23kaij0wqn"]
+[gd_scene load_steps=21 format=3 uid="uid://dyf23kaij0wqn"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="PackedScene" uid="uid://csuphbpruxtrh" path="res://scenes/HUD/player_life_bar.tscn" id="2_hp8bw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bto3b5twkq7gj" path="res://scenes/HUD/death_screen.tscn" id="8_n6ctr"]
 [ext_resource type="AudioStream" uid="uid://hqasyg3vanal" path="res://sounds/SFX/Player/ShootEffect.wav" id="9_qulf7"]
 [ext_resource type="AudioStream" uid="uid://cl16r632p0qb5" path="res://sounds/BGM/deathsound.wav" id="11_6pg7g"]
+[ext_resource type="PackedScene" uid="uid://ckwvryymfqohm" path="res://scenes/UI/Player/bazooka_ui.tscn" id="11_ll0hx"]
 [ext_resource type="AudioStream" uid="uid://dk7wdjoi41cuq" path="res://sounds/SFX/Player/macrofage_weapon .wav" id="15_fkrn1"]
 [ext_resource type="PackedScene" uid="uid://nt37rum3dhef" path="res://scenes/HUD/WheelSwitchWeapons.tscn" id="24_40cle"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="24_r7y5r"]
@@ -60,10 +61,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="PlayerLifeBar" parent="PlayerHUD" instance=ExtResource("2_hp8bw")]
 
 [node name="GunShoot" parent="PlayerHUD" instance=ExtResource("3_rmxp2")]
+offset_left = -1.0
+offset_top = -4.0
+offset_right = -1.0
+offset_bottom = -4.0
 
 [node name="UI_AMMO" parent="PlayerHUD" instance=ExtResource("4_mpvfg")]
 
 [node name="WheelSwitchWeapons" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("24_40cle")]
+visible = false
 offset_right = -264.0
 offset_bottom = -192.0
 player = NodePath("../..")
@@ -76,6 +82,7 @@ offset_bottom = 409.0
 scale = Vector2(0.480624, 0.480624)
 
 [node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
+visible = false
 
 [node name="DeathScreen" parent="PlayerHUD" instance=ExtResource("8_n6ctr")]
 
@@ -93,11 +100,14 @@ grow_vertical = 1
 player = NodePath("../..")
 
 [node name="PressInteraction" parent="PlayerHUD" instance=ExtResource("25_rnpm1")]
+visible = false
 offset_left = 566.0
 offset_top = 491.0
 offset_right = 606.0
 offset_bottom = 531.0
 scale = Vector2(0.33834, 0.33834)
+
+[node name="BazookaUI" parent="PlayerHUD" instance=ExtResource("11_ll0hx")]
 
 [node name="ShootPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_qulf7")

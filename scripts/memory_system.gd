@@ -11,6 +11,7 @@ var m3 = Global.m3_active
 @onready var wsw = $"../WheelSwitchWeapons"
 @onready var memorias = $Memorias
 @onready var animation_player = $AnimationPlayer
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 
 @export var player:CharacterBody3D = null
@@ -25,13 +26,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("call_memory_system") and !wsw.visible and !pressed:
-		animation_player.play("to_center")
+		_activate_center_animation()
 		get_tree().paused = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		pressed = true
 		
 	elif Input.is_action_just_pressed("call_memory_system") and !wsw.visible and pressed:
-		animation_player.play("to_side")
+		animation_tree["parameters/conditions/to_side"] = true
+		animation_tree["parameters/conditions/to_center"] = false
+		animation_tree["parameters/To_Side/blend_position"] = 1
+		animation_tree["parameters/To_Center/blend_position"] = -1
 		get_tree().paused = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		pressed = false
@@ -50,8 +54,8 @@ func _process(_delta):
 		else:
 			count += 1
 			activate_memory(count)
-	else:
-		return
+	
+	
 
 
 func _on_memoria_1_pressed():
@@ -103,7 +107,19 @@ func change_button_animation_state(b1, b2):
 	
 func _disable_visibility():
 	if pressed:
-		animation_player.play("to_side")
+		_activate_side_animation()
 		pressed = false
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _activate_side_animation():
+	animation_tree["parameters/conditions/to_center"] = false
+	animation_tree["parameters/conditions/to_side"] = true
+	animation_tree["parameters/To_Side/blend_position"] = 1
+	animation_tree["parameters/To_Center/blend_position"] = -1
+	
+func _activate_center_animation():
+	animation_tree["parameters/conditions/to_center"] = true
+	animation_tree["parameters/conditions/to_side"] = false
+	animation_tree["parameters/To_Side/blend_position"] = -1
+	animation_tree["parameters/To_Center/blend_position"] = 1
