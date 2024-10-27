@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://d36mflmgjmxea"]
+[gd_scene load_steps=107 format=3 uid="uid://d36mflmgjmxea"]
 
 [ext_resource type="ArrayMesh" uid="uid://djp2vbbqe1dc" path="res://prefabs/map0.obj" id="1_62mxc"]
 [ext_resource type="Script" path="res://scripts/Levels/tutorial_phase.gd" id="1_bhgoj"]
@@ -163,6 +163,9 @@ uv1_scale = Vector3(7, 19, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dq8f2"]
 albedo_texture = ExtResource("12_h6fy2")
 uv1_scale = Vector3(7, 19, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lkm3v"]
+albedo_texture = ExtResource("2_23uxg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxj3n"]
 albedo_texture = ExtResource("12_h6fy2")
@@ -606,6 +609,17 @@ skeleton = NodePath("../..")
 [node name="StaticBody3D2" type="StaticBody3D" parent="Plataforma de Tutorial/MeshInstance3D19"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma de Tutorial/MeshInstance3D19/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_4t2qi")
+
+[node name="MeshInstance3D41" type="MeshInstance3D" parent="Plataforma de Tutorial"]
+transform = Transform3D(-4.37114e-07, 0, 1, 0, 5, 0, -10, 0, -4.37114e-08, 85.5138, 10.6407, 131.465)
+material_override = SubResource("StandardMaterial3D_lkm3v")
+mesh = ExtResource("8_pm2n1")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Plataforma de Tutorial/MeshInstance3D41"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma de Tutorial/MeshInstance3D41/StaticBody3D2"]
 shape = SubResource("ConcavePolygonShape3D_4t2qi")
 
 [node name="MeshInstance3D22" type="MeshInstance3D" parent="Plataforma de Tutorial"]
