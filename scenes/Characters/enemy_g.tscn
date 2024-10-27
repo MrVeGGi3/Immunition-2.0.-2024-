@@ -109,7 +109,7 @@ viewport_path = NodePath("SubViewport2")
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy", "green"]]
 collision_layer = 8
-collision_mask = 3
+collision_mask = 2051
 platform_on_leave = 2
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
@@ -201,5 +201,10 @@ texture = SubResource("ViewportTexture_vfcuh")
 transform = Transform3D(0.58181, 0, 0, 0, 0.58181, 0, 0, 0, 0.58181, -0.129741, 2.35011, 0.578897)
 billboard = 1
 texture = SubResource("ViewportTexture_vdkrg")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65526, 0)
+target_position = Vector3(0, 0, -30)
+collision_mask = 3
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

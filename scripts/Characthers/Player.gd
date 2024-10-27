@@ -11,7 +11,9 @@ extends CharacterBody3D
 @onready var flame_thrower_shoot = $FlameThrowerShoot #raycast do neutrófilo
 @onready var neutrofile_sound = $NeutrofileSound#som do flamethrower
 @onready var ammo_neu = $"PlayerHUD/UI_AMMO/Neutrófilo/Ammo_Neu"
-
+#Arma 4
+@onready var timer_bazooka: Timer = $ShootBazooka
+@onready var bazooka_position: Marker3D = $BazookaPosition
 
 
 #Animação e Camera
@@ -47,7 +49,6 @@ extends CharacterBody3D
 @onready var death_sound = $DeathSound # música da morte do player
 
 
-
 #Ajuste de Mecânica
 @onready var marker_3d = $Marker3D
 @onready var hit_marker_explosion = $HitMarkerExplosion
@@ -68,14 +69,17 @@ const UPLEFT = Vector2(-1,-1)
 const UPRIGHT = Vector2(1,-1)
 const DOWNLEFT = Vector2(-1,1)
 const DOWNRIGHT = Vector2(1,1)
+
 #Booleanas
 var can_shoot = Global.c_shoot
 var can_shoot_mf = Global.c_shoot_mf
 var can_shoot_nf = Global.c_shoot_nf
+var can_shoot_bz = Global.c_shoot_bz
 var dead = false
 var m1 = Global.m1_active
 var m2 = Global.m2_active
 var m3 = Global.m3_active
+
 #Variáveis do Player
 var vida
 @export var l_ammo = 30 #munição linfócito
@@ -161,6 +165,9 @@ func _process(delta):
 	
 	elif Input.is_action_just_pressed("change_neutrofile"):
 		change_neutrofile()
+	
+	elif Input.is_action_just_pressed("change_bazooka"):
+		change_bazooka()
 	
 	if Input.is_action_just_pressed("shoot"):
 		if can_shoot:
@@ -431,6 +438,12 @@ func shoot_neutrofile_anim_done():
 	can_shoot = false
 	set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
 
+func shoot_bazooka_anim_done():
+	can_shoot_bz = false
+	set_global_transition_bool_baz(can_shoot_bz)
+	timer_bazooka.start()
+	
+
 	
 func _on_jump_tutorial_pressed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -447,12 +460,15 @@ func set_global_transition_bool_csm(variavel):
 		Global.c_shoot_mf = variavel
 func set_global_transition_bool_csn(variavel):
 		Global.c_shoot_nf = variavel
+func set_global_transition_bool_baz(variavel):
+		Global.c_shoot_bz = variavel
 		
 func change_linfocit():
 	animated_sprite_2d.play("idle")
 	animated_sprite_2d.animation_finished.disconnect(shoot_macrofage_anim_done)
 	animated_sprite_2d.animation_finished.disconnect(shoot_neutrofile_anim_done)
 	animated_sprite_2d.animation_finished.connect(shoot_anim_done)
+	_disconnect_bazooka()
 	if m_ammo > 0:
 		can_shoot = true
 		can_shoot_mf = false
@@ -468,6 +484,7 @@ func change_macrofage():
 	animated_sprite_2d.animation_finished.disconnect(shoot_anim_done)
 	animated_sprite_2d.animation_finished.disconnect(shoot_neutrofile_anim_done)
 	animated_sprite_2d.animation_finished.connect(shoot_macrofage_anim_done)
+	_disconnect_bazooka()
 	if l_ammo > 0:
 		can_shoot_mf = true
 		can_shoot = false
@@ -483,6 +500,7 @@ func change_neutrofile():
 	animated_sprite_2d.animation_finished.disconnect(shoot_anim_done)
 	animated_sprite_2d.animation_finished.disconnect(shoot_macrofage_anim_done)
 	animated_sprite_2d.animation_finished.connect(shoot_neutrofile_anim_done)
+	_disconnect_bazooka()
 	if n_ammo > 0:
 		can_shoot = false
 		can_shoot_mf = false
@@ -492,6 +510,13 @@ func change_neutrofile():
 		can_shoot_nf = false
 		set_global_transition_bool_csn(can_shoot_nf)
 
+func change_bazooka():
+	neutrofile_sound.stop()
+	#Colocar Animação 2D da Bazooka em forma neutro
+	#animated_sprite_2d.animation_finished.connect(shoot_bazooka_anim_done)
+	can_shoot_bz = true
+	set_global_transition_bool_baz(can_shoot_bz)
+	
 func get_more_ammo(lammo, mammo, nammo):
 	l_ammo += lammo
 	m_ammo += mammo
@@ -512,3 +537,21 @@ func can_interact():
 
 func cant_interact():
 	press_interaction.visible = false
+
+func _disconnect_animations():
+	animated_sprite_2d.animation_finished.disconnect(shoot_anim_done)
+	animated_sprite_2d.animation_finished.disconnect(shoot_macrofage_anim_done)
+	animated_sprite_2d.animation_finished.disconnect(shoot_neutrofile_anim_done)
+	can_shoot = false
+	can_shoot_mf = false
+	can_shoot_nf = false
+	set_global_animation_bool(can_shoot, can_shoot_mf, can_shoot_nf)
+
+func _disconnect_bazooka():
+	animated_sprite_2d.animation_finished.disconnect(shoot_bazooka_anim_done)
+	can_shoot_bz = false
+	set_global_transition_bool_baz(can_shoot_bz)
+
+func _on_shoot_bazooka_timeout() -> void:
+	can_shoot_bz = true
+	set_global_transition_bool_baz(can_shoot_bz)

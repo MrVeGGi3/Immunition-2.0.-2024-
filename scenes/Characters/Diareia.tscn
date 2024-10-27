@@ -84,7 +84,7 @@ shape = SubResource("SphereShape3D_brpco")
 
 [node name="PoisonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_37tlt")
-volume_db = 10.0
+volume_db = 24.0
 bus = &"SFX"
 
 [connection signal="timeout" from="PoisonTimerEmmiter" to="." method="_on_poison_timer_emmiter_timeout"]

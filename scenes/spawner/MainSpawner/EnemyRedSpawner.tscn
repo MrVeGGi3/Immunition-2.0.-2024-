@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpnefj4pf0y8o"]
+
+[ext_resource type="Script" path="res://scripts/Spawner/Enemy_red_spawner.gd" id="1_pprjy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxm6m"]
+albedo_color = Color(0.686275, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qavm4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y24na"]
+size = Vector3(1.94983, 1, 1.85498)
+
+[node name="EnemyRedSpawner" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0378703, 0, 0)
+script = ExtResource("1_pprjy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, 0.0990976, 0)
+material_override = SubResource("StandardMaterial3D_vxm6m")
+mesh = SubResource("PlaneMesh_qavm4")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D2"]
+transform = Transform3D(0.999699, 0.0245148, -0.000598763, -0.0245046, 0.99961, 0.0133991, 0.000926987, -0.0133804, 0.99991, 0.0297744, 0.00212681, 0.0440291)
+shape = SubResource("BoxShape3D_y24na")
+
+[node name="CreateEnemyRTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="CreateEnemyRTimer" to="." method="_on_timer_timeout"]

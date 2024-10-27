@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://3xdj3eb0mv5x"]
+
+[ext_resource type="Script" path="res://scripts/Effects/ss_missile_explosion.gd" id="1_m5i8n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4iuis"]
+radius = 8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ry0q2"]
+albedo_color = Color(1, 0, 0.0431373, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_78rpl"]
+radius = 8.0
+height = 16.0
+
+[node name="SsMissileExplosion" type="Node3D"]
+script = ExtResource("1_m5i8n")
+
+[node name="TimerDestruction" type="Timer" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16384
+collision_mask = 40
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_4iuis")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ry0q2")
+mesh = SubResource("SphereMesh_78rpl")
+
+[connection signal="timeout" from="TimerDestruction" to="." method="_on_timer_destruction_timeout"]

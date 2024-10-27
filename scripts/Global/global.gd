@@ -4,6 +4,7 @@ var mouse_sens = 0.5
 var c_shoot = true
 var c_shoot_mf = false
 var c_shoot_nf = false
+var c_shoot_bz = false
 var m1_active = true
 var m2_active = false
 var m3_active = false
@@ -17,6 +18,9 @@ var influenza_destroyed : int = 0
 var infected_cells_destroyed : int = 0
 var influenza_in_scene: int = 0
 var pathogen_killed : int = 0 
+var blue_pathogen_spawned : int = 0
+var green_pathogen_spawned : int = 0
+var red_pathogen_spawned : int = 0 
 #Contagem de Objetos Coletados!
 var extractors_collected : int = 0
 var wall_piece : int = 0 

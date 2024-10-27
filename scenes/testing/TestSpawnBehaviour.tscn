@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdk4nyv52ja6l"]
+
+[ext_resource type="PackedScene" uid="uid://bfboe67w06flw" path="res://scenes/spawner/MainSpawner/EnemyBlueSpawner.tscn" id="1_uci0p"]
+[ext_resource type="PackedScene" uid="uid://clgg3rj7ipuo4" path="res://scenes/spawner/MainSpawner/EnemyGreenSpawner.tscn" id="2_tconm"]
+[ext_resource type="PackedScene" uid="uid://dpnefj4pf0y8o" path="res://scenes/spawner/MainSpawner/EnemyRedSpawner.tscn" id="3_1jf4l"]
+[ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="4_1wsfx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oimh0"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cm6sy"]
+data = PackedVector3Array(-5, 0.5, 5, 5, 0.5, 5, -5, -0.5, 5, 5, 0.5, 5, 5, -0.5, 5, -5, -0.5, 5, 5, 0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, 0.5, -5, -5, -0.5, -5, 5, -0.5, -5, 5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, -5, 5, -0.5, -5, 5, -0.5, 5, -5, 0.5, -5, -5, 0.5, 5, -5, -0.5, -5, -5, 0.5, 5, -5, -0.5, 5, -5, -0.5, -5, 5, 0.5, 5, -5, 0.5, 5, 5, 0.5, -5, -5, 0.5, 5, -5, 0.5, -5, 5, 0.5, -5, -5, -0.5, 5, 5, -0.5, 5, -5, -0.5, -5, 5, -0.5, 5, 5, -0.5, -5, -5, -0.5, -5)
+
+[node name="TestSpawnBehaviour" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0017453, 0.999999, 0, -0.999999, 0.0017453, 0, 12.6637, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_oimh0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_cm6sy")
+
+[node name="EnemyBlueSpawner" parent="." instance=ExtResource("1_uci0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97668, 0.580931, -3.9671)
+
+[node name="EnemyGreenSpawner" parent="." instance=ExtResource("2_tconm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0378703, 0.462363, -3.96238)
+
+[node name="EnemyRedSpawner" parent="." instance=ExtResource("3_1jf4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92866, 0.55759, -3.98069)
+
+[node name="Player" parent="." instance=ExtResource("4_1wsfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.09925)

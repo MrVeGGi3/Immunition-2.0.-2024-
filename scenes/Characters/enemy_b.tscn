@@ -90,11 +90,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0of21"]
-margin = 2.871
-radius = 0.587145
-height = 3.07399
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hltyo"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -107,10 +102,15 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_6g00w"]
 viewport_path = NodePath("SubViewport2")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0of21"]
+margin = 2.871
+radius = 0.587145
+height = 3.07399
+
 [node name="Enemy" type="CharacterBody3D" groups=["blue", "enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 8
-collision_mask = 3
+collision_mask = 2051
 platform_on_leave = 2
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
@@ -139,9 +139,6 @@ wait_time = 2.0
 [node name="MonsterBite" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_pk5c8")
 bus = &"SFX"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_0of21")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
@@ -211,5 +208,12 @@ texture = SubResource("ViewportTexture_8ro1c")
 transform = Transform3D(0.529244, 0, 0, 0, 0.529244, 0, 0, 0, 0.529244, 0.919687, 0.862516, -0.155986)
 billboard = 1
 texture = SubResource("ViewportTexture_6g00w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0of21")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -30)
+collision_mask = 2051
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

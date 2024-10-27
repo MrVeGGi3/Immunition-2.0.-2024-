@@ -16,10 +16,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var player_position = player.marker_3d.global_transform.origin
 	var current_position = global_transform.origin
-	
-	RC.set_target_position(player_position) 
-	RC.force_raycast_update()	
-	
+	look_at(player_position)
 
 	if RC.is_colliding():
 		var collider = RC.get_collider()

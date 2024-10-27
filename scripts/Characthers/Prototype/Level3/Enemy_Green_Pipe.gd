@@ -15,10 +15,17 @@ extends CharacterBody3D
 @export_category("Dano ao Player")
 @export var damage = 2
 
+@export_category("Forças Aplicadas")
+@export var force_x = 0.0
+@export var force_y = 0.0
+@export var force_z = 20.0
+@export var gravity = -9.8
 #Booleanas
 var can_colide = true
 var dead = false
 var is_pipe_attacked = false
+var is_force_applied = false
+var can_follow_player = true
 #Instâncias
 @onready var timer = $Timer
 @onready var monster_bite = $MonsterBite
@@ -29,16 +36,18 @@ var is_pipe_attacked = false
 @onready var sub_viewport = $SubViewport
 @onready var CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 @onready var nav = $NavigationAgent3D
-@onready var symbol = $Sprite3D2
+@onready var symbol = $IconControl
+@onready var rc : RayCast3D = $RayCast3D
+
 var nearest_pipe
 var pipe_shortest_distance
 var current_position
 var player_position
 
 func _ready() -> void:
-	nav.target_position = player.global_transform.origin
+	pass
 	
-func _physics_process(_delta):
+func _physics_process(delta):
 	if dead:
 		return
 	current_position = global_transform.origin
@@ -50,18 +59,25 @@ func _physics_process(_delta):
 	
 	if player == null:
 		return
-	player_position = player.global_transform.origin
+	player_position = player.marker_3d.global_transform.origin
+	rc.look_at(player_position)
+	
+	if rc.is_colliding() and can_follow_player:
+		var collider = rc.get_collider()
+		if collider == player:
+			nav.target_position = player_position
+			print("Estou indo atrás do Player")
 	
 	var dist_to_player = global_transform.origin.distance_to(player_position)
 	if  dist_to_player <= minimum_distance and !is_pipe_attacked:
-		nav.target_position = player_position
+		can_follow_player = true
 		attempt_to_kill_player()
 		
 	var pipes = get_tree().get_nodes_in_group("pipe")
 	if pipes.is_empty():
 		return
-	var nearest_pipe = null
-	var pipe_shortest_distance = INF
+	nearest_pipe = null
+	pipe_shortest_distance = INF
 	
 	for pipe in pipes:
 		if pipe.visible == true:
@@ -72,9 +88,18 @@ func _physics_process(_delta):
 				nearest_pipe = pipe
 		if nearest_pipe != null and pipe_shortest_distance <= minimum_distance and pipe_shortest_distance < dist_to_player:
 			nav.target_position = nearest_pipe.global_transform.origin
+			can_follow_player = false
 		else:
-			nav.target_position = player_position
+			can_follow_player = true
 			attempt_to_kill_player()
+			
+	if is_force_applied:
+		if velocity.z != 0:
+			velocity.z = lerp(velocity.z, 0, 0.1 * delta)
+			velocity.y += gravity * delta
+		else:
+			is_force_applied = false		
+	
 
 func attempt_to_kill_player():
 	var dist_to_player = global_transform.origin.distance_to(player_position)
@@ -177,5 +202,10 @@ func damage_effect():
 func attack_pipe(pipe):
 	monster_bite.play()
 	is_pipe_attacked = true
+	pipe.damage(damage)
 		
-	
+func _backward_force():
+	print("Estou sendo empurrado pela explosão")
+	var opposite_direction_z = -transform.basis.z.normalized()
+	velocity = Vector3(force_x, force_y, force_z) * opposite_direction_z
+	is_force_applied = true

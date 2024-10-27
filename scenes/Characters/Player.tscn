@@ -81,11 +81,6 @@ offset_right = 154.0
 offset_bottom = 409.0
 scale = Vector2(0.480624, 0.480624)
 
-[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
-visible = false
-
-[node name="DeathScreen" parent="PlayerHUD" instance=ExtResource("8_n6ctr")]
-
 [node name="MemorySystem" parent="PlayerHUD" node_paths=PackedStringArray("player") instance=ExtResource("25_vndgg")]
 process_mode = 3
 anchors_preset = 0
@@ -108,6 +103,11 @@ offset_bottom = 531.0
 scale = Vector2(0.33834, 0.33834)
 
 [node name="BazookaUI" parent="PlayerHUD" instance=ExtResource("11_ll0hx")]
+
+[node name="DeathScreen" parent="PlayerHUD" instance=ExtResource("8_n6ctr")]
+
+[node name="pause_menu" parent="PlayerHUD" instance=ExtResource("8_5pk0d")]
+visible = false
 
 [node name="ShootPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_qulf7")
@@ -162,4 +162,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48025, -1.34568)
 [node name="HitMarkerExplosion" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21481, 1.27402, 0.017539)
 
+[node name="ShootBazooka" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="BazookaPosition" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.991622, 0.129176, 0, -0.129176, 0.991622, 0, 1.48109, -0.959993)
+
 [connection signal="timeout" from="FlameThrowerShoot/EnableParticle" to="." method="_on_enable_particle_timeout"]
+[connection signal="timeout" from="ShootBazooka" to="." method="_on_shoot_bazooka_timeout"]

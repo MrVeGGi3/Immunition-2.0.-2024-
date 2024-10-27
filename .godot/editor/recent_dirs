@@ -1,7 +1,9 @@
-res://scenes/UI/Player
-res://scenes/AudioSource
+res://scripts/Spawner
 res://scripts/Tests
 res://scripts/Effects
+res://scenes/effect
+res://scenes/UI/Player
+res://scenes/AudioSource
 res://scripts/Levels
 res://scripts/Characthers
 res://images/UI/Backgrounds/Ammo
@@ -15,10 +17,8 @@ res://scripts/HUD
 res://scripts/Animations
 res://scripts/Configs
 E:/Downloads/ImmutionHTML
-res://scripts/Spawner
 res://scripts/Characthers/objects
 res://scenes/scenary
 res://scenes/Characters/BoatLevel
-res://scripts/Characthers/boatlevel
 E:/Godot
 E:/Downloads/ImmunitionExport
