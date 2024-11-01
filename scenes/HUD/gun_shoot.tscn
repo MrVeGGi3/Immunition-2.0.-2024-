@@ -469,7 +469,8 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(584, 322)
+position = Vector2(569, 308.5)
+scale = Vector2(0.625, 0.625)
 texture = ExtResource("4_of32f")
 
 [node name="AnimaçãoArmas" type="AnimationPlayer" parent="."]

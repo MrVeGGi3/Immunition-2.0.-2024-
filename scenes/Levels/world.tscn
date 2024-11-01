@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://d36mflmgjmxea"]
+[gd_scene load_steps=121 format=3 uid="uid://d36mflmgjmxea"]
 
 [ext_resource type="ArrayMesh" uid="uid://djp2vbbqe1dc" path="res://prefabs/map0.obj" id="1_62mxc"]
 [ext_resource type="Script" path="res://scripts/Levels/tutorial_phase.gd" id="1_bhgoj"]
@@ -6,9 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://8onv0icy5g7h" path="res://scenes/Characters/enemy_g.tscn" id="3_aiuty"]
 [ext_resource type="PackedScene" uid="uid://c8bydekkhr5m4" path="res://scenes/Characters/enemy_b.tscn" id="5_l6q2f"]
 [ext_resource type="PackedScene" uid="uid://tatlbq78gkdr" path="res://scenes/Characters/enemy_r.tscn" id="6_grihp"]
-[ext_resource type="Script" path="res://scripts/HUD/minimap.gd" id="8_p6n3d"]
 [ext_resource type="ArrayMesh" uid="uid://eikqtfkce6jq" path="res://prefabs/dev_grey.obj" id="8_pm2n1"]
-[ext_resource type="PackedScene" uid="uid://b2t0j5ekr733w" path="res://scenes/icons/EnemyMinimapColorect.tscn" id="9_1aak7"]
 [ext_resource type="Texture2D" uid="uid://bhlaan6ukbhkc" path="res://prefabs/floor1_20240614085358.png" id="10_0gv02"]
 [ext_resource type="ArrayMesh" uid="uid://vuyc3qmcbjd0" path="res://prefabs/dev_valley.obj" id="10_nwkjw"]
 [ext_resource type="Texture2D" uid="uid://btxr4ptpyvwrb" path="res://prefabs/wall1_20240614085020.png" id="12_h6fy2"]
@@ -21,7 +19,14 @@
 [ext_resource type="PackedScene" uid="uid://ddags07nm6eq3" path="res://scenes/UI/Tutorials/pathogen_tutorial.tscn" id="16_wu77b"]
 [ext_resource type="AudioStream" uid="uid://ddot4x86ay8a4" path="res://sounds/BGM/VictorySong.wav" id="18_ajfg6"]
 [ext_resource type="AudioStream" uid="uid://f0w2v6fjmevp" path="res://sounds/BGM/TutorialBGM.wav" id="19_2tlax"]
+[ext_resource type="Script" path="res://scripts/tutorials/walking_tutorial.gd" id="20_ghkui"]
+[ext_resource type="Script" path="res://scripts/tutorials/switch_weaponsgd.gd" id="21_wd0gk"]
 [ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="22_73hvy"]
+[ext_resource type="Script" path="res://scripts/tutorials/jump&run.gd" id="22_i3s7t"]
+[ext_resource type="Script" path="res://scripts/tutorials/memory.gd" id="23_gukux"]
+[ext_resource type="Script" path="res://scripts/tutorials/shoot_tutorial.gd" id="24_aitb5"]
+[ext_resource type="Script" path="res://scripts/tutorials/finish_level.gd" id="24_aocre"]
+[ext_resource type="PackedScene" uid="uid://c5yaq5d5t8iip" path="res://scenes/HUD/minimap.tscn" id="27_0a1ny"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x5567"]
 sky_top_color = Color(0.663169, 0.350295, 0.212311, 1)
@@ -385,6 +390,38 @@ uv1_scale = Vector3(8, 8, 8)
 albedo_texture = ExtResource("16_gs7y8")
 uv1_scale = Vector3(8, 8, 8)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85lcm"]
+albedo_color = Color(0.525101, 0.525101, 0.525101, 0.25098)
+metallic = 0.3
+roughness = 0.91
+
+[sub_resource type="BoxMesh" id="BoxMesh_3q73e"]
+size = Vector3(2, 40, 30)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_de2cr"]
+data = PackedVector3Array(-1, 20, 15, 1, 20, 15, -1, -20, 15, 1, 20, 15, 1, -20, 15, -1, -20, 15, 1, 20, -15, -1, 20, -15, 1, -20, -15, -1, 20, -15, -1, -20, -15, 1, -20, -15, 1, 20, 15, 1, 20, -15, 1, -20, 15, 1, 20, -15, 1, -20, -15, 1, -20, 15, -1, 20, -15, -1, 20, 15, -1, -20, -15, -1, 20, 15, -1, -20, 15, -1, -20, -15, 1, 20, 15, -1, 20, 15, 1, 20, -15, -1, 20, 15, -1, 20, -15, 1, 20, -15, -1, -20, 15, 1, -20, 15, -1, -20, -15, 1, -20, 15, 1, -20, -15, -1, -20, -15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s3bq1"]
+data = PackedVector3Array(-1, 20, 15, 1, 20, 15, -1, -20, 15, 1, 20, 15, 1, -20, 15, -1, -20, 15, 1, 20, -15, -1, 20, -15, 1, -20, -15, -1, 20, -15, -1, -20, -15, 1, -20, -15, 1, 20, 15, 1, 20, -15, 1, -20, 15, 1, 20, -15, 1, -20, -15, 1, -20, 15, -1, 20, -15, -1, 20, 15, -1, -20, -15, -1, 20, 15, -1, -20, 15, -1, -20, -15, 1, 20, 15, -1, 20, 15, 1, 20, -15, -1, 20, 15, -1, 20, -15, 1, 20, -15, -1, -20, 15, 1, -20, 15, -1, -20, -15, 1, -20, 15, 1, -20, -15, -1, -20, -15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_g1xnt"]
+data = PackedVector3Array(-1, 20, 15, 1, 20, 15, -1, -20, 15, 1, 20, 15, 1, -20, 15, -1, -20, 15, 1, 20, -15, -1, 20, -15, 1, -20, -15, -1, 20, -15, -1, -20, -15, 1, -20, -15, 1, 20, 15, 1, 20, -15, 1, -20, 15, 1, 20, -15, 1, -20, -15, 1, -20, 15, -1, 20, -15, -1, 20, 15, -1, -20, -15, -1, 20, 15, -1, -20, 15, -1, -20, -15, 1, 20, 15, -1, 20, 15, 1, 20, -15, -1, 20, 15, -1, 20, -15, 1, 20, -15, -1, -20, 15, 1, -20, 15, -1, -20, -15, 1, -20, 15, 1, -20, -15, -1, -20, -15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rl72s"]
+data = PackedVector3Array(-1, 20, 15, 1, 20, 15, -1, -20, 15, 1, 20, 15, 1, -20, 15, -1, -20, 15, 1, 20, -15, -1, 20, -15, 1, -20, -15, -1, 20, -15, -1, -20, -15, 1, -20, -15, 1, 20, 15, 1, 20, -15, 1, -20, 15, 1, 20, -15, 1, -20, -15, 1, -20, 15, -1, 20, -15, -1, 20, 15, -1, -20, -15, -1, 20, 15, -1, -20, 15, -1, -20, -15, 1, 20, 15, -1, 20, 15, 1, 20, -15, -1, 20, 15, -1, 20, -15, 1, 20, -15, -1, -20, 15, 1, -20, 15, -1, -20, -15, 1, -20, 15, 1, -20, -15, -1, -20, -15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0kbjw"]
+size = Vector3(4, 40, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_766hr"]
+size = Vector3(4, 40, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wtick"]
+size = Vector3(4, 40, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ow51s"]
+size = Vector3(4, 40, 30)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj026"]
 bg_color = Color(0.563031, 0.650005, 1.34766e-06, 1)
 
@@ -502,64 +539,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.174, 0, -12.8252)
 [node name="CalculationPoint" type="MeshInstance3D" parent="ControlDistanceNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.442, -2.94984, 0)
 mesh = SubResource("ArrayMesh_f01f8")
-
-[node name="Minimap" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("8_p6n3d")
-level = NodePath("..")
-
-[node name="ColorRect" type="ColorRect" parent="Minimap"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -200.0
-offset_bottom = 200.0
-grow_horizontal = 0
-color = Color(0, 0, 0, 1)
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Minimap/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewport" type="SubViewport" parent="Minimap/ColorRect/SubViewportContainer"]
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(200, 200)
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="Minimap/ColorRect/SubViewportContainer/SubViewport"]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 52.0567, 70, 125.742)
-projection = 1
-current = true
-size = 20.0
-
-[node name="ColorRect" type="ColorRect" parent="Minimap/ColorRect/SubViewportContainer/SubViewport"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 5.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.694118, 0.694118, 0.694118, 1)
-
-[node name="EnemyMinimapColorect" parent="Minimap/ColorRect/SubViewportContainer/SubViewport" instance=ExtResource("9_1aak7")]
-offset_left = 952.0
-offset_right = 972.0
 
 [node name="Plataforma de Tutorial" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_onvof")
@@ -1056,6 +1035,177 @@ transform = Transform3D(-11.3658, 5.77431, -0.000210667, 3.84954, 17.0487, 0, 0.
 material_override = SubResource("StandardMaterial3D_0n4qp")
 mesh = ExtResource("13_jusbj")
 
+[node name="VictorySong" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("18_ajfg6")
+volume_db = -5.0
+bus = &"BGM"
+
+[node name="TutorialBGM" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("19_2tlax")
+volume_db = -10.0
+bus = &"BGM"
+
+[node name="Player" parent="." instance=ExtResource("22_73hvy")]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 60, 12, 134)
+
+[node name="NextTutorialPlatforms" type="Node3D" parent="."]
+
+[node name="Platform1" type="Node3D" parent="NextTutorialPlatforms"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NextTutorialPlatforms/Platform1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.9424, 0, 125.27)
+material_override = SubResource("StandardMaterial3D_85lcm")
+mesh = SubResource("BoxMesh_3q73e")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NextTutorialPlatforms/Platform1/MeshInstance3D"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextTutorialPlatforms/Platform1/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_de2cr")
+
+[node name="Platform2" type="Node3D" parent="NextTutorialPlatforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8345, 0, 25.4235)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NextTutorialPlatforms/Platform2"]
+transform = Transform3D(0.0320737, 0, -0.999485, 0, 1, 0, 0.999485, 0, 0.0320737, 86.9424, 0, 125.27)
+material_override = SubResource("StandardMaterial3D_85lcm")
+mesh = SubResource("BoxMesh_3q73e")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NextTutorialPlatforms/Platform2/MeshInstance3D"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextTutorialPlatforms/Platform2/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s3bq1")
+
+[node name="Platform3" type="Node3D" parent="NextTutorialPlatforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0073, 0, 165.044)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NextTutorialPlatforms/Platform3"]
+transform = Transform3D(0.0320737, 0, -0.999485, 0, 1, 0, 0.999485, 0, 0.0320737, 86.9424, 0, 125.27)
+material_override = SubResource("StandardMaterial3D_85lcm")
+mesh = SubResource("BoxMesh_3q73e")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NextTutorialPlatforms/Platform3/MeshInstance3D"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextTutorialPlatforms/Platform3/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_g1xnt")
+
+[node name="Platform4" type="Node3D" parent="NextTutorialPlatforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.147, 0, 218.995)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NextTutorialPlatforms/Platform4"]
+transform = Transform3D(0.0320737, 0, -0.999485, 0, 1, 0, 0.999485, 0, 0.0320737, 86.9424, 0, 125.27)
+material_override = SubResource("StandardMaterial3D_85lcm")
+mesh = SubResource("BoxMesh_3q73e")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NextTutorialPlatforms/Platform4/MeshInstance3D"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextTutorialPlatforms/Platform4/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rl72s")
+
+[node name="Areas3D" type="Node3D" parent="NextTutorialPlatforms"]
+
+[node name="Area3D1" type="Area3D" parent="NextTutorialPlatforms/Areas3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.9424, 0, 125.27)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextTutorialPlatforms/Areas3D/Area3D1"]
+transform = Transform3D(0.599667, 0, 0, 0, 0.930915, 0, 0, 0, 0.930915, 0, 0, 0)
+shape = SubResource("BoxShape3D_0kbjw")
+
+[node name="Area3D2" type="Area3D" parent="NextTutorialPlatforms/Areas3D"]
+transform = Transform3D(0.0320737, 0, -0.999485, 0, 1, 0, 0.999485, 0, 0.0320737, 110.777, 0, 150.693)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextTutorialPlatforms/Areas3D/Area3D2"]
+shape = SubResource("BoxShape3D_766hr")
+
+[node name="Area3D3" type="Area3D" parent="NextTutorialPlatforms/Areas3D"]
+transform = Transform3D(0.0320737, 0, -0.999485, 0, 1, 0, 0.999485, 0, 0.0320737, 104.95, 0, 290.314)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextTutorialPlatforms/Areas3D/Area3D3"]
+shape = SubResource("BoxShape3D_wtick")
+
+[node name="Area3D4" type="Area3D" parent="NextTutorialPlatforms/Areas3D"]
+transform = Transform3D(0.0320737, 0, -0.999485, 0, 1, 0, 0.999485, 0, 0.0320737, 111.68, 0, 340.187)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextTutorialPlatforms/Areas3D/Area3D4"]
+shape = SubResource("BoxShape3D_ow51s")
+
+[node name="Minimap" parent="." instance=ExtResource("27_0a1ny")]
+target = NodePath("../Player")
+camera_distance = 30.0
+
+[node name="Tutorial" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TutorialWalking" type="Control" parent="Tutorial"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TutorialWalkingBar" parent="Tutorial/TutorialWalking" instance=ExtResource("16_wu77b")]
+visible = false
+script = ExtResource("20_ghkui")
+
+[node name="TutorialWalkingBar2" parent="Tutorial/TutorialWalking" instance=ExtResource("16_wu77b")]
+visible = false
+script = ExtResource("24_aitb5")
+
+[node name="TutorialSwitchWeapons" type="Control" parent="Tutorial"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TutorialSwitchWeaponsBar" parent="Tutorial/TutorialSwitchWeapons" instance=ExtResource("16_wu77b")]
+visible = false
+script = ExtResource("21_wd0gk")
+
+[node name="TutorialJumpRun" type="Control" parent="Tutorial"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TutorialJumpRunBar" parent="Tutorial/TutorialJumpRun" instance=ExtResource("16_wu77b")]
+visible = false
+script = ExtResource("22_i3s7t")
+
+[node name="TutorialMemory" type="Control" parent="Tutorial"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TutorialMemoryBar" parent="Tutorial/TutorialMemory" instance=ExtResource("16_wu77b")]
+visible = false
+script = ExtResource("23_gukux")
+
+[node name="TutorialFinishLevel" type="Control" parent="Tutorial"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TutorialFinishLevelBar" parent="Tutorial/TutorialFinishLevel" instance=ExtResource("16_wu77b")]
+visible = false
+script = ExtResource("24_aocre")
+
 [node name="PhaseFinished" type="Control" parent="."]
 process_mode = 3
 visible = false
@@ -1105,20 +1255,8 @@ offset_bottom = 236.0
 theme_override_fonts/font = ExtResource("15_s6clv")
 text = "Próximo Nível"
 
-[node name="PathogenTutorial" parent="." instance=ExtResource("16_wu77b")]
-
-[node name="VictorySong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_ajfg6")
-volume_db = -10.0
-bus = &"BGM"
-
-[node name="TutorialBGM" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("19_2tlax")
-volume_db = -10.0
-bus = &"BGM"
-
-[node name="Player" parent="." instance=ExtResource("22_73hvy")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 60, 12, 134)
-
+[connection signal="body_entered" from="NextTutorialPlatforms/Areas3D/Area3D1" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="NextTutorialPlatforms/Areas3D/Area3D2" to="." method="_on_area_3d_2_body_entered"]
+[connection signal="body_entered" from="NextTutorialPlatforms/Areas3D/Area3D3" to="." method="_on_area_3d_3_body_entered"]
+[connection signal="body_entered" from="NextTutorialPlatforms/Areas3D/Area3D4" to="." method="_on_area_3d_4_body_entered"]
 [connection signal="pressed" from="PhaseFinished/Panel/NextPhase" to="." method="_on_next_phase_pressed"]

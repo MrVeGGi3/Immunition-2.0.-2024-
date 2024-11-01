@@ -3,16 +3,17 @@ extends Control
 
 @onready var color_rect = $ColorRect/SubViewportContainer/SubViewport/ColorRect
 @export var target : NodePath
-@export var camera_distance := 60.0 
+@export var camera_distance = 120.0 
 @onready var player := get_node(target)
 @onready var camera = $ColorRect/SubViewportContainer/SubViewport/Camera3D
-@export var level : NodePath
-@onready var world := get_node(level)
 @onready var is_paused = Global.is_paused
 #@onready var screen_size = DisplayServer.window_get_size()
 #var enemy_colorect = preload("res://scenes/icons/EnemyMinimapColorect.tscn")
 #@onready var diff_size = Vector2(screen_size.x - color_rect.size.x, screen_size.y - color_rect.size.y)
-	
+
+func _ready() -> void:
+	if target:
+		camera.rotation = Vector3(-90, player.rotation.y, 0)
 func _process(_delta : float) -> void:
 	if target:
 		camera.size = camera_distance

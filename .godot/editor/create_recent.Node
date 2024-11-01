@@ -1,7 +1,10 @@
-RayCast3D
+Node3D
 Area3D
-Camera3D
+Node
 MeshInstance3D
+Control
+RayCast3D
+Camera3D
 DirectionalLight3D
 RigidBody3D
 Marker3D
@@ -9,6 +12,3 @@ AudioStreamPlayer3D
 NavigationRegion3D
 Timer
 CollisionShape3D
-AnimationTree
-Control
-AudioStreamPlayer

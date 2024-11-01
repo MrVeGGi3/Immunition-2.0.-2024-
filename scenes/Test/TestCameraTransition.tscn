@@ -821,7 +821,7 @@ shape = SubResource("ConcavePolygonShape3D_m6f5v")
 transform = Transform3D(1, 0, 0, 0, -0.0449446, 0.99899, 0, -0.99899, -0.0449446, 0, 6.87153, 0)
 
 [node name="Camera3D2" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53124, 1.13282, 0.583074)
+transform = Transform3D(0.634043, 0.0265156, 0.772843, -0.773298, 0.0217407, 0.63367, 0, -0.999412, 0.034289, 2.53124, 1.13282, 0.583074)
 current = true
 
 [connection signal="pressed" from="Player/PlayerHUD/DeathScreen/Panel/RestartButton" to="Player" method="restart"]
