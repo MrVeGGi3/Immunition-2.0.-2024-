@@ -201,6 +201,7 @@ change_bazooka={
 3d_physics/layer_13="DiareiaPoison"
 3d_physics/layer_14="Markers"
 3d_physics/layer_15="SSMissile"
+3d_physics/layer_16="ElasticJump"
 avoidance/layer_1="Influenza"
 avoidance/layer_2="Cells"
 avoidance/layer_3="Pathogen"

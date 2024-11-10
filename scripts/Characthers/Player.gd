@@ -88,7 +88,7 @@ var vida
 @export var max_speed : float = 24.0
 @export var SPEED = 12.0
 @export var aceleration = 0.5
-
+@export var elastic_jump_force : int
 
 func _ready():
 	bazooka_ui.hide()
@@ -244,6 +244,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
+	
 	
 
 func restart():
@@ -555,3 +556,7 @@ func _disconnect_bazooka():
 func _on_shoot_bazooka_timeout() -> void:
 	can_shoot_bz = true
 	set_global_transition_bool_baz(can_shoot_bz)
+
+func _elastic_jump():
+	velocity.y += elastic_jump_force
+	

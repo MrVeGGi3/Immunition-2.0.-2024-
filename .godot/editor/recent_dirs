@@ -1,10 +1,10 @@
+res://scenes/AudioSource
+res://scripts/Effects
 res://scripts/tutorials
 res://scripts/Spawner
 res://scripts/Tests
-res://scripts/Effects
 res://scenes/effect
 res://scenes/UI/Player
-res://scenes/AudioSource
 res://scripts/Levels
 res://scripts/Characthers
 res://images/UI/Backgrounds/Ammo

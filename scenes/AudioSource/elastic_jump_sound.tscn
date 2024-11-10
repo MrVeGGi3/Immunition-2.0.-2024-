@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://4bk78gdl6vgo"]
+
+[ext_resource type="AudioStream" uid="uid://3014j0fy0tb2" path="res://sounds/SFX/Elastic/ElasticJump.wav" id="1_tlry3"]
+
+[node name="ElasticJumpSound" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_tlry3")
+volume_db = 70.0
