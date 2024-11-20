@@ -1,3 +1,6 @@
+res://tbmapfiles
+res://textures
+res://scenes/Levels
 res://scenes/AudioSource
 res://scripts/Effects
 res://scripts/tutorials
@@ -18,6 +21,4 @@ res://scripts/HUD
 res://scripts/Animations
 res://scripts/Configs
 E:/Downloads/ImmutionHTML
-res://scripts/Characthers/objects
-res://scenes/scenary
 E:/Godot
