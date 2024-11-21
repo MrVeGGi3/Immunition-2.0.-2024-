@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b2ihycok3ju22"]
+
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_n1gc6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cwka"]
+
+[resource]
+Label/colors/font_color = Color(4.33177e-06, 0.996337, 0.578825, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_n1gc6")
+Label/styles/normal = SubResource("StyleBoxEmpty_4cwka")

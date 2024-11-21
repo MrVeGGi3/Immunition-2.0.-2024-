@@ -7,9 +7,12 @@ offset_right = 10.0
 offset_bottom = 10.0
 
 [node name="SubViewport" type="SubViewport" parent="."]
+process_mode = 3
 transparent_bg = true
 handle_input_locally = false
+canvas_item_default_texture_repeat = 1
 size = Vector2i(10, 10)
+render_target_clear_mode = 1
 render_target_update_mode = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewport"]

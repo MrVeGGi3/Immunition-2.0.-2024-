@@ -1,3 +1,7 @@
+res://images/Pipe Animations
+res://scenes/UI/Pipe
+res://themes
+res://
 res://tbmapfiles
 res://textures
 res://scenes/Levels
@@ -16,9 +20,5 @@ res://scripts/Characthers/Prototype/Level3
 res://scripts/Count
 res://scripts/Elevators
 res://scripts/Collectables
-res://themes
-res://scripts/HUD
-res://scripts/Animations
-res://scripts/Configs
 E:/Downloads/ImmutionHTML
 E:/Godot

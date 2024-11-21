@@ -3,13 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://ropyigdpatuv" path="res://images/UI/Sliders/Ellipse 1.png" id="1_13ffs"]
 
 [node name="GrabberViewport" type="SubViewportContainer"]
+process_mode = 3
 offset_right = 100.0
 offset_bottom = 50.0
 
 [node name="SubViewport" type="SubViewport" parent="."]
+process_mode = 3
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(100, 50)
+render_target_clear_mode = 1
 render_target_update_mode = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewport"]

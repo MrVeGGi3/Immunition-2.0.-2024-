@@ -18,6 +18,7 @@ texture = ExtResource("4_vg524")
 
 [resource]
 OptionButton/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(0, 0, 0, 1)
 OptionButton/font_sizes/font_size = 16
 OptionButton/fonts/font = ExtResource("1_inrif")
 OptionButton/icons/arrow = SubResource("ViewportTexture_ticde")

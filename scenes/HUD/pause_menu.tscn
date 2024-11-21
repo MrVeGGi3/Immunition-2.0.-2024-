@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://5ran8yqdqky"]
+[gd_scene load_steps=26 format=3 uid="uid://5ran8yqdqky"]
 
 [ext_resource type="Script" path="res://scripts/HUD/Pause.gd" id="1_4srht"]
 [ext_resource type="Theme" uid="uid://unuynfnhkuni" path="res://themes/label.tres" id="1_w2yf1"]
@@ -16,10 +16,26 @@
 [ext_resource type="Texture2D" uid="uid://cxhyj8lv8hmyq" path="res://images/UI/Backgrounds/Options/Title Circle - Opções.png" id="14_0c0r3"]
 [ext_resource type="Texture2D" uid="uid://ropyigdpatuv" path="res://images/UI/Sliders/Ellipse 1.png" id="15_xtgub"]
 [ext_resource type="Texture2D" uid="uid://dfl8lv7t0jfyf" path="res://images/UI/Backgrounds/Options/Polygon 1.png" id="16_e0h5u"]
+[ext_resource type="Texture2D" uid="uid://xcbfs5aiatga" path="res://images/UI/Buttons/ResolutionIcon/icon.png" id="17_p475o"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_woqas"]
+viewport_path = NodePath("ArrowSliderViewport/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_irdy6"]
+viewport_path = NodePath("ArrowSliderViewport/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h0si5"]
+viewport_path = NodePath("GrabberViewport/SubViewport")
 
 [sub_resource type="LabelSettings" id="LabelSettings_nhucs"]
 font_size = 70
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ktusa"]
+viewport_path = NodePath("GrabberViewport/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_81nod"]
+viewport_path = NodePath("GrabberViewport/SubViewport")
 
 [sub_resource type="InputEventAction" id="InputEventAction_cc1os"]
 action = &"ui_cancel"
@@ -90,6 +106,7 @@ offset_top = 396.0
 offset_right = 636.0
 offset_bottom = 436.0
 theme = ExtResource("5_6358x")
+theme_override_icons/arrow = SubResource("ViewportTexture_woqas")
 expand_icon = true
 
 [node name="ResolutionControl" type="Control" parent="."]
@@ -116,6 +133,7 @@ offset_top = 459.0
 offset_right = 636.0
 offset_bottom = 499.0
 theme = ExtResource("5_6358x")
+theme_override_icons/arrow = SubResource("ViewportTexture_irdy6")
 
 [node name="MouseSensibilityControl" type="Control" parent="."]
 layout_mode = 3
@@ -133,6 +151,7 @@ offset_top = 352.0
 offset_right = 809.0
 offset_bottom = 402.0
 theme = ExtResource("9_hn1co")
+theme_override_icons/grabber = SubResource("ViewportTexture_h0si5")
 max_value = 4.0
 step = 0.1
 value = 1.0
@@ -190,6 +209,7 @@ offset_top = 583.0
 offset_right = 1223.0
 offset_bottom = 633.0
 theme = ExtResource("9_hn1co")
+theme_override_icons/grabber = SubResource("ViewportTexture_ktusa")
 max_value = 1.0
 step = 0.001
 script = ExtResource("3_rjk7c")
@@ -229,6 +249,7 @@ offset_top = 257.0
 offset_right = 807.0
 offset_bottom = 307.0
 theme = ExtResource("9_hn1co")
+theme_override_icons/grabber = SubResource("ViewportTexture_81nod")
 max_value = 1.0
 step = 0.001
 script = ExtResource("3_rjk7c")
@@ -291,6 +312,31 @@ render_target_update_mode = 4
 position = Vector2(5, 5)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("16_e0h5u")
+
+[node name="ButtonIconViewport" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -705.0
+offset_top = -280.0
+offset_right = -336.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="ButtonIconViewport"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(325, 100)
+size_2d_override = Vector2i(0, 500)
+render_target_clear_mode = 1
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonIconViewport/SubViewport"]
+texture = ExtResource("17_p475o")
 
 [connection signal="changed" from="MouseSensibilityControl/MouseSensibilitySlider" to="MouseSensibilityControl/MouseSensibilitySlider" method="_on_changed"]
 [connection signal="value_changed" from="MouseSensibilityControl/MouseSensibilitySlider" to="MouseSensibilityControl/MouseSensibilitySlider" method="_on_value_changed"]

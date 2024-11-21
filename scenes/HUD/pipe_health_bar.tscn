@@ -1,9 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://p3d1lggvitpk"]
+[gd_scene load_steps=15 format=3 uid="uid://p3d1lggvitpk"]
 
+[ext_resource type="Script" path="res://scenes/UI/Pipe/pipe_health_bar.gd" id="1_n8uwg"]
 [ext_resource type="Texture2D" uid="uid://bcrja1q6t7mig" path="res://images/UI/Backgrounds/Ammo/UI Bar.png" id="1_vn4im"]
 [ext_resource type="Texture2D" uid="uid://bb8a4v3ufs3h2" path="res://images/UI/Backgrounds/Ammo/UI Bar Piscando.png" id="1_vtp2b"]
 [ext_resource type="Texture2D" uid="uid://dlkv4v1vax1vq" path="res://images/UI/LifeBar/Barra Fundo.png" id="3_wtnrw"]
+[ext_resource type="Theme" uid="uid://b2ihycok3ju22" path="res://themes/pipelife.tres" id="4_832hd"]
 [ext_resource type="Texture2D" uid="uid://20whk6wbac1i" path="res://images/UI/LifeBar/Barra Verde.png" id="4_nb1my"]
+[ext_resource type="Texture2D" uid="uid://cjak342rjvtf7" path="res://images/Pipe Animations/Pipe attacked.png" id="7_nhh8u"]
+[ext_resource type="Texture2D" uid="uid://dqbd6pwyc0jon" path="res://images/Pipe Animations/Pipe broken.png" id="8_hyylv"]
+[ext_resource type="Texture2D" uid="uid://vyjmwh1meuco" path="res://images/Pipe Animations/Pipe confirm.png" id="9_q57dj"]
+[ext_resource type="Texture2D" uid="uid://dpesj8kseqkm0" path="res://images/Pipe Animations/Pipe.png" id="10_4fpsh"]
+[ext_resource type="Texture2D" uid="uid://b2i5hmcn4omnf" path="res://images/Pipe Animations/Counter.png" id="11_qxuyr"]
+[ext_resource type="Theme" uid="uid://c3ieaoejle7t" path="res://themes/pipecountertext.tres" id="12_ynvyd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tpc5w"]
 animations = [{
@@ -24,6 +32,41 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ihqg2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_nhh8u")
+}],
+"loop": true,
+"name": &"attacked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hyylv")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_q57dj")
+}],
+"loop": true,
+"name": &"confirm",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4fpsh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="PipeHealthBar" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -31,75 +74,22 @@ offset_left = 942.0
 offset_top = 113.0
 offset_right = 982.0
 offset_bottom = 153.0
+script = ExtResource("1_n8uwg")
 
 [node name="UIBar" type="AnimatedSprite2D" parent="."]
-position = Vector2(-343, -34)
-scale = Vector2(0.703138, 0.703138)
+modulate = Color(1, 1, 1, 0.294118)
+position = Vector2(-59.1311, 96.679)
+scale = Vector2(0.904897, 1.03544)
 sprite_frames = SubResource("SpriteFrames_tpc5w")
-animation = &"hit"
-
-[node name="PipeLifeBar1" type="TextureProgressBar" parent="UIBar"]
-offset_left = -213.329
-offset_top = 22.7551
-offset_right = 378.671
-offset_bottom = 69.7551
-rotation = 4.71239
-scale = Vector2(0.2, 0.2)
-fill_mode = 2
-texture_under = ExtResource("3_wtnrw")
-texture_progress = ExtResource("4_nb1my")
-
-[node name="PipeLifeBar2" type="TextureProgressBar" parent="UIBar"]
-offset_left = -86.754
-offset_top = 25.5995
-offset_right = 505.246
-offset_bottom = 72.5995
-rotation = 4.71239
-scale = Vector2(0.2, 0.2)
-fill_mode = 2
-texture_under = ExtResource("3_wtnrw")
-texture_progress = ExtResource("4_nb1my")
-
-[node name="PipeLifeBar3" type="TextureProgressBar" parent="UIBar"]
-offset_left = 54.0434
-offset_top = 22.7551
-offset_right = 646.043
-offset_bottom = 69.7551
-rotation = 4.71239
-scale = Vector2(0.2, 0.2)
-fill_mode = 2
-texture_under = ExtResource("3_wtnrw")
-texture_progress = ExtResource("4_nb1my")
-
-[node name="PipeLifeBar4" type="TextureProgressBar" parent="UIBar"]
-offset_left = 187.73
-offset_top = 24.1773
-offset_right = 779.73
-offset_bottom = 71.1773
-rotation = 4.71239
-scale = Vector2(0.2, 0.2)
-fill_mode = 2
-texture_under = ExtResource("3_wtnrw")
-texture_progress = ExtResource("4_nb1my")
-
-[node name="PipeAnimation1" type="AnimatedSprite2D" parent="UIBar"]
-position = Vector2(-210.485, 48.3547)
-
-[node name="PipeAnimation2" type="AnimatedSprite2D" parent="UIBar"]
-position = Vector2(-81.0652, 49.7769)
-
-[node name="PipeAnimation3" type="AnimatedSprite2D" parent="UIBar"]
-position = Vector2(56.8878, 45.5103)
-
-[node name="PipeAnimation4" type="AnimatedSprite2D" parent="UIBar"]
-position = Vector2(191.996, 44.0881)
+animation = &"normal"
+autoplay = "normal"
 
 [node name="Labels" type="Control" parent="."]
 anchors_preset = 0
-offset_left = -468.0
-offset_top = -77.0
-offset_right = -428.0
-offset_bottom = -37.0
+offset_left = -266.0
+offset_top = -30.0
+offset_right = -223.0
+offset_bottom = 10.0
 
 [node name="PipePercentage1" type="Label" parent="Labels"]
 layout_mode = 0
@@ -107,24 +97,171 @@ offset_left = -5.0
 offset_top = 7.0
 offset_right = 35.0
 offset_bottom = 30.0
+theme = ExtResource("4_832hd")
+text = "100"
 
 [node name="PipePercentage2" type="Label" parent="Labels"]
 layout_mode = 0
-offset_left = 92.0
+offset_left = 115.0
 offset_top = 8.0
-offset_right = 132.0
-offset_bottom = 31.0
+offset_right = 155.0
+offset_bottom = 41.0
+theme = ExtResource("4_832hd")
+text = "100"
 
 [node name="PipePercentage3" type="Label" parent="Labels"]
 layout_mode = 0
-offset_left = 194.0
-offset_top = 8.0
-offset_right = 234.0
-offset_bottom = 31.0
+offset_left = 236.0
+offset_top = 10.0
+offset_right = 276.0
+offset_bottom = 43.0
+theme = ExtResource("4_832hd")
+text = "100"
 
 [node name="PipePercentage4" type="Label" parent="Labels"]
 layout_mode = 0
-offset_left = 270.0
-offset_top = 9.0
-offset_right = 310.0
-offset_bottom = 32.0
+offset_left = 356.0
+offset_top = 10.0
+offset_right = 396.0
+offset_bottom = 43.0
+theme = ExtResource("4_832hd")
+text = "100"
+
+[node name="HealthBars" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -17.0
+offset_top = 42.0
+offset_right = 23.0
+offset_bottom = 82.0
+
+[node name="PipeLifeBar1" type="TextureProgressBar" parent="HealthBars"]
+layout_mode = 0
+offset_left = -246.0
+offset_top = 81.0
+offset_right = 346.0
+offset_bottom = 128.0
+rotation = 4.71239
+scale = Vector2(0.2, 0.2)
+max_value = 30.0
+value = 30.0
+texture_under = ExtResource("3_wtnrw")
+texture_progress = ExtResource("4_nb1my")
+
+[node name="PipeLifeBar2" type="TextureProgressBar" parent="HealthBars"]
+layout_mode = 0
+offset_left = -123.0
+offset_top = 81.0
+offset_right = 469.0
+offset_bottom = 128.0
+rotation = 4.71239
+scale = Vector2(0.2, 0.2)
+max_value = 30.0
+value = 30.0
+texture_under = ExtResource("3_wtnrw")
+texture_progress = ExtResource("4_nb1my")
+
+[node name="PipeLifeBar3" type="TextureProgressBar" parent="HealthBars"]
+layout_mode = 0
+offset_top = 83.0
+offset_right = 592.0
+offset_bottom = 130.0
+rotation = 4.71239
+scale = Vector2(0.2, 0.2)
+max_value = 30.0
+value = 30.0
+texture_under = ExtResource("3_wtnrw")
+texture_progress = ExtResource("4_nb1my")
+
+[node name="PipeLifeBar4" type="TextureProgressBar" parent="HealthBars"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 84.0
+offset_right = 712.0
+offset_bottom = 131.0
+rotation = 4.71239
+scale = Vector2(0.2, 0.2)
+max_value = 30.0
+value = 30.0
+texture_under = ExtResource("3_wtnrw")
+texture_progress = ExtResource("4_nb1my")
+
+[node name="PipeAnimation" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -5.0
+offset_top = -7.0
+offset_right = 35.0
+offset_bottom = 33.0
+
+[node name="PipeAnimation1" type="AnimatedSprite2D" parent="PipeAnimation"]
+position = Vector2(-253, 168)
+scale = Vector2(0.120532, 0.108302)
+sprite_frames = SubResource("SpriteFrames_ihqg2")
+autoplay = "default"
+
+[node name="Counter 1" type="Sprite2D" parent="PipeAnimation/PipeAnimation1"]
+position = Vector2(-8.29653, -193.902)
+texture = ExtResource("11_qxuyr")
+
+[node name="Number 1" type="Label" parent="PipeAnimation/PipeAnimation1/Counter 1"]
+offset_left = -58.0757
+offset_top = -193.902
+offset_right = 43.9243
+offset_bottom = 188.098
+theme = ExtResource("12_ynvyd")
+text = "1
+"
+
+[node name="PipeAnimation2" type="AnimatedSprite2D" parent="PipeAnimation"]
+position = Vector2(-129, 168)
+scale = Vector2(0.120532, 0.108302)
+sprite_frames = SubResource("SpriteFrames_ihqg2")
+autoplay = "default"
+
+[node name="Counter 2" type="Sprite2D" parent="PipeAnimation/PipeAnimation2"]
+position = Vector2(-8.29653, -193.902)
+texture = ExtResource("11_qxuyr")
+
+[node name="Number 2" type="Label" parent="PipeAnimation/PipeAnimation2/Counter 2"]
+offset_left = -66.3722
+offset_top = -193.902
+offset_right = 83.6278
+offset_bottom = 188.098
+theme = ExtResource("12_ynvyd")
+text = "2"
+
+[node name="PipeAnimation3" type="AnimatedSprite2D" parent="PipeAnimation"]
+position = Vector2(-6, 172)
+scale = Vector2(0.120532, 0.108302)
+sprite_frames = SubResource("SpriteFrames_ihqg2")
+autoplay = "default"
+
+[node name="Counter 3" type="Sprite2D" parent="PipeAnimation/PipeAnimation3"]
+position = Vector2(8.29653, -203.135)
+texture = ExtResource("11_qxuyr")
+
+[node name="Number 3" type="Label" parent="PipeAnimation/PipeAnimation3/Counter 3"]
+offset_left = -58.0757
+offset_top = -193.902
+offset_right = 43.9243
+offset_bottom = 188.098
+theme = ExtResource("12_ynvyd")
+text = "3"
+
+[node name="PipeAnimation4" type="AnimatedSprite2D" parent="PipeAnimation"]
+position = Vector2(114, 172)
+scale = Vector2(0.120532, 0.108302)
+sprite_frames = SubResource("SpriteFrames_ihqg2")
+autoplay = "default"
+
+[node name="Counter 4" type="Sprite2D" parent="PipeAnimation/PipeAnimation4"]
+position = Vector2(-8.29653, -203.135)
+texture = ExtResource("11_qxuyr")
+
+[node name="Number 4" type="Label" parent="PipeAnimation/PipeAnimation4/Counter 4"]
+offset_left = -99.5583
+offset_top = -203.135
+offset_right = 60.4417
+offset_bottom = 178.865
+theme = ExtResource("12_ynvyd")
+text = "4
+"

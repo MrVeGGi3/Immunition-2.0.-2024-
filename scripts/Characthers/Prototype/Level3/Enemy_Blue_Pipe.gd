@@ -86,7 +86,7 @@ func _physics_process(delta):
 			if distance_to_pipe <  pipe_shortest_distance:
 				pipe_shortest_distance = distance_to_pipe
 				nearest_pipe = pipe
-		if nearest_pipe != null and pipe_shortest_distance <= minimum_distance and pipe_shortest_distance < dist_to_player:
+		if nearest_pipe != null and pipe_shortest_distance <= minimum_distance and pipe_shortest_distance < dist_to_player and !pipe.get_destroyed():
 			nav.target_position = nearest_pipe.global_transform.origin
 			can_follow_player = false
 		else:
