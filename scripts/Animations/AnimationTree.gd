@@ -2,6 +2,7 @@ extends AnimationTree
 
 @onready var animation_tree: AnimationTree = $"."
 @onready var animação: AnimationPlayer = $"../AnimaçãoArmas"
+@onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 
 
 # Called when the node enters the scene tree for the first time.

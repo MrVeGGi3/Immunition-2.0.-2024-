@@ -1,3 +1,4 @@
+res://scripts/Levels
 res://images/Pipe Animations
 res://scenes/UI/Pipe
 res://themes
@@ -12,7 +13,6 @@ res://scripts/Spawner
 res://scripts/Tests
 res://scenes/effect
 res://scenes/UI/Player
-res://scripts/Levels
 res://scripts/Characthers
 res://images/UI/Backgrounds/Ammo
 res://scenes/HUD

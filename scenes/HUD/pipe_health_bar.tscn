@@ -78,8 +78,8 @@ script = ExtResource("1_n8uwg")
 
 [node name="UIBar" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.294118)
-position = Vector2(-59.1311, 96.679)
-scale = Vector2(0.904897, 1.03544)
+position = Vector2(22, 154)
+scale = Vector2(0.602016, 0.308183)
 sprite_frames = SubResource("SpriteFrames_tpc5w")
 animation = &"normal"
 autoplay = "normal"
@@ -93,37 +93,10 @@ offset_bottom = 10.0
 
 [node name="PipePercentage1" type="Label" parent="Labels"]
 layout_mode = 0
-offset_left = -5.0
-offset_top = 7.0
-offset_right = 35.0
-offset_bottom = 30.0
-theme = ExtResource("4_832hd")
-text = "100"
-
-[node name="PipePercentage2" type="Label" parent="Labels"]
-layout_mode = 0
-offset_left = 115.0
-offset_top = 8.0
-offset_right = 155.0
-offset_bottom = 41.0
-theme = ExtResource("4_832hd")
-text = "100"
-
-[node name="PipePercentage3" type="Label" parent="Labels"]
-layout_mode = 0
-offset_left = 236.0
-offset_top = 10.0
-offset_right = 276.0
-offset_bottom = 43.0
-theme = ExtResource("4_832hd")
-text = "100"
-
-[node name="PipePercentage4" type="Label" parent="Labels"]
-layout_mode = 0
-offset_left = 356.0
-offset_top = 10.0
-offset_right = 396.0
-offset_bottom = 43.0
+offset_left = 197.0
+offset_top = 149.0
+offset_right = 237.0
+offset_bottom = 182.0
 theme = ExtResource("4_832hd")
 text = "100"
 
@@ -136,50 +109,11 @@ offset_bottom = 82.0
 
 [node name="PipeLifeBar1" type="TextureProgressBar" parent="HealthBars"]
 layout_mode = 0
-offset_left = -246.0
-offset_top = 81.0
-offset_right = 346.0
-offset_bottom = 128.0
-rotation = 4.71239
-scale = Vector2(0.2, 0.2)
-max_value = 30.0
-value = 30.0
-texture_under = ExtResource("3_wtnrw")
-texture_progress = ExtResource("4_nb1my")
-
-[node name="PipeLifeBar2" type="TextureProgressBar" parent="HealthBars"]
-layout_mode = 0
-offset_left = -123.0
-offset_top = 81.0
-offset_right = 469.0
-offset_bottom = 128.0
-rotation = 4.71239
-scale = Vector2(0.2, 0.2)
-max_value = 30.0
-value = 30.0
-texture_under = ExtResource("3_wtnrw")
-texture_progress = ExtResource("4_nb1my")
-
-[node name="PipeLifeBar3" type="TextureProgressBar" parent="HealthBars"]
-layout_mode = 0
-offset_top = 83.0
-offset_right = 592.0
-offset_bottom = 130.0
-rotation = 4.71239
-scale = Vector2(0.2, 0.2)
-max_value = 30.0
-value = 30.0
-texture_under = ExtResource("3_wtnrw")
-texture_progress = ExtResource("4_nb1my")
-
-[node name="PipeLifeBar4" type="TextureProgressBar" parent="HealthBars"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 84.0
-offset_right = 712.0
-offset_bottom = 131.0
-rotation = 4.71239
-scale = Vector2(0.2, 0.2)
+offset_left = -61.0
+offset_top = 110.0
+offset_right = 531.0
+offset_bottom = 157.0
+scale = Vector2(0.4, 0.4)
 max_value = 30.0
 value = 30.0
 texture_under = ExtResource("3_wtnrw")
@@ -193,7 +127,7 @@ offset_right = 35.0
 offset_bottom = 33.0
 
 [node name="PipeAnimation1" type="AnimatedSprite2D" parent="PipeAnimation"]
-position = Vector2(-253, 168)
+position = Vector2(-108, 158)
 scale = Vector2(0.120532, 0.108302)
 sprite_frames = SubResource("SpriteFrames_ihqg2")
 autoplay = "default"
@@ -209,59 +143,4 @@ offset_right = 43.9243
 offset_bottom = 188.098
 theme = ExtResource("12_ynvyd")
 text = "1
-"
-
-[node name="PipeAnimation2" type="AnimatedSprite2D" parent="PipeAnimation"]
-position = Vector2(-129, 168)
-scale = Vector2(0.120532, 0.108302)
-sprite_frames = SubResource("SpriteFrames_ihqg2")
-autoplay = "default"
-
-[node name="Counter 2" type="Sprite2D" parent="PipeAnimation/PipeAnimation2"]
-position = Vector2(-8.29653, -193.902)
-texture = ExtResource("11_qxuyr")
-
-[node name="Number 2" type="Label" parent="PipeAnimation/PipeAnimation2/Counter 2"]
-offset_left = -66.3722
-offset_top = -193.902
-offset_right = 83.6278
-offset_bottom = 188.098
-theme = ExtResource("12_ynvyd")
-text = "2"
-
-[node name="PipeAnimation3" type="AnimatedSprite2D" parent="PipeAnimation"]
-position = Vector2(-6, 172)
-scale = Vector2(0.120532, 0.108302)
-sprite_frames = SubResource("SpriteFrames_ihqg2")
-autoplay = "default"
-
-[node name="Counter 3" type="Sprite2D" parent="PipeAnimation/PipeAnimation3"]
-position = Vector2(8.29653, -203.135)
-texture = ExtResource("11_qxuyr")
-
-[node name="Number 3" type="Label" parent="PipeAnimation/PipeAnimation3/Counter 3"]
-offset_left = -58.0757
-offset_top = -193.902
-offset_right = 43.9243
-offset_bottom = 188.098
-theme = ExtResource("12_ynvyd")
-text = "3"
-
-[node name="PipeAnimation4" type="AnimatedSprite2D" parent="PipeAnimation"]
-position = Vector2(114, 172)
-scale = Vector2(0.120532, 0.108302)
-sprite_frames = SubResource("SpriteFrames_ihqg2")
-autoplay = "default"
-
-[node name="Counter 4" type="Sprite2D" parent="PipeAnimation/PipeAnimation4"]
-position = Vector2(-8.29653, -203.135)
-texture = ExtResource("11_qxuyr")
-
-[node name="Number 4" type="Label" parent="PipeAnimation/PipeAnimation4/Counter 4"]
-offset_left = -99.5583
-offset_top = -203.135
-offset_right = 60.4417
-offset_bottom = 178.865
-theme = ExtResource("12_ynvyd")
-text = "4
 "

@@ -48,6 +48,7 @@ extends CharacterBody3D
 #Músicas(BGM
 @onready var death_sound = $DeathSound # música da morte do player
 
+@onready var error_audio: AudioStreamPlayer = $ErrorAudio
 
 #Ajuste de Mecânica
 @onready var marker_3d = $Marker3D
@@ -57,7 +58,7 @@ extends CharacterBody3D
 const vida_maxima = 10.0
 const INCREASE_SPEED = 10
 var JUMP_FORCE = 8.0
-const GRAVITY = Vector3(0, -9.8, 0)
+const GRAVITY = Vector3(0, -18.6, 0)
 const CONTROL_BULLET_EMISSION = Global.CONTROL_BULLET_EMISSION
 
 #Constantes para Modulação de Vetor
@@ -559,4 +560,7 @@ func _on_shoot_bazooka_timeout() -> void:
 
 func _elastic_jump():
 	velocity.y += elastic_jump_force
+
+func play_button_sound():
+	error_audio.play()
 	

@@ -66,7 +66,6 @@ func _physics_process(delta):
 		var collider = rc.get_collider()
 		if collider == player:
 			nav.target_position = player_position
-			print("Estou indo atrás do Player")
 	
 	var dist_to_player = global_transform.origin.distance_to(player_position)
 	if  dist_to_player <= minimum_distance and !is_pipe_attacked:
