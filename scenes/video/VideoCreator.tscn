@@ -8,6 +8,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+render_target_update_mode = 4
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport"]
 offset_right = 40.0

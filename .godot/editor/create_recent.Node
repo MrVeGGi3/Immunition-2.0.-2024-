@@ -1,3 +1,4 @@
+TBLoader
 VideoStreamPlayer
 SubViewport
 SubViewportContainer
@@ -7,9 +8,7 @@ Sprite2D
 AnimatedSprite3D
 Label
 Control
-TBLoader
 AudioStreamPlayer3D
 DirectionalLight3D
 Area3D
 Node
-RayCast3D
