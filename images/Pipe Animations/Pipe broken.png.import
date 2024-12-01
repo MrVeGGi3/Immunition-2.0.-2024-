@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqbd6pwyc0jon"
 path.s3tc="res://.godot/imported/Pipe broken.png-b556c721c79e65baa87897f4be20758d.s3tc.ctex"
+path.etc2="res://.godot/imported/Pipe broken.png-b556c721c79e65baa87897f4be20758d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/Pipe Animations/Pipe broken.png"
-dest_files=["res://.godot/imported/Pipe broken.png-b556c721c79e65baa87897f4be20758d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Pipe broken.png-b556c721c79e65baa87897f4be20758d.s3tc.ctex", "res://.godot/imported/Pipe broken.png-b556c721c79e65baa87897f4be20758d.etc2.ctex"]
 
 [params]
 

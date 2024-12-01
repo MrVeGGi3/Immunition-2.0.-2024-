@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://72vg61sfbcfe"
 path.s3tc="res://.godot/imported/InfectedCell.png-103a0750f56ed3bc9742467f3dd619aa.s3tc.ctex"
+path.etc2="res://.godot/imported/InfectedCell.png-103a0750f56ed3bc9742467f3dd619aa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/Monster/infectedcell/InfectedCell.png"
-dest_files=["res://.godot/imported/InfectedCell.png-103a0750f56ed3bc9742467f3dd619aa.s3tc.ctex"]
+dest_files=["res://.godot/imported/InfectedCell.png-103a0750f56ed3bc9742467f3dd619aa.s3tc.ctex", "res://.godot/imported/InfectedCell.png-103a0750f56ed3bc9742467f3dd619aa.etc2.ctex"]
 
 [params]
 

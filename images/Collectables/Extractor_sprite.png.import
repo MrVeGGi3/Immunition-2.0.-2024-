@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://3flapnmavn1e"
 path.s3tc="res://.godot/imported/Extractor_sprite.png-de2b1031594c1430e25affe1c5946fe2.s3tc.ctex"
+path.etc2="res://.godot/imported/Extractor_sprite.png-de2b1031594c1430e25affe1c5946fe2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/Collectables/Extractor_sprite.png"
-dest_files=["res://.godot/imported/Extractor_sprite.png-de2b1031594c1430e25affe1c5946fe2.s3tc.ctex"]
+dest_files=["res://.godot/imported/Extractor_sprite.png-de2b1031594c1430e25affe1c5946fe2.s3tc.ctex", "res://.godot/imported/Extractor_sprite.png-de2b1031594c1430e25affe1c5946fe2.etc2.ctex"]
 
 [params]
 

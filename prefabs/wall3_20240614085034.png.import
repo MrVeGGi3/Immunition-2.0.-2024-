@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbnptvq4384u6"
 path.s3tc="res://.godot/imported/wall3_20240614085034.png-10159593495a667e87d9c8f75fe2b262.s3tc.ctex"
+path.etc2="res://.godot/imported/wall3_20240614085034.png-10159593495a667e87d9c8f75fe2b262.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://prefabs/wall3_20240614085034.png"
-dest_files=["res://.godot/imported/wall3_20240614085034.png-10159593495a667e87d9c8f75fe2b262.s3tc.ctex"]
+dest_files=["res://.godot/imported/wall3_20240614085034.png-10159593495a667e87d9c8f75fe2b262.s3tc.ctex", "res://.godot/imported/wall3_20240614085034.png-10159593495a667e87d9c8f75fe2b262.etc2.ctex"]
 
 [params]
 

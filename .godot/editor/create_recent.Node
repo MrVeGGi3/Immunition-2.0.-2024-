@@ -1,9 +1,9 @@
+Node3D
 AudioStreamPlayer
 AudioStreamPlayer3D
 DirectionalLight3D
 OmniLight3D
 Node
-Node3D
 NavigationRegion3D
 MeshInstance3D
 Button

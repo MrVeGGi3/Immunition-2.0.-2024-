@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0fr1s0clvt42"
 path.s3tc="res://.godot/imported/monster_bacteria.png-d6bb46a40e758aaa207167c9f003321e.s3tc.ctex"
+path.etc2="res://.godot/imported/monster_bacteria.png-d6bb46a40e758aaa207167c9f003321e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/Monster/monster_bacteria.png"
-dest_files=["res://.godot/imported/monster_bacteria.png-d6bb46a40e758aaa207167c9f003321e.s3tc.ctex"]
+dest_files=["res://.godot/imported/monster_bacteria.png-d6bb46a40e758aaa207167c9f003321e.s3tc.ctex", "res://.godot/imported/monster_bacteria.png-d6bb46a40e758aaa207167c9f003321e.etc2.ctex"]
 
 [params]
 

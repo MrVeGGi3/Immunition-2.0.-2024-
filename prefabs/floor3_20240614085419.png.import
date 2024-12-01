@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://0h81ae3vy3hb"
 path.s3tc="res://.godot/imported/floor3_20240614085419.png-d4071c7c52fcff82c451a2bd05aa5357.s3tc.ctex"
+path.etc2="res://.godot/imported/floor3_20240614085419.png-d4071c7c52fcff82c451a2bd05aa5357.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://prefabs/floor3_20240614085419.png"
-dest_files=["res://.godot/imported/floor3_20240614085419.png-d4071c7c52fcff82c451a2bd05aa5357.s3tc.ctex"]
+dest_files=["res://.godot/imported/floor3_20240614085419.png-d4071c7c52fcff82c451a2bd05aa5357.s3tc.ctex", "res://.godot/imported/floor3_20240614085419.png-d4071c7c52fcff82c451a2bd05aa5357.etc2.ctex"]
 
 [params]
 

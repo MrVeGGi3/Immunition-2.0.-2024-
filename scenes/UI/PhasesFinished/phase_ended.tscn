@@ -338,6 +338,7 @@ layout_mode = 2
 theme = ExtResource("6_5kdyu")
 
 [node name="GoToNextPhase" type="Button" parent="."]
+layout_mode = 0
 offset_left = 676.0
 offset_top = 492.0
 offset_right = 792.0

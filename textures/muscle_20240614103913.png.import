@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0iu4tjj73cto"
 path.s3tc="res://.godot/imported/muscle_20240614103913.png-3473f8244af0d4a2e6277b4905ea8b98.s3tc.ctex"
+path.etc2="res://.godot/imported/muscle_20240614103913.png-3473f8244af0d4a2e6277b4905ea8b98.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/muscle_20240614103913.png"
-dest_files=["res://.godot/imported/muscle_20240614103913.png-3473f8244af0d4a2e6277b4905ea8b98.s3tc.ctex"]
+dest_files=["res://.godot/imported/muscle_20240614103913.png-3473f8244af0d4a2e6277b4905ea8b98.s3tc.ctex", "res://.godot/imported/muscle_20240614103913.png-3473f8244af0d4a2e6277b4905ea8b98.etc2.ctex"]
 
 [params]
 

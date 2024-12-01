@@ -867,6 +867,7 @@ offset_left = -119.0
 offset_top = -75.0
 offset_right = 81.0
 offset_bottom = -35.0
+theme_override_colors/font_color = Color(0.615686, 0, 0, 1)
 theme_override_fonts/font = ExtResource("20_tptig")
 theme_override_font_sizes/font_size = 30
 text = "Precisa-se de "
@@ -974,6 +975,7 @@ offset_left = -119.0
 offset_top = -75.0
 offset_right = 81.0
 offset_bottom = -35.0
+theme_override_colors/font_color = Color(0.615686, 0, 0, 1)
 theme_override_fonts/font = ExtResource("20_tptig")
 theme_override_font_sizes/font_size = 30
 text = "Precisa-se de "
@@ -1189,6 +1191,7 @@ offset_left = -119.0
 offset_top = -75.0
 offset_right = 81.0
 offset_bottom = -35.0
+theme_override_colors/font_color = Color(0.615686, 0, 0, 1)
 theme_override_fonts/font = ExtResource("20_tptig")
 theme_override_font_sizes/font_size = 30
 text = "Precisa-se de "
@@ -1245,147 +1248,147 @@ skeleton = NodePath("../..")
 
 [node name="PhaseEnded" parent="." instance=ExtResource("21_q720d")]
 
-[node name="Pathogens" type="Node" parent="."]
+[node name="Pathogens" type="Node3D" parent="."]
 
-[node name="Group1" type="Node3D" parent="Pathogens"]
+[node name="PathGroup1" type="Node3D" parent="Pathogens"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23181, 16.5846, -104.622)
 
-[node name="Enemy" parent="Pathogens/Group1" instance=ExtResource("22_p26x0")]
+[node name="Enemy" parent="Pathogens/PathGroup1" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9349, 1.80426, 0.31691)
 
-[node name="Enemy2" parent="Pathogens/Group1" instance=ExtResource("23_jrgvm")]
+[node name="Enemy2" parent="Pathogens/PathGroup1" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6242, 0, 0)
 
-[node name="Enemy3" parent="Pathogens/Group1" instance=ExtResource("24_013hg")]
+[node name="Enemy3" parent="Pathogens/PathGroup1" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0868, 1.2844, 16.4976)
 
-[node name="Group2" type="Node3D" parent="Pathogens"]
+[node name="PathGroup2" type="Node3D" parent="Pathogens"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03514, 15.5247, -70.9249)
 
-[node name="Enemy" parent="Pathogens/Group2" instance=ExtResource("22_p26x0")]
+[node name="Enemy" parent="Pathogens/PathGroup2" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3728, 2.66607, 0)
 
-[node name="Enemy2" parent="Pathogens/Group2" instance=ExtResource("23_jrgvm")]
+[node name="Enemy2" parent="Pathogens/PathGroup2" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4572, 2.10212, 0)
 
-[node name="Group3" type="Node3D" parent="Pathogens"]
+[node name="PathGroup3" type="Node3D" parent="Pathogens"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.3866, 18.9261, -92.6028)
 
-[node name="Enemy" parent="Pathogens/Group3" instance=ExtResource("22_p26x0")]
+[node name="Enemy" parent="Pathogens/PathGroup3" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.65044, 1, 0)
 
-[node name="Enemy2" parent="Pathogens/Group3" instance=ExtResource("23_jrgvm")]
+[node name="Enemy2" parent="Pathogens/PathGroup3" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.74082, 9.67837)
 
-[node name="Enemy3" parent="Pathogens/Group3" instance=ExtResource("24_013hg")]
+[node name="Enemy3" parent="Pathogens/PathGroup3" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.6091, 0)
 
-[node name="Group4" type="Node3D" parent="Pathogens"]
+[node name="PathGroup4" type="Node3D" parent="Pathogens"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.718225, 10.8329, -75.8372)
 
-[node name="Enemy" parent="Pathogens/Group4" instance=ExtResource("24_013hg")]
+[node name="Enemy" parent="Pathogens/PathGroup4" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.59007, 1.54519)
 
-[node name="Enemy2" parent="Pathogens/Group4" instance=ExtResource("23_jrgvm")]
+[node name="Enemy2" parent="Pathogens/PathGroup4" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.82365, -26.3542)
 
-[node name="Enemy3" parent="Pathogens/Group4" instance=ExtResource("22_p26x0")]
+[node name="Enemy3" parent="Pathogens/PathGroup4" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5163, -1.56045, -12.3874)
 
-[node name="Enemy4" parent="Pathogens/Group4" instance=ExtResource("24_013hg")]
+[node name="Enemy4" parent="Pathogens/PathGroup4" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8175, -2.73903, -9.30945)
 
-[node name="Group5" type="Node3D" parent="Pathogens"]
+[node name="PathGroup5" type="Node3D" parent="Pathogens"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127708, -0.228735, -87.2449)
 
-[node name="Enemy" parent="Pathogens/Group5" instance=ExtResource("22_p26x0")]
+[node name="Enemy" parent="Pathogens/PathGroup5" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.79513, -13.7719)
 
-[node name="Enemy2" parent="Pathogens/Group5" instance=ExtResource("22_p26x0")]
+[node name="Enemy2" parent="Pathogens/PathGroup5" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.07166, 2.27996, 0)
 
-[node name="Enemy3" parent="Pathogens/Group5" instance=ExtResource("22_p26x0")]
+[node name="Enemy3" parent="Pathogens/PathGroup5" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9659, 2.50763, 8.19648)
 
-[node name="Enemy4" parent="Pathogens/Group5" instance=ExtResource("23_jrgvm")]
+[node name="Enemy4" parent="Pathogens/PathGroup5" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8232, 1.00139, -14.6887)
 
-[node name="Enemy5" parent="Pathogens/Group5" instance=ExtResource("23_jrgvm")]
+[node name="Enemy5" parent="Pathogens/PathGroup5" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4319, 1.39114, 10.3344)
 
-[node name="Enemy6" parent="Pathogens/Group5" instance=ExtResource("24_013hg")]
+[node name="Enemy6" parent="Pathogens/PathGroup5" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22784, -8.1214)
 
-[node name="Enemy7" parent="Pathogens/Group5" instance=ExtResource("24_013hg")]
+[node name="Enemy7" parent="Pathogens/PathGroup5" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22784, 8.63844)
 
-[node name="Group6" type="Node3D" parent="Pathogens"]
+[node name="PathGroup6" type="Node3D" parent="Pathogens"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.6749, -213.086)
 
-[node name="Enemy" parent="Pathogens/Group6" instance=ExtResource("22_p26x0")]
+[node name="Enemy" parent="Pathogens/PathGroup6" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11576, 1.35247, 0)
 
-[node name="Enemy" parent="Pathogens/Group6/Enemy" instance=ExtResource("24_013hg")]
+[node name="Enemy" parent="Pathogens/PathGroup6/Enemy" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8745, -1.35948, -19.7707)
 
-[node name="Enemy2" parent="Pathogens/Group6" instance=ExtResource("23_jrgvm")]
+[node name="Enemy2" parent="Pathogens/PathGroup6" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.32085, 0.991913, 0)
 
-[node name="Enemy3" parent="Pathogens/Group6" instance=ExtResource("24_013hg")]
+[node name="Enemy3" parent="Pathogens/PathGroup6" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.948061, 5.20024)
 
-[node name="Group7" type="Node3D" parent="Pathogens"]
+[node name="PathGroup7" type="Node3D" parent="Pathogens"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.66748, -213.086)
 
-[node name="Enemy" parent="Pathogens/Group7" instance=ExtResource("22_p26x0")]
+[node name="Enemy" parent="Pathogens/PathGroup7" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11576, 1.35247, 0)
 
-[node name="Enemy2" parent="Pathogens/Group7" instance=ExtResource("23_jrgvm")]
+[node name="Enemy2" parent="Pathogens/PathGroup7" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.32085, 0.991913, 0)
 
-[node name="Enemy3" parent="Pathogens/Group7" instance=ExtResource("24_013hg")]
+[node name="Enemy3" parent="Pathogens/PathGroup7" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.948061, 5.20024)
 
-[node name="Group8" type="Node3D" parent="Pathogens"]
+[node name="PathGroup8" type="Node3D" parent="Pathogens"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.66748, -228.608)
 
-[node name="Enemy" parent="Pathogens/Group8" instance=ExtResource("22_p26x0")]
+[node name="Enemy" parent="Pathogens/PathGroup8" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11576, 1.35247, 0)
 
-[node name="Enemy2" parent="Pathogens/Group8" instance=ExtResource("23_jrgvm")]
+[node name="Enemy2" parent="Pathogens/PathGroup8" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.32085, 0.991913, 0)
 
-[node name="Enemy3" parent="Pathogens/Group8" instance=ExtResource("24_013hg")]
+[node name="Enemy3" parent="Pathogens/PathGroup8" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.948061, 5.20024)
 
-[node name="Group9" type="Node3D" parent="Pathogens"]
+[node name="PathGroup9" type="Node3D" parent="Pathogens"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506236, -228.608)
 
-[node name="Enemy" parent="Pathogens/Group9" instance=ExtResource("22_p26x0")]
+[node name="Enemy" parent="Pathogens/PathGroup9" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11576, 1.35247, 10.5662)
 
-[node name="Enemy2" parent="Pathogens/Group9" instance=ExtResource("23_jrgvm")]
+[node name="Enemy2" parent="Pathogens/PathGroup9" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8566, 0.991913, -1.42891)
 
-[node name="Enemy3" parent="Pathogens/Group9" instance=ExtResource("24_013hg")]
+[node name="Enemy3" parent="Pathogens/PathGroup9" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2896, 0.58974, 18.9165)
 
-[node name="Enemy4" parent="Pathogens/Group9" instance=ExtResource("22_p26x0")]
+[node name="Enemy4" parent="Pathogens/PathGroup9" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52869, 1.35247, -0.000823975)
 
-[node name="Group10" type="Node3D" parent="Pathogens"]
+[node name="PathGroup10" type="Node3D" parent="Pathogens"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06884, 0.550021, -227.346)
 
-[node name="Enemy" parent="Pathogens/Group10" instance=ExtResource("22_p26x0")]
+[node name="Enemy" parent="Pathogens/PathGroup10" instance=ExtResource("22_p26x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1424, 1.76308, 10.1699)
 
-[node name="Enemy2" parent="Pathogens/Group10" instance=ExtResource("23_jrgvm")]
+[node name="Enemy2" parent="Pathogens/PathGroup10" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14516, 0.991913, 20.3173)
 
-[node name="Enemy3" parent="Pathogens/Group10" instance=ExtResource("24_013hg")]
+[node name="Enemy3" parent="Pathogens/PathGroup10" instance=ExtResource("24_013hg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5491, 0.948061, 11.5063)
 
-[node name="Enemy4" parent="Pathogens/Group10" instance=ExtResource("23_jrgvm")]
+[node name="Enemy4" parent="Pathogens/PathGroup10" instance=ExtResource("23_jrgvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1679, 0.350417, 10.2566)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]

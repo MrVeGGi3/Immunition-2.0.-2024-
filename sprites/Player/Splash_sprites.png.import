@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7bx6oyr5oajj"
 path.s3tc="res://.godot/imported/Splash_sprites.png-cceec5375912b8499c56d674ebf2f63d.s3tc.ctex"
+path.etc2="res://.godot/imported/Splash_sprites.png-cceec5375912b8499c56d674ebf2f63d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/Player/Splash_sprites.png"
-dest_files=["res://.godot/imported/Splash_sprites.png-cceec5375912b8499c56d674ebf2f63d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Splash_sprites.png-cceec5375912b8499c56d674ebf2f63d.s3tc.ctex", "res://.godot/imported/Splash_sprites.png-cceec5375912b8499c56d674ebf2f63d.etc2.ctex"]
 
 [params]
 

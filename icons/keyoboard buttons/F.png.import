@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://qrwngwlxceyy"
 path.s3tc="res://.godot/imported/F.png-78420ab782446ac5e05f2ff73969d0c2.s3tc.ctex"
+path.etc2="res://.godot/imported/F.png-78420ab782446ac5e05f2ff73969d0c2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://icons/keyoboard buttons/F.png"
-dest_files=["res://.godot/imported/F.png-78420ab782446ac5e05f2ff73969d0c2.s3tc.ctex"]
+dest_files=["res://.godot/imported/F.png-78420ab782446ac5e05f2ff73969d0c2.s3tc.ctex", "res://.godot/imported/F.png-78420ab782446ac5e05f2ff73969d0c2.etc2.ctex"]
 
 [params]
 

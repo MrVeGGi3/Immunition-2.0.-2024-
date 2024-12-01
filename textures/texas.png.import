@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://daa1un0fymlfh"
 path.s3tc="res://.godot/imported/texas.png-72b1310ee3d2c5347dec1cb979886a91.s3tc.ctex"
+path.etc2="res://.godot/imported/texas.png-72b1310ee3d2c5347dec1cb979886a91.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/texas.png"
-dest_files=["res://.godot/imported/texas.png-72b1310ee3d2c5347dec1cb979886a91.s3tc.ctex"]
+dest_files=["res://.godot/imported/texas.png-72b1310ee3d2c5347dec1cb979886a91.s3tc.ctex", "res://.godot/imported/texas.png-72b1310ee3d2c5347dec1cb979886a91.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cskn57alcan64"
 path.s3tc="res://.godot/imported/Célula.png-1fc91d85fa0a49c4b8d384624b632ad6.s3tc.ctex"
+path.etc2="res://.godot/imported/Célula.png-1fc91d85fa0a49c4b8d384624b632ad6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/cell/Célula.png"
-dest_files=["res://.godot/imported/Célula.png-1fc91d85fa0a49c4b8d384624b632ad6.s3tc.ctex"]
+dest_files=["res://.godot/imported/Célula.png-1fc91d85fa0a49c4b8d384624b632ad6.s3tc.ctex", "res://.godot/imported/Célula.png-1fc91d85fa0a49c4b8d384624b632ad6.etc2.ctex"]
 
 [params]
 

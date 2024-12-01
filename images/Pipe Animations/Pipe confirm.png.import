@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://vyjmwh1meuco"
 path.s3tc="res://.godot/imported/Pipe confirm.png-c3a44efba9a8dc098140eaf108cf5500.s3tc.ctex"
+path.etc2="res://.godot/imported/Pipe confirm.png-c3a44efba9a8dc098140eaf108cf5500.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/Pipe Animations/Pipe confirm.png"
-dest_files=["res://.godot/imported/Pipe confirm.png-c3a44efba9a8dc098140eaf108cf5500.s3tc.ctex"]
+dest_files=["res://.godot/imported/Pipe confirm.png-c3a44efba9a8dc098140eaf108cf5500.s3tc.ctex", "res://.godot/imported/Pipe confirm.png-c3a44efba9a8dc098140eaf108cf5500.etc2.ctex"]
 
 [params]
 

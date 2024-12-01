@@ -24,7 +24,6 @@ var escape_vector = Vector3(0,0,0)
 
 #Instância
 var infected_cell = preload("res://scenes/Characters/Infected_cells.tscn")
-@onready var mesh_instance_cell = $MeshInstance3D
 @onready var walk_marker = $WalkMarker
 
 # Called when the node enters the scene tree for the first time.
