@@ -10,7 +10,7 @@ func _ready():
 	append_next_line()
 	append_desc_line("Lucas Camilo dos Reis")
 	append_empty_space()
-	append_title_line("Programação, Sonografia")
+	append_title_line("Programação, Sonoplastia")
 	append_next_line()
 	append_desc_line("Matheus Veras Soares")
 	append_empty_space()
@@ -24,6 +24,9 @@ func _ready():
 	append_next_line()
 	append_copyright_item("San Junipero", "Infraction")
 	append_empty_space()
+	append_copyright_item("Apolunewave", "Neon Fire")
+	append_empty_space()
+	append_copyright_item("Aries Beats", "Nightwave")
 	append_title_line("Agradecimentos Especiais")
 	
 	

@@ -18,6 +18,12 @@ var menu = "res://scenes/HUD/menu.tscn"
 @onready var score_ii = $"VBoxContainer2/Score II"
 @onready var score_iii = $"VBoxContainer2/Score III"
 @onready var animation_tree: AnimationPlayer = $AnimationTree
+@onready var NextPhaseButton: Button = $GoToNextPhase
+
+var level_2 = preload("res://scenes/Levels/level_2.tscn")
+var level_3 = preload("res://scenes/Levels/level_3.tscn")
+var scenes = [level_2, level_3]
+
 
 var pont_1
 var pont_2
@@ -25,7 +31,7 @@ var pont_3
 var actual_score_i = 0
 var actual_score_ii = 0
 var actual_score_iii = 0
-
+var scenes_index
 
 
 
@@ -91,8 +97,17 @@ func _process(_delta):
 	score_i.text = str(actual_score_i)
 	score_ii.text = str(actual_score_ii)
 	score_iii.text = str(actual_score_iii)
+	scenes_index = Global.score_index
 	
+	if scenes_index == 1:
+		NextPhaseButton.visible = false
 	
 
-	
-	
+func _on_go_to_next_phase_pressed() -> void:
+	if scenes_index == 1:
+		return
+	get_tree().change_scene_to_packed(scenes[scenes_index])
+	Global.score_index += 1
+
+func _hide_button():
+	NextPhaseButton.visible = false

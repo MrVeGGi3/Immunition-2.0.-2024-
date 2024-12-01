@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dblogam5obn7d"]
+[gd_scene load_steps=8 format=3 uid="uid://dblogam5obn7d"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/Prototype/Level3/Pipe.gd" id="1_ffcu3"]
+[ext_resource type="Texture2D" uid="uid://cjak342rjvtf7" path="res://images/Pipe Animations/Pipe attacked.png" id="2_cck1m"]
 [ext_resource type="Texture2D" uid="uid://dpesj8kseqkm0" path="res://images/Pipe Animations/Pipe.png" id="2_wcpmx"]
+[ext_resource type="Texture2D" uid="uid://dqbd6pwyc0jon" path="res://images/Pipe Animations/Pipe broken.png" id="3_cb6nv"]
+[ext_resource type="Texture2D" uid="uid://vyjmwh1meuco" path="res://images/Pipe Animations/Pipe confirm.png" id="4_7yn47"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bvxlm"]
 height = 1.18618
@@ -9,6 +12,30 @@ radius = 2.58137
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65qan"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cck1m")
+}],
+"loop": true,
+"name": &"attacked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cb6nv")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7yn47")
+}],
+"loop": true,
+"name": &"confirm",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_wcpmx")
@@ -27,7 +54,7 @@ collision_layer = 2048
 collision_mask = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 5, 0, 0, 0, 1, 0.10489, 1.59638, -0.0634849)
+transform = Transform3D(0.918767, 0, 0, 0, 7.65738, 0, 0, 0, 0.774563, 0.10489, 1.59638, -0.0634849)
 shape = SubResource("CylinderShape3D_bvxlm")
 
 [node name="CollisionTime" type="Timer" parent="."]

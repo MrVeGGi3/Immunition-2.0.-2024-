@@ -25,4 +25,9 @@ func _on_timer_timeout():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	create_enemy_b_timer.wait_time = time_to_spawn
+
+func start_timer():
 	create_enemy_b_timer.start()
+	
+func stop_spawn():
+	create_enemy_b_timer.stop()

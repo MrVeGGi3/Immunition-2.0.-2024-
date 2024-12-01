@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0p5cdpyguqvt"
+path="res://.godot/imported/Apolunewave – Neon Fire [Synthwave] 🎵 from Royalty Free Planet™.wav-b2d95c18ea46d3afab343689da805530.sample"
+
+[deps]
+
+source_file="res://sounds/BGM/Apolunewave – Neon Fire [Synthwave] 🎵 from Royalty Free Planet™.wav"
+dest_files=["res://.godot/imported/Apolunewave – Neon Fire [Synthwave] 🎵 from Royalty Free Planet™.wav-b2d95c18ea46d3afab343689da805530.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

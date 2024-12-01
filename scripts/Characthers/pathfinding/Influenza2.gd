@@ -24,7 +24,7 @@ var projectile = preload("res://scenes/effect/influenza_projectile.tscn")
 @onready var nav = $NavigationAgent3D
 #Soms
 @onready var influenza_projectile_sound = $InfluenzaProjectileSound
-@onready var influenza_death = $InfluenzaDeath
+@onready var influenza_death = get_tree().get_first_node_in_group("i_sound")
 #Corpo
 @onready var influenza_animation = $InfluenzaAnimation
 @onready var player = get_tree().get_first_node_in_group("player")

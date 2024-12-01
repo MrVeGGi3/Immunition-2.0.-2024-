@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var area_3d: Area3D = $Area3D
-@onready var retro_coin: AudioStreamPlayer = $RetroCoin
+@onready var coin_sound = get_tree().get_first_node_in_group("c_sound")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 			destroy_and_add()
 			
 func destroy_and_add():
-	retro_coin.play()
+	coin_sound.play()
 	Global.wall_piece += 1
 	print("O número total de peças coletadas é:", Global.wall_piece)
 	queue_free()

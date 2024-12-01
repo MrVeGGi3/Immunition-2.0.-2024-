@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://eo83pnhguw3i"]
+
+[ext_resource type="AudioStream" uid="uid://cf1lb3gv0r0ff" path="res://sounds/BGM/NIGHT RIDE - 80s Synthwave 2018 ｜ Retro Electro Pop Music ｜ Dark Space Wave 80er Synthpop (FREE).wav" id="1_kpieq"]
+
+[node name="Level2BGM" type="AudioStreamPlayer"]
+stream = ExtResource("1_kpieq")

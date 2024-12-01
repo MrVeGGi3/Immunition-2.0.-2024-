@@ -208,3 +208,6 @@ func _backward_force():
 	var opposite_direction_z = -transform.basis.z.normalized()
 	velocity = Vector3(force_x, force_y, force_z) * opposite_direction_z
 	is_force_applied = true
+
+func _time_ended():
+	queue_free()

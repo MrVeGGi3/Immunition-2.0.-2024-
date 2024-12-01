@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmaecxa81b56j"]
+[gd_scene load_steps=8 format=3 uid="uid://bmaecxa81b56j"]
 
 [ext_resource type="Script" path="res://scripts/Characthers/pathfinding/Influenza2.gd" id="1_ivp2f"]
 [ext_resource type="AudioStream" uid="uid://bci23xhxmk4vc" path="res://sounds/SFX/Influenza/Projectile/influenza_projectile_sound.wav" id="2_qyl77"]
-[ext_resource type="AudioStream" uid="uid://dod0ghuv3nyeo" path="res://sounds/SFX/Influenza/InfluenzaDeathSound.wav" id="3_23wsa"]
 [ext_resource type="Texture2D" uid="uid://df0ywocvinitg" path="res://sprites/Monster/influenza/Influenza.png" id="4_cpnkm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kjfol"]
@@ -74,11 +73,6 @@ billboard = 1
 sprite_frames = SubResource("SpriteFrames_xvbic")
 autoplay = "default"
 frame_progress = 0.669839
-
-[node name="InfluenzaDeath" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_23wsa")
-volume_db = 10.0
-bus = &"SFX"
 
 [connection signal="timeout" from="GoToObject" to="." method="_on_go_to_object_timeout"]
 [connection signal="timeout" from="ShootTime" to="." method="_on_shoot_time_timeout"]

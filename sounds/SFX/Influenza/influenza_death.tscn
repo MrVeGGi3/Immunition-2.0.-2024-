@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhe08vhtji17p"]
+
+[ext_resource type="AudioStream" uid="uid://dod0ghuv3nyeo" path="res://sounds/SFX/Influenza/InfluenzaDeathSound.wav" id="1_s532f"]
+
+[node name="InfluenzaDeath" type="AudioStreamPlayer" groups=["i_sound"]]
+stream = ExtResource("1_s532f")
+volume_db = 10.0
+bus = &"SFX"

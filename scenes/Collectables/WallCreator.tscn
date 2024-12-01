@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://stfl4op38grh"]
 
 [ext_resource type="Script" path="res://scripts/Collectables/wall_creator.gd" id="1_3hwsh"]
-[ext_resource type="AudioStream" uid="uid://crfhigf3aro35" path="res://sounds/SFX/Collected/retro_coin.wav" id="2_36p5t"]
+[ext_resource type="PackedScene" uid="uid://du3djanlfvrw7" path="res://sounds/SFX/Collected/retro_coin.tscn" id="2_c23g8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2a7k"]
 albedo_color = Color(1, 0.0784314, 0, 1)
@@ -24,7 +24,4 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_hi1g1")
 
-[node name="RetroCoin" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_36p5t")
-volume_db = -3.643
-bus = &"SFX"
+[node name="RetroCoin" parent="." instance=ExtResource("2_c23g8")]

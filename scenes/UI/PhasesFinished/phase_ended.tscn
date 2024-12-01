@@ -337,4 +337,18 @@ theme = ExtResource("6_5kdyu")
 layout_mode = 2
 theme = ExtResource("6_5kdyu")
 
+[node name="GoToNextPhase" type="Button" parent="."]
+offset_left = 676.0
+offset_top = 492.0
+offset_right = 792.0
+offset_bottom = 523.0
+scale = Vector2(2.39583, 2.39583)
+theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0.270566, 0.602748, 0.308116, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0.145098, 0, 1)
+theme_override_fonts/font = ExtResource("3_naj03")
+text = "Próxima Fase"
+
 [connection signal="pressed" from="GoToMenu" to="." method="_on_go_to_menu_pressed"]
+[connection signal="pressed" from="GoToNextPhase" to="." method="_on_go_to_next_phase_pressed"]

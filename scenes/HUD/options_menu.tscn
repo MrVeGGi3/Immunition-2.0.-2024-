@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dsouffo4som3t"]
+[gd_scene load_steps=23 format=3 uid="uid://dsouffo4som3t"]
 
 [ext_resource type="Script" path="res://scripts/HUD/options_pre_game.gd" id="1_i72dq"]
 [ext_resource type="Theme" uid="uid://unuynfnhkuni" path="res://themes/label.tres" id="2_v1hyc"]
@@ -13,11 +13,28 @@
 [ext_resource type="Script" path="res://scripts/Sliders/mouse_sensibility.gd" id="9_b7v6d"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="10_o3py7"]
 [ext_resource type="AudioStream" uid="uid://bo033vak4kltn" path="res://sounds/SFX/Buttons/ButtonSelected.wav" id="11_xgfak"]
+[ext_resource type="Texture2D" uid="uid://dfl8lv7t0jfyf" path="res://images/UI/Backgrounds/Options/Polygon 1.png" id="14_7e8qa"]
+[ext_resource type="Texture2D" uid="uid://ropyigdpatuv" path="res://images/UI/Sliders/Ellipse 1.png" id="15_cx0pe"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eu5c7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nhucs"]
 font_size = 50
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ordvl"]
+viewport_path = NodePath("GrabberViewport/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_e44kv"]
+viewport_path = NodePath("GrabberViewport/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_48bbe"]
+viewport_path = NodePath("ArrowSliderViewport/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mcb47"]
+viewport_path = NodePath("ArrowSliderViewport/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x6ib6"]
+viewport_path = NodePath("GrabberViewport/SubViewport")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -126,6 +143,7 @@ offset_top = 154.0
 offset_right = 735.0
 offset_bottom = 204.0
 theme = ExtResource("4_4kh80")
+theme_override_icons/grabber = SubResource("ViewportTexture_ordvl")
 max_value = 1.0
 step = 0.001
 script = ExtResource("3_y1gkl")
@@ -148,6 +166,7 @@ offset_top = 209.0
 offset_right = 738.0
 offset_bottom = 259.0
 theme = ExtResource("4_4kh80")
+theme_override_icons/grabber = SubResource("ViewportTexture_e44kv")
 max_value = 1.0
 step = 0.001
 script = ExtResource("3_y1gkl")
@@ -180,6 +199,7 @@ layout_mode = 2
 [node name="OptionButton" type="OptionButton" parent="TypeScreenControl/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_icons/arrow = SubResource("ViewportTexture_48bbe")
 
 [node name="ResolutionControl" type="Control" parent="."]
 layout_mode = 3
@@ -208,6 +228,7 @@ layout_mode = 2
 [node name="ResolutionButton" type="OptionButton" parent="ResolutionControl/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_icons/arrow = SubResource("ViewportTexture_mcb47")
 
 [node name="MouseSensibilityControl" type="Control" parent="."]
 anchors_preset = 0
@@ -222,6 +243,7 @@ offset_top = 301.0
 offset_right = 735.0
 offset_bottom = 351.0
 theme = ExtResource("4_4kh80")
+theme_override_icons/grabber = SubResource("ViewportTexture_x6ib6")
 max_value = 4.0
 step = 0.1
 value = 1.0
@@ -236,6 +258,48 @@ offset_bottom = 300.0
 theme_override_fonts/font = ExtResource("10_o3py7")
 theme_override_font_sizes/font_size = 25
 text = "Sensibilidade do Mouse"
+
+[node name="ArrowSliderViewport" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = -62.0
+offset_top = 10.0
+offset_right = -52.0
+offset_bottom = 20.0
+
+[node name="SubViewport" type="SubViewport" parent="ArrowSliderViewport"]
+process_mode = 3
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_repeat = 1
+size = Vector2i(10, 10)
+render_target_clear_mode = 1
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="ArrowSliderViewport/SubViewport"]
+position = Vector2(5, 5)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_7e8qa")
+
+[node name="GrabberViewport" type="SubViewportContainer" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = -122.0
+offset_top = 24.0
+offset_right = -22.0
+offset_bottom = 74.0
+
+[node name="SubViewport" type="SubViewport" parent="GrabberViewport"]
+process_mode = 3
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(100, 50)
+render_target_clear_mode = 1
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="GrabberViewport/SubViewport"]
+position = Vector2(50, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_cx0pe")
 
 [connection signal="pressed" from="Opções/Panel/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="Opções/Panel/Jogar" to="." method="_on_play_pressed"]

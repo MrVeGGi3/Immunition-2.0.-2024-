@@ -1,6 +1,10 @@
-res://tbmapfiles
-res://scripts/Levels
+res://sounds/BGM
+res://sounds/SFX/Pipe
+res://sounds/SFX/Influenza
+res://sounds/SFX/Collected
 res://images/Pipe Animations
+res://scripts/Levels
+res://tbmapfiles
 res://scenes/UI/Pipe
 res://themes
 res://
@@ -16,9 +20,5 @@ res://scenes/UI/Player
 res://scripts/Characthers
 res://images/UI/Backgrounds/Ammo
 res://scenes/HUD
-res://scripts/Characthers/Prototype/Level3
-res://scripts/Count
-res://scripts/Elevators
-res://scripts/Collectables
 E:/Downloads/ImmutionHTML
 E:/Godot

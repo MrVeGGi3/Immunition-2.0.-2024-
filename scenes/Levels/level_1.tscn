@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=3 uid="uid://cj7emqhky70af"]
+[gd_scene load_steps=177 format=3 uid="uid://cj7emqhky70af"]
 
 [ext_resource type="Script" path="res://scripts/Levels/level_1.gd" id="1_bgiqj"]
 [ext_resource type="Texture2D" uid="uid://bhlaan6ukbhkc" path="res://prefabs/floor1_20240614085358.png" id="2_fikwp"]
@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://cc6g7d2jxbm48" path="res://scenes/spawner/MainSpawner/CellSpawner3D.tscn" id="47_5u452"]
 [ext_resource type="PackedScene" uid="uid://by5w8r5ir8bac" path="res://scenes/AudioSource/door_opening.tscn" id="47_i1yyk"]
 [ext_resource type="PackedScene" uid="uid://doww2heou7dsn" path="res://scenes/spawner/MainSpawner/InfluenzaSpawner3D.tscn" id="48_d5mun"]
+[ext_resource type="PackedScene" uid="uid://dhe08vhtji17p" path="res://sounds/SFX/Influenza/influenza_death.tscn" id="49_bnvrp"]
 [ext_resource type="AudioStream" uid="uid://b0f6ntlqc0lg5" path="res://sounds/BGM/Level_1.wav" id="49_wylse"]
 [ext_resource type="Script" path="res://scripts/Count/influenza_count.gd" id="52_ket2y"]
 [ext_resource type="Texture2D" uid="uid://bvjoyraetdpi6" path="res://images/CountBackground/Contador_base.png" id="53_p5uxp"]
@@ -2239,6 +2240,7 @@ offset_bottom = -2.0
 target = NodePath("../Player")
 
 [node name="PhaseEnded" parent="." instance=ExtResource("16_ee351")]
+visible = false
 
 [node name="Enemy" parent="." instance=ExtResource("57_uqt37")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2124, 2.94173, -39.7701)
@@ -2457,6 +2459,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21481, 1.27402, 0.017539)
 [node name="DoorOpening" parent="." instance=ExtResource("47_i1yyk")]
 stream = null
 volume_db = -5.0
+
+[node name="InfluenzaDeath" parent="." instance=ExtResource("49_bnvrp")]
 
 [connection signal="body_entered" from="ExtractorPlatform/AreaPlatform" to="." method="_on_area_platform_body_entered"]
 [connection signal="timeout" from="TimerCounter/Control2/Count" to="." method="_on_count_timeout"]

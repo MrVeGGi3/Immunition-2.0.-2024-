@@ -14,6 +14,7 @@ var percentage
 @export var anim_3_done : bool = false
 @export var anim_4_done : bool = false
 @export var anim_5_done : bool = false
+@export var wall_complete : bool = false
 #Sons
 @onready var error_audio: AudioStreamPlayer = $ErrorAudio
 #HUD
@@ -64,6 +65,7 @@ func _process(_delta: float) -> void:
 				subtraction_pieces(Global.wall_piece, pieces_to_open)
 				wall_animation.play("100%")
 				area_3d.monitoring = false
+				wall_complete = true
 		else:
 			pieces_wall_hud.visible = true
 			pieces_hud_animation.play("cant_construct")
@@ -101,4 +103,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	can_change = false
 	player.cant_interact()
 	need_pieces_hud.visible = false
+
+func get_wall_complete_status():
+	return wall_complete
 	

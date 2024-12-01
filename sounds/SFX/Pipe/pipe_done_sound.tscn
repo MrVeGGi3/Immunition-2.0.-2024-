@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dffe1f8d2fjug"]
+
+[ext_resource type="AudioStream" uid="uid://c1uwbkl576pfn" path="res://sounds/SFX/Pipe/pipe_done_sound.wav" id="1_5tri6"]
+
+[node name="PipeDoneSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_5tri6")
+bus = &"SFX"

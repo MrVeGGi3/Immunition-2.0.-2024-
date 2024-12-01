@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://hgyg8lrf5ill"]
+
+[ext_resource type="AudioStream" uid="uid://c0p5cdpyguqvt" path="res://sounds/BGM/Apolunewave – Neon Fire [Synthwave] 🎵 from Royalty Free Planet™.wav" id="1_6hx45"]
+
+[node name="Level3BGM" type="AudioStreamPlayer"]
+stream = ExtResource("1_6hx45")
+bus = &"BGM"

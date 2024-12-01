@@ -1,11 +1,11 @@
-[gd_scene load_steps=30 format=4 uid="uid://brnm137iii2wi"]
+[gd_scene load_steps=74 format=4 uid="uid://brnm137iii2wi"]
 
+[ext_resource type="Script" path="res://scripts/Levels/level_2.gd" id="1_1qj7d"]
 [ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="1_vskrl"]
 [ext_resource type="Texture2D" uid="uid://bl3g6pm7e6hov" path="res://prefabs/dev_grey.png" id="2_nwxma"]
 [ext_resource type="ArrayMesh" uid="uid://eikqtfkce6jq" path="res://prefabs/dev_grey.obj" id="3_4ca8m"]
 [ext_resource type="Texture2D" uid="uid://cghbpdvq15frc" path="res://prefabs/dev_orange.png" id="4_q6oav"]
 [ext_resource type="ArrayMesh" uid="uid://bd1p4vxwpo0fn" path="res://prefabs/dev_pillar.obj" id="5_ocly3"]
-[ext_resource type="PackedScene" uid="uid://iw3umuo4ymew" path="res://scenes/scenary/MovingWalls.tscn" id="6_kxe5x"]
 [ext_resource type="PackedScene" uid="uid://stfl4op38grh" path="res://scenes/Collectables/WallCreator.tscn" id="7_xyd21"]
 [ext_resource type="Texture2D" uid="uid://cny22eous5cr1" path="res://textures/floor2_20240614085410.png" id="8_m3ofe"]
 [ext_resource type="Texture2D" uid="uid://c8j4suhbocmyr" path="res://textures/asset1_20240614085733.png" id="9_64tgq"]
@@ -15,6 +15,18 @@
 [ext_resource type="Texture2D" uid="uid://bp31ju02np0em" path="res://textures/wall1_20240614085020.png" id="13_152co"]
 [ext_resource type="Texture2D" uid="uid://hyje7o8yaxpu" path="res://textures/wall3_20240614085034.png" id="14_r30sh"]
 [ext_resource type="Texture2D" uid="uid://d0iu4tjj73cto" path="res://textures/muscle_20240614103913.png" id="15_2kq1f"]
+[ext_resource type="Script" path="res://scripts/Elevators/moving_walls.gd" id="16_ijc76"]
+[ext_resource type="AudioStream" uid="uid://bqhnvkpnvrvf1" path="res://sounds/SFX/Door/WallMovement.wav" id="17_mq5qr"]
+[ext_resource type="PackedScene" uid="uid://by5w8r5ir8bac" path="res://scenes/AudioSource/door_opening.tscn" id="18_rc2xp"]
+[ext_resource type="PackedScene" uid="uid://bavcym5qvj7ka" path="res://scenes/AudioSource/error_audio.tscn" id="19_xdh8n"]
+[ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="20_tptig"]
+[ext_resource type="PackedScene" uid="uid://cisbfousat14j" path="res://scenes/UI/PhasesFinished/phase_ended.tscn" id="21_q720d"]
+[ext_resource type="PackedScene" uid="uid://c8bydekkhr5m4" path="res://scenes/Characters/enemy_b.tscn" id="22_p26x0"]
+[ext_resource type="PackedScene" uid="uid://8onv0icy5g7h" path="res://scenes/Characters/enemy_g.tscn" id="23_jrgvm"]
+[ext_resource type="PackedScene" uid="uid://tatlbq78gkdr" path="res://scenes/Characters/enemy_r.tscn" id="24_013hg"]
+[ext_resource type="PackedScene" uid="uid://btp6gers53b0l" path="res://scenes/AudioSource/victory_song.tscn" id="25_jqqau"]
+[ext_resource type="PackedScene" uid="uid://du3djanlfvrw7" path="res://sounds/SFX/Collected/retro_coin.tscn" id="26_7yv3a"]
+[ext_resource type="PackedScene" uid="uid://eo83pnhguw3i" path="res://sounds/BGM/level_2bgm.tscn" id="27_83txj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rncjf"]
 albedo_texture = ExtResource("2_nwxma")
@@ -27,6 +39,418 @@ albedo_texture = ExtResource("4_q6oav")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qjxye"]
 points = PackedVector3Array(-2, 0, -2, 2, 0, -2, -2, 0, 2, -2, 12.5806, -2, 2, 0, 2, 2, 12.5806, -2, -2, 12.5806, 2, 2, 12.5806, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1puu1"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lkpj8"]
+size = Vector3(1, 6, 14)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uw2p8"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cu2fy"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u7ux0"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wx3qn"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wmg66"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tfv5a"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_q2mc5"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_45tt3"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6yr33"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1hlgt"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jb83r"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_moc5y"]
+data = PackedVector3Array(-0.5, 3, 7, 0.5, 3, 7, -0.5, -3, 7, 0.5, 3, 7, 0.5, -3, 7, -0.5, -3, 7, 0.5, 3, -7, -0.5, 3, -7, 0.5, -3, -7, -0.5, 3, -7, -0.5, -3, -7, 0.5, -3, -7, 0.5, 3, 7, 0.5, 3, -7, 0.5, -3, 7, 0.5, 3, -7, 0.5, -3, -7, 0.5, -3, 7, -0.5, 3, -7, -0.5, 3, 7, -0.5, -3, -7, -0.5, 3, 7, -0.5, -3, 7, -0.5, -3, -7, 0.5, 3, 7, -0.5, 3, 7, 0.5, 3, -7, -0.5, 3, 7, -0.5, 3, -7, 0.5, 3, -7, -0.5, -3, 7, 0.5, -3, 7, -0.5, -3, -7, 0.5, -3, 7, 0.5, -3, -7, -0.5, -3, -7)
+
+[sub_resource type="Animation" id="Animation_5a3sb"]
+resource_name = "100%"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wall&Ground/Wall:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anim_5_done")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorOpening")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_mq5qr")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_h1ios"]
+resource_name = "20%"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wall&Ground/Wall:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -5, 0), Vector3(0, -4, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anim_1_done")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorOpening")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_mq5qr")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_7axw1"]
+resource_name = "40%"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wall&Ground/Wall:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -4, 0), Vector3(0, -3, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anim_2_done")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorOpening")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_mq5qr")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_5gn2g"]
+resource_name = "60%"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wall&Ground/Wall:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -3, 0), Vector3(0, -2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anim_3_done")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorOpening")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_mq5qr")
+}],
+"times": PackedFloat32Array(0.333333)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_g2yty"]
+resource_name = "80%"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wall&Ground/Wall:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -2, 0), Vector3(0, -1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anim_4_done")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorOpening")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_mq5qr")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_hirid"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wall&Ground/Wall:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anim_1_done")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anim_2_done")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:anim_3_done")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:anim_4_done")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:anim_5_done")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mpdel"]
+_data = {
+"100%": SubResource("Animation_5a3sb"),
+"20%": SubResource("Animation_h1ios"),
+"40%": SubResource("Animation_7axw1"),
+"60%": SubResource("Animation_5gn2g"),
+"80%": SubResource("Animation_g2yty"),
+"RESET": SubResource("Animation_hirid")
+}
+
+[sub_resource type="Animation" id="Animation_tycyg"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_8u5kd"]
+resource_name = "cant_construct"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Peças Insuficientes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.566667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(402, 296), Vector2(414, 545)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Peças Insuficientes:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.533333),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [200, 10]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Peças Insuficientes:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_io4fq"]
+_data = {
+"RESET": SubResource("Animation_tycyg"),
+"cant_construct": SubResource("Animation_8u5kd")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iauoq"]
+albedo_color = Color(1, 0.517647, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wmedy"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nkr7b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ihm0x"]
+size = Vector3(1.8694, 0.582886, 2.00903)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yp5qx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_df3du"]
+albedo_color = Color(0.0187488, 5.77569e-07, 0.182389, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tabqn"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_j2i72"]
+vertices = PackedVector3Array(-18.25, 25.7997, -203.135, -4.25, 25.7997, -203.135, -4, 25.7997, -204.385, -18.25, 25.7997, -244.635, 8.25, 25.7997, -204.385, 8.5, 25.7997, -203.135, 23.5, 25.7997, -203.135, 23.25, 25.7997, -244.635, -16.75, 0.549697, -235.885, -10.5, 0.799697, -235.885, -10, 1.0497, -236.635, -10, 1.0497, -243.135, -16.75, 0.549697, -243.135, -11.35, 0.549697, -243.135, -11.7399, 0.549697, -237.639, -2.25, 7.7997, -236.635, -2.25, 7.7997, -236.135, -2, 8.0497, -236.135, -1.75, 8.0497, -236.635, 8, 16.5497, -236.635, 8, 16.5497, -243.135, 5.23077, 13.7997, -243.135, 4.7551, 13.7997, -242.122, -7.75, 0.549697, -243.135, -7.75, 0.549697, -236.635, -5.25, 0.549697, -236.635, -5.25, 0.549697, -243.135, -10.25, 0.549697, -235.385, -16.75, 0.549697, -204.385, 22, 0.549697, -243.135, -2.5, 0.549697, -243.135, -2.75, 0.549697, -235.385, 22, 0.549697, -204.385, -1.5, 16.7997, -204.385, -1.25, 16.7997, -202.385, 5.5, 16.7997, -202.385, 5.75, 16.7997, -204.385, 8.25, 16.7997, -235.635, -16.75, 16.7997, -235.635, -16.75, 16.7997, -204.385, 22, 16.7997, -243.135, 22, 16.7997, -204.385, -2.25, 7.7997, -235.635, -1.75, 7.7997, -235.385, 22, 7.7997, -204.385, 22, 7.7997, -235.635, -16.75, 7.7997, -204.385, -16.75, 7.7997, -235.635, 136.75, 0.0496969, -202.885, 137, 0.0496969, -202.135, 141.5, -0.450303, -202.135, 141.5, -0.450303, -209.885, 24.5, 15.2997, -209.885, 24.5, 15.2997, -202.885, -2.25, 20.2997, -203.385, -3.25, 20.2997, -203.385, -3.5, 20.2997, -202.385, -3.5, 20.2997, -192.135, -2.25, 20.2997, -192.135, 6.5, 20.2997, -203.385, 6.5, 20.2997, -192.135, 7.5, 20.2997, -192.135, 7.5, 20.2997, -203.385, -3.25, 16.7997, -203.135, -3.25, 16.7997, -192.135, -2.5, 16.7997, -192.135, -2.5, 16.7997, -203.135, 6.75, 16.7997, -203.135, 6.75, 16.7997, -192.135, 7.5, 16.7997, -192.135, 7.5, 16.7997, -203.135, -1.25, 16.7997, -108.885, 5.5, 16.7997, -108.635, 136.75, -0.200303, -201.635, 141.5, -0.450303, -190.635, 129.25, 0.299697, -201.635, 129.25, 0.299697, -192.135, 129.75, 0.299697, -191.885, 129.75, 0.299697, -190.385, -162.75, 0.549697, -201.885, -162.75, 0.549697, -192.135, -162.75, 7.5497, -191.135, -162.75, 7.5497, -184.135, 128.5, 7.5497, -184.135, 128.5, 7.5497, -191.135, -3.5, 25.7997, -191.135, -3.5, 25.7997, -120.135, 7.5, 25.7997, -120.135, 7.5, 25.7997, -191.135, -162.5, 0.549697, -190.885, -162.5, 0.549697, -184.135, 128.5, 0.549697, -184.135, 128.5, 0.549697, -190.885, -3.25, 17.7997, -190.885, -3.25, 17.7997, -184.135, -2.5, 17.7997, -184.135, -2.5, 17.7997, -190.885, 6.75, 17.5497, -190.885, 6.75, 17.5497, -184.135, 7.5, 17.5497, -184.135, 7.5, 17.5497, -190.885, 129.75, 0.299697, -184.885, 141.5, -0.450303, -184.635, 129.25, 0.299697, -182.885, 127.5, 0.549697, -182.885, 127.75, 0.549697, -176.135, 129.5, 0.299697, -176.135, 129.75, 0.299697, -183.385, 129.75, 0.299697, -174.385, 141.5, -0.450303, -174.635, -162.75, 0.549697, -182.885, -162.75, 0.549697, -176.135, -3.5, 20.0497, -182.885, -3.5, 20.0497, -176.135, -2.5, 20.0497, -176.135, -2.5, 20.0497, -182.885, -3.25, 17.7997, -182.885, -3.25, 17.7997, -176.135, -2.5, 17.7997, -176.135, -2.5, 17.7997, -182.885, 6.5, 17.5497, -182.885, 6.5, 17.5497, -176.135, 7.5, 17.5497, -176.135, 7.5, 17.5497, -182.885, -162.75, 7.5497, -175.135, -162.75, 7.5497, -168.135, 128.5, 7.5497, -168.135, 128.5, 7.5497, -175.135, -162.5, 0.549697, -174.885, -162.5, 0.549697, -168.135, 128.5, 0.549697, -168.135, 128.5, 0.549697, -174.885, -3.25, 17.7997, -174.885, -3.25, 17.7997, -168.135, -2.5, 17.7997, -168.135, -2.5, 17.7997, -174.885, 6.75, 17.5497, -174.885, 6.75, 17.5497, -168.135, 7.5, 17.5497, -168.135, 7.5, 17.5497, -174.885, 129.75, 0.299697, -168.885, 141.5, -0.450303, -168.635, 129.25, 0.299697, -166.885, 127.5, 0.549697, -166.885, 127.75, 0.549697, -160.135, 129.5, 0.299697, -160.135, 129.75, 0.299697, -167.385, 129.75, 0.299697, -158.385, 141.5, -0.450303, -158.635, -162.75, 0.549697, -166.885, -162.75, 0.549697, -160.135, -3.5, 20.0497, -166.885, -3.5, 20.0497, -160.135, -2.5, 20.0497, -160.135, -2.5, 20.0497, -166.885, -3.25, 17.7997, -166.885, -3.25, 17.7997, -160.135, -2.5, 17.7997, -160.135, -2.5, 17.7997, -166.885, 6.5, 17.5497, -166.885, 6.5, 17.5497, -160.135, 7.5, 17.5497, -160.135, 7.5, 17.5497, -166.885, -162.75, 7.5497, -159.135, -162.75, 7.5497, -152.135, 128.5, 7.5497, -152.135, 128.5, 7.5497, -159.135, -162.5, 0.549697, -158.885, -162.5, 0.549697, -152.135, 128.5, 0.549697, -152.135, 128.5, 0.549697, -158.885, -3.25, 17.7997, -158.885, -3.25, 17.7997, -152.135, -2.5, 17.7997, -152.135, -2.5, 17.7997, -158.885, 6.75, 17.5497, -158.885, 6.75, 17.5497, -152.135, 7.5, 17.5497, -152.135, 7.5, 17.5497, -158.885, 129.75, 0.299697, -152.885, 141.5, -0.450303, -152.635, 129.25, 0.299697, -150.885, 127.5, 0.549697, -150.885, 127.75, 0.549697, -144.135, 129.5, 0.299697, -144.135, 129.75, 0.299697, -151.385, 129.75, 0.299697, -142.385, 141.5, -0.450303, -142.635, -162.75, 0.549697, -150.885, -162.75, 0.549697, -144.135, -3.5, 20.0497, -150.885, -3.5, 20.0497, -144.135, -2.5, 20.0497, -144.135, -2.5, 20.0497, -150.885, -3.25, 17.7997, -150.885, -3.25, 17.7997, -144.135, -2.5, 17.7997, -144.135, -2.5, 17.7997, -150.885, 6.5, 17.5497, -150.885, 6.5, 17.5497, -144.135, 7.5, 17.5497, -144.135, 7.5, 17.5497, -150.885, -162.75, 7.5497, -143.135, -162.75, 7.5497, -136.135, 128.5, 7.5497, -136.135, 128.5, 7.5497, -143.135, -162.5, 0.549697, -142.885, -162.5, 0.549697, -136.135, 128.5, 0.549697, -136.135, 128.5, 0.549697, -142.885, -3.25, 17.7997, -142.885, -3.25, 17.7997, -136.135, -2.5, 17.7997, -136.135, -2.5, 17.7997, -142.885, 6.75, 17.5497, -142.885, 6.75, 17.5497, -136.135, 7.5, 17.5497, -136.135, 7.5, 17.5497, -142.885, 129.75, 0.299697, -136.885, 141.5, -0.450303, -136.635, 129.25, 0.299697, -134.885, 127.5, 0.549697, -134.885, 127.75, 0.549697, -128.135, 129.5, 0.299697, -128.135, 129.75, 0.299697, -135.385, 129.75, 0.299697, -126.385, 141.5, -0.450303, -126.635, -162.75, 0.549697, -134.885, -162.75, 0.549697, -128.135, -3.5, 20.0497, -134.885, -3.5, 20.0497, -128.135, -2.5, 20.0497, -128.135, -2.5, 20.0497, -134.885, -3.25, 17.7997, -134.885, -3.25, 17.7997, -128.135, -2.5, 17.7997, -128.135, -2.5, 17.7997, -134.885, 6.5, 17.5497, -134.885, 6.5, 17.5497, -128.135, 7.5, 17.5497, -128.135, 7.5, 17.5497, -134.885, -162.75, 7.5497, -127.135, -162.75, 7.5497, -120.135, 128.5, 7.5497, -120.135, 128.5, 7.5497, -127.135, -162.5, 0.549697, -126.885, -162.5, 0.549697, -120.135, 128.5, 0.549697, -120.135, 128.5, 0.549697, -126.885, -3.25, 17.7997, -126.885, -3.25, 17.7997, -120.135, -2.5, 17.7997, -120.135, -2.5, 17.7997, -126.885, 6.75, 17.5497, -126.885, 6.75, 17.5497, -120.135, 7.5, 17.5497, -120.135, 7.5, 17.5497, -126.885, 129.75, 0.299697, -120.885, 141.5, -0.450303, -120.635, 135, 0.0496969, -109.135, 135, 0.299697, -108.635, 135.25, 0.299697, -108.635, 135.25, 0.0496969, -109.135, 129.75, 0.299697, -119.385, 136.75, -0.200303, -109.135, 141.5, -0.450303, -108.635, 136.75, 0.0496969, -108.635, 129.25, 0.299697, -118.885, 127.75, 0.549697, -118.885, 128, 0.549697, -109.135, -162.75, 0.549697, -118.885, -162.75, 0.549697, -109.135, -3.5, 20.2997, -108.885, -3.25, 20.2997, -107.885, -2.5, 20.2997, -107.885, -2.5, 20.2997, -118.885, -3.5, 20.2997, -118.885, -3.25, 16.7997, -118.885, -3.25, 16.7997, -107.885, -2.5, 16.7997, -107.885, -2.5, 16.7997, -118.885, 6.5, 20.2997, -118.885, 6.5, 20.2997, -107.885, 7.5, 20.2997, -107.885, 7.5, 20.2997, -118.885, 6.75, 16.7997, -118.885, 6.75, 16.7997, -107.885, 7.5, 16.7997, -107.885, 7.5, 16.7997, -118.885, -1.25, 16.7997, -107.135, 5.5, 16.7997, -106.885, -1.75, 16.7997, -106.635, -3.25, 16.7997, -106.635, -3, 16.7997, -98.885, 7, 16.7997, -98.885, 7.25, 16.7997, -106.635, 135.25, 0.299697, -108.135, 135, 0.299697, -108.135, 141.5, -0.450303, -101.135, 136.75, 0.0496969, -108.135, 24.5, 15.2997, -108.135, 24.5, 15.2997, -101.135, -17.75, 22.5497, -107.885, -4.5, 22.5497, -108.135, -18.25, 22.5497, -108.135, 23.5, 22.5497, -108.135, 8.5, 22.5497, -108.135, 23, 22.5497, -107.635, 23.5, 22.5497, -100.885, 22.75, 22.5497, -66.885, 23.25, 22.5497, -66.635, -18.5, 22.5497, -98.885, -18, 22.5497, -97.885, -75.5, 22.5497, -97.885, -76.75, 22.5497, -98.885, -18.5, 22.5497, -75.885, -18.25, 22.5497, -66.635, -17.75, 22.5497, -66.885, -18, 22.5497, -76.885, -75.75, 22.5497, -77.135, -76.75, 22.5497, -75.885, -17.25, 0.549697, -96.635, -19, 0.549697, -96.635, -18.75, 0.549697, -77.885, -16.75, 0.549697, -77.635, -16.75, 0.549697, -67.885, 22, 0.549697, -67.885, -16.75, 0.549697, -97.135, 22, 0.549697, -106.635, -16.75, 0.549697, -106.635, -8.75, 7.7997, -98.885, -7.25, 7.7997, -98.885, -7.5, 7.7997, -106.635, -16.75, 7.7997, -97.885, -9, 7.7997, -97.635, -16.75, 7.7997, -106.635, -8.75, 16.7997, -98.885, -7.25, 16.7997, -98.885, -7.5, 16.7997, -106.635, -16.75, 16.7997, -97.885, -9, 16.7997, -97.635, -16.75, 16.7997, -106.635, 12.5, 7.7997, -98.885, 12.75, 7.7997, -106.635, 12.5, 16.7997, -98.885, 12.75, 16.7997, -106.635, 14, 7.7997, -98.885, 14.25, 7.7997, -97.135, 22, 7.7997, -97.385, 22, 7.7997, -106.635, 14, 16.7997, -98.885, 14.25, 16.7997, -97.135, 22, 16.7997, -97.385, 22, 16.7997, -106.635, -56.5, 7.7997, -84.135, -57, 7.7997, -84.135, -57, 7.7997, -77.885, -17, 7.7997, -77.885, -16.75, 7.7997, -76.635, -9, 7.7997, -76.885, -17.25, 7.7997, -96.635, -56.5, 7.7997, -96.635, -58, 16.5497, -96.635, -58.25, 16.5497, -91.885, -56.5, 16.7997, -91.635, -17.25, 16.7997, -96.635, -17, 16.7997, -77.885, -16.75, 16.7997, -76.635, -9, 16.7997, -76.885, -56.5, 16.7997, -77.885, 14.25, 7.7997, -77.635, 22, 7.7997, -77.385, 14.25, 16.7997, -77.635, 22, 16.7997, -77.385, -74.5, 0.549697, -91.135, -70.25, 0.799697, -91.135, -70, 0.799697, -91.885, -74.5, 0.549697, -96.635, -64.25, 4.2997, -91.885, -64, 4.2997, -96.635, -70.5625, 0.549697, -96.635, -74.5, 13.5497, -90.385, -69.75, 13.2997, -90.135, -69.75, 13.7997, -91.635, -68, 14.0497, -91.885, -68.25, 14.0497, -96.635, -74.5, 13.7997, -96.635, -74.5, 13.7997, -91.635, -67, 0.549697, -96.635, -67, 0.549697, -91.885, -57.5, 0.549697, -91.885, -57.5, 0.549697, -96.635, -62.5, 4.7997, -91.635, -57.5, 4.7997, -96.635, -62.7, 4.7997, -96.635, -62.5, 6.7997, -86.135, -57.5, 6.7997, -86.135, -57.5, 4.7997, -91.385, -56.75, 0.549697, -90.635, -58.25, 0.549697, -90.635, -58, 0.549697, -77.885, -56.25, 0.549697, -91.135, -56.25, 0.549697, -96.635, -70, 0.549697, -90.635, -74.5, 0.549697, -77.885, -74.5, 11.0497, -84.385, -69.75, 11.2997, -84.635, -57.5, 7.5497, -84.135, -62.5, 7.7997, -83.135, -64.75, 8.7997, -82.885, -64.75, 8.7997, -77.885, -62.1667, 7.7997, -77.885, -69.5, 10.7997, -82.885, -68.3125, 10.5497, -82.885, -65.775, 9.0497, -81.66, -74.5, 10.7997, -77.885, -68.9286, 10.7997, -77.885, 14.25, 7.7997, -76.135, 13.75, 7.7997, -75.635, 12.25, 7.7997, -75.635, 12.5, 7.7997, -67.885, 22, 7.7997, -67.885, 14.25, 16.7997, -76.135, 13.75, 16.7997, -75.635, 12.25, 16.7997, -75.635, 12.5, 16.7997, -67.885, 22, 16.7997, -67.885, -7.5, 7.7997, -67.885, -7.25, 7.7997, -75.635, -8.75, 7.7997, -75.635, -16.75, 7.7997, -67.885, -7.5, 16.7997, -67.885, -7.25, 16.7997, -75.635, -8.75, 16.7997, -75.635, -16.75, 16.7997, -67.885)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(2, 3, 4), PackedInt32Array(4, 3, 7), PackedInt32Array(13, 14, 12), PackedInt32Array(12, 14, 8), PackedInt32Array(8, 14, 9), PackedInt32Array(9, 14, 10), PackedInt32Array(10, 14, 11), PackedInt32Array(11, 14, 13), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(21, 22, 11), PackedInt32Array(11, 22, 18), PackedInt32Array(18, 22, 19), PackedInt32Array(19, 22, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(15, 10, 11), PackedInt32Array(18, 15, 11), PackedInt32Array(26, 25, 23), PackedInt32Array(23, 25, 24), PackedInt32Array(9, 27, 8), PackedInt32Array(8, 27, 28), PackedInt32Array(31, 30, 29), PackedInt32Array(29, 32, 31), PackedInt32Array(31, 32, 28), PackedInt32Array(28, 27, 31), PackedInt32Array(34, 33, 35), PackedInt32Array(35, 33, 36), PackedInt32Array(36, 33, 37), PackedInt32Array(39, 38, 33), PackedInt32Array(33, 38, 37), PackedInt32Array(19, 20, 37), PackedInt32Array(37, 20, 40), PackedInt32Array(36, 37, 41), PackedInt32Array(41, 37, 40), PackedInt32Array(16, 17, 42), PackedInt32Array(42, 17, 43), PackedInt32Array(45, 44, 43), PackedInt32Array(43, 44, 46), PackedInt32Array(42, 43, 47), PackedInt32Array(47, 43, 46), PackedInt32Array(49, 48, 50), PackedInt32Array(50, 48, 51), PackedInt32Array(53, 52, 48), PackedInt32Array(48, 52, 51), PackedInt32Array(55, 54, 56), PackedInt32Array(56, 54, 57), PackedInt32Array(57, 54, 58), PackedInt32Array(62, 61, 59), PackedInt32Array(59, 61, 60), PackedInt32Array(66, 65, 63), PackedInt32Array(63, 65, 64), PackedInt32Array(70, 69, 67), PackedInt32Array(67, 69, 68), PackedInt32Array(34, 35, 71), PackedInt32Array(71, 35, 72), PackedInt32Array(49, 50, 73), PackedInt32Array(73, 50, 74), PackedInt32Array(76, 75, 77), PackedInt32Array(77, 75, 73), PackedInt32Array(77, 73, 74), PackedInt32Array(74, 78, 77), PackedInt32Array(76, 80, 75), PackedInt32Array(75, 80, 79), PackedInt32Array(84, 83, 81), PackedInt32Array(81, 83, 82), PackedInt32Array(88, 87, 85), PackedInt32Array(85, 87, 86), PackedInt32Array(92, 91, 89), PackedInt32Array(89, 91, 90), PackedInt32Array(96, 95, 93), PackedInt32Array(93, 95, 94), PackedInt32Array(100, 99, 97), PackedInt32Array(97, 99, 98), PackedInt32Array(78, 74, 101), PackedInt32Array(101, 74, 102), PackedInt32Array(106, 105, 103), PackedInt32Array(103, 105, 104), PackedInt32Array(107, 101, 102), PackedInt32Array(103, 107, 106), PackedInt32Array(106, 107, 108), PackedInt32Array(108, 107, 109), PackedInt32Array(109, 107, 102), PackedInt32Array(110, 104, 111), PackedInt32Array(111, 104, 105), PackedInt32Array(115, 114, 112), PackedInt32Array(112, 114, 113), PackedInt32Array(119, 118, 116), PackedInt32Array(116, 118, 117), PackedInt32Array(123, 122, 120), PackedInt32Array(120, 122, 121), PackedInt32Array(127, 126, 124), PackedInt32Array(124, 126, 125), PackedInt32Array(131, 130, 128), PackedInt32Array(128, 130, 129), PackedInt32Array(135, 134, 132), PackedInt32Array(132, 134, 133), PackedInt32Array(139, 138, 136), PackedInt32Array(136, 138, 137), PackedInt32Array(108, 109, 140), PackedInt32Array(140, 109, 141), PackedInt32Array(145, 144, 142), PackedInt32Array(142, 144, 143), PackedInt32Array(146, 140, 141), PackedInt32Array(142, 146, 145), PackedInt32Array(145, 146, 147), PackedInt32Array(147, 146, 148), PackedInt32Array(148, 146, 141), PackedInt32Array(149, 143, 150), PackedInt32Array(150, 143, 144), PackedInt32Array(154, 153, 151), PackedInt32Array(151, 153, 152), PackedInt32Array(158, 157, 155), PackedInt32Array(155, 157, 156), PackedInt32Array(162, 161, 159), PackedInt32Array(159, 161, 160), PackedInt32Array(166, 165, 163), PackedInt32Array(163, 165, 164), PackedInt32Array(170, 169, 167), PackedInt32Array(167, 169, 168), PackedInt32Array(174, 173, 171), PackedInt32Array(171, 173, 172), PackedInt32Array(178, 177, 175), PackedInt32Array(175, 177, 176), PackedInt32Array(147, 148, 179), PackedInt32Array(179, 148, 180), PackedInt32Array(184, 183, 181), PackedInt32Array(181, 183, 182), PackedInt32Array(185, 179, 180), PackedInt32Array(181, 185, 184), PackedInt32Array(184, 185, 186), PackedInt32Array(186, 185, 187), PackedInt32Array(187, 185, 180), PackedInt32Array(188, 182, 189), PackedInt32Array(189, 182, 183), PackedInt32Array(193, 192, 190), PackedInt32Array(190, 192, 191), PackedInt32Array(197, 196, 194), PackedInt32Array(194, 196, 195), PackedInt32Array(201, 200, 198), PackedInt32Array(198, 200, 199), PackedInt32Array(205, 204, 202), PackedInt32Array(202, 204, 203), PackedInt32Array(209, 208, 206), PackedInt32Array(206, 208, 207), PackedInt32Array(213, 212, 210), PackedInt32Array(210, 212, 211), PackedInt32Array(217, 216, 214), PackedInt32Array(214, 216, 215), PackedInt32Array(186, 187, 218), PackedInt32Array(218, 187, 219), PackedInt32Array(223, 222, 220), PackedInt32Array(220, 222, 221), PackedInt32Array(224, 218, 219), PackedInt32Array(220, 224, 223), PackedInt32Array(223, 224, 225), PackedInt32Array(225, 224, 226), PackedInt32Array(226, 224, 219), PackedInt32Array(227, 221, 228), PackedInt32Array(228, 221, 222), PackedInt32Array(232, 231, 229), PackedInt32Array(229, 231, 230), PackedInt32Array(236, 235, 233), PackedInt32Array(233, 235, 234), PackedInt32Array(240, 239, 237), PackedInt32Array(237, 239, 238), PackedInt32Array(244, 243, 241), PackedInt32Array(241, 243, 242), PackedInt32Array(248, 247, 245), PackedInt32Array(245, 247, 246), PackedInt32Array(252, 251, 249), PackedInt32Array(249, 251, 250), PackedInt32Array(256, 255, 253), PackedInt32Array(253, 255, 254), PackedInt32Array(225, 226, 257), PackedInt32Array(257, 226, 258), PackedInt32Array(262, 261, 259), PackedInt32Array(259, 261, 260), PackedInt32Array(257, 258, 263), PackedInt32Array(263, 258, 264), PackedInt32Array(264, 258, 265), PackedInt32Array(265, 266, 264), PackedInt32Array(269, 268, 267), PackedInt32Array(267, 263, 269), PackedInt32Array(269, 263, 259), PackedInt32Array(264, 262, 263), PackedInt32Array(262, 259, 263), PackedInt32Array(270, 268, 271), PackedInt32Array(271, 268, 269), PackedInt32Array(273, 272, 274), PackedInt32Array(274, 272, 276), PackedInt32Array(274, 276, 275), PackedInt32Array(280, 279, 277), PackedInt32Array(277, 279, 278), PackedInt32Array(284, 283, 281), PackedInt32Array(281, 283, 282), PackedInt32Array(288, 287, 285), PackedInt32Array(285, 287, 286), PackedInt32Array(290, 289, 72), PackedInt32Array(72, 289, 71), PackedInt32Array(293, 292, 291), PackedInt32Array(289, 290, 291), PackedInt32Array(291, 290, 295), PackedInt32Array(291, 295, 294), PackedInt32Array(291, 294, 293), PackedInt32Array(297, 260, 296), PackedInt32Array(296, 260, 261), PackedInt32Array(297, 296, 298), PackedInt32Array(266, 265, 299), PackedInt32Array(299, 265, 298), PackedInt32Array(300, 297, 301), PackedInt32Array(301, 297, 298), PackedInt32Array(296, 299, 298), PackedInt32Array(304, 303, 302), PackedInt32Array(307, 306, 305), PackedInt32Array(305, 308, 307), PackedInt32Array(307, 308, 309), PackedInt32Array(309, 308, 310), PackedInt32Array(304, 302, 311), PackedInt32Array(311, 302, 312), PackedInt32Array(312, 313, 311), PackedInt32Array(311, 313, 314), PackedInt32Array(316, 315, 317), PackedInt32Array(317, 315, 318), PackedInt32Array(313, 319, 314), PackedInt32Array(314, 319, 320), PackedInt32Array(317, 309, 316), PackedInt32Array(316, 309, 310), PackedInt32Array(318, 315, 319), PackedInt32Array(319, 315, 320), PackedInt32Array(322, 321, 323), PackedInt32Array(323, 321, 324), PackedInt32Array(326, 325, 324), PackedInt32Array(321, 327, 324), PackedInt32Array(324, 327, 328), PackedInt32Array(324, 328, 326), PackedInt32Array(327, 329, 328), PackedInt32Array(332, 331, 330), PackedInt32Array(334, 333, 330), PackedInt32Array(330, 333, 335), PackedInt32Array(330, 335, 332), PackedInt32Array(338, 337, 336), PackedInt32Array(340, 339, 336), PackedInt32Array(336, 339, 341), PackedInt32Array(336, 341, 338), PackedInt32Array(331, 332, 342), PackedInt32Array(342, 332, 343), PackedInt32Array(338, 292, 337), PackedInt32Array(337, 292, 293), PackedInt32Array(294, 295, 344), PackedInt32Array(344, 295, 345), PackedInt32Array(346, 342, 343), PackedInt32Array(348, 347, 346), PackedInt32Array(343, 349, 346), PackedInt32Array(346, 349, 348), PackedInt32Array(350, 344, 345), PackedInt32Array(352, 351, 350), PackedInt32Array(345, 353, 350), PackedInt32Array(350, 353, 352), PackedInt32Array(355, 354, 356), PackedInt32Array(356, 354, 357), PackedInt32Array(358, 357, 359), PackedInt32Array(359, 357, 360), PackedInt32Array(359, 360, 333), PackedInt32Array(359, 333, 334), PackedInt32Array(361, 360, 354), PackedInt32Array(354, 360, 357), PackedInt32Array(363, 362, 364), PackedInt32Array(364, 362, 365), PackedInt32Array(367, 366, 368), PackedInt32Array(368, 366, 365), PackedInt32Array(368, 365, 339), PackedInt32Array(368, 339, 340), PackedInt32Array(369, 364, 366), PackedInt32Array(366, 364, 365), PackedInt32Array(347, 348, 370), PackedInt32Array(370, 348, 371), PackedInt32Array(351, 352, 372), PackedInt32Array(372, 352, 373), PackedInt32Array(375, 374, 376), PackedInt32Array(376, 374, 377), PackedInt32Array(377, 380, 376), PackedInt32Array(376, 380, 378), PackedInt32Array(378, 380, 379), PackedInt32Array(383, 382, 381), PackedInt32Array(385, 384, 383), PackedInt32Array(381, 387, 383), PackedInt32Array(383, 387, 386), PackedInt32Array(383, 386, 385), PackedInt32Array(384, 385, 363), PackedInt32Array(363, 385, 362), PackedInt32Array(391, 390, 388), PackedInt32Array(388, 390, 389), PackedInt32Array(379, 394, 378), PackedInt32Array(378, 394, 392), PackedInt32Array(392, 394, 393), PackedInt32Array(393, 397, 392), PackedInt32Array(392, 397, 396), PackedInt32Array(392, 396, 395), PackedInt32Array(400, 399, 398), PackedInt32Array(398, 401, 400), PackedInt32Array(400, 401, 323), PackedInt32Array(323, 401, 322), PackedInt32Array(401, 402, 322), PackedInt32Array(375, 403, 374), PackedInt32Array(374, 403, 404), PackedInt32Array(399, 400, 403), PackedInt32Array(403, 400, 404), PackedInt32Array(406, 405, 382), PackedInt32Array(382, 405, 381), PackedInt32Array(396, 407, 395), PackedInt32Array(395, 407, 408), PackedInt32Array(408, 410, 409), PackedInt32Array(407, 355, 408), PackedInt32Array(408, 355, 356), PackedInt32Array(408, 356, 411), PackedInt32Array(408, 411, 410), PackedInt32Array(405, 406, 412), PackedInt32Array(413, 410, 412), PackedInt32Array(410, 414, 409), PackedInt32Array(409, 414, 413), PackedInt32Array(413, 414, 410), PackedInt32Array(410, 416, 412), PackedInt32Array(412, 416, 415), PackedInt32Array(412, 415, 405), PackedInt32Array(417, 370, 371), PackedInt32Array(420, 419, 418), PackedInt32Array(417, 371, 418), PackedInt32Array(418, 371, 421), PackedInt32Array(418, 421, 420), PackedInt32Array(422, 372, 373), PackedInt32Array(425, 424, 423), PackedInt32Array(422, 373, 423), PackedInt32Array(423, 373, 426), PackedInt32Array(423, 426, 425), PackedInt32Array(429, 428, 427), PackedInt32Array(359, 429, 358), PackedInt32Array(358, 429, 430), PackedInt32Array(430, 429, 427), PackedInt32Array(433, 432, 431), PackedInt32Array(368, 433, 367), PackedInt32Array(367, 433, 434), PackedInt32Array(434, 433, 431), PackedInt32Array(428, 419, 427), PackedInt32Array(427, 419, 420), PackedInt32Array(432, 424, 431), PackedInt32Array(431, 424, 425)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e83xh"]
 albedo_texture = ExtResource("8_m3ofe")
@@ -147,6 +571,7 @@ _surfaces = [{
 data = PackedVector3Array(4.0586, 7.1716, -108.637, 4.0586, 5.1716, -108.637, 20.0586, 5.1716, -108.637, 4.0586, 7.1716, -108.637, 20.0586, 5.1716, -108.637, 20.0586, 7.1716, -108.637, 4.0586, 7.1716, -108.637, 4.0586, 7.1716, 35.3631, 4.0586, 5.1716, 35.3631, 4.0586, 7.1716, -108.637, 4.0586, 5.1716, 35.3631, 4.0586, 5.1716, -108.637, 20.0586, 5.1716, -108.637, 4.0586, 5.1716, -108.637, 4.0586, 5.1716, 35.3631, 20.0586, 5.1716, -108.637, 4.0586, 5.1716, 35.3631, 20.0586, 5.1716, 35.3631, 20.0586, 7.1716, -108.637, 20.0586, 7.1716, 35.3631, 4.0586, 7.1716, 35.3631, 20.0586, 7.1716, -108.637, 4.0586, 7.1716, 35.3631, 4.0586, 7.1716, -108.637, 20.0586, 7.1716, -108.637, 20.0586, 5.1716, -108.637, 20.0586, 5.1716, 35.3631, 20.0586, 7.1716, -108.637, 20.0586, 5.1716, 35.3631, 20.0586, 7.1716, 35.3631, 4.0586, 7.1716, 35.3631, 20.0586, 7.1716, 35.3631, 20.0586, 5.1716, 35.3631, 4.0586, 7.1716, 35.3631, 20.0586, 5.1716, 35.3631, 4.0586, 5.1716, 35.3631, -26.9414, 7.1716, -197.637, -26.9414, 5.1716, -197.637, 53.0586, 5.1716, -197.637, -26.9414, 7.1716, -197.637, 53.0586, 5.1716, -197.637, 53.0586, 7.1716, -197.637, -26.9414, 7.1716, -197.637, -26.9414, 7.1716, -133.137, -26.9414, 5.1716, -133.137, -26.9414, 7.1716, -197.637, -26.9414, 5.1716, -133.137, -26.9414, 5.1716, -197.637, 53.0586, 5.1716, -197.637, -26.9414, 5.1716, -197.637, -26.9414, 5.1716, -133.137, 53.0586, 5.1716, -197.637, -26.9414, 5.1716, -133.137, 53.0586, 5.1716, -133.137, 53.0586, 7.1716, -197.637, 53.0586, 7.1716, -133.137, -26.9414, 7.1716, -133.137, 53.0586, 7.1716, -197.637, -26.9414, 7.1716, -133.137, -26.9414, 7.1716, -197.637, 53.0586, 7.1716, -197.637, 53.0586, 5.1716, -197.637, 53.0586, 5.1716, -133.137, 53.0586, 7.1716, -197.637, 53.0586, 5.1716, -133.137, 53.0586, 7.1716, -133.137, -26.9414, 7.1716, -133.137, 53.0586, 7.1716, -133.137, 53.0586, 5.1716, -133.137, -26.9414, 7.1716, -133.137, 53.0586, 5.1716, -133.137, -26.9414, 5.1716, -133.137, -26.9414, -25.3284, -213.137, -26.9414, -27.3284, -213.137, 53.0586, -27.3284, -213.137, -26.9414, -25.3284, -213.137, 53.0586, -27.3284, -213.137, 53.0586, -25.3284, -213.137, -26.9414, -25.3284, -213.137, -26.9414, -25.3284, -133.137, -26.9414, -27.3284, -133.137, -26.9414, -25.3284, -213.137, -26.9414, -27.3284, -133.137, -26.9414, -27.3284, -213.137, 53.0586, -27.3284, -213.137, -26.9414, -27.3284, -213.137, -26.9414, -27.3284, -133.137, 53.0586, -27.3284, -213.137, -26.9414, -27.3284, -133.137, 53.0586, -27.3284, -133.137, 53.0586, -25.3284, -213.137, 53.0586, -25.3284, -133.137, -26.9414, -25.3284, -133.137, 53.0586, -25.3284, -213.137, -26.9414, -25.3284, -133.137, -26.9414, -25.3284, -213.137, 53.0586, -25.3284, -213.137, 53.0586, -27.3284, -213.137, 53.0586, -27.3284, -133.137, 53.0586, -25.3284, -213.137, 53.0586, -27.3284, -133.137, 53.0586, -25.3284, -133.137, -26.9414, -25.3284, -133.137, 53.0586, -25.3284, -133.137, 53.0586, -27.3284, -133.137, -26.9414, -25.3284, -133.137, 53.0586, -27.3284, -133.137, -26.9414, -27.3284, -133.137, -26.9414, 7.1716, 59.8631, -26.9414, 5.1716, 59.8631, 53.0586, 5.1716, 59.8631, -26.9414, 7.1716, 59.8631, 53.0586, 5.1716, 59.8631, 53.0586, 7.1716, 59.8631, -26.9414, 7.1716, 59.8631, -26.9414, 7.1716, 79.8631, -26.9414, 5.1716, 79.8631, -26.9414, 7.1716, 59.8631, -26.9414, 5.1716, 79.8631, -26.9414, 5.1716, 59.8631, 53.0586, 5.1716, 59.8631, -26.9414, 5.1716, 59.8631, -26.9414, 5.1716, 79.8631, 53.0586, 5.1716, 59.8631, -26.9414, 5.1716, 79.8631, 53.0586, 5.1716, 79.8631, 53.0586, 7.1716, 59.8631, 53.0586, 7.1716, 79.8631, -26.9414, 7.1716, 79.8631, 53.0586, 7.1716, 59.8631, -26.9414, 7.1716, 79.8631, -26.9414, 7.1716, 59.8631, 53.0586, 7.1716, 59.8631, 53.0586, 5.1716, 59.8631, 53.0586, 5.1716, 79.8631, 53.0586, 7.1716, 59.8631, 53.0586, 5.1716, 79.8631, 53.0586, 7.1716, 79.8631, -26.9414, 7.1716, 79.8631, 53.0586, 7.1716, 79.8631, 53.0586, 5.1716, 79.8631, -26.9414, 7.1716, 79.8631, 53.0586, 5.1716, 79.8631, -26.9414, 5.1716, 79.8631, -26.9414, 7.1716, 119.863, -26.9414, 5.1716, 119.863, 53.0586, 5.1716, 119.863, -26.9414, 7.1716, 119.863, 53.0586, 5.1716, 119.863, 53.0586, 7.1716, 119.863, -26.9414, 7.1716, 119.863, -26.9414, 7.1716, 139.863, -26.9414, 5.1716, 139.863, -26.9414, 7.1716, 119.863, -26.9414, 5.1716, 139.863, -26.9414, 5.1716, 119.863, 53.0586, 5.1716, 119.863, -26.9414, 5.1716, 119.863, -26.9414, 5.1716, 139.863, 53.0586, 5.1716, 119.863, -26.9414, 5.1716, 139.863, 53.0586, 5.1716, 139.863, 53.0586, 7.1716, 119.863, 53.0586, 7.1716, 139.863, -26.9414, 7.1716, 139.863, 53.0586, 7.1716, 119.863, -26.9414, 7.1716, 139.863, -26.9414, 7.1716, 119.863, 53.0586, 7.1716, 119.863, 53.0586, 5.1716, 119.863, 53.0586, 5.1716, 139.863, 53.0586, 7.1716, 119.863, 53.0586, 5.1716, 139.863, 53.0586, 7.1716, 139.863, -26.9414, 7.1716, 139.863, 53.0586, 7.1716, 139.863, 53.0586, 5.1716, 139.863, -26.9414, 7.1716, 139.863, 53.0586, 5.1716, 139.863, -26.9414, 5.1716, 139.863, -105.941, 7.1716, 79.8631, -105.941, 5.1716, 79.8631, -6.9414, 5.1716, 79.8631, -105.941, 7.1716, 79.8631, -6.9414, 5.1716, 79.8631, -6.9414, 7.1716, 79.8631, -105.941, 7.1716, 79.8631, -105.941, 7.1716, 119.863, -105.941, 5.1716, 119.863, -105.941, 7.1716, 79.8631, -105.941, 5.1716, 119.863, -105.941, 5.1716, 79.8631, -6.9414, 5.1716, 79.8631, -105.941, 5.1716, 79.8631, -105.941, 5.1716, 119.863, -6.9414, 5.1716, 79.8631, -105.941, 5.1716, 119.863, -6.9414, 5.1716, 119.863, -6.9414, 7.1716, 79.8631, -6.9414, 7.1716, 119.863, -105.941, 7.1716, 119.863, -6.9414, 7.1716, 79.8631, -105.941, 7.1716, 119.863, -105.941, 7.1716, 79.8631, -6.9414, 7.1716, 79.8631, -6.9414, 5.1716, 79.8631, -6.9414, 5.1716, 119.863, -6.9414, 7.1716, 79.8631, -6.9414, 5.1716, 119.863, -6.9414, 7.1716, 119.863, -105.941, 7.1716, 119.863, -6.9414, 7.1716, 119.863, -6.9414, 5.1716, 119.863, -105.941, 7.1716, 119.863, -6.9414, 5.1716, 119.863, -105.941, 5.1716, 119.863, 33.0586, 7.1716, 79.8631, 33.0586, 5.1716, 79.8631, 53.0586, 5.1716, 79.8631, 33.0586, 7.1716, 79.8631, 53.0586, 5.1716, 79.8631, 53.0586, 7.1716, 79.8631, 33.0586, 7.1716, 79.8631, 33.0586, 7.1716, 119.863, 33.0586, 5.1716, 119.863, 33.0586, 7.1716, 79.8631, 33.0586, 5.1716, 119.863, 33.0586, 5.1716, 79.8631, 53.0586, 5.1716, 79.8631, 33.0586, 5.1716, 79.8631, 33.0586, 5.1716, 119.863, 53.0586, 5.1716, 79.8631, 33.0586, 5.1716, 119.863, 53.0586, 5.1716, 119.863, 53.0586, 7.1716, 79.8631, 53.0586, 7.1716, 119.863, 33.0586, 7.1716, 119.863, 53.0586, 7.1716, 79.8631, 33.0586, 7.1716, 119.863, 33.0586, 7.1716, 79.8631, 53.0586, 7.1716, 79.8631, 53.0586, 5.1716, 79.8631, 53.0586, 5.1716, 119.863, 53.0586, 7.1716, 79.8631, 53.0586, 5.1716, 119.863, 53.0586, 7.1716, 119.863, 33.0586, 7.1716, 119.863, 53.0586, 7.1716, 119.863, 53.0586, 5.1716, 119.863, 33.0586, 7.1716, 119.863, 53.0586, 5.1716, 119.863, 33.0586, 5.1716, 119.863, -26.9414, -25.3284, 59.8631, -26.9414, -27.3284, 59.8631, 53.0586, -27.3284, 59.8631, -26.9414, -25.3284, 59.8631, 53.0586, -27.3284, 59.8631, 53.0586, -25.3284, 59.8631, -26.9414, -25.3284, 59.8631, -26.9414, -25.3284, 139.863, -26.9414, -27.3284, 139.863, -26.9414, -25.3284, 59.8631, -26.9414, -27.3284, 139.863, -26.9414, -27.3284, 59.8631, 53.0586, -27.3284, 59.8631, -26.9414, -27.3284, 59.8631, -26.9414, -27.3284, 139.863, 53.0586, -27.3284, 59.8631, -26.9414, -27.3284, 139.863, 53.0586, -27.3284, 139.863, 53.0586, -25.3284, 59.8631, 53.0586, -25.3284, 139.863, -26.9414, -25.3284, 139.863, 53.0586, -25.3284, 59.8631, -26.9414, -25.3284, 139.863, -26.9414, -25.3284, 59.8631, 53.0586, -25.3284, 59.8631, 53.0586, -27.3284, 59.8631, 53.0586, -27.3284, 139.863, 53.0586, -25.3284, 59.8631, 53.0586, -27.3284, 139.863, 53.0586, -25.3284, 139.863, -26.9414, -25.3284, 139.863, 53.0586, -25.3284, 139.863, 53.0586, -27.3284, 139.863, -26.9414, -25.3284, 139.863, 53.0586, -27.3284, 139.863, -26.9414, -27.3284, 139.863, -142.441, -25.3284, 79.8631, -142.441, -27.3284, 79.8631, -26.9414, -27.3284, 79.8631, -142.441, -25.3284, 79.8631, -26.9414, -27.3284, 79.8631, -26.9414, -25.3284, 79.8631, -142.441, -25.3284, 79.8631, -142.441, -25.3284, 119.863, -142.441, -27.3284, 119.863, -142.441, -25.3284, 79.8631, -142.441, -27.3284, 119.863, -142.441, -27.3284, 79.8631, -26.9414, -27.3284, 79.8631, -142.441, -27.3284, 79.8631, -142.441, -27.3284, 119.863, -26.9414, -27.3284, 79.8631, -142.441, -27.3284, 119.863, -26.9414, -27.3284, 119.863, -26.9414, -25.3284, 79.8631, -26.9414, -25.3284, 119.863, -142.441, -25.3284, 119.863, -26.9414, -25.3284, 79.8631, -142.441, -25.3284, 119.863, -142.441, -25.3284, 79.8631, -26.9414, -25.3284, 79.8631, -26.9414, -27.3284, 79.8631, -26.9414, -27.3284, 119.863, -26.9414, -25.3284, 79.8631, -26.9414, -27.3284, 119.863, -26.9414, -25.3284, 119.863, -142.441, -25.3284, 119.863, -26.9414, -25.3284, 119.863, -26.9414, -27.3284, 119.863, -142.441, -25.3284, 119.863, -26.9414, -27.3284, 119.863, -142.441, -27.3284, 119.863, -26.9414, -10.8284, -197.637, -26.9414, -12.8284, -197.637, 53.0586, -12.8284, -197.637, -26.9414, -10.8284, -197.637, 53.0586, -12.8284, -197.637, 53.0586, -10.8284, -197.637, -26.9414, -10.8284, -197.637, -26.9414, -10.8284, -133.137, -26.9414, -12.8284, -133.137, -26.9414, -10.8284, -197.637, -26.9414, -12.8284, -133.137, -26.9414, -12.8284, -197.637, 53.0586, -12.8284, -197.637, -26.9414, -12.8284, -197.637, -26.9414, -12.8284, -133.137, 53.0586, -12.8284, -197.637, -26.9414, -12.8284, -133.137, 53.0586, -12.8284, -133.137, 53.0586, -10.8284, -197.637, 53.0586, -10.8284, -133.137, -26.9414, -10.8284, -133.137, 53.0586, -10.8284, -197.637, -26.9414, -10.8284, -133.137, -26.9414, -10.8284, -197.637, 53.0586, -10.8284, -197.637, 53.0586, -12.8284, -197.637, 53.0586, -12.8284, -133.137, 53.0586, -10.8284, -197.637, 53.0586, -12.8284, -133.137, 53.0586, -10.8284, -133.137, -26.9414, -10.8284, -133.137, 53.0586, -10.8284, -133.137, 53.0586, -12.8284, -133.137, -26.9414, -10.8284, -133.137, 53.0586, -12.8284, -133.137, -26.9414, -12.8284, -133.137, -26.9414, -10.8284, 119.863, -26.9414, -12.8284, 119.863, 53.0586, -12.8284, 119.863, -26.9414, -10.8284, 119.863, 53.0586, -12.8284, 119.863, 53.0586, -10.8284, 119.863, -26.9414, -10.8284, 119.863, -26.9414, -10.8284, 139.863, -26.9414, -12.8284, 139.863, -26.9414, -10.8284, 119.863, -26.9414, -12.8284, 139.863, -26.9414, -12.8284, 119.863, 53.0586, -12.8284, 119.863, -26.9414, -12.8284, 119.863, -26.9414, -12.8284, 139.863, 53.0586, -12.8284, 119.863, -26.9414, -12.8284, 139.863, 53.0586, -12.8284, 139.863, 53.0586, -10.8284, 119.863, 53.0586, -10.8284, 139.863, -26.9414, -10.8284, 139.863, 53.0586, -10.8284, 119.863, -26.9414, -10.8284, 139.863, -26.9414, -10.8284, 119.863, 53.0586, -10.8284, 119.863, 53.0586, -12.8284, 119.863, 53.0586, -12.8284, 139.863, 53.0586, -10.8284, 119.863, 53.0586, -12.8284, 139.863, 53.0586, -10.8284, 139.863, -26.9414, -10.8284, 139.863, 53.0586, -10.8284, 139.863, 53.0586, -12.8284, 139.863, -26.9414, -10.8284, 139.863, 53.0586, -12.8284, 139.863, -26.9414, -12.8284, 139.863, 33.0586, -10.8284, 79.8631, 33.0586, -12.8284, 79.8631, 53.0586, -12.8284, 79.8631, 33.0586, -10.8284, 79.8631, 53.0586, -12.8284, 79.8631, 53.0586, -10.8284, 79.8631, 33.0586, -10.8284, 79.8631, 33.0586, -10.8284, 119.863, 33.0586, -12.8284, 119.863, 33.0586, -10.8284, 79.8631, 33.0586, -12.8284, 119.863, 33.0586, -12.8284, 79.8631, 53.0586, -12.8284, 79.8631, 33.0586, -12.8284, 79.8631, 33.0586, -12.8284, 119.863, 53.0586, -12.8284, 79.8631, 33.0586, -12.8284, 119.863, 53.0586, -12.8284, 119.863, 53.0586, -10.8284, 79.8631, 53.0586, -10.8284, 119.863, 33.0586, -10.8284, 119.863, 53.0586, -10.8284, 79.8631, 33.0586, -10.8284, 119.863, 33.0586, -10.8284, 79.8631, 53.0586, -10.8284, 79.8631, 53.0586, -12.8284, 79.8631, 53.0586, -12.8284, 119.863, 53.0586, -10.8284, 79.8631, 53.0586, -12.8284, 119.863, 53.0586, -10.8284, 119.863, 33.0586, -10.8284, 119.863, 53.0586, -10.8284, 119.863, 53.0586, -12.8284, 119.863, 33.0586, -10.8284, 119.863, 53.0586, -12.8284, 119.863, 33.0586, -12.8284, 119.863, -26.9414, -10.8284, 59.8631, -26.9414, -12.8284, 59.8631, 53.0586, -12.8284, 59.8631, -26.9414, -10.8284, 59.8631, 53.0586, -12.8284, 59.8631, 53.0586, -10.8284, 59.8631, -26.9414, -10.8284, 59.8631, -26.9414, -10.8284, 79.8631, -26.9414, -12.8284, 79.8631, -26.9414, -10.8284, 59.8631, -26.9414, -12.8284, 79.8631, -26.9414, -12.8284, 59.8631, 53.0586, -12.8284, 59.8631, -26.9414, -12.8284, 59.8631, -26.9414, -12.8284, 79.8631, 53.0586, -12.8284, 59.8631, -26.9414, -12.8284, 79.8631, 53.0586, -12.8284, 79.8631, 53.0586, -10.8284, 59.8631, 53.0586, -10.8284, 79.8631, -26.9414, -10.8284, 79.8631, 53.0586, -10.8284, 59.8631, -26.9414, -10.8284, 79.8631, -26.9414, -10.8284, 59.8631, 53.0586, -10.8284, 59.8631, 53.0586, -12.8284, 59.8631, 53.0586, -12.8284, 79.8631, 53.0586, -10.8284, 59.8631, 53.0586, -12.8284, 79.8631, 53.0586, -10.8284, 79.8631, -26.9414, -10.8284, 79.8631, 53.0586, -10.8284, 79.8631, 53.0586, -12.8284, 79.8631, -26.9414, -10.8284, 79.8631, 53.0586, -12.8284, 79.8631, -26.9414, -12.8284, 79.8631, -105.941, -10.8284, 79.8631, -105.941, -12.8284, 79.8631, -6.9414, -12.8284, 79.8631, -105.941, -10.8284, 79.8631, -6.9414, -12.8284, 79.8631, -6.9414, -10.8284, 79.8631, -105.941, -10.8284, 79.8631, -105.941, -10.8284, 119.863, -105.941, -12.8284, 119.863, -105.941, -10.8284, 79.8631, -105.941, -12.8284, 119.863, -105.941, -12.8284, 79.8631, -6.9414, -12.8284, 79.8631, -105.941, -12.8284, 79.8631, -105.941, -12.8284, 119.863, -6.9414, -12.8284, 79.8631, -105.941, -12.8284, 119.863, -6.9414, -12.8284, 119.863, -6.9414, -10.8284, 79.8631, -6.9414, -10.8284, 119.863, -105.941, -10.8284, 119.863, -6.9414, -10.8284, 79.8631, -105.941, -10.8284, 119.863, -105.941, -10.8284, 79.8631, -6.9414, -10.8284, 79.8631, -6.9414, -12.8284, 79.8631, -6.9414, -12.8284, 119.863, -6.9414, -10.8284, 79.8631, -6.9414, -12.8284, 119.863, -6.9414, -10.8284, 119.863, -105.941, -10.8284, 119.863, -6.9414, -10.8284, 119.863, -6.9414, -12.8284, 119.863, -105.941, -10.8284, 119.863, -6.9414, -12.8284, 119.863, -105.941, -12.8284, 119.863, 20.0586, 8.6716, -108.637, 20.0586, 5.1716, -108.637, 24.0586, 5.1716, -108.637, 20.0586, 8.6716, -108.637, 24.0586, 5.1716, -108.637, 24.0586, 8.6716, -108.637, 20.0586, 8.6716, -108.637, 20.0586, 8.6716, 35.3631, 20.0586, 5.1716, 35.3631, 20.0586, 8.6716, -108.637, 20.0586, 5.1716, 35.3631, 20.0586, 5.1716, -108.637, 24.0586, 5.1716, -108.637, 20.0586, 5.1716, -108.637, 20.0586, 5.1716, 35.3631, 24.0586, 5.1716, -108.637, 20.0586, 5.1716, 35.3631, 24.0586, 5.1716, 35.3631, 24.0586, 8.6716, -108.637, 24.0586, 8.6716, 35.3631, 20.0586, 8.6716, 35.3631, 24.0586, 8.6716, -108.637, 20.0586, 8.6716, 35.3631, 20.0586, 8.6716, -108.637, 24.0586, 8.6716, -108.637, 24.0586, 5.1716, -108.637, 24.0586, 5.1716, 35.3631, 24.0586, 8.6716, -108.637, 24.0586, 5.1716, 35.3631, 24.0586, 8.6716, 35.3631, 20.0586, 8.6716, 35.3631, 24.0586, 8.6716, 35.3631, 24.0586, 5.1716, 35.3631, 20.0586, 8.6716, 35.3631, 24.0586, 5.1716, 35.3631, 20.0586, 5.1716, 35.3631, 0.0586, 9.1716, -108.637, 0.0586, 5.1716, -108.637, 4.0586, 5.1716, -108.637, 0.0586, 9.1716, -108.637, 4.0586, 5.1716, -108.637, 4.0586, 9.1716, -108.637, 0.0586, 9.1716, -108.637, 0.0586, 9.1716, 35.3631, 0.0586, 5.1716, 35.3631, 0.0586, 9.1716, -108.637, 0.0586, 5.1716, 35.3631, 0.0586, 5.1716, -108.637, 4.0586, 5.1716, -108.637, 0.0586, 5.1716, -108.637, 0.0586, 5.1716, 35.3631, 4.0586, 5.1716, -108.637, 0.0586, 5.1716, 35.3631, 4.0586, 5.1716, 35.3631, 4.0586, 9.1716, -108.637, 4.0586, 9.1716, 35.3631, 0.0586, 9.1716, 35.3631, 4.0586, 9.1716, -108.637, 0.0586, 9.1716, 35.3631, 0.0586, 9.1716, -108.637, 4.0586, 9.1716, -108.637, 4.0586, 5.1716, -108.637, 4.0586, 5.1716, 35.3631, 4.0586, 9.1716, -108.637, 4.0586, 5.1716, 35.3631, 4.0586, 9.1716, 35.3631, 0.0586, 9.1716, 35.3631, 4.0586, 9.1716, 35.3631, 4.0586, 5.1716, 35.3631, 0.0586, 9.1716, 35.3631, 4.0586, 5.1716, 35.3631, 0.0586, 5.1716, 35.3631, 20.0586, 23.1716, -108.637, 20.0586, 8.6716, -108.637, 24.0586, 8.6716, -108.637, 20.0586, 23.1716, -108.637, 24.0586, 8.6716, -108.637, 24.0586, 23.1716, -108.637, 20.0586, 23.1716, -108.637, 20.0586, 23.1716, -92.6369, 20.0586, 8.6716, -92.6369, 20.0586, 23.1716, -108.637, 20.0586, 8.6716, -92.6369, 20.0586, 8.6716, -108.637, 24.0586, 8.6716, -108.637, 20.0586, 8.6716, -108.637, 20.0586, 8.6716, -92.6369, 24.0586, 8.6716, -108.637, 20.0586, 8.6716, -92.6369, 24.0586, 8.6716, -92.6369, 24.0586, 23.1716, -108.637, 24.0586, 23.1716, -92.6369, 20.0586, 23.1716, -92.6369, 24.0586, 23.1716, -108.637, 20.0586, 23.1716, -92.6369, 20.0586, 23.1716, -108.637, 24.0586, 23.1716, -108.637, 24.0586, 8.6716, -108.637, 24.0586, 8.6716, -92.6369, 24.0586, 23.1716, -108.637, 24.0586, 8.6716, -92.6369, 24.0586, 23.1716, -92.6369, 20.0586, 23.1716, -92.6369, 24.0586, 23.1716, -92.6369, 24.0586, 8.6716, -92.6369, 20.0586, 23.1716, -92.6369, 24.0586, 8.6716, -92.6369, 20.0586, 8.6716, -92.6369, 20.0586, 23.1716, 19.3631, 20.0586, 8.6716, 19.3631, 24.0586, 8.6716, 19.3631, 20.0586, 23.1716, 19.3631, 24.0586, 8.6716, 19.3631, 24.0586, 23.1716, 19.3631, 20.0586, 23.1716, 19.3631, 20.0586, 23.1716, 35.3631, 20.0586, 8.6716, 35.3631, 20.0586, 23.1716, 19.3631, 20.0586, 8.6716, 35.3631, 20.0586, 8.6716, 19.3631, 24.0586, 8.6716, 19.3631, 20.0586, 8.6716, 19.3631, 20.0586, 8.6716, 35.3631, 24.0586, 8.6716, 19.3631, 20.0586, 8.6716, 35.3631, 24.0586, 8.6716, 35.3631, 24.0586, 23.1716, 19.3631, 24.0586, 23.1716, 35.3631, 20.0586, 23.1716, 35.3631, 24.0586, 23.1716, 19.3631, 20.0586, 23.1716, 35.3631, 20.0586, 23.1716, 19.3631, 24.0586, 23.1716, 19.3631, 24.0586, 8.6716, 19.3631, 24.0586, 8.6716, 35.3631, 24.0586, 23.1716, 19.3631, 24.0586, 8.6716, 35.3631, 24.0586, 23.1716, 35.3631, 20.0586, 23.1716, 35.3631, 24.0586, 23.1716, 35.3631, 24.0586, 8.6716, 35.3631, 20.0586, 23.1716, 35.3631, 24.0586, 8.6716, 35.3631, 20.0586, 8.6716, 35.3631, 20.0586, 23.1716, -76.6369, 20.0586, 8.6716, -76.6369, 24.0586, 8.6716, -76.6369, 20.0586, 23.1716, -76.6369, 24.0586, 8.6716, -76.6369, 24.0586, 23.1716, -76.6369, 20.0586, 23.1716, -76.6369, 20.0586, 23.1716, -60.6369, 20.0586, 8.6716, -60.6369, 20.0586, 23.1716, -76.6369, 20.0586, 8.6716, -60.6369, 20.0586, 8.6716, -76.6369, 24.0586, 8.6716, -76.6369, 20.0586, 8.6716, -76.6369, 20.0586, 8.6716, -60.6369, 24.0586, 8.6716, -76.6369, 20.0586, 8.6716, -60.6369, 24.0586, 8.6716, -60.6369, 24.0586, 23.1716, -76.6369, 24.0586, 23.1716, -60.6369, 20.0586, 23.1716, -60.6369, 24.0586, 23.1716, -76.6369, 20.0586, 23.1716, -60.6369, 20.0586, 23.1716, -76.6369, 24.0586, 23.1716, -76.6369, 24.0586, 8.6716, -76.6369, 24.0586, 8.6716, -60.6369, 24.0586, 23.1716, -76.6369, 24.0586, 8.6716, -60.6369, 24.0586, 23.1716, -60.6369, 20.0586, 23.1716, -60.6369, 24.0586, 23.1716, -60.6369, 24.0586, 8.6716, -60.6369, 20.0586, 23.1716, -60.6369, 24.0586, 8.6716, -60.6369, 20.0586, 8.6716, -60.6369, 20.0586, 23.1716, -44.6369, 20.0586, 8.6716, -44.6369, 24.0586, 8.6716, -44.6369, 20.0586, 23.1716, -44.6369, 24.0586, 8.6716, -44.6369, 24.0586, 23.1716, -44.6369, 20.0586, 23.1716, -44.6369, 20.0586, 23.1716, -28.6369, 20.0586, 8.6716, -28.6369, 20.0586, 23.1716, -44.6369, 20.0586, 8.6716, -28.6369, 20.0586, 8.6716, -44.6369, 24.0586, 8.6716, -44.6369, 20.0586, 8.6716, -44.6369, 20.0586, 8.6716, -28.6369, 24.0586, 8.6716, -44.6369, 20.0586, 8.6716, -28.6369, 24.0586, 8.6716, -28.6369, 24.0586, 23.1716, -44.6369, 24.0586, 23.1716, -28.6369, 20.0586, 23.1716, -28.6369, 24.0586, 23.1716, -44.6369, 20.0586, 23.1716, -28.6369, 20.0586, 23.1716, -44.6369, 24.0586, 23.1716, -44.6369, 24.0586, 8.6716, -44.6369, 24.0586, 8.6716, -28.6369, 24.0586, 23.1716, -44.6369, 24.0586, 8.6716, -28.6369, 24.0586, 23.1716, -28.6369, 20.0586, 23.1716, -28.6369, 24.0586, 23.1716, -28.6369, 24.0586, 8.6716, -28.6369, 20.0586, 23.1716, -28.6369, 24.0586, 8.6716, -28.6369, 20.0586, 8.6716, -28.6369, 20.0586, 23.1716, -12.6369, 20.0586, 8.6716, -12.6369, 24.0586, 8.6716, -12.6369, 20.0586, 23.1716, -12.6369, 24.0586, 8.6716, -12.6369, 24.0586, 23.1716, -12.6369, 20.0586, 23.1716, -12.6369, 20.0586, 23.1716, 3.3631, 20.0586, 8.6716, 3.3631, 20.0586, 23.1716, -12.6369, 20.0586, 8.6716, 3.3631, 20.0586, 8.6716, -12.6369, 24.0586, 8.6716, -12.6369, 20.0586, 8.6716, -12.6369, 20.0586, 8.6716, 3.3631, 24.0586, 8.6716, -12.6369, 20.0586, 8.6716, 3.3631, 24.0586, 8.6716, 3.3631, 24.0586, 23.1716, -12.6369, 24.0586, 23.1716, 3.3631, 20.0586, 23.1716, 3.3631, 24.0586, 23.1716, -12.6369, 20.0586, 23.1716, 3.3631, 20.0586, 23.1716, -12.6369, 24.0586, 23.1716, -12.6369, 24.0586, 8.6716, -12.6369, 24.0586, 8.6716, 3.3631, 24.0586, 23.1716, -12.6369, 24.0586, 8.6716, 3.3631, 24.0586, 23.1716, 3.3631, 20.0586, 23.1716, 3.3631, 24.0586, 23.1716, 3.3631, 24.0586, 8.6716, 3.3631, 20.0586, 23.1716, 3.3631, 24.0586, 8.6716, 3.3631, 20.0586, 8.6716, 3.3631, 0.0586, 23.1716, -108.637, 0.0586, 9.1716, -108.637, 4.0586, 9.1716, -108.637, 0.0586, 23.1716, -108.637, 4.0586, 9.1716, -108.637, 4.0586, 23.1716, -108.637, 0.0586, 23.1716, -108.637, 0.0586, 23.1716, -92.6369, 0.0586, 9.1716, -92.6369, 0.0586, 23.1716, -108.637, 0.0586, 9.1716, -92.6369, 0.0586, 9.1716, -108.637, 4.0586, 9.1716, -108.637, 0.0586, 9.1716, -108.637, 0.0586, 9.1716, -92.6369, 4.0586, 9.1716, -108.637, 0.0586, 9.1716, -92.6369, 4.0586, 9.1716, -92.6369, 4.0586, 23.1716, -108.637, 4.0586, 23.1716, -92.6369, 0.0586, 23.1716, -92.6369, 4.0586, 23.1716, -108.637, 0.0586, 23.1716, -92.6369, 0.0586, 23.1716, -108.637, 4.0586, 23.1716, -108.637, 4.0586, 9.1716, -108.637, 4.0586, 9.1716, -92.6369, 4.0586, 23.1716, -108.637, 4.0586, 9.1716, -92.6369, 4.0586, 23.1716, -92.6369, 0.0586, 23.1716, -92.6369, 4.0586, 23.1716, -92.6369, 4.0586, 9.1716, -92.6369, 0.0586, 23.1716, -92.6369, 4.0586, 9.1716, -92.6369, 0.0586, 9.1716, -92.6369, 0.0586, 23.1716, -76.6369, 0.0586, 9.1716, -76.6369, 4.0586, 9.1716, -76.6369, 0.0586, 23.1716, -76.6369, 4.0586, 9.1716, -76.6369, 4.0586, 23.1716, -76.6369, 0.0586, 23.1716, -76.6369, 0.0586, 23.1716, -60.6369, 0.0586, 9.1716, -60.6369, 0.0586, 23.1716, -76.6369, 0.0586, 9.1716, -60.6369, 0.0586, 9.1716, -76.6369, 4.0586, 9.1716, -76.6369, 0.0586, 9.1716, -76.6369, 0.0586, 9.1716, -60.6369, 4.0586, 9.1716, -76.6369, 0.0586, 9.1716, -60.6369, 4.0586, 9.1716, -60.6369, 4.0586, 23.1716, -76.6369, 4.0586, 23.1716, -60.6369, 0.0586, 23.1716, -60.6369, 4.0586, 23.1716, -76.6369, 0.0586, 23.1716, -60.6369, 0.0586, 23.1716, -76.6369, 4.0586, 23.1716, -76.6369, 4.0586, 9.1716, -76.6369, 4.0586, 9.1716, -60.6369, 4.0586, 23.1716, -76.6369, 4.0586, 9.1716, -60.6369, 4.0586, 23.1716, -60.6369, 0.0586, 23.1716, -60.6369, 4.0586, 23.1716, -60.6369, 4.0586, 9.1716, -60.6369, 0.0586, 23.1716, -60.6369, 4.0586, 9.1716, -60.6369, 0.0586, 9.1716, -60.6369, 0.0586, 23.1716, -44.6369, 0.0586, 9.1716, -44.6369, 4.0586, 9.1716, -44.6369, 0.0586, 23.1716, -44.6369, 4.0586, 9.1716, -44.6369, 4.0586, 23.1716, -44.6369, 0.0586, 23.1716, -44.6369, 0.0586, 23.1716, -28.6369, 0.0586, 9.1716, -28.6369, 0.0586, 23.1716, -44.6369, 0.0586, 9.1716, -28.6369, 0.0586, 9.1716, -44.6369, 4.0586, 9.1716, -44.6369, 0.0586, 9.1716, -44.6369, 0.0586, 9.1716, -28.6369, 4.0586, 9.1716, -44.6369, 0.0586, 9.1716, -28.6369, 4.0586, 9.1716, -28.6369, 4.0586, 23.1716, -44.6369, 4.0586, 23.1716, -28.6369, 0.0586, 23.1716, -28.6369, 4.0586, 23.1716, -44.6369, 0.0586, 23.1716, -28.6369, 0.0586, 23.1716, -44.6369, 4.0586, 23.1716, -44.6369, 4.0586, 9.1716, -44.6369, 4.0586, 9.1716, -28.6369, 4.0586, 23.1716, -44.6369, 4.0586, 9.1716, -28.6369, 4.0586, 23.1716, -28.6369, 0.0586, 23.1716, -28.6369, 4.0586, 23.1716, -28.6369, 4.0586, 9.1716, -28.6369, 0.0586, 23.1716, -28.6369, 4.0586, 9.1716, -28.6369, 0.0586, 9.1716, -28.6369, 0.0586, 23.1716, -12.6369, 0.0586, 9.1716, -12.6369, 4.0586, 9.1716, -12.6369, 0.0586, 23.1716, -12.6369, 4.0586, 9.1716, -12.6369, 4.0586, 23.1716, -12.6369, 0.0586, 23.1716, -12.6369, 0.0586, 23.1716, 3.3631, 0.0586, 9.1716, 3.3631, 0.0586, 23.1716, -12.6369, 0.0586, 9.1716, 3.3631, 0.0586, 9.1716, -12.6369, 4.0586, 9.1716, -12.6369, 0.0586, 9.1716, -12.6369, 0.0586, 9.1716, 3.3631, 4.0586, 9.1716, -12.6369, 0.0586, 9.1716, 3.3631, 4.0586, 9.1716, 3.3631, 4.0586, 23.1716, -12.6369, 4.0586, 23.1716, 3.3631, 0.0586, 23.1716, 3.3631, 4.0586, 23.1716, -12.6369, 0.0586, 23.1716, 3.3631, 0.0586, 23.1716, -12.6369, 4.0586, 23.1716, -12.6369, 4.0586, 9.1716, -12.6369, 4.0586, 9.1716, 3.3631, 4.0586, 23.1716, -12.6369, 4.0586, 9.1716, 3.3631, 4.0586, 23.1716, 3.3631, 0.0586, 23.1716, 3.3631, 4.0586, 23.1716, 3.3631, 4.0586, 9.1716, 3.3631, 0.0586, 23.1716, 3.3631, 4.0586, 9.1716, 3.3631, 0.0586, 9.1716, 3.3631, 0.0586, 23.1716, 19.3631, 0.0586, 9.1716, 19.3631, 4.0586, 9.1716, 19.3631, 0.0586, 23.1716, 19.3631, 4.0586, 9.1716, 19.3631, 4.0586, 23.1716, 19.3631, 0.0586, 23.1716, 19.3631, 0.0586, 23.1716, 35.3631, 0.0586, 9.1716, 35.3631, 0.0586, 23.1716, 19.3631, 0.0586, 9.1716, 35.3631, 0.0586, 9.1716, 19.3631, 4.0586, 9.1716, 19.3631, 0.0586, 9.1716, 19.3631, 0.0586, 9.1716, 35.3631, 4.0586, 9.1716, 19.3631, 0.0586, 9.1716, 35.3631, 4.0586, 9.1716, 35.3631, 4.0586, 23.1716, 19.3631, 4.0586, 23.1716, 35.3631, 0.0586, 23.1716, 35.3631, 4.0586, 23.1716, 19.3631, 0.0586, 23.1716, 35.3631, 0.0586, 23.1716, 19.3631, 4.0586, 23.1716, 19.3631, 4.0586, 9.1716, 19.3631, 4.0586, 9.1716, 35.3631, 4.0586, 23.1716, 19.3631, 4.0586, 9.1716, 35.3631, 4.0586, 23.1716, 35.3631, 0.0586, 23.1716, 35.3631, 4.0586, 23.1716, 35.3631, 4.0586, 9.1716, 35.3631, 0.0586, 23.1716, 35.3631, 4.0586, 9.1716, 35.3631, 0.0586, 9.1716, 35.3631, 16.5586, 7.1716, -133.137, 16.5586, 5.1716, -133.137, 24.0586, 5.1716, -133.137, 16.5586, 7.1716, -133.137, 24.0586, 5.1716, -133.137, 24.0586, 7.1716, -133.137, 16.5586, 7.1716, -133.137, 16.5586, 7.1716, -108.637, 16.5586, 5.1716, -108.637, 16.5586, 7.1716, -133.137, 16.5586, 5.1716, -108.637, 16.5586, 5.1716, -133.137, 24.0586, 5.1716, -133.137, 16.5586, 5.1716, -133.137, 16.5586, 5.1716, -108.637, 24.0586, 5.1716, -133.137, 16.5586, 5.1716, -108.637, 24.0586, 5.1716, -108.637, 24.0586, 7.1716, -133.137, 24.0586, 7.1716, -108.637, 16.5586, 7.1716, -108.637, 24.0586, 7.1716, -133.137, 16.5586, 7.1716, -108.637, 16.5586, 7.1716, -133.137, 24.0586, 7.1716, -133.137, 24.0586, 5.1716, -133.137, 24.0586, 5.1716, -108.637, 24.0586, 7.1716, -133.137, 24.0586, 5.1716, -108.637, 24.0586, 7.1716, -108.637, 16.5586, 7.1716, -108.637, 24.0586, 7.1716, -108.637, 24.0586, 5.1716, -108.637, 16.5586, 7.1716, -108.637, 24.0586, 5.1716, -108.637, 16.5586, 5.1716, -108.637, 20.0586, 14.1716, -133.137, 20.0586, 7.1716, -133.137, 24.0586, 7.1716, -133.137, 20.0586, 14.1716, -133.137, 24.0586, 7.1716, -133.137, 24.0586, 14.1716, -133.137, 20.0586, 14.1716, -133.137, 20.0586, 14.1716, -108.637, 20.0586, 7.1716, -108.637, 20.0586, 14.1716, -133.137, 20.0586, 7.1716, -108.637, 20.0586, 7.1716, -133.137, 24.0586, 7.1716, -133.137, 20.0586, 7.1716, -133.137, 20.0586, 7.1716, -108.637, 24.0586, 7.1716, -133.137, 20.0586, 7.1716, -108.637, 24.0586, 7.1716, -108.637, 24.0586, 14.1716, -133.137, 24.0586, 14.1716, -108.637, 20.0586, 14.1716, -108.637, 24.0586, 14.1716, -133.137, 20.0586, 14.1716, -108.637, 20.0586, 14.1716, -133.137, 24.0586, 14.1716, -133.137, 24.0586, 7.1716, -133.137, 24.0586, 7.1716, -108.637, 24.0586, 14.1716, -133.137, 24.0586, 7.1716, -108.637, 24.0586, 14.1716, -108.637, 20.0586, 14.1716, -108.637, 24.0586, 14.1716, -108.637, 24.0586, 7.1716, -108.637, 20.0586, 14.1716, -108.637, 24.0586, 7.1716, -108.637, 20.0586, 7.1716, -108.637, 0.0586, 14.1716, -133.137, 0.0586, 7.1716, -133.137, 4.0586, 7.1716, -133.137, 0.0586, 14.1716, -133.137, 4.0586, 7.1716, -133.137, 4.0586, 14.1716, -133.137, 0.0586, 14.1716, -133.137, 0.0586, 14.1716, -108.637, 0.0586, 7.1716, -108.637, 0.0586, 14.1716, -133.137, 0.0586, 7.1716, -108.637, 0.0586, 7.1716, -133.137, 4.0586, 7.1716, -133.137, 0.0586, 7.1716, -133.137, 0.0586, 7.1716, -108.637, 4.0586, 7.1716, -133.137, 0.0586, 7.1716, -108.637, 4.0586, 7.1716, -108.637, 4.0586, 14.1716, -133.137, 4.0586, 14.1716, -108.637, 0.0586, 14.1716, -108.637, 4.0586, 14.1716, -133.137, 0.0586, 14.1716, -108.637, 0.0586, 14.1716, -133.137, 4.0586, 14.1716, -133.137, 4.0586, 7.1716, -133.137, 4.0586, 7.1716, -108.637, 4.0586, 14.1716, -133.137, 4.0586, 7.1716, -108.637, 4.0586, 14.1716, -108.637, 0.0586, 14.1716, -108.637, 4.0586, 14.1716, -108.637, 4.0586, 7.1716, -108.637, 0.0586, 14.1716, -108.637, 4.0586, 7.1716, -108.637, 0.0586, 7.1716, -108.637, 0.0586, 7.1716, 35.3631, 0.0586, 5.1716, 35.3631, 7.5586, 5.1716, 35.3631, 0.0586, 7.1716, 35.3631, 7.5586, 5.1716, 35.3631, 7.5586, 7.1716, 35.3631, 0.0586, 7.1716, 35.3631, 0.0586, 7.1716, 59.8631, 0.0586, 5.1716, 59.8631, 0.0586, 7.1716, 35.3631, 0.0586, 5.1716, 59.8631, 0.0586, 5.1716, 35.3631, 7.5586, 5.1716, 35.3631, 0.0586, 5.1716, 35.3631, 0.0586, 5.1716, 59.8631, 7.5586, 5.1716, 35.3631, 0.0586, 5.1716, 59.8631, 7.5586, 5.1716, 59.8631, 7.5586, 7.1716, 35.3631, 7.5586, 7.1716, 59.8631, 0.0586, 7.1716, 59.8631, 7.5586, 7.1716, 35.3631, 0.0586, 7.1716, 59.8631, 0.0586, 7.1716, 35.3631, 7.5586, 7.1716, 35.3631, 7.5586, 5.1716, 35.3631, 7.5586, 5.1716, 59.8631, 7.5586, 7.1716, 35.3631, 7.5586, 5.1716, 59.8631, 7.5586, 7.1716, 59.8631, 0.0586, 7.1716, 59.8631, 7.5586, 7.1716, 59.8631, 7.5586, 5.1716, 59.8631, 0.0586, 7.1716, 59.8631, 7.5586, 5.1716, 59.8631, 0.0586, 5.1716, 59.8631, 20.0586, 14.1716, 35.3631, 20.0586, 7.1716, 35.3631, 24.0586, 7.1716, 35.3631, 20.0586, 14.1716, 35.3631, 24.0586, 7.1716, 35.3631, 24.0586, 14.1716, 35.3631, 20.0586, 14.1716, 35.3631, 20.0586, 14.1716, 59.8631, 20.0586, 7.1716, 59.8631, 20.0586, 14.1716, 35.3631, 20.0586, 7.1716, 59.8631, 20.0586, 7.1716, 35.3631, 24.0586, 7.1716, 35.3631, 20.0586, 7.1716, 35.3631, 20.0586, 7.1716, 59.8631, 24.0586, 7.1716, 35.3631, 20.0586, 7.1716, 59.8631, 24.0586, 7.1716, 59.8631, 24.0586, 14.1716, 35.3631, 24.0586, 14.1716, 59.8631, 20.0586, 14.1716, 59.8631, 24.0586, 14.1716, 35.3631, 20.0586, 14.1716, 59.8631, 20.0586, 14.1716, 35.3631, 24.0586, 14.1716, 35.3631, 24.0586, 7.1716, 35.3631, 24.0586, 7.1716, 59.8631, 24.0586, 14.1716, 35.3631, 24.0586, 7.1716, 59.8631, 24.0586, 14.1716, 59.8631, 20.0586, 14.1716, 59.8631, 24.0586, 14.1716, 59.8631, 24.0586, 7.1716, 59.8631, 20.0586, 14.1716, 59.8631, 24.0586, 7.1716, 59.8631, 20.0586, 7.1716, 59.8631, 0.0586, 14.1716, 35.3631, 0.0586, 7.1716, 35.3631, 4.0586, 7.1716, 35.3631, 0.0586, 14.1716, 35.3631, 4.0586, 7.1716, 35.3631, 4.0586, 14.1716, 35.3631, 0.0586, 14.1716, 35.3631, 0.0586, 14.1716, 59.8631, 0.0586, 7.1716, 59.8631, 0.0586, 14.1716, 35.3631, 0.0586, 7.1716, 59.8631, 0.0586, 7.1716, 35.3631, 4.0586, 7.1716, 35.3631, 0.0586, 7.1716, 35.3631, 0.0586, 7.1716, 59.8631, 4.0586, 7.1716, 35.3631, 0.0586, 7.1716, 59.8631, 4.0586, 7.1716, 59.8631, 4.0586, 14.1716, 35.3631, 4.0586, 14.1716, 59.8631, 0.0586, 14.1716, 59.8631, 4.0586, 14.1716, 35.3631, 0.0586, 14.1716, 59.8631, 0.0586, 14.1716, 35.3631, 4.0586, 14.1716, 35.3631, 4.0586, 7.1716, 35.3631, 4.0586, 7.1716, 59.8631, 4.0586, 14.1716, 35.3631, 4.0586, 7.1716, 59.8631, 4.0586, 14.1716, 59.8631, 0.0586, 14.1716, 59.8631, 4.0586, 14.1716, 59.8631, 4.0586, 7.1716, 59.8631, 0.0586, 14.1716, 59.8631, 4.0586, 7.1716, 59.8631, 0.0586, 7.1716, 59.8631, 0.0586, 13.6716, 3.3631, 0.0586, 9.1716, 3.3631, 4.0586, 9.1716, 3.3631, 0.0586, 13.6716, 3.3631, 4.0586, 9.1716, 3.3631, 4.0586, 13.6716, 3.3631, 0.0586, 13.6716, 3.3631, 0.0586, 13.6716, 19.3631, 0.0586, 9.1716, 19.3631, 0.0586, 13.6716, 3.3631, 0.0586, 9.1716, 19.3631, 0.0586, 9.1716, 3.3631, 4.0586, 9.1716, 3.3631, 0.0586, 9.1716, 3.3631, 0.0586, 9.1716, 19.3631, 4.0586, 9.1716, 3.3631, 0.0586, 9.1716, 19.3631, 4.0586, 9.1716, 19.3631, 4.0586, 13.6716, 3.3631, 4.0586, 13.6716, 19.3631, 0.0586, 13.6716, 19.3631, 4.0586, 13.6716, 3.3631, 0.0586, 13.6716, 19.3631, 0.0586, 13.6716, 3.3631, 4.0586, 13.6716, 3.3631, 4.0586, 9.1716, 3.3631, 4.0586, 9.1716, 19.3631, 4.0586, 13.6716, 3.3631, 4.0586, 9.1716, 19.3631, 4.0586, 13.6716, 19.3631, 0.0586, 13.6716, 19.3631, 4.0586, 13.6716, 19.3631, 4.0586, 9.1716, 19.3631, 0.0586, 13.6716, 19.3631, 4.0586, 9.1716, 19.3631, 0.0586, 9.1716, 19.3631, 0.0586, 13.6716, -28.6369, 0.0586, 9.1716, -28.6369, 4.0586, 9.1716, -28.6369, 0.0586, 13.6716, -28.6369, 4.0586, 9.1716, -28.6369, 4.0586, 13.6716, -28.6369, 0.0586, 13.6716, -28.6369, 0.0586, 13.6716, -12.6369, 0.0586, 9.1716, -12.6369, 0.0586, 13.6716, -28.6369, 0.0586, 9.1716, -12.6369, 0.0586, 9.1716, -28.6369, 4.0586, 9.1716, -28.6369, 0.0586, 9.1716, -28.6369, 0.0586, 9.1716, -12.6369, 4.0586, 9.1716, -28.6369, 0.0586, 9.1716, -12.6369, 4.0586, 9.1716, -12.6369, 4.0586, 13.6716, -28.6369, 4.0586, 13.6716, -12.6369, 0.0586, 13.6716, -12.6369, 4.0586, 13.6716, -28.6369, 0.0586, 13.6716, -12.6369, 0.0586, 13.6716, -28.6369, 4.0586, 13.6716, -28.6369, 4.0586, 9.1716, -28.6369, 4.0586, 9.1716, -12.6369, 4.0586, 13.6716, -28.6369, 4.0586, 9.1716, -12.6369, 4.0586, 13.6716, -12.6369, 0.0586, 13.6716, -12.6369, 4.0586, 13.6716, -12.6369, 4.0586, 9.1716, -12.6369, 0.0586, 13.6716, -12.6369, 4.0586, 9.1716, -12.6369, 0.0586, 9.1716, -12.6369, 0.0586, 13.6716, -60.6369, 0.0586, 9.1716, -60.6369, 4.0586, 9.1716, -60.6369, 0.0586, 13.6716, -60.6369, 4.0586, 9.1716, -60.6369, 4.0586, 13.6716, -60.6369, 0.0586, 13.6716, -60.6369, 0.0586, 13.6716, -44.6369, 0.0586, 9.1716, -44.6369, 0.0586, 13.6716, -60.6369, 0.0586, 9.1716, -44.6369, 0.0586, 9.1716, -60.6369, 4.0586, 9.1716, -60.6369, 0.0586, 9.1716, -60.6369, 0.0586, 9.1716, -44.6369, 4.0586, 9.1716, -60.6369, 0.0586, 9.1716, -44.6369, 4.0586, 9.1716, -44.6369, 4.0586, 13.6716, -60.6369, 4.0586, 13.6716, -44.6369, 0.0586, 13.6716, -44.6369, 4.0586, 13.6716, -60.6369, 0.0586, 13.6716, -44.6369, 0.0586, 13.6716, -60.6369, 4.0586, 13.6716, -60.6369, 4.0586, 9.1716, -60.6369, 4.0586, 9.1716, -44.6369, 4.0586, 13.6716, -60.6369, 4.0586, 9.1716, -44.6369, 4.0586, 13.6716, -44.6369, 0.0586, 13.6716, -44.6369, 4.0586, 13.6716, -44.6369, 4.0586, 9.1716, -44.6369, 0.0586, 13.6716, -44.6369, 4.0586, 9.1716, -44.6369, 0.0586, 9.1716, -44.6369, 0.0586, 13.6716, -92.6369, 0.0586, 9.1716, -92.6369, 4.0586, 9.1716, -92.6369, 0.0586, 13.6716, -92.6369, 4.0586, 9.1716, -92.6369, 4.0586, 13.6716, -92.6369, 0.0586, 13.6716, -92.6369, 0.0586, 13.6716, -76.6369, 0.0586, 9.1716, -76.6369, 0.0586, 13.6716, -92.6369, 0.0586, 9.1716, -76.6369, 0.0586, 9.1716, -92.6369, 4.0586, 9.1716, -92.6369, 0.0586, 9.1716, -92.6369, 0.0586, 9.1716, -76.6369, 4.0586, 9.1716, -92.6369, 0.0586, 9.1716, -76.6369, 4.0586, 9.1716, -76.6369, 4.0586, 13.6716, -92.6369, 4.0586, 13.6716, -76.6369, 0.0586, 13.6716, -76.6369, 4.0586, 13.6716, -92.6369, 0.0586, 13.6716, -76.6369, 0.0586, 13.6716, -92.6369, 4.0586, 13.6716, -92.6369, 4.0586, 9.1716, -92.6369, 4.0586, 9.1716, -76.6369, 4.0586, 13.6716, -92.6369, 4.0586, 9.1716, -76.6369, 4.0586, 13.6716, -76.6369, 0.0586, 13.6716, -76.6369, 4.0586, 13.6716, -76.6369, 4.0586, 9.1716, -76.6369, 0.0586, 13.6716, -76.6369, 4.0586, 9.1716, -76.6369, 0.0586, 9.1716, -76.6369, 16.5586, 7.1716, 35.3631, 16.5586, 5.1716, 35.3631, 24.0586, 5.1716, 35.3631, 16.5586, 7.1716, 35.3631, 24.0586, 5.1716, 35.3631, 24.0586, 7.1716, 35.3631, 16.5586, 7.1716, 35.3631, 16.5586, 7.1716, 59.8631, 16.5586, 5.1716, 59.8631, 16.5586, 7.1716, 35.3631, 16.5586, 5.1716, 59.8631, 16.5586, 5.1716, 35.3631, 24.0586, 5.1716, 35.3631, 16.5586, 5.1716, 35.3631, 16.5586, 5.1716, 59.8631, 24.0586, 5.1716, 35.3631, 16.5586, 5.1716, 59.8631, 24.0586, 5.1716, 59.8631, 24.0586, 7.1716, 35.3631, 24.0586, 7.1716, 59.8631, 16.5586, 7.1716, 59.8631, 24.0586, 7.1716, 35.3631, 16.5586, 7.1716, 59.8631, 16.5586, 7.1716, 35.3631, 24.0586, 7.1716, 35.3631, 24.0586, 5.1716, 35.3631, 24.0586, 5.1716, 59.8631, 24.0586, 7.1716, 35.3631, 24.0586, 5.1716, 59.8631, 24.0586, 7.1716, 59.8631, 16.5586, 7.1716, 59.8631, 24.0586, 7.1716, 59.8631, 24.0586, 5.1716, 59.8631, 16.5586, 7.1716, 59.8631, 24.0586, 5.1716, 59.8631, 16.5586, 5.1716, 59.8631, 0.0586, 7.1716, -133.137, 0.0586, 5.1716, -133.137, 7.5586, 5.1716, -133.137, 0.0586, 7.1716, -133.137, 7.5586, 5.1716, -133.137, 7.5586, 7.1716, -133.137, 0.0586, 7.1716, -133.137, 0.0586, 7.1716, -108.637, 0.0586, 5.1716, -108.637, 0.0586, 7.1716, -133.137, 0.0586, 5.1716, -108.637, 0.0586, 5.1716, -133.137, 7.5586, 5.1716, -133.137, 0.0586, 5.1716, -133.137, 0.0586, 5.1716, -108.637, 7.5586, 5.1716, -133.137, 0.0586, 5.1716, -108.637, 7.5586, 5.1716, -108.637, 7.5586, 7.1716, -133.137, 7.5586, 7.1716, -108.637, 0.0586, 7.1716, -108.637, 7.5586, 7.1716, -133.137, 0.0586, 7.1716, -108.637, 0.0586, 7.1716, -133.137, 7.5586, 7.1716, -133.137, 7.5586, 5.1716, -133.137, 7.5586, 5.1716, -108.637, 7.5586, 7.1716, -133.137, 7.5586, 5.1716, -108.637, 7.5586, 7.1716, -108.637, 0.0586, 7.1716, -108.637, 7.5586, 7.1716, -108.637, 7.5586, 5.1716, -108.637, 0.0586, 7.1716, -108.637, 7.5586, 5.1716, -108.637, 0.0586, 5.1716, -108.637, 0.0586, 25.1716, -108.637, 0.0586, 23.1716, -108.637, 24.0586, 23.1716, -108.637, 0.0586, 25.1716, -108.637, 24.0586, 23.1716, -108.637, 24.0586, 25.1716, -108.637, 0.0586, 25.1716, -108.637, 0.0586, 25.1716, 35.3631, 0.0586, 23.1716, 35.3631, 0.0586, 25.1716, -108.637, 0.0586, 23.1716, 35.3631, 0.0586, 23.1716, -108.637, 24.0586, 23.1716, -108.637, 0.0586, 23.1716, -108.637, 0.0586, 23.1716, 35.3631, 24.0586, 23.1716, -108.637, 0.0586, 23.1716, 35.3631, 24.0586, 23.1716, 35.3631, 24.0586, 25.1716, -108.637, 24.0586, 25.1716, 35.3631, 0.0586, 25.1716, 35.3631, 24.0586, 25.1716, -108.637, 0.0586, 25.1716, 35.3631, 0.0586, 25.1716, -108.637, 24.0586, 25.1716, -108.637, 24.0586, 23.1716, -108.637, 24.0586, 23.1716, 35.3631, 24.0586, 25.1716, -108.637, 24.0586, 23.1716, 35.3631, 24.0586, 25.1716, 35.3631, 0.0586, 25.1716, 35.3631, 24.0586, 25.1716, 35.3631, 24.0586, 23.1716, 35.3631, 0.0586, 25.1716, 35.3631, 24.0586, 23.1716, 35.3631, 0.0586, 23.1716, 35.3631, -26.9414, 25.1716, -213.137, -26.9414, 23.1716, -213.137, 53.0586, 23.1716, -213.137, -26.9414, 25.1716, -213.137, 53.0586, 23.1716, -213.137, 53.0586, 25.1716, -213.137, -26.9414, 25.1716, -213.137, -26.9414, 25.1716, -133.137, -26.9414, 23.1716, -133.137, -26.9414, 25.1716, -213.137, -26.9414, 23.1716, -133.137, -26.9414, 23.1716, -213.137, 53.0586, 23.1716, -213.137, -26.9414, 23.1716, -213.137, -26.9414, 23.1716, -133.137, 53.0586, 23.1716, -213.137, -26.9414, 23.1716, -133.137, 53.0586, 23.1716, -133.137, 53.0586, 25.1716, -213.137, 53.0586, 25.1716, -133.137, -26.9414, 25.1716, -133.137, 53.0586, 25.1716, -213.137, -26.9414, 25.1716, -133.137, -26.9414, 25.1716, -213.137, 53.0586, 25.1716, -213.137, 53.0586, 23.1716, -213.137, 53.0586, 23.1716, -133.137, 53.0586, 25.1716, -213.137, 53.0586, 23.1716, -133.137, 53.0586, 25.1716, -133.137, -26.9414, 25.1716, -133.137, 53.0586, 25.1716, -133.137, 53.0586, 23.1716, -133.137, -26.9414, 25.1716, -133.137, 53.0586, 23.1716, -133.137, -26.9414, 23.1716, -133.137, 7.5586, 7.1716, -133.137, 7.5586, 6.6716, -133.137, 16.5586, 6.6716, -133.137, 7.5586, 7.1716, -133.137, 16.5586, 6.6716, -133.137, 16.5586, 7.1716, -133.137, 7.5586, 7.1716, -133.137, 7.5586, 7.1716, -108.637, 7.5586, 6.6716, -108.637, 7.5586, 7.1716, -133.137, 7.5586, 6.6716, -108.637, 7.5586, 6.6716, -133.137, 16.5586, 6.6716, -133.137, 7.5586, 6.6716, -133.137, 7.5586, 6.6716, -108.637, 16.5586, 6.6716, -133.137, 7.5586, 6.6716, -108.637, 16.5586, 6.6716, -108.637, 16.5586, 7.1716, -133.137, 16.5586, 7.1716, -108.637, 7.5586, 7.1716, -108.637, 16.5586, 7.1716, -133.137, 7.5586, 7.1716, -108.637, 7.5586, 7.1716, -133.137, 16.5586, 7.1716, -133.137, 16.5586, 6.6716, -133.137, 16.5586, 6.6716, -108.637, 16.5586, 7.1716, -133.137, 16.5586, 6.6716, -108.637, 16.5586, 7.1716, -108.637, 7.5586, 7.1716, -108.637, 16.5586, 7.1716, -108.637, 16.5586, 6.6716, -108.637, 7.5586, 7.1716, -108.637, 16.5586, 6.6716, -108.637, 7.5586, 6.6716, -108.637, 37.5586, 7.1716, -213.137, 37.5586, 5.1716, -213.137, 53.0586, 5.1716, -213.137, 37.5586, 7.1716, -213.137, 53.0586, 5.1716, -213.137, 53.0586, 7.1716, -213.137, 37.5586, 7.1716, -213.137, 37.5586, 7.1716, -197.637, 37.5586, 5.1716, -197.637, 37.5586, 7.1716, -213.137, 37.5586, 5.1716, -197.637, 37.5586, 5.1716, -213.137, 53.0586, 5.1716, -213.137, 37.5586, 5.1716, -213.137, 37.5586, 5.1716, -197.637, 53.0586, 5.1716, -213.137, 37.5586, 5.1716, -197.637, 53.0586, 5.1716, -197.637, 53.0586, 7.1716, -213.137, 53.0586, 7.1716, -197.637, 37.5586, 7.1716, -197.637, 53.0586, 7.1716, -213.137, 37.5586, 7.1716, -197.637, 37.5586, 7.1716, -213.137, 53.0586, 7.1716, -213.137, 53.0586, 5.1716, -213.137, 53.0586, 5.1716, -197.637, 53.0586, 7.1716, -213.137, 53.0586, 5.1716, -197.637, 53.0586, 7.1716, -197.637, 37.5586, 7.1716, -197.637, 53.0586, 7.1716, -197.637, 53.0586, 5.1716, -197.637, 37.5586, 7.1716, -197.637, 53.0586, 5.1716, -197.637, 37.5586, 5.1716, -197.637, 7.5586, 7.1716, 35.3631, 7.5586, 6.6716, 35.3631, 16.5586, 6.6716, 35.3631, 7.5586, 7.1716, 35.3631, 16.5586, 6.6716, 35.3631, 16.5586, 7.1716, 35.3631, 7.5586, 7.1716, 35.3631, 7.5586, 7.1716, 59.8631, 7.5586, 6.6716, 59.8631, 7.5586, 7.1716, 35.3631, 7.5586, 6.6716, 59.8631, 7.5586, 6.6716, 35.3631, 16.5586, 6.6716, 35.3631, 7.5586, 6.6716, 35.3631, 7.5586, 6.6716, 59.8631, 16.5586, 6.6716, 35.3631, 7.5586, 6.6716, 59.8631, 16.5586, 6.6716, 59.8631, 16.5586, 7.1716, 35.3631, 16.5586, 7.1716, 59.8631, 7.5586, 7.1716, 59.8631, 16.5586, 7.1716, 35.3631, 7.5586, 7.1716, 59.8631, 7.5586, 7.1716, 35.3631, 16.5586, 7.1716, 35.3631, 16.5586, 6.6716, 35.3631, 16.5586, 6.6716, 59.8631, 16.5586, 7.1716, 35.3631, 16.5586, 6.6716, 59.8631, 16.5586, 7.1716, 59.8631, 7.5586, 7.1716, 59.8631, 16.5586, 7.1716, 59.8631, 16.5586, 6.6716, 59.8631, 7.5586, 7.1716, 59.8631, 16.5586, 6.6716, 59.8631, 7.5586, 6.6716, 59.8631, 25.0758, 7.1716, -213.137, -13.0276, -25.3284, -213.137, -2.5814, -25.3284, -213.137, 25.0758, 7.1716, -213.137, -2.5814, -25.3284, -213.137, 37.5586, 5.0807, -213.137, 25.0758, 7.1716, -213.137, 37.5586, 5.0807, -213.137, 37.5586, 7.1716, -213.137, 25.0758, 7.1716, -213.137, 25.0758, 7.1716, -197.637, -13.0276, -25.3284, -197.637, 25.0758, 7.1716, -213.137, -13.0276, -25.3284, -197.637, -13.0276, -25.3284, -213.137, -2.5814, -25.3284, -213.137, -13.0276, -25.3284, -213.137, -13.0276, -25.3284, -197.637, -2.5814, -25.3284, -213.137, -13.0276, -25.3284, -197.637, -2.5814, -25.3284, -197.637, 37.5586, 7.1716, -213.137, 37.5586, 7.1716, -197.637, 25.0758, 7.1716, -197.637, 37.5586, 7.1716, -213.137, 25.0758, 7.1716, -197.637, 25.0758, 7.1716, -213.137, 37.5586, 5.0807, -213.137, -2.5814, -25.3284, -213.137, -2.5814, -25.3284, -197.637, 37.5586, 5.0807, -213.137, -2.5814, -25.3284, -197.637, 37.5586, 5.0807, -197.637, 37.5586, 5.0807, -213.137, 37.5586, 5.0807, -197.637, 37.5586, 7.1716, -197.637, 37.5586, 5.0807, -213.137, 37.5586, 7.1716, -197.637, 37.5586, 7.1716, -213.137, 25.0758, 7.1716, -197.637, 37.5586, 7.1716, -197.637, 37.5586, 5.0807, -197.637, 25.0758, 7.1716, -197.637, 37.5586, 5.0807, -197.637, -2.5814, -25.3284, -197.637, 25.0758, 7.1716, -197.637, -2.5814, -25.3284, -197.637, -13.0276, -25.3284, -197.637, -105.941, 7.1716, 79.8631, -106.441, 7.1716, 79.8631, -130.441, 1.1716, 79.8631, -105.941, 7.1716, 79.8631, -130.441, 1.1716, 79.8631, -105.941, 1.1716, 79.8631, -106.441, 7.1716, 79.8631, -106.441, 7.1716, 91.8631, -130.441, 1.1716, 91.8631, -106.441, 7.1716, 79.8631, -130.441, 1.1716, 91.8631, -130.441, 1.1716, 79.8631, -105.941, 1.1716, 79.8631, -130.441, 1.1716, 79.8631, -130.441, 1.1716, 91.8631, -105.941, 1.1716, 79.8631, -130.441, 1.1716, 91.8631, -105.941, 1.1716, 91.8631, -105.941, 7.1716, 79.8631, -105.941, 7.1716, 91.8631, -106.441, 7.1716, 91.8631, -105.941, 7.1716, 79.8631, -106.441, 7.1716, 91.8631, -106.441, 7.1716, 79.8631, -105.941, 7.1716, 79.8631, -105.941, 1.1716, 79.8631, -105.941, 1.1716, 91.8631, -105.941, 7.1716, 79.8631, -105.941, 1.1716, 91.8631, -105.941, 7.1716, 91.8631, -106.441, 7.1716, 91.8631, -105.941, 7.1716, 91.8631, -105.941, 1.1716, 91.8631, -106.441, 7.1716, 91.8631, -105.941, 1.1716, 91.8631, -130.441, 1.1716, 91.8631, -142.441, 1.1716, 79.8631, -142.441, -4.8284, 79.8631, -130.441, -4.8284, 79.8631, -142.441, 1.1716, 79.8631, -130.441, -4.8284, 79.8631, -130.441, 1.1716, 79.8631, -142.441, 1.1716, 79.8631, -142.441, 1.1716, 92.3631, -142.441, -4.8284, 107.863, -142.441, 1.1716, 79.8631, -142.441, -4.8284, 107.863, -142.441, -4.8284, 79.8631, -130.441, -4.8284, 79.8631, -142.441, -4.8284, 79.8631, -142.441, -4.8284, 107.863, -130.441, -4.8284, 79.8631, -142.441, -4.8284, 107.863, -130.441, -4.8284, 107.863, -130.441, 1.1716, 79.8631, -130.441, 1.1716, 92.3631, -142.441, 1.1716, 92.3631, -130.441, 1.1716, 79.8631, -142.441, 1.1716, 92.3631, -142.441, 1.1716, 79.8631, -130.441, 1.1716, 79.8631, -130.441, -4.8284, 79.8631, -130.441, -4.8284, 107.863, -130.441, 1.1716, 79.8631, -130.441, -4.8284, 107.863, -130.441, 1.1716, 92.3631, -142.441, 1.1716, 92.3631, -130.441, 1.1716, 92.3631, -130.441, -4.8284, 107.863, -142.441, 1.1716, 92.3631, -130.441, -4.8284, 107.863, -142.441, -4.8284, 107.863, -142.441, -4.8284, 107.863, -142.441, -10.8284, 107.863, -117.941, -10.8284, 107.863, -142.441, -4.8284, 107.863, -117.941, -10.8284, 107.863, -129.941, -4.8284, 107.863, -142.441, -4.8284, 107.863, -142.441, -4.8284, 119.863, -142.441, -10.8284, 119.863, -142.441, -4.8284, 107.863, -142.441, -10.8284, 119.863, -142.441, -10.8284, 107.863, -117.941, -10.8284, 107.863, -142.441, -10.8284, 107.863, -142.441, -10.8284, 119.863, -117.941, -10.8284, 107.863, -142.441, -10.8284, 119.863, -117.941, -10.8284, 119.863, -129.941, -4.8284, 107.863, -129.941, -4.8284, 119.863, -142.441, -4.8284, 119.863, -129.941, -4.8284, 107.863, -142.441, -4.8284, 119.863, -142.441, -4.8284, 107.863, -129.941, -4.8284, 107.863, -117.941, -10.8284, 107.863, -117.941, -10.8284, 119.863, -129.941, -4.8284, 107.863, -117.941, -10.8284, 119.863, -129.941, -4.8284, 119.863, -142.441, -4.8284, 119.863, -129.941, -4.8284, 119.863, -117.941, -10.8284, 119.863, -142.441, -4.8284, 119.863, -117.941, -10.8284, 119.863, -142.441, -10.8284, 119.863, -117.941, -10.8284, 107.363, -117.941, -16.8284, 91.8631, -105.941, -16.8284, 91.8631, -117.941, -10.8284, 107.363, -105.941, -16.8284, 91.8631, -105.941, -10.8284, 107.363, -117.941, -10.8284, 107.363, -117.941, -10.8284, 119.863, -117.941, -16.8284, 119.863, -117.941, -10.8284, 107.363, -117.941, -16.8284, 119.863, -117.941, -16.8284, 91.8631, -105.941, -16.8284, 91.8631, -117.941, -16.8284, 91.8631, -117.941, -16.8284, 119.863, -105.941, -16.8284, 91.8631, -117.941, -16.8284, 119.863, -105.941, -16.8284, 119.863, -105.941, -10.8284, 107.363, -105.941, -10.8284, 119.863, -117.941, -10.8284, 119.863, -105.941, -10.8284, 107.363, -117.941, -10.8284, 119.863, -117.941, -10.8284, 107.363, -105.941, -10.8284, 107.363, -105.941, -16.8284, 91.8631, -105.941, -16.8284, 119.863, -105.941, -10.8284, 107.363, -105.941, -16.8284, 119.863, -105.941, -10.8284, 119.863, -117.941, -10.8284, 119.863, -105.941, -10.8284, 119.863, -105.941, -16.8284, 119.863, -117.941, -10.8284, 119.863, -105.941, -16.8284, 119.863, -117.941, -16.8284, 119.863, -118.441, -16.8284, 79.8631, -132.941, -25.3284, 79.8631, -105.941, -25.3284, 79.8631, -118.441, -16.8284, 79.8631, -105.941, -25.3284, 79.8631, -105.941, -16.8284, 79.8631, -118.441, -16.8284, 79.8631, -118.441, -16.8284, 91.8631, -132.941, -25.3284, 91.8631, -118.441, -16.8284, 79.8631, -132.941, -25.3284, 91.8631, -132.941, -25.3284, 79.8631, -105.941, -25.3284, 79.8631, -132.941, -25.3284, 79.8631, -132.941, -25.3284, 91.8631, -105.941, -25.3284, 79.8631, -132.941, -25.3284, 91.8631, -105.941, -25.3284, 91.8631, -105.941, -16.8284, 79.8631, -105.941, -16.8284, 91.8631, -118.441, -16.8284, 91.8631, -105.941, -16.8284, 79.8631, -118.441, -16.8284, 91.8631, -118.441, -16.8284, 79.8631, -105.941, -16.8284, 79.8631, -105.941, -25.3284, 79.8631, -105.941, -25.3284, 91.8631, -105.941, -16.8284, 79.8631, -105.941, -25.3284, 91.8631, -105.941, -16.8284, 91.8631, -118.441, -16.8284, 91.8631, -105.941, -16.8284, 91.8631, -105.941, -25.3284, 91.8631, -118.441, -16.8284, 91.8631, -105.941, -25.3284, 91.8631, -132.941, -25.3284, 91.8631, -29.4414, 25.1716, -213.137, -29.4414, -27.3284, -213.137, -26.9414, -27.3284, -213.137, -29.4414, 25.1716, -213.137, -26.9414, -27.3284, -213.137, -26.9414, 25.1716, -213.137, -29.4414, 25.1716, -213.137, -29.4414, 25.1716, -133.137, -29.4414, -27.3284, -133.137, -29.4414, 25.1716, -213.137, -29.4414, -27.3284, -133.137, -29.4414, -27.3284, -213.137, -26.9414, -27.3284, -213.137, -29.4414, -27.3284, -213.137, -29.4414, -27.3284, -133.137, -26.9414, -27.3284, -213.137, -29.4414, -27.3284, -133.137, -26.9414, -27.3284, -133.137, -26.9414, 25.1716, -213.137, -26.9414, 25.1716, -133.137, -29.4414, 25.1716, -133.137, -26.9414, 25.1716, -213.137, -29.4414, 25.1716, -133.137, -29.4414, 25.1716, -213.137, -26.9414, 25.1716, -213.137, -26.9414, -27.3284, -213.137, -26.9414, -27.3284, -133.137, -26.9414, 25.1716, -213.137, -26.9414, -27.3284, -133.137, -26.9414, 25.1716, -133.137, -29.4414, 25.1716, -133.137, -26.9414, 25.1716, -133.137, -26.9414, -27.3284, -133.137, -29.4414, 25.1716, -133.137, -26.9414, -27.3284, -133.137, -29.4414, -27.3284, -133.137, 53.0586, 25.1716, -213.137, 53.0586, -27.3284, -213.137, 55.5586, -27.3284, -213.137, 53.0586, 25.1716, -213.137, 55.5586, -27.3284, -213.137, 55.5586, 25.1716, -213.137, 53.0586, 25.1716, -213.137, 53.0586, 25.1716, -133.137, 53.0586, -27.3284, -133.137, 53.0586, 25.1716, -213.137, 53.0586, -27.3284, -133.137, 53.0586, -27.3284, -213.137, 55.5586, -27.3284, -213.137, 53.0586, -27.3284, -213.137, 53.0586, -27.3284, -133.137, 55.5586, -27.3284, -213.137, 53.0586, -27.3284, -133.137, 55.5586, -27.3284, -133.137, 55.5586, 25.1716, -213.137, 55.5586, 25.1716, -133.137, 53.0586, 25.1716, -133.137, 55.5586, 25.1716, -213.137, 53.0586, 25.1716, -133.137, 53.0586, 25.1716, -213.137, 55.5586, 25.1716, -213.137, 55.5586, -27.3284, -213.137, 55.5586, -27.3284, -133.137, 55.5586, 25.1716, -213.137, 55.5586, -27.3284, -133.137, 55.5586, 25.1716, -133.137, 53.0586, 25.1716, -133.137, 55.5586, 25.1716, -133.137, 55.5586, -27.3284, -133.137, 53.0586, 25.1716, -133.137, 55.5586, -27.3284, -133.137, 53.0586, -27.3284, -133.137, -29.4414, 25.1716, -215.637, -29.4414, -27.3284, -215.637, 55.5586, -27.3284, -215.637, -29.4414, 25.1716, -215.637, 55.5586, -27.3284, -215.637, 55.5586, 25.1716, -215.637, -29.4414, 25.1716, -215.637, -29.4414, 25.1716, -213.137, -29.4414, -27.3284, -213.137, -29.4414, 25.1716, -215.637, -29.4414, -27.3284, -213.137, -29.4414, -27.3284, -215.637, 55.5586, -27.3284, -215.637, -29.4414, -27.3284, -215.637, -29.4414, -27.3284, -213.137, 55.5586, -27.3284, -215.637, -29.4414, -27.3284, -213.137, 55.5586, -27.3284, -213.137, 55.5586, 25.1716, -215.637, 55.5586, 25.1716, -213.137, -29.4414, 25.1716, -213.137, 55.5586, 25.1716, -215.637, -29.4414, 25.1716, -213.137, -29.4414, 25.1716, -215.637, 55.5586, 25.1716, -215.637, 55.5586, -27.3284, -215.637, 55.5586, -27.3284, -213.137, 55.5586, 25.1716, -215.637, 55.5586, -27.3284, -213.137, 55.5586, 25.1716, -213.137, -29.4414, 25.1716, -213.137, 55.5586, 25.1716, -213.137, 55.5586, -27.3284, -213.137, -29.4414, 25.1716, -213.137, 55.5586, -27.3284, -213.137, -29.4414, -27.3284, -213.137, -29.4414, 25.1716, -133.137, -29.4414, -27.3284, -133.137, 0.0586, -27.3284, -133.137, -29.4414, 25.1716, -133.137, 0.0586, -27.3284, -133.137, 0.0586, 25.1716, -133.137, -29.4414, 25.1716, -133.137, -29.4414, 25.1716, -130.637, -29.4414, -27.3284, -130.637, -29.4414, 25.1716, -133.137, -29.4414, -27.3284, -130.637, -29.4414, -27.3284, -133.137, 0.0586, -27.3284, -133.137, -29.4414, -27.3284, -133.137, -29.4414, -27.3284, -130.637, 0.0586, -27.3284, -133.137, -29.4414, -27.3284, -130.637, 0.0586, -27.3284, -130.637, 0.0586, 25.1716, -133.137, 0.0586, 25.1716, -130.637, -29.4414, 25.1716, -130.637, 0.0586, 25.1716, -133.137, -29.4414, 25.1716, -130.637, -29.4414, 25.1716, -133.137, 0.0586, 25.1716, -133.137, 0.0586, -27.3284, -133.137, 0.0586, -27.3284, -130.637, 0.0586, 25.1716, -133.137, 0.0586, -27.3284, -130.637, 0.0586, 25.1716, -130.637, -29.4414, 25.1716, -130.637, 0.0586, 25.1716, -130.637, 0.0586, -27.3284, -130.637, -29.4414, 25.1716, -130.637, 0.0586, -27.3284, -130.637, -29.4414, -27.3284, -130.637, 24.0586, 25.1716, -133.137, 24.0586, -27.3284, -133.137, 55.5586, -27.3284, -133.137, 24.0586, 25.1716, -133.137, 55.5586, -27.3284, -133.137, 55.5586, 25.1716, -133.137, 24.0586, 25.1716, -133.137, 24.0586, 25.1716, -130.637, 24.0586, -27.3284, -130.637, 24.0586, 25.1716, -133.137, 24.0586, -27.3284, -130.637, 24.0586, -27.3284, -133.137, 55.5586, -27.3284, -133.137, 24.0586, -27.3284, -133.137, 24.0586, -27.3284, -130.637, 55.5586, -27.3284, -133.137, 24.0586, -27.3284, -130.637, 55.5586, -27.3284, -130.637, 55.5586, 25.1716, -133.137, 55.5586, 25.1716, -130.637, 24.0586, 25.1716, -130.637, 55.5586, 25.1716, -133.137, 24.0586, 25.1716, -130.637, 24.0586, 25.1716, -133.137, 55.5586, 25.1716, -133.137, 55.5586, -27.3284, -133.137, 55.5586, -27.3284, -130.637, 55.5586, 25.1716, -133.137, 55.5586, -27.3284, -130.637, 55.5586, 25.1716, -130.637, 24.0586, 25.1716, -130.637, 55.5586, 25.1716, -130.637, 55.5586, -27.3284, -130.637, 24.0586, 25.1716, -130.637, 55.5586, -27.3284, -130.637, 24.0586, -27.3284, -130.637, 0.0586, 5.1716, -133.137, 0.0586, -27.3284, -133.137, 24.0586, -27.3284, -133.137, 0.0586, 5.1716, -133.137, 24.0586, -27.3284, -133.137, 24.0586, 5.1716, -133.137, 0.0586, 5.1716, -133.137, 0.0586, 5.1716, -130.637, 0.0586, -27.3284, -130.637, 0.0586, 5.1716, -133.137, 0.0586, -27.3284, -130.637, 0.0586, -27.3284, -133.137, 24.0586, -27.3284, -133.137, 0.0586, -27.3284, -133.137, 0.0586, -27.3284, -130.637, 24.0586, -27.3284, -133.137, 0.0586, -27.3284, -130.637, 24.0586, -27.3284, -130.637, 24.0586, 5.1716, -133.137, 24.0586, 5.1716, -130.637, 0.0586, 5.1716, -130.637, 24.0586, 5.1716, -133.137, 0.0586, 5.1716, -130.637, 0.0586, 5.1716, -133.137, 24.0586, 5.1716, -133.137, 24.0586, -27.3284, -133.137, 24.0586, -27.3284, -130.637, 24.0586, 5.1716, -133.137, 24.0586, -27.3284, -130.637, 24.0586, 5.1716, -130.637, 0.0586, 5.1716, -130.637, 24.0586, 5.1716, -130.637, 24.0586, -27.3284, -130.637, 0.0586, 5.1716, -130.637, 24.0586, -27.3284, -130.637, 0.0586, -27.3284, -130.637, -29.4414, 5.1716, 57.3631, -29.4414, -27.3284, 57.3631, 55.5586, -27.3284, 57.3631, -29.4414, 5.1716, 57.3631, 55.5586, -27.3284, 57.3631, 55.5586, 5.1716, 57.3631, -29.4414, 5.1716, 57.3631, -29.4414, 5.1716, 59.8631, -29.4414, -27.3284, 59.8631, -29.4414, 5.1716, 57.3631, -29.4414, -27.3284, 59.8631, -29.4414, -27.3284, 57.3631, 55.5586, -27.3284, 57.3631, -29.4414, -27.3284, 57.3631, -29.4414, -27.3284, 59.8631, 55.5586, -27.3284, 57.3631, -29.4414, -27.3284, 59.8631, 55.5586, -27.3284, 59.8631, 55.5586, 5.1716, 57.3631, 55.5586, 5.1716, 59.8631, -29.4414, 5.1716, 59.8631, 55.5586, 5.1716, 57.3631, -29.4414, 5.1716, 59.8631, -29.4414, 5.1716, 57.3631, 55.5586, 5.1716, 57.3631, 55.5586, -27.3284, 57.3631, 55.5586, -27.3284, 59.8631, 55.5586, 5.1716, 57.3631, 55.5586, -27.3284, 59.8631, 55.5586, 5.1716, 59.8631, -29.4414, 5.1716, 59.8631, 55.5586, 5.1716, 59.8631, 55.5586, -27.3284, 59.8631, -29.4414, 5.1716, 59.8631, 55.5586, -27.3284, 59.8631, -29.4414, -27.3284, 59.8631, 53.0586, 18.6716, 59.8631, 53.0586, -27.3284, 59.8631, 55.5586, -27.3284, 59.8631, 53.0586, 18.6716, 59.8631, 55.5586, -27.3284, 59.8631, 55.5586, 18.6716, 59.8631, 53.0586, 18.6716, 59.8631, 53.0586, 18.6716, 139.863, 53.0586, -27.3284, 139.863, 53.0586, 18.6716, 59.8631, 53.0586, -27.3284, 139.863, 53.0586, -27.3284, 59.8631, 55.5586, -27.3284, 59.8631, 53.0586, -27.3284, 59.8631, 53.0586, -27.3284, 139.863, 55.5586, -27.3284, 59.8631, 53.0586, -27.3284, 139.863, 55.5586, -27.3284, 139.863, 55.5586, 18.6716, 59.8631, 55.5586, 18.6716, 139.863, 53.0586, 18.6716, 139.863, 55.5586, 18.6716, 59.8631, 53.0586, 18.6716, 139.863, 53.0586, 18.6716, 59.8631, 55.5586, 18.6716, 59.8631, 55.5586, -27.3284, 59.8631, 55.5586, -27.3284, 139.863, 55.5586, 18.6716, 59.8631, 55.5586, -27.3284, 139.863, 55.5586, 18.6716, 139.863, 53.0586, 18.6716, 139.863, 55.5586, 18.6716, 139.863, 55.5586, -27.3284, 139.863, 53.0586, 18.6716, 139.863, 55.5586, -27.3284, 139.863, 53.0586, -27.3284, 139.863, -29.4414, 18.6716, 59.8631, -29.4414, 5.1716, 59.8631, -26.9414, 5.1716, 59.8631, -29.4414, 18.6716, 59.8631, -26.9414, 5.1716, 59.8631, -26.9414, 18.6716, 59.8631, -29.4414, 18.6716, 59.8631, -29.4414, 18.6716, 79.8631, -29.4414, 5.1716, 79.8631, -29.4414, 18.6716, 59.8631, -29.4414, 5.1716, 79.8631, -29.4414, 5.1716, 59.8631, -26.9414, 5.1716, 59.8631, -29.4414, 5.1716, 59.8631, -29.4414, 5.1716, 79.8631, -26.9414, 5.1716, 59.8631, -29.4414, 5.1716, 79.8631, -26.9414, 5.1716, 79.8631, -26.9414, 18.6716, 59.8631, -26.9414, 18.6716, 79.8631, -29.4414, 18.6716, 79.8631, -26.9414, 18.6716, 59.8631, -29.4414, 18.6716, 79.8631, -29.4414, 18.6716, 59.8631, -26.9414, 18.6716, 59.8631, -26.9414, 5.1716, 59.8631, -26.9414, 5.1716, 79.8631, -26.9414, 18.6716, 59.8631, -26.9414, 5.1716, 79.8631, -26.9414, 18.6716, 79.8631, -29.4414, 18.6716, 79.8631, -26.9414, 18.6716, 79.8631, -26.9414, 5.1716, 79.8631, -29.4414, 18.6716, 79.8631, -26.9414, 5.1716, 79.8631, -29.4414, 5.1716, 79.8631, 24.0586, 18.6716, 57.3631, 24.0586, 5.1716, 57.3631, 55.5586, 5.1716, 57.3631, 24.0586, 18.6716, 57.3631, 55.5586, 5.1716, 57.3631, 55.5586, 18.6716, 57.3631, 24.0586, 18.6716, 57.3631, 24.0586, 18.6716, 59.8631, 24.0586, 5.1716, 59.8631, 24.0586, 18.6716, 57.3631, 24.0586, 5.1716, 59.8631, 24.0586, 5.1716, 57.3631, 55.5586, 5.1716, 57.3631, 24.0586, 5.1716, 57.3631, 24.0586, 5.1716, 59.8631, 55.5586, 5.1716, 57.3631, 24.0586, 5.1716, 59.8631, 55.5586, 5.1716, 59.8631, 55.5586, 18.6716, 57.3631, 55.5586, 18.6716, 59.8631, 24.0586, 18.6716, 59.8631, 55.5586, 18.6716, 57.3631, 24.0586, 18.6716, 59.8631, 24.0586, 18.6716, 57.3631, 55.5586, 18.6716, 57.3631, 55.5586, 5.1716, 57.3631, 55.5586, 5.1716, 59.8631, 55.5586, 18.6716, 57.3631, 55.5586, 5.1716, 59.8631, 55.5586, 18.6716, 59.8631, 24.0586, 18.6716, 59.8631, 55.5586, 18.6716, 59.8631, 55.5586, 5.1716, 59.8631, 24.0586, 18.6716, 59.8631, 55.5586, 5.1716, 59.8631, 24.0586, 5.1716, 59.8631, -29.4414, 18.6716, 57.3631, -29.4414, 5.1716, 57.3631, 0.0586, 5.1716, 57.3631, -29.4414, 18.6716, 57.3631, 0.0586, 5.1716, 57.3631, 0.0586, 18.6716, 57.3631, -29.4414, 18.6716, 57.3631, -29.4414, 18.6716, 59.8631, -29.4414, 5.1716, 59.8631, -29.4414, 18.6716, 57.3631, -29.4414, 5.1716, 59.8631, -29.4414, 5.1716, 57.3631, 0.0586, 5.1716, 57.3631, -29.4414, 5.1716, 57.3631, -29.4414, 5.1716, 59.8631, 0.0586, 5.1716, 57.3631, -29.4414, 5.1716, 59.8631, 0.0586, 5.1716, 59.8631, 0.0586, 18.6716, 57.3631, 0.0586, 18.6716, 59.8631, -29.4414, 18.6716, 59.8631, 0.0586, 18.6716, 57.3631, -29.4414, 18.6716, 59.8631, -29.4414, 18.6716, 57.3631, 0.0586, 18.6716, 57.3631, 0.0586, 5.1716, 57.3631, 0.0586, 5.1716, 59.8631, 0.0586, 18.6716, 57.3631, 0.0586, 5.1716, 59.8631, 0.0586, 18.6716, 59.8631, -29.4414, 18.6716, 59.8631, 0.0586, 18.6716, 59.8631, 0.0586, 5.1716, 59.8631, -29.4414, 18.6716, 59.8631, 0.0586, 5.1716, 59.8631, -29.4414, 5.1716, 59.8631, -29.4414, 18.6716, 139.863, -29.4414, -27.3284, 139.863, 55.5586, -27.3284, 139.863, -29.4414, 18.6716, 139.863, 55.5586, -27.3284, 139.863, 55.5586, 18.6716, 139.863, -29.4414, 18.6716, 139.863, -29.4414, 18.6716, 142.363, -29.4414, -27.3284, 142.363, -29.4414, 18.6716, 139.863, -29.4414, -27.3284, 142.363, -29.4414, -27.3284, 139.863, 55.5586, -27.3284, 139.863, -29.4414, -27.3284, 139.863, -29.4414, -27.3284, 142.363, 55.5586, -27.3284, 139.863, -29.4414, -27.3284, 142.363, 55.5586, -27.3284, 142.363, 55.5586, 18.6716, 139.863, 55.5586, 18.6716, 142.363, -29.4414, 18.6716, 142.363, 55.5586, 18.6716, 139.863, -29.4414, 18.6716, 142.363, -29.4414, 18.6716, 139.863, 55.5586, 18.6716, 139.863, 55.5586, -27.3284, 139.863, 55.5586, -27.3284, 142.363, 55.5586, 18.6716, 139.863, 55.5586, -27.3284, 142.363, 55.5586, 18.6716, 142.363, -29.4414, 18.6716, 142.363, 55.5586, 18.6716, 142.363, 55.5586, -27.3284, 142.363, -29.4414, 18.6716, 142.363, 55.5586, -27.3284, 142.363, -29.4414, -27.3284, 142.363, -29.4414, 5.1716, 59.8631, -29.4414, -27.3284, 59.8631, -26.9414, -27.3284, 59.8631, -29.4414, 5.1716, 59.8631, -26.9414, -27.3284, 59.8631, -26.9414, 5.1716, 59.8631, -29.4414, 5.1716, 59.8631, -29.4414, 5.1716, 79.8631, -29.4414, -27.3284, 79.8631, -29.4414, 5.1716, 59.8631, -29.4414, -27.3284, 79.8631, -29.4414, -27.3284, 59.8631, -26.9414, -27.3284, 59.8631, -29.4414, -27.3284, 59.8631, -29.4414, -27.3284, 79.8631, -26.9414, -27.3284, 59.8631, -29.4414, -27.3284, 79.8631, -26.9414, -27.3284, 79.8631, -26.9414, 5.1716, 59.8631, -26.9414, 5.1716, 79.8631, -29.4414, 5.1716, 79.8631, -26.9414, 5.1716, 59.8631, -29.4414, 5.1716, 79.8631, -29.4414, 5.1716, 59.8631, -26.9414, 5.1716, 59.8631, -26.9414, -27.3284, 59.8631, -26.9414, -27.3284, 79.8631, -26.9414, 5.1716, 59.8631, -26.9414, -27.3284, 79.8631, -26.9414, 5.1716, 79.8631, -29.4414, 5.1716, 79.8631, -26.9414, 5.1716, 79.8631, -26.9414, -27.3284, 79.8631, -29.4414, 5.1716, 79.8631, -26.9414, -27.3284, 79.8631, -29.4414, -27.3284, 79.8631, -29.4414, 5.1716, 119.863, -29.4414, -27.3284, 119.863, -26.9414, -27.3284, 119.863, -29.4414, 5.1716, 119.863, -26.9414, -27.3284, 119.863, -26.9414, 5.1716, 119.863, -29.4414, 5.1716, 119.863, -29.4414, 5.1716, 139.863, -29.4414, -27.3284, 139.863, -29.4414, 5.1716, 119.863, -29.4414, -27.3284, 139.863, -29.4414, -27.3284, 119.863, -26.9414, -27.3284, 119.863, -29.4414, -27.3284, 119.863, -29.4414, -27.3284, 139.863, -26.9414, -27.3284, 119.863, -29.4414, -27.3284, 139.863, -26.9414, -27.3284, 139.863, -26.9414, 5.1716, 119.863, -26.9414, 5.1716, 139.863, -29.4414, 5.1716, 139.863, -26.9414, 5.1716, 119.863, -29.4414, 5.1716, 139.863, -29.4414, 5.1716, 119.863, -26.9414, 5.1716, 119.863, -26.9414, -27.3284, 119.863, -26.9414, -27.3284, 139.863, -26.9414, 5.1716, 119.863, -26.9414, -27.3284, 139.863, -26.9414, 5.1716, 139.863, -29.4414, 5.1716, 139.863, -26.9414, 5.1716, 139.863, -26.9414, -27.3284, 139.863, -29.4414, 5.1716, 139.863, -26.9414, -27.3284, 139.863, -29.4414, -27.3284, 139.863, -29.4414, 18.6716, 119.863, -29.4414, 5.1716, 119.863, -26.9414, 5.1716, 119.863, -29.4414, 18.6716, 119.863, -26.9414, 5.1716, 119.863, -26.9414, 18.6716, 119.863, -29.4414, 18.6716, 119.863, -29.4414, 18.6716, 139.863, -29.4414, 5.1716, 139.863, -29.4414, 18.6716, 119.863, -29.4414, 5.1716, 139.863, -29.4414, 5.1716, 119.863, -26.9414, 5.1716, 119.863, -29.4414, 5.1716, 119.863, -29.4414, 5.1716, 139.863, -26.9414, 5.1716, 119.863, -29.4414, 5.1716, 139.863, -26.9414, 5.1716, 139.863, -26.9414, 18.6716, 119.863, -26.9414, 18.6716, 139.863, -29.4414, 18.6716, 139.863, -26.9414, 18.6716, 119.863, -29.4414, 18.6716, 139.863, -29.4414, 18.6716, 119.863, -26.9414, 18.6716, 119.863, -26.9414, 5.1716, 119.863, -26.9414, 5.1716, 139.863, -26.9414, 18.6716, 119.863, -26.9414, 5.1716, 139.863, -26.9414, 18.6716, 139.863, -29.4414, 18.6716, 139.863, -26.9414, 18.6716, 139.863, -26.9414, 5.1716, 139.863, -29.4414, 18.6716, 139.863, -26.9414, 5.1716, 139.863, -29.4414, 5.1716, 139.863, -142.441, 18.6716, 75.8631, -142.441, -27.3284, 75.8631, -29.4414, -27.3284, 75.8631, -142.441, 18.6716, 75.8631, -29.4414, -27.3284, 75.8631, -29.4414, 18.6716, 75.8631, -142.441, 18.6716, 75.8631, -142.441, 18.6716, 79.8631, -142.441, -27.3284, 79.8631, -142.441, 18.6716, 75.8631, -142.441, -27.3284, 79.8631, -142.441, -27.3284, 75.8631, -29.4414, -27.3284, 75.8631, -142.441, -27.3284, 75.8631, -142.441, -27.3284, 79.8631, -29.4414, -27.3284, 75.8631, -142.441, -27.3284, 79.8631, -29.4414, -27.3284, 79.8631, -29.4414, 18.6716, 75.8631, -29.4414, 18.6716, 79.8631, -142.441, 18.6716, 79.8631, -29.4414, 18.6716, 75.8631, -142.441, 18.6716, 79.8631, -142.441, 18.6716, 75.8631, -29.4414, 18.6716, 75.8631, -29.4414, -27.3284, 75.8631, -29.4414, -27.3284, 79.8631, -29.4414, 18.6716, 75.8631, -29.4414, -27.3284, 79.8631, -29.4414, 18.6716, 79.8631, -142.441, 18.6716, 79.8631, -29.4414, 18.6716, 79.8631, -29.4414, -27.3284, 79.8631, -142.441, 18.6716, 79.8631, -29.4414, -27.3284, 79.8631, -142.441, -27.3284, 79.8631, -142.441, 18.6716, 119.863, -142.441, -27.3284, 119.863, -29.4414, -27.3284, 119.863, -142.441, 18.6716, 119.863, -29.4414, -27.3284, 119.863, -29.4414, 18.6716, 119.863, -142.441, 18.6716, 119.863, -142.441, 18.6716, 123.863, -142.441, -27.3284, 123.863, -142.441, 18.6716, 119.863, -142.441, -27.3284, 123.863, -142.441, -27.3284, 119.863, -29.4414, -27.3284, 119.863, -142.441, -27.3284, 119.863, -142.441, -27.3284, 123.863, -29.4414, -27.3284, 119.863, -142.441, -27.3284, 123.863, -29.4414, -27.3284, 123.863, -29.4414, 18.6716, 119.863, -29.4414, 18.6716, 123.863, -142.441, 18.6716, 123.863, -29.4414, 18.6716, 119.863, -142.441, 18.6716, 123.863, -142.441, 18.6716, 119.863, -29.4414, 18.6716, 119.863, -29.4414, -27.3284, 119.863, -29.4414, -27.3284, 123.863, -29.4414, 18.6716, 119.863, -29.4414, -27.3284, 123.863, -29.4414, 18.6716, 123.863, -142.441, 18.6716, 123.863, -29.4414, 18.6716, 123.863, -29.4414, -27.3284, 123.863, -142.441, 18.6716, 123.863, -29.4414, -27.3284, 123.863, -142.441, -27.3284, 123.863, -146.441, 18.6716, 75.8631, -146.441, -27.3284, 75.8631, -142.441, -27.3284, 75.8631, -146.441, 18.6716, 75.8631, -142.441, -27.3284, 75.8631, -142.441, 18.6716, 75.8631, -146.441, 18.6716, 75.8631, -146.441, 18.6716, 123.863, -146.441, -27.3284, 123.863, -146.441, 18.6716, 75.8631, -146.441, -27.3284, 123.863, -146.441, -27.3284, 75.8631, -142.441, -27.3284, 75.8631, -146.441, -27.3284, 75.8631, -146.441, -27.3284, 123.863, -142.441, -27.3284, 75.8631, -146.441, -27.3284, 123.863, -142.441, -27.3284, 123.863, -142.441, 18.6716, 75.8631, -142.441, 18.6716, 123.863, -146.441, 18.6716, 123.863, -142.441, 18.6716, 75.8631, -146.441, 18.6716, 123.863, -146.441, 18.6716, 75.8631, -142.441, 18.6716, 75.8631, -142.441, -27.3284, 75.8631, -142.441, -27.3284, 123.863, -142.441, 18.6716, 75.8631, -142.441, -27.3284, 123.863, -142.441, 18.6716, 123.863, -146.441, 18.6716, 123.863, -142.441, 18.6716, 123.863, -142.441, -27.3284, 123.863, -146.441, 18.6716, 123.863, -142.441, -27.3284, 123.863, -146.441, -27.3284, 123.863, -318.441, -25.3284, -130.137, -318.441, -27.3284, -130.137, 266.059, -27.3284, -130.137, -318.441, -25.3284, -130.137, 266.059, -27.3284, -130.137, 266.059, -25.3284, -130.137, -318.441, -25.3284, -130.137, -318.441, -25.3284, 57.3631, -318.441, -27.3284, 57.3631, -318.441, -25.3284, -130.137, -318.441, -27.3284, 57.3631, -318.441, -27.3284, -130.137, 266.059, -27.3284, -130.137, -318.441, -27.3284, -130.137, -318.441, -27.3284, 57.3631, 266.059, -27.3284, -130.137, -318.441, -27.3284, 57.3631, 266.059, -27.3284, 57.3631, 266.059, -25.3284, -130.137, 266.059, -25.3284, 57.3631, -318.441, -25.3284, 57.3631, 266.059, -25.3284, -130.137, -318.441, -25.3284, 57.3631, -318.441, -25.3284, -130.137, 266.059, -25.3284, -130.137, 266.059, -27.3284, -130.137, 266.059, -27.3284, 57.3631, 266.059, -25.3284, -130.137, 266.059, -27.3284, 57.3631, 266.059, -25.3284, 57.3631, -318.441, -25.3284, 57.3631, 266.059, -25.3284, 57.3631, 266.059, -27.3284, 57.3631, -318.441, -25.3284, 57.3631, 266.059, -27.3284, 57.3631, -318.441, -27.3284, 57.3631, 266.059, -25.3284, -130.137, 266.059, -27.3284, -130.137, 292.059, -27.3284, -130.137, 266.059, -25.3284, -130.137, 266.059, -25.3284, 57.3631, 266.059, -27.3284, 57.3631, 266.059, -25.3284, -130.137, 266.059, -27.3284, 57.3631, 266.059, -27.3284, -130.137, 292.059, -27.3284, -130.137, 266.059, -27.3284, -130.137, 266.059, -27.3284, 57.3631, 292.059, -27.3284, -130.137, 266.059, -27.3284, 57.3631, 292.059, -27.3284, 57.3631, 292.059, -27.3284, -130.137, 292.059, -27.3284, 57.3631, 266.059, -25.3284, 57.3631, 292.059, -27.3284, -130.137, 266.059, -25.3284, 57.3631, 266.059, -25.3284, -130.137, 266.059, -25.3284, 57.3631, 292.059, -27.3284, 57.3631, 266.059, -27.3284, 57.3631, -318.441, -11.3284, -44.6369, -318.441, -25.3284, -44.6369, 266.059, -25.3284, -44.6369, -318.441, -11.3284, -44.6369, 266.059, -25.3284, -44.6369, 266.059, -11.3284, -44.6369, -318.441, -11.3284, -44.6369, -318.441, -11.3284, -28.6369, -318.441, -25.3284, -28.6369, -318.441, -11.3284, -44.6369, -318.441, -25.3284, -28.6369, -318.441, -25.3284, -44.6369, 266.059, -25.3284, -44.6369, -318.441, -25.3284, -44.6369, -318.441, -25.3284, -28.6369, 266.059, -25.3284, -44.6369, -318.441, -25.3284, -28.6369, 266.059, -25.3284, -28.6369, 266.059, -11.3284, -44.6369, 266.059, -11.3284, -28.6369, -318.441, -11.3284, -28.6369, 266.059, -11.3284, -44.6369, -318.441, -11.3284, -28.6369, -318.441, -11.3284, -44.6369, 266.059, -11.3284, -44.6369, 266.059, -25.3284, -44.6369, 266.059, -25.3284, -28.6369, 266.059, -11.3284, -44.6369, 266.059, -25.3284, -28.6369, 266.059, -11.3284, -28.6369, -318.441, -11.3284, -28.6369, 266.059, -11.3284, -28.6369, 266.059, -25.3284, -28.6369, -318.441, -11.3284, -28.6369, 266.059, -25.3284, -28.6369, -318.441, -25.3284, -28.6369, -318.441, -11.3284, -12.6369, -318.441, -25.3284, -12.6369, 266.059, -25.3284, -12.6369, -318.441, -11.3284, -12.6369, 266.059, -25.3284, -12.6369, 266.059, -11.3284, -12.6369, -318.441, -11.3284, -12.6369, -318.441, -11.3284, 3.3631, -318.441, -25.3284, 3.3631, -318.441, -11.3284, -12.6369, -318.441, -25.3284, 3.3631, -318.441, -25.3284, -12.6369, 266.059, -25.3284, -12.6369, -318.441, -25.3284, -12.6369, -318.441, -25.3284, 3.3631, 266.059, -25.3284, -12.6369, -318.441, -25.3284, 3.3631, 266.059, -25.3284, 3.3631, 266.059, -11.3284, -12.6369, 266.059, -11.3284, 3.3631, -318.441, -11.3284, 3.3631, 266.059, -11.3284, -12.6369, -318.441, -11.3284, 3.3631, -318.441, -11.3284, -12.6369, 266.059, -11.3284, -12.6369, 266.059, -25.3284, -12.6369, 266.059, -25.3284, 3.3631, 266.059, -11.3284, -12.6369, 266.059, -25.3284, 3.3631, 266.059, -11.3284, 3.3631, -318.441, -11.3284, 3.3631, 266.059, -11.3284, 3.3631, 266.059, -25.3284, 3.3631, -318.441, -11.3284, 3.3631, 266.059, -25.3284, 3.3631, -318.441, -25.3284, 3.3631, -318.441, -11.3284, -76.6369, -318.441, -25.3284, -76.6369, 266.059, -25.3284, -76.6369, -318.441, -11.3284, -76.6369, 266.059, -25.3284, -76.6369, 266.059, -11.3284, -76.6369, -318.441, -11.3284, -76.6369, -318.441, -11.3284, -60.6369, -318.441, -25.3284, -60.6369, -318.441, -11.3284, -76.6369, -318.441, -25.3284, -60.6369, -318.441, -25.3284, -76.6369, 266.059, -25.3284, -76.6369, -318.441, -25.3284, -76.6369, -318.441, -25.3284, -60.6369, 266.059, -25.3284, -76.6369, -318.441, -25.3284, -60.6369, 266.059, -25.3284, -60.6369, 266.059, -11.3284, -76.6369, 266.059, -11.3284, -60.6369, -318.441, -11.3284, -60.6369, 266.059, -11.3284, -76.6369, -318.441, -11.3284, -60.6369, -318.441, -11.3284, -76.6369, 266.059, -11.3284, -76.6369, 266.059, -25.3284, -76.6369, 266.059, -25.3284, -60.6369, 266.059, -11.3284, -76.6369, 266.059, -25.3284, -60.6369, 266.059, -11.3284, -60.6369, -318.441, -11.3284, -60.6369, 266.059, -11.3284, -60.6369, 266.059, -25.3284, -60.6369, -318.441, -11.3284, -60.6369, 266.059, -25.3284, -60.6369, -318.441, -25.3284, -60.6369, -318.441, -11.3284, -108.637, -318.441, -25.3284, -108.637, 266.059, -25.3284, -108.637, -318.441, -11.3284, -108.637, 266.059, -25.3284, -108.637, 266.059, -11.3284, -108.637, -318.441, -11.3284, -108.637, -318.441, -11.3284, -92.6369, -318.441, -25.3284, -92.6369, -318.441, -11.3284, -108.637, -318.441, -25.3284, -92.6369, -318.441, -25.3284, -108.637, 266.059, -25.3284, -108.637, -318.441, -25.3284, -108.637, -318.441, -25.3284, -92.6369, 266.059, -25.3284, -108.637, -318.441, -25.3284, -92.6369, 266.059, -25.3284, -92.6369, 266.059, -11.3284, -108.637, 266.059, -11.3284, -92.6369, -318.441, -11.3284, -92.6369, 266.059, -11.3284, -108.637, -318.441, -11.3284, -92.6369, -318.441, -11.3284, -108.637, 266.059, -11.3284, -108.637, 266.059, -25.3284, -108.637, 266.059, -25.3284, -92.6369, 266.059, -11.3284, -108.637, 266.059, -25.3284, -92.6369, 266.059, -11.3284, -92.6369, -318.441, -11.3284, -92.6369, 266.059, -11.3284, -92.6369, 266.059, -25.3284, -92.6369, -318.441, -11.3284, -92.6369, 266.059, -25.3284, -92.6369, -318.441, -25.3284, -92.6369, -318.441, -11.3284, 19.3631, -318.441, -25.3284, 19.3631, 266.059, -25.3284, 19.3631, -318.441, -11.3284, 19.3631, 266.059, -25.3284, 19.3631, 266.059, -11.3284, 19.3631, -318.441, -11.3284, 19.3631, -318.441, -11.3284, 35.3631, -318.441, -25.3284, 35.3631, -318.441, -11.3284, 19.3631, -318.441, -25.3284, 35.3631, -318.441, -25.3284, 19.3631, 266.059, -25.3284, 19.3631, -318.441, -25.3284, 19.3631, -318.441, -25.3284, 35.3631, 266.059, -25.3284, 19.3631, -318.441, -25.3284, 35.3631, 266.059, -25.3284, 35.3631, 266.059, -11.3284, 19.3631, 266.059, -11.3284, 35.3631, -318.441, -11.3284, 35.3631, 266.059, -11.3284, 19.3631, -318.441, -11.3284, 35.3631, -318.441, -11.3284, 19.3631, 266.059, -11.3284, 19.3631, 266.059, -25.3284, 19.3631, 266.059, -25.3284, 35.3631, 266.059, -11.3284, 19.3631, 266.059, -25.3284, 35.3631, 266.059, -11.3284, 35.3631, -318.441, -11.3284, 35.3631, 266.059, -11.3284, 35.3631, 266.059, -25.3284, 35.3631, -318.441, -11.3284, 35.3631, 266.059, -25.3284, 35.3631, -318.441, -25.3284, 35.3631, 55.5586, 4.6716, -146.137, 55.5586, -27.3284, -146.137, 292.08, -27.3284, -146.137, 55.5586, 4.6716, -146.137, 55.5586, 4.6716, -130.137, 55.5586, -27.3284, -130.137, 55.5586, 4.6716, -146.137, 55.5586, -27.3284, -130.137, 55.5586, -27.3284, -146.137, 292.08, -27.3284, -146.137, 55.5586, -27.3284, -146.137, 55.5586, -27.3284, -130.137, 292.08, -27.3284, -146.137, 55.5586, -27.3284, -130.137, 292.08, -27.3284, -130.137, 292.08, -27.3284, -146.137, 292.08, -27.3284, -130.137, 55.5586, 4.6716, -130.137, 292.08, -27.3284, -146.137, 55.5586, 4.6716, -130.137, 55.5586, 4.6716, -146.137, 55.5586, 4.6716, -130.137, 292.08, -27.3284, -130.137, 55.5586, -27.3284, -130.137, 55.5586, 4.6716, 57.3631, 55.5586, -27.3284, 57.3631, 292.08, -27.3284, 57.3631, 55.5586, 4.6716, 57.3631, 55.5586, 4.6716, 73.3631, 55.5586, -27.3284, 73.3631, 55.5586, 4.6716, 57.3631, 55.5586, -27.3284, 73.3631, 55.5586, -27.3284, 57.3631, 292.08, -27.3284, 57.3631, 55.5586, -27.3284, 57.3631, 55.5586, -27.3284, 73.3631, 292.08, -27.3284, 57.3631, 55.5586, -27.3284, 73.3631, 292.08, -27.3284, 73.3631, 292.08, -27.3284, 57.3631, 292.08, -27.3284, 73.3631, 55.5586, 4.6716, 73.3631, 292.08, -27.3284, 57.3631, 55.5586, 4.6716, 73.3631, 55.5586, 4.6716, 57.3631, 55.5586, 4.6716, 73.3631, 292.08, -27.3284, 73.3631, 55.5586, -27.3284, 73.3631, -8.9414, 9.1716, 77.8631, -8.9414, 7.1716, 77.8631, 35.0586, 7.1716, 77.8631, -8.9414, 9.1716, 77.8631, 35.0586, 7.1716, 77.8631, 35.0586, 9.1716, 77.8631, -8.9414, 9.1716, 77.8631, -8.9414, 9.1716, 79.8631, -8.9414, 7.1716, 79.8631, -8.9414, 9.1716, 77.8631, -8.9414, 7.1716, 79.8631, -8.9414, 7.1716, 77.8631, 35.0586, 7.1716, 77.8631, -8.9414, 7.1716, 77.8631, -8.9414, 7.1716, 79.8631, 35.0586, 7.1716, 77.8631, -8.9414, 7.1716, 79.8631, 35.0586, 7.1716, 79.8631, 35.0586, 9.1716, 77.8631, 35.0586, 9.1716, 79.8631, -8.9414, 9.1716, 79.8631, 35.0586, 9.1716, 77.8631, -8.9414, 9.1716, 79.8631, -8.9414, 9.1716, 77.8631, 35.0586, 9.1716, 77.8631, 35.0586, 7.1716, 77.8631, 35.0586, 7.1716, 79.8631, 35.0586, 9.1716, 77.8631, 35.0586, 7.1716, 79.8631, 35.0586, 9.1716, 79.8631, -8.9414, 9.1716, 79.8631, 35.0586, 9.1716, 79.8631, 35.0586, 7.1716, 79.8631, -8.9414, 9.1716, 79.8631, 35.0586, 7.1716, 79.8631, -8.9414, 7.1716, 79.8631, -8.9414, 9.1716, 119.863, -8.9414, 7.1716, 119.863, 35.0586, 7.1716, 119.863, -8.9414, 9.1716, 119.863, 35.0586, 7.1716, 119.863, 35.0586, 9.1716, 119.863, -8.9414, 9.1716, 119.863, -8.9414, 9.1716, 121.863, -8.9414, 7.1716, 121.863, -8.9414, 9.1716, 119.863, -8.9414, 7.1716, 121.863, -8.9414, 7.1716, 119.863, 35.0586, 7.1716, 119.863, -8.9414, 7.1716, 119.863, -8.9414, 7.1716, 121.863, 35.0586, 7.1716, 119.863, -8.9414, 7.1716, 121.863, 35.0586, 7.1716, 121.863, 35.0586, 9.1716, 119.863, 35.0586, 9.1716, 121.863, -8.9414, 9.1716, 121.863, 35.0586, 9.1716, 119.863, -8.9414, 9.1716, 121.863, -8.9414, 9.1716, 119.863, 35.0586, 9.1716, 119.863, 35.0586, 7.1716, 119.863, 35.0586, 7.1716, 121.863, 35.0586, 9.1716, 119.863, 35.0586, 7.1716, 121.863, 35.0586, 9.1716, 121.863, -8.9414, 9.1716, 121.863, 35.0586, 9.1716, 121.863, 35.0586, 7.1716, 121.863, -8.9414, 9.1716, 121.863, 35.0586, 7.1716, 121.863, -8.9414, 7.1716, 121.863, -8.9414, 9.1716, 79.8631, -8.9414, 7.1716, 79.8631, -6.9414, 7.1716, 79.8631, -8.9414, 9.1716, 79.8631, -6.9414, 7.1716, 79.8631, -6.9414, 9.1716, 79.8631, -8.9414, 9.1716, 79.8631, -8.9414, 9.1716, 119.863, -8.9414, 7.1716, 119.863, -8.9414, 9.1716, 79.8631, -8.9414, 7.1716, 119.863, -8.9414, 7.1716, 79.8631, -6.9414, 7.1716, 79.8631, -8.9414, 7.1716, 79.8631, -8.9414, 7.1716, 119.863, -6.9414, 7.1716, 79.8631, -8.9414, 7.1716, 119.863, -6.9414, 7.1716, 119.863, -6.9414, 9.1716, 79.8631, -6.9414, 9.1716, 119.863, -8.9414, 9.1716, 119.863, -6.9414, 9.1716, 79.8631, -8.9414, 9.1716, 119.863, -8.9414, 9.1716, 79.8631, -6.9414, 9.1716, 79.8631, -6.9414, 7.1716, 79.8631, -6.9414, 7.1716, 119.863, -6.9414, 9.1716, 79.8631, -6.9414, 7.1716, 119.863, -6.9414, 9.1716, 119.863, -8.9414, 9.1716, 119.863, -6.9414, 9.1716, 119.863, -6.9414, 7.1716, 119.863, -8.9414, 9.1716, 119.863, -6.9414, 7.1716, 119.863, -8.9414, 7.1716, 119.863, 33.0586, 9.1716, 79.8631, 33.0586, 7.1716, 79.8631, 35.0586, 7.1716, 79.8631, 33.0586, 9.1716, 79.8631, 35.0586, 7.1716, 79.8631, 35.0586, 9.1716, 79.8631, 33.0586, 9.1716, 79.8631, 33.0586, 9.1716, 119.863, 33.0586, 7.1716, 119.863, 33.0586, 9.1716, 79.8631, 33.0586, 7.1716, 119.863, 33.0586, 7.1716, 79.8631, 35.0586, 7.1716, 79.8631, 33.0586, 7.1716, 79.8631, 33.0586, 7.1716, 119.863, 35.0586, 7.1716, 79.8631, 33.0586, 7.1716, 119.863, 35.0586, 7.1716, 119.863, 35.0586, 9.1716, 79.8631, 35.0586, 9.1716, 119.863, 33.0586, 9.1716, 119.863, 35.0586, 9.1716, 79.8631, 33.0586, 9.1716, 119.863, 33.0586, 9.1716, 79.8631, 35.0586, 9.1716, 79.8631, 35.0586, 7.1716, 79.8631, 35.0586, 7.1716, 119.863, 35.0586, 9.1716, 79.8631, 35.0586, 7.1716, 119.863, 35.0586, 9.1716, 119.863, 33.0586, 9.1716, 119.863, 35.0586, 9.1716, 119.863, 35.0586, 7.1716, 119.863, 33.0586, 9.1716, 119.863, 35.0586, 7.1716, 119.863, 33.0586, 7.1716, 119.863, -8.9414, -8.8284, 79.8631, -8.9414, -10.8284, 79.8631, -6.9414, -10.8284, 79.8631, -8.9414, -8.8284, 79.8631, -6.9414, -10.8284, 79.8631, -6.9414, -8.8284, 79.8631, -8.9414, -8.8284, 79.8631, -8.9414, -8.8284, 119.863, -8.9414, -10.8284, 119.863, -8.9414, -8.8284, 79.8631, -8.9414, -10.8284, 119.863, -8.9414, -10.8284, 79.8631, -6.9414, -10.8284, 79.8631, -8.9414, -10.8284, 79.8631, -8.9414, -10.8284, 119.863, -6.9414, -10.8284, 79.8631, -8.9414, -10.8284, 119.863, -6.9414, -10.8284, 119.863, -6.9414, -8.8284, 79.8631, -6.9414, -8.8284, 119.863, -8.9414, -8.8284, 119.863, -6.9414, -8.8284, 79.8631, -8.9414, -8.8284, 119.863, -8.9414, -8.8284, 79.8631, -6.9414, -8.8284, 79.8631, -6.9414, -10.8284, 79.8631, -6.9414, -10.8284, 119.863, -6.9414, -8.8284, 79.8631, -6.9414, -10.8284, 119.863, -6.9414, -8.8284, 119.863, -8.9414, -8.8284, 119.863, -6.9414, -8.8284, 119.863, -6.9414, -10.8284, 119.863, -8.9414, -8.8284, 119.863, -6.9414, -10.8284, 119.863, -8.9414, -10.8284, 119.863, 33.0586, -8.8284, 79.8631, 33.0586, -10.8284, 79.8631, 35.0586, -10.8284, 79.8631, 33.0586, -8.8284, 79.8631, 35.0586, -10.8284, 79.8631, 35.0586, -8.8284, 79.8631, 33.0586, -8.8284, 79.8631, 33.0586, -8.8284, 119.863, 33.0586, -10.8284, 119.863, 33.0586, -8.8284, 79.8631, 33.0586, -10.8284, 119.863, 33.0586, -10.8284, 79.8631, 35.0586, -10.8284, 79.8631, 33.0586, -10.8284, 79.8631, 33.0586, -10.8284, 119.863, 35.0586, -10.8284, 79.8631, 33.0586, -10.8284, 119.863, 35.0586, -10.8284, 119.863, 35.0586, -8.8284, 79.8631, 35.0586, -8.8284, 119.863, 33.0586, -8.8284, 119.863, 35.0586, -8.8284, 79.8631, 33.0586, -8.8284, 119.863, 33.0586, -8.8284, 79.8631, 35.0586, -8.8284, 79.8631, 35.0586, -10.8284, 79.8631, 35.0586, -10.8284, 119.863, 35.0586, -8.8284, 79.8631, 35.0586, -10.8284, 119.863, 35.0586, -8.8284, 119.863, 33.0586, -8.8284, 119.863, 35.0586, -8.8284, 119.863, 35.0586, -10.8284, 119.863, 33.0586, -8.8284, 119.863, 35.0586, -10.8284, 119.863, 33.0586, -10.8284, 119.863, -8.9414, -8.8284, 119.863, -8.9414, -10.8284, 119.863, 35.0586, -10.8284, 119.863, -8.9414, -8.8284, 119.863, 35.0586, -10.8284, 119.863, 35.0586, -8.8284, 119.863, -8.9414, -8.8284, 119.863, -8.9414, -8.8284, 121.863, -8.9414, -10.8284, 121.863, -8.9414, -8.8284, 119.863, -8.9414, -10.8284, 121.863, -8.9414, -10.8284, 119.863, 35.0586, -10.8284, 119.863, -8.9414, -10.8284, 119.863, -8.9414, -10.8284, 121.863, 35.0586, -10.8284, 119.863, -8.9414, -10.8284, 121.863, 35.0586, -10.8284, 121.863, 35.0586, -8.8284, 119.863, 35.0586, -8.8284, 121.863, -8.9414, -8.8284, 121.863, 35.0586, -8.8284, 119.863, -8.9414, -8.8284, 121.863, -8.9414, -8.8284, 119.863, 35.0586, -8.8284, 119.863, 35.0586, -10.8284, 119.863, 35.0586, -10.8284, 121.863, 35.0586, -8.8284, 119.863, 35.0586, -10.8284, 121.863, 35.0586, -8.8284, 121.863, -8.9414, -8.8284, 121.863, 35.0586, -8.8284, 121.863, 35.0586, -10.8284, 121.863, -8.9414, -8.8284, 121.863, 35.0586, -10.8284, 121.863, -8.9414, -10.8284, 121.863, -8.9414, -8.8284, 77.8631, -8.9414, -10.8284, 77.8631, 35.0586, -10.8284, 77.8631, -8.9414, -8.8284, 77.8631, 35.0586, -10.8284, 77.8631, 35.0586, -8.8284, 77.8631, -8.9414, -8.8284, 77.8631, -8.9414, -8.8284, 79.8631, -8.9414, -10.8284, 79.8631, -8.9414, -8.8284, 77.8631, -8.9414, -10.8284, 79.8631, -8.9414, -10.8284, 77.8631, 35.0586, -10.8284, 77.8631, -8.9414, -10.8284, 77.8631, -8.9414, -10.8284, 79.8631, 35.0586, -10.8284, 77.8631, -8.9414, -10.8284, 79.8631, 35.0586, -10.8284, 79.8631, 35.0586, -8.8284, 77.8631, 35.0586, -8.8284, 79.8631, -8.9414, -8.8284, 79.8631, 35.0586, -8.8284, 77.8631, -8.9414, -8.8284, 79.8631, -8.9414, -8.8284, 77.8631, 35.0586, -8.8284, 77.8631, 35.0586, -10.8284, 77.8631, 35.0586, -10.8284, 79.8631, 35.0586, -8.8284, 77.8631, 35.0586, -10.8284, 79.8631, 35.0586, -8.8284, 79.8631, -8.9414, -8.8284, 79.8631, 35.0586, -8.8284, 79.8631, 35.0586, -10.8284, 79.8631, -8.9414, -8.8284, 79.8631, 35.0586, -10.8284, 79.8631, -8.9414, -10.8284, 79.8631)
 
 [node name="Level2" type="Node3D"]
+script = ExtResource("1_1qj7d")
 
 [node name="Player" parent="." instance=ExtResource("1_vskrl")]
 transform = Transform3D(0.999988, 0, 0.00488687, 0, 1, 0, -0.00488687, 0, 0.999988, 1.82714, 17.9817, -146.266)
@@ -200,42 +625,811 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_qjxye")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, -2, 28, -14)
+transform = Transform3D(0.929209, 0.111977, -0.352181, 0.368763, -0.343279, 0.863813, -0.0241693, -0.932535, -0.360271, -2, 46.3729, -167.301)
+light_energy = 1.784
 
-[node name="MovingWalls" parent="." instance=ExtResource("6_kxe5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
-
-[node name="Peças de Coletagem" type="Node3D" parent="."]
+[node name="Peças de Coletagem" type="Node" parent="."]
 
 [node name="WallCreator" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26509, 2.57119, -16.8277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.620965, 17.1682, -219.095)
 
 [node name="WallCreator2" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9039, 2.24683, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8432, 17.1655, -237.305)
 
 [node name="WallCreator3" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75191, 1.60996, -5.67354)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5678, 9.41944, -226.359)
 
 [node name="WallCreator4" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75191, 1.60996, 1.00735)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8461, 9.41944, -220.188)
 
 [node name="WallCreator5" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26509, 2.57119, -13.2478)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8461, 0.501013, -210.541)
 
 [node name="WallCreator6" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53992, 2.57119, -13.2478)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4714, 0.501013, -210.541)
 
-[node name="TBLoader" type="TBLoader" parent="."]
+[node name="WallCreator7" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14921, 17.1682, -101.53)
+
+[node name="WallCreator8" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14921, 17.1682, -71.4351)
+
+[node name="WallCreator9" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4875, 8.16141, -84.7844)
+
+[node name="WallCreator10" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34394, 8.16141, -74.7985)
+
+[node name="WallCreator11" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2922, 1.07063, -74.7985)
+
+[node name="WallCreator12" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2922, 1.07063, -96.4629)
+
+[node name="WallCreator13" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.70849, 1.07063, -96.4629)
+
+[node name="WallCreator14" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.70849, 1.07063, -79.1738)
+
+[node name="WallCreator15" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8461, 0.501013, -227.689)
+
+[node name="WallCreator16" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5215, 0.501013, -227.689)
+
+[node name="WallCreator17" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.84561, 0.501013, -222.802)
+
+[node name="WallCreator18" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08861, 9.41944, -220.188)
+
+[node name="WallCreator19" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65591, 1.50475, -86.6217)
+
+[node name="WallCreator20" parent="Peças de Coletagem" instance=ExtResource("7_xyd21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.34394, 8.16141, -102.409)
+
+[node name="Caixas de Colisão" type="Node" parent="."]
+
+[node name="CollisionBox1" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23463, 21.9876, -147.612)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uw2p8")
+
+[node name="CollisionBox2" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23463, 21.9876, -132.048)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_cu2fy")
+
+[node name="CollisionBox3" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23463, 21.9876, -162.933)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_u7ux0")
+
+[node name="CollisionBox4" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23463, 21.9876, -179.554)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_wx3qn")
+
+[node name="CollisionBox5" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.61156, 21.0989, -178.929)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_wmg66")
+
+[node name="CollisionBox6" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.61156, 20.4358, -163.506)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tfv5a")
+
+[node name="CollisionBox7" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.61156, 20.4358, -148.203)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q2mc5")
+
+[node name="CollisionBox8" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.61156, 20.4358, -132.568)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_45tt3")
+
+[node name="CollisionBox9" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.61156, 24.4802, -197.201)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6yr33")
+
+[node name="CollisionBox10" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.989418, 24.4802, -197.201)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox10/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_1hlgt")
+
+[node name="CollisionBox11" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.989418, 23.9265, -113.693)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox11/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_jb83r")
+
+[node name="CollisionBox12" type="MeshInstance3D" parent="Caixas de Colisão"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1348, 23.9265, -113.693)
+material_override = SubResource("StandardMaterial3D_1puu1")
+mesh = SubResource("BoxMesh_lkpj8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Caixas de Colisão/CollisionBox12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caixas de Colisão/CollisionBox12/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_moc5y")
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="MovingWalls" type="Node3D" parent="Walls" groups=["m_walls"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
+script = ExtResource("16_ijc76")
+
+[node name="WallAnimation" type="AnimationPlayer" parent="Walls/MovingWalls"]
+libraries = {
+"": SubResource("AnimationLibrary_mpdel")
+}
+
+[node name="DoorOpening" parent="Walls/MovingWalls" instance=ExtResource("18_rc2xp")]
+stream = null
+
+[node name="ErrorAudio" parent="Walls/MovingWalls" instance=ExtResource("19_xdh8n")]
+
+[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls/PiecesWallHUD"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 296.0
+offset_right = 2196.0
+offset_bottom = 551.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 200
+text = "Peças Insuficientes"
+
+[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls/PiecesWallHUD"]
+libraries = {
+"": SubResource("AnimationLibrary_io4fq")
+}
+
+[node name="NeedPiecesHUD" type="Control" parent="Walls/MovingWalls"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 491.0
+offset_top = 451.0
+offset_right = 531.0
+offset_bottom = 491.0
+
+[node name="NeedPieces" type="Label" parent="Walls/MovingWalls/NeedPiecesHUD"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = -75.0
+offset_right = 81.0
+offset_bottom = -35.0
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 30
+text = "Precisa-se de "
+
+[node name="QuantityPieces" type="Label" parent="Walls/MovingWalls/NeedPiecesHUD"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = -79.0
+offset_right = 131.0
+offset_bottom = -27.0
+theme_override_colors/font_color = Color(1, 0.477854, 0.410056, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 40
+text = "3
+"
+
+[node name="Control" type="Control" parent="Walls/MovingWalls"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Activator" type="MeshInstance3D" parent="Walls/MovingWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74315, 16.1848, -171.727)
+material_override = SubResource("StandardMaterial3D_iauoq")
+mesh = SubResource("BoxMesh_wmedy")
+
+[node name="Area" type="MeshInstance3D" parent="Walls/MovingWalls/Activator"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0428216, -0.394057, -0.165401)
+mesh = SubResource("PlaneMesh_nkr7b")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Walls/MovingWalls/Activator/Area"]
+collision_layer = 1024
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MovingWalls/Activator/Area/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.893355, 0.536242, -0.172485)
+shape = SubResource("BoxShape3D_ihm0x")
+
+[node name="Wall&Ground" type="Node3D" parent="Walls/MovingWalls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 125.947, -0.458888, -172.119)
+
+[node name="Wall" type="MeshInstance3D" parent="Walls/MovingWalls/Wall&Ground"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 1, 0, -5, 0)
+mesh = SubResource("BoxMesh_yp5qx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/MovingWalls/Wall&Ground"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 4.76837e-07, 0)
+material_override = SubResource("StandardMaterial3D_df3du")
+mesh = SubResource("BoxMesh_tabqn")
+skeleton = NodePath("../..")
+
+[node name="MovingWalls2" type="Node3D" parent="Walls" groups=["m_walls"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
+script = ExtResource("16_ijc76")
+
+[node name="WallAnimation" type="AnimationPlayer" parent="Walls/MovingWalls2"]
+libraries = {
+"": SubResource("AnimationLibrary_mpdel")
+}
+
+[node name="DoorOpening" parent="Walls/MovingWalls2" instance=ExtResource("18_rc2xp")]
+stream = null
+
+[node name="ErrorAudio" parent="Walls/MovingWalls2" instance=ExtResource("19_xdh8n")]
+
+[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls2/PiecesWallHUD"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 296.0
+offset_right = 2196.0
+offset_bottom = 551.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 200
+text = "Peças Insuficientes"
+
+[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls2/PiecesWallHUD"]
+libraries = {
+"": SubResource("AnimationLibrary_io4fq")
+}
+
+[node name="NeedPiecesHUD" type="Control" parent="Walls/MovingWalls2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 491.0
+offset_top = 451.0
+offset_right = 531.0
+offset_bottom = 491.0
+
+[node name="NeedPieces" type="Label" parent="Walls/MovingWalls2/NeedPiecesHUD"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = -75.0
+offset_right = 81.0
+offset_bottom = -35.0
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 30
+text = "Precisa-se de "
+
+[node name="QuantityPieces" type="Label" parent="Walls/MovingWalls2/NeedPiecesHUD"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = -79.0
+offset_right = 131.0
+offset_bottom = -27.0
+theme_override_colors/font_color = Color(1, 0.477854, 0.410056, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 40
+text = "3
+"
+
+[node name="Control" type="Control" parent="Walls/MovingWalls2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Activator" type="MeshInstance3D" parent="Walls/MovingWalls2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28002, 15.9652, -156.285)
+material_override = SubResource("StandardMaterial3D_iauoq")
+mesh = SubResource("BoxMesh_wmedy")
+
+[node name="Area" type="MeshInstance3D" parent="Walls/MovingWalls2/Activator"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0428216, -0.394057, -0.165401)
+mesh = SubResource("PlaneMesh_nkr7b")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Walls/MovingWalls2/Activator/Area"]
+collision_layer = 1024
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MovingWalls2/Activator/Area/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.069786, 0.269795, -0.00354004)
+shape = SubResource("BoxShape3D_ihm0x")
+
+[node name="Wall&Ground" type="Node3D" parent="Walls/MovingWalls2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 125.947, -0.458888, -156.585)
+
+[node name="Wall" type="MeshInstance3D" parent="Walls/MovingWalls2/Wall&Ground"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 1, 0, -5, 0)
+mesh = SubResource("BoxMesh_yp5qx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/MovingWalls2/Wall&Ground"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 4.76837e-07, 0)
+material_override = SubResource("StandardMaterial3D_df3du")
+mesh = SubResource("BoxMesh_tabqn")
+skeleton = NodePath("../..")
+
+[node name="MovingWalls3" type="Node3D" parent="Walls" groups=["m_walls"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
+script = ExtResource("16_ijc76")
+
+[node name="WallAnimation" type="AnimationPlayer" parent="Walls/MovingWalls3"]
+libraries = {
+"": SubResource("AnimationLibrary_mpdel")
+}
+
+[node name="DoorOpening" parent="Walls/MovingWalls3" instance=ExtResource("18_rc2xp")]
+stream = null
+
+[node name="ErrorAudio" parent="Walls/MovingWalls3" instance=ExtResource("19_xdh8n")]
+
+[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls3"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls3/PiecesWallHUD"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 296.0
+offset_right = 2196.0
+offset_bottom = 551.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 200
+text = "Peças Insuficientes"
+
+[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls3/PiecesWallHUD"]
+libraries = {
+"": SubResource("AnimationLibrary_io4fq")
+}
+
+[node name="NeedPiecesHUD" type="Control" parent="Walls/MovingWalls3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 491.0
+offset_top = 451.0
+offset_right = 531.0
+offset_bottom = 491.0
+
+[node name="NeedPieces" type="Label" parent="Walls/MovingWalls3/NeedPiecesHUD"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = -75.0
+offset_right = 81.0
+offset_bottom = -35.0
+theme_override_colors/font_color = Color(0.615686, 0, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 30
+text = "Precisa-se de "
+
+[node name="QuantityPieces" type="Label" parent="Walls/MovingWalls3/NeedPiecesHUD"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = -79.0
+offset_right = 131.0
+offset_bottom = -27.0
+theme_override_colors/font_color = Color(1, 0.477854, 0.410056, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 40
+text = "3
+"
+
+[node name="Control" type="Control" parent="Walls/MovingWalls3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Activator" type="MeshInstance3D" parent="Walls/MovingWalls3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.20458, 16.1665, -140.129)
+material_override = SubResource("StandardMaterial3D_iauoq")
+mesh = SubResource("BoxMesh_wmedy")
+
+[node name="Area" type="MeshInstance3D" parent="Walls/MovingWalls3/Activator"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0428216, -0.394057, -0.165401)
+mesh = SubResource("PlaneMesh_nkr7b")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Walls/MovingWalls3/Activator/Area"]
+collision_layer = 1024
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MovingWalls3/Activator/Area/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0697861, -0.208557, -0.00354004)
+shape = SubResource("BoxShape3D_ihm0x")
+
+[node name="Wall&Ground" type="Node3D" parent="Walls/MovingWalls3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 125.947, -0.458888, -139.786)
+
+[node name="Wall" type="MeshInstance3D" parent="Walls/MovingWalls3/Wall&Ground"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 1, 0, -5, 0)
+mesh = SubResource("BoxMesh_yp5qx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/MovingWalls3/Wall&Ground"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 4.76837e-07, 0)
+material_override = SubResource("StandardMaterial3D_df3du")
+mesh = SubResource("BoxMesh_tabqn")
+skeleton = NodePath("../..")
+
+[node name="MovingWalls4" type="Node3D" parent="Walls" groups=["m_walls"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
+script = ExtResource("16_ijc76")
+
+[node name="WallAnimation" type="AnimationPlayer" parent="Walls/MovingWalls4"]
+libraries = {
+"": SubResource("AnimationLibrary_mpdel")
+}
+
+[node name="DoorOpening" parent="Walls/MovingWalls4" instance=ExtResource("18_rc2xp")]
+stream = null
+
+[node name="ErrorAudio" parent="Walls/MovingWalls4" instance=ExtResource("19_xdh8n")]
+
+[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls4"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls4/PiecesWallHUD"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 296.0
+offset_right = 2196.0
+offset_bottom = 551.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 200
+text = "Peças Insuficientes"
+
+[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls4/PiecesWallHUD"]
+libraries = {
+"": SubResource("AnimationLibrary_io4fq")
+}
+
+[node name="NeedPiecesHUD" type="Control" parent="Walls/MovingWalls4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 491.0
+offset_top = 451.0
+offset_right = 531.0
+offset_bottom = 491.0
+
+[node name="NeedPieces" type="Label" parent="Walls/MovingWalls4/NeedPiecesHUD"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = -75.0
+offset_right = 81.0
+offset_bottom = -35.0
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 30
+text = "Precisa-se de "
+
+[node name="QuantityPieces" type="Label" parent="Walls/MovingWalls4/NeedPiecesHUD"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = -79.0
+offset_right = 131.0
+offset_bottom = -27.0
+theme_override_colors/font_color = Color(1, 0.477854, 0.410056, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 40
+text = "3
+"
+
+[node name="Control" type="Control" parent="Walls/MovingWalls4"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Activator" type="MeshInstance3D" parent="Walls/MovingWalls4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.17482, 16.5933, -125.288)
+material_override = SubResource("StandardMaterial3D_iauoq")
+mesh = SubResource("BoxMesh_wmedy")
+
+[node name="Area" type="MeshInstance3D" parent="Walls/MovingWalls4/Activator"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0428216, -0.394057, -0.165401)
+mesh = SubResource("PlaneMesh_nkr7b")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Walls/MovingWalls4/Activator/Area"]
+collision_layer = 1024
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MovingWalls4/Activator/Area/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.069786, 0.286144, -0.00354004)
+shape = SubResource("BoxShape3D_ihm0x")
+
+[node name="Wall&Ground" type="Node3D" parent="Walls/MovingWalls4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 125.947, -0.458888, -124.211)
+
+[node name="Wall" type="MeshInstance3D" parent="Walls/MovingWalls4/Wall&Ground"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 1, 0, -5, 0)
+mesh = SubResource("BoxMesh_yp5qx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/MovingWalls4/Wall&Ground"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 4.76837e-07, 0)
+material_override = SubResource("StandardMaterial3D_df3du")
+mesh = SubResource("BoxMesh_tabqn")
+skeleton = NodePath("../..")
+
+[node name="PhaseEnded" parent="." instance=ExtResource("21_q720d")]
+
+[node name="Pathogens" type="Node" parent="."]
+
+[node name="Group1" type="Node3D" parent="Pathogens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23181, 16.5846, -104.622)
+
+[node name="Enemy" parent="Pathogens/Group1" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9349, 1.80426, 0.31691)
+
+[node name="Enemy2" parent="Pathogens/Group1" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6242, 0, 0)
+
+[node name="Enemy3" parent="Pathogens/Group1" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0868, 1.2844, 16.4976)
+
+[node name="Group2" type="Node3D" parent="Pathogens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03514, 15.5247, -70.9249)
+
+[node name="Enemy" parent="Pathogens/Group2" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3728, 2.66607, 0)
+
+[node name="Enemy2" parent="Pathogens/Group2" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4572, 2.10212, 0)
+
+[node name="Group3" type="Node3D" parent="Pathogens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.3866, 18.9261, -92.6028)
+
+[node name="Enemy" parent="Pathogens/Group3" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.65044, 1, 0)
+
+[node name="Enemy2" parent="Pathogens/Group3" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.74082, 9.67837)
+
+[node name="Enemy3" parent="Pathogens/Group3" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.6091, 0)
+
+[node name="Group4" type="Node3D" parent="Pathogens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.718225, 10.8329, -75.8372)
+
+[node name="Enemy" parent="Pathogens/Group4" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.59007, 1.54519)
+
+[node name="Enemy2" parent="Pathogens/Group4" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.82365, -26.3542)
+
+[node name="Enemy3" parent="Pathogens/Group4" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5163, -1.56045, -12.3874)
+
+[node name="Enemy4" parent="Pathogens/Group4" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8175, -2.73903, -9.30945)
+
+[node name="Group5" type="Node3D" parent="Pathogens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127708, -0.228735, -87.2449)
+
+[node name="Enemy" parent="Pathogens/Group5" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.79513, -13.7719)
+
+[node name="Enemy2" parent="Pathogens/Group5" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.07166, 2.27996, 0)
+
+[node name="Enemy3" parent="Pathogens/Group5" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9659, 2.50763, 8.19648)
+
+[node name="Enemy4" parent="Pathogens/Group5" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8232, 1.00139, -14.6887)
+
+[node name="Enemy5" parent="Pathogens/Group5" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4319, 1.39114, 10.3344)
+
+[node name="Enemy6" parent="Pathogens/Group5" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22784, -8.1214)
+
+[node name="Enemy7" parent="Pathogens/Group5" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22784, 8.63844)
+
+[node name="Group6" type="Node3D" parent="Pathogens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.6749, -213.086)
+
+[node name="Enemy" parent="Pathogens/Group6" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11576, 1.35247, 0)
+
+[node name="Enemy" parent="Pathogens/Group6/Enemy" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8745, -1.35948, -19.7707)
+
+[node name="Enemy2" parent="Pathogens/Group6" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.32085, 0.991913, 0)
+
+[node name="Enemy3" parent="Pathogens/Group6" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.948061, 5.20024)
+
+[node name="Group7" type="Node3D" parent="Pathogens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.66748, -213.086)
+
+[node name="Enemy" parent="Pathogens/Group7" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11576, 1.35247, 0)
+
+[node name="Enemy2" parent="Pathogens/Group7" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.32085, 0.991913, 0)
+
+[node name="Enemy3" parent="Pathogens/Group7" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.948061, 5.20024)
+
+[node name="Group8" type="Node3D" parent="Pathogens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.66748, -228.608)
+
+[node name="Enemy" parent="Pathogens/Group8" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11576, 1.35247, 0)
+
+[node name="Enemy2" parent="Pathogens/Group8" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.32085, 0.991913, 0)
+
+[node name="Enemy3" parent="Pathogens/Group8" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.948061, 5.20024)
+
+[node name="Group9" type="Node3D" parent="Pathogens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506236, -228.608)
+
+[node name="Enemy" parent="Pathogens/Group9" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11576, 1.35247, 10.5662)
+
+[node name="Enemy2" parent="Pathogens/Group9" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8566, 0.991913, -1.42891)
+
+[node name="Enemy3" parent="Pathogens/Group9" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2896, 0.58974, 18.9165)
+
+[node name="Enemy4" parent="Pathogens/Group9" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52869, 1.35247, -0.000823975)
+
+[node name="Group10" type="Node3D" parent="Pathogens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06884, 0.550021, -227.346)
+
+[node name="Enemy" parent="Pathogens/Group10" instance=ExtResource("22_p26x0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1424, 1.76308, 10.1699)
+
+[node name="Enemy2" parent="Pathogens/Group10" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14516, 0.991913, 20.3173)
+
+[node name="Enemy3" parent="Pathogens/Group10" instance=ExtResource("24_013hg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5491, 0.948061, 11.5063)
+
+[node name="Enemy4" parent="Pathogens/Group10" instance=ExtResource("23_jrgvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1679, 0.350417, 10.2566)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_j2i72")
+
+[node name="TBLoader" type="TBLoader" parent="NavigationRegion3D"]
 map_resource = "res://tbmapfiles/lvl2_v2.map"
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 15.7997, -163.635)
 
-[node name="Default Layer" type="Node3D" parent="TBLoader"]
+[node name="Default Layer" type="Node3D" parent="NavigationRegion3D/TBLoader"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.05856, -6.17165, 52.6369)
 
-[node name="entity_0_geometry" type="MeshInstance3D" parent="TBLoader/Default Layer"]
+[node name="entity_0_geometry" type="MeshInstance3D" parent="NavigationRegion3D/TBLoader/Default Layer"]
 mesh = SubResource("ArrayMesh_wuoxo")
 
-[node name="entity_0_geometry_col" type="StaticBody3D" parent="TBLoader/Default Layer"]
+[node name="entity_0_geometry_col" type="StaticBody3D" parent="NavigationRegion3D/TBLoader/Default Layer"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TBLoader/Default Layer/entity_0_geometry_col"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/TBLoader/Default Layer/entity_0_geometry_col"]
 shape = SubResource("ConcavePolygonShape3D_u87f3")
+
+[node name="VictorySong" parent="." instance=ExtResource("25_jqqau")]
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.412286, -0.487386, -0.769724, -0.128192, -0.867501, 0.480635, -0.901991, -0.0994865, -0.420137, -12.3876, 23.1472, -236.925)
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.620346, -0.448259, -0.643611, -0.197251, -0.883378, 0.42513, -0.75912, -0.136775, -0.636419, -16.109, 5.91283, -236.925)
+
+[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0936913, 0.995601, 0, -0.995601, 0.0936913, -66.465, 18.8215, -87.6127)
+
+[node name="DirectionalLight3D5" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.281337, 0.089907, 0.955388, -0.959609, -0.0263588, -0.280099, 0, -0.995601, 0.0936913, -123.027, 1.40223, -78.1053)
+
+[node name="RetroCoin" parent="." groups=["c_sound"] instance=ExtResource("26_7yv3a")]
+
+[node name="Level2BGM" parent="." instance=ExtResource("27_83txj")]
+bus = &"BGM"
+
+[connection signal="body_entered" from="Walls/MovingWalls/Activator/Area/Area3D" to="Walls/MovingWalls" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Walls/MovingWalls/Activator/Area/Area3D" to="Walls/MovingWalls" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Walls/MovingWalls2/Activator/Area/Area3D" to="Walls/MovingWalls2" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Walls/MovingWalls2/Activator/Area/Area3D" to="Walls/MovingWalls2" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Walls/MovingWalls3/Activator/Area/Area3D" to="Walls/MovingWalls3" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Walls/MovingWalls3/Activator/Area/Area3D" to="Walls/MovingWalls3" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Walls/MovingWalls4/Activator/Area/Area3D" to="Walls/MovingWalls4" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Walls/MovingWalls4/Activator/Area/Area3D" to="Walls/MovingWalls4" method="_on_area_3d_body_exited"]
