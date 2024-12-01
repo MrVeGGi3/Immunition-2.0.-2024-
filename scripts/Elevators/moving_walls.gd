@@ -2,7 +2,6 @@ extends Node3D
 
 
 @onready var area_3d: Area3D = $Activator/Area/Area3D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var player = get_tree().get_first_node_in_group("player")
 #Variáveis
 @export var pieces_to_open : int = 5
