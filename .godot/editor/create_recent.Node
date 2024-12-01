@@ -1,3 +1,4 @@
+WorldEnvironment
 AudioStreamPlayer
 AudioStreamPlayer3D
 DirectionalLight3D
@@ -11,4 +12,3 @@ TBLoader
 VideoStreamPlayer
 SubViewport
 SubViewportContainer
-Sprite2D
