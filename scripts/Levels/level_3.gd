@@ -39,6 +39,7 @@ var enemy_blue
 var enemy_green
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_tree().paused = true
 	level_3bgm.play()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	for i in range(1, pipes.size()):
@@ -80,6 +81,7 @@ func _process(delta: float) -> void:
 		phase_ended.visible = true
 		phase_ended._hide_button()
 		get_tree().paused = true
+		
 
 func _on_count_timeout() -> void:
 	pipe_disable_visiblity()

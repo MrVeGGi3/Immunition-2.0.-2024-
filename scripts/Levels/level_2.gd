@@ -12,6 +12,7 @@ var criteria2 = ""
 var criteria3 = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.score_index = 1
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	level_2bgm.play()

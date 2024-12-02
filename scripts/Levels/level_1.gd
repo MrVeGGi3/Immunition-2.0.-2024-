@@ -39,9 +39,10 @@ var go_to_next_phase = false
 var start_enemies
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global.cells_in_scene = 0.0
-	Global.contamined_cells = 0.0
-	Global.pathogen_killed = 0.0	
+	Global.score_index = 0
+	Global.cells_in_scene = 0
+	Global.contamined_cells = 0
+	Global.pathogen_killed = 0
 	timer_counter.hide()
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

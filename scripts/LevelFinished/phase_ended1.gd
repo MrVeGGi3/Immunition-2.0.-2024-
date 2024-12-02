@@ -20,8 +20,8 @@ var menu = "res://scenes/HUD/menu.tscn"
 @onready var animation_tree: AnimationPlayer = $AnimationTree
 @onready var NextPhaseButton: Button = $GoToNextPhase
 
-var level_2 = preload("res://scenes/Levels/level_2.tscn")
-var level_3 = preload("res://scenes/Levels/level_3.tscn")
+var level_2 = "res://scenes/Levels/level_2.tscn"
+var level_3 = "res://scenes/Levels/level_3.tscn"
 var scenes = [level_2, level_3]
 
 
@@ -99,14 +99,13 @@ func _process(_delta):
 	score_iii.text = str(actual_score_iii)
 	scenes_index = Global.score_index
 	
-	if scenes_index == 1:
-		NextPhaseButton.visible = false
 	
 
 func _on_go_to_next_phase_pressed() -> void:
+	if scenes_index == 0:
+		get_tree().change_scene_to_file(level_2)
 	if scenes_index == 1:
-		return
-	get_tree().change_scene_to_packed(scenes[scenes_index])
+		get_tree().change_scene_to_file(level_3)
 	Global.score_index += 1
 
 func _hide_button():
