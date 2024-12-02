@@ -29,9 +29,9 @@ extends Node3D
 var index = 0
 var enemies
 var message = "Vias respiratórias restauradas com sucesso! Obrigado por Jogar!"
-var criteria1 = "Aprenda"
-var criteria2 = "Preserve"
-var criteria3 = "Proteja"
+var criteria1 = "Canos Não Quebrados"
+var criteria2 = "Patógenos Destruídos"
+var criteria3 = "Vida do Player"
 
 var can_spawn = true
 var enemy_red
@@ -39,7 +39,7 @@ var enemy_blue
 var enemy_green
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_tree().paused = true
+	get_tree().paused = false
 	level_3bgm.play()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	for i in range(1, pipes.size()):

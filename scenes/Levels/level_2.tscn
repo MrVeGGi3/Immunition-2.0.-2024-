@@ -1428,6 +1428,12 @@ transform = Transform3D(-0.281337, 0.089907, 0.955388, -0.959609, -0.0263588, -0
 [node name="Level2BGM" parent="." instance=ExtResource("27_83txj")]
 bus = &"BGM"
 
+[node name="WallPiecesHUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="body_entered" from="Walls/MovingWalls/Activator/Area/Area3D" to="Walls/MovingWalls" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Walls/MovingWalls/Activator/Area/Area3D" to="Walls/MovingWalls" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="Walls/MovingWalls2/Activator/Area/Area3D" to="Walls/MovingWalls2" method="_on_area_3d_body_entered"]

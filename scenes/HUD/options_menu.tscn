@@ -57,6 +57,7 @@ bus = &"BGM"
 [node name="ButtonSelected" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_xgfak")
 volume_db = 10.0
+bus = &"SFX"
 
 [node name="BackgroundOptions" type="Sprite2D" parent="."]
 position = Vector2(576, 89)

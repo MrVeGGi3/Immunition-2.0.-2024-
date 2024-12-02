@@ -6,10 +6,12 @@ extends Node3D
 @onready var retro_coin: AudioStreamPlayer = $RetroCoin
 @onready var level_2bgm: AudioStreamPlayer = $Level2BGM
 
+var seconds
+var minutes
 var message = "Muros reconstruídos com sucesso!"
-var criteria1 = ""
-var criteria2 = ""
-var criteria3 = ""
+var criteria1 = "Tempo do Jogo"
+var criteria2 = "Patógenos Destruídos"
+var criteria3 = "Vida do Player"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.score_index = 1
@@ -23,6 +25,11 @@ func _process(delta: float) -> void:
 	var m_wall_2 = moving_walls[1].get_wall_complete_status()
 	var m_wall_3 = moving_walls[2].get_wall_complete_status()
 	var m_wall_4 = moving_walls[3].get_wall_complete_status()
+	seconds += delta
+	if seconds == 60:
+		minutes += 1
+		seconds = 0
+			
 	
 	if m_wall_1 and m_wall_2 and  m_wall_3 and m_wall_4:
 		level_2bgm.stop()
