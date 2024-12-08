@@ -175,8 +175,8 @@ func _process(delta):
 			shoot()
 			if l_ammo < 0:
 				l_ammo = 0
-			if not l_ammo < 0:
-				l_ammo -=1
+			if not l_ammo <= 0:
+				l_ammo -= 1
 			if l_ammo == 0:
 				can_shoot = false
 				set_global_transition_bool_cs(can_shoot)
@@ -185,7 +185,7 @@ func _process(delta):
 			shoot_by_macrofage()
 			if m_ammo < 0:
 				m_ammo = 0
-			if not m_ammo < 0:
+			if not m_ammo <= 0:
 				m_ammo -=1
 			if m_ammo == 0:
 				can_shoot_mf = false

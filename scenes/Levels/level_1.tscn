@@ -2374,9 +2374,9 @@ player = NodePath("../..")
 
 [node name="Whell&memory" parent="Player/PlayerHUD" instance=ExtResource("21_m7wo0")]
 offset_left = 168.0
-offset_top = 306.0
+offset_top = 414.0
 offset_right = 168.0
-offset_bottom = 306.0
+offset_bottom = 414.0
 scale = Vector2(0.480624, 0.480624)
 
 [node name="pause_menu" parent="Player/PlayerHUD" instance=ExtResource("22_lt2jr")]

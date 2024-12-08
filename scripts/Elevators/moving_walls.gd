@@ -64,10 +64,8 @@ func _process(_delta: float) -> void:
 				wall_animation.play("100%")
 				area_3d.monitoring = false
 				wall_complete = true
-				pieces_wall_hud.visible = true
 				pieces_hud_animation.play("wall_constructed")
-		elif Global.wall_piece <= 0:
-			pieces_wall_hud.visible = true
+		elif Global.wall_piece <= 0 and !wall_complete:
 			pieces_hud_animation.play("cant_construct")
 	
 		

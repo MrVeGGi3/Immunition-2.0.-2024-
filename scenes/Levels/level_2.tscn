@@ -401,10 +401,46 @@ albedo_color = Color(0.0187488, 5.77569e-07, 0.182389, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tabqn"]
 
-[sub_resource type="Animation" id="Animation_tycyg"]
+[sub_resource type="Animation" id="Animation_f4imu"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Peças Insuficientes:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="Animation" id="Animation_8u5kd"]
+[sub_resource type="Animation" id="Animation_uuh0r"]
 resource_name = "cant_construct"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -442,8 +478,32 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.633333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="Animation" id="Animation_jnhb0"]
+[sub_resource type="Animation" id="Animation_sp7f7"]
 resource_name = "wall_constructed"
 length = 0.5
 tracks/0/type = "value"
@@ -482,12 +542,36 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Peças Insuficientes:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_io4fq"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_efe5p"]
 _data = {
-"RESET": SubResource("Animation_tycyg"),
-"cant_construct": SubResource("Animation_8u5kd"),
-"wall_constructed": SubResource("Animation_jnhb0")
+"RESET": SubResource("Animation_f4imu"),
+"cant_construct": SubResource("Animation_uuh0r"),
+"wall_constructed": SubResource("Animation_sp7f7")
 }
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_j2i72"]
@@ -940,6 +1024,7 @@ mesh = SubResource("BoxMesh_tabqn")
 skeleton = NodePath("../..")
 
 [node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -950,22 +1035,23 @@ grow_vertical = 2
 [node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls/PiecesWallHUD"]
 visible = false
 layout_mode = 0
-offset_left = 414.0
-offset_top = 545.0
-offset_right = 2208.0
-offset_bottom = 800.0
+offset_left = 402.0
+offset_top = 296.0
+offset_right = 2196.0
+offset_bottom = 551.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
 theme_override_fonts/font = ExtResource("20_tptig")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 200
 text = "Peças Insuficientes"
 
 [node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls/PiecesWallHUD"]
 libraries = {
-"": SubResource("AnimationLibrary_io4fq")
+"": SubResource("AnimationLibrary_efe5p")
 }
 
 [node name="Label" type="Label" parent="Walls/MovingWalls/PiecesWallHUD"]
+visible = false
 layout_mode = 0
 offset_left = 302.0
 offset_top = 522.0
@@ -1060,6 +1146,7 @@ mesh = SubResource("BoxMesh_tabqn")
 skeleton = NodePath("../..")
 
 [node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls2"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1068,6 +1155,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls2/PiecesWallHUD"]
+visible = false
 layout_mode = 0
 offset_left = 402.0
 offset_top = 296.0
@@ -1081,10 +1169,11 @@ text = "Peças Insuficientes"
 
 [node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls2/PiecesWallHUD"]
 libraries = {
-"": SubResource("AnimationLibrary_io4fq")
+"": SubResource("AnimationLibrary_efe5p")
 }
 
 [node name="Label" type="Label" parent="Walls/MovingWalls2/PiecesWallHUD"]
+visible = false
 layout_mode = 0
 offset_left = 302.0
 offset_top = 522.0
@@ -1179,6 +1268,7 @@ mesh = SubResource("BoxMesh_tabqn")
 skeleton = NodePath("../..")
 
 [node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls3"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1187,6 +1277,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls3/PiecesWallHUD"]
+visible = false
 layout_mode = 0
 offset_left = 402.0
 offset_top = 296.0
@@ -1200,10 +1291,11 @@ text = "Peças Insuficientes"
 
 [node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls3/PiecesWallHUD"]
 libraries = {
-"": SubResource("AnimationLibrary_io4fq")
+"": SubResource("AnimationLibrary_efe5p")
 }
 
 [node name="Label" type="Label" parent="Walls/MovingWalls3/PiecesWallHUD"]
+visible = false
 layout_mode = 0
 offset_left = 302.0
 offset_top = 522.0
@@ -1298,6 +1390,7 @@ mesh = SubResource("BoxMesh_tabqn")
 skeleton = NodePath("../..")
 
 [node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls4"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1306,6 +1399,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls4/PiecesWallHUD"]
+visible = false
 layout_mode = 0
 offset_left = 402.0
 offset_top = 296.0
@@ -1319,10 +1413,11 @@ text = "Peças Insuficientes"
 
 [node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls4/PiecesWallHUD"]
 libraries = {
-"": SubResource("AnimationLibrary_io4fq")
+"": SubResource("AnimationLibrary_efe5p")
 }
 
 [node name="Label" type="Label" parent="Walls/MovingWalls4/PiecesWallHUD"]
+visible = false
 layout_mode = 0
 offset_left = 302.0
 offset_top = 522.0
