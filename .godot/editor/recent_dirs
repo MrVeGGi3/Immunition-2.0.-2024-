@@ -1,3 +1,4 @@
+res://textures
 E:/Downloads/ImmunitionWeb
 E:/Downloads/Immunition
 res://scenes/HUD
@@ -12,7 +13,6 @@ res://tbmapfiles
 res://scenes/UI/Pipe
 res://themes
 res://
-res://textures
 res://scenes/Levels
 res://scenes/AudioSource
 res://scripts/Effects

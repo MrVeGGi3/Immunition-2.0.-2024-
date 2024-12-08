@@ -1,3 +1,4 @@
+WorldEnvironment
 Label
 Sprite2D
 NavigationLink3D
@@ -11,4 +12,3 @@ OmniLight3D
 Node
 MeshInstance3D
 Button
-TBLoader

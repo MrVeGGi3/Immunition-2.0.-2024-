@@ -1,4 +1,4 @@
-[gd_scene load_steps=177 format=3 uid="uid://cj7emqhky70af"]
+[gd_scene load_steps=178 format=3 uid="uid://cj7emqhky70af"]
 
 [ext_resource type="Script" path="res://scripts/Levels/level_1.gd" id="1_bgiqj"]
 [ext_resource type="Texture2D" uid="uid://bhlaan6ukbhkc" path="res://prefabs/floor1_20240614085358.png" id="2_fikwp"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scripts/Sound/open_door.gd" id="7_e1fkr"]
 [ext_resource type="ArrayMesh" uid="uid://d08ovuxubggti" path="res://prefabs/dev_torus.obj" id="7_l520q"]
 [ext_resource type="Texture2D" uid="uid://2xy8spk7ppfo" path="res://prefabs/asset1_20240614085733.png" id="7_lhhxw"]
+[ext_resource type="Texture2D" uid="uid://c8j4suhbocmyr" path="res://textures/asset1_20240614085733.png" id="7_ogwx6"]
 [ext_resource type="PackedScene" uid="uid://b8uj1bea2qdb1" path="res://scenes/Collectables/extractor.tscn" id="8_2o5mc"]
 [ext_resource type="Texture2D" uid="uid://coa64uv3ga52g" path="res://prefabs/wall2_20240614085027.png" id="9_2x05d"]
 [ext_resource type="PackedScene" uid="uid://chjb7f3unarmp" path="res://scenes/UI/ItensCollected/extractos_collected.tscn" id="9_hv02g"]
@@ -119,13 +120,11 @@ uv1_scale = Vector3(10, 10, 1)
 albedo_texture = ExtResource("7_lhhxw")
 uv1_scale = Vector3(10, 10, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_au7i6"]
-albedo_texture = ExtResource("7_lhhxw")
-uv1_scale = Vector3(10, 10, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwvbf"]
+albedo_texture = ExtResource("7_ogwx6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8sfv"]
-albedo_texture = ExtResource("7_lhhxw")
-uv1_scale = Vector3(10, 10, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wi7e5"]
+albedo_texture = ExtResource("7_ogwx6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xikxf"]
 albedo_texture = ExtResource("7_lhhxw")
@@ -991,7 +990,7 @@ shape = SubResource("ConvexPolygonShape3D_lfanu")
 
 [node name="DevPillar21" type="MeshInstance3D" parent="NavigationObstacle3D/Pillars"]
 transform = Transform3D(-0.00137154, 0, 0.912608, 0, 0.71177, 0, -0.801853, 0, -0.00156098, -118.677, 1.29365, -139.951)
-material_override = SubResource("StandardMaterial3D_au7i6")
+material_override = SubResource("StandardMaterial3D_iwvbf")
 mesh = ExtResource("4_8d1tl")
 skeleton = NodePath("../../..")
 
@@ -1002,7 +1001,7 @@ shape = SubResource("ConvexPolygonShape3D_lfanu")
 
 [node name="DevPillar20" type="MeshInstance3D" parent="NavigationObstacle3D/Pillars"]
 transform = Transform3D(-0.00137154, 0, 0.912608, 0, 0.71177, 0, -0.801853, 0, -0.00156098, -118.653, 1.29365, -127.606)
-material_override = SubResource("StandardMaterial3D_y8sfv")
+material_override = SubResource("StandardMaterial3D_wi7e5")
 mesh = ExtResource("4_8d1tl")
 skeleton = NodePath("../../..")
 
