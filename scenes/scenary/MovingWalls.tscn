@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://iw3umuo4ymew"]
+[gd_scene load_steps=21 format=3 uid="uid://iw3umuo4ymew"]
 
 [ext_resource type="Script" path="res://scripts/Elevators/moving_walls.gd" id="1_nk7k4"]
 [ext_resource type="AudioStream" uid="uid://bqhnvkpnvrvf1" path="res://sounds/SFX/Door/WallMovement.wav" id="2_kcoyj"]
 [ext_resource type="PackedScene" uid="uid://by5w8r5ir8bac" path="res://scenes/AudioSource/door_opening.tscn" id="2_mryot"]
 [ext_resource type="PackedScene" uid="uid://bavcym5qvj7ka" path="res://scenes/AudioSource/error_audio.tscn" id="3_bw0de"]
+[ext_resource type="PackedScene" uid="uid://bnmb7h7c46h8k" path="res://scenes/HUD/pieces_wall_hud.tscn" id="5_4m2dt"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="5_ehx7k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iauoq"]
@@ -316,54 +317,6 @@ _data = {
 "RESET": SubResource("Animation_hirid")
 }
 
-[sub_resource type="Animation" id="Animation_tycyg"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_8u5kd"]
-resource_name = "cant_construct"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Peças Insuficientes:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.566667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(402, 296), Vector2(414, 545)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Peças Insuficientes:theme_override_font_sizes/font_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.0333333, 0.533333),
-"transitions": PackedFloat32Array(2, 1),
-"update": 0,
-"values": [200, 10]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Peças Insuficientes:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_io4fq"]
-_data = {
-"RESET": SubResource("Animation_tycyg"),
-"cant_construct": SubResource("Animation_8u5kd")
-}
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_df3du"]
 albedo_color = Color(0.0187488, 5.77569e-07, 0.182389, 1)
 
@@ -402,31 +355,6 @@ stream = null
 
 [node name="ErrorAudio" parent="." instance=ExtResource("3_bw0de")]
 
-[node name="PiecesWallHUD" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Peças Insuficientes" type="Label" parent="PiecesWallHUD"]
-layout_mode = 0
-offset_left = 402.0
-offset_top = 296.0
-offset_right = 2196.0
-offset_bottom = 551.0
-scale = Vector2(0.2, 0.2)
-theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
-theme_override_fonts/font = ExtResource("5_ehx7k")
-theme_override_font_sizes/font_size = 200
-text = "Peças Insuficientes"
-
-[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="PiecesWallHUD"]
-libraries = {
-"": SubResource("AnimationLibrary_io4fq")
-}
-
 [node name="NeedPiecesHUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -457,12 +385,6 @@ theme_override_font_sizes/font_size = 40
 text = "3
 "
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="Wall&Ground" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall&Ground"]
@@ -475,6 +397,8 @@ skeleton = NodePath("../..")
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 1, 0, -5, 0)
 mesh = SubResource("BoxMesh_yp5qx")
 skeleton = NodePath("../..")
+
+[node name="PiecesWallHUD" parent="." instance=ExtResource("5_4m2dt")]
 
 [connection signal="body_entered" from="Activator/Area/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Activator/Area/Area3D" to="." method="_on_area_3d_body_exited"]

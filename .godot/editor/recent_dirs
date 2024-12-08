@@ -1,5 +1,6 @@
 E:/Downloads/ImmunitionWeb
 E:/Downloads/Immunition
+res://scenes/HUD
 E:/Downloads
 res://sounds/BGM
 res://sounds/SFX/Pipe
@@ -19,7 +20,3 @@ res://scripts/tutorials
 res://scripts/Spawner
 res://scripts/Tests
 res://scenes/effect
-res://scenes/UI/Player
-res://scripts/Characthers
-res://images/UI/Backgrounds/Ammo
-res://scenes/HUD

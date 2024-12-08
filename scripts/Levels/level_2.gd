@@ -13,6 +13,11 @@ var criteria1 = "Tempo do Jogo"
 var criteria2 = "Patógenos Destruídos"
 var criteria3 = "Vida do Player"
 
+@onready var wall_pieces_hud: Control = $WallPiecesHUD
+@onready var wall_pieces_available: Label = $WallPiecesHUD/WallPiecesAvailable
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.wall_piece = 0
@@ -25,6 +30,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	wall_pieces_available.text = str(Global.wall_piece)
 	var m_wall_1 = moving_walls[0].get_wall_complete_status()
 	var m_wall_2 = moving_walls[1].get_wall_complete_status()
 	var m_wall_3 = moving_walls[2].get_wall_complete_status()
@@ -36,6 +42,7 @@ func _process(delta: float) -> void:
 	if m_wall_1 and m_wall_2 and  m_wall_3 and m_wall_4:
 		level_2bgm.stop()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		wall_pieces_hud.visible = false
 		player.disable_UI()
 		victory_song.play()
 		phase_ended.level_finished(2, message, criteria1, criteria2, criteria3)

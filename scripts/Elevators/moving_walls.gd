@@ -1,7 +1,7 @@
 extends Node3D
 
 
-@onready var area_3d: Area3D = $Activator/Area/Area3D
+@onready var area_3d: Area3D = $Activator/Area/Area3D 
 @onready var player = get_tree().get_first_node_in_group("player")
 #Variáveis
 @export var pieces_to_open : int = 5
@@ -44,7 +44,6 @@ func _process(_delta: float) -> void:
 		error_audio.play()
 		need_pieces_hud.visible = false
 		if Global.wall_piece > 0:
-			
 			subtraction_pieces(Global.wall_piece, pieces_to_open)
 			percentage = (pieces_to_open  * 100.00 / initial_pieces_open) 
 			print(percentage)
@@ -65,7 +64,9 @@ func _process(_delta: float) -> void:
 				wall_animation.play("100%")
 				area_3d.monitoring = false
 				wall_complete = true
-		else:
+				pieces_wall_hud.visible = true
+				pieces_hud_animation.play("wall_constructed")
+		elif Global.wall_piece <= 0:
 			pieces_wall_hud.visible = true
 			pieces_hud_animation.play("cant_construct")
 	

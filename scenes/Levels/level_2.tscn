@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://brnm137iii2wi"]
+[gd_scene load_steps=76 format=4 uid="uid://brnm137iii2wi"]
 
 [ext_resource type="Script" path="res://scripts/Levels/level_2.gd" id="1_1qj7d"]
 [ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="1_vskrl"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://btp6gers53b0l" path="res://scenes/AudioSource/victory_song.tscn" id="25_jqqau"]
 [ext_resource type="PackedScene" uid="uid://du3djanlfvrw7" path="res://sounds/SFX/Collected/retro_coin.tscn" id="26_7yv3a"]
 [ext_resource type="PackedScene" uid="uid://eo83pnhguw3i" path="res://sounds/BGM/level_2bgm.tscn" id="27_83txj"]
+[ext_resource type="Texture2D" uid="uid://6tlxriuwydvw" path="res://images/UI/Collector/WallCollectorUI.png" id="28_3crg3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rncjf"]
 albedo_texture = ExtResource("2_nwxma")
@@ -383,6 +384,23 @@ _data = {
 "RESET": SubResource("Animation_hirid")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iauoq"]
+albedo_color = Color(1, 0.517647, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wmedy"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nkr7b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ihm0x"]
+size = Vector3(1.8694, 0.582886, 2.00903)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yp5qx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_df3du"]
+albedo_color = Color(0.0187488, 5.77569e-07, 0.182389, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tabqn"]
+
 [sub_resource type="Animation" id="Animation_tycyg"]
 length = 0.001
 
@@ -425,28 +443,52 @@ tracks/2/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_jnhb0"]
+resource_name = "wall_constructed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(302, 522), Vector2(131, 276)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_io4fq"]
 _data = {
 "RESET": SubResource("Animation_tycyg"),
-"cant_construct": SubResource("Animation_8u5kd")
+"cant_construct": SubResource("Animation_8u5kd"),
+"wall_constructed": SubResource("Animation_jnhb0")
 }
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iauoq"]
-albedo_color = Color(1, 0.517647, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_wmedy"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_nkr7b"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ihm0x"]
-size = Vector3(1.8694, 0.582886, 2.00903)
-
-[sub_resource type="BoxMesh" id="BoxMesh_yp5qx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_df3du"]
-albedo_color = Color(0.0187488, 5.77569e-07, 0.182389, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tabqn"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_j2i72"]
 vertices = PackedVector3Array(-18.25, 25.7997, -203.135, -4.25, 25.7997, -203.135, -4, 25.7997, -204.385, -18.25, 25.7997, -244.635, 8.25, 25.7997, -204.385, 8.5, 25.7997, -203.135, 23.5, 25.7997, -203.135, 23.25, 25.7997, -244.635, -16.75, 0.549697, -235.885, -10.5, 0.799697, -235.885, -10, 1.0497, -236.635, -10, 1.0497, -243.135, -16.75, 0.549697, -243.135, -11.35, 0.549697, -243.135, -11.7399, 0.549697, -237.639, -2.25, 7.7997, -236.635, -2.25, 7.7997, -236.135, -2, 8.0497, -236.135, -1.75, 8.0497, -236.635, 8, 16.5497, -236.635, 8, 16.5497, -243.135, 5.23077, 13.7997, -243.135, 4.7551, 13.7997, -242.122, -7.75, 0.549697, -243.135, -7.75, 0.549697, -236.635, -5.25, 0.549697, -236.635, -5.25, 0.549697, -243.135, -10.25, 0.549697, -235.385, -16.75, 0.549697, -204.385, 22, 0.549697, -243.135, -2.5, 0.549697, -243.135, -2.75, 0.549697, -235.385, 22, 0.549697, -204.385, -1.5, 16.7997, -204.385, -1.25, 16.7997, -202.385, 5.5, 16.7997, -202.385, 5.75, 16.7997, -204.385, 8.25, 16.7997, -235.635, -16.75, 16.7997, -235.635, -16.75, 16.7997, -204.385, 22, 16.7997, -243.135, 22, 16.7997, -204.385, -2.25, 7.7997, -235.635, -1.75, 7.7997, -235.385, 22, 7.7997, -204.385, 22, 7.7997, -235.635, -16.75, 7.7997, -204.385, -16.75, 7.7997, -235.635, 136.75, 0.0496969, -202.885, 137, 0.0496969, -202.135, 141.5, -0.450303, -202.135, 141.5, -0.450303, -209.885, 24.5, 15.2997, -209.885, 24.5, 15.2997, -202.885, -2.25, 20.2997, -203.385, -3.25, 20.2997, -203.385, -3.5, 20.2997, -202.385, -3.5, 20.2997, -192.135, -2.25, 20.2997, -192.135, 6.5, 20.2997, -203.385, 6.5, 20.2997, -192.135, 7.5, 20.2997, -192.135, 7.5, 20.2997, -203.385, -3.25, 16.7997, -203.135, -3.25, 16.7997, -192.135, -2.5, 16.7997, -192.135, -2.5, 16.7997, -203.135, 6.75, 16.7997, -203.135, 6.75, 16.7997, -192.135, 7.5, 16.7997, -192.135, 7.5, 16.7997, -203.135, -1.25, 16.7997, -108.885, 5.5, 16.7997, -108.635, 136.75, -0.200303, -201.635, 141.5, -0.450303, -190.635, 129.25, 0.299697, -201.635, 129.25, 0.299697, -192.135, 129.75, 0.299697, -191.885, 129.75, 0.299697, -190.385, -162.75, 0.549697, -201.885, -162.75, 0.549697, -192.135, -162.75, 7.5497, -191.135, -162.75, 7.5497, -184.135, 128.5, 7.5497, -184.135, 128.5, 7.5497, -191.135, -3.5, 25.7997, -191.135, -3.5, 25.7997, -120.135, 7.5, 25.7997, -120.135, 7.5, 25.7997, -191.135, -162.5, 0.549697, -190.885, -162.5, 0.549697, -184.135, 128.5, 0.549697, -184.135, 128.5, 0.549697, -190.885, -3.25, 17.7997, -190.885, -3.25, 17.7997, -184.135, -2.5, 17.7997, -184.135, -2.5, 17.7997, -190.885, 6.75, 17.5497, -190.885, 6.75, 17.5497, -184.135, 7.5, 17.5497, -184.135, 7.5, 17.5497, -190.885, 129.75, 0.299697, -184.885, 141.5, -0.450303, -184.635, 129.25, 0.299697, -182.885, 127.5, 0.549697, -182.885, 127.75, 0.549697, -176.135, 129.5, 0.299697, -176.135, 129.75, 0.299697, -183.385, 129.75, 0.299697, -174.385, 141.5, -0.450303, -174.635, -162.75, 0.549697, -182.885, -162.75, 0.549697, -176.135, -3.5, 20.0497, -182.885, -3.5, 20.0497, -176.135, -2.5, 20.0497, -176.135, -2.5, 20.0497, -182.885, -3.25, 17.7997, -182.885, -3.25, 17.7997, -176.135, -2.5, 17.7997, -176.135, -2.5, 17.7997, -182.885, 6.5, 17.5497, -182.885, 6.5, 17.5497, -176.135, 7.5, 17.5497, -176.135, 7.5, 17.5497, -182.885, -162.75, 7.5497, -175.135, -162.75, 7.5497, -168.135, 128.5, 7.5497, -168.135, 128.5, 7.5497, -175.135, -162.5, 0.549697, -174.885, -162.5, 0.549697, -168.135, 128.5, 0.549697, -168.135, 128.5, 0.549697, -174.885, -3.25, 17.7997, -174.885, -3.25, 17.7997, -168.135, -2.5, 17.7997, -168.135, -2.5, 17.7997, -174.885, 6.75, 17.5497, -174.885, 6.75, 17.5497, -168.135, 7.5, 17.5497, -168.135, 7.5, 17.5497, -174.885, 129.75, 0.299697, -168.885, 141.5, -0.450303, -168.635, 129.25, 0.299697, -166.885, 127.5, 0.549697, -166.885, 127.75, 0.549697, -160.135, 129.5, 0.299697, -160.135, 129.75, 0.299697, -167.385, 129.75, 0.299697, -158.385, 141.5, -0.450303, -158.635, -162.75, 0.549697, -166.885, -162.75, 0.549697, -160.135, -3.5, 20.0497, -166.885, -3.5, 20.0497, -160.135, -2.5, 20.0497, -160.135, -2.5, 20.0497, -166.885, -3.25, 17.7997, -166.885, -3.25, 17.7997, -160.135, -2.5, 17.7997, -160.135, -2.5, 17.7997, -166.885, 6.5, 17.5497, -166.885, 6.5, 17.5497, -160.135, 7.5, 17.5497, -160.135, 7.5, 17.5497, -166.885, -162.75, 7.5497, -159.135, -162.75, 7.5497, -152.135, 128.5, 7.5497, -152.135, 128.5, 7.5497, -159.135, -162.5, 0.549697, -158.885, -162.5, 0.549697, -152.135, 128.5, 0.549697, -152.135, 128.5, 0.549697, -158.885, -3.25, 17.7997, -158.885, -3.25, 17.7997, -152.135, -2.5, 17.7997, -152.135, -2.5, 17.7997, -158.885, 6.75, 17.5497, -158.885, 6.75, 17.5497, -152.135, 7.5, 17.5497, -152.135, 7.5, 17.5497, -158.885, 129.75, 0.299697, -152.885, 141.5, -0.450303, -152.635, 129.25, 0.299697, -150.885, 127.5, 0.549697, -150.885, 127.75, 0.549697, -144.135, 129.5, 0.299697, -144.135, 129.75, 0.299697, -151.385, 129.75, 0.299697, -142.385, 141.5, -0.450303, -142.635, -162.75, 0.549697, -150.885, -162.75, 0.549697, -144.135, -3.5, 20.0497, -150.885, -3.5, 20.0497, -144.135, -2.5, 20.0497, -144.135, -2.5, 20.0497, -150.885, -3.25, 17.7997, -150.885, -3.25, 17.7997, -144.135, -2.5, 17.7997, -144.135, -2.5, 17.7997, -150.885, 6.5, 17.5497, -150.885, 6.5, 17.5497, -144.135, 7.5, 17.5497, -144.135, 7.5, 17.5497, -150.885, -162.75, 7.5497, -143.135, -162.75, 7.5497, -136.135, 128.5, 7.5497, -136.135, 128.5, 7.5497, -143.135, -162.5, 0.549697, -142.885, -162.5, 0.549697, -136.135, 128.5, 0.549697, -136.135, 128.5, 0.549697, -142.885, -3.25, 17.7997, -142.885, -3.25, 17.7997, -136.135, -2.5, 17.7997, -136.135, -2.5, 17.7997, -142.885, 6.75, 17.5497, -142.885, 6.75, 17.5497, -136.135, 7.5, 17.5497, -136.135, 7.5, 17.5497, -142.885, 129.75, 0.299697, -136.885, 141.5, -0.450303, -136.635, 129.25, 0.299697, -134.885, 127.5, 0.549697, -134.885, 127.75, 0.549697, -128.135, 129.5, 0.299697, -128.135, 129.75, 0.299697, -135.385, 129.75, 0.299697, -126.385, 141.5, -0.450303, -126.635, -162.75, 0.549697, -134.885, -162.75, 0.549697, -128.135, -3.5, 20.0497, -134.885, -3.5, 20.0497, -128.135, -2.5, 20.0497, -128.135, -2.5, 20.0497, -134.885, -3.25, 17.7997, -134.885, -3.25, 17.7997, -128.135, -2.5, 17.7997, -128.135, -2.5, 17.7997, -134.885, 6.5, 17.5497, -134.885, 6.5, 17.5497, -128.135, 7.5, 17.5497, -128.135, 7.5, 17.5497, -134.885, -162.75, 7.5497, -127.135, -162.75, 7.5497, -120.135, 128.5, 7.5497, -120.135, 128.5, 7.5497, -127.135, -162.5, 0.549697, -126.885, -162.5, 0.549697, -120.135, 128.5, 0.549697, -120.135, 128.5, 0.549697, -126.885, -3.25, 17.7997, -126.885, -3.25, 17.7997, -120.135, -2.5, 17.7997, -120.135, -2.5, 17.7997, -126.885, 6.75, 17.5497, -126.885, 6.75, 17.5497, -120.135, 7.5, 17.5497, -120.135, 7.5, 17.5497, -126.885, 129.75, 0.299697, -120.885, 141.5, -0.450303, -120.635, 135, 0.0496969, -109.135, 135, 0.299697, -108.635, 135.25, 0.299697, -108.635, 135.25, 0.0496969, -109.135, 129.75, 0.299697, -119.385, 136.75, -0.200303, -109.135, 141.5, -0.450303, -108.635, 136.75, 0.0496969, -108.635, 129.25, 0.299697, -118.885, 127.75, 0.549697, -118.885, 128, 0.549697, -109.135, -162.75, 0.549697, -118.885, -162.75, 0.549697, -109.135, -3.5, 20.2997, -108.885, -3.25, 20.2997, -107.885, -2.5, 20.2997, -107.885, -2.5, 20.2997, -118.885, -3.5, 20.2997, -118.885, -3.25, 16.7997, -118.885, -3.25, 16.7997, -107.885, -2.5, 16.7997, -107.885, -2.5, 16.7997, -118.885, 6.5, 20.2997, -118.885, 6.5, 20.2997, -107.885, 7.5, 20.2997, -107.885, 7.5, 20.2997, -118.885, 6.75, 16.7997, -118.885, 6.75, 16.7997, -107.885, 7.5, 16.7997, -107.885, 7.5, 16.7997, -118.885, -1.25, 16.7997, -107.135, 5.5, 16.7997, -106.885, -1.75, 16.7997, -106.635, -3.25, 16.7997, -106.635, -3, 16.7997, -98.885, 7, 16.7997, -98.885, 7.25, 16.7997, -106.635, 135.25, 0.299697, -108.135, 135, 0.299697, -108.135, 141.5, -0.450303, -101.135, 136.75, 0.0496969, -108.135, 24.5, 15.2997, -108.135, 24.5, 15.2997, -101.135, -17.75, 22.5497, -107.885, -4.5, 22.5497, -108.135, -18.25, 22.5497, -108.135, 23.5, 22.5497, -108.135, 8.5, 22.5497, -108.135, 23, 22.5497, -107.635, 23.5, 22.5497, -100.885, 22.75, 22.5497, -66.885, 23.25, 22.5497, -66.635, -18.5, 22.5497, -98.885, -18, 22.5497, -97.885, -75.5, 22.5497, -97.885, -76.75, 22.5497, -98.885, -18.5, 22.5497, -75.885, -18.25, 22.5497, -66.635, -17.75, 22.5497, -66.885, -18, 22.5497, -76.885, -75.75, 22.5497, -77.135, -76.75, 22.5497, -75.885, -17.25, 0.549697, -96.635, -19, 0.549697, -96.635, -18.75, 0.549697, -77.885, -16.75, 0.549697, -77.635, -16.75, 0.549697, -67.885, 22, 0.549697, -67.885, -16.75, 0.549697, -97.135, 22, 0.549697, -106.635, -16.75, 0.549697, -106.635, -8.75, 7.7997, -98.885, -7.25, 7.7997, -98.885, -7.5, 7.7997, -106.635, -16.75, 7.7997, -97.885, -9, 7.7997, -97.635, -16.75, 7.7997, -106.635, -8.75, 16.7997, -98.885, -7.25, 16.7997, -98.885, -7.5, 16.7997, -106.635, -16.75, 16.7997, -97.885, -9, 16.7997, -97.635, -16.75, 16.7997, -106.635, 12.5, 7.7997, -98.885, 12.75, 7.7997, -106.635, 12.5, 16.7997, -98.885, 12.75, 16.7997, -106.635, 14, 7.7997, -98.885, 14.25, 7.7997, -97.135, 22, 7.7997, -97.385, 22, 7.7997, -106.635, 14, 16.7997, -98.885, 14.25, 16.7997, -97.135, 22, 16.7997, -97.385, 22, 16.7997, -106.635, -56.5, 7.7997, -84.135, -57, 7.7997, -84.135, -57, 7.7997, -77.885, -17, 7.7997, -77.885, -16.75, 7.7997, -76.635, -9, 7.7997, -76.885, -17.25, 7.7997, -96.635, -56.5, 7.7997, -96.635, -58, 16.5497, -96.635, -58.25, 16.5497, -91.885, -56.5, 16.7997, -91.635, -17.25, 16.7997, -96.635, -17, 16.7997, -77.885, -16.75, 16.7997, -76.635, -9, 16.7997, -76.885, -56.5, 16.7997, -77.885, 14.25, 7.7997, -77.635, 22, 7.7997, -77.385, 14.25, 16.7997, -77.635, 22, 16.7997, -77.385, -74.5, 0.549697, -91.135, -70.25, 0.799697, -91.135, -70, 0.799697, -91.885, -74.5, 0.549697, -96.635, -64.25, 4.2997, -91.885, -64, 4.2997, -96.635, -70.5625, 0.549697, -96.635, -74.5, 13.5497, -90.385, -69.75, 13.2997, -90.135, -69.75, 13.7997, -91.635, -68, 14.0497, -91.885, -68.25, 14.0497, -96.635, -74.5, 13.7997, -96.635, -74.5, 13.7997, -91.635, -67, 0.549697, -96.635, -67, 0.549697, -91.885, -57.5, 0.549697, -91.885, -57.5, 0.549697, -96.635, -62.5, 4.7997, -91.635, -57.5, 4.7997, -96.635, -62.7, 4.7997, -96.635, -62.5, 6.7997, -86.135, -57.5, 6.7997, -86.135, -57.5, 4.7997, -91.385, -56.75, 0.549697, -90.635, -58.25, 0.549697, -90.635, -58, 0.549697, -77.885, -56.25, 0.549697, -91.135, -56.25, 0.549697, -96.635, -70, 0.549697, -90.635, -74.5, 0.549697, -77.885, -74.5, 11.0497, -84.385, -69.75, 11.2997, -84.635, -57.5, 7.5497, -84.135, -62.5, 7.7997, -83.135, -64.75, 8.7997, -82.885, -64.75, 8.7997, -77.885, -62.1667, 7.7997, -77.885, -69.5, 10.7997, -82.885, -68.3125, 10.5497, -82.885, -65.775, 9.0497, -81.66, -74.5, 10.7997, -77.885, -68.9286, 10.7997, -77.885, 14.25, 7.7997, -76.135, 13.75, 7.7997, -75.635, 12.25, 7.7997, -75.635, 12.5, 7.7997, -67.885, 22, 7.7997, -67.885, 14.25, 16.7997, -76.135, 13.75, 16.7997, -75.635, 12.25, 16.7997, -75.635, 12.5, 16.7997, -67.885, 22, 16.7997, -67.885, -7.5, 7.7997, -67.885, -7.25, 7.7997, -75.635, -8.75, 7.7997, -75.635, -16.75, 7.7997, -67.885, -7.5, 16.7997, -67.885, -7.25, 16.7997, -75.635, -8.75, 16.7997, -75.635, -16.75, 16.7997, -67.885)
@@ -828,31 +870,6 @@ stream = null
 
 [node name="ErrorAudio" parent="Walls/MovingWalls" instance=ExtResource("19_xdh8n")]
 
-[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls/PiecesWallHUD"]
-layout_mode = 0
-offset_left = 402.0
-offset_top = 296.0
-offset_right = 2196.0
-offset_bottom = 551.0
-scale = Vector2(0.2, 0.2)
-theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
-theme_override_fonts/font = ExtResource("20_tptig")
-theme_override_font_sizes/font_size = 200
-text = "Peças Insuficientes"
-
-[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls/PiecesWallHUD"]
-libraries = {
-"": SubResource("AnimationLibrary_io4fq")
-}
-
 [node name="NeedPiecesHUD" type="Control" parent="Walls/MovingWalls"]
 layout_mode = 3
 anchors_preset = 0
@@ -922,6 +939,43 @@ material_override = SubResource("StandardMaterial3D_df3du")
 mesh = SubResource("BoxMesh_tabqn")
 skeleton = NodePath("../..")
 
+[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls/PiecesWallHUD"]
+visible = false
+layout_mode = 0
+offset_left = 414.0
+offset_top = 545.0
+offset_right = 2208.0
+offset_bottom = 800.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 10
+text = "Peças Insuficientes"
+
+[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls/PiecesWallHUD"]
+libraries = {
+"": SubResource("AnimationLibrary_io4fq")
+}
+
+[node name="Label" type="Label" parent="Walls/MovingWalls/PiecesWallHUD"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 522.0
+offset_right = 886.0
+offset_bottom = 574.0
+theme_override_colors/font_color = Color(0, 0.784314, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 40
+text = "Muro Construído com Sucesso!!"
+
 [node name="MovingWalls2" type="Node3D" parent="Walls" groups=["m_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
 script = ExtResource("16_ijc76")
@@ -935,31 +989,6 @@ libraries = {
 stream = null
 
 [node name="ErrorAudio" parent="Walls/MovingWalls2" instance=ExtResource("19_xdh8n")]
-
-[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls2"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls2/PiecesWallHUD"]
-layout_mode = 0
-offset_left = 402.0
-offset_top = 296.0
-offset_right = 2196.0
-offset_bottom = 551.0
-scale = Vector2(0.2, 0.2)
-theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
-theme_override_fonts/font = ExtResource("20_tptig")
-theme_override_font_sizes/font_size = 200
-text = "Peças Insuficientes"
-
-[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls2/PiecesWallHUD"]
-libraries = {
-"": SubResource("AnimationLibrary_io4fq")
-}
 
 [node name="NeedPiecesHUD" type="Control" parent="Walls/MovingWalls2"]
 layout_mode = 3
@@ -1030,6 +1059,42 @@ material_override = SubResource("StandardMaterial3D_df3du")
 mesh = SubResource("BoxMesh_tabqn")
 skeleton = NodePath("../..")
 
+[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls2/PiecesWallHUD"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 296.0
+offset_right = 2196.0
+offset_bottom = 551.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 200
+text = "Peças Insuficientes"
+
+[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls2/PiecesWallHUD"]
+libraries = {
+"": SubResource("AnimationLibrary_io4fq")
+}
+
+[node name="Label" type="Label" parent="Walls/MovingWalls2/PiecesWallHUD"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 522.0
+offset_right = 886.0
+offset_bottom = 574.0
+theme_override_colors/font_color = Color(0, 0.784314, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 40
+text = "Muro Construído com Sucesso!!"
+
 [node name="MovingWalls3" type="Node3D" parent="Walls" groups=["m_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
 script = ExtResource("16_ijc76")
@@ -1043,31 +1108,6 @@ libraries = {
 stream = null
 
 [node name="ErrorAudio" parent="Walls/MovingWalls3" instance=ExtResource("19_xdh8n")]
-
-[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls3"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls3/PiecesWallHUD"]
-layout_mode = 0
-offset_left = 402.0
-offset_top = 296.0
-offset_right = 2196.0
-offset_bottom = 551.0
-scale = Vector2(0.2, 0.2)
-theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
-theme_override_fonts/font = ExtResource("20_tptig")
-theme_override_font_sizes/font_size = 200
-text = "Peças Insuficientes"
-
-[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls3/PiecesWallHUD"]
-libraries = {
-"": SubResource("AnimationLibrary_io4fq")
-}
 
 [node name="NeedPiecesHUD" type="Control" parent="Walls/MovingWalls3"]
 layout_mode = 3
@@ -1138,6 +1178,42 @@ material_override = SubResource("StandardMaterial3D_df3du")
 mesh = SubResource("BoxMesh_tabqn")
 skeleton = NodePath("../..")
 
+[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls3"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls3/PiecesWallHUD"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 296.0
+offset_right = 2196.0
+offset_bottom = 551.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 200
+text = "Peças Insuficientes"
+
+[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls3/PiecesWallHUD"]
+libraries = {
+"": SubResource("AnimationLibrary_io4fq")
+}
+
+[node name="Label" type="Label" parent="Walls/MovingWalls3/PiecesWallHUD"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 522.0
+offset_right = 886.0
+offset_bottom = 574.0
+theme_override_colors/font_color = Color(0, 0.784314, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 40
+text = "Muro Construído com Sucesso!!"
+
 [node name="MovingWalls4" type="Node3D" parent="Walls" groups=["m_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
 script = ExtResource("16_ijc76")
@@ -1151,31 +1227,6 @@ libraries = {
 stream = null
 
 [node name="ErrorAudio" parent="Walls/MovingWalls4" instance=ExtResource("19_xdh8n")]
-
-[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls4"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls4/PiecesWallHUD"]
-layout_mode = 0
-offset_left = 402.0
-offset_top = 296.0
-offset_right = 2196.0
-offset_bottom = 551.0
-scale = Vector2(0.2, 0.2)
-theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
-theme_override_fonts/font = ExtResource("20_tptig")
-theme_override_font_sizes/font_size = 200
-text = "Peças Insuficientes"
-
-[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls4/PiecesWallHUD"]
-libraries = {
-"": SubResource("AnimationLibrary_io4fq")
-}
 
 [node name="NeedPiecesHUD" type="Control" parent="Walls/MovingWalls4"]
 layout_mode = 3
@@ -1245,6 +1296,42 @@ transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 4.76837e-07, 0)
 material_override = SubResource("StandardMaterial3D_df3du")
 mesh = SubResource("BoxMesh_tabqn")
 skeleton = NodePath("../..")
+
+[node name="PiecesWallHUD" type="Control" parent="Walls/MovingWalls4"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls4/PiecesWallHUD"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 296.0
+offset_right = 2196.0
+offset_bottom = 551.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 200
+text = "Peças Insuficientes"
+
+[node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls4/PiecesWallHUD"]
+libraries = {
+"": SubResource("AnimationLibrary_io4fq")
+}
+
+[node name="Label" type="Label" parent="Walls/MovingWalls4/PiecesWallHUD"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 522.0
+offset_right = 886.0
+offset_bottom = 574.0
+theme_override_colors/font_color = Color(0, 0.784314, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 40
+text = "Muro Construído com Sucesso!!"
 
 [node name="PhaseEnded" parent="." instance=ExtResource("21_q720d")]
 
@@ -1431,8 +1518,47 @@ bus = &"BGM"
 [node name="WallPiecesHUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 556.0
+offset_top = 70.0
+offset_right = 596.0
+offset_bottom = 110.0
+
+[node name="Sprite2D" type="Sprite2D" parent="WallPiecesHUD"]
+position = Vector2(-22, 20)
+scale = Vector2(0.4905, 0.4905)
+texture = ExtResource("28_3crg3")
+
+[node name="Label" type="Label" parent="WallPiecesHUD"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -4.0
+offset_right = 56.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 40
+text = "x
+"
+
+[node name="WallPiecesAvailable" type="Label" parent="WallPiecesHUD"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = -6.0
+offset_right = 96.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 40
+
+[node name="Label2" type="Label" parent="WallPiecesHUD"]
+layout_mode = 0
+offset_left = -162.0
+offset_top = 50.0
+offset_right = 226.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 20
+text = "Colete as Peças para Reconstruir o muro"
 
 [connection signal="body_entered" from="Walls/MovingWalls/Activator/Area/Area3D" to="Walls/MovingWalls" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Walls/MovingWalls/Activator/Area/Area3D" to="Walls/MovingWalls" method="_on_area_3d_body_exited"]

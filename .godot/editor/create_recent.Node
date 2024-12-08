@@ -1,3 +1,5 @@
+Label
+Sprite2D
 NavigationLink3D
 Node3D
 NavigationRegion3D
@@ -10,5 +12,3 @@ Node
 MeshInstance3D
 Button
 TBLoader
-VideoStreamPlayer
-SubViewport
