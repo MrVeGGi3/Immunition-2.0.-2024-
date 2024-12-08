@@ -62,8 +62,30 @@ func count_score_lvl_1(inf_cells : float, total_cells : float, kill_enemies : fl
 	pont_3 = score_3 * 10
 	animation_tree.play("score_animation")
 
-func count_score_lvl_2(min, sec):
-	pass
+func count_score_lvl_2(minutes : float, kill_enemies : float, player_life : float, maximum_time : int, total_enemies : int, max_life : int):
+	var score_1 = floori((1 - (minutes/maximum_time)) * 100)
+	var score_2 = floori((kill_enemies/total_enemies) * 100)
+	var score_3 = floori((player_life/max_life) * 100)
+	percentage_i.text = str(score_1) + "%"
+	percentage_ii.text = str(score_2) + "%"
+	percentage_iii.text = str(score_3) + "%"
+	pont_1 = score_1 * 10
+	pont_2 = score_2 * 10
+	pont_3 = score_3 * 10
+	animation_tree.play("score_animation")
+
+func count_score_lvl_3(broken_pipes, total_pipes, kill_enemies, total_enemies, player_life, max_life):
+	var pipes_relation = (broken_pipes/total_pipes)
+	var score_1 = floori((1 - pipes_relation) * 100)
+	var score_2 = floori((kill_enemies/total_enemies) * 100)
+	var score_3 = floori((player_life/max_life) * 100)
+	percentage_i.text = str(score_1) + "%"
+	percentage_ii.text = str(score_2) + "%"
+	percentage_iii.text = str(score_3) + "%"
+	pont_1 = score_1 * 10
+	pont_2 = score_2 * 10
+	pont_3 = score_3 * 10
+	animation_tree.play("score_animation")
 
 func score_animation_1():
 	if actual_score_i < pont_1:

@@ -208,6 +208,10 @@ avoidance/layer_3="Pathogen"
 avoidance/layer_4="Environment"
 avoidance/layer_5="Diareia"
 
+[navigation]
+
+3d/default_cell_size=1.0
+
 [physics]
 
 3d/run_on_separate_thread=true

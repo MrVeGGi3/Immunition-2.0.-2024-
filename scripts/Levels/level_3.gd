@@ -23,9 +23,12 @@ extends Node3D
 @onready var pipe_done_sound: AudioStreamPlayer = $PipeDoneSound
 @onready var level_3bgm: AudioStreamPlayer = $Level3BGM
 
+@onready var nav_link: NavigationLink3D = $NavigationsLink3D/NavigationLink3D
+@onready var nav_link_2: NavigationLink3D = $NavigationsLink3D/NavigationLink3D2
+@onready var nav_link_3: NavigationLink3D  = $NavigationsLink3D/NavigationLink3D3
+@onready var nav_link_4: NavigationLink3D = $NavigationsLink3D/NavigationLink3D4
 
-
-
+var pipes_in_scene 
 var index = 0
 var enemies
 var message = "Vias respiratórias restauradas com sucesso! Obrigado por Jogar!"
@@ -39,6 +42,11 @@ var enemy_blue
 var enemy_green
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	set_nav_links_end_position()
+	Global.pipes_destroyed = 0
+	Global.pathogen_killed = 0
+	pipes_in_scene = pipes.size()
+	print("o número de canos é:", pipes_in_scene)
 	get_tree().paused = false
 	level_3bgm.play()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -78,6 +86,7 @@ func _process(delta: float) -> void:
 		player.disable_UI()
 		victory_song.play()
 		phase_ended.level_finished(3, message, criteria1, criteria2, criteria3)
+		phase_ended.count_score_lvl_3(Global.pipes_destroyed, pipes_in_scene, Global.pathogen_killed, 20, player.vida, player.vida_maxima)
 		phase_ended.visible = true
 		phase_ended._hide_button()
 		get_tree().paused = true
@@ -120,4 +129,9 @@ func destroy_all_enemies():
 		enemy._time_ended()
 	for enemy in enemy_green:
 		enemy._time_ended()
-	
+
+func set_nav_links_end_position():
+	nav_link.set_global_end_position(pipes[1].global_transform.origin)
+	nav_link_2.set_global_end_position(pipes[1].global_transform.origin)
+	nav_link_3.set_global_end_position(pipes[2].global_transform.origin)
+	nav_link_4.set_global_end_position(pipes[2].global_transform.origin)

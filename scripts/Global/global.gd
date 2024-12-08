@@ -26,7 +26,7 @@ var extractors_collected : int = 0
 var wall_piece : int = 0 
 #Contagem se um objetivo foi alcançado
 var is_enemies_destroyed = false
-
+var pipes_destroyed : int
 var score_index = 0
 
 # Called when the node enters the scene tree for the first time.
