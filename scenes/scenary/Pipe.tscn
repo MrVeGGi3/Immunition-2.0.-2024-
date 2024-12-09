@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://vyjmwh1meuco" path="res://images/Pipe Animations/Pipe confirm.png" id="4_7yn47"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bvxlm"]
-height = 1.18618
-radius = 2.58137
+height = 1.0
+radius = 2.5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65qan"]
 animations = [{
@@ -50,11 +50,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.13934, 0)
 script = ExtResource("1_ffcu3")
 
 [node name="Area3D" type="Area3D" parent="."]
+disable_mode = 2
 collision_layer = 2048
 collision_mask = 10
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.918767, 0, 0, 0, 7.65738, 0, 0, 0, 0.774563, 0.10489, 1.59638, -0.0634849)
+transform = Transform3D(0.918767, 0, 0, 0, 7.65738, 0, 0, 0, 0.774563, -0.128394, 1.59638, -0.0634849)
 shape = SubResource("CylinderShape3D_bvxlm")
 
 [node name="CollisionTime" type="Timer" parent="."]
@@ -63,7 +65,9 @@ wait_time = 3.0
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_65qan")
+animation = &"attacked"
 autoplay = "default"
+frame_progress = 0.00197323
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

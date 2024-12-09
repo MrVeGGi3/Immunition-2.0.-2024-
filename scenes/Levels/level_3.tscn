@@ -337,17 +337,13 @@ elastic_jump_force = 20
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4532, 17.2576, -18.8178)
 
 [node name="Pipe" parent="Pipes" instance=ExtResource("7_47spo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0408, -2.01778, -150.077)
-max_life = 10
-life = 10
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.04, -0.34, -150)
 
 [node name="Pipe2" parent="Pipes" instance=ExtResource("7_47spo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.3918, 0.735167, -263.285)
-max_life = 10
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.39, 0.735, -263.2)
 
 [node name="Pipe3" parent="Pipes" instance=ExtResource("7_47spo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3091, 10.4538, -161.815)
-max_life = 10
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3, 10.454, -161.8)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.138032, 0.990428, 0, -0.990428, 0.138032, -12.7674, 57.6243, -90.703)
@@ -601,40 +597,40 @@ light_energy = 0.843
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.8799, 16.0079, -170.007)
 
 [node name="EnemyBlueSpawner" parent="Spawners" instance=ExtResource("20_q507b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0578079, -4.20577, 11.8283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0578079, -4.96283, 11.8283)
 height_spawn_position = 1.0
 time_to_spawn = 7.0
 
 [node name="EnemyRedSpawner" parent="Spawners" instance=ExtResource("21_tku6u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6385, -4.5519, 1.55385)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6385, -4.87452, 1.55385)
 height_spawn_position = 1.0
 
 [node name="EnemyGreenSpawner2" parent="Spawners" instance=ExtResource("22_qr7gq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.95578, -2.09264, -100.846)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.95578, -2.31234, -100.846)
 height_spawn_position = 1.0
 
 [node name="EnemyBlueSpawner2" parent="Spawners" instance=ExtResource("20_q507b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228958, -1.75496, -108.067)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228958, -1.83562, -108.067)
 height_spawn_position = 1.0
 
 [node name="EnemyGreenSpawner" parent="Spawners" instance=ExtResource("22_qr7gq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1615, -4.57922, 3.13808)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1615, -5.08662, 3.13808)
 height_spawn_position = 1.0
 
 [node name="EnemyRedSpawner2" parent="Spawners" instance=ExtResource("21_tku6u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.94759, -2.00018, -101.391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13805, -2.38515, -101.391)
 height_spawn_position = 1.0
 
 [node name="EnemyBlueSpawner3" parent="Spawners" instance=ExtResource("20_q507b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0189896, 7.77847, -17.0914)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0189896, 7.32573, -17.0914)
 height_spawn_position = 1.0
 
 [node name="EnemyGreenSpawner3" parent="Spawners" instance=ExtResource("22_qr7gq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59634, 6.91187, -23.3537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59634, 6.85596, -23.3537)
 height_spawn_position = 1.0
 
 [node name="EnemyRedSpawner3" parent="Spawners" instance=ExtResource("21_tku6u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7633, 7.08738, -23.1068)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7633, 6.82182, -23.1068)
 height_spawn_position = 1.0
 
 [node name="PhaseEnded" parent="." instance=ExtResource("23_tnpa8")]

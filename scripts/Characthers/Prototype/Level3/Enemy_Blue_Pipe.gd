@@ -1,10 +1,12 @@
+class_name Enemy
 extends CharacterBody3D
 #Variáveis
 @export_category("Atributos")
-@export var move_speed = 5.0 
+@export var move_speed = 30.0 
 @export var attack_range = 2.0
 @export var enemy_health = 15
 @export var minimum_distance = 10
+@export var speed_multiplier = 3.0
 
 @export_category("Recarregar Armas")
 @export var l_ammo : int = 2
@@ -53,7 +55,7 @@ func _physics_process(delta):
 	current_position = global_transform.origin
 	var next_position = nav.get_next_path_position()
 	var new_velocity = (next_position - current_position).normalized()
-	velocity = velocity.move_toward(new_velocity, move_speed)
+	velocity = velocity.move_toward(new_velocity * speed_multiplier, move_speed)
 	move_and_slide()
 	
 	
@@ -98,7 +100,7 @@ func _physics_process(delta):
 		else:
 			is_force_applied = false		
 	
-		
+	
 
 func attempt_to_kill_player():
 	var dist_to_player = global_transform.origin.distance_to(player_position)
@@ -196,6 +198,7 @@ func damage_effect():
 	tween.tween_property(animated_sprite_3d,"modulate", Color.WHITE, 0.3)
 
 func attack_pipe(pipe):
+	print("Estou atacando o cano")
 	monster_bite.play()
 	is_pipe_attacked = true
 	pipe.damage(damage)
@@ -208,3 +211,6 @@ func _backward_force():
 
 func _time_ended():
 	queue_free()
+
+func _get_nearest_pipe():
+	return nearest_pipe

@@ -1,7 +1,7 @@
 extends Node3D
 
 @export_category("Propriedades")
-@export var max_life : int = 30
+@export var max_life : int = 15
 @export var is_destroyed = false
 @export var life : int 
 @export var is_attacked = false
@@ -17,34 +17,32 @@ extends Node3D
 @onready var player = get_tree().get_first_node_in_group("player")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("Eu sou o cano:", self)
 	life = max_life
-	area_3d.collision_mask = 2 | 4
 	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
-	var bodies = area_3d.get_overlapping_bodies()
-	for body in bodies:
-		if body.is_in_group("enemy") and !is_attacked and !is_destroyed:
-			is_being_attacked = true
-			animated_sprite_3d.play("attacked")
-			body.attack_pipe(self)
-			is_attacked = true
-			collision_time.start()
-		else:
-			is_being_attacked = false
-			animated_sprite_3d.play("default")
-	
 	if can_activate and Input.is_action_just_pressed("Interact"):
 			print("Cano Acionado para Manutenção!")
 			counter._start_count()
 			player.play_button_sound()
 			actioned = true
-			area_3d.collision_mask = 4
 			can_activate = false
 	
-	
+func _process(delta: float) -> void:
+	var bodies = area_3d.get_overlapping_bodies()
+	for body in bodies:
+		if body.is_in_group("enemy") and !is_attacked and !is_destroyed:
+			body.attack_pipe(body._get_nearest_pipe())
+			animated_sprite_3d.play("attacked")
+			is_being_attacked = true
+			is_attacked = true
+			collision_time.start()
+		else:
+			is_being_attacked = false
+			animated_sprite_3d.play("default")
 	
 func damage(dmg):
 	life -= dmg
@@ -83,9 +81,6 @@ func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
 	if body.is_in_group("player") and !can_activate and !actioned:
 		body.can_interact()
 		can_activate = true
-
-
-
 
 func _on_area_3d_body_exited(body: CharacterBody3D) -> void:
 	if body.is_in_group("player"):

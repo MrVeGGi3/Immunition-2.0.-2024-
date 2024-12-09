@@ -1,11 +1,11 @@
 extends CharacterBody3D
 #Variáveis
 @export_category("Atributos")
-@export var move_speed = 5.0 
+@export var move_speed = 60.0
 @export var attack_range = 2.0
 @export var enemy_health = 15
 @export var minimum_distance = 10
-
+@export var speed_multiplier = 3.0
 
 @export_category("Recarregar Armas")
 @export var l_ammo : int = 2
@@ -26,6 +26,8 @@ var dead = false
 var is_pipe_attacked = false
 var is_force_applied = false
 var can_follow_player = true
+var nearest_pipe = null
+var pipe_shortest_distance = INF
 #Instâncias
 @onready var timer = $Timer
 @onready var monster_bite = $MonsterBite
@@ -51,7 +53,7 @@ func _physics_process(delta):
 	current_position = global_transform.origin
 	var next_position = nav.get_next_path_position()
 	var new_velocity = (next_position - current_position).normalized()
-	velocity = velocity.move_toward(new_velocity, move_speed)
+	velocity = velocity.move_toward(new_velocity * speed_multiplier, move_speed)
 	move_and_slide()
 	
 	
@@ -73,8 +75,8 @@ func _physics_process(delta):
 	var pipes = get_tree().get_nodes_in_group("pipe")
 	if pipes.is_empty():
 		return
-	var nearest_pipe = null
-	var pipe_shortest_distance = INF
+	nearest_pipe = null
+	pipe_shortest_distance = INF
 	
 	for pipe in pipes:
 		if pipe.visible == true:
@@ -96,6 +98,9 @@ func _physics_process(delta):
 			velocity.z = lerp(velocity.z, 0, 0.1 * delta)
 		else:
 			is_force_applied = false	
+			
+	
+
 			
 func kill_red_nf():
 	damage_effect()
@@ -202,4 +207,7 @@ func _backward_force():
 
 func _time_ended():
 	queue_free()
+
+func _get_nearest_pipe():
+	return nearest_pipe
 	
