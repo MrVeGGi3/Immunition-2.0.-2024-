@@ -91,7 +91,9 @@ func _process(delta: float) -> void:
 		phase_ended._hide_button()
 		get_tree().paused = true
 		
-
+	if player.dead:
+		level_3bgm.stop()
+		
 func _on_count_timeout() -> void:
 	pipe_disable_visiblity()
 	pipes[index].time_end()

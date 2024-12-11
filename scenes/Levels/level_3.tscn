@@ -474,9 +474,18 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -42.0
+offset_right = -3.0
+offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("18_150ed")
+
+[node name="Sprite2D" type="Sprite2D" parent="TimerCounter"]
+position = Vector2(559, 203)
+scale = Vector2(0.82278, 0.161848)
+texture = ExtResource("19_33xtd")
 
 [node name="Control2" type="Control" parent="TimerCounter"]
 anchors_preset = 0
@@ -634,6 +643,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7633, 6.82182, -23.1068)
 height_spawn_position = 1.0
 
 [node name="PhaseEnded" parent="." instance=ExtResource("23_tnpa8")]
+visible = false
 
 [node name="VictorySong" parent="." instance=ExtResource("24_diju3")]
 

@@ -2173,13 +2173,29 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -30.0
-offset_right = 2.0
-offset_bottom = -30.0
+offset_left = 4.0
+offset_top = -49.0
+offset_right = 4.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("52_ket2y")
+
+[node name="Sprite2D" type="Sprite2D" parent="TimerCounter"]
+position = Vector2(564, 187)
+scale = Vector2(0.803628, 0.265636)
+texture = ExtResource("53_p5uxp")
+
+[node name="Description" type="Label" parent="TimerCounter"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 176.0
+offset_right = 716.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("25_7kquy")
+theme_override_font_sizes/font_size = 20
+text = "Proteja as Células do Influenza!!!"
 
 [node name="Control2" type="Control" parent="TimerCounter"]
 anchors_preset = 0
@@ -2214,22 +2230,11 @@ text = ":"
 [node name="Count" type="Timer" parent="TimerCounter/Control2"]
 wait_time = 30.0
 
-[node name="Description" type="Label" parent="TimerCounter"]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 170.0
-offset_right = 717.0
-offset_bottom = 197.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("25_7kquy")
-theme_override_font_sizes/font_size = 20
-text = "Proteja as Células do Influenza!!!"
-
 [node name="ExtractosCollected" parent="." instance=ExtResource("9_hv02g")]
-offset_left = -21.0
-offset_top = -19.0
-offset_right = -21.0
-offset_bottom = -19.0
+offset_left = -15.0
+offset_top = -25.0
+offset_right = -15.0
+offset_bottom = -25.0
 
 [node name="Minimap" parent="." instance=ExtResource("10_vb8wc")]
 offset_left = -3.0
@@ -2379,6 +2384,7 @@ offset_bottom = 414.0
 scale = Vector2(0.480624, 0.480624)
 
 [node name="pause_menu" parent="Player/PlayerHUD" instance=ExtResource("22_lt2jr")]
+visible = false
 
 [node name="DeathScreen" parent="Player/PlayerHUD" instance=ExtResource("39_qgjc3")]
 
@@ -2460,7 +2466,7 @@ stream = null
 volume_db = -5.0
 
 [node name="InfluenzaDeath" parent="." instance=ExtResource("49_bnvrp")]
-volume_db = 3.0
+volume_db = -5.0
 
 [connection signal="body_entered" from="ExtractorPlatform/AreaPlatform" to="." method="_on_area_platform_body_entered"]
 [connection signal="timeout" from="TimerCounter/Control2/Count" to="." method="_on_count_timeout"]

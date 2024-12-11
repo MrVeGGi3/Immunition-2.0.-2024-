@@ -72,5 +72,5 @@ func second_dialogue():
 	get_tree().paused = true
 	tutorial_walking_bar_2.visible = true
 
-
-	
+func get_moved_variable():
+	return moved

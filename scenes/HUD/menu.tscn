@@ -77,7 +77,7 @@ bus = &"BGM"
 
 [node name="ButtonSelected" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_q25pb")
-volume_db = 10.0
+volume_db = -10.0
 bus = &"SFX"
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Play" to="." method="_on_play_pressed"]

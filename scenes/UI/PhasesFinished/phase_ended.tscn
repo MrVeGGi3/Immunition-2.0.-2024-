@@ -261,12 +261,13 @@ text = "1
 
 [node name="ConclusionMessage" type="Label" parent="."]
 layout_mode = 0
-offset_left = 113.0
-offset_top = 146.0
-offset_right = 1240.0
-offset_bottom = 174.0
+offset_left = 80.0
+offset_top = 141.0
+offset_right = 1080.0
+offset_bottom = 341.0
 theme = ExtResource("5_sygh5")
 text = "Com as proteínas extraídas da fibra muscular, o sistema imune tem mais força para derrotar a infecção da Influenza!"
+horizontal_alignment = 1
 
 [node name="AnimationTree" type="AnimationPlayer" parent="."]
 libraries = {

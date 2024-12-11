@@ -37,6 +37,8 @@ func _process(delta: float) -> void:
 	var m_wall_4 = moving_walls[3].get_wall_complete_status()
 	seconds += delta
 	
+	if player.dead:
+		level_2bgm.stop()
 			
 	
 	if m_wall_1 and m_wall_2 and  m_wall_3 and m_wall_4:

@@ -26,6 +26,21 @@ offset_right = 88.0
 offset_bottom = 33.0
 scale = Vector2(0.889124, 0.889124)
 
+[node name="Sprite2D" type="Sprite2D" parent="Control2"]
+position = Vector2(601.716, 230.564)
+scale = Vector2(1.77291, 0.236399)
+texture = ExtResource("2_gua5c")
+
+[node name="Description" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 227.19
+offset_top = 215.943
+offset_right = 1234.19
+offset_bottom = 255.943
+theme_override_fonts/font = ExtResource("1_qg1se")
+theme_override_font_sizes/font_size = 22
+text = "Colete os Extratores de Proteína e as ative na plataforma de extração!"
+
 [node name="Background" type="Sprite2D" parent="Control2"]
 position = Vector2(597, 131)
 scale = Vector2(0.536252, 0.544096)
@@ -61,7 +76,7 @@ text = "3
 "
 
 [node name="Extractor" type="Sprite2D" parent="Control2/Control"]
-position = Vector2(922.857, 575.715)
+position = Vector2(928.481, 576.84)
 scale = Vector2(0.145562, 0.148942)
 texture = ExtResource("4_vfkmo")
 
@@ -76,13 +91,3 @@ theme_override_fonts/font = ExtResource("1_qg1se")
 theme_override_font_sizes/font_size = 40
 text = "/
 "
-
-[node name="Description" type="Label" parent="Control2"]
-layout_mode = 0
-offset_left = 273.303
-offset_top = 208.07
-offset_right = 1280.3
-offset_bottom = 248.07
-theme_override_fonts/font = ExtResource("1_qg1se")
-theme_override_font_sizes/font_size = 20
-text = "Colete os Extratores de Proteína e as ative na plataforma de extração!"

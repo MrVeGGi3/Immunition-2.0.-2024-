@@ -90,7 +90,7 @@ func _pause_for_tutorial():
 
 
 func _on_area_3d_body_entered(body: CharacterBody3D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and tutorial_walking.get_moved_variable():
 		platform_1.queue_free()
 		area_3d_1.queue_free()
 		_pause_for_tutorial()

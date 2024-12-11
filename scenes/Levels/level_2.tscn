@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://brnm137iii2wi"]
+[gd_scene load_steps=78 format=4 uid="uid://brnm137iii2wi"]
 
 [ext_resource type="Script" path="res://scripts/Levels/level_2.gd" id="1_1qj7d"]
 [ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="1_vskrl"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://du3djanlfvrw7" path="res://sounds/SFX/Collected/retro_coin.tscn" id="26_7yv3a"]
 [ext_resource type="PackedScene" uid="uid://eo83pnhguw3i" path="res://sounds/BGM/level_2bgm.tscn" id="27_83txj"]
 [ext_resource type="Texture2D" uid="uid://6tlxriuwydvw" path="res://images/UI/Collector/WallCollectorUI.png" id="28_3crg3"]
+[ext_resource type="Texture2D" uid="uid://bvjoyraetdpi6" path="res://images/CountBackground/Contador_base.png" id="28_cs5jc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rncjf"]
 albedo_texture = ExtResource("2_nwxma")
@@ -1439,6 +1440,7 @@ theme_override_font_sizes/font_size = 40
 text = "Muro Construído com Sucesso!!"
 
 [node name="PhaseEnded" parent="." instance=ExtResource("21_q720d")]
+visible = false
 
 [node name="Pathogens" type="Node3D" parent="."]
 
@@ -1616,6 +1618,7 @@ transform = Transform3D(1, 0, 0, 0, 0.0936913, 0.995601, 0, -0.995601, 0.0936913
 transform = Transform3D(-0.281337, 0.089907, 0.955388, -0.959609, -0.0263588, -0.280099, 0, -0.995601, 0.0936913, -123.027, 1.40223, -78.1053)
 
 [node name="RetroCoin" parent="." groups=["c_sound"] instance=ExtResource("26_7yv3a")]
+volume_db = -5.0
 
 [node name="Level2BGM" parent="." instance=ExtResource("27_83txj")]
 bus = &"BGM"
@@ -1623,27 +1626,20 @@ bus = &"BGM"
 [node name="WallPiecesHUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 556.0
-offset_top = 70.0
-offset_right = 596.0
-offset_bottom = 110.0
+offset_left = 560.0
+offset_top = 38.0
+offset_right = 600.0
+offset_bottom = 78.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="WallPiecesHUD"]
+position = Vector2(27, 44)
+scale = Vector2(0.945587, 0.443325)
+texture = ExtResource("28_cs5jc")
 
 [node name="Sprite2D" type="Sprite2D" parent="WallPiecesHUD"]
 position = Vector2(-22, 20)
 scale = Vector2(0.4905, 0.4905)
 texture = ExtResource("28_3crg3")
-
-[node name="Label" type="Label" parent="WallPiecesHUD"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = -4.0
-offset_right = 56.0
-offset_bottom = 51.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("20_tptig")
-theme_override_font_sizes/font_size = 40
-text = "x
-"
 
 [node name="WallPiecesAvailable" type="Label" parent="WallPiecesHUD"]
 layout_mode = 0
@@ -1657,13 +1653,25 @@ theme_override_font_sizes/font_size = 40
 
 [node name="Label2" type="Label" parent="WallPiecesHUD"]
 layout_mode = 0
-offset_left = -162.0
+offset_left = -165.0
 offset_top = 50.0
-offset_right = 226.0
+offset_right = 223.0
 offset_bottom = 77.0
 theme_override_fonts/font = ExtResource("20_tptig")
 theme_override_font_sizes/font_size = 20
 text = "Colete as Peças para Reconstruir o muro"
+
+[node name="Label" type="Label" parent="WallPiecesHUD"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -4.0
+offset_right = 56.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("20_tptig")
+theme_override_font_sizes/font_size = 40
+text = "x
+"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g5h88")
