@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b4dut3nqrk03"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/pathfinding/Infected_cells_2.gd" id="1_hcc2l"]
+[ext_resource type="Script" uid="uid://v6d2wqywntu" path="res://scripts/Characthers/pathfinding/Infected_cells_2.gd" id="1_hcc2l"]
 [ext_resource type="Texture2D" uid="uid://72vg61sfbcfe" path="res://sprites/Monster/infectedcell/InfectedCell.png" id="2_l1gyh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdiig"]

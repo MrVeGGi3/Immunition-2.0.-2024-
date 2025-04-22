@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dblogam5obn7d"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/Prototype/Level3/Pipe.gd" id="1_ffcu3"]
+[ext_resource type="Script" uid="uid://d31adcpr2rpyl" path="res://scripts/Characthers/Prototype/Level3/Pipe.gd" id="1_ffcu3"]
 [ext_resource type="Texture2D" uid="uid://cjak342rjvtf7" path="res://images/Pipe Animations/Pipe attacked.png" id="2_cck1m"]
 [ext_resource type="Texture2D" uid="uid://dpesj8kseqkm0" path="res://images/Pipe Animations/Pipe.png" id="2_wcpmx"]
 [ext_resource type="Texture2D" uid="uid://dqbd6pwyc0jon" path="res://images/Pipe Animations/Pipe broken.png" id="3_cb6nv"]

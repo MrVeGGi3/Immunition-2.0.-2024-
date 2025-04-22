@@ -1,16 +1,16 @@
 [gd_scene load_steps=178 format=3 uid="uid://cj7emqhky70af"]
 
-[ext_resource type="Script" path="res://scripts/Levels/level_1.gd" id="1_bgiqj"]
+[ext_resource type="Script" uid="uid://hrpyr6x8cxvn" path="res://scripts/Levels/level_1.gd" id="1_bgiqj"]
 [ext_resource type="Texture2D" uid="uid://bhlaan6ukbhkc" path="res://prefabs/floor1_20240614085358.png" id="2_fikwp"]
-[ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="2_hvoua"]
+[ext_resource type="Script" uid="uid://dkagk4n2xqyje" path="res://scripts/Characthers/Player.gd" id="2_hvoua"]
 [ext_resource type="ArrayMesh" uid="uid://eikqtfkce6jq" path="res://prefabs/dev_grey.obj" id="2_n1rvy"]
 [ext_resource type="Texture2D" uid="uid://cghbpdvq15frc" path="res://prefabs/dev_orange.png" id="3_3i1ra"]
 [ext_resource type="ArrayMesh" uid="uid://bd1p4vxwpo0fn" path="res://prefabs/dev_pillar.obj" id="4_8d1tl"]
 [ext_resource type="Texture2D" uid="uid://0h81ae3vy3hb" path="res://prefabs/floor3_20240614085419.png" id="4_63pe4"]
 [ext_resource type="Texture2D" uid="uid://btxr4ptpyvwrb" path="res://prefabs/wall1_20240614085020.png" id="4_p16kq"]
-[ext_resource type="Script" path="res://scripts/Elevators/Elevator_Animations.gd" id="5_hwk44"]
+[ext_resource type="Script" uid="uid://bd63ue117lfb6" path="res://scripts/Elevators/Elevator_Animations.gd" id="5_hwk44"]
 [ext_resource type="ArrayMesh" uid="uid://vuyc3qmcbjd0" path="res://prefabs/dev_valley.obj" id="6_f3rrp"]
-[ext_resource type="Script" path="res://scripts/Sound/open_door.gd" id="7_e1fkr"]
+[ext_resource type="Script" uid="uid://cow7kq5d1o55f" path="res://scripts/Sound/open_door.gd" id="7_e1fkr"]
 [ext_resource type="ArrayMesh" uid="uid://d08ovuxubggti" path="res://prefabs/dev_torus.obj" id="7_l520q"]
 [ext_resource type="Texture2D" uid="uid://2xy8spk7ppfo" path="res://prefabs/asset1_20240614085733.png" id="7_lhhxw"]
 [ext_resource type="Texture2D" uid="uid://c8j4suhbocmyr" path="res://textures/asset1_20240614085733.png" id="7_ogwx6"]
@@ -44,7 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://doww2heou7dsn" path="res://scenes/spawner/MainSpawner/InfluenzaSpawner3D.tscn" id="48_d5mun"]
 [ext_resource type="PackedScene" uid="uid://dhe08vhtji17p" path="res://sounds/SFX/Influenza/influenza_death.tscn" id="49_bnvrp"]
 [ext_resource type="AudioStream" uid="uid://b0f6ntlqc0lg5" path="res://sounds/BGM/Level_1.wav" id="49_wylse"]
-[ext_resource type="Script" path="res://scripts/Count/influenza_count.gd" id="52_ket2y"]
+[ext_resource type="Script" uid="uid://bsw42uio5n1fo" path="res://scripts/Count/influenza_count.gd" id="52_ket2y"]
 [ext_resource type="Texture2D" uid="uid://bvjoyraetdpi6" path="res://images/CountBackground/Contador_base.png" id="53_p5uxp"]
 [ext_resource type="PackedScene" uid="uid://bj2row0123pwr" path="res://scenes/UI/Player/press_interaction.tscn" id="56_qlsug"]
 [ext_resource type="PackedScene" uid="uid://c8bydekkhr5m4" path="res://scenes/Characters/enemy_b.tscn" id="57_uqt37"]
@@ -437,9 +437,9 @@ resource_name = "parado"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l4ghg"]
 _data = {
-"Aberto": SubResource("Animation_ntwdi"),
-"RESET": SubResource("Animation_7evaq"),
-"parado": SubResource("Animation_gx5gc")
+&"Aberto": SubResource("Animation_ntwdi"),
+&"RESET": SubResource("Animation_7evaq"),
+&"parado": SubResource("Animation_gx5gc")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15gt3"]
@@ -651,9 +651,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fx1qj"]
 _data = {
-"CameraFinalPoint": SubResource("Animation_m7d40"),
-"CameraFirstPoint": SubResource("Animation_o1pda"),
-"RESET": SubResource("Animation_yf2j5")
+&"CameraFinalPoint": SubResource("Animation_m7d40"),
+&"CameraFirstPoint": SubResource("Animation_o1pda"),
+&"RESET": SubResource("Animation_yf2j5")
 }
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_18hrr"]
@@ -1798,7 +1798,7 @@ shape = SubResource("BoxShape3D_0jkbb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationObstacle3D/Portões/DevGrey35"]
 libraries = {
-"": SubResource("AnimationLibrary_l4ghg")
+&"": SubResource("AnimationLibrary_l4ghg")
 }
 
 [node name="DevGrey41" type="MeshInstance3D" parent="NavigationObstacle3D/Portões"]
@@ -1819,7 +1819,7 @@ unique_name_in_owner = true
 reset_on_save = false
 root_node = NodePath("../../../../CameraPosition")
 libraries = {
-"": SubResource("AnimationLibrary_fx1qj")
+&"": SubResource("AnimationLibrary_fx1qj")
 }
 
 [node name="MapLevel1" type="NavigationRegion3D" parent="."]

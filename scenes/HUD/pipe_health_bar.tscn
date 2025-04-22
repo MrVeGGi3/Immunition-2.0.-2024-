@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://p3d1lggvitpk"]
 
-[ext_resource type="Script" path="res://scenes/UI/Pipe/pipe_health_bar.gd" id="1_n8uwg"]
+[ext_resource type="Script" uid="uid://rk7xqqysx3if" path="res://scenes/UI/Pipe/pipe_health_bar.gd" id="1_n8uwg"]
 [ext_resource type="Texture2D" uid="uid://bcrja1q6t7mig" path="res://images/UI/Backgrounds/Ammo/UI Bar.png" id="1_vn4im"]
 [ext_resource type="Texture2D" uid="uid://bb8a4v3ufs3h2" path="res://images/UI/Backgrounds/Ammo/UI Bar Piscando.png" id="1_vtp2b"]
 [ext_resource type="Texture2D" uid="uid://dlkv4v1vax1vq" path="res://images/UI/LifeBar/Barra Fundo.png" id="3_wtnrw"]

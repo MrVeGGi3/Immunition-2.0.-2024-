@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cisbfousat14j"]
 
-[ext_resource type="Script" path="res://scripts/LevelFinished/phase_ended1.gd" id="1_e8n6b"]
+[ext_resource type="Script" uid="uid://b00ulko5kqghj" path="res://scripts/LevelFinished/phase_ended1.gd" id="1_e8n6b"]
 [ext_resource type="Texture2D" uid="uid://b1i6udx23kait" path="res://images/UI/Barra de Dialogo.png" id="2_7mnyx"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="3_naj03"]
 [ext_resource type="Theme" uid="uid://ckgj4andhmk7" path="res://themes/criteria_words.tres" id="4_djy4w"]
@@ -205,7 +205,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v72jy"]
 _data = {
-"score_animation": SubResource("Animation_otj7v")
+&"score_animation": SubResource("Animation_otj7v")
 }
 
 [node name="PhaseEnded" type="Control"]
@@ -230,8 +230,8 @@ offset_top = 492.0
 offset_right = 341.0
 offset_bottom = 523.0
 scale = Vector2(2.39583, 2.39583)
-theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
 theme_override_fonts/font = ExtResource("3_naj03")
 text = "Menu"
 
@@ -271,7 +271,7 @@ horizontal_alignment = 1
 
 [node name="AnimationTree" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_v72jy")
+&"": SubResource("AnimationLibrary_v72jy")
 }
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
@@ -345,10 +345,10 @@ offset_top = 492.0
 offset_right = 792.0
 offset_bottom = 523.0
 scale = Vector2(2.39583, 2.39583)
-theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_normal_color = Color(0.270566, 0.602748, 0.308116, 1)
 theme_override_colors/icon_pressed_color = Color(0, 0.145098, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.270566, 0.602748, 0.308116, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.270588, 0.811765, 0.337255, 1)
 theme_override_fonts/font = ExtResource("3_naj03")
 text = "Próxima Fase"
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4ahcvafmygv2"]
 
-[ext_resource type="Script" path="res://scripts/Count/phase_time_count.gd" id="1_rmqqb"]
+[ext_resource type="Script" uid="uid://j8j655t0r6d8" path="res://scripts/Count/phase_time_count.gd" id="1_rmqqb"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="2_wdvb4"]
 
 [node name="PhaseTimeCount" type="Control"]

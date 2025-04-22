@@ -53,7 +53,7 @@ func _physics_process(delta):
 	current_position = global_transform.origin
 	var next_position = nav.get_next_path_position()
 	var new_velocity = (next_position - current_position).normalized()
-	velocity = velocity.move_toward(new_velocity * speed_multiplier, move_speed)
+	velocity = velocity.lerp(new_velocity * speed_multiplier, delta)
 	move_and_slide()
 	
 	

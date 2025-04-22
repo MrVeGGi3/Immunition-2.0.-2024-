@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cddycqhl26bsg"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/on_water/TestWaterBehaviour.gd" id="1_125vd"]
+[ext_resource type="Script" uid="uid://d4hd4hudqmrju" path="res://scripts/Characthers/on_water/TestWaterBehaviour.gd" id="1_125vd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7ap0t"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://c7lfkrscakmnq"]
 
-[ext_resource type="Script" path="res://scripts/Levels/level_4.gd" id="1_l8knx"]
+[ext_resource type="Script" uid="uid://b7agpo1wwuk1x" path="res://scripts/Levels/level_4.gd" id="1_l8knx"]
 [ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="1_lgns5"]
 [ext_resource type="Texture2D" uid="uid://bl3g6pm7e6hov" path="res://prefabs/dev_grey.png" id="4_1aimf"]
 [ext_resource type="ArrayMesh" uid="uid://eikqtfkce6jq" path="res://prefabs/dev_grey.obj" id="5_ququp"]

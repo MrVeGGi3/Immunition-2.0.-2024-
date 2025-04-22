@@ -1,6 +1,6 @@
 [gd_scene load_steps=78 format=4 uid="uid://brnm137iii2wi"]
 
-[ext_resource type="Script" path="res://scripts/Levels/level_2.gd" id="1_1qj7d"]
+[ext_resource type="Script" uid="uid://yk2be81xarav" path="res://scripts/Levels/level_2.gd" id="1_1qj7d"]
 [ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="1_vskrl"]
 [ext_resource type="Texture2D" uid="uid://bl3g6pm7e6hov" path="res://prefabs/dev_grey.png" id="2_nwxma"]
 [ext_resource type="ArrayMesh" uid="uid://eikqtfkce6jq" path="res://prefabs/dev_grey.obj" id="3_4ca8m"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bp31ju02np0em" path="res://textures/wall1_20240614085020.png" id="13_152co"]
 [ext_resource type="Texture2D" uid="uid://hyje7o8yaxpu" path="res://textures/wall3_20240614085034.png" id="14_r30sh"]
 [ext_resource type="Texture2D" uid="uid://d0iu4tjj73cto" path="res://textures/muscle_20240614103913.png" id="15_2kq1f"]
-[ext_resource type="Script" path="res://scripts/Elevators/moving_walls.gd" id="16_ijc76"]
+[ext_resource type="Script" uid="uid://c3m8aegvqvogd" path="res://scripts/Elevators/moving_walls.gd" id="16_ijc76"]
 [ext_resource type="AudioStream" uid="uid://bqhnvkpnvrvf1" path="res://sounds/SFX/Door/WallMovement.wav" id="17_mq5qr"]
 [ext_resource type="PackedScene" uid="uid://by5w8r5ir8bac" path="res://scenes/AudioSource/door_opening.tscn" id="18_rc2xp"]
 [ext_resource type="PackedScene" uid="uid://bavcym5qvj7ka" path="res://scenes/AudioSource/error_audio.tscn" id="19_xdh8n"]
@@ -377,12 +377,12 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mpdel"]
 _data = {
-"100%": SubResource("Animation_5a3sb"),
-"20%": SubResource("Animation_h1ios"),
-"40%": SubResource("Animation_7axw1"),
-"60%": SubResource("Animation_5gn2g"),
-"80%": SubResource("Animation_g2yty"),
-"RESET": SubResource("Animation_hirid")
+&"100%": SubResource("Animation_5a3sb"),
+&"20%": SubResource("Animation_h1ios"),
+&"40%": SubResource("Animation_7axw1"),
+&"60%": SubResource("Animation_5gn2g"),
+&"80%": SubResource("Animation_g2yty"),
+&"RESET": SubResource("Animation_hirid")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iauoq"]
@@ -570,9 +570,9 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_efe5p"]
 _data = {
-"RESET": SubResource("Animation_f4imu"),
-"cant_construct": SubResource("Animation_uuh0r"),
-"wall_constructed": SubResource("Animation_sp7f7")
+&"RESET": SubResource("Animation_f4imu"),
+&"cant_construct": SubResource("Animation_uuh0r"),
+&"wall_constructed": SubResource("Animation_sp7f7")
 }
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_j2i72"]
@@ -957,7 +957,7 @@ script = ExtResource("16_ijc76")
 
 [node name="WallAnimation" type="AnimationPlayer" parent="Walls/MovingWalls"]
 libraries = {
-"": SubResource("AnimationLibrary_mpdel")
+&"": SubResource("AnimationLibrary_mpdel")
 }
 
 [node name="DoorOpening" parent="Walls/MovingWalls" instance=ExtResource("18_rc2xp")]
@@ -1058,7 +1058,7 @@ text = "Peças Insuficientes"
 
 [node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls/PiecesWallHUD"]
 libraries = {
-"": SubResource("AnimationLibrary_efe5p")
+&"": SubResource("AnimationLibrary_efe5p")
 }
 
 [node name="Label" type="Label" parent="Walls/MovingWalls/PiecesWallHUD"]
@@ -1079,7 +1079,7 @@ script = ExtResource("16_ijc76")
 
 [node name="WallAnimation" type="AnimationPlayer" parent="Walls/MovingWalls2"]
 libraries = {
-"": SubResource("AnimationLibrary_mpdel")
+&"": SubResource("AnimationLibrary_mpdel")
 }
 
 [node name="DoorOpening" parent="Walls/MovingWalls2" instance=ExtResource("18_rc2xp")]
@@ -1180,7 +1180,7 @@ text = "Peças Insuficientes"
 
 [node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls2/PiecesWallHUD"]
 libraries = {
-"": SubResource("AnimationLibrary_efe5p")
+&"": SubResource("AnimationLibrary_efe5p")
 }
 
 [node name="Label" type="Label" parent="Walls/MovingWalls2/PiecesWallHUD"]
@@ -1201,7 +1201,7 @@ script = ExtResource("16_ijc76")
 
 [node name="WallAnimation" type="AnimationPlayer" parent="Walls/MovingWalls3"]
 libraries = {
-"": SubResource("AnimationLibrary_mpdel")
+&"": SubResource("AnimationLibrary_mpdel")
 }
 
 [node name="DoorOpening" parent="Walls/MovingWalls3" instance=ExtResource("18_rc2xp")]
@@ -1302,7 +1302,7 @@ text = "Peças Insuficientes"
 
 [node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls3/PiecesWallHUD"]
 libraries = {
-"": SubResource("AnimationLibrary_efe5p")
+&"": SubResource("AnimationLibrary_efe5p")
 }
 
 [node name="Label" type="Label" parent="Walls/MovingWalls3/PiecesWallHUD"]
@@ -1323,7 +1323,7 @@ script = ExtResource("16_ijc76")
 
 [node name="WallAnimation" type="AnimationPlayer" parent="Walls/MovingWalls4"]
 libraries = {
-"": SubResource("AnimationLibrary_mpdel")
+&"": SubResource("AnimationLibrary_mpdel")
 }
 
 [node name="DoorOpening" parent="Walls/MovingWalls4" instance=ExtResource("18_rc2xp")]
@@ -1424,7 +1424,7 @@ text = "Peças Insuficientes"
 
 [node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls4/PiecesWallHUD"]
 libraries = {
-"": SubResource("AnimationLibrary_efe5p")
+&"": SubResource("AnimationLibrary_efe5p")
 }
 
 [node name="Label" type="Label" parent="Walls/MovingWalls4/PiecesWallHUD"]

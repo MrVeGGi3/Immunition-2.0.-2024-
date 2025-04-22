@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dod0xb7tw831s"]
 
-[ext_resource type="Script" path="res://scripts/Tests/score_counter.gd" id="1_3cuta"]
+[ext_resource type="Script" uid="uid://nfolfvl64jk" path="res://scripts/Tests/score_counter.gd" id="1_3cuta"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fee4n"]
 bg_color = Color(0.6, 0, 0.6, 1)
@@ -82,7 +82,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_glxa2"]
 _data = {
-"score_counter": SubResource("Animation_0dfj6")
+&"score_counter": SubResource("Animation_0dfj6")
 }
 
 [node name="TestScoreAnimation" type="Control"]
@@ -113,5 +113,5 @@ theme_override_font_sizes/font_size = 100
 
 [node name="CounterAnimator" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_glxa2")
+&"": SubResource("AnimationLibrary_glxa2")
 }

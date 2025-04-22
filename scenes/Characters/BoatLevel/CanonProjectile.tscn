@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://j634oumsagby"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/objects/CanonProjectile.gd" id="1_vv54j"]
+[ext_resource type="Script" uid="uid://mdj82u7l60pg" path="res://scripts/Characthers/objects/CanonProjectile.gd" id="1_vv54j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msw4u"]
 albedo_color = Color(1, 1, 0.282353, 1)

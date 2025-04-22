@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bg63lx5k5yiq6"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/boatlevel/PlayerProjectile.gd" id="1_47pk0"]
+[ext_resource type="Script" uid="uid://gud6b1n4lngx" path="res://scripts/Characthers/boatlevel/PlayerProjectile.gd" id="1_47pk0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k7ihe"]
 metallic = 1.0

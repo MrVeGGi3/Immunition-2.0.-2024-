@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0vfkd7kys2id"]
 
-[ext_resource type="Script" path="res://scripts/Effects/StopBoatBar.gd" id="1_jh5io"]
+[ext_resource type="Script" uid="uid://cfs3r2ho2vb2f" path="res://scripts/Effects/StopBoatBar.gd" id="1_jh5io"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o64gg"]
 albedo_color = Color(1, 1, 1, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dxw65433g47rd"]
 
-[ext_resource type="Script" path="res://scripts/HUD/level_selection.gd" id="1_787yw"]
+[ext_resource type="Script" uid="uid://bb0sn3r0wq8sn" path="res://scripts/HUD/level_selection.gd" id="1_787yw"]
 [ext_resource type="Texture2D" uid="uid://bbb5bhxa2nget" path="res://images/UI/Main Screen Without logo.png" id="1_jvapf"]
 [ext_resource type="Theme" uid="uid://chfew0owxhkt5" path="res://themes/fasename_description.tres" id="2_a5op5"]
 [ext_resource type="Theme" uid="uid://c33mgls2q6ijq" path="res://themes/go_phase_button.tres" id="2_xsfrr"]

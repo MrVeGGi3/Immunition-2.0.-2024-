@@ -1,6 +1,6 @@
 [gd_scene load_steps=80 format=3 uid="uid://ryq41sr1ajnr"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_t28fd"]
+[ext_resource type="Script" uid="uid://dkagk4n2xqyje" path="res://scripts/Characthers/Player.gd" id="1_t28fd"]
 [ext_resource type="Theme" uid="uid://bd32nqym4104l" path="res://themes/playerLifeBarTheme.tres" id="2_idtty"]
 [ext_resource type="Texture2D" uid="uid://bv42ntqndsu6p" path="res://icons/Icon Head CH Alive_RedAnimated.png" id="3_ibs0r"]
 [ext_resource type="PackedScene" uid="uid://br57ykp7o40bi" path="res://scenes/HUD/tutorial_finished.tscn" id="4_iu8ug"]

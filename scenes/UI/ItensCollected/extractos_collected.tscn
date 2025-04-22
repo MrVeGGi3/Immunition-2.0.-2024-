@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://chjb7f3unarmp"]
 
-[ext_resource type="Script" path="res://scripts/Count/extractors_collected.gd" id="1_1iq7y"]
+[ext_resource type="Script" uid="uid://vv28df85njwu" path="res://scripts/Count/extractors_collected.gd" id="1_1iq7y"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_qg1se"]
 [ext_resource type="Texture2D" uid="uid://bvjoyraetdpi6" path="res://images/CountBackground/Contador_base.png" id="2_gua5c"]
 [ext_resource type="Texture2D" uid="uid://3flapnmavn1e" path="res://images/Collectables/Extractor_sprite.png" id="4_vfkmo"]

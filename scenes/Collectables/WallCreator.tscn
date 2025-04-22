@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://stfl4op38grh"]
 
-[ext_resource type="Script" path="res://scripts/Collectables/wall_creator.gd" id="1_3hwsh"]
+[ext_resource type="Script" uid="uid://d1kmsgjcy251x" path="res://scripts/Collectables/wall_creator.gd" id="1_3hwsh"]
 [ext_resource type="PackedScene" uid="uid://du3djanlfvrw7" path="res://sounds/SFX/Collected/retro_coin.tscn" id="2_c23g8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2a7k"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bmaecxa81b56j"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/pathfinding/Influenza2.gd" id="1_ivp2f"]
+[ext_resource type="Script" uid="uid://b53q51kbllx6f" path="res://scripts/Characthers/pathfinding/Influenza2.gd" id="1_ivp2f"]
 [ext_resource type="AudioStream" uid="uid://bci23xhxmk4vc" path="res://sounds/SFX/Influenza/Projectile/influenza_projectile_sound.wav" id="2_qyl77"]
 [ext_resource type="Texture2D" uid="uid://df0ywocvinitg" path="res://sprites/Monster/influenza/Influenza.png" id="4_cpnkm"]
 

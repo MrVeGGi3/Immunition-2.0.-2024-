@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bba17plx7ppug"]
 
-[ext_resource type="Script" path="res://scripts/Count/influenza_count.gd" id="1_lww33"]
+[ext_resource type="Script" uid="uid://bsw42uio5n1fo" path="res://scripts/Count/influenza_count.gd" id="1_lww33"]
 [ext_resource type="Texture2D" uid="uid://bvjoyraetdpi6" path="res://images/CountBackground/Contador_base.png" id="2_0uc78"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="2_yk23k"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://df633h7tawp6h"]
 
-[ext_resource type="Script" path="res://scripts/Effects/elastic_jump.gd" id="1_e8r1i"]
+[ext_resource type="Script" uid="uid://cktsr3b6ldgyj" path="res://scripts/Effects/elastic_jump.gd" id="1_e8r1i"]
 [ext_resource type="PackedScene" uid="uid://4bk78gdl6vgo" path="res://scenes/AudioSource/elastic_jump_sound.tscn" id="2_bwpsj"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5oe8y"]

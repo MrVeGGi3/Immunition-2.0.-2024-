@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bq18nfmu2v2tt"]
 
-[ext_resource type="Script" path="res://scripts/Spawner/CanonSpawn.gd" id="1_5nrsw"]
+[ext_resource type="Script" uid="uid://bpkls330sclcb" path="res://scripts/Spawner/CanonSpawn.gd" id="1_5nrsw"]
 [ext_resource type="AudioStream" uid="uid://jrls4mvnkg3t" path="res://sounds/SFX/Canon/cannon-firing-193247.wav" id="2_40d0w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imanp"]

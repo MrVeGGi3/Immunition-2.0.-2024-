@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cpjluqbhepjhu"]
 
-[ext_resource type="Shader" path="res://shaders/water.gdshader" id="1_vkdau"]
+[ext_resource type="Shader" uid="uid://d8bgdmsiiq16" path="res://shaders/water.gdshader" id="1_vkdau"]
 [ext_resource type="PackedScene" uid="uid://cddycqhl26bsg" path="res://scenes/scenary/glucose.tscn" id="2_v0oxb"]
 [ext_resource type="PackedScene" uid="uid://co1gpl0ybl361" path="res://scenes/Characters/BoatLevel/PlayerRedGlob.tscn" id="3_en4je"]
 [ext_resource type="PackedScene" uid="uid://bxr7ccckvjy8x" path="res://scenes/Characters/BoatLevel/Enemy1.tscn" id="4_o6jnu"]

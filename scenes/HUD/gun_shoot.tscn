@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b86srxxd4jnsq" path="res://sprites/Player/macrofago_sprite.png" id="2_x8ebb"]
 [ext_resource type="Texture2D" uid="uid://cmixvfomb2y5w" path="res://sprites/Player/neutrofilos_sprite2.png" id="3_8bp2g"]
 [ext_resource type="Texture2D" uid="uid://d2s5b3sa7xwae" path="res://images/UI/Shoot/Mira.png" id="4_of32f"]
-[ext_resource type="Script" path="res://scripts/Animations/AnimationTree.gd" id="5_kxove"]
+[ext_resource type="Script" uid="uid://bv6cby7iq6573" path="res://scripts/Animations/AnimationTree.gd" id="5_kxove"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ys8yx"]
 atlas = ExtResource("1_psfsf")
@@ -356,13 +356,13 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nk4dt"]
 _data = {
-"RESET": SubResource("Animation_dr6dr"),
-"idle": SubResource("Animation_q6ytu"),
-"walk_diagonal_left": SubResource("Animation_sh4uc"),
-"walk_diagonal_right": SubResource("Animation_164b0"),
-"walk_forward_back": SubResource("Animation_tyvy1"),
-"walk_left_side": SubResource("Animation_tn0vh"),
-"walk_right_side": SubResource("Animation_dwdse")
+&"RESET": SubResource("Animation_dr6dr"),
+&"idle": SubResource("Animation_q6ytu"),
+&"walk_diagonal_left": SubResource("Animation_sh4uc"),
+&"walk_diagonal_right": SubResource("Animation_164b0"),
+&"walk_forward_back": SubResource("Animation_tyvy1"),
+&"walk_left_side": SubResource("Animation_tn0vh"),
+&"walk_right_side": SubResource("Animation_dwdse")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6lel6"]
@@ -477,7 +477,7 @@ texture = ExtResource("4_of32f")
 
 [node name="AnimaçãoArmas" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_nk4dt")
+&"": SubResource("AnimationLibrary_nk4dt")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

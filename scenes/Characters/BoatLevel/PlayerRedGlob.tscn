@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://co1gpl0ybl361"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/boatlevel/PlayerRedGlob.gd" id="1_yxba6"]
-[ext_resource type="Shader" path="res://shaders/PlayerRedGlob.gdshader" id="2_xwdaj"]
+[ext_resource type="Script" uid="uid://ogn6g22ml6ik" path="res://scripts/Characthers/boatlevel/PlayerRedGlob.gd" id="1_yxba6"]
+[ext_resource type="Shader" uid="uid://bhajiqb2go0su" path="res://shaders/PlayerRedGlob.gdshader" id="2_xwdaj"]
 [ext_resource type="ArrayMesh" uid="uid://dnlysv02q21bn" path="res://prefabs/redglobe.obj" id="3_q4pf8"]
 [ext_resource type="AudioStream" uid="uid://c518ckkiay50l" path="res://sounds/SFX/Player/Blaster.wav" id="4_j0syb"]
 

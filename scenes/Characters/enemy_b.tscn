@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://c8bydekkhr5m4"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/Prototype/Level3/Enemy_Blue_Pipe.gd" id="1_22ik2"]
+[ext_resource type="Script" uid="uid://cpoi52n58wmtm" path="res://scripts/Characthers/Prototype/Level3/Enemy_Blue_Pipe.gd" id="1_22ik2"]
 [ext_resource type="Texture2D" uid="uid://cj21mxonxa3cx" path="res://sprites/Monster/monster1_Blue_sprite.png" id="2_u3qrc"]
 [ext_resource type="AudioStream" uid="uid://bw3djxfntr0jb" path="res://sounds/SFX/Monster/monster_die.wav" id="3_4l37k"]
 [ext_resource type="AudioStream" uid="uid://bud3mha4g5u45" path="res://sounds/SFX/Monster/monster_bite.wav" id="4_pk5c8"]
@@ -187,6 +187,8 @@ max_speed = 30.0
 use_3d_avoidance = true
 avoidance_layers = 4
 avoidance_mask = 5
+debug_enabled = true
+debug_path_custom_color = Color(0.27451, 0.247059, 1, 1)
 
 [node name="SubViewport2" type="SubViewport" parent="."]
 transparent_bg = true

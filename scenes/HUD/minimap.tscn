@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5yaq5d5t8iip"]
 
-[ext_resource type="Script" path="res://scripts/HUD/minimap.gd" id="1_3n4vq"]
+[ext_resource type="Script" uid="uid://d32nnbc18x13i" path="res://scripts/HUD/minimap.gd" id="1_3n4vq"]
 
 [node name="Minimap" type="Control"]
 layout_mode = 3

@@ -17,7 +17,7 @@ var is_shooting = false
 var shoot_by_player = false
 #Instâncias
 @onready var mesh_instance_influenza = $MeshInstance3Ds
-var projectile = preload("res://scenes/testing/influenza_projectile.tscn")
+var projectile = preload("res://scenes/effect/influenza_projectile.tscn")
 #Referência de Localização
 @onready var marker_3d = $Marker3D
 #Timers

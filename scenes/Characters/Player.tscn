@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://dyf23kaij0wqn"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
+[ext_resource type="Script" uid="uid://dkagk4n2xqyje" path="res://scripts/Characthers/Player.gd" id="1_cyly3"]
 [ext_resource type="PackedScene" uid="uid://csuphbpruxtrh" path="res://scenes/HUD/player_life_bar.tscn" id="2_hp8bw"]
 [ext_resource type="PackedScene" uid="uid://btp7d3bapr771" path="res://scenes/HUD/gun_shoot.tscn" id="3_rmxp2"]
 [ext_resource type="PackedScene" uid="uid://bjs28xuudoshk" path="res://scenes/HUD/ui_ammo.tscn" id="4_mpvfg"]

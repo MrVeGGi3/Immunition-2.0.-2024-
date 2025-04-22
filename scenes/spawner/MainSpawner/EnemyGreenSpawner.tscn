@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://clgg3rj7ipuo4"]
 
-[ext_resource type="Script" path="res://scripts/Spawner/Enemy_green_spawner.gd" id="1_djbc3"]
+[ext_resource type="Script" uid="uid://btlj2h0gki34w" path="res://scripts/Spawner/Enemy_green_spawner.gd" id="1_djbc3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxm6m"]
 albedo_color = Color(0.0927298, 0.335664, 0.0467472, 1)

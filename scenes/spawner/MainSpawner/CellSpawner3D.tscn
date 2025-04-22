@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cc6g7d2jxbm48"]
 
-[ext_resource type="Script" path="res://scripts/Spawner/CellSpawner3D.gd" id="1_7ter3"]
+[ext_resource type="Script" uid="uid://cl8pfofwsd27n" path="res://scripts/Spawner/CellSpawner3D.gd" id="1_7ter3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxm6m"]
 albedo_color = Color(0, 0.2, 0.470588, 1)

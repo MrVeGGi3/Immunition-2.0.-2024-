@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://0iep3tsvbsfw"]
 
-[ext_resource type="Script" path="res://scripts/Tests/diareia_testing_behaviour.gd" id="1_wx0xl"]
+[ext_resource type="Script" uid="uid://byvo8plv284ni" path="res://scripts/Tests/diareia_testing_behaviour.gd" id="1_wx0xl"]
 [ext_resource type="PackedScene" uid="uid://iokacrnac0al" path="res://scenes/Characters/Diareia.tscn" id="2_76fxh"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_oywpu"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://8onv0icy5g7h"]
 
-[ext_resource type="Script" path="res://scripts/Characthers/Prototype/Level3/Enemy_Green_Pipe.gd" id="1_54gt1"]
+[ext_resource type="Script" uid="uid://d4lrjg3xd4ck4" path="res://scripts/Characthers/Prototype/Level3/Enemy_Green_Pipe.gd" id="1_54gt1"]
 [ext_resource type="AudioStream" uid="uid://bw3djxfntr0jb" path="res://sounds/SFX/Monster/monster_die.wav" id="3_hw3m5"]
 [ext_resource type="Texture2D" uid="uid://2semeicsex86" path="res://sprites/Monster/monster1_sprite.png" id="4_0ryar"]
 [ext_resource type="AudioStream" uid="uid://bud3mha4g5u45" path="res://sounds/SFX/Monster/monster_bite.wav" id="4_fgou3"]

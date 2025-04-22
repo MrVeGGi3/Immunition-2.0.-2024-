@@ -170,9 +170,9 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_efe5p"]
 _data = {
-"RESET": SubResource("Animation_f4imu"),
-"cant_construct": SubResource("Animation_uuh0r"),
-"wall_constructed": SubResource("Animation_sp7f7")
+&"RESET": SubResource("Animation_f4imu"),
+&"cant_construct": SubResource("Animation_uuh0r"),
+&"wall_constructed": SubResource("Animation_sp7f7")
 }
 
 [node name="PiecesWallHUD" type="Control"]
@@ -199,7 +199,7 @@ text = "Peças Insuficientes"
 
 [node name="PiecesHUDAnimation" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_efe5p")
+&"": SubResource("AnimationLibrary_efe5p")
 }
 
 [node name="Label" type="Label" parent="."]

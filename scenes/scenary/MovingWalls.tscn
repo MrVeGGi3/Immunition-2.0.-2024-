@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://iw3umuo4ymew"]
 
-[ext_resource type="Script" path="res://scripts/Elevators/moving_walls.gd" id="1_nk7k4"]
+[ext_resource type="Script" uid="uid://c3m8aegvqvogd" path="res://scripts/Elevators/moving_walls.gd" id="1_nk7k4"]
 [ext_resource type="AudioStream" uid="uid://bqhnvkpnvrvf1" path="res://sounds/SFX/Door/WallMovement.wav" id="2_kcoyj"]
 [ext_resource type="PackedScene" uid="uid://by5w8r5ir8bac" path="res://scenes/AudioSource/door_opening.tscn" id="2_mryot"]
 [ext_resource type="PackedScene" uid="uid://bavcym5qvj7ka" path="res://scenes/AudioSource/error_audio.tscn" id="3_bw0de"]
@@ -309,12 +309,12 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mpdel"]
 _data = {
-"100%": SubResource("Animation_5a3sb"),
-"20%": SubResource("Animation_h1ios"),
-"40%": SubResource("Animation_7axw1"),
-"60%": SubResource("Animation_5gn2g"),
-"80%": SubResource("Animation_g2yty"),
-"RESET": SubResource("Animation_hirid")
+&"100%": SubResource("Animation_5a3sb"),
+&"20%": SubResource("Animation_h1ios"),
+&"40%": SubResource("Animation_7axw1"),
+&"60%": SubResource("Animation_5gn2g"),
+&"80%": SubResource("Animation_g2yty"),
+&"RESET": SubResource("Animation_hirid")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_df3du"]
@@ -347,7 +347,7 @@ shape = SubResource("BoxShape3D_ihm0x")
 
 [node name="WallAnimation" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_mpdel")
+&"": SubResource("AnimationLibrary_mpdel")
 }
 
 [node name="DoorOpening" parent="." instance=ExtResource("2_mryot")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8uj1bea2qdb1"]
 
-[ext_resource type="Script" path="res://scripts/Collectables/extractor.gd" id="1_gyhq5"]
+[ext_resource type="Script" uid="uid://b4ifafng1jmmm" path="res://scripts/Collectables/extractor.gd" id="1_gyhq5"]
 [ext_resource type="Texture2D" uid="uid://3flapnmavn1e" path="res://images/Collectables/Extractor_sprite.png" id="2_y5qpl"]
 [ext_resource type="AudioStream" uid="uid://3ypaxguslr8k" path="res://sounds/SFX/Collected/ItemCollected.wav" id="3_an6nw"]
 

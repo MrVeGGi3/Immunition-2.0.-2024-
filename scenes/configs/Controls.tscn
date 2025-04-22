@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bc1evn6cd1vd1"]
 
-[ext_resource type="Script" path="res://scripts/Configs/controls.gd" id="1_5caey"]
+[ext_resource type="Script" uid="uid://clbhheo8gfqio" path="res://scripts/Configs/controls.gd" id="1_5caey"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_end32"]
 [ext_resource type="Theme" uid="uid://kk57keqqixit" path="res://themes/config_group_title.tres" id="2_nnchl"]
 [ext_resource type="Theme" uid="uid://ck4ch32br55s2" path="res://themes/ButtonChangeControl.tres" id="3_sl4qg"]

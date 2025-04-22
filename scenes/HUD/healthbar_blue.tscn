@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://6i25h0a6br3j"]
 
-[ext_resource type="Script" path="res://scripts/HUD/hb_ccolor.gd" id="1_507is"]
+[ext_resource type="Script" uid="uid://geiqp3wy6j24" path="res://scripts/HUD/hb_ccolor.gd" id="1_507is"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="2_erho2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hltyo"]

@@ -77,8 +77,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ncl28"]
 _data = {
-"RESET": SubResource("Animation_queg3"),
-"moving platform": SubResource("Animation_0e4b4")
+&"RESET": SubResource("Animation_queg3"),
+&"moving platform": SubResource("Animation_0e4b4")
 }
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bikoe"]
@@ -124,8 +124,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_til0j"]
 _data = {
-"RESET": SubResource("Animation_v3wrh"),
-"move_platform_escaoe": SubResource("Animation_nltjj")
+&"RESET": SubResource("Animation_v3wrh"),
+&"move_platform_escaoe": SubResource("Animation_nltjj")
 }
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5j052"]
@@ -402,7 +402,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dval3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Environment/Platform"]
 libraries = {
-"": SubResource("AnimationLibrary_ncl28")
+&"": SubResource("AnimationLibrary_ncl28")
 }
 autoplay = "moving platform"
 
@@ -418,7 +418,7 @@ mesh = SubResource("BoxMesh_fm6f6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Environment/Returning Platform"]
 libraries = {
-"": SubResource("AnimationLibrary_til0j")
+&"": SubResource("AnimationLibrary_til0j")
 }
 autoplay = "move_platform_escaoe"
 

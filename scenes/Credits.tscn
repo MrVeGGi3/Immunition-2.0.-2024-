@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://crryhmvagudiy"]
 
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="1_quklc"]
-[ext_resource type="Script" path="res://scripts/Credits.gd" id="1_t7vyp"]
+[ext_resource type="Script" uid="uid://t88tqwmplag0" path="res://scripts/Credits.gd" id="1_t7vyp"]
 [ext_resource type="Texture2D" uid="uid://1vx6gnr4idap" path="res://Immunition.icon.png" id="3_ulgcr"]
-[ext_resource type="Script" path="res://scripts/Credits/CreditsScroll.gd" id="4_woutw"]
+[ext_resource type="Script" uid="uid://7npa5xjnh1gn" path="res://scripts/Credits/CreditsScroll.gd" id="4_woutw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qlg7"]
 bg_color = Color(0.6, 0.6, 0.929412, 0.364706)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://3xdj3eb0mv5x"]
 
-[ext_resource type="Script" path="res://scripts/Effects/ss_missile_explosion.gd" id="1_m5i8n"]
+[ext_resource type="Script" uid="uid://ctapujokjc7wc" path="res://scripts/Effects/ss_missile_explosion.gd" id="1_m5i8n"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4iuis"]
 radius = 8.0
