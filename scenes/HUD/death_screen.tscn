@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://e61bp2oo2edm" path="res://scripts/HUD/death_screen.gd" id="1_wyh63"]
 [ext_resource type="Theme" uid="uid://dufxlwl2jmmm8" path="res://themes/purpleTheme.tres" id="2_sqt3c"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="3_yulug"]
-[ext_resource type="Texture2D" uid="uid://d0r2c8ejf2khy" path="res://icons/Icon Head CH Died.png" id="4_bujgq"]
+[ext_resource type="Texture2D" uid="uid://bk0i7w1cbye7o" path="res://images/UI/Death/Icon Head CH Died.png" id="5_5jpmj"]
 
 [node name="DeathScreen" type="Control"]
 process_mode = 3
@@ -47,8 +47,8 @@ offset_bottom = 243.0
 text = "Recomeçar"
 
 [node name="PlayerDead" type="Sprite2D" parent="."]
-position = Vector2(549, 347)
-scale = Vector2(0.145759, 0.145759)
-texture = ExtResource("4_bujgq")
+position = Vector2(537, 342)
+scale = Vector2(0.122194, 0.122194)
+texture = ExtResource("5_5jpmj")
 
 [connection signal="pressed" from="Panel/RestartButton" to="." method="_on_restart_button_pressed"]

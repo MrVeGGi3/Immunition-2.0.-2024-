@@ -1,31 +1,31 @@
 [gd_scene load_steps=10 format=3 uid="uid://csuphbpruxtrh"]
 
 [ext_resource type="Theme" uid="uid://bd32nqym4104l" path="res://themes/playerLifeBarTheme.tres" id="1_1pmqx"]
-[ext_resource type="Texture2D" uid="uid://bv42ntqndsu6p" path="res://icons/Icon Head CH Alive_RedAnimated.png" id="2_yr12c"]
+[ext_resource type="Texture2D" uid="uid://bqi2u8ktv4kte" path="res://sprites/Player/Icon Head CH Alive_RedAnimated.png" id="1_k5v70"]
 [ext_resource type="Texture2D" uid="uid://dlkv4v1vax1vq" path="res://images/UI/LifeBar/Barra Fundo.png" id="3_3vihq"]
 [ext_resource type="Texture2D" uid="uid://20whk6wbac1i" path="res://images/UI/LifeBar/Barra Verde.png" id="4_33hcy"]
 [ext_resource type="Texture2D" uid="uid://b05ok28kdyb5j" path="res://images/UI/LifeBar/Border Health UI.png" id="5_q4wgt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ocaef"]
-atlas = ExtResource("2_yr12c")
-region = Rect2(1062, 0, 1062, 731)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxbkh"]
+atlas = ExtResource("1_k5v70")
+region = Rect2(1434, 0, 1434, 1013)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ft53n"]
-atlas = ExtResource("2_yr12c")
-region = Rect2(0, 0, 1062, 731)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbcgj"]
+atlas = ExtResource("1_k5v70")
+region = Rect2(0, 0, 1434, 1013)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jsgjo"]
-atlas = ExtResource("2_yr12c")
-region = Rect2(0, 0, 1062, 731)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdda4"]
+atlas = ExtResource("1_k5v70")
+region = Rect2(0, 0, 1434, 1013)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4vnq4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ocaef")
+"texture": SubResource("AtlasTexture_gxbkh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ft53n")
+"texture": SubResource("AtlasTexture_sbcgj")
 }],
 "loop": false,
 "name": &"damage_received",
@@ -33,7 +33,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jsgjo")
+"texture": SubResource("AtlasTexture_wdda4")
 }],
 "loop": false,
 "name": &"idle",
@@ -50,12 +50,10 @@ offset_right = 175.0
 offset_bottom = 532.0
 
 [node name="DamageTaken" type="AnimatedSprite2D" parent="."]
-position = Vector2(-31, 24)
-scale = Vector2(0.193912, 0.193912)
+position = Vector2(-23, 8)
+scale = Vector2(0.154055, 0.154055)
 sprite_frames = SubResource("SpriteFrames_4vnq4")
 animation = &"damage_received"
-frame = 1
-frame_progress = 1.0
 
 [node name="LifeBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
