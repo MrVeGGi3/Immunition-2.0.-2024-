@@ -53,7 +53,8 @@ offset_bottom = 532.0
 position = Vector2(-23, 8)
 scale = Vector2(0.154055, 0.154055)
 sprite_frames = SubResource("SpriteFrames_4vnq4")
-animation = &"damage_received"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="LifeBar" type="TextureProgressBar" parent="."]
 layout_mode = 0

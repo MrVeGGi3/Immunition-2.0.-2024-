@@ -14,13 +14,12 @@ extends Control
 func _ready() -> void:
 	if target:
 		camera.rotation = Vector3(-90, player.rotation.y, 0)
+		
 func _process(_delta : float) -> void:
 	if target:
 		camera.size = camera_distance
 		camera.position = Vector3(player.position.x, camera_distance, player.position.z)
-	#var enemies_green = get_tree().get_nodes_in_group("green")
-	#var enemies_blue = get_tree().get_nodes_in_group("blue")
-	#var enemies_red = get_tree().get_nodes_in_group("red")
+		
 	if is_paused:
 		visible = false
 	else:

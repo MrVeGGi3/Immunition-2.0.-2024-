@@ -2181,22 +2181,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("52_ket2y")
 
-[node name="Sprite2D" type="Sprite2D" parent="TimerCounter"]
-position = Vector2(564, 187)
-scale = Vector2(0.803628, 0.265636)
-texture = ExtResource("53_p5uxp")
-
-[node name="Description" type="Label" parent="TimerCounter"]
-layout_mode = 0
-offset_left = 408.0
-offset_top = 176.0
-offset_right = 716.0
-offset_bottom = 203.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("25_7kquy")
-theme_override_font_sizes/font_size = 20
-text = "Proteja as Células do Influenza!!!"
-
 [node name="Control2" type="Control" parent="TimerCounter"]
 anchors_preset = 0
 offset_left = -403.0
@@ -2230,6 +2214,22 @@ text = ":"
 [node name="Count" type="Timer" parent="TimerCounter/Control2"]
 wait_time = 30.0
 
+[node name="Sprite2D" type="Sprite2D" parent="TimerCounter"]
+position = Vector2(564, 187)
+scale = Vector2(0.803628, 0.265636)
+texture = ExtResource("53_p5uxp")
+
+[node name="Description" type="Label" parent="TimerCounter"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 176.0
+offset_right = 716.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("25_7kquy")
+theme_override_font_sizes/font_size = 20
+text = "Proteja as Células do Influenza!!!"
+
 [node name="ExtractosCollected" parent="." instance=ExtResource("9_hv02g")]
 offset_left = -15.0
 offset_top = -25.0
@@ -2244,7 +2244,6 @@ offset_bottom = -2.0
 target = NodePath("../Player")
 
 [node name="PhaseEnded" parent="." instance=ExtResource("16_ee351")]
-visible = false
 
 [node name="Enemy" parent="." instance=ExtResource("57_uqt37")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2124, 2.94173, -39.7701)
