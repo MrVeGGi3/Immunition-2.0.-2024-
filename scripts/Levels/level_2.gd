@@ -8,10 +8,10 @@ extends Node3D
 
 var start_enemies
 var seconds : float
-var message = "Muros reconstruídos com sucesso!"
-var criteria1 = "Tempo do Jogo"
-var criteria2 = "Patógenos Destruídos"
-var criteria3 = "Vida do Player"
+var message = tr("LEVEL_2_CONCLUSION_MESSAGE")
+var criteria1 = tr("PHASE_2_CRITERIA_1")
+var criteria2 = tr("PHASE_2_CRITERIA_2")
+var criteria3 = tr("PHASE_2_CRITERIA_3")
 
 @onready var wall_pieces_hud: Control = $WallPiecesHUD
 @onready var wall_pieces_available: Label = $WallPiecesHUD/WallPiecesAvailable
@@ -51,3 +51,8 @@ func _process(delta: float) -> void:
 		phase_ended.count_score_lvl_2(seconds, Global.pathogen_killed, player.vida, 240.00, start_enemies,player.vida_maxima)
 		phase_ended.visible = true
 		get_tree().paused = true
+	
+	message = tr("LEVEL_2_CONCLUSION_MESSAGE")
+	criteria1 = tr("PHASE_2_CRITERIA_1")
+	criteria2 = tr("PHASE_2_CRITERIA_2")
+	criteria3 = tr("PHASE_2_CRITERIA_3")

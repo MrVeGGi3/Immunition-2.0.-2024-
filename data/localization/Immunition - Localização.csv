@@ -1,0 +1,81 @@
+key,pt_BR,en
+LOADING,Carregando,Loading
+PLAY_GAME_BUTTON,Jogar,Play
+OPTION_GAME_BUTTON,Opções,Settings
+QUIT_GAME_BUTTON,Sair,Exit Game
+CREDITS_BUTTON,Créditos,Credits
+OPTIONS_MENU_TITLE,Opções,Settings
+TEST_SFX_BUTTON,Testar SFX,Test SFX
+MOUSE_SENSIBILITY,Sensibilidade do Mouse,Mouse Sensitivity
+SCREEN_TYPE,Tipo de Tela,Screen Type
+SCREEN_RESOLUTION,Resolução ,Resolution
+LANGUAGE_TYPE,Lingugagem,Language
+WINDOWED_MODE,Modo de Janela,Windowed
+FULLSCREEN_MODE,Tela Cheia,Fullscreen
+NO_EDGE_MODE,Sem Borda,Borderless Window
+FULLSCREEN_NO_EDGE,Tela Cheia sem Borda,Fullscreen Borderless Window
+BACK_BUTTON,Voltar,Back
+TUTORIAL_TITLE,Tutorial,Tutorial
+TUTORIAL_SPEECH_1,"Bem vindo á medula óssea, soldado!","Welcome to the bone marrow, soldier!"
+TUTORIAL_SPEECH_2,"Bom, temos muito trabalho por aqui",We have a lot of work to do today.
+TUTORIAL_SPEECH_3,Acabou havendo um corte simples no braço,A slight cut in our host's arm...
+TUTORIAL_SPEECH_4,"E por fim, alguns invasores entraram...",..and some invaders got inside.
+TUTORIAL_SPEECH_5,Vamos te ensinar como lidar com esses enxeridos!,Let's teach you how to deal with these pests
+MOVIMENTATION_TITLE,Movimentação,Movement
+TUTORIAL_TIP_1,WASD para Andar,"Press the W, A, S, and D keys to move"
+TUTORIAL_SPEECH_6,"Após se movimentar, espere o próximo passo","After moving, await for the next step"
+PRESS_BUTTON_CLOSE_TUTORIAL,(Pressione o botão abaixo para fechar o tutorial),(Press the button below to close the tutorial)
+SKIP_BUTTON,Pular,Jump
+SHOOT_TITLE,Atirar:,Shoot
+TUTORIAL_TIP_2,"Rotação com o movimento do mouse, atirar com o botão esquerdo","Move your mouse to aim, press the left mouse button to shoot"
+TUTORIAL_SPEECH_7,"Após testar, vá para a plataforma á frente!","After trying things out, move to the platform up ahead!"
+WEAPON_SELECT_TITLE,Seleção de Armas,Weapon Selection
+WEAPON_SELECT_TIP,"Para selecionar alguma arma, basta pressionar o botão ""Q"" e usar o mouse","To select a weapon, press the ""Q"" key and use your mouse"
+WEAPON_SELECT_TIP_2,"Ou usar [color=green] [b] 1 [/b][/color],[color=blue][b] 2 [/b][/color],[color=red][b] 3 [/b][/color] para alterar rapidamente","You can also use the [color=green] [b] ""1""[/b][/color],[color=blue][b] ""2""[/b][/color], or [color=red][b]""3"" [/b][/color] keys to quickly select a weapon"
+WEAPON_EFFECTS_TITLE,Efeitos de Armas,Weapon Effects
+WEAPON_EFFECTS_TIP,A arma [color=green] linfócito [/color] causa menor dano e lentidão,The [color=green] lymphocyte [/color] weapon deals low damage and slows enemies
+WEAPON_EFFECTS_TIP_2,A arma [color=blue] macrofágo [/color] causa maior dano instantâneo [p] e tem menor alcance [/p],The [color=blue] macrophage [/color] weapon dealy heavy damage at a lower range
+WEAPON_EFFECTS_TIP_3,A arma [color=red] neutrófilo [/color] causa [p] maior dano contínuo e em área [/p],The [color=red] neutrophil [/color] weapon deals famage over time over an area
+WEAPON_EFFECTS_SPEECH,Agora manda bala!,Now light 'em up!
+W_EFFECTS_SPEECH_2,"Após destruir os inimigos, [p] avance na plataforma á direita [/p]","After eliminating the enemies, head to the platform on the right"
+MOVIMENTATION_2_TITLE,Movimentação II,Movement II
+MOV_TIP_2,"Botão [b] ""Espaço"" [/b] para pular [p] e [b] SHIFT [/b] para correr [/p]","Press [b] ""Space"" [/b] to jump [p] and [b]""Shift""[/b] to sprint [/p]"
+MEMORY_SYSTEM_TITLE,Sistema de Memória,Memory System
+MEMORY_SYSTEM_TIP,Está vendo esse patógeno que está indo em sua direção?,See that pathogen coming your way?
+MEMORY_SYSTEM_TIP_2,Cada [color=green] cor [/color] no seu[color] quadrado [/color],Let's match their[color=green] color [/color] with the correct [color=green] memory [/color]
+MEMORY_SYSTEM_TIP_3,"Para usar o sistema de memória, basta pressionar [b] E [/b] [p] e selecionar com o mouse [/p]","To select a memory, press the [b] ""E"" [/b] key and use your mouse"
+MEMORY_SYSTEM_TIP_4,A memória com a mesma [color=purple] cor/símbolo [/color] do [color=purple] patógeno [/color] [p] causa maior efeito e dano[/p],Enemies with the same [color=purple] color/symbol [/color] of your [color=purple] selected memory [/color] [p] will receive more damage [/p]
+END_GAME_TITLE,Para o fim de jogo,To finish a level
+END_GAME_TIP,Todo final de nível possui esse objeto na sua frente!,Complete the level objectives and/or reach this object up ahead!
+END_GAME_TIP_2,"Para finalizar, basta apenas encostar nele","This ring will end the level, just get to it's position."
+END_GAME_TIP_3,"Bom soldado, creio que já está preparado para a Guerra","Alright soldier, you just might be ready for War."
+END_GAME_TIP_4,Vá com sede de sangue! [p] Não desse corpo... quis dizer.. você entendeu [/p],Fight for this body! Fight for it's life!
+END_GAME_ORDER,[color=purple] Vá para o objeto á frente para encerrar o tutorial! [/color],[color=purple] Head to the objective up ahead to complete the tutorial! [/color]
+CONGRATULATIONS,Parabéns!!!,Congratulations!
+TUTORIAL_ENDED,Tutorial Concluído!,Tutorial Completed!
+NEXT_LEVEL_BUTTON,Próximo Nível,Next Level
+PHASE_1_CONDITION,Colete os Extratores de Proteína e as ative na plataforma de extração,Collect Protein Extractors and activate them at the extraction platform
+PHASE_1_CONDITION_2,Proteja as Células do Influenza!,Protect the cells from the Flu!
+LEVEL_CONCLUDED,Nível          Concluído!,Level Completed!
+LEVEL_1_CONCLUSION_MESSAGE,"Com as proteínas extraídas da fibra muscular, o sistema imune tem mais força para derrotar a infecção do Influenza!",
+CRITERIA_1,Critério 1,Criteria 1
+CRITERIA_2,Critério 2,Criteria 2
+CRITERIA_3,Critério 3,Criteria 3
+PHASE_1_CRITERIA_1,Células Vivas,Surviving Cells
+PHASE_1_CRITERIA_2,Patógenos Destruídos,Pathogens Destroyed
+PHASE_1_CRITERIA_3,Vida Restante,Remaining Health
+PHASE_2_CRITERIA_1,Tempo do Jogo,Time Spent
+PHASE_2_CRITERIA_2,Patógenos Destruídos,Pathogens Destroyed
+PHASE_2_CRITERIA_3,Vida do Player,Remaining Health
+LEVEL_2_CONCLUSION_MESSAGE,Muros Reconstruídos com Sucesso!,Walls Rebuilt!
+PHASE_3_CRITERIA_1,Canos não quebrados,Remaining Pipes
+PHASE_3_CRITERIA_2,Patógenos Destruídos,Pathogens Destroyed
+PHASE_3_CRITERIA_3,Vida do Player,Remaining Health
+LEVEL_3_CONCLUSION_MESSAGE,Vias Respiratórias restauradas com sucesso! Obrigado por jogar!,Airways cleared! Thanks for playing!
+CREDITS_ROLE_1,"Arte 2D, UI/UX, Animação","2D Art, UI/UX, Animation"
+CREDITS_ROLE_2,"Game Design, Arte 3D, Level Design","Game Design, 3D Art, Level Design"
+CREDITS_ROLE_3,"Programação, Sonoplastia","Programming, Audio Design"
+CREDITS_MUSIC,Músicas Utilizadas,Muusic Used
+CREDITS_SPECIAL_GREETINGS,Agradecimentos Especiais,Special Thanks
+PTBR_LANGUAGE_NAME,Português,Portuguese
+ENGLISH_LANG_NAME,Inglês,English

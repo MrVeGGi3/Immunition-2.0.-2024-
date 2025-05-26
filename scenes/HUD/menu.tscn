@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bk44w6ltyiq7d"]
+[gd_scene load_steps=10 format=3 uid="uid://bk44w6ltyiq7d"]
 
 [ext_resource type="Script" uid="uid://bsaenbgmc0g4p" path="res://scripts/HUD/Menu.gd" id="1_g04yw"]
 [ext_resource type="Theme" uid="uid://btc3kqb6qx6k3" path="res://themes/button.tres" id="2_27d8b"]
 [ext_resource type="Texture2D" uid="uid://cumum55a2e8e4" path="res://images/Menu_Screen.png" id="2_bscqu"]
 [ext_resource type="AudioStream" uid="uid://c14cj6uhjlgdt" path="res://sounds/BGM/Synthwave Game Vlog [No Copyright Music]  San Juniper.wav" id="3_ry4k5"]
+[ext_resource type="Script" uid="uid://cyuj83dbup7jx" path="res://scenes/HUD/main_menu_buttons.gd" id="3_ubcrl"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="4_qxk2a"]
 [ext_resource type="AudioStream" uid="uid://bo033vak4kltn" path="res://sounds/SFX/Buttons/ButtonSelected.wav" id="6_q25pb"]
 
@@ -31,30 +32,31 @@ position = Vector2(574.5, 328.5)
 scale = Vector2(0.448828, 0.452083)
 texture = ExtResource("2_bscqu")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="MainMenuButtons" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 455.0
 offset_top = 437.0
 offset_right = 688.0
 offset_bottom = 581.0
 theme = SubResource("Theme_seh5y")
+script = ExtResource("3_ubcrl")
 
-[node name="Play" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Play" type="Button" parent="CanvasLayer/MainMenuButtons"]
 layout_mode = 2
 theme = ExtResource("2_27d8b")
 text = "Jogar"
 
-[node name="Options" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Options" type="Button" parent="CanvasLayer/MainMenuButtons"]
 layout_mode = 2
 theme = ExtResource("2_27d8b")
 text = "Opções"
 
-[node name="Exit" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Exit" type="Button" parent="CanvasLayer/MainMenuButtons"]
 layout_mode = 2
 theme = ExtResource("2_27d8b")
 text = "Sair
 "
 
-[node name="Créditos" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Créditos" type="Button" parent="CanvasLayer/MainMenuButtons"]
 layout_mode = 2
 theme = ExtResource("2_27d8b")
 theme_override_fonts/font = ExtResource("4_qxk2a")
@@ -80,7 +82,7 @@ stream = ExtResource("6_q25pb")
 volume_db = -10.0
 bus = &"SFX"
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Créditos" to="." method="_on_créditos_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/Créditos" to="." method="_on_créditos_pressed"]

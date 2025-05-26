@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=3 uid="uid://d36mflmgjmxea"]
+[gd_scene load_steps=122 format=3 uid="uid://d36mflmgjmxea"]
 
 [ext_resource type="ArrayMesh" uid="uid://djp2vbbqe1dc" path="res://prefabs/map0.obj" id="1_62mxc"]
 [ext_resource type="Script" uid="uid://fw8581uur7u2" path="res://scripts/Levels/tutorial_phase.gd" id="1_bhgoj"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://ohdwvdn6oea7" path="res://scripts/tutorials/shoot_tutorial.gd" id="24_aitb5"]
 [ext_resource type="Script" uid="uid://bmelcqrokvfys" path="res://scripts/tutorials/finish_level.gd" id="24_aocre"]
 [ext_resource type="PackedScene" uid="uid://c5yaq5d5t8iip" path="res://scenes/HUD/minimap.tscn" id="27_0a1ny"]
+[ext_resource type="Script" uid="uid://bbwuprjokmqhf" path="res://scripts/Localization/phase_finished_localization.gd" id="28_svnuq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x5567"]
 sky_top_color = Color(0.663169, 0.350295, 0.212311, 1)
@@ -1208,7 +1209,6 @@ script = ExtResource("24_aocre")
 
 [node name="PhaseFinished" type="Control" parent="."]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -1254,6 +1254,9 @@ offset_right = 283.0
 offset_bottom = 236.0
 theme_override_fonts/font = ExtResource("15_s6clv")
 text = "Próximo Nível"
+
+[node name="PhaseFinishedLocalization" type="Node" parent="PhaseFinished"]
+script = ExtResource("28_svnuq")
 
 [connection signal="body_entered" from="NextTutorialPlatforms/Areas3D/Area3D1" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="NextTutorialPlatforms/Areas3D/Area3D2" to="." method="_on_area_3d_2_body_entered"]

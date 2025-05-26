@@ -4,12 +4,17 @@ extends Node3D
 @export var speed = 5
 @onready var area_3d = $Area3D
 @onready var auto_destruction_timer = $AutoDestructionTimer
-@onready var player = get_tree.get_first_node_in_group("player")
+@onready var player 
 @onready var enemy_position = global_transform.origin
 var player_position
 func _ready():
 	player_position = player.global_transform.origin
 	auto_destruction_timer.start()
+	player = get_tree().get_first_node_in_group("player")
+	if player:
+		print("Player detectado")
+	else:
+		return
 	
 func _process(delta):
 	var direction = (enemy_position - player_position).normalized()

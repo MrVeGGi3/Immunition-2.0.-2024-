@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu2hmfb6uyp7s"]
+
+[ext_resource type="Script" uid="uid://djdwf3yh0agjh" path="res://scenes/TranslationSetting/localization_language_finder.gd" id="1_7u882"]
+
+[node name="LocalizationLanguageFinder" type="Node"]
+script = ExtResource("1_7u882")

@@ -31,10 +31,10 @@ extends Node3D
 var pipes_in_scene 
 var index = 0
 var enemies
-var message = "Vias respiratórias restauradas com sucesso! Obrigado por Jogar!"
-var criteria1 = "Canos Não Quebrados"
-var criteria2 = "Patógenos Destruídos"
-var criteria3 = "Vida do Player"
+var message = tr("LEVEL_3_CONCLUSION_MESSAGE")
+var criteria1 = tr("PHASE_3_CRITERIA_1")
+var criteria2 = tr("PHASE_3_CRITERIA_2")
+var criteria3 = tr("PHASE_3_CRITERIA_3")
 
 var can_spawn = true
 var enemy_red
@@ -93,6 +93,11 @@ func _process(delta: float) -> void:
 		
 	if player.dead:
 		level_3bgm.stop()
+		
+	message = tr("LEVEL_3_CONCLUSION_MESSAGE")
+	criteria1 = tr("PHASE_3_CRITERIA_1")
+	criteria2 = tr("PHASE_3_CRITERIA_2")
+	criteria3 = tr("PHASE_3_CRITERIA_3")
 		
 func _on_count_timeout() -> void:
 	pipe_disable_visiblity()

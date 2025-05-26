@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bm5eamvxvwfj8"
+
+[deps]
+
+files=["res://data/localization/Immunition - Localização.pt_BR.translation", "res://data/localization/Immunition - Localização.en.translation"]
+
+source_file="res://data/localization/Immunition - Localização.csv"
+dest_files=["res://data/localization/Immunition - Localização.pt_BR.translation", "res://data/localization/Immunition - Localização.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

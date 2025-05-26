@@ -43,6 +43,7 @@ var enemies_destroyed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	phase_finished.hide()
 	tutorial_bgm.play()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	player.disable_UI()

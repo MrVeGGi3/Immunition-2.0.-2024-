@@ -184,6 +184,10 @@ change_bazooka={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://data/localization/Immunition - Localização.en.translation", "res://data/localization/Immunition - Localização.pt_BR.translation")
+
 [layer_names]
 
 3d_physics/layer_1="Environment"

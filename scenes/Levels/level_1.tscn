@@ -1,4 +1,4 @@
-[gd_scene load_steps=178 format=3 uid="uid://cj7emqhky70af"]
+[gd_scene load_steps=179 format=3 uid="uid://cj7emqhky70af"]
 
 [ext_resource type="Script" uid="uid://hrpyr6x8cxvn" path="res://scripts/Levels/level_1.gd" id="1_bgiqj"]
 [ext_resource type="Texture2D" uid="uid://bhlaan6ukbhkc" path="res://prefabs/floor1_20240614085358.png" id="2_fikwp"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://btp6gers53b0l" path="res://scenes/AudioSource/victory_song.tscn" id="22_n1uel"]
 [ext_resource type="FontFile" uid="uid://b6b3cu5hbka6f" path="res://fonts/Hey Comic.otf" id="25_7kquy"]
 [ext_resource type="AudioStream" uid="uid://hqasyg3vanal" path="res://sounds/SFX/Player/ShootEffect.wav" id="27_0ur8g"]
+[ext_resource type="Script" uid="uid://ns7qjf2t0bev" path="res://scripts/Localization/timer_localization.gd" id="27_omph1"]
 [ext_resource type="AudioStream" uid="uid://dk7wdjoi41cuq" path="res://sounds/SFX/Player/macrofage_weapon .wav" id="30_ax3k4"]
 [ext_resource type="AudioStream" uid="uid://blyju371t1s68" path="res://sounds/SFX/Player/Flamethrower_Sound.wav" id="31_8xm55"]
 [ext_resource type="PackedScene" uid="uid://csuphbpruxtrh" path="res://scenes/HUD/player_life_bar.tscn" id="33_rwaqr"]
@@ -2229,6 +2230,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("25_7kquy")
 theme_override_font_sizes/font_size = 20
 text = "Proteja as Células do Influenza!!!"
+
+[node name="TimerLocalization" type="Node" parent="TimerCounter"]
+script = ExtResource("27_omph1")
 
 [node name="ExtractosCollected" parent="." instance=ExtResource("9_hv02g")]
 offset_left = -15.0

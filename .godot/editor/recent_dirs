@@ -1,5 +1,9 @@
-E:/Downloads/ImmunitionWEB
-E:/Downloads
+res://data/localization
+res://scripts/Localization
+C:/GameDev/Projects/Godot/Immunition-2.0.-2024-/data
+res://scripts
+res://themes
+res://scripts/Global
 res://sprites/Player
 res://textures
 res://scenes/HUD
@@ -11,11 +15,7 @@ res://images/Pipe Animations
 res://scripts/Levels
 res://tbmapfiles
 res://scenes/UI/Pipe
-res://themes
 res://
 res://scenes/Levels
 res://scenes/AudioSource
 res://scripts/Effects
-res://scripts/tutorials
-res://scripts/Spawner
-res://scripts/Tests

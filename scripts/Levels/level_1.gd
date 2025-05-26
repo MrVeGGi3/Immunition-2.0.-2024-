@@ -28,10 +28,10 @@ extends Node3D
 @onready var count = $TimerCounter/Control2/Count
 
 @export_category("Critérios")
-@onready var message = "Com as proteínas extraídas da fibra muscular, o sistema imune tem mais força para derrotar a infecção da Influenza!"
-@onready var criteria1 = "Células Vivas" 
-@onready var criteria2 = "Patógenos Destruídos"
-@onready var criteria3 = "Vida Restante"
+@onready var message = tr("LEVEL_1_CONCLUSION_MESSAGE")
+@onready var criteria1 = tr("PHASE_1_CRITERIA_1")
+@onready var criteria2 = tr("PHASE_1_CRITERIA_2")
+@onready var criteria3 = tr("PHASE_1_CRITERIA_3")
 #Booleanas de Controle
 var is_extractor_build = false
 var is_entered_platform = false
@@ -87,6 +87,11 @@ func _process(_delta):
 		
 	if player.dead:
 		level_1bgm.stop()
+		
+	message = tr("LEVEL_1_CONCLUSION_MESSAGE")
+	criteria1 = tr("PHASE_1_CRITERIA_1")
+	criteria2 = tr("PHASE_1_CRITERIA_2")
+	criteria3 = tr("PHASE_1_CRITERIA_3")
 	
 		
 func cutscene_cells():
