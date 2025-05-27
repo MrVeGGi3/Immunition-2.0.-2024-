@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://brnm137iii2wi"]
+[gd_scene load_steps=82 format=4 uid="uid://brnm137iii2wi"]
 
 [ext_resource type="Script" uid="uid://yk2be81xarav" path="res://scripts/Levels/level_2.gd" id="1_1qj7d"]
 [ext_resource type="PackedScene" uid="uid://dyf23kaij0wqn" path="res://scenes/Characters/Player.tscn" id="1_vskrl"]
@@ -12,7 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://criflh8ql4iqh" path="res://textures/floor1_20240614085358.png" id="10_vgrb0"]
 [ext_resource type="Texture2D" uid="uid://pq4s2on8e7d1" path="res://textures/floor3_20240614085419.png" id="11_74h5e"]
 [ext_resource type="Texture2D" uid="uid://jou6csovdty5" path="res://textures/wall2_20240614085027.png" id="12_b56bv"]
+[ext_resource type="Script" uid="uid://cy7ujxo2opm6e" path="res://scripts/Localization/MovingWalls/need_pieces_localization_3.gd" id="13_4c4jv"]
+[ext_resource type="Script" uid="uid://bxyu4owlrfgrc" path="res://scripts/Localization/MovingWalls/need_pieces_localization.gd" id="13_5ytgs"]
 [ext_resource type="Texture2D" uid="uid://bp31ju02np0em" path="res://textures/wall1_20240614085020.png" id="13_152co"]
+[ext_resource type="Script" uid="uid://dbgv1e6714t2e" path="res://scripts/Localization/MovingWalls/need_pieces_localization_4.gd" id="13_c6w1e"]
+[ext_resource type="Script" uid="uid://br5ydfan5ctak" path="res://scripts/Localization/MovingWalls/need_pieces_localization_2.gd" id="13_l61k0"]
 [ext_resource type="Texture2D" uid="uid://hyje7o8yaxpu" path="res://textures/wall3_20240614085034.png" id="14_r30sh"]
 [ext_resource type="Texture2D" uid="uid://d0iu4tjj73cto" path="res://textures/muscle_20240614103913.png" id="15_2kq1f"]
 [ext_resource type="Script" uid="uid://c3m8aegvqvogd" path="res://scripts/Elevators/moving_walls.gd" id="16_ijc76"]
@@ -1073,6 +1077,9 @@ theme_override_fonts/font = ExtResource("20_tptig")
 theme_override_font_sizes/font_size = 40
 text = "Muro Construído com Sucesso!!"
 
+[node name="NeedPiecesLocalization" type="Node" parent="Walls/MovingWalls"]
+script = ExtResource("13_5ytgs")
+
 [node name="MovingWalls2" type="Node3D" parent="Walls" groups=["m_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
 script = ExtResource("16_ijc76")
@@ -1194,6 +1201,9 @@ theme_override_colors/font_color = Color(0, 0.784314, 0, 1)
 theme_override_fonts/font = ExtResource("20_tptig")
 theme_override_font_sizes/font_size = 40
 text = "Muro Construído com Sucesso!!"
+
+[node name="NeedPiecesLocalization" type="Node" parent="Walls/MovingWalls2"]
+script = ExtResource("13_l61k0")
 
 [node name="MovingWalls3" type="Node3D" parent="Walls" groups=["m_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
@@ -1317,6 +1327,9 @@ theme_override_fonts/font = ExtResource("20_tptig")
 theme_override_font_sizes/font_size = 40
 text = "Muro Construído com Sucesso!!"
 
+[node name="NeedPiecesLocalization" type="Node" parent="Walls/MovingWalls3"]
+script = ExtResource("13_4c4jv")
+
 [node name="MovingWalls4" type="Node3D" parent="Walls" groups=["m_walls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.01611, -7)
 script = ExtResource("16_ijc76")
@@ -1412,14 +1425,14 @@ grow_vertical = 2
 [node name="Peças Insuficientes" type="Label" parent="Walls/MovingWalls4/PiecesWallHUD"]
 visible = false
 layout_mode = 0
-offset_left = 402.0
-offset_top = 296.0
-offset_right = 2196.0
-offset_bottom = 551.0
+offset_left = 414.0
+offset_top = 545.0
+offset_right = 2208.0
+offset_bottom = 800.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(0.976471, 0.682353, 0, 1)
 theme_override_fonts/font = ExtResource("20_tptig")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 10
 text = "Peças Insuficientes"
 
 [node name="PiecesHUDAnimation" type="AnimationPlayer" parent="Walls/MovingWalls4/PiecesWallHUD"]
@@ -1430,14 +1443,18 @@ libraries = {
 [node name="Label" type="Label" parent="Walls/MovingWalls4/PiecesWallHUD"]
 visible = false
 layout_mode = 0
-offset_left = 302.0
-offset_top = 522.0
-offset_right = 887.0
-offset_bottom = 574.0
+offset_left = 131.0
+offset_top = 276.0
+offset_right = 716.0
+offset_bottom = 328.0
+scale = Vector2(1.5, 1.5)
 theme_override_colors/font_color = Color(0, 0.784314, 0, 1)
 theme_override_fonts/font = ExtResource("20_tptig")
 theme_override_font_sizes/font_size = 40
 text = "Muro Construído com Sucesso!!"
+
+[node name="NeedPiecesLocalization" type="Node" parent="Walls"]
+script = ExtResource("13_c6w1e")
 
 [node name="PhaseEnded" parent="." instance=ExtResource("21_q720d")]
 visible = false
@@ -1621,6 +1638,7 @@ transform = Transform3D(-0.281337, 0.089907, 0.955388, -0.959609, -0.0263588, -0
 volume_db = -5.0
 
 [node name="Level2BGM" parent="." instance=ExtResource("27_83txj")]
+process_mode = 3
 bus = &"BGM"
 
 [node name="WallPiecesHUD" type="Control" parent="."]

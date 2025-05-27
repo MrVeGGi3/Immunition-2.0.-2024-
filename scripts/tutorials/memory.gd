@@ -12,7 +12,7 @@ var currentIndex = 0
 @onready var memory_system_tip_2 = tr("MEMORY_SYSTEM_TIP_2")
 @onready var memory_system_tip_3 = tr("MEMORY_SYSTEM_TIP_3")
 @onready var memory_system_tip_4 = "[font_size=25]" + tr("MEMORY_SYSTEM_TIP_4") + "[/font_size]"
-@onready var close_tutorial = "[color=gray]" + tr("BACK_BUTTON") + "[/color]"
+@onready var close_tutorial = "[color=gray]" + tr("PRESS_BUTTON_CLOSE_TUTORIAL") + "[/color]"
 
 @onready var texts = [
 	memory_system_title,

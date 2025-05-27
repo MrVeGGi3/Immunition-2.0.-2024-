@@ -1236,15 +1236,6 @@ theme_override_fonts/font = ExtResource("15_s6clv")
 theme_override_font_sizes/font_size = 40
 text = "Parábens!!!!!!!"
 
-[node name="Obrigado" type="Label" parent="PhaseFinished/Panel"]
-layout_mode = 0
-offset_left = 152.0
-offset_top = 133.0
-offset_right = 367.0
-offset_bottom = 185.0
-theme_override_fonts/font = ExtResource("15_s6clv")
-text = "Tutorial Concluído!"
-
 [node name="NextPhase" type="Button" parent="PhaseFinished/Panel"]
 process_mode = 3
 layout_mode = 0
@@ -1254,6 +1245,15 @@ offset_right = 283.0
 offset_bottom = 236.0
 theme_override_fonts/font = ExtResource("15_s6clv")
 text = "Próximo Nível"
+
+[node name="Obrigado" type="Label" parent="PhaseFinished/Panel"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 133.0
+offset_right = 367.0
+offset_bottom = 185.0
+theme_override_fonts/font = ExtResource("15_s6clv")
+text = "Tutorial Concluído!"
 
 [node name="PhaseFinishedLocalization" type="Node" parent="PhaseFinished"]
 script = ExtResource("28_svnuq")

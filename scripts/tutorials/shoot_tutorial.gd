@@ -12,7 +12,7 @@ var moved = false
 
 @export_group("Variáveis de Localização")
 @onready var shoot_title ="[b] [font_size=40]" +  tr("SHOOT_TITLE") + "[/font_size] [/b]"
-@onready var tutorial_tip_2 ="[font_size=30]" +  tr("TUTORIAL_TIP_2") + "[/font_size]"
+@onready var tutorial_tip_2 ="[font_size= 20]" +  tr("TUTORIAL_TIP_2") + "[/font_size]"
 @onready var tutorial_speech = tr("TUTORIAL_SPEECH_7")
 @onready var close_tutorial = "[color=gray]"  + tr("PRESS_BUTTON_CLOSE_TUTORIAL") +  "[/color]"
 

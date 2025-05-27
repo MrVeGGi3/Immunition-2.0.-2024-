@@ -20,6 +20,11 @@ var menu = "res://scenes/HUD/menu.tscn"
 @onready var animation_tree: AnimationPlayer = $AnimationTree
 @onready var NextPhaseButton: Button = $GoToNextPhase
 @onready var nível: Label = $Nível
+@onready var go_to_menu: Button = $GoToMenu
+
+
+
+
 
 var level_2 = "res://scenes/Levels/level_2.tscn"
 var level_3 = "res://scenes/Levels/level_3.tscn"
@@ -122,6 +127,8 @@ func _process(_delta):
 	score_iii.text = str(actual_score_iii)
 	scenes_index = Global.score_index
 	nível.text = tr("LEVEL_CONCLUDED")
+	NextPhaseButton.text = tr("NEXT_LEVEL_BUTTON")
+	go_to_menu.text = tr("MENU_BUTTON")
 	
 	
 	

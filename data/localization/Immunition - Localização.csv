@@ -27,10 +27,10 @@ TUTORIAL_SPEECH_6,"Após se movimentar, espere o próximo passo","After moving, 
 PRESS_BUTTON_CLOSE_TUTORIAL,(Pressione o botão abaixo para fechar o tutorial),(Press the button below to close the tutorial)
 SKIP_BUTTON,Pular,Jump
 SHOOT_TITLE,Atirar:,Shoot
-TUTORIAL_TIP_2,"Rotação com o movimento do mouse, atirar com o botão esquerdo","Move your mouse to aim, press the left mouse button to shoot"
+TUTORIAL_TIP_2,"Rotação com o movimento do mouse,[p] atirar com o botão esquerdo [/p]","Move your mouse to aim, [p] press the left mouse button to shoot [/p]"
 TUTORIAL_SPEECH_7,"Após testar, vá para a plataforma á frente!","After trying things out, move to the platform up ahead!"
 WEAPON_SELECT_TITLE,Seleção de Armas,Weapon Selection
-WEAPON_SELECT_TIP,"Para selecionar alguma arma, basta pressionar o botão ""Q"" e usar o mouse","To select a weapon, press the ""Q"" key and use your mouse"
+WEAPON_SELECT_TIP,"Para selecionar alguma arma, [p] basta pressionar o botão ""Q"" e usar o mouse [/p]","To select a weapon, press the ""Q"" key and use your mouse"
 WEAPON_SELECT_TIP_2,"Ou usar [color=green] [b] 1 [/b][/color],[color=blue][b] 2 [/b][/color],[color=red][b] 3 [/b][/color] para alterar rapidamente","You can also use the [color=green] [b] ""1""[/b][/color],[color=blue][b] ""2""[/b][/color], or [color=red][b]""3"" [/b][/color] keys to quickly select a weapon"
 WEAPON_EFFECTS_TITLE,Efeitos de Armas,Weapon Effects
 WEAPON_EFFECTS_TIP,A arma [color=green] linfócito [/color] causa menor dano e lentidão,The [color=green] lymphocyte [/color] weapon deals low damage and slows enemies
@@ -42,8 +42,8 @@ MOVIMENTATION_2_TITLE,Movimentação II,Movement II
 MOV_TIP_2,"Botão [b] ""Espaço"" [/b] para pular [p] e [b] SHIFT [/b] para correr [/p]","Press [b] ""Space"" [/b] to jump [p] and [b]""Shift""[/b] to sprint [/p]"
 MEMORY_SYSTEM_TITLE,Sistema de Memória,Memory System
 MEMORY_SYSTEM_TIP,Está vendo esse patógeno que está indo em sua direção?,See that pathogen coming your way?
-MEMORY_SYSTEM_TIP_2,Cada [color=green] cor [/color] no seu[color] quadrado [/color],Let's match their[color=green] color [/color] with the correct [color=green] memory [/color]
-MEMORY_SYSTEM_TIP_3,"Para usar o sistema de memória, basta pressionar [b] E [/b] [p] e selecionar com o mouse [/p]","To select a memory, press the [b] ""E"" [/b] key and use your mouse"
+MEMORY_SYSTEM_TIP_2,Cada [color=green] cor [/color] no seu [color=green] quadrado [/color],Let's match their[color=green] color [/color] with the correct [color=green] memory [/color]
+MEMORY_SYSTEM_TIP_3,"Para selecionar a memória, [p] pressione o botão [b] ""E ""[/b]  e use seu mouse [/p]","To select a memory, [p] press the [b] ""E"" [/b] key and use your mouse [/p]"
 MEMORY_SYSTEM_TIP_4,A memória com a mesma [color=purple] cor/símbolo [/color] do [color=purple] patógeno [/color] [p] causa maior efeito e dano[/p],Enemies with the same [color=purple] color/symbol [/color] of your [color=purple] selected memory [/color] [p] will receive more damage [/p]
 END_GAME_TITLE,Para o fim de jogo,To finish a level
 END_GAME_TIP,Todo final de nível possui esse objeto na sua frente!,Complete the level objectives and/or reach this object up ahead!
@@ -57,7 +57,7 @@ NEXT_LEVEL_BUTTON,Próximo Nível,Next Level
 PHASE_1_CONDITION,Colete os Extratores de Proteína e as ative na plataforma de extração,Collect Protein Extractors and activate them at the extraction platform
 PHASE_1_CONDITION_2,Proteja as Células do Influenza!,Protect the cells from the Flu!
 LEVEL_CONCLUDED,Nível          Concluído!,Level Completed!
-LEVEL_1_CONCLUSION_MESSAGE,"Com as proteínas extraídas da fibra muscular, o sistema imune tem mais força para derrotar a infecção do Influenza!",
+LEVEL_1_CONCLUSION_MESSAGE,"Com as proteínas extraídas da fibra muscular, o sistema imune tem mais força para derrotar a infecção do Influenza!",System clear! 
 CRITERIA_1,Critério 1,Criteria 1
 CRITERIA_2,Critério 2,Criteria 2
 CRITERIA_3,Critério 3,Criteria 3
@@ -75,7 +75,11 @@ LEVEL_3_CONCLUSION_MESSAGE,Vias Respiratórias restauradas com sucesso! Obrigado
 CREDITS_ROLE_1,"Arte 2D, UI/UX, Animação","2D Art, UI/UX, Animation"
 CREDITS_ROLE_2,"Game Design, Arte 3D, Level Design","Game Design, 3D Art, Level Design"
 CREDITS_ROLE_3,"Programação, Sonoplastia","Programming, Audio Design"
-CREDITS_MUSIC,Músicas Utilizadas,Muusic Used
+CREDITS_MUSIC,Músicas Utilizadas,Music Used
 CREDITS_SPECIAL_GREETINGS,Agradecimentos Especiais,Special Thanks
 PTBR_LANGUAGE_NAME,Português,Portuguese
 ENGLISH_LANG_NAME,Inglês,English
+MENU_BUTTON,Menu,Menu
+NEED,Precisa-se de,Need more
+INSUFICIENT_PIECES,Peças Insuficientes, No enough!
+WALL_CONSTRUCTED,Muro construído com sucesso!,Barrier built!

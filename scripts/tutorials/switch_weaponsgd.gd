@@ -8,8 +8,8 @@ var currentIndex = 0
 
 @export_group("Variáveis de Localização")
 @onready var weapon_selection = "[font_size=40]" + tr("WEAPON_SELECT_TITLE") + "[/font_size]"
-@onready var weapon_selection_tip = "[font_size=30]" + tr("WEAPON_SELECT_TIP") + "[/font_size]"
-@onready var weapon_selection_tip_2 = "[font_size=40] [b]" + tr("WEAPON_SELECT_TIP_2") + "[/b] [/font_size]"
+@onready var weapon_selection_tip = "[font_size=20]" + tr("WEAPON_SELECT_TIP") + "[/font_size]"
+@onready var weapon_selection_tip_2 = "[font_size=30] [b]" + tr("WEAPON_SELECT_TIP_2") + "[/b] [/font_size]"
 
 @onready var weapons_selection_title = "[font_size=40] [b]" +  tr("WEAPON_EFFECTS_TITLE") + "[/b] [/font_size]"
 @onready var weapon_effects_tip = "[font_size=30]" +  tr("WEAPON_EFFECTS_TIP") + "[/font_size]"
@@ -17,7 +17,7 @@ var currentIndex = 0
 @onready var weapon_effects_tip_3 = "[font_size=30]" + tr("WEAPON_EFFECTS_TIP_3") + "[/font_size]"
 @onready var weapon_speech = "[font_size=30]" + tr("WEAPON_EFFECTS_SPEECH") + "[/font_size]"
 @onready var weapon_speech_2 = "[font_size=30]" +  tr("W_EFFECTS_SPEECH_2") + "[/font_size]"
-@onready var close_tutorial ="[color=gray][b]" + tr("PRESS_BUTTON_CLOSE_TUTORIAL") + "[/b][/color]"
+@onready var close_tutorial ="[color=gray]" + tr("PRESS_BUTTON_CLOSE_TUTORIAL") + "[/color]"
 
 @onready var texts = [
 	weapon_selection, weapon_selection_tip, weapon_selection_tip_2,
