@@ -12,11 +12,11 @@ FPS 3D com temática de Microbiologia para o Trabalho de Graduação em Tecnolog
 
 
 ## Ferramentas Utilizadas:
-Engine: Godot 4.4
-Linguagem: GDScript
-Modelos 3D: TrenchBroom
-Arte 2D: Krita
-Edição de Áudio: Audacity
+- Engine: Godot 4.4
+- Linguagem: GDScript
+- Modelos 3D: TrenchBroom
+- Arte 2D: Krita
+- Edição de Áudio: Audacity
 
 
 ## Autores
