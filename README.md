@@ -6,8 +6,9 @@ FPS 3D com temática de Microbiologia para o Trabalho de Graduação em Tecnolog
 
 ##Implementações importantes:
 - Raycast 3D para Line of Sigth e Tiro
-- NavigationMap3D para Automatização dos Inimigos
-- Interface de Usuário, Localização
+- NavigationMap3D para Automatização dos Inimigos;
+- Interface de Usuário, Localização (Inglês e Português);
+- Mecânica de troca de armas;
 
 
 ##Ferramentas Utilizadas:
