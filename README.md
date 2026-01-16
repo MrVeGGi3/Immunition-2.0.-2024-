@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="https://img.itch.zone/aW1hZ2UvMzI4MTU1MS8xOTYzNjUyNS5wbmc=/original/A%2B%2F8a%2B.png" width="100%" alt="Immunition Banner" />
+<img width="250" height="200" alt="Immunition Banner" src="https://github.com/user-attachments/assets/5b8a71e8-c664-4bfe-8a92-7a6fcc10b9ac" />
+</div>
 
   <h1>🦠 IMMUNITION 2.0</h1>
   
