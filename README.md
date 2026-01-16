@@ -1,6 +1,6 @@
 <div align="center">
-<img width="250" height="200" alt="Immunition Banner" src="https://github.com/user-attachments/assets/5b8a71e8-c664-4bfe-8a92-7a6fcc10b9ac" />
-</div>
+  <img width="250" height="200" alt="Immunition Banner" src="https://github.com/user-attachments/assets/268c01b3-1568-4278-9d47-7ba4040b9dc8" />
+  />
 
   <h1>🦠 IMMUNITION 2.0</h1>
   
@@ -15,7 +15,7 @@
     <a href="#">
       <img src="https://img.shields.io/badge/Language-GDScript-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white" />
     </a>
-    <a href="https://veggi3.itch.io/immunition-final />
+    <a href="https://veggi3.itch.io/immunition-final">
       <img src="https://img.shields.io/badge/Play%20on-Itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white" />
     </a>
   </p>
@@ -39,4 +39,35 @@ This project focuses on scalable systems and optimization for web-based deployme
 Implemented a modular **Finite State Machine (FSM)** from scratch to handle Enemy AI behaviors. This allows for decoupled logic and easy expansion of new enemy types.
 * **States:** `Idle`, `Patrol`, `Chase`, `Attack`, `Flee`.
 * **Logic:** Enemies dynamically switch states based on player distance, line of sight (Raycasts), and health thresholds.
+
+
+### 🎯 Physics: Continuous Collision Detection
+Solved the "Tunneling Effect" (where fast bullets pass through thin walls) common in standard physics engines.
+* **Solution:** Implemented custom **Raycasting** ahead of the projectile's trajectory frame-by-frame to detect hits before the physics step updates.
+
+---
+
+## 🕹️ Gameplay & Controls
+
+| Action | Input |
+| :--- | :--- |
+| **Move** | `W`, `A`, `S`, `D` |
+| **Shoot** | `Left Mouse Button` |
+| **Jump** | `Space` |
+| **Switch Weapon** | `1`, `2`, `3` or `Scroll` |
+
+---
+
+## 🛠️ Credits & Tools
+
+* **Lead Programmer & Sound Designer:** Matheus Soares ([@MrVeGGi3](https://github.com/MrVeGGi3))
+* **Level Designer & 3D Artist:** Lucas Camillo
+* **Engine:** Godot 4.3
+* **Audio:** Audacity & Musescore
+
+---
+
+<div align="center">
+  <p><i>Developed with 💙 by VeGGi3</i></p>
+</div>
 
