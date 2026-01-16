@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="250" height="200" alt="Immunition Banner" src="https://github.com/user-attachments/assets/268c01b3-1568-4278-9d47-7ba4040b9dc8" />
+ <img width="250" height="200" alt="Immunition Banner" src="https://github.com/user-attachments/assets/b014a52d-f257-48c0-ac3a-ca5a14bcc32a" />
   />
 
   <h1>🦠 IMMUNITION 2.0</h1>
