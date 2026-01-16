@@ -1,27 +1,41 @@
-# Immunition 2.0.(2024)
- Second edition in the year of 2024
+<div align="center">
+  <img src="https://img.itch.zone/aW1hZ2UvMzI4MTU1MS8xOTYzNjUyNS5wbmc=/original/A%2B%2F8a%2B.png" width="100%" alt="Immunition Banner" />
 
-## Descrição
-FPS 3D com temática de Microbiologia para o Trabalho de Graduação em Tecnologia em Jogos Digitais
+  <h1>🦠 IMMUNITION 2.0</h1>
+  
+  <p>
+    <strong>A 3D Educational FPS about Microbiology and Immune Defense.</strong>
+  </p>
 
-## Implementações importantes:
-- Raycast 3D para Line of Sigth e Tiro
-- NavigationMap3D para Automatização dos Inimigos;
-- Interface de Usuário, Localização (Inglês e Português);
-- Mecânica de troca de armas;
+  <p>
+    <a href="https://godotengine.org">
+      <img src="https://img.shields.io/badge/Engine-Godot%204.3-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white" />
+    </a>
+    <a href="#">
+      <img src="https://img.shields.io/badge/Language-GDScript-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white" />
+    </a>
+    <a href="https://veggi3.itch.io/immunition">
+      <img src="https://img.shields.io/badge/Play%20on-Itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white" />
+    </a>
+  </p>
+</div>
 
+---
 
-## Ferramentas Utilizadas:
-- Engine: Godot 4.4
-- Linguagem: GDScript
-- Modelos 3D: TrenchBroom
-- Arte 2D: Krita
-- Edição de Áudio: Audacity
+## 📖 About the Project
 
+**Immunition** is a fast-paced First-Person Shooter (FPS) developed as a Capstone Project for the Digital Games Degree. The game simulates the human immune system, where the player controls a white blood cell defending the body against viral waves.
 
-## Autores
-Arte 2D, UI - Daniel Marto da Silva
+The goal was to combine **Arcade Mechanics** (inspired by *Doom* and *Quake*) with **Educational Content**, ensuring accurate biological metaphors while maintaining high-performance gameplay on WebGL.
 
-Game Design, Arte 3D, Produção - Lucas Camillo dos Santos
+---
 
-Programação e Sound Design - Matheus Veras Soares 
+## ⚙️ Engineering & Architecture
+
+This project focuses on scalable systems and optimization for web-based deployment. Key technical achievements include:
+
+### 🧠 Finite State Machine (AI)
+Implemented a modular **Finite State Machine (FSM)** from scratch to handle Enemy AI behaviors. This allows for decoupled logic and easy expansion of new enemy types.
+* **States:** `Idle`, `Patrol`, `Chase`, `Attack`, `Flee`.
+* **Logic:** Enemies dynamically switch states based on player distance, line of sight (Raycasts), and health thresholds.
+
