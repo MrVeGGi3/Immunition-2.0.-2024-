@@ -15,7 +15,7 @@
     <a href="#">
       <img src="https://img.shields.io/badge/Language-GDScript-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white" />
     </a>
-    <a href="https://veggi3.itch.io/immunition-final>
+    <a href="https://veggi3.itch.io/immunition-final />
       <img src="https://img.shields.io/badge/Play%20on-Itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white" />
     </a>
   </p>
