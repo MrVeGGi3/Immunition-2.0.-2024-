@@ -60,8 +60,8 @@ Solved the "Tunneling Effect" (where fast bullets pass through thin walls) commo
 ## 🛠️ Credits & Tools
 
 * **Lead Programmer & Sound Designer:** Matheus Soares ([@MrVeGGi3](https://github.com/MrVeGGi3))
-* **Level Designer & 3D Artist:** Lucas Camillo
-* **Concept Art, UX/UI and 2D Arts:** Daniel Marto da Silva
+* **Lead Game Designer & 3D Artist:** Lucas Camillo([@KhamiloKing](https://github.com/KhamilloKing)
+* **Lead Arts and Animation: Concept Art, UX/UI and 2D Arts:** Daniel Marto da Silva
 * **Engine:** Godot 4.3
 * **Audio:** Audacity & Musescore
 
